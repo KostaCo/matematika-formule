@@ -1,0 +1,433 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{cmsrb}
+\usepackage[OT2,T1]{fontenc}
+\usepackage[serbian]{babel}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{mathtools,amsfonts}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage[pagestyles]{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{definition}{Definicija}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\DeclareMathOperator{\arccot}{arccot}
+
+% Title
+\title{Matematika - Formule i teoreme}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+% Section 1
+\chapter{Logika}
+\section{Relacije}
+Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobine:\\
+\begin{itemize}
+    \item \textbf{Refleksivnost}: $x \; \rho \; x, \;\forall x \in A$\\
+    \item \textbf{Simetričnost}: $x \; \rho \; y \implies y \; \rho \; x, \;\forall x,y \in A$\\
+    \item \textbf{Antisimetričnost}: $x \; \rho \; y \land y \; \rho \; x \implies x = y, \;\forall x,y \in A$\\
+    \item \textbf{Tranzitivnost}: $x \;\rho\; y \;\land \; y \;\rho\; z \implies x \;\rho \; z, \; \forall x,y,z \in A$
+\end{itemize}
+\subsection{Relacije ekvivalencije i poretka}
+\begin{itemize}
+    \item \textbf{Ekvivalencija}: refleksivnost + simetričnost + tranzitivnost
+    \item \textbf{Poredak}: refleksivnost + antisimetričnost + tranzitivnost
+\end{itemize}
+\subsection{\textit{1-1} i \textit{na} funkcije}
+\begin{itemize}
+    \item \textbf{1-1}: $x_1=x_2 \implies f(x_1) = f(x_2)$
+    \item \textbf{na}: $f:A\xrightarrow{} B, \; (\forall y \in B)(\exists x \in A)(y = f(x))$
+\end{itemize}
+\section{Operacije}
+\begin{itemize}
+    \item \textbf{Komutativnost}: $x+y=y+x$
+    \item \textbf{Asocijativnost}: $x+(y+z) = (x+y)+z$
+    \item \textbf{Distributivnost ($\cdot$ prema $+$ sa desne strane)}: $(x+y)\cdot z = (x \cdot z) + (y \cdot z)$
+    \item \textbf{Distributivnost ($\cdot$ prema $+$ sa leve strane)}: $z \cdot (x+y) = (z \cdot x) + (z \cdot y)$
+\end{itemize}
+\newpage
+\chapter{Kombinatorika}
+\section{Princip uključivanja i isključivanja}
+\[\begin{aligned}
+    &|A_1 \;\cup\; A_2\;\cup\; \dots \;\cup\;A_n| = \\
+    &\sum^n_{i=1}|A_i| - \sum_{1 \leq i < j \leq n} |A_i \;\cap\; A_j| + \sum_{1 \leq i < j < k \leq n}  |A_i \cap A_j \cap A_k| - {\dots}
+    + (-1)^{n-1}|A_1 \cap A_2 \cap {\dots} \cap A_n|
+\end{aligned}\]
+    
+\section{Binomna i polinomna formula}
+\[
+    (a+b)^n = \sum^n_{k=0}{{n}\choose k} a^{n-k}b^k
+\]
+\[
+(a_1+{\dots} + a_m)^n = \sum_{k_1+{\dots}+k_m = n, \;k_i \geq 0} \frac{n!}{k_1!k_2!\dots k_m!}a_1^{k_1}a_2
+^{k_2}\dots a_m^{k_m}\]
+\section{Zbir ${{a}\choose b}$}
+\[
+    {{n+1}\choose k+1} = {{n}\choose k}+{{n}\choose k+1}
+\]
+
+\newpage
+
+\newpage
+\chapter{Algebra}
+\section{Zbir i razlika kubova i kub zbira i razlike}
+\[a^3\pm b^3 = (a \pm b)(a^2 \mp ab +b^2)\]
+\[(a\pm b)^3 = a^3 \pm b^3 + 3ab(b \pm a) = a^3 \pm 3a^2b + 3ab^2 \pm b^3\]
+\section{Nejednakosti}
+\subsection{Sredine ($H_n,\; G_n,\; A_n,\; K_n$)}
+\[H_n = \frac{n}{\frac{1}{x_1} + {\dots} + \frac{1}{x_n}} \;\leq\; G_n = \sqrt[n]{|x_1\cdot {\dots} \cdot x_n|} \;\leq\; A_n = \frac{x_1+{\dots} +x_n}{n} \;\leq\; K_n = \sqrt{\frac{x_1^2+{\dots} + x_n^2}{n}}\]
+\subsection{Bernulijeva nejednakost}
+\[(1+x)^n \geq 1 + nx, \;\;x>-1, \;n\in \mathbb{N}\]
+\subsection{Koši-Švarcova nejednakost}
+\[(a_1^2 + \dots + a_n^2)(b_1^2 + \dots + b_n^2) \geq (a_1b_1 + \dots + a_nb_n)^2, \;\forall a_i,b_i \in \mathbb{R}, \; n \in \mathbb{N}\]
+\section{Korenovanje}
+\[
+    \sqrt{a\pm \sqrt{b}} = \sqrt{\frac{a + \sqrt{a^2-b}}{2}} \pm \sqrt{\frac{a - \sqrt{a^2-b}}{2}}
+\]
+\newpage
+\section{Nizovi}
+\subsection{Poznate sume}
+\[
+    \sum^n_{k=1}k=1+2+3+4+\dots+n=\frac{n(n+1)}{2}
+\]
+\[
+    \sum^n_{k=1}k^2=1 + 4+9+16+\dots+n^2=\frac{n(n+1)(2n+1)}{6}
+\]
+\[
+    \sum^n_{k=1}k^3=1+8+27+64+\dots+n^3=(1+2+3+4+\dots+n)^2= \frac{n^2(n+1)^2}{4}
+\]
+\[
+    \frac{1}{1\cdot2} + \frac{1}{2\cdot3} +\dots+ \frac{1}{n(n+1)}=\sum_{k=1}^n\frac{1}{k(k+1)}=\sum^n_{k=1}\bigg[\frac{1}{k}-\frac{1}{k+1}\bigg] = 1-\frac{1}{n+1}
+\]
+\subsection{Teoreme}
+\[\begin{aligned}
+    &\textbf{Štolc: }\;\;\lim_{x\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{x\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{x\to +\infty} b_n = +\infty)\\
+    &\textbf{Koši ($A_n$): }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\\
+    &\textbf{$G_n$: }\;\;\lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\\
+    &\textbf{$H_n$: }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\\
+    &a_n > 0, n \in \mathbb{N} \; \land \; \lim_{x\to +\infty} \frac{a_{n+1}}{a_n} = l \implies \lim_{x\to +\infty} \sqrt[n]{a_n} = l
+\end{aligned}\]
+\newpage
+\subsection{Aritmetički niz}
+\[
+    S_n = \frac{n}{2}(a_1+a_n) = \frac{n}{2}(2a_1+(n-1)d)
+\]
+\subsection{Geometrijski niz}
+\[
+    S_n = b_1\frac{q^n-1}{q-1}
+\]
+\section{Diferencne jednačine}
+\subsection{Linearne diferencne jednačine I reda}
+\begin{align}
+\label{niz1}
+    a_{n+1}=qa_n+\varphi(n),\;n\in\mathbb{N}   
+\end{align}
+\begin{theorem} Ako je $a_n'$ opšte rešenje jednačine $a_{n+1}=qa_n$ i ako je $(a_n'')$ proizvoljno rešenje jednačine (\ref{niz1}), tj. proizvoljan niz koji zadovoljava uslov $a_{n+1}''=qa_n''+\varphi(n),\;n\in\mathbb{N}$, onda su sva rešenja jednačine (\ref{niz1}) oblika $(a_n)$, gde je $a_n = a_n'+a_n''$.\end{theorem}
+
+\subsection{Linearne diferencne jednačine II reda}
+
+\begin{align}
+\label{niz2}
+    a_{n+2}=pa_{n+1}+qa_n,\;n\in\mathbb{N}
+\end{align}
+\begin{theorem}
+    Neka su $(x_n)$ i $(y_n)$ proizvoljna dva rešenja diference jednačine (\ref{niz2}) i $C_1$ i $C_2$ proizvoljni brojevi. Tada je i niz $(a_n)$ za koji je
+    \begin{align}
+    \label{niz3}
+        a_n=C_1x_n+C_2y_n, \; n\in \mathbb{N}
+    \end{align}
+    takođe rešenje te jednačine.
+\end{theorem}
+\begin{theorem}
+    Ako su $(x_n)$ i $(y_n)$ neproporcionalna rešenja jednačine (\ref{niz2}), onda se svako njeno rešenje može predstaviti u obliku $a_n= C_1x_n+C_2y_n$.
+\end{theorem}
+\begin{align}
+    \label{niz4}
+    \text{Karakteristična jednačina za (\ref{niz1}):}\;\; t^2=pt+q
+\end{align}
+\begin{theorem}
+    1) Ako su rešenja $t_1$ i $t_2$ karakteristične jednačine (\ref{niz4}) različita, tada su pomoću $x_n =t_1^n$ i $y_n=t_2^n, \;n\in\mathbb{N}$ određena dva neproporcionalna rešenja $(x_n)$ i $(y_n)$ diferencne jednačine (\ref{niz1}).\\
+
+    \noindent 2) Neka je $t_1$ dvostruko rešenje kvadratne jednačine (\ref{niz4}). Tada su nizovi $(x_n)$ i $(y_n)$, dati sa $x_n = t_1^n$ i $y_n=nt_1^n$ neproporcionalna rešenja jednačine (\ref{niz1}).
+\end{theorem}
+\newpage
+\section{Polinomi}
+Za $P(x) = a_nx^n + \dots + a_1x+a_0, \; a_i \in \mathbb{Z}$ važi:
+
+\begin{itemize}
+    \item $P(\alpha) = 0 \;\land\; \alpha \in \mathbb{Z} \implies \alpha \;| \;a_0$
+    \item $\frac{p}{q} \in \mathbb{Q} \;\land\; NZD(p,q) = 1 \;\land\; P(\frac{p}{q}) = 0 \implies p \;|\; a_0 \;\land\; q \;|\; a_n$
+\end{itemize}
+
+\newpage
+\chapter{Geometrija}
+\section{Trigonometrija}
+\subsection{Sinusna teorema}
+\[
+\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma}
+\]
+
+\subsection{Kosinusna teorema}
+\[
+\begin{aligned}
+a^2 &= b^2 + c^2 - 2bc \cos \alpha, \\
+b^2 &= a^2 + c^2 - 2ac \cos \beta, \\
+c^2 &= a^2 + b^2 - 2ab \cos \gamma
+\end{aligned}
+\]
+
+\subsection{Teorema o projekcijama}
+\[
+\begin{aligned}
+a &= b \cos \gamma + c \cos \beta, \\
+b &= a \cos \gamma + c \cos \alpha, \\
+c &= a \cos \beta + b \cos \alpha
+\end{aligned}
+\]
+\subsection{Adicione formule}
+\[
+\begin{aligned}
+\sin(x \pm y) = \sin(x)\cos(y) \pm \cos(x)\sin(y) \\
+\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y) \\
+\tan(x \pm y) = \frac{\tan(x) \pm \tan(y)}{1 \mp \tan(x)\tan(y)} \\
+\cot(x \pm y) = \frac{\cot(x)\cot(y) \mp 1}{\cot(y) \pm \cot(x)} \\
+\end{aligned}
+\]
+
+\subsection{Formule za polovinu ugla}
+\[
+\begin{aligned}
+    \sin^2\left(\frac{x}{2}\right) = \frac{1 - \cos(x)}{2} \\
+    \cos^2\left(\frac{x}{2}\right) = \frac{1 + \cos(x)}{2} \\
+    \sin(x) = \frac{2\tan\left(\frac{x}{2}\right)}{1 + \tan^2\left(\frac{x}{2}\right)}\\
+    \cos(x) = \frac{1 - \tan^2\left(\frac{x}{2}\right)}{1 + \tan^2\left(\frac{x}{2}\right)}\\
+    \tan(x) = \frac{2\tan\left(\frac{x}{2}\right)}{1 - \tan^2\left(\frac{x}{2}\right)}\\
+    \cot(x) = \frac{1 - \tan^2\left(\frac{x}{2}\right)}{2\tan\left(\frac{x}{2}\right)}
+\end{aligned}
+\]
+
+\subsection{Transformacije proizvoda u zbir}
+\[
+\begin{aligned}
+    \sin(x)\sin(y) = \frac{1}{2}[\cos(x-y) - \cos(x+y)]\\
+    \cos(x)\cos(y) = \frac{1}{2}[\cos(x-y) + \cos(x+y)]\\
+    \sin(x)\cos(y) = \frac{1}{2}[\sin(x-y) + \sin(x+y)]
+\end{aligned}
+\]
+
+\subsection{Transformacije zbira u proizvod}
+\[
+\begin{aligned}
+    \cos(x) + \cos(y) = 2\cos\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
+    \cos(x) - \cos(y) = -2\sin\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\\
+    \sin(x) + \sin(y) = 2\sin\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
+    \sin(x) - \sin(y) = 2\cos\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\\
+    C_{n} = \cos(\alpha) + \cos(\alpha + x)+\cos(\alpha + 2x)+...+\cos(\alpha + nx) = \frac{\sin(\frac{n+1}{2}x)\cos(\alpha + \frac{n}{2}x)}{\sin(\frac{x}{2})}\\
+    S_{n} = \sin(\alpha + x)+\sin(\alpha + 2x)+...+\sin(\alpha + nx) = \frac{\sin(\frac{n+1}{2}x)\sin(\alpha + \frac{n}{2}x)}{\sin(\frac{x}{2})}
+\end{aligned}
+\]
+
+\subsection{Molvajdove formule}
+\[
+\begin{aligned}
+    \frac{a + b}{c} = \cos\left(\frac{\alpha - \beta}{2}\right) \sec\left(\frac{\gamma}{2}\right)\\
+    \frac{a - b}{c} = \sin\left(\frac{\alpha - \beta}{2}\right) \csc\left(\frac{\gamma}{2}\right)
+\end{aligned}
+\]
+
+\subsection{Tangensna teorema}
+\[
+\begin{aligned}
+    \frac{a - b}{a + b} = \frac{\tan\left(\frac{\alpha - \beta}{2}\right)}{\tan\left(\frac{\alpha + \beta}{2}\right)}
+\end{aligned}
+\]
+
+
+\subsection{Inverzne trigonometrijske funkcije}
+\[
+    \sin(\arccos(x)) = \cos(\arcsin(x))=\sqrt{1-x^2}
+\]
+\[
+\begin{aligned}
+\arccos(x) + \arccos(y) =
+\begin{cases}
+    \arccos\left(xy - \sqrt{(1-x^2)(1-y^2)}\right), x + y \geq 0\\
+    2\pi - \arccos\left(xy - \sqrt{(1-x^2)(1-y^2)}\right), x + y < 0
+\end{cases}\\
+    \arctan(x) + \arctan(y) =
+\begin{cases}
+    \arctan\left(\frac{x+y}{1-xy}\right), xy < 1\\
+    \arctan\left(\frac{x+y}{1-xy}\right) + \pi, x > 0, y > 0\\
+    \arctan\left(\frac{x+y}{1-xy}\right) - \pi, x < 0, y < 0
+\end{cases}
+\end{aligned}
+\]
+
+
+\subsection{Formule višestrukog ugla}
+\[
+\begin{aligned}
+    \sin(2x) = 2\sin(x)\cos(x)\\
+    \cos(2x) = \cos^2(x) - \sin^2(x)\\
+    \sin(3x) = 3\sin(x) - 4\sin^3(x)\\
+    \cos(3x) = 4\cos^3(x) - 3\cos(x)\\
+    \tan(3x)=\tan(x)\tan\bigg(\frac{\pi}{3}-x\bigg)\tan\bigg(\frac{\pi}{3}+x\bigg)\\
+    \sin(nx) = \sum_{k = 0}^{\frac{n-1}{2}} (-1)^{k}\binom{n}{2k + 1} \cos^{n-2k-1}(x)\sin^{2k+1}(x)\\
+    \cos(nx) = \sum_{k = 0}^{\frac{n}{2}} (-1)^{k}\binom{n}{2k} \cos^{n-2k}(x)\sin^{2k}(x)\\
+\end{aligned}
+\]
+\subsection{Ostalo}
+\[
+ \sum_{i=0}^{\frac{1}{2}{(n-3)}}\cos\left(\frac{\left(2i+1\right)\pi}{n}\right) = \frac{1}{2},\;n=2k+1\geq3, k \in \mathbb{N}_0
+\]
+
+\newpage
+
+\chapter{Teorija brojeva}
+\section{Kongruencija}
+\subsection{Mala Fermaova teorema}
+\[a^{p-1} \equiv_p 1, \text{ za svaki prost broj $p \in \mathbb{Z}$}\]
+\subsection{Broj delilaca}
+\[
+    \tau(a) = (\alpha_1+1)\dots (\alpha_n + 1), \;\; a = p_1^{\alpha_1}\dots p_n^{\alpha_n}
+\]
+\section{Kompleksni brojevi}
+\subsection{Muavrova formula}
+\[ 
+    z^n = r^n(\cos(n\varphi) + i\sin(n\varphi))
+\]
+\subsection{Koren kompleksnog broja}
+\[ 
+    z_k = \sqrt[n]{|a|} \bigg[\cos\bigg(\frac{\alpha+2k\pi}{n}\bigg) + i \sin\bigg(\frac{\alpha+2k\pi}{n}\bigg)\bigg]
+\]
+\subsection{Zbir $n$-tih korena kompleksog broja}
+\[
+    x^n = z, \;\;z,x\in \mathbb{C} \implies  \; \sum^n_{k=1} x_k=0 \;\; (x_1, x_2, \dots, x_n \;\; \text{se ponašaju kao težišne duži $n$-tougla}.)
+\]
+\chapter{Analitička geometrija}
+\section{Ugao između dve prave}
+\[
+    \tan(\theta) = \bigg|\frac{k_1-k_2}{1+k_1k_2}\bigg|,\;\;\;  \text{gde je $\theta$ ugao pod kojim se seku prave } k_1x+b_1 \text{ i } k_2x+b_2.
+\]
+\chapter{Analiza}
+\section{Limesi}
+
+
+\subsection{Upoređivanje beskonačnosti}
+\[
+    n^n > n!>\alpha^n>n^\beta, \;\;(n \to +\infty, \alpha, \beta \in \mathbb{R})
+\]
+\section{Asimptote}
+\subsection{Kosa asimptota}
+\[
+    \lim_{x\to\pm\infty} \frac{f(x)}{x} = a, \;\;\; \lim_{x\to\pm\infty} [f(x) - ax] = b
+\]
+\section{Izvodi}
+\subsection{Poznati izvodi}
+\begin{align*}
+&(e^x)' = e^x \\
+&(\log_a x)' = \frac{1}{x \ln a} \quad (a > 0,\ a \neq 1,\ x > 0) \\
+&(\sin x)' = \cos x \\
+&(\cos x)' = -\sin x \\
+&(\tan x)' = \frac{1}{\cos^2 x} \quad (x \neq \frac{\pi}{2} + k\pi,\ k \in \mathbb{Z}) \\
+&(\cot x)' = -\frac{1}{\sin^2 x}  \quad (x \neq k\pi,\ k \in \mathbb{Z}) \\
+&(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}} \quad (|x| < 1) \\
+&(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}} \quad (|x| < 1) \\
+&(\arctan x)' = \frac{1}{1 + x^2} \\
+&(\text{arccot}\, x)' = -\frac{1}{1 + x^2} \\
+\end{align*}
+\subsection{Lajbnicova formula}
+\[
+(uv)^{(n)} = \sum^n_{k=0}{{n}\choose k} u^{(n-k)}v^{(k)}
+\]
+\newpage
+\subsection{Fermaova, Rolova i Lagranžova teorema}
+
+\noindent\textbf{Fermaova teorema}: Neka je $U_\delta = (c - \delta,c + \delta) \;\delta$-okolina tačke $c \in \mathbb{R}$ i funkcija $f:U_\delta \xrightarrow{}\mathbb{R}$ diferencijabilna u tački $c$. Ako funkcija $f$ u tački $c$ ima lokalni ekstremum, onda je $f'(c) = 0.$\\
+
+\noindent\textbf{Rolova teorema}: Neka je funkcija $f:[a,b] \xrightarrow{} \mathbb{R}$:
+\begin{itemize}
+    \item neprekidna u svim tačkama segmenta $[a,b]$,
+    \item diferencijabilna u svim tačkama intervala $(a,b)$,
+    \item ima jednake vrednosti na krajevima tog segmenta: $f(a) = f(b)$.
+\end{itemize}
+Tada postoji tačka $c \in (a,b)$ td. $f'(c) = 0$.\\
+
+\noindent\textbf{Lagranžova teorema}: Neka je funkcija $f:[a,b] \xrightarrow{} \mathbb{R}$:
+\begin{itemize}
+    \item neprekidna u svim tačkama segmenta $[a,b]$,
+    \item diferencijabilna u svim tačkama intervala $(a,b)$.
+\end{itemize}
+Tada postoji tačka $c \in (a,b)$ td. $f'(c)(b - a) = f(b) - f(a)$.
+
+\newpage
+\section{Tejlorov razvoj}
+\subsection{Opšta formula Tejlorovog razvoja}
+\boxed{ T_{n,a}(x)=f(a)+\frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2+\dots + \frac{f^{(n)}(a)}{n!}(x-a)^n, \;\; a \in \mathbb{R}, n \in \mathbb{N}}
+\subsection{Razvoji elementarnih funkcija}
+\[
+\begin{aligned}
+    (1+x)^\alpha &= 1+{{\alpha}\choose{1}}x+{{\alpha}\choose{2}}x^2 +{{\alpha}\choose{3}}x^3+\dots\;,\;\;\alpha \in \mathbb{R}, \;|x| < 1\\
+    \frac{1}{1-x} &= 1+x+x^2+x^3+\dots, \;|x| < 1\\
+    e^x&=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots,\;\;x \in \mathbb{R}\\
+    \ln(1+x)&=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots, \;|x| < 1\\
+    \sin(x)&=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}+\dots,\;\;x \in \mathbb{R}\\
+    \arcsin(x)&=x+\frac{1}{6}x^3+\frac{3}{40}x^5+\frac{5}{112}x^7+\frac{35}{1152}x^9+\dots, \;|x| \leq 1 \\
+    \cos(x)&=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!}+\dots,\;\;x \in \mathbb{R}\\
+    \arccos(x)&=\frac{\pi}{2}-x-\frac{1}{6}x^3-\frac{3}{40}x^5-\frac{5}{112}x^7-\frac{35}{1152}x^9-\dots, \;|x| \leq 1\\
+    \tan(x)&=x+\frac{1}{3}x^3+\frac{2}{15}x^5+\frac{17}{315}x^7+\frac{62}{2835}x^9+\dots, \;|x| < \frac{\pi}{2}\\
+    \arctan(x) &= x-\frac{1}{3}x^3+\frac{1}{5}x^5-\frac{1}{7}x^7+\frac{1}{9}x^9+\dots, \;|x| \leq 1\\
+    \cot(x)&= \frac{1}{x}-\frac{x}{3}-\frac{x^3}{45}-\frac{2x^5}{945}+\frac{x^7}{4725}-\frac{2x^9}{93555}+\dots, \; x \neq 0\\
+    \arccot(x) &= \frac{\pi}{2}-x+\frac{1}{3}x^3-\frac{1}{5}x^5+\frac{1}{7}x^7-\frac{1}{9}x^9+\dots, \;|x| \leq 1
+\end{aligned}
+\]
+\newpage
+\section{Integrali}
+\subsection{Poznati integrali}
+\[
+    \begin{aligned}
+        \int x^a\; dx &= \frac{1}{a+1}x^{a+1} + C,\;\;\;a\in \mathbb{R}\setminus\{-1\},\;x>0\\
+        \int \frac{1}{x} \;dx &= \ln |x| + C,\;\;\;x\neq 0\\
+        \int a^x\;dx&=\frac{a^x}{\ln (a)} + C,\;\;\;a>0,\;a\neq 1\\
+        \int e^x\;dx &= e^x+C\\
+        \int \sin (x)\;dx &= -\cos (x) + C\\
+        \int \cos(x)\;dx &= \sin (x)+C\\
+        \int \frac{1}{\sin^2(x)}\;dx &= -\cot (x) + C,\;\;\;x \neq k\pi,\;k\in \mathbb{Z}\\
+        \int \frac{1}{\cos ^2 (x)}\;dx &= \tan (x) + C,\;\;\;x\neq \frac{\pi}{2} + k\pi,\;k\in\mathbb{Z}\\
+        \int \frac{1}{1+x^2}\;dx &= \arctan(x) + C\\
+        \int \frac{1}{\sqrt{1-x^2}}\;dx &= \arcsin(x) + C,\;\;\;|x| < 1\\
+        \int \frac{1}{\sqrt{x^2+1}}\;dx &= \ln|x+\sqrt{x^2+1}| + C\\
+        \int \frac{1}{\sqrt{x^2-1}}\;dx &= \ln|x+\sqrt{x^2-1}| + C,\;\;\;|x|>1
+        \end{aligned}
+\]
+\subsection{Izvedeni integrali}
+\[
+    \begin{aligned}
+        \int \ln|x|\;dx &= x\ln|x| - x + C\\
+        \int \sqrt{a^2-x^2}\;dx &= \frac{x}{2}\arcsin\bigg(\frac{x}{a}\bigg) + \frac{x}{2}\sqrt{a^2-x^2} + C,\;\;\;a\in \mathbb{R}, \;|x| \leq a\\
+        \int \frac{1}{\sin(x)}\;dx &= \ln\bigg|\tan \bigg(\frac{x}{2}\bigg)\bigg| + C\\
+        \int \frac{1}{\cos(x)}\;dx &= \ln\bigg|\cot \bigg(\frac{\pi}{4} - \frac{x}{2}\bigg)\bigg| + C
+    \end{aligned}
+\]
+                                                                                                      
+\end{document}
