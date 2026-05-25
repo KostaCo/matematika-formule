@@ -17,12 +17,11 @@
 \contentsline {section}{\numberline {3.3}Korenovanje}{5}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Nizovi}{6}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Poznate sume}{6}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Teoreme}{6}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Aritmetički niz}{7}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Geometrijski niz}{7}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Diferencne jednačine}{7}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Linearne diferencne jednačine I reda}{7}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Linearne diferencne jednačine II reda}{7}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.4.2}Aritmetički niz}{6}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Geometrijski niz}{6}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Diferencne jednačine}{6}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Linearne diferencne jednačine I reda}{6}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Linearne diferencne jednačine II reda}{6}{subsection.3.5.2}%
 \contentsline {section}{\numberline {3.6}Polinomi}{8}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Geometrija}{9}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Trigonometrija}{9}{section.4.1}%
@@ -51,6 +50,7 @@
 \contentsline {chapter}{\numberline {7}Analiza}{14}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Limesi}{14}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Upoređivanje beskonačnosti}{14}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Teoreme}{14}{subsection.7.1.2}%
 \contentsline {section}{\numberline {7.2}Asimptote}{14}{section.7.2}%
 \contentsline {subsection}{\numberline {7.2.1}Kosa asimptota}{14}{subsection.7.2.1}%
 \contentsline {section}{\numberline {7.3}Izvodi}{15}{section.7.3}%

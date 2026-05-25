@@ -119,15 +119,7 @@ Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobin
 \[
     \frac{1}{1\cdot2} + \frac{1}{2\cdot3} +\dots+ \frac{1}{n(n+1)}=\sum_{k=1}^n\frac{1}{k(k+1)}=\sum^n_{k=1}\bigg[\frac{1}{k}-\frac{1}{k+1}\bigg] = 1-\frac{1}{n+1}
 \]
-\subsection{Teoreme}
-\[\begin{aligned}
-    &\textbf{Štolc: }\;\;\lim_{x\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{x\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{x\to +\infty} b_n = +\infty)\\
-    &\textbf{Koši ($A_n$): }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\\
-    &\textbf{$G_n$: }\;\;\lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\\
-    &\textbf{$H_n$: }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\\
-    &a_n > 0, n \in \mathbb{N} \; \land \; \lim_{x\to +\infty} \frac{a_{n+1}}{a_n} = l \implies \lim_{x\to +\infty} \sqrt[n]{a_n} = l
-\end{aligned}\]
-\newpage
+
 \subsection{Aritmetički niz}
 \[
     S_n = \frac{n}{2}(a_1+a_n) = \frac{n}{2}(2a_1+(n-1)d)
@@ -335,8 +327,16 @@ c &= a \cos \beta + b \cos \alpha
 
 \subsection{Upoređivanje beskonačnosti}
 \[
-    n^n > n!>\alpha^n>n^\beta, \;\;(n \to +\infty, \alpha, \beta \in \mathbb{R})
+    (n!)^2 >> n^n >> n!>>\alpha^n>>n^\alpha >> \log_\alpha (n)  %, \;\;(n \to +\infty, \alpha, \beta \in \mathbb{R})
 \]
+\subsection{Teoreme}
+\[\begin{aligned}
+    &\textbf{Štolc: }\;\;\lim_{x\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{x\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{x\to +\infty} b_n = +\infty)\\
+    &\textbf{Koši ($A_n$): }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\\
+    &\textbf{$\mathbf{G_n}$: }\;\;\lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\\
+    &\textbf{$\mathbf{H_n}$: }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\\
+    &\textbf{$\mathbf{\sqrt[n]{a_n}}$: }\;\;a_n > 0, n \in \mathbb{N} \; \land \; \lim_{x\to +\infty} \frac{a_{n+1}}{a_n} = l \implies \lim_{x\to +\infty} \sqrt[n]{a_n} = l
+\end{aligned}\]
 \section{Asimptote}
 \subsection{Kosa asimptota}
 \[
