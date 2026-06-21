@@ -107,26 +107,23 @@ Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobin
 \newpage
 \section{Nizovi}
 \subsection{Poznate sume}
-\[
-    \sum^n_{k=1}k=1+2+3+4+\dots+n=\frac{n(n+1)}{2}
-\]
-\[
-    \sum^n_{k=1}k^2=1 + 4+9+16+\dots+n^2=\frac{n(n+1)(2n+1)}{6}
-\]
-\[
-    \sum^n_{k=1}k^3=1+8+27+64+\dots+n^3=(1+2+3+4+\dots+n)^2= \frac{n^2(n+1)^2}{4}
-\]
-\[
-    \frac{1}{1\cdot2} + \frac{1}{2\cdot3} +\dots+ \frac{1}{n(n+1)}=\sum_{k=1}^n\frac{1}{k(k+1)}=\sum^n_{k=1}\bigg[\frac{1}{k}-\frac{1}{k+1}\bigg] = 1-\frac{1}{n+1}
-\]
 
+\[
+\begin{aligned}
+    &\sum^n_{k=1}k=1+2+3+4+\dots+n=\frac{n(n+1)}{2}\\
+    &\sum^n_{k=1}k^2=1 + 4+9+16+\dots+n^2=\frac{n(n+1)(2n+1)}{6}\\
+    &\sum^n_{k=1}k^3=1+8+27+64+\dots+n^3=(1+2+3+4+\dots+n)^2= \frac{n^2(n+1)^2}{4}\\
+    &\frac{1}{1\cdot2} + \frac{1}{2\cdot3} +\dots+ \frac{1}{n(n+1)}=\sum_{k=1}^n\frac{1}{k(k+1)}=\sum^n_{k=1}\bigg[\frac{1}{k}-\frac{1}{k+1}\bigg] = 1-\frac{1}{n+1}\\
+    &\sum_{k = 1}^{+\infty} \frac{1}{k} = + \infty
+\end{aligned}
+\]
 \subsection{Aritmetički niz}
 \[
     S_n = \frac{n}{2}(a_1+a_n) = \frac{n}{2}(2a_1+(n-1)d)
 \]
 \subsection{Geometrijski niz}
 \[
-    S_n = b_1\frac{q^n-1}{q-1}
+    S_n = b_1\frac{1 - q^n}{1 - q}
 \]
 \section{Diferencne jednačine}
 \subsection{Linearne diferencne jednačine I reda}
@@ -325,18 +322,38 @@ c &= a \cos \beta + b \cos \alpha
 \section{Limesi}
 
 
+
+\subsection{Poznati limesi}
+\[
+    \begin{aligned}
+        &\lim_{x \to +\infty} \sqrt[x]{x} = 1 \\
+        &\lim_{x \to +\infty} \bigg(1 + \frac{1}{x}\bigg)^x = \lim_{n \to +\infty} \frac{n}{\sqrt[n]{n!}} = e \\
+        &\lim_{x \to 0} \bigg(\frac{a^x-1}{x} \bigg)  = \ln a \;\;\;\Bigg[\implies \lim_{x \to 0} \bigg(\frac{e^x-1}{x} \bigg) = 1 \Bigg]\\
+        &\lim_{x \to 0} \frac{\ln (x+1)}{x} = 1\\
+        &\lim_{x \to 0} x  \ln (x) = 0 \;\;\;\Bigg[\implies \lim_{x \to 0} x^x = 1 \Bigg]\\
+        &\lim_{x \to +\infty} \frac{\ln x}{x} = 0 \\
+        &\lim_{x \to 0} \frac{\sin(x)}{x} = 1 \\
+        &\lim_{x \to 0} \frac{1 - \cos(x)}{x} = 0 \\
+        &\lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2}\\
+        &\lim_{n \to +\infty} \underbrace{\sin \sin \dots \sin(x_0)}_{n} = 0\;,\; x_0 \in \mathbb{R}\\
+        &\lim_{n \to +\infty} \underbrace{\cos \cos \dots \cos(x_0)}_{n} = d\;,\; x_0 \in \mathbb{R}, \; d\;\text{- Dottie number}\\
+        &\lim_{n \to +\infty} \bigg(\sum_{k = 1}^{n} \frac{1}{k} - \log(n) \bigg) = \gamma \approx 0.5772 \; \text{(Ojlerova konstanta)}
+    \end{aligned}
+\]
 \subsection{Upoređivanje beskonačnosti}
 \[
     (n!)^2 >> n^n >> n!>>\alpha^n>>n^\alpha >> \log_\alpha (n)  %, \;\;(n \to +\infty, \alpha, \beta \in \mathbb{R})
 \]
 \subsection{Teoreme}
 \[\begin{aligned}
+    &\textbf{3 limesa: }\;\;\\&\;\;\;\;f(x) \leq h(x) \leq g(x) \;\text{na}\; \dot{U}_a \;\land\; \lim_{x \to a} f(x) = \lim_{x \to a} g(x) \implies \lim_{x \to a} f(x) = \lim_{x \to a} h(x) = \lim_{x \to a} g(x)  \\
     &\textbf{Štolc: }\;\;\lim_{x\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{x\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{x\to +\infty} b_n = +\infty)\\
     &\textbf{Koši ($A_n$): }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\\
     &\textbf{$\mathbf{G_n}$: }\;\;\lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\\
     &\textbf{$\mathbf{H_n}$: }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\\
     &\textbf{$\mathbf{\sqrt[n]{a_n}}$: }\;\;a_n > 0, n \in \mathbb{N} \; \land \; \lim_{x\to +\infty} \frac{a_{n+1}}{a_n} = l \implies \lim_{x\to +\infty} \sqrt[n]{a_n} = l
 \end{aligned}\]
+
 \section{Asimptote}
 \subsection{Kosa asimptota}
 \[
