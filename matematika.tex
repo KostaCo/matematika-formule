@@ -6,6 +6,8 @@
 \usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{cmsrb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage[OT2,T1]{fontenc}
 \usepackage[serbian]{babel}
 \usepackage{lipsum}
@@ -27,12 +29,17 @@
 \newtheorem{definition}{Definicija}[section]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritam}
+\numberwithin{algorithm}{section}
+\makeatother
+
 \DeclareMathOperator{\arccot}{arccot}
 
 % Title
 \title{Matematika - Cheatsheet}
-\author{}
-\date{}
+\author{Kosta Čolović}
+\date{Poslednja izmena: 1. jul 2026.}
 
 \begin{document}
 \maketitle
@@ -399,9 +406,414 @@ c &= a \cos \beta + b \cos \alpha
     \item \textbf{Komplement} $\overline{G} = (V, \overline{E})$ grafa $G = (V, E)$ - čvorovi su susedni u $\overline{G}$ akko nisu susedni u $G$. Graf je \textit{samokomplementaran} ako je izomorfan svom komplementu.
 \end{itemize}
 \subsection{Šetnje, staze i putevi}
+\begin{itemize}
+    \item \textbf{Šetnja} - niz čvorova i grana $(v_1, e_1, v_2, e_2, \ldots, e_{n-1}, v_n)$ grafa $G$ u kojem se svaka grana pojavljuje između dva sa njom incidentna čvora. \textit{Dužina šetnje} je broj grana koje se pojavljuju u njoj. Šetnja je \textit{zatvorena} akko počinje i završava u istom čvoru.
+    \item \textbf{Staza} - šetnja u kojoj se svaka grana pojavljuje najviše jednom. 
+    \item \textbf{Put} - šetnja u kojoj se svaki čvor (pa i svaka grana) pojavljuje najviše jednom.
+    \item Dva čvora $u$ i $v$ su \textit{povezana} akko postoji šetnja koja počinje u $u$ i završava u $v$. Graf je \textit{povezan} akko su svi njegovi čvorovi međusobno povezani.
+    \item Povezanost čvorova u grafu je relacija ekvivalencije. \textit{Komponente povezanosti} grafa su klase ekvivalencije te relacije.
+    \item \textbf{Vezivni čvor} - čvor čije uklanjanje povećava broj komponenti povezanosti grafa.
+    \item \textbf{Most} (ili vezivna grana) - grana čije uklanjanje povećava broj komponenti povezanosti grafa (za 1).
+    \item \textbf{Rastojanje} $\operatorname{dist}(u, v)$ između dva čvora $u$ i $v$ - dužina najkraćeg puta koji ih povezuje. Ako ne postoji takva šetnja, rastojanje je beskonačno.
+    \item \textbf{Ekscentricitet} čvora $u$ - $\operatorname{ecc}(u) = \max \{ \operatorname{dist}(u, v)$ | $v \in V \}$.
+    \item \textbf{Radijus} grafa $G$ - $\operatorname{rad}(G) = \min \{ \operatorname{ecc}(u)$ | $u \in V \}$.
+    \item \textbf{Centar} grafa $G$ - skup svih čvorova $u$ za koje važi $\operatorname{ecc}(u) = \operatorname{rad}(G)$.
+    \item \textbf{Dijametar} grafa $G$ - $\operatorname{diam}(G) = \max \{ \operatorname{ecc}(u)$ | $u \in V \}$.
+\end{itemize}
+\subsection{Neki grafovi}
+\begin{itemize}
+    \item \textbf{Prazan graf} - graf bez grana. Takav graf sa sa jednim čvorom se naziva \textit{trivijalni graf}.
+    \item \textbf{Potpun (kompletan) graf} $K_n$ - graf sa $n$ čvorova od kojih su svaka dva povezana granom.
+    \item \textbf{Regularni graf} - graf u kojem su svi čvorovi istog stepena. Ako je stepen $k$, graf se naziva \textit{$k$-regularnim}.
+    \item \textbf{Bipartitni graf} - trivijalni graf ili graf čiji se skup čvorova može podeliti na dva disjunktna podskupa tako da svaka grana povezuje čvor iz jednog podskupa sa čvorom iz drugog.
+    \item \textbf{Potpun (kompletan) bipartitni graf} $K_{m, n}$ - bipartitni graf sa $m$ čvorova u jednom i $n$ čvorova u drugom podskupu, pri čemu je svaki čvor iz jednog podskupa povezan sa svakim čvorom iz drugog podskupa. Stepen svakog čvora iz prvog podskupa je $n$, a stepen svakog čvora iz drugog podskupa je $m$.
+    \begin{itemize}
+        \item \textbf{Zvezda} $S_n$ - kompletan bipartitni graf $K_{1, n}$.
+    \end{itemize}
+    \item \textbf{Ciklus} $C_n$ - Povezan graf kod kojeg je stepen svakog čvora jednak 2. Ciklus sa $n$ čvorova se naziva \textit{$n$-ciklus}.
+    \item \textbf{Put} je:
+    \begin{itemize}
+        \item za $n \leq 2$, jedini povezan graf sa $n$ čvorova;
+        \item za $n \geq 3$, graf koji se dobija uklanjanjem jedne grane ciklusa $C_n$.
+    \end{itemize} Put koji ima $n$ čvorova označava se sa $P_n$.
+    \item  \textbf{Dužina ciklusa} i \textbf{dužina puta} - broj grana koje sadrže.
+\end{itemize}
+\begin{theorem}
+    Graf je bipartitan. $\iff$ Graf ne sadrži cikluse neparne dužine.
+\end{theorem}
+\subsection{Matrične reprezentacije grafova}
+\begin{itemize}
+    \item \textbf{Matrica susedstva} $A(G)$ grafa $G$ sa $n$ čvorova - kvadratna matrica reda $n$ čiji element $a_{ij}$ je jednak broju grana koje povezuju čvorove $v_i$ i $v_j$. Za prost graf, $a_{ij} = 1$ ako su čvorovi susedni, a $a_{ij} = 0$ inače.
+    \item \textbf{Matrica incidencije} $R(G)$ grafa $G$ sa $n$ čvorova i $m$ grana - matrica reda $n \times m$ čiji element $a_{ij}$ je jednak 1 ako je čvor $v_i$ incidentan sa granom $e_j$, a $a_{ij} = 0$ inače.
+\end{itemize}
+\section{Stabla}
+\subsection{Definicija i osnovna svojstva}
+\begin{itemize}
+    \item \textbf{Stablo} - Povezan graf koji ne sadrži podgraf izomorfan ciklusu. U prevodu, povezan graf bez ciklusa.
+    \item \textbf{Šuma} - Graf čije su komponente povezanosti stabla.
+\end{itemize}
+\begin{theorem}
+    Sledeće tvrdnje su ekvivalentne:
+    \begin{enumerate}
+        \item $T$ je stablo.
+        \item $T$ je povezan graf kod kojeg je broj grana za 1 manji od broja čvorova, tj važi $m = n - 1$.
+        \item $T$ je maksimalni graf bez ciklusa, tj. dodavanje bilo koje grane u $T$ stvara ciklus.
+        \item $T$ je minimalni povezan graf, tj. uklanjanje bilo koje grane iz $T$ ga čini nepovezanim.
+        \item Za svaka dva grafa $T$ postoji tačno jedan put koji ih povezuje.
+    \end{enumerate}
+\end{theorem}
+\subsection{Korenska i razapinjuća stabla}
+\begin{itemize}
+    \item \textbf{Korensko stablo} - stablo u čiji je jedan čvor izdvojen od ostalih. Taj čvor se naziva \textit{koren}.
+    \item Ako je $r$ koren stabla i ako važi $\operatorname{dist}(u, r) = i$, kažemo da čvor $u$ pripada \textit{$i$-tom nivou} stabla. Ako $u$ pripada $i$-tom nivou, a $v$ $(i + 1)$-om nivou, i ako su susedni, kažemo da je $u$ \textit{prethodnik} čvora $v$, a $v$ \textit{sledbenik} čvora $u$. Čvor koji nema naslednika nazivamo \textit{list}. Čvor koji nije ni koren ni list nazivamo \textit{unutrašnji čvor}.
+    \item \textbf{Korensko $k$-arno stablo} - korensko stablo kod kojeg svaki čvor ima najviše $k$ sledbenika.
+    \item \textbf{Potpuno korensko $k$-arno stablo} - korensko $k$-arno stablo kod kojeg svaki čvor koji nije list ima tačno $k$ sledbenika.
+    \item \textbf{Razapinjući graf} grafa $G$ - graf koji ima isti skup čvorova kao i $G$ i čiji je skup grana podskup skupa grana grafa $G$. 
+    \item \textbf{Razapinjuće stablo} povezanog grafa $G$ - razapinjući graf koji je stablo.
+    \item \textbf{Razapinjuća šuma} grafa $G$ - razapinjući podgraf koji se sastoji od razapinjućih stabala komponenata povezanosti grafa $G$.
+    \item Ako je $T$ razapinjuće stablo povezanog grafa $G$, onda se dodavanjem proizvoljne grane stablu $T$, pri čemu ona pripada grafu $G$, dobija tačno jedan ciklus u novonastalom grafu. Taj ciklus se naziva \textbf{elementarni ciklus} grafa $G$ u odnosu na razapinjuće stablo $T$.
+    \item Broj elementarnih ciklusa povezanog grafa ne zavisi od izbora razapinjućeg stabla. Broj grana svakog razapinjućeg stabla jednak je $n - 1$, a po definiciji svaka grana koja pripada grafu, a ne pripada fiksiranom razapinjućem stablu, određuje jedan elementarni ciklus. Dakle, broj elementarnih ciklusa povezanog grafa $G$ jednak je $m - n + 1$.
+\end{itemize}
+
+\begin{theorem}
+    Broj elementarnih ciklusa grafa jednak je $m - n + p$, gde je $m$ broj grana grafa, $n$ je broj čvorova grafa, a $p$ je broj komponenti povezanosti grafa.
+\end{theorem}
+\begin{itemize}
+    \item \textbf{Ciklomatički broj} $v$ grafa - broj elementarnih ciklusa grafa.
+\end{itemize}
+
+\subsection{Pretrage grafova}
+Pretraga grafa je postupak sistematskog obilaska svakog čvora grafa tačno jednom. Rezultat pretrage je \textbf{stablo pretrage} (razapinjuće usmereno stablo).
+
+\begin{itemize}
+    \item \textbf{Pretraga po dubini} (DFS - Depth First Search) - „najdublji” mogući put: iz trenutnog čvora se ide ka neobrađenom susedu dokle god je moguće, a zatim se vrši povratak (bektrek) na prethodni čvor. 
+    \item \textbf{Pretraga po širini} (BFS - Breadth First Search) - „nivo po nivo”: prvo se obilaze svi neobrađeni susedi početnog čvora, zatim svi neobrađeni susedi tih suseda, i tako redom.
+\end{itemize}
+
+
+
+\section{Označena stabla}
+\subsection{Prebrojavanje označenih stabala}
+\begin{theorem}[Kejlijeva teorema]
+    Broj označenih stabala sa $n$ čvorova jednak je $n^{n-2}$.
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Kontrakcija} $G \cdot e$ - dobija se od multigrafa $G-e$ identifikovanjem (spajanjem) krajnjih čvorova grane $e$ u jedan čvor.
+    \item \textbf{Rekurentna formula} za broj razapinjućih stabala $t(G)$:
+    $$t(G) = t(G - e) + t(G \cdot e)$$
+\end{itemize}
+
+\subsection{Kodiranje i dekodiranje označenih stabala}
+Svako označeno stablo sa $n$ ($n \geq 2$) čvorova može se jednoznačno predstaviti \textbf{Priferovim nizom} dužine $n-2$.
+\vfill
+\begin{algorithm}[!h]
+    \caption{Priferovo kodiranje}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Stablo $T$ sa $n$ čvorova.
+        \item \textbf{WHILE} broj čvorova $> 2$:
+        \begin{itemize}
+            \item $u$ = list sa najmanjom oznakom;
+            \item $v$ = sused čvora $u$;
+            \item $s := s + v$; // dodaj $v$ u niz
+            \item $T := T - u$; // ukloni $u$ iz stabla
+        \end{itemize}
+        \item \textbf{RETURN} $s$
+    \end{enumerate}
+\end{algorithm}
+\vfill
+\newpage
+\begin{algorithm}[!h]
+    \caption{Priferovo dekodiranje}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Priferov niz $s = (s_1, s_2, \ldots, s_{n-2})$.
+        \item \textbf{Inicijalizacija}:
+        \begin{itemize}
+            \item $T = (V, \emptyset)$ gde je $V = \{1, 2, \ldots, n\}$.
+            \item $l = (1, 2, \ldots, n)$ // lista čvorova koji mogu biti listovi.
+        \end{itemize}
+        \item \textbf{WHILE} $s \neq ()$:
+        \begin{itemize}
+            \item $v$ = najmanji čvor iz $l$ koji se ne nalazi u $s$;
+            \item $w = s_1$;
+            \item $T := T + \{v, w\}$ // dodaj granu između $v$ i $w$;
+            \item $l := l \setminus \{v\}$;
+            \item $s := s \setminus \{s_1\}$;
+        \end{itemize}
+        \item \textbf{Završni korak}: Poveži granom poslednja dva čvora preostala u listi $l$.
+        \item \textbf{RETURN} $T$
+    \end{enumerate}
+\end{algorithm}
+
+\section{Minimalna razapinjuća stabla}
+
+\subsection{Težinski grafovi}
+Kod težinskih grafova, svakoj grani $e$ dodeljena je vrednost (težina) $w(e)$, koja predstavlja trošak, udaljenost ili kapacitet veze.
+
+\begin{itemize}
+    \item \textbf{Težina grafa} $w(G)$ - suma težina svih grana u grafu:
+    $$w(G) = \sum_{e \in E(G)} w(e)$$
+    \item \textbf{Minimalno razapinjuće stablo} (MST) - razapinjuće stablo $T$ grafa $G$ za koje je suma težina grana $w(T)$ minimalna.
+\end{itemize}
+
+\subsection{Kruskalov algoritam}
+Strategija Kruskalovog algoritma je „najpre grana najmanje težine”. Reč je o \textbf{pohlepnom algoritmu} koji u svakom koraku bira lokalno optimalno rešenje.
+\newpage
+\begin{algorithm}[ht]
+    \caption{Kruskalov algoritam}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Povezan težinski graf $G = (V, E)$.
+        \item $T = (V, \emptyset)$ // inicijalizacija praznog stabla.
+        \item Sortiraj sve grane $e \in E$ u neopadajući niz po težinama.
+        \item \textbf{FOR} svaku granu $e = (u, v)$ iz sortiranog niza:
+        \begin{itemize}
+            \item \textbf{IF} $T + e$ ne sadrži ciklus:
+            \item $T := T + e$ // dodaj granu u stablo.
+        \end{itemize}
+        \item \textbf{RETURN} $T$
+    \end{enumerate}
+\end{algorithm}
+
+\begin{theorem}[3.4.1]
+    Kruskalov algoritam rezultuje minimalnim razapinjućim stablom (MST) povezanog težinskog grafa.
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Napomena:} Algoritam se može optimizovati uvođenjem brojača dodatih grana. Kada broj grana dostigne $n-1$, algoritam se može završiti, jer je stablo kompletirano.
+\end{itemize}
+
+\subsection{Primov algoritam}
+Strategija Primovog algoritma zasniva se na principu „najpre najbliži sused”. Za razliku od Kruskalovog algoritma koji grane bira globalno, Primov algoritam gradi stablo postepeno, proširujući trenutni podgraf.
+
+\begin{theorem}[3.4.3]
+    Neka je $G = (V, E)$ povezan težinski graf, $U \subset V$ i $e$ grana minimalne težine koja spaja čvor iz skupa $U$ sa čvorom iz skupa $V \setminus U$. Tada postoji minimalno razapinjuće stablo grafa $G$ koje sadrži granu $e$.
+\end{theorem}
+
+\begin{algorithm}[ht]
+    \caption{Primov algoritam}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Težinski graf $G = (V, E)$.
+        \item $T = (\emptyset, \emptyset)$ // inicijalizacija praznog stabla.
+        \item Izaberi proizvoljan čvor $v \in V$ i dodaj ga u $T$.
+        \item \textbf{WHILE} broj čvorova u $T < |V|$:
+        \begin{itemize}
+            \item Nađi granu $e = (u, w)$ minimalne težine takvu da $u \in T$, a $w \notin T$.
+            \item Dodaj granu $e$ i čvor $w$ u $T$.
+        \end{itemize}
+        \item \textbf{RETURN} $T$
+    \end{enumerate}
+\end{algorithm}
+
+\section{Ojlerovi multigrafovi}
+Multigraf je \textbf{Ojlerov} ako sadrži zatvorenu stazu koja svaku granu obilazi tačno jednom. \textbf{Poluojlerov} graf sadrži stazu (ne nužno zatvorenu) koja svaku granu obilazi tačno jednom.
+
+\begin{theorem}[Ojlerova teorema]
+    Netrivijalan povezan multigraf je Ojlerov akko svi njegovi čvorovi imaju paran stepen.
+\end{theorem}
+
+\begin{theorem}
+    Netrivijalan povezan multigraf je poluojlerov akko sadrži tačno 0 ili 2 čvora neparnog stepena.
+\end{theorem}
+
+
+Flerijev algoritam se koristi za pronalaženje Ojlerove staze u grafu. Ključno pravilo pri izboru grane je izbegavanje „mostova” osim ako ne postoji druga mogućnost.
+
+\begin{algorithm}[ht]
+    \caption{Flerijev algoritam}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Ojlerov multigraf $G$.
+        \item Izaberi proizvoljan čvor $v_0$. Neka je $s = (v_0)$ trenutna staza.
+        \item $H = G$ // radna kopija grafa.
+        \item \textbf{WHILE} broj grana u $H > 0$:
+        \begin{itemize}
+            \item Izaberi granu $e = (u, v)$ iz $H$ takvu da:
+            \begin{enumerate}
+                \item $u$ je poslednji čvor staze $s$.
+                \item $e$ nije most u $H$ (osim ako ne postoji drugi izbor).
+            \end{enumerate}
+            \item $s := s + e + v$; 
+            \item $H := H - e$; // ukloni granu iz pomoćnog grafa.
+        \end{itemize}
+        \item \textbf{RETURN} $s$
+    \end{enumerate}
+\end{algorithm}
+
+
+
+U slučaju kada graf nije poluojlerov, problem se može modifikovati dodavanjem novih grana ili dozvoljavanjem višestrukih prolazaka kroz iste grane.
+
+
+\subsection{Problem kineskog poštara}
+Problem kineskog poštara (engl. \textit{Route Inspection Problem}) odnosi se na pronalaženje zatvorene šetnje u povezanom težinskom multigrafu koja sadrži sve grane grafa i ima minimalnu ukupnu težinu.
+
+\begin{itemize}
+    \item \textbf{Cilj:} Optimizovati rutu tako da se obiđu sve ulice (grane) uz minimalan utrošak vremena (dužine puta).
+    \item \textbf{Ojlerov slučaj:} Ako je multigraf Ojlerov, svaka Ojlerova staza predstavlja optimalno rešenje jer se svakom granom prolazi tačno jednom.
+    \item \textbf{Opšti slučaj:} Ako graf nije Ojlerov (postoje čvorovi neparnog stepena), neke grane se moraju obići više puta. Problem se tada svodi na „uparivanje” čvorova neparnog stepena i dodavanje puteva minimalne težine između njih kako bi svi čvorovi postali parnog stepena.
+\end{itemize}
+
+
+
+\begin{algorithm}[ht]
+    \caption{Rešavanje problema kineskog poštara (za neojlerov graf)}
+    \begin{enumerate}
+        \item Identifikuj sve čvorove neparnog stepena u multigrafu.
+        \item Odredi sve moguće puteve između parova čvorova neparnog stepena i pronađi onaj skup uparivanja koji daje minimalnu ukupnu težinu.
+        \item Dodaj „virtuelne” grane (duplikate postojećih grana) duž najkraćih puteva između odabranih parova, čineći graf Ojlerovim.
+        \item Primenom Flerijevog algoritma na tako modifikovan graf pronađi Ojlerovu stazu.
+    \end{enumerate}
+\end{algorithm}
+
+\section{Hamiltonovi grafovi}
+Graf je \textbf{Hamiltonov} ako sadrži ciklus koji prolazi kroz svaki čvor grafa tačno jednom (\textbf{Hamiltonov ciklus}). Graf je \textbf{polu-Hamiltonov} ako sadrži put koji prolazi kroz svaki čvor grafa tačno jednom (\textbf{Hamiltonov put}).
+
+\begin{theorem}[Dirakova teorema]
+    Ako graf $G$ ima $n \geq 3$ čvorova i minimalni stepen čvora $\delta(G) \geq \frac{n}{2}$, tada je $G$ Hamiltonov.
+\end{theorem}
+
+
+
+\subsection*{Problem konjičkog skoka}
+Problem konjičkog skoka zahteva obilazak svakog polja šahovske table (ili table formata $m \times n$) skakačem, tako da se na svakom polju stane tačno jedanput.
+
+\begin{itemize}
+    \item \textbf{Grafovska interpretacija:} Čvorovi grafa su polja table, a grane predstavljaju dozvoljene poteze skakača.
+    \item \textbf{Veza sa teorijom:} Postojanje rešenja ekvivalentno je postojanju Hamiltonovog puta (ili ciklusa) u tako konstruisanom grafu.
+    \item \textbf{Napomena:} Za table formata $m \times n$ (gde je $m, n \geq 3$), rešenje postoji osim za tabele formata $3 \times 3$, $3 \times 5$, $3 \times 6$ i $4 \times 4$.
+    \item \textbf{Metoda:} Problemi većih dimenzija (npr. $8 \times 8$) često se rešavaju metodom „podela i vladaj” — deljenjem table na manje segmente koji se pojedinačno rešavaju i povezuju.
+\end{itemize}
+
+
+
+Za razliku od Ojlerovih grafova, ne postoji jednostavna i efikasna teorema (nužan i dovoljan uslov) za proveru postojanja Hamiltonovog ciklusa u opštem grafu, zbog čega je ovaj problem računski složen (NP-kompletan).
+
+\subsection{Problem trgovačkog putnika}
+Problem trgovačkog putnika (engl. \textit{Traveling Salesperson Problem - TSP}) zahteva pronalaženje Hamiltonovog ciklusa minimalne težine u potpunom težinskom grafu.
+
+\begin{itemize}
+    \item \textbf{Cilj:} Obići svaki grad (čvor) tačno jednom i vratiti se u početni, uz minimalnu ukupnu dužinu puta.
+    \item \textbf{Kompleksnost:} Problem je \textbf{NP-težak}, što znači da ne postoji poznat algoritam koji bi ga rešio u polinomijalnom vremenu za sve ulaze.
+    \item \textbf{Pristupi:}
+    \begin{itemize}
+        \item \textit{Egzaktni algoritmi:} Pretraga svih mogućih Hamiltonovih ciklusa (neefikasno za veliki broj gradova).
+        \item \textit{Heuristički algoritmi:} Traže \textbf{suboptimalna} rešenja (rešenja "bliska" optimalnom) u razumnom vremenu.
+    \end{itemize}
+\end{itemize}
+
+
+
+\subsection*{3-heuristika}
+Ova heuristika poboljšava početni Hamiltonov ciklus kroz iterativne promene (lokalna pretraga).
+
+\begin{algorithm}[ht]
+    \caption{3-heuristika za TSP}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Hamiltonov ciklus $s_1$ potpunog težinskog grafa.
+        \item \textbf{WHILE} kriterijum zaustavljanja nije ispunjen:
+        \begin{itemize}
+            \item Ukloni 3 nesusedne grane iz trenutnog ciklusa $s_i$, čime se dobijaju 3 zasebna puta.
+            \item Ponovo poveži krajeve tih puteva na sve moguće načine da se formira novi Hamiltonov ciklus.
+            \item Izaberi ciklus $s_{i+1}$ sa minimalnom težinom među svim novonastalim ciklusima.
+            \item \textbf{IF} $w(s_{i+1}) < w(s_i)$, prihvati $s_{i+1}$ kao trenutni ciklus.
+        \end{itemize}
+        \item \textbf{RETURN} $s_i$ (suboptimalni ciklus)
+    \end{enumerate}
+\end{algorithm}
+
+\begin{itemize}
+    \item \textbf{Napomena:} Strategija „uvek idi do najbližeg suseda” (Greedy) je najjednostavnija heuristika, ali često ne daje optimalno rešenje. 3-heuristika daje znatno bolje rezultate jer omogućava „preslaganje” ciklusa.
+\end{itemize}
+
+\section{Planarni grafovi}
+Graf je \textbf{planaran} ako se može nacrtati u ravni tako da se njegove grane nigde ne seku (osim u čvorovima). Svaki takav crtež deli ravan na jednu ili više \textbf{oblasti} (jedna od njih je uvek beskonačna).
+
+
+
+\begin{theorem}[Ojlerova teorema za planarne grafove]
+    Za svaki povezan planaran graf $G$ važi:
+    $$n - m + f = 2$$
+    gde su $n$ broj čvorova, $m$ broj grana, a $f$ broj oblasti na koje graf deli ravan.
+\end{theorem}
+
+\subsection*{Kuratovskijeva teorema}
+Da bismo definisali karakterizaciju planarnih grafova, koristimo pojam \textbf{potpodele} (subdivision), koja nastaje umetanjem novih čvorova na postojeće grane.
+
+
+
+\begin{theorem}[Kuratovskijeva teorema]
+    Graf je planaran ako i samo ako ne sadrži podgraf koji je izomorfan nekoj potpodi grafa $K_5$ (kompletan graf sa 5 čvorova) ili $K_{3,3}$ (kompletan bipartitan graf sa 3+3 čvora).
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Značaj:} Ovo je fundamentalni rezultat koji nam omogućava da testiramo planarnost bilo kog grafa identifikacijom tzv. "zabranjenih" struktura (Kuratovskijevi grafovi).
+\end{itemize}
+
+\section{Sparivanja u grafovima}
+\textbf{Sparivanje} (matching) u grafu $G$ je podskup skupa grana takav da nijedne dve grane nemaju zajednički čvor (nisu susedne).
+
+\begin{itemize}
+    \item \textbf{Maksimalno sparivanje} - sparivanje kojem se ne može dodati nova grana, a da ostane sparivanje.
+    \item \textbf{Najveće sparivanje} - sparivanje sa najvećim mogućim brojem grana.
+    \item \textbf{Savršeno sparivanje} - sparivanje u kojem je svaki čvor grafa incidentan sa tačno jednom granom sparivanja.
+\end{itemize}
+
+
+
+\subsection*{Beržova teorema i proširenje}
+\begin{itemize}
+    \item \textbf{M-alternirajući put} - put kod kojeg grane naizmenično pripadaju i ne pripadaju sparivanju $M$.
+    \item \textbf{M-uvećani put} - M-alternirajući put čiji su krajnji čvorovi slobodni (nisu pokriveni sparivanjem $M$).
+\end{itemize}
+
+\begin{theorem}[Beržova teorema]
+    Sparivanje $M$ u grafu $G$ je najveće ako i samo ako $G$ ne sadrži M-uvećani put.
+\end{theorem}
+
+\subsection*{Problem rasporeda poslova (Asignacija)}
+Problem se modeluje pomoću bipartitnog grafa gde jedna particija čvorova predstavlja radnike, a druga poslove.
+
+\begin{itemize}
+    \item \textbf{Jednostavan slučaj:} Ako su svi radnici jednako efikasni, problem se svodi na pronalaženje \textbf{najvećeg sparivanja} u bipartitnom grafu. Za to se koristi \textbf{Mađarski algoritam}.
+    \item \textbf{Složeniji slučaj:} Ako radnici imaju različitu efikasnost, koriste se težinski bipartitni grafovi gde težina grane predstavlja cenu ili vreme obavljanja posla. Ovde se primenjuje \textbf{Kun-Mankresov algoritam}.
+\end{itemize}
+
+\section{Bojenje grafova}
+Bojenje grafova podrazumeva dodeljivanje boja elementima grafa (čvorovima ili granama) uz određene uslove.
+
+\begin{itemize}
+    \item \textbf{Pravilno bojenje čvorova} - funkcija kojom se susednim čvorovima dodeljuju različite boje.
+    \item \textbf{Hromatski broj $\chi(G)$} - minimalan broj boja potrebnih za pravilno bojenje čvorova. To je invarijanta grafa.
+    \item \textbf{Linijski graf $L(G)$} - graf čiji čvorovi odgovaraju granama grafa $G$, a susedni su ako su odgovarajuće grane u $G$ susedne. Bojenje grana grafa $G$ ekvivalentno je bojenju čvorova grafa $L(G)$.
+\end{itemize}
+
+\subsubsection{Teoreme i svojstva}
+\begin{itemize}
+    \item \textbf{Kompletni grafovi:} $\chi(K_n) = n$.
+    \item \textbf{Bipartitni grafovi:} Za graf sa bar jednom granom, $\chi(G) = 2$ (bihromatski grafovi).
+    \item \textbf{Ciklus $C_n$:} $\chi(C_n) = 2$ za $n=2k$, odnosno $\chi(C_n) = 3$ za $n=2k-1$.
+    \item \textbf{Gornja granica:} $\chi(G) \leq \Delta + 1$.
+    \item \textbf{Bruks teorema:} Jednakost $\chi(G) = \Delta + 1$ važi akko je graf kompletan ili ciklus neparne dužine.
+\end{itemize}
+
+\subsection{Bojenje mapa}
+Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako da susedne teritorije (one koje dele granicu dužine veće od nule) imaju različite boje.
+
+\begin{itemize}
+    \item \textbf{Modelovanje:} Svaka mapa se može predstaviti kao planaran graf gde čvorovi odgovaraju teritorijama, a grane granicama. Problem se svodi na određivanje hromatskog broja tog planarnog grafa.
+    \item \textbf{Teorema o četiri boje:} Svaki planaran graf je 4-obojiv ($\chi(G) \leq 4$).
+    \item \textbf{Istorijat:} Hipotezu je 1890. godine podržao Hejvud (dokazao 5-obojivost), dok su Epl i Haken tek 1976. godine dokazali teoremu o 4 boje uz pomoć računara.
+\end{itemize}
+
+
+\subsection*{Primene i algoritmi}
+\begin{itemize}
+    \item \textbf{Pohlepna heuristika:} Čvorovi se boje redom ($v_1, \dots, v_n$), a svakom se dodeljuje prva boja koja nije iskorišćena za njegove susede. Iako efikasan, ovaj algoritam ne garantuje minimalan broj boja ($\chi$).
+    \item \textbf{Raspored ispita:} Ispiti su čvorovi, a grane povezuju one koje student polaže istovremeno. Potreban broj termina = $\chi(G)$.
+    \item \textbf{Skladištenje materijala:} Materije su čvorovi, a grane povezuju nekompatibilne supstance. Minimalan broj skladišnih prostorija = $\chi(G)$.
+\end{itemize}
+
 
 \chapter{Linearna algebra}
-
 \chapter{Analitička geometrija}
 \section{Ugao između dve prave}
 \[

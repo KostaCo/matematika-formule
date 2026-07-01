@@ -43,6 +43,16 @@ INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.s
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\cmsrb\cmsrb.sty
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\cmsrb\cmsrb.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex\latex\cyrillic\ot2enc.def
@@ -199,6 +209,8 @@ INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\fonts\vf\public\cmsrb\t1cmsrb
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cmsrb\t1cmsrbrr-base.tfm
 INPUT C:\Users\Kosta\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\cmsrb\cmsrbt1.enc
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\fonts\vf\public\cmsrb\t1cmsrbrr.vf
+INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cmsrb\t1cmsrbrr-base.tfm
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cmsrb\t1cmsrbrb.tfm
 INPUT C:\Users\Kosta\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cmsrb\t1cmsrbrb.tfm
 INPUT .\matematika.toc
