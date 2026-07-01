@@ -812,6 +812,78 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item \textbf{Skladištenje materijala:} Materije su čvorovi, a grane povezuju nekompatibilne supstance. Minimalan broj skladišnih prostorija = $\chi(G)$.
 \end{itemize}
 
+\section{Rastojanja u usmerenim težinskim grafovima}
+\subsection{Dajkstrin algoritam}
+\begin{algorithm}[ht]
+    \caption{Dajkstrin algoritam}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Usmeren težinski graf $G$ i početni čvor $r$.
+        \item \textbf{Inicijalizacija}:
+        \begin{itemize}
+            \item $prethodnik(u) = undefined$ za sve $u \in V$.
+            \item $rastojanje(r) = 0$, a $rastojanje(u) = \infty$ za sve $u \in V \setminus \{r\}$.
+            \item $S = \emptyset$ (skup razmotrenih čvorova).
+        \end{itemize}
+        \item \textbf{WHILE} $S \neq V$:
+        \begin{itemize}
+            \item Nađi $u \in V \setminus S$ takav da je $rastojanje(u)$ minimalno.
+            \item $S := S \cup \{u\}$.
+            \item \textbf{FOR} svaka grana $(u, v)$ gde $v \in V \setminus S$:
+            \begin{itemize}
+                \item \textbf{IF} $rastojanje(u) + w(u, v) < rastojanje(v)$:
+                \begin{itemize}
+                    \item $prethodnik(v) = u$
+                    \item $rastojanje(v) = rastojanje(u) + w(u, v)$
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+        \item \textbf{Rekonstrukcija puteva} (za svaki $u \in S$):
+        \begin{itemize}
+            \item $v = u$, $put = (u)$.
+            \item \textbf{WHILE} $prethodnik(v) \neq undefined$:
+            \begin{itemize}
+                \item $v = prethodnik(v)$, $put = v + put$.
+            \end{itemize}
+        \end{itemize}
+        \item \textbf{RETURN} $put, rastojanje(u)$
+    \end{enumerate}
+\end{algorithm}
+
+\begin{itemize}
+    \item \textbf{Napomena:} U prvom delu, algoritam određuje prethodnika svakog čvora i izračunava najkraća rastojanja. Drugi deo algoritma služi za rekonstrukciju samih putanja koristeći informacije o prethodnicima. Moguća je modifikacija algoritma kojom se direktno pamte nizovi čvorova koji čine najkraći put.
+\end{itemize}
+
+\begin{theorem}[Teorema 3.10.3]
+    Dajkstrin algoritam daje najkraće puteve od jednog čvora usmerenog težinskog grafa do svih čvorova tog grafa.
+\end{theorem}
+\newpage
+\subsection{Flojd-Varšalov algoritam}
+\begin{algorithm}[ht]
+    \caption{Flojd-Varšalov algoritam}
+    \begin{enumerate}
+        \item \textbf{INPUT}: Inicijalna matrica rastojanja $D$ usmerenog težinskog grafa.
+        \item $n = \text{size}(D)$.
+        \item \textbf{FOR} $i = 1$ \textbf{TO} $n$:
+        \begin{itemize}
+            \item \textbf{FOR} $j = 1$ \textbf{TO} $n$:
+            \begin{itemize}
+                \item \textbf{FOR} $k = 1$ \textbf{TO} $n$:
+                \begin{itemize}
+                    \item \textbf{IF} $D(j, k) > D(j, i) + D(i, k)$:
+                    \begin{itemize}
+                        \item $D(j, k) := D(j, i) + D(i, k)$
+                    \end{itemize}
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+        \item \textbf{RETURN} $D$ (matrica najkraćih rastojanja)
+    \end{enumerate}
+\end{algorithm}
+
+\begin{itemize}
+    \item \textbf{Napomena:} Za svaka dva čvora grafa, algoritam pronalazi najkraći put koji potencijalno prolazi kroz sve ostale čvorove. 
+    \item \textbf{Modifikacije:} Algoritam se može unaprediti za rekonstrukciju samih putanja (pamćenjem prethodnika) ili za utvrđivanje dostupnosti čvorova (tada se težine grana tretiraju kao 1, a algoritam proverava samo postojanje puta).
+\end{itemize}
 
 \chapter{Linearna algebra}
 \chapter{Analitička geometrija}
