@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  1 JUL 2026 14:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  1 JUL 2026 18:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -708,14 +708,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...metrijske funkcije}{12}{subsection.4.1.10}
+l.38 ....1}Muavrova formula}{11}{subsection.4.2.1}
                                                   % [1
 
-])
+] [2])
 \tf@toc=\write4
 \openout4 = `matematika.toc'.
 
- [2]
+ [3]
 Glava 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 44--46
@@ -740,160 +740,176 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[3
+[4
 
 {C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cmsrb/cmsrbts1.enc}]
 Glava 2.
 
-Overfull \hbox (17.14336pt too wide) detected at line 75
-[][]
- []
-
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 79.
-
-[4
-
-] [5]
-Glava 3.
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 115.
+(hyperref)                removing `math shift' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 115.
+(hyperref)                removing `subscript' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 115.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 115.
+(hyperref)                removed on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 115.
+(hyperref)                removing `subscript' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 115.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 115.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 115.
+(hyperref)                removed on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 115.
+(hyperref)                removing `subscript' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 115.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 79.
 
 
-Overfull \hbox (36.77383pt too wide) detected at line 116
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 79.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 79.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 79.
+
+
+Overfull \hbox (36.77383pt too wide) detected at line 80
 \OML/cmmsrbm/m/it/12 H[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 G[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 A[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 K[] \OT1/cmrsrbm/m/n/12 = []
  []
 
-[6
+[5
 
-] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+] [6] [7]
+Glava 3.
+[8
 
- []
-
-[8] [9]
+] [9] [10]
 Glava 4.
-[10
-
-] [11] [12]
-Glava 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 330.
+(hyperref)                removing `math shift' on input line 261.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 330.
+(hyperref)                removing `math shift' on input line 261.
 
 
-Overfull \hbox (14.47087pt too wide) detected at line 333
+Overfull \hbox (14.47087pt too wide) detected at line 264
 \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = \OML/cmmsrbm/m/it/12 z;   z; x \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 C  \OT1/cmrsrbm/m/n/12 =[]\OMS/cmsy/m/n/12 )   [] \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = 0  (\OML/cmmsrbm/m/it/12 x[]; x[]; [] ; x[]  []:\OT1/cmrsrbm/m/n/12 )
  []
 
-[13
+[11
 
 ]
-Glava 6.
-[14
+Glava 5.
 
-] [15]
-Glava 7.
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 281.
+
+[12
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+[15]
+Glava 6.
 [16
+
+] [17]
+Glava 7.
+[18
 
 ]
 Glava 8.
+[19
 
-Overfull \hbox (7.87657pt too wide) detected at line 416
+]
+Glava 9.
+
+Overfull \hbox (7.87657pt too wide) detected at line 445
 [][]
  []
 
-[17
+[20
 
-] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 452--453
+] [21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
 
  []
 
-[20]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 464--465
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+
+ []
+
+[23]
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 493--494
 [][] 
  []
 
-[21] [22] (matematika.aux)
+[24] [25]
+Glava 10.
+[26
+
+]
+Glava 11.
+[27
+
+]
+Glava 12.
+[28
+
+] (matematika.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `matematika.out' has not changed.
-(rerunfilecheck)             Checksum: 40FCA3639CE98F1DBC117D6FAEDFF3A7;11149.
+(rerunfilecheck)             Checksum: 00EC21A82CB1716D1AFAA5C6067A2F07;13207.
  ) 
 Here is how much of TeX's memory you used:
- 14782 strings out of 467870
- 233147 string characters out of 5418355
- 756998 words of memory out of 5000000
- 43343 multiletter control sequences out of 15000+600000
+ 14826 strings out of 467870
+ 233741 string characters out of 5418355
+ 757000 words of memory out of 5000000
+ 43363 multiletter control sequences out of 15000+600000
  675574 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,578b,624s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrb.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbri.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrr.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrx.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (23 pages, 379782 bytes).
+Output written on matematika.pdf (29 pages, 398424 bytes).
 PDF statistics:
- 596 PDF objects out of 1000 (max. 8388607)
- 105 named destinations out of 1000 (max. 500000)
- 569 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 700 PDF objects out of 1000 (max. 8388607)
+ 129 named destinations out of 1000 (max. 500000)
+ 681 words of extra memory for PDF output out of 10000 (max. 10000000)
 
