@@ -331,6 +331,48 @@ c &= a \cos \beta + b \cos \alpha
 \[
     x^n = z, \;\;z,x\in \mathbb{C} \implies  \; \sum^n_{k=1} x_k=0 \;\; (x_1, x_2, \dots, x_n \;\; \text{se ponašaju kao težišne duži $n$-tougla}.)
 \]
+
+
+
+
+\chapter{Teorija grafova}
+
+\section{Osnovni pojmovi i teoreme}
+
+\subsection{Tipovi grafova}
+\begin{itemize}
+    \item \textbf{Prost graf}: $G = (V, E),\;\; V $ - skup čvorova, $E$ - skup grana.
+    \item Čvorovi su \textit{susedni} ako ih grana spaja. Grana je \textit{incidentna} sa ova dva čvora. Ti čvorovi su \textit{krajevi} grane. Grane incidentne sa susednim čvorom su \textit{susedne}.
+    \item \textbf{Stepen čvora} $u$ ($d_u$) - broj grana incidentnih sa njim.
+    \item \textbf{Okolina čvora} $u$ ($N(u)$) - skup svih čvorova njemu susednih.
+    \item \textbf{$\delta$} - \textit{minimalni stepen} čvora u grafu; \textbf{$\Delta$} - \textit{maksimalni stepen} čvora u grafu.
+    \item \textbf{Graf sa petljama} - dopuštene grane čija su oba kraja isti čvor.
+    \item \textbf{Multigraf} - dopušteno više grana između dva ista čvora.
+    \item \textbf{Težinski graf} - svakoj grani pridružena numerička vrednost.
+    \item \textbf{Usmereni (orijentisani) graf (digraf)} - svaka grana može imati usmerenje.
+\end{itemize}
+
+\begin{theorem}
+    Suma stepena čvorova grafa jednaka je dvostrukom broju grana:
+    $$\sum_{i = 1}^{n} d_{u_i} = 2m$$
+\end{theorem}
+
+\begin{theorem}
+    Broj čvorova \textit{neparnog stepena} grafa nije neparan.
+\end{theorem}
+
+\subsection{Izomorfizmi grafova i teoreme}
+\begin{itemize}
+    \item \textbf{Izomorfni grafovi} - postoji \textit{bijekcija} skupa čvorova jednog na skup čvorova drugog koja čuva susedstva. U prevodu, izomorfni su ako se razlikuju samo oznake čvorova.
+    \item \textbf{$k$-dimenziona kocka} - graf čiji se skup čvorova sastoji od svih uređenih binarnih $k$-torki i čiji su čvorovi susedni akko se odgovarajuće $k$-torke razlikuju tačno u jednoj koordinati.
+    \item \textbf{Invarijanta grafa} - funkcija definisana na skupu grafova koja ima istu vrednost za sve izomorfne grafove.
+    \item \textbf{Podgraf} $G' = (V', E')$ grafa $G = (V, E)$ - važi $V' \subseteq V, \; E' \subseteq E$.
+    \item \textbf{Indukovani podgraf} - dobija se uklanjanjem proizvoljnog skupa čvorova grafa (zadržavaju se sve grane iz originalnog grafa koje povezuju preostale čvorove).
+    \item \textbf{Komplement} $\overline{G} = (V, \overline{E})$ grafa $G = (V, E)$ - čvorovi su susedni u $\overline{G}$ akko nisu susedni u $G$. Graf je \textit{samokomplementaran} ako je izomorfan svom komplementu.
+\end{itemize}
+\subsection{Šetnje, staze i putevi}
+
+
 \chapter{Analitička geometrija}
 \section{Ugao između dve prave}
 \[

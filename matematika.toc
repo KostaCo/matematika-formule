@@ -46,22 +46,27 @@
 \contentsline {subsection}{\numberline {5.2.1}Muavrova formula}{13}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Koren kompleksnog broja}{13}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Zbir $n$-tih korena kompleksog broja}{13}{subsection.5.2.3}%
-\contentsline {chapter}{\numberline {6}Analitička geometrija}{14}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Ugao između dve prave}{14}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Analiza}{15}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Limesi}{15}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Poznati limesi}{15}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Upoređivanje beskonačnosti}{15}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}Teoreme}{16}{subsection.7.1.3}%
-\contentsline {section}{\numberline {7.2}Asimptote}{16}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Kosa asimptota}{16}{subsection.7.2.1}%
-\contentsline {section}{\numberline {7.3}Izvodi}{17}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Poznati izvodi}{17}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Lajbnicova formula}{17}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Fermaova, Rolova i Lagranžova teorema}{18}{subsection.7.3.3}%
-\contentsline {section}{\numberline {7.4}Tejlorov razvoj}{19}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Opšta formula Tejlorovog razvoja}{19}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Razvoji elementarnih funkcija}{19}{subsection.7.4.2}%
-\contentsline {section}{\numberline {7.5}Integrali}{20}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Poznati integrali}{20}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Izvedeni integrali}{20}{subsection.7.5.2}%
+\contentsline {chapter}{\numberline {6}Teorija grafova}{14}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Osnovni pojmovi i teoreme}{14}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Tipovi grafova}{14}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Izomorfizmi grafova i teoreme}{14}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Šetnje, staze i putevi}{15}{subsection.6.1.3}%
+\contentsline {chapter}{\numberline {7}Analitička geometrija}{16}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Ugao između dve prave}{16}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Analiza}{17}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Limesi}{17}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Poznati limesi}{17}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Upoređivanje beskonačnosti}{17}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Teoreme}{18}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}Asimptote}{18}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Kosa asimptota}{18}{subsection.8.2.1}%
+\contentsline {section}{\numberline {8.3}Izvodi}{19}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Poznati izvodi}{19}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Lajbnicova formula}{19}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Fermaova, Rolova i Lagranžova teorema}{20}{subsection.8.3.3}%
+\contentsline {section}{\numberline {8.4}Tejlorov razvoj}{21}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Opšta formula Tejlorovog razvoja}{21}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Razvoji elementarnih funkcija}{21}{subsection.8.4.2}%
+\contentsline {section}{\numberline {8.5}Integrali}{22}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Poznati integrali}{22}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Izvedeni integrali}{22}{subsection.8.5.2}%
