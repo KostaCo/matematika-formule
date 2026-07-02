@@ -13,6 +13,7 @@
 \usepackage{lipsum}
 \usepackage{hyperref}
 \usepackage{mathtools,amsfonts}
+\usepackage{comment}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -311,7 +312,14 @@ c &= a \cos \beta + b \cos \alpha
 \subsection{Formula uključenja-isključenja}
 \[\bigg|\bigcup_{i=1}^n A_i\bigg| = \sum_{\emptyset \not = I \subset \mathbb{N}_n}{} (-1)^{|I| - 1} \bigg|\bigcap_{i \in I} A_i\bigg|\]
 \section{Izbori elemenata}
-\section{Generisanje permutacija i kombinacija}
+\begin{itemize}
+    \item Vandermondov identitet:
+    \[
+        \sum_{k = 0}^{r} {{r} \choose {k}} {{s} \choose {n - k}} = {{r + s} \choose {n}}
+        \]
+\end{itemize}
+    \[ \sum_{k = 0}^{r} {{r} \choose {k}} {{s} \choose {n + k}} = {{r + s} \choose {r + n}} \]
+    \section{Generisanje permutacija i kombinacija}
 
 \section{Funkcije generatrise}
 \subsection{Definicija funkcije generatrise}
@@ -332,7 +340,87 @@ c &= a \cos \beta + b \cos \alpha
     \end{aligned}
 \]
 \section{Particije brojeva}
+\begin{itemize}
+    \item Broj kompozicija (uređena $k$-torka $(a_1, \dots, a_k)$ td. $\sum_{i = 1}^{k} a_i = n$) broja $n$ na $k$ sabiraka je
+    \[
+        {{n - 1} \choose {k - 1}}
+    \]
+    \item Broj kompozicija prirodnog broja $n$ jednak je
+    \[
+        \sum_{k = 1}^{n} {{n-1} \choose {k-1}} = 2^{n-1}
+    \]
+    \item Formula za broj particija ne postoji.
+    \item Za particije broja $n$ važi
+    \[
+        p_k(n) = p_k(n - k) + p_{k - 1}(n - k) + \dots + p_1(n - k)
+    \]
+\end{itemize}
 \section{Rekurentne jednačine}
+\subsection{Linearne rekurentne jednačine}
+
+\begin{itemize}
+    \item Linearna rekurentna jednačina $k$-tog reda:
+    \[
+        f_0(n)a_n + f_1(n)a_{n+1} + \dots + f_k(n)a_{n + k} = f(n)
+    \]
+    \item Opšte rešenje nehomogene linearne rekurentne jednačine je oblika 
+    \[
+        a_n = h_n + p_n,
+    \]
+    gde je $h_n$ opšte rešenje odgovarajuće homogene jednačine, a $p_n$ partikularno rešenje date nehomogene jednačine.
+\end{itemize}
+\subsubsection{Linearne rekurentne jednačine sa konstantnim koeficijentima}
+\begin{itemize}
+    \item Linearna rekurentna jednačina $k$-tog reda sa konstantim koeficijentima:
+    \[
+        f_0a_n + f_1a_{n+1} + \dots + f_ka_{n + k} = f(n)
+    \]    
+    \item Karakteristična jednačina rekurentne jednačine sa konstantnim koeficijentima je jednačina
+    \begin{equation}
+        f_kx^k + \dots + f_1x + f_0 = 0
+        \label{lrj1}
+    \end{equation}
+    \item Određivanje \textbf{opšteg rešenja} linearne rek. jednačine sa konst. koeficijentima:
+    \begin{enumerate}
+        \item Ako su nule $x_1, x_2, \dots, x_n \in \mathbb{C}$ karakteristične jednačine \ref{lrj1} jednostruke,
+        onda je to opšte rešenje dato sa
+        \[
+            a_n = c_1x^n_1 + c_2x^n_2 + \dots + c_kx^n_k
+        \]
+        \item Ako postoji nula multipliciteta $m$, onda ona daje član 
+        \[
+            c_ix_i^n + c_{i+1}nx^n_i + \dots + c_{i + m - 1}n^{m - 1}x_i^n
+        \]
+        u opštem rešenju homogene jednačine.
+    \end{enumerate}
+    \item Određivanje \textbf{partikularnog rešenja} lin. rek. jednačine sa konst. koeficijentima:
+    \begin{itemize}
+        \item Ako važi $f(n) = P_d(n)b^n$, gde je $P_d$ polinom stepena $d$ i $b \in \mathbb{R}$, važi sledeće:
+        \begin{enumerate}
+            \item ako $x = b$ nije nula kar. jednačine \ref{lrj1}, onda se partikularno rešenje traži u obliku
+            \[
+                p_n = (A_0 + A_1n + \dots + A_dn^d)b^n            
+            \]
+            \item ako $x = b$ jeste nula multipliciteta $m$, onda se partikularno rešenje traži u obliku
+            \[
+                p_n = n^m(A_0 + A_1n+\dots + A_dn^d)b^n
+            \]
+        \end{enumerate}
+    \end{itemize}
+    \item Mogu se rešavati i pomoću funkcija generatrisa.
+    
+\end{itemize}
+\subsubsection{Linearne rekurentne jednačine sa funkcionalnim koeficijentima}
+\begin{itemize}
+    \item Ne postoji opšti metod za rešavanje jednačina sa funkcionalnim koeficijentima, niti se sve mogu rešiti. Može se izračunati prvih nekoliko članova i potom induktivno dokazati naslućeno rešenje. Primenjuje se i metod smene, kojim se jednačina uprošćava.
+\end{itemize}
+
+\subsection{Nelinearne rekurentne jednačine}
+\begin{itemize}
+    \item Rešavaju se slično kao linearne rekurentne jednačine sa funkcionalnim koeficijentima.
+\end{itemize}
+
+\begin{comment}
 \subsection{Linearne rekurentne jednačine}
 \subsubsection{Linearne diferencne jednačine I reda}
 \begin{align}
@@ -367,8 +455,20 @@ c &= a \cos \beta + b \cos \alpha
 
     \noindent 2) Neka je $t_1$ dvostruko rešenje kvadratne jednačine (\ref{niz4}). Tada su nizovi $(x_n)$ i $(y_n)$, dati sa $x_n = t_1^n$ i $y_n=nt_1^n$ neproporcionalna rešenja jednačine (\ref{niz1}).
 \end{theorem}
-\subsection{Nelinearne rekurentne jednačine}
+\end{comment}
+
+
 \section{Fibonačijevi brojevi}
+\begin{itemize}
+    \item Rekurentna formula:
+    \[
+        F_{n + 2} = F_{n + 1} + F_{n}, \;\; F_0 = 0, F_1 = 1
+    \]
+    \item Opšti član niza (Bineova formula):
+    \[
+        F_n = \frac{\bigg(\frac{1 + \sqrt{5}}{2}\bigg)^n - \bigg(\frac{1 - \sqrt{5}}{2}\bigg)^n}{\sqrt{5}}
+    \]
+\end{itemize}
 \subsection{Lukasovi brojevi}
 \section{Katalanovi brojevi}
 \section{Bernulijevi brojevi}
