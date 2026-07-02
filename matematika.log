@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  2 JUL 2026 20:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  2 JUL 2026 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -926,10 +926,10 @@ Package rerunfilecheck Info: File `matematika.out' has not changed.
 (rerunfilecheck)             Checksum: F1F8256262B6DA7872ECE725969D1491;17442.
  ) 
 Here is how much of TeX's memory you used:
- 15675 strings out of 467533
- 243638 string characters out of 5422138
- 768912 words of memory out of 5000000
- 44123 multiletter control sequences out of 15000+600000
+ 15679 strings out of 467533
+ 243690 string characters out of 5422138
+ 768901 words of memory out of 5000000
+ 44127 multiletter control sequences out of 15000+600000
  675918 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,587b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s

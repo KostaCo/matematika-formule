@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1783016398.60992 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1783016399.24048 0
+["pdflatex"] 1783016731.45284 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1783016732.0628 0
   "/etc/texmf/web2c/texmf.cnf" 1779652215.19533 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kosta/Projects/matematika-formule/matematika.tex" 1783016398.44817 57598 cb4755446488ae7c3490c15ec752fea5 ""
+  "/home/kosta/Projects/matematika-formule/matematika.tex" 1783016731.27975 57592 c9a59f2defb1f7b638ddb9af2f31c131 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbt1.enc" 1586730458 2157 57b150f99c9d61d6c444b4cace336027 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbts1.enc" 1586730458 2739 09dbe67a27d855e4d39579aa6d913f4e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -143,10 +143,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1779652241 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1779652292 3643082 d718a7a87975810f30f4b2fa7adae9db ""
-  "matematika.aux" 1783016399.1692 17033 b181793589cac7a5fb2a34d51d78991b "pdflatex"
-  "matematika.out" 1783016399.1702 17442 f1f8256262b6da7872ece725969d1491 "pdflatex"
-  "matematika.tex" 1783016398.44817 57598 cb4755446488ae7c3490c15ec752fea5 ""
-  "matematika.toc" 1783016399.17171 9797 00360559e09e2c04eaae515aa01128b3 "pdflatex"
+  "matematika.aux" 1783016731.99378 17033 b181793589cac7a5fb2a34d51d78991b "pdflatex"
+  "matematika.out" 1783016731.99547 17442 f1f8256262b6da7872ece725969d1491 "pdflatex"
+  "matematika.tex" 1783016731.27975 57592 c9a59f2defb1f7b638ddb9af2f31c131 ""
+  "matematika.toc" 1783016731.99585 9797 00360559e09e2c04eaae515aa01128b3 "pdflatex"
   (generated)
   "matematika.aux"
   "matematika.log"
