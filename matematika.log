@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  2 JUL 2026 20:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  3 JUL 2026 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -873,49 +873,49 @@ Overfull \hbox (23.36397pt too wide) in paragraph at lines 800--801
 []\T1/cmsrbr/m/it/12 Heuristi£ki al-go-rit-mi: \T1/cmsrbr/m/n/12 Tra-ºe \T1/cmsrbr/b/n/12 su-bop-ti-mal-na \T1/cmsrbr/m/n/12 re-²e-nja (re-²e-nja "bli-ska"optimalnom)
  []
 
-[26] [27] [28] [29] [30]
+[26] [27] [28] [29] [30] [31]
 Glava 7.
-[31
+[32
 
 ]
 Glava 8.
-[32
+[33
 
 ]
 Glava 9.
 
-Overfull \hbox (7.87657pt too wide) detected at line 1030
+Overfull \hbox (7.87657pt too wide) detected at line 1038
 [][]
  []
 
-[33
+[34
 
-] [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
-
- []
-
-
+] [35] [36]
 Underfull \hbox (badness 10000) in paragraph at lines 1066--1067
 
  []
 
-[36]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 1078--1079
+
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
+
+ []
+
+[37]
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 1086--1087
 [][] 
  []
 
-[37] [38]
+[38] [39]
 Glava 10.
-[39
-
-]
-Glava 11.
 [40
 
 ]
-Glava 12.
+Glava 11.
 [41
+
+]
+Glava 12.
+[42
 
 ] (./matematika.aux)
  ***********
@@ -926,18 +926,18 @@ Package rerunfilecheck Info: File `matematika.out' has not changed.
 (rerunfilecheck)             Checksum: F1F8256262B6DA7872ECE725969D1491;17442.
  ) 
 Here is how much of TeX's memory you used:
- 15679 strings out of 467533
- 243690 string characters out of 5422138
+ 15680 strings out of 467533
+ 243697 string characters out of 5422138
  768901 words of memory out of 5000000
  44127 multiletter control sequences out of 15000+600000
  675918 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,587b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrx.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (42 pages, 369607 bytes).
+Output written on matematika.pdf (43 pages, 370305 bytes).
 PDF statistics:
- 959 PDF objects out of 1000 (max. 8388607)
- 871 compressed objects within 9 object streams
- 231 named destinations out of 1000 (max. 500000)
+ 964 PDF objects out of 1000 (max. 8388607)
+ 875 compressed objects within 9 object streams
+ 232 named destinations out of 1000 (max. 500000)
  873 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -824,7 +824,7 @@ Ova heuristika poboljšava početni Hamiltonov ciklus kroz iterativne promene (l
 \begin{itemize}
     \item \textbf{Napomena:} Strategija „uvek idi do najbližeg suseda” (Greedy) je najjednostavnija heuristika, ali često ne daje optimalno rešenje. 3-heuristika daje znatno bolje rezultate jer omogućava „preslaganje” ciklusa.
 \end{itemize}
-
+\newpage
 \section{Planarni grafovi}
 Graf je \textbf{planaran} ako se može nacrtati u ravni tako da se njegove grane nigde ne seku (osim u čvorovima). Svaki takav crtež deli ravan na jednu ili više \textbf{oblasti} (jedna od njih je uvek beskonačna).
 
@@ -835,6 +835,14 @@ Graf je \textbf{planaran} ako se može nacrtati u ravni tako da se njegove grane
     $$n - m + f = 2$$
     gde su $n$ broj čvorova, $m$ broj grana, a $f$ broj oblasti na koje graf deli ravan.
 \end{theorem}
+
+\textbf{Posledice Ojlerove teoreme:}
+\begin{itemize}
+    \item Za svaki prost planaran graf sa $n \geq 3$ važi:
+    \[ m \le 3n - 6 \] 
+    \item Ako prost planaran graf ne sadrži cikluse dužine 3 (npr. bipartitan je), onda važi stroža nejednakost:
+    \[ m \le 2n - 4 \]
+\end{itemize}
 
 \subsection*{Kuratovskijeva teorema}
 Da bismo definisali karakterizaciju planarnih grafova, koristimo pojam \textbf{potpodele} (subdivision), koja nastaje umetanjem novih čvorova na postojeće grane.
