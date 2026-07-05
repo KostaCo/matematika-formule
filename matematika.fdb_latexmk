@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1783241258.77648 "d:/Projekti/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1783241260.09806 0
+["pdflatex"] 1783244540.2997 "d:/Projekti/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1783244542.26939 0
   "C:/Users/Kosta/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1783239793 90336 08e6d31167078fb1fde7f415ac955abb ""
   "C:/Users/Kosta/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1765279486 13333552 39e7fdd33c8df25cdda8ed4c0eb75844 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cmsrb/cmsrbt1.enc" 1572034764 2157 57b150f99c9d61d6c444b4cace336027 ""
@@ -140,11 +140,11 @@
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1761901070 10374 2ffd4f27c7f90b8a300608069537743c ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1761901070 33142 efe8f4750fc02524935e7423b4bdef69 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "d:/Projekti/matematika-formule/matematika.tex" 1783241258 58449 5f677b0fef27242d33038f27df35aa57 ""
-  "matematika.aux" 1783241259 17063 bf29682d1c23af09f40042572d76d566 "pdflatex"
-  "matematika.out" 1783241259 17610 103af2e9a33c27828d734fbb2629982b "pdflatex"
-  "matematika.tex" 1783241258 58449 5f677b0fef27242d33038f27df35aa57 ""
-  "matematika.toc" 1783241259 9827 b525c313d95c0269f40253bec1a1d693 "pdflatex"
+  "d:/Projekti/matematika-formule/matematika.tex" 1783244538 58464 4596abfa42ac9834f3aca146a94ae6dc ""
+  "matematika.aux" 1783244541 17063 bf29682d1c23af09f40042572d76d566 "pdflatex"
+  "matematika.out" 1783244541 17610 103af2e9a33c27828d734fbb2629982b "pdflatex"
+  "matematika.tex" 1783244538 58464 4596abfa42ac9834f3aca146a94ae6dc ""
+  "matematika.toc" 1783244541 9827 b525c313d95c0269f40253bec1a1d693 "pdflatex"
   (generated)
   "matematika.aux"
   "matematika.log"
