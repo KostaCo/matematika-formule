@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  5 JUL 2026 10:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  5 JUL 2026 10:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -627,30 +627,30 @@ Package babel Info: 'serbian' activates 'serbian' shorthands.
 )
 \openout1 = `matematika.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 45.
-LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 51.
+LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 51.
  (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -686,8 +686,8 @@ LaTeX Font Info:    ... okay on input line 45.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Encoding Info:    Redeclaring text command \v (encoding OT2) on input line 45.
-LaTeX Encoding Info:    Text composite with undeclared \v in encoding OT2 on input line 45.
+LaTeX Encoding Info:    Redeclaring text command \v (encoding OT2) on input line 51.
+LaTeX Encoding Info:    Text composite with undeclared \v in encoding OT2 on input line 51.
 (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
  (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -710,7 +710,7 @@ File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 \makeMPintoPDFobject=\count352
 \everyMPtoPDFconversion=\toks38
 )) (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 45.
+Package hyperref Info: Link coloring ON on input line 51.
  (matematika.out) (matematika.out)
 \@outlinefile=\write4
 \openout4 = `matematika.out'.
@@ -729,11 +729,11 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 \Gin@req@height=\dimen198
 \Gin@req@width=\dimen199
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
  (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -752,25 +752,25 @@ l.38 ....1}Muavrova formula}{11}{subsection.4.2.1}
  [3]
 Glava 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--54
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+cmsrbr on input line 54.
+LaTeX Font Info:    Trying to load font information for TS1+cmsrbr on input line 60.
 (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/cmsrb\ts1cmsrbr.fd
 File: ts1cmsrbr.fd 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
@@ -780,57 +780,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--57
 Glava 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 87.
+(hyperref)                removing `math shift' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 87.
+(hyperref)                removing `subscript' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 87.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 87.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 87.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 87.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 87.
+(hyperref)                removed on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 87.
+(hyperref)                removing `subscript' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 87.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 87.
+(hyperref)                removed on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 87.
+(hyperref)                removing `subscript' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 87.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 93.
 
 
-Overfull \hbox (36.77383pt too wide) detected at line 88
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 93.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 93.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 93.
+
+
+Overfull \hbox (36.77383pt too wide) detected at line 94
 \OML/cmmsrbm/m/it/12 H[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 G[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 A[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 K[] \OT1/cmrsrbm/m/n/12 = []
  []
 
@@ -844,14 +844,14 @@ Glava 3.
 Glava 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 269.
+(hyperref)                removing `math shift' on input line 275.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 269.
+(hyperref)                removing `math shift' on input line 275.
 
 
-Overfull \hbox (14.47087pt too wide) detected at line 272
+Overfull \hbox (14.47087pt too wide) detected at line 278
 \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = \OML/cmmsrbm/m/it/12 z;   z; x \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 C  \OT1/cmrsrbm/m/n/12 =[]\OMS/cmsy/m/n/12 )   [] \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = 0  (\OML/cmmsrbm/m/it/12 x[]; x[]; [] ; x[]  []:\OT1/cmrsrbm/m/n/12 )
  []
 
@@ -862,12 +862,12 @@ Glava 5.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 289.
+(amsmath)                 on input line 295.
 
 [12
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
@@ -876,9 +876,9 @@ Glava 6.
 [17
 
 ] [18] [19] [20]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 612.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 618.
  [21] [22] [23] [24] [25]
-Overfull \hbox (23.36397pt too wide) in paragraph at lines 800--801
+Overfull \hbox (23.36397pt too wide) in paragraph at lines 806--807
 []\T1/cmsrbr/m/it/12 Heuristi£ki al-go-rit-mi: \T1/cmsrbr/m/n/12 Tra-ºe \T1/cmsrbr/b/n/12 su-bop-ti-mal-na \T1/cmsrbr/m/n/12 re-²e-nja (re-²e-nja "bli-ska"optimalnom)
  []
 
@@ -893,24 +893,24 @@ Glava 8.
 ]
 Glava 9.
 
-Overfull \hbox (7.87657pt too wide) detected at line 1038
+Overfull \hbox (7.87657pt too wide) detected at line 1044
 [][]
  []
 
 [34
 
 ] [35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1066--1067
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1073
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1081
 
  []
 
 [37]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 1086--1088
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 1092--1094
 [][] 
  []
 
@@ -937,13 +937,13 @@ Package rerunfilecheck Info: File `matematika.out' has not changed.
 Here is how much of TeX's memory you used:
  15685 strings out of 467870
  247102 string characters out of 5418355
- 769289 words of memory out of 5000000
+ 769285 words of memory out of 5000000
  44096 multiletter control sequences out of 15000+600000
  675918 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,578b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrb.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbri.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrr.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrx.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (43 pages, 469368 bytes).
+Output written on matematika.pdf (43 pages, 469382 bytes).
 PDF statistics:
  954 PDF objects out of 1000 (max. 8388607)
  232 named destinations out of 1000 (max. 500000)
