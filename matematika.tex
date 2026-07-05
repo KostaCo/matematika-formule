@@ -1008,8 +1008,43 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \]
 \chapter{Analiza}
 \section{Limesi}
-
-
+\subsection{Teoreme i definicije}
+\begin{definition}
+    Kažemo da niz realnih brojeva $x_n$ ima limes $L$ ako važi:
+    \[ (\forall \epsilon > 0)(\exists n_0 \in \mathbb{N})(\forall n \in \mathbb{N}) \; n \geq n_0 \implies |x_n - L| < \varepsilon \]
+    Tada kažemo da on konvergira. U suprotnom, kažemo da divergira.
+\end{definition}
+\begin{definition}
+    Kažemo da niz realnih brojeva $x_n$ ima limes $+\infty$ ako važi:
+    \[ (\forall M \in \mathbb{R})(\exists n_0 \in \mathbb{N})(\forall n \in \mathbb{N}) \; n \geq n_0 \implies x_n > M \]
+    Analogno, kažemo da niz realnih brojeva $x_n$ ima limes $-\infty$ ako važi:
+    \[ (\forall M \in \mathbb{R})(\exists n_0 \in \mathbb{N})(\forall n \in \mathbb{N}) \; n \geq n_0 \implies x_n < M \]
+\end{definition}
+\begin{definition}
+    Kažemo da je niz $(x_n)$ ograničen ako postoji broj $M \in \mathbb{R}$ takav da važi $|x_n| \leq M$ za sve $n \in \mathbb{N}$. Broj $M$ nazivamo ograničenjem niza $(x_n)$.
+\end{definition}
+\begin{theorem}
+    Niz $(x_n)$ konvergira $\implies$ niz $(x_n)$ je ograničen.
+\end{theorem}
+\begin{theorem}
+    \textbf{(o 3 limesa): }\[f(x) \leq h(x) \leq g(x) \;\text{na}\; \dot{U}_a \;\land\; \lim_{x \to a} f(x) = \lim_{x \to a} g(x) \implies \lim_{x \to a} f(x) = \lim_{x \to a} h(x) = \lim_{x \to a} g(x)\]
+\end{theorem}
+\begin{theorem}
+    \textbf{(Štolc):} 
+    \[ \lim_{x\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{x\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{x\to +\infty} b_n = +\infty) \]
+\end{theorem}
+\begin{theorem}
+    \textbf{(Koši ($A_n$)): }\[\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\]
+\end{theorem}
+\begin{theorem}
+    \textbf{($H_n$): }\[\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\]
+\end{theorem}
+\begin{theorem}
+    \textbf{($G_n$): }\[lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\]
+\end{theorem}
+\begin{theorem}
+    Monoton niz je konvergentan akko je ograničen.
+\end{theorem}
 
 \subsection{Poznati limesi}
 \[
@@ -1034,11 +1069,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \]
 \subsection{Teoreme}
 \[\begin{aligned}
-    &\textbf{3 limesa: }\;\;\\&\;\;\;\;f(x) \leq h(x) \leq g(x) \;\text{na}\; \dot{U}_a \;\land\; \lim_{x \to a} f(x) = \lim_{x \to a} g(x) \implies \lim_{x \to a} f(x) = \lim_{x \to a} h(x) = \lim_{x \to a} g(x)  \\
-    &\textbf{Štolc: }\;\;\lim_{x\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{x\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{x\to +\infty} b_n = +\infty)\\
-    &\textbf{Koši ($A_n$): }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\\
-    &\textbf{$\mathbf{G_n}$: }\;\;\lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\\
-    &\textbf{$\mathbf{H_n}$: }\;\;\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\\
     &\textbf{$\mathbf{\sqrt[n]{a_n}}$: }\;\;a_n > 0, n \in \mathbb{N} \; \land \; \lim_{x\to +\infty} \frac{a_{n+1}}{a_n} = l \implies \lim_{x\to +\infty} \sqrt[n]{a_n} = l \\
     &\textbf{L'Hôpitalovo pravilo: } \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)},\; c \in \overline{\mathbb{R}} ,\;\; \text{za oblike } \frac{\pm \infty}{\pm \infty} \;\text{i } \frac{0}{0}
 \end{aligned}\]
@@ -1070,7 +1100,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \subsection{Fermaova, Rolova i Lagranžova teorema}
 
 \noindent\textbf{Fermaova teorema}: Neka je $U_\delta = (c - \delta,c + \delta) \;\delta$-okolina tačke $c \in \mathbb{R}$ i funkcija $f:U_\delta \xrightarrow{}\mathbb{R}$ diferencijabilna u tački $c$. Ako funkcija $f$ u tački $c$ ima lokalni ekstremum, onda je $f'(c) = 0.$\\
-
+\vfill
 \noindent\textbf{Rolova teorema}: Neka je funkcija $f:[a,b] \xrightarrow{} \mathbb{R}$:
 \begin{itemize}
     \item neprekidna u svim tačkama segmenta $[a,b]$,
@@ -1084,7 +1114,7 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c) = 0$.\\
     \includegraphics[width=0.5\textwidth]{slike/rolle.pdf}
     \caption{Rolova teorema}
 \end{figure}
-
+\vfill
 \noindent\textbf{Lagranžova teorema}: Neka je funkcija $f:[a,b] \xrightarrow{} \mathbb{R}$:
 \begin{itemize}
     \item neprekidna u svim tačkama segmenta $[a,b]$,

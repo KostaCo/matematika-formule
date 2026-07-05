@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1783277027.20694 "d:/Projekti/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1783277028.76272 0
+["pdflatex"] 1783284340.13135 "d:/Projekti/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1783284341.65479 0
   "C:/Users/Kosta/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1783239793 90336 08e6d31167078fb1fde7f415ac955abb ""
   "C:/Users/Kosta/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1765279486 13333552 39e7fdd33c8df25cdda8ed4c0eb75844 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cmsrb/cmsrbt1.enc" 1572034764 2157 57b150f99c9d61d6c444b4cace336027 ""
@@ -37,8 +37,6 @@
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cmsrb/t1cmsrbrx.tfm" 1572117788 11744 95e84486dea761acffea59ac9b948c44 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cmsrb/ts1cmsrbrr-base.tfm" 1572117832 1428 f1e822d296e43ae7f2718d98f52843d2 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cmsrb/ts1cmsrbrr.tfm" 1572117834 1476 bf693a701d454aac525f43c9cabb1baa ""
-  "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
-  "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1247596666 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247596666 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
@@ -140,11 +138,11 @@
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1761901070 10374 2ffd4f27c7f90b8a300608069537743c ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1761901070 33142 efe8f4750fc02524935e7423b4bdef69 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "d:/Projekti/matematika-formule/matematika.tex" 1783277024 58755 dab0d5f3252038a130cf26746bf9c2e5 ""
-  "matematika.aux" 1783277028 17328 54ccd93daaa3f7219afb45f528540f51 "pdflatex"
-  "matematika.out" 1783277028 17610 103af2e9a33c27828d734fbb2629982b "pdflatex"
-  "matematika.tex" 1783277024 58755 dab0d5f3252038a130cf26746bf9c2e5 ""
-  "matematika.toc" 1783277028 9827 b525c313d95c0269f40253bec1a1d693 "pdflatex"
+  "d:/Projekti/matematika-formule/matematika.tex" 1783284339 60054 d67cf756d85d06780c6b125d35b3a777 ""
+  "matematika.aux" 1783284341 17460 725eb6aafd00e9307275e14c1707f1a3 "pdflatex"
+  "matematika.out" 1783284341 17779 ee10ca95ba90dfab53753c75db0efffb "pdflatex"
+  "matematika.tex" 1783284339 60054 d67cf756d85d06780c6b125d35b3a777 ""
+  "matematika.toc" 1783284341 9918 b4772456b8729e65bb169ebf7034696c "pdflatex"
   "slike/Mittelwertsatz6.svg.png" 1783276848 126270 b9528d7fc65d9521361db1627249b588 ""
   "slike/rolle.pdf" 1783276551 6734 db32dab086a48e45db83764f98d960ed ""
   (generated)

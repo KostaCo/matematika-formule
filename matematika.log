@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  5 JUL 2026 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  5 JUL 2026 22:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -892,35 +892,30 @@ Glava 8.
 
 ]
 Glava 9.
-
-Overfull \hbox (7.87657pt too wide) detected at line 1044
-[][]
- []
-
 [34
 
 ] [35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1073
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1080--1081
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
 
  []
 
-<slike/rolle.pdf, id=802, 552.20506pt x 241.06795pt>
+<slike/rolle.pdf, id=815, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 1084.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 1114.
 (pdftex.def)             Requested size: 226.48395pt x 98.8716pt.
-<slike/Mittelwertsatz6.svg.png, id=803, 1927.2pt x 1229.59375pt>
+<slike/Mittelwertsatz6.svg.png, id=816, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1097.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1127.
 (pdftex.def)             Requested size: 226.48395pt x 144.48666pt.
 [37 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 1104--1106
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 1134--1136
 [][] 
  []
 
@@ -942,20 +937,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `matematika.out' has not changed.
-(rerunfilecheck)             Checksum: 103AF2E9A33C27828D734FBB2629982B;17610.
+(rerunfilecheck)             Checksum: EE10CA95BA90DFAB53753C75DB0EFFFB;17779.
  ) 
 Here is how much of TeX's memory you used:
- 15705 strings out of 467870
- 247632 string characters out of 5418355
- 769285 words of memory out of 5000000
- 44114 multiletter control sequences out of 15000+600000
- 675918 words of font info for 102 fonts, out of 8000000 for 9000
+ 15723 strings out of 467870
+ 247932 string characters out of 5418355
+ 771285 words of memory out of 5000000
+ 44120 multiletter control sequences out of 15000+600000
+ 685043 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,16n,79p,578b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrb.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbri.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrr.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrx.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (43 pages, 566887 bytes).
+ 75i,17n,79p,578b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrb.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbri.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrr.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrx.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on matematika.pdf (43 pages, 556806 bytes).
 PDF statistics:
- 968 PDF objects out of 1000 (max. 8388607)
- 234 named destinations out of 1000 (max. 500000)
- 883 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 975 PDF objects out of 1000 (max. 8388607)
+ 245 named destinations out of 1000 (max. 500000)
+ 891 words of extra memory for PDF output out of 10000 (max. 10000000)
 
