@@ -103,8 +103,8 @@
 \contentsline {subsection}{\numberline {9.3.2}Lajbnicova formula}{36}{subsection.9.3.2}%
 \contentsline {subsection}{\numberline {9.3.3}Fermaova, Rolova i Lagranžova teorema}{37}{subsection.9.3.3}%
 \contentsline {section}{\numberline {9.4}Tejlorov razvoj}{38}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Opšta formula Tejlorovog razvoja}{38}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Razvoji elementarnih funkcija}{38}{subsection.9.4.2}%
+\contentsline {subsection}{\numberline {9.4.1}Opšta formula Tejlorovog razvoja i ostaci}{38}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Razvoji elementarnih funkcija (Maklorenov polinom)}{38}{subsection.9.4.2}%
 \contentsline {section}{\numberline {9.5}Integrali}{39}{section.9.5}%
 \contentsline {subsection}{\numberline {9.5.1}Poznati integrali}{39}{subsection.9.5.1}%
 \contentsline {subsection}{\numberline {9.5.2}Izvedeni integrali}{39}{subsection.9.5.2}%

@@ -1058,7 +1058,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{align*}
 \subsection{Lajbnicova formula}
 \[
-(uv)^{(n)} = \sum^n_{k=0}{{n}\choose k} u^{(n-k)}v^{(k)}
+(f \cdot g)^{(n)} = \sum^n_{k=0}{{n}\choose k} f^{(n-k)}(x) \cdot g^{(k)}(x)
 \]
 \newpage
 \subsection{Fermaova, Rolova i Lagranžova teorema}
@@ -1082,9 +1082,15 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c)(b - a) = f(b) - f(a)$.
 
 \newpage
 \section{Tejlorov razvoj}
-\subsection{Opšta formula Tejlorovog razvoja}
+\subsection{Opšta formula Tejlorovog razvoja i ostaci}
 \boxed{ T_{n,a}(x)=f(a)+\frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2+\dots + \frac{f^{(n)}(a)}{n!}(x-a)^n, \;\; a \in \mathbb{R}, n \in \mathbb{N}}
-\subsection{Razvoji elementarnih funkcija}
+\begin{itemize}
+    \item \textbf{Maklorenov polinom:} $M_n(x) = T_{n,0}(x)$
+    \item \textbf{Peanov ostatak:} \[R_n(x) = f(x) - T_{n,a}(x) = o((x-a)^n)\]
+    \item \textbf{Lagranžov ostatak:} \[R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}, \;\;\xi \in (a,x)\]
+\end{itemize}
+
+\subsection{Razvoji elementarnih funkcija (Maklorenov polinom)}
 \[
 \begin{aligned}
     (1+x)^\alpha &= 1+{{\alpha}\choose{1}}x+{{\alpha}\choose{2}}x^2 +{{\alpha}\choose{3}}x^3+\dots\;,\;\;\alpha \in \mathbb{R}, \;|x| < 1\\
