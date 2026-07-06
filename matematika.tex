@@ -1007,8 +1007,9 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \tan(\theta) = \bigg|\frac{k_1-k_2}{1+k_1k_2}\bigg|,\;\;\;  \text{gde je $\theta$ ugao pod kojim se seku prave } k_1x+b_1 \text{ i } k_2x+b_2.
 \]
 \chapter{Analiza}
-\section{Limesi}
-\subsection{Teoreme i definicije}
+\section{Nizovi}
+
+\subsection{Limes niza}
 \begin{definition}
     Kažemo da niz realnih brojeva $x_n$ ima limes $L$ ako važi:
     \[ (\forall \epsilon > 0)(\exists n_0 \in \mathbb{N})(\forall n \in \mathbb{N}) \; n \geq n_0 \implies |x_n - L| < \varepsilon \]
@@ -1042,10 +1043,53 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{theorem}
     \textbf{($G_n$): }\[lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\]
 \end{theorem}
+
+\subsection{Monotoni nizovi}
 \begin{theorem}
     Monoton niz je konvergentan akko je ograničen.
 \end{theorem}
+\begin{definition}
+    \[ e = \lim_{n \to +\infty} \bigg(1 + \frac{1}{n} \bigg)^n \]
+\end{definition}
 
+\subsection{Podnizovi, tačke nagomilavanja, gornji i donji limes}
+\begin{definition}
+    Podniz niza $(x_n)_{n \in \mathbb{N}}$ je niz $(x_{n(k)})_{k \in \mathbb{N}}$ gde je $k \mapsto n(k)$ neko strogo rastuće preslikavanje skupa $\mathbb{N}$ u sebe. (Drugim rečima, podniz se konstruiše tako što izdvojimo neke elemente prvobitnog niza pri čemu nam indeksi izdvojenih elemenata rastu.)
+\end{definition}
+\begin{theorem}
+    Ako niz konvergira, tada i svaki njegov podniz konvergira ka toj istoj vrednosti.
+\end{theorem}
+\begin{definition}
+    Kažemo da je $x$ tačka nagomilavanja niza ako postoji njegov podniz koji konvergira ka njoj. Najveća tačka nagomilavanja se naziva \textbf{gornji limes (limes superior)} $\overline{\lim {x_n}}$ (ili $\lim \sup x_n$).
+    Najmanja tačka nagomilavanja se naziva \textbf{donji limes (limes inferior)} $\underline{\lim} \;{x_n}$ (ili $\lim \inf x_n$).
+\end{definition}
+\begin{theorem}
+    \textbf{(Bolcano-Vajerštras): } Svaki ograničen niz prirodnih brojeva ima tačku nagomilavanja.
+\end{theorem}
+
+\subsection{Košijev kriterijum konvergencije}
+\begin{definition}
+    Kažemo da je niz \textbf{Košijev} ako 
+    \[ (\forall \varepsilon > 0)(\exists n_0 \in \mathbb{N})(\forall m, n \in \mathbb{N})\; m, n \geq n_0 \implies |x_n - x_m| < \varepsilon \]
+\end{definition}
+\begin{theorem}
+    Niz konvergira. $\iff$ Niz je Košijev.
+\end{theorem}
+
+\section{Limesi i neprekidnost funkcija}
+\subsection{Funkcije}
+\begin{theorem}
+    \[ \sin(x) \leq x \leq \tan(x),\;\; x \in \bigg[0, \frac{\pi}{2}\bigg) \]
+\end{theorem}
+\begin{itemize}
+    \item \textbf{Posledica:} \[ |\sin(x)| \;\leq |x|,\;\; x \in \mathbb{R} \]
+\end{itemize}
+
+\subsection{Osnovno o svojstvu neprekidnosti}
+\begin{definition}
+    Kažemo da je funkcija $f : A \rightarrow \mathbb{R}$ neprekidna u tački $a \in A$ akko
+    \[ (\forall \varepsilon > 0)(\exists \delta > 0)(\forall x \in A)\; |x-a| < \delta \implies |f(x) - f(a)| < \varepsilon \]
+\end{definition}
 \subsection{Poznati limesi}
 \[
     \begin{aligned}
