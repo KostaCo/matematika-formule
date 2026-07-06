@@ -1090,6 +1090,14 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     Kažemo da je funkcija $f : A \rightarrow \mathbb{R}$ neprekidna u tački $a \in A$ akko
     \[ (\forall \varepsilon > 0)(\exists \delta > 0)(\forall x \in A)\; |x-a| < \delta \implies |f(x) - f(a)| < \varepsilon \]
 \end{definition}
+
+\subsection{Neprekidnost funkcija}
+\begin{theorem}
+    \textbf{(Koši-Bolcano):} Neka je $f: [a, b] \rightarrow \mathbb{R}$ neprekidna funkcija t.d. je $f(a) \cdot f(b) < 0$. Tada je  $f(c) = 0$ za neko $c \in (a, b)$.
+\end{theorem}
+\begin{theorem}
+    \textbf{(Vajerštras): } Neprekidna funkcija na zatvorenom i ograničenom intervalu je ograničena i dostiže maksimum i minimum.
+\end{theorem}
 \subsection{Poznati limesi}
 \[
     \begin{aligned}
@@ -1122,7 +1130,13 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \[
     \lim_{x\to\pm\infty} \frac{f(x)}{x} = a, \;\;\; \lim_{x\to\pm\infty} [f(x) - ax] = b
 \]
+
 \section{Izvodi}
+\[ f'(x_0) = \lim_{h \to 0}\frac{f(x_0 + h) - f(x_0)}{h} \]
+\[ (f^{-1})'(y_0) = \frac{1}{f'(f^{-1}(y_0))} \]
+\[
+    \frac{d}{dx} f(g(x)) = f'(g(x))\cdot g'(x)
+\]
 \subsection{Poznati izvodi}
 \begin{align*}
 &(e^x)' = e^x \\
@@ -1141,10 +1155,10 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 (f \cdot g)^{(n)} = \sum^n_{k=0}{{n}\choose k} f^{(n-k)}(x) \cdot g^{(k)}(x)
 \]
 \newpage
-\subsection{Fermaova, Rolova i Lagranžova teorema}
+\subsection{Fermaova, Rolova, Košijeva i Lagranžova teorema}
 
 \noindent\textbf{Fermaova teorema}: Neka je $U_\delta = (c - \delta,c + \delta) \;\delta$-okolina tačke $c \in \mathbb{R}$ i funkcija $f:U_\delta \xrightarrow{}\mathbb{R}$ diferencijabilna u tački $c$. Ako funkcija $f$ u tački $c$ ima lokalni ekstremum, onda je $f'(c) = 0.$\\
-\vfill
+
 \noindent\textbf{Rolova teorema}: Neka je funkcija $f:[a,b] \xrightarrow{} \mathbb{R}$:
 \begin{itemize}
     \item neprekidna u svim tačkama segmenta $[a,b]$,
@@ -1155,10 +1169,18 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c) = 0$.\\
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.5\textwidth]{slike/rolle.pdf}
+    \includegraphics[width=0.4\textwidth]{slike/rolle.pdf}
     \caption{Rolova teorema}
 \end{figure}
-\vfill
+
+\noindent \textbf{Košijeva teorema}: Neka su funkcije $f, g: [a, b] \to \mathbb{R}, \; (g'(x) \neq 0$ za $x \in (a, b))$:
+\begin{itemize}
+    \item neprekidne na $[a, b]$
+    \item diferencijabilne na $(a, b)$
+\end{itemize}
+Tada postoji tačka $x_0 \in (a, b)$ t.d. važi
+$ \displaystyle \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(x_0)}{g'(x_0)} $.
+
 \noindent\textbf{Lagranžova teorema}: Neka je funkcija $f:[a,b] \xrightarrow{} \mathbb{R}$:
 \begin{itemize}
     \item neprekidna u svim tačkama segmenta $[a,b]$,
@@ -1168,7 +1190,7 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c)(b - a) = f(b) - f(a)$.
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.5\textwidth]{slike/Mittelwertsatz6.svg.png}
+    \includegraphics[width=0.4\textwidth]{slike/Mittelwertsatz6.svg.png}
     \caption{Lagranžova teorema}
 \end{figure}
 

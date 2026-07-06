@@ -100,15 +100,16 @@
 \contentsline {section}{\numberline {9.2}Limesi i neprekidnost funkcija}{35}{section.9.2}%
 \contentsline {subsection}{\numberline {9.2.1}Funkcije}{35}{subsection.9.2.1}%
 \contentsline {subsection}{\numberline {9.2.2}Osnovno o svojstvu neprekidnosti}{35}{subsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.2.3}Poznati limesi}{36}{subsection.9.2.3}%
-\contentsline {subsection}{\numberline {9.2.4}Upoređivanje beskonačnosti}{36}{subsection.9.2.4}%
-\contentsline {subsection}{\numberline {9.2.5}Teoreme}{36}{subsection.9.2.5}%
-\contentsline {section}{\numberline {9.3}Asimptote}{36}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Kosa asimptota}{36}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.2.3}Neprekidnost funkcija}{36}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}Poznati limesi}{36}{subsection.9.2.4}%
+\contentsline {subsection}{\numberline {9.2.5}Upoređivanje beskonačnosti}{36}{subsection.9.2.5}%
+\contentsline {subsection}{\numberline {9.2.6}Teoreme}{36}{subsection.9.2.6}%
+\contentsline {section}{\numberline {9.3}Asimptote}{37}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Kosa asimptota}{37}{subsection.9.3.1}%
 \contentsline {section}{\numberline {9.4}Izvodi}{37}{section.9.4}%
 \contentsline {subsection}{\numberline {9.4.1}Poznati izvodi}{37}{subsection.9.4.1}%
 \contentsline {subsection}{\numberline {9.4.2}Lajbnicova formula}{37}{subsection.9.4.2}%
-\contentsline {subsection}{\numberline {9.4.3}Fermaova, Rolova i Lagranžova teorema}{38}{subsection.9.4.3}%
+\contentsline {subsection}{\numberline {9.4.3}Fermaova, Rolova, Košijeva i Lagranžova teorema}{38}{subsection.9.4.3}%
 \contentsline {section}{\numberline {9.5}Tejlorov razvoj}{39}{section.9.5}%
 \contentsline {subsection}{\numberline {9.5.1}Opšta formula Tejlorovog razvoja i ostaci}{39}{subsection.9.5.1}%
 \contentsline {subsection}{\numberline {9.5.2}Razvoji elementarnih funkcija (Maklorenov polinom)}{39}{subsection.9.5.2}%
