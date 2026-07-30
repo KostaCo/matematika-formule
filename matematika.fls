@@ -266,6 +266,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmsrb/t1cmsrbrr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/cmsrb/t1cmsrbrr.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmsrb/t1cmsrbrr-base.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmsrb/t1cmsrbrx.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmsrb/t1cmsrbri.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmsrb/t1cmsrbri.tfm
