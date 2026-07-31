@@ -1020,14 +1020,13 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \chapter{Linearna algebra}
 \section{Linearni operatori}
-\subsection{Linearni funkcionali (3.10)}
-\begin{itemize}
-    \item Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim \operatorname{Hom} (V, \mathbb{F})$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots a_nx_n \in \mathbb{R}$. 
-    \item Zbog teoreme o rangu i efektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
-\end{itemize}
+\subsection{Linearni funkcionali, dualna baza, anihilator (3.10)}
+Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim \operatorname{Hom} (V, \mathbb{F})$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots a_nx_n \in \mathbb{R}$. 
+
+
+Zbog teoreme o rangu i efektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
 \subsubsection{Dualna baza}
-\begin{itemize}
-    \item  Neka je $V$ vektorski prostor nad $\mathbb{F}$ ($n = \dim V < \infty$) i $e = (e_1, \dots, e_n)$ neka njegova baza.
+    Neka je $V$ vektorski prostor nad $\mathbb{F}$ ($n = \dim V < \infty$) i $e = (e_1, \dots, e_n)$ neka njegova baza.
      Postoji jedinstvena baza $e^* = (e_1^*, \dots, e_n^*)$ prostora $V^* = \operatorname{Hom} (V, \mathbb{F})$ takva da je:
     \begin{enumerate}
         \item \[
@@ -1039,8 +1038,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item svaki linearni funkcional $f: V \to \mathbb{F}$ je oblika\[ f = \sum_{j=1}^{n} f(e_j)e_j^* \] 
     \item za svaki vektor $x \in X$ važi \[ x = \sum_{j=1}^{n} e^*_j(x)e_j \]
     \end{enumerate}
-    Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. Intuitivno, dualna baza rešava sledeći problem. Recimo da imamo vektor $x \in V$ zadat u standardnim koordinatama i nestandardnu bazu $e$ prostora $V$. Dualna baza su upravo "{senzori}"\ koji "izvlače"\ te koordinate. Dakle, dualna baza pretvara standardne koorinate u koordinate u nekoj bazi $e$. Funkcionali su upravo koeficijenti u redovima inverzne matrice prelaska.
-\end{itemize}
+    Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. Intuitivno, dualna baza rešava sledeći problem. Recimo da imamo vektor $x \in V$ zadat u standardnim koordinatama i nestandardnu bazu $e$ prostora $V$. Dualna baza su upravo "{senzori}"\ koji "izvlače"\ te koordinate. Dakle, dualna baza pretvara standardne koordinate u koordinate u nekoj bazi $e$. Funkcionali su upravo koeficijenti u redovima inverzne matrice prelaska.
 
 \subsubsection*{Primer: Dualna baza i matrica prelaska}
 Neka je data nestandardna baza prostora $\mathbb{R}^2$:
@@ -1052,12 +1050,12 @@ Kolone matrice prelaska $P$ su vektori baze $e$:
 P = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \implies P^{-1} = \frac{1}{-2} \begin{bmatrix} -1 & -1 \\ -1 & 1 \end{bmatrix}
 = \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \\[4pt] \frac{1}{2} & -\frac{1}{2} \end{bmatrix}.
 \]
-\textbf{Interpretacija:} Vrste matrice $P^{-1}$ su koeficijenti funkcionala dualne baze $e^*$:
+\textit{Interpretacija:} Vrste matrice $P^{-1}$ su koeficijenti funkcionala dualne baze $e^*$:
 \[
 e_1^*(x,y) = \frac{1}{2}x + \frac{1}{2}y, \quad
 e_2^*(x,y) = \frac{1}{2}x - \frac{1}{2}y.
 \]
-Neka je vektor $v \in \mathbb{R}^2$ zadat u \textbf{standardnim koordinatama}:
+Neka je vektor $v \in \mathbb{R}^2$ zadat u \textit{standardnim koordinatama}:
 \[
 v = (7, 3).
 \]
@@ -1073,6 +1071,18 @@ Dakle, standardni vektor $(7, 3)$ zapisan u bazi $e$ ima koordinate:
 \]
 
 \subsubsection{Anihilator}
+Svaki linearni funkcional je oblika $f(x) = \sum_{j=1}^{n}x_j\xi_j$, gde je $\xi_j=f(e_j)\in\mathbb{F}$. Jezgro ovog (ne-nula) preslikavanja 
+$\operatorname{Ker} f = \{x \in V \;|\; f(x) = 0\}$ je očigledno hiperravan u $V \cong \mathbb{F}^n$, koja prolazi kroz koordinatni početak.
+I obrnutno, svaka hiperravan na $V$ je jezgro nekog ne-nula linearnog funkcionala na $V$. 
+
+Neka je $H = \operatorname{Ker} f$ hiperravan u $V$
+i neka je $\mathcal{B}_H = \{a_1, a_2, \dots, a_{n-1}\}$ baza za $H$. Dopunimo je vektorom $a_0$ do baze za $V$. Tada je \[H = \{x \in V\;|\; f(x) = 0\},\] gde
+je $f$ jedinstveni linearni funkcional koji zadovoljava \[f(a_0) = 1 \footnote{mogli smo odabrati i bilo koju drugu vrednost $\alpha \neq 0$ - jezgro ostaje isto} \;\;\text{i}\;\; 
+f(a_1) = f(a_2) = \dots = f(a_{n-1})=0.\]
+
+Sa druge strane, skup $A = \{g \in V^* \;|\; g(a_0) = 0\}$ je \textbf{anihilator} $\{a_0\}^0$ vektora $a_0$. Kako je $\dim A = \dim H = n-1$, $A$ i $H$ su izomorfni. Ovo možemo uopštiti na 
+bilo koji podskup $S$ v. prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] Geometrijski, ako je $S$ podskup prostora $V$, njegov 
+anihilator $S^0$ je skup svih linearnih funkcionala $f(x) = a_1x_1 + a_2x_2 +  \dots +a_{n}x_{n}$ takvih da je vektor $(a_1, \dots, a_{n})$ normalan na svaki vektor $s \in S$.
 
 \chapter{Analitička geometrija}
 \section{Ugao između dve prave}

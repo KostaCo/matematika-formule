@@ -91,7 +91,7 @@
 \contentsline {chapter}{\numberline {7}Teorija grupa}{32}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Linearna algebra}{33}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Linearni operatori}{33}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Linearni funkcionali (3.10)}{33}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.1}Linearni funkcionali, dualna baza, anihilator (3.10)}{33}{subsection.8.1.1}%
 \contentsline {subsubsection}{Dualna baza}{33}{subsection.8.1.1}%
 \contentsline {subsubsection}{Anihilator}{34}{Item.57}%
 \contentsline {chapter}{\numberline {9}Analitička geometrija}{35}{chapter.9}%
