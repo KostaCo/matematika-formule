@@ -14,6 +14,14 @@
 \usepackage{hyperref}
 \usepackage{mathtools,amsfonts}
 \usepackage{comment}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{csquotes} % Srpski znaci navoda
+\usepackage{subcaption}
+\usepackage{bm}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -1019,12 +1027,15 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{description}
 
 \chapter{Linearna algebra}
+
 \section{Linearni operatori}
-\subsection{Linearni funkcionali, dualna baza, anihilator (3.10)}
+\newpage
+\subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
 Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim \operatorname{Hom} (V, \mathbb{F})$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots a_nx_n \in \mathbb{R}$. 
 
 
 Zbog teoreme o rangu i efektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
+\\
 \subsubsection{Dualna baza}
     Neka je $V$ vektorski prostor nad $\mathbb{F}$ ($n = \dim V < \infty$) i $e = (e_1, \dots, e_n)$ neka njegova baza.
      Postoji jedinstvena baza $e^* = (e_1^*, \dots, e_n^*)$ prostora $V^* = \operatorname{Hom} (V, \mathbb{F})$ takva da je:
@@ -1036,9 +1047,13 @@ Zbog teoreme o rangu i efektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\
         \end{cases}
     \]
     \item svaki linearni funkcional $f: V \to \mathbb{F}$ je oblika\[ f = \sum_{j=1}^{n} f(e_j)e_j^* \] 
-    \item za svaki vektor $x \in X$ važi \[ x = \sum_{j=1}^{n} e^*_j(x)e_j \]
+    \item za svaki vektor $x \in V$ važi \[ x = \sum_{j=1}^{n} e^*_j(x)e_j \]
     \end{enumerate}
-    Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. Intuitivno, dualna baza rešava sledeći problem. Recimo da imamo vektor $x \in V$ zadat u standardnim koordinatama i nestandardnu bazu $e$ prostora $V$. Dualna baza su upravo "{senzori}"\ koji "izvlače"\ te koordinate. Dakle, dualna baza pretvara standardne koordinate u koordinate u nekoj bazi $e$. Funkcionali su upravo koeficijenti u redovima inverzne matrice prelaska.
+    Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. \\
+    
+    \noindent\underline{\textit{Intuicija:}} Dualna baza rešava sledeći problem. Recimo da imamo vektor $x \in V$ zadat u standardnim koordinatama i nestandardnu bazu $e$ prostora $V$. Hoćemo da izrazimo $x$ kao linearnu kombinaciju vektora baze $e$. Dualna baza se sastoji od linearnih funkcionala koji rade baš ovo - pretvaraju standardne koordinate u koordinate u nekoj bazi $e$. Funkcionali $e_j^*$ su upravo koeficijenti u redovima inverzne matrice prelaska.
+\newpage
+
 
 \subsubsection*{Primer: Dualna baza i matrica prelaska}
 Neka je data nestandardna baza prostora $\mathbb{R}^2$:
@@ -1047,10 +1062,12 @@ e_1 = (1, 1), \quad e_2 = (1, -1).
 \]
 Kolone matrice prelaska $P$ su vektori baze $e$:
 \[
-P = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \implies P^{-1} = \frac{1}{-2} \begin{bmatrix} -1 & -1 \\ -1 & 1 \end{bmatrix}
+P = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \] 
+Računamo inverznu matricu:
+\[ P^{-1} = \frac{1}{-2} \begin{bmatrix} -1 & -1 \\ -1 & 1 \end{bmatrix}
 = \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \\[4pt] \frac{1}{2} & -\frac{1}{2} \end{bmatrix}.
 \]
-\textit{Interpretacija:} Vrste matrice $P^{-1}$ su koeficijenti funkcionala dualne baze $e^*$:
+Vrste matrice $P^{-1}$ su koeficijenti funkcionala dualne baze $e^*$:
 \[
 e_1^*(x,y) = \frac{1}{2}x + \frac{1}{2}y, \quad
 e_2^*(x,y) = \frac{1}{2}x - \frac{1}{2}y.
@@ -1069,7 +1086,7 @@ Dakle, standardni vektor $(7, 3)$ zapisan u bazi $e$ ima koordinate:
 \[
 \boxed{v = 5e_1 + 2e_2}
 \]
-
+\newpage
 \subsubsection{Anihilator}
 Svaki linearni funkcional je oblika $f(x) = \sum_{j=1}^{n}x_j\xi_j$, gde je $\xi_j=f(e_j)\in\mathbb{F}$. Jezgro ovog (ne-nula) preslikavanja 
 $\operatorname{Ker} f = \{x \in V \;|\; f(x) = 0\}$ je očigledno hiperravan u $V \cong \mathbb{F}^n$, koja prolazi kroz koordinatni početak.
@@ -1081,9 +1098,111 @@ je $f$ jedinstveni linearni funkcional koji zadovoljava \[f(a_0) = 1 \footnote{m
 f(a_1) = f(a_2) = \dots = f(a_{n-1})=0.\]
 
 Sa druge strane, skup $A = \{g \in V^* \;|\; g(a_0) = 0\}$ je \textbf{anihilator} $\{a_0\}^0$ vektora $a_0$. Kako je $\dim A = \dim H = n-1$, $A$ i $H$ su izomorfni. Ovo možemo uopštiti na 
-bilo koji podskup $S$ v. prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] Geometrijski, ako je $S$ podskup prostora $V$, njegov 
+bilo koji podskup $S$ v. prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] \underline{\textit{Intuicija:}} Geometrijski, ako je $S$ podskup prostora $V$, njegov 
 anihilator $S^0$ je skup svih linearnih funkcionala $f(x) = a_1x_1 + a_2x_2 +  \dots +a_{n}x_{n}$ takvih da je vektor $(a_1, \dots, a_{n})$ normalan na svaki vektor $s \in S$.
 
+\begin{theorem}
+    Ako je $V$, $\dim V < \infty$, vektorski prostor nad $F$ i $L$ njegov potprostor, tada važi
+    \[ \dim L + \dim L^0 = \dim V \]
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Ako je npr. $V = \mathbb{R}^3$ i $\dim L = 2$, tada se svi vektori normalni na $L$ nalaze na pravoj $\alpha x$, $\alpha \in \mathbb{R}, \; x \in L^\perp$,\; tj. $\dim L^0 = 1$. Zapravo, 
+prostori $L^0$ i $L^\perp$ su izomorfni ukoliko postoji skalarni proizvod na $V$.
+\\
+
+
+\noindent\textbf{Posledica 1.} \textit{
+    Neka je $\dim V = n,\; \dim L = l,\; L \leq V$. Tada je 
+    \[ L = H_1 \cap H_2 \cap \dots \cap H_{n-l},  \] gde su $H_i$ hiperravni od $V$.}\\
+\noindent\underline{\textit{Intuicija:}} Neka je, na primer, $V = \mathbb{R}^3$. Ako je $\dim L = 2$, tada je $L$ jedna hiperravan (tj. ravan) iz $\mathbb{R}^3$. Sa druge strane, ako je $\dim L = 1$, tada je $L$ prava iz $\mathbb{R}^3$,
+tj. presek dve ravni iz $\mathbb{R}^3$. Slično, ako je $L$ tačka iz $\mathbb{R}^3$, tj. $\dim L = 0$, tada je $L$ zapravo presek tri ravni iz $V$.
+\\
+
+
+\noindent\textbf{Posledica 2.}\textit{
+    Neka je $\dim V < \infty$ i $L \leq V, \; M \leq V$. Tada je $L = M \iff L^0 = M^0$.}\\
+\noindent\underline{\textit{Intuicija:}} Neka je npr. $V = \mathbb{R}^3$ i $L$ i $M$ dve ravni. Znamo da je svaka ravan potpuno određena vektorom normale i jednom tačkom koju sadrži. Kako anihilator upravo zamišljamo
+kao prostor čiji su svi vektori normalni na dati skup (u ovom slučaju v. prostor) i kako svaki anihilator zadrži tačku nula, imamo baš ono što nam treba.
+
+
+\newpage
+\subsubsection{Refleksivnost}
+Za v. prostor $V$, $\dim V < \infty$, nad $\mathbb{F}$ posmatramo niz $V, V^*, V^{**}, V^{***}, \dots$. Svi elementi ovog niza su prostori nad istim poljem $\mathbb{F}$ i imaju istu dimenziju $\dim V$. Dakle, 
+svi ovi prostori su izomorfni.
+
+Za svako $x \in V$ i $f \in V^*$ možemo definisati linearno preslikavanje $\phi:V \to V^{**}:$ \[\phi(x)[f] \;  = f(x). \;\footnote{Napomena: $\phi: V \to V^{**}$, ali $\phi(x) : V^* \to \mathbb{F}$.} \]
+\underline{\textit{Intuicija:}} Zamislimo stvari na sledeći način. 
+
+\begin{itemize}
+    \item $V$ sadrži neke objekte $x, y, z, \dots$, čije osobine možemo da merimo. Ove objekte zovemo vektori. Svaka osobina je upravo po jedna komponenta vektora.
+    \item $V^*$ su svi mogući eksperimenti (merenja) koje možemo da uradimo na objektima iz $V$. Ove eksperimente zovemo linearnim funkcionalima. Jedan funkcional može biti 
+    npr. "Kolika je $x$-koordinata?", drugi "Kolika je $y$-koordinata?", treći "Koliko je $x + y - 2z$?"\ itd. Dakle, $V^*$ nije skup rezultata, već svih pitanja koje možemo
+    postaviti vektoru.
+    \item Šta sve znamo o konkretnom vektoru, npr. $x = (3, -1, 5)$? Znamo kako odgovara na svako moguće pitanje (tj. koju vrednost daje za svaki mogući eksperiment). Dakle, jedan
+    vektor određuje beskonačnu tabelu sa pitanjima i odgovorima:
+    \begin{table}[!h]
+        \centering
+        \begin{tabular}{cc}
+            \toprule
+            Pitanje & Odgovor \\ \midrule
+            $f_1$ & 3 \\
+            $f_2$ & 2 \\
+            $f_3$ & 42 \\
+            \vdots & \vdots \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \item Šta radi $\phi(x)$? On pravi ovu tabelu. On kaže "{daj mi pitanje $f$ i daću ti odgovor na $f$ za vektor $x$}". Dakle, $\phi(x): f \mapsto f(x)$. Zašto je ovo zapravo element
+    prostora $V^{**}$? Znamo da svaki linearni funkcional slika element prostora u broj (opštije, u element polja $\mathbb{F}$). Pošto je sada $V^*$ prostor, element mora slikati $V^* \to \mathbb{F}$.
+    Dakle, uzme funkcional i vrati broj. Koji broj? Baš njegov rezultat na $x$.
+    \item Ovim pristupom vektor više nije samo strelica. Možemo ga posmatrati kao mašinu koja zna odgovor na svako moguće linearno pitanje. Ovo je potpuno nova filozofija. Evo još jedne jako prirodne analogije.
+    Zamislimo osobu. Ne opisujemo je fotografijom. Opisujemo je odgovorom na sva moguća pitanja. Ime? Marko. Visina? 183. Masa? 79. Godine? 25. I tako dalje. Ako znamo odgovore na sva moguća pitanja, onda znamo i osobu.
+    Ne treba nam fotografija. Isto tako, ne moramo znati koordinate vektora. Potpuno je određen odgovorom na sva moguća pitanja.
+    \item Dakle, ne treba gledati na $V^{**\dots*}$ kao merač merača merača $\dots$ merača, već razmišljati na gore navedeni način.
+\end{itemize}
+\newpage
+
+
+
+
+
+\begin{comment}
+Neka je $(a_1, \dots, a_n)$ baza od $V$ i $x \in V$. Dakle, važi:
+
+\[x = x_1a_1 + x_2a_2 + \dots + x_na_n\]
+Označimo $g = \phi(x)$ i primetimo da važi $\phi(a_i) = a_i^{**}$. Dakle,
+\[g = \phi(x) = \phi(a_1x_1 + \dots + a_nx_n) = x_1\phi(a_1)  + \dots + x_n\phi(a_n) = x_1a_1^{**} + \dots + x_na_n^{**}\]
+Sada, $f \in V^*$ je linearni funkcional, dakle oblika
+\[f = \xi_1a_1^* + \xi_2a_2^*+ \dots + \xi_na_n^* \implies f(x) = \xi_1x_1 + \xi_2x_2+ \dots + \xi_nx_n\]
+Sada primenimo $g$ na $f$:
+\[ g(f) = (x_1\phi(a_1) + \dots + x_n\phi(a_n))(f) = x_1\cdot\phi(a_1)(f) + \dots + x_n \cdot \phi(a_n)(f) \]
+Po definiciji je $\phi(a_i)(f) = f(a_i)$. Znači, zbog $a_i^*(a_j) = \delta_{ij}$ važi $f(a_i) = \xi_i$:
+\[g(f) = x_1 f(a_1) + \dots + x_n f(a_n) = \xi_1x_1 + \dots + \xi_nx_n = f(x)\]
+Dakle, koordinate vektora su ostale iste! Pogledajmo: \[x = (x_1, \dots, x_n) \;\;\text{i}\;\; \phi(x) = (x_1, \dots, x_n).\]
+Zato je ovo prirodan izomorfizam. Vektor je u potpunosti određen svim mogućim "linearnim merenjima"\ koja se na njemu mogu izvršiti. Preslikavanje $\phi(x)$ radi baš ovo.
+Možemo vektor posmatrati i kao telo u fizici. Telo se može opisati 1. koordinatama ili 2. svim mogućim eksperimentima koji se na njemu mogu uraditi. Ako svaki mogući eksperiment
+na 2 tela daje identične rezultate, onda su ta tela ista. Dakle, ako za svaki funkcional važi $f(x) + f(y)$, onda $x = y$.
+\end{comment}
+
+\newpage
+
+
+\begin{theorem}
+    Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$. Preslikavanje $\phi$ je izomorfizam vektorskih prostora $V$ i $V^{**}$.
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} U diskusiji iznad smo pokazali da svaki vektor ima jedinstven skup pitanja koji ga opisuje. Obrnuto, svaka linearna tabela odgovora (tj. svako linearno preslikavanje $g: V^* \to \mathbb{F}$ koje svakom pitanju dodeljuje broj) potiče od tačno jednog vektora $x \in V$ takvog da je $g = \phi(x)$. Dakle, ne postoji "lažni profil" – svaki zamišljeni linearni profil je profil nekog stvarnog vektora, pa su $V$ i $V^{**}$ savršeno istog oblika (izomorfni).\\
+
+
+\noindent\textbf{Posledica 1.}
+Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
+\begin{itemize}
+    \item \textit{Neka je $\varPsi \in V^{**}$. Tada postoji jedinstveni $x \in V$ td. $\phi(x) = \varPsi$.\\}
+    \noindent\underline{\textit{Intuicija:}} U $\varPsi$ pišu odgovori na sva moguća pitanja. Ako su odgovori kozistentni (linearni), onda tačno taj upitnik pripada jednom $x \in V$. Taj vektor je jedinstven.
+    \item \textit{Svaka baza od $V^*$ dualna je nekoj bazi iz $V$.}\\
+    \noindent\underline{\textit{Intuicija:}} Recimo da imamo $n$ pitanja koja čine bazu u $V^*$. Tim pitanjima odgovara tačno jedan skup od $n$ vektora od kojih svaki na svoje pitanje odgovara sa 1, a na ostala sa 0.
+    \item \textit{Neka je $S$ proizvoljni podskup od $V$. Tada je $(S^0)^0 = \mathcal{L}(S)$.}\\
+    \noindent\underline{\textit{Intuicija:}} Zamislimo da je $V = \mathbb{R}^3$ i $S$ ravan. $S^0$ je tada prava normalna na ravan $S$. $(S^0)^0$ je sada skup svih vektora normalnih na pravu $S^0$ - to je upravo ravan.
+\end{itemize}
 \chapter{Analitička geometrija}
 \section{Ugao između dve prave}
 \[
