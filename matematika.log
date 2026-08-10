@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  10 AUG 2026 10:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  10 AUG 2026 10:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -987,27 +987,27 @@ Glava 8.
 [33
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1038--1040
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1039
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1053
 
  []
 
 [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1112
+Underfull \hbox (badness 10000) in paragraph at lines 1108--1111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1120
+Underfull \hbox (badness 10000) in paragraph at lines 1115--1119
 
  []
 
 [36] [37] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 1194--1195
+Underfull \hbox (badness 10000) in paragraph at lines 1193--1194
 
  []
 
@@ -1020,27 +1020,27 @@ Glava 10.
 [40
 
 ] [41] [42] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1363--1364
+Underfull \hbox (badness 10000) in paragraph at lines 1362--1363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1371--1372
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1371
 
  []
 
 <slike/rolle.pdf, id=916, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 1375.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 1374.
 (pdftex.def)             Requested size: 181.18439pt x 79.09654pt.
 <slike/Mittelwertsatz6.svg.png, id=917, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1396.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1395.
 (pdftex.def)             Requested size: 181.18439pt x 115.59308pt.
 [44 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 1403--1405
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 1402--1404
 [][] 
  []
 
