@@ -19,7 +19,8 @@
 \usepackage{wrapfig}
 \usepackage{xcolor}
 \usepackage{booktabs}
-\usepackage{csquotes} % Srpski znaci navoda
+\usepackage[autostyle=true]{csquotes} % Prilagođava navodnike jeziku iz babel-a
+\MakeOuterQuote{"}                    % Pretvara obične "..." sa tastature u „...”
 \usepackage{subcaption}
 \usepackage{bm}
 \hypersetup{
@@ -1008,6 +1009,38 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item \textbf{Modifikacije:} Algoritam se može unaprediti za rekonstrukciju samih putanja (pamćenjem prethodnika) ili za utvrđivanje dostupnosti čvorova (tada se težine grana tretiraju kao 1, a algoritam proverava samo postojanje puta).
 \end{itemize}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Teorija grupa}
 \noindent
 \begin{equation*}
@@ -1026,15 +1059,55 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item[Monoid $(S, \cdot)$:] $(S1), (M4)$  
 \end{description}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Linearna algebra}
 
 \section{Linearni operatori}
 \newpage
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
-Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim \operatorname{Hom} (V, \mathbb{F})$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots a_nx_n \in \mathbb{R}$. 
+Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. 
 
 
-Zbog teoreme o rangu i efektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
+Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
 \\
 \subsubsection{Dualna baza}
     Neka je $V$ vektorski prostor nad $\mathbb{F}$ ($n = \dim V < \infty$) i $e = (e_1, \dots, e_n)$ neka njegova baza.
@@ -1052,8 +1125,16 @@ Zbog teoreme o rangu i efektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\
     Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. \\
     
     \noindent\underline{\textit{Intuicija:}} Dualna baza rešava sledeći problem. Recimo da imamo vektor $x \in V$ zadat u standardnim koordinatama i nestandardnu bazu $e$ prostora $V$. Hoćemo da izrazimo $x$ kao linearnu kombinaciju vektora baze $e$. Dualna baza se sastoji od linearnih funkcionala koji rade baš ovo - pretvaraju standardne koordinate u koordinate u nekoj bazi $e$. Funkcionali $e_j^*$ su upravo koeficijenti u redovima inverzne matrice prelaska.
-\newpage
 
+\subsubsection*{Primer: Određivanje dualne baze}
+Neka je $V = \mathbb{R}^3$ i neka je $V = \mathcal{L}\left(\{e_1 = (2, 1), \;e_2 = (3,1)\}\right)$. Odredimo bazu $e^*$. Znamo da važi $e^*_j(e_i) = \delta_{ij}$. Dakle, 
+\[ e_1^*(e_1) = e_1^*((2, 1)) = 2e_1^*((1, 0)) + e_1^*((0, 1)) = 1 \]
+\[ e_1^*(e_2) = e_1^*((3, 1)) = 3e_1^*((1, 0)) + e_1^*((0, 1)) = 0 \]
+Rešavanjem ovog sistema, dobijamo $e_1^*((1, 0)) = -1$ i $e_1^*((0, 1)) = 3$. Analognim postupkom, za $e_2^*$ dobijamo $e_2^*((1, 0)) = 1$ i $e_2^*((0, 1)) = -2$. Sada, za proizvoljan
+vektor $v = (x, y)$ važi 
+\[ e_1^*(v) = xe_1^*((1, 0)) + ye_1^*((0, 1)) = -x + 3y \]
+\[ e_2^*(v) = xe_2^*((1, 0)) + ye_2^*((0, 1)) = x - 2y \]
+Dakle, $V^* = \mathcal{L} \left(\left\{ e_1^* , e_2^* \right\}\right)  = \mathcal{L} \left(\left\{ -x + 3y , x - 2y \right\}\right)$.
 
 \subsubsection*{Primer: Dualna baza i matrica prelaska}
 Neka je data nestandardna baza prostora $\mathbb{R}^2$:
@@ -1098,7 +1179,7 @@ je $f$ jedinstveni linearni funkcional koji zadovoljava \[f(a_0) = 1 \footnote{m
 f(a_1) = f(a_2) = \dots = f(a_{n-1})=0.\]
 
 Sa druge strane, skup $A = \{g \in V^* \;|\; g(a_0) = 0\}$ je \textbf{anihilator} $\{a_0\}^0$ vektora $a_0$. Kako je $\dim A = \dim H = n-1$, $A$ i $H$ su izomorfni. Ovo možemo uopštiti na 
-bilo koji podskup $S$ v. prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] \underline{\textit{Intuicija:}} Geometrijski, ako je $S$ podskup prostora $V$, njegov 
+bilo koji podskup $S$ vektorskog prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] \underline{\textit{Intuicija:}} Geometrijski, ako je $S$ podskup prostora $V$, njegov 
 anihilator $S^0$ je skup svih linearnih funkcionala $f(x) = a_1x_1 + a_2x_2 +  \dots +a_{n}x_{n}$ takvih da je vektor $(a_1, \dots, a_{n})$ normalan na svaki vektor $s \in S$.
 
 \begin{theorem}
@@ -1111,7 +1192,7 @@ prostori $L^0$ i $L^\perp$ su izomorfni ukoliko postoji skalarni proizvod na $V$
 
 
 \noindent\textbf{Posledica 1.} \textit{
-    Neka je $\dim V = n,\; \dim L = l,\; L \leq V$. Tada je 
+    Neka je $\dim V = n,\; \dim L = l,\; L \leq V$. Tada je00 
     \[ L = H_1 \cap H_2 \cap \dots \cap H_{n-l},  \] gde su $H_i$ hiperravni od $V$.}\\
 \noindent\underline{\textit{Intuicija:}} Neka je, na primer, $V = \mathbb{R}^3$. Ako je $\dim L = 2$, tada je $L$ jedna hiperravan (tj. ravan) iz $\mathbb{R}^3$. Sa druge strane, ako je $\dim L = 1$, tada je $L$ prava iz $\mathbb{R}^3$,
 tj. presek dve ravni iz $\mathbb{R}^3$. Slično, ako je $L$ tačka iz $\mathbb{R}^3$, tj. $\dim L = 0$, tada je $L$ zapravo presek tri ravni iz $V$.
@@ -1164,8 +1245,6 @@ Za svako $x \in V$ i $f \in V^*$ možemo definisati linearno preslikavanje $\phi
 
 
 
-
-
 \begin{comment}
 Neka je $(a_1, \dots, a_n)$ baza od $V$ i $x \in V$. Dakle, važi:
 
@@ -1203,6 +1282,66 @@ Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
     \item \textit{Neka je $S$ proizvoljni podskup od $V$. Tada je $(S^0)^0 = \mathcal{L}(S)$.}\\
     \noindent\underline{\textit{Intuicija:}} Zamislimo da je $V = \mathbb{R}^3$ i $S$ ravan. $S^0$ je tada prava normalna na ravan $S$. $(S^0)^0$ je sada skup svih vektora normalnih na pravu $S^0$ - to je upravo ravan.
 \end{itemize}
+
+\subsection{Dualno preslikavanje}
+Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom} \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
+\[ (A^*[f])(x) := A^*[f](x) = (f \circ A)(x) = f(A(x)) \]
+Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjugovani)} operator od $A$.
+\begin{theorem}
+    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom}\left(U, V\right)$. Tada postoji jedinstveni linearni operator $A^* 
+    \in \operatorname{Hom}\left(U^*, V^*\right)$ takav da je $A^*[f](x) = f(A(x)), \linebreak \forall f \in V^*, \; \forall x \in U$.
+\end{theorem}
+\begin{theorem}
+    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$, $\operatorname{dim} U, \operatorname{dim} V < \infty$, i \linebreak$A \in \operatorname{Hom}\left(U, V\right)$. Tada
+    \begin{enumerate}
+        \item $\ker A^* = (\operatorname{Im} A)^0$
+        \item $\operatorname{Im} A^* = (\ker A)^0$
+        \item $\operatorname{r}(A^*) = \operatorname{r}(A)$
+    \end{enumerate}
+\end{theorem}
+\begin{theorem}
+    Neka su $U$ i $V$ konačnodimenzioni v. prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom}\left(U, V\right)$. Neka je $e$ neka baza od $U$ i $e^*$ njoj dualna 
+    baza od $U^*$, i neka je $f$ neka baza od $V$ i $f^*$ njoj dualna baza od $V^*$. Ako sa $\mathcal{A}$ obeležimo matricu operatora $A$ u paru baza $e$ i $f$, a sa
+    $\mathcal{A}^*$ matricu operatora $A^*$ u paru baza $f^*$ i $e^*$, tada je \[\mathcal{A}^\mathcal{T} = \mathcal{A}^*.\]
+\end{theorem}
+\noindent\textbf{Posledica 1.} Neka je $\mathcal{A}$ matrica nad poljem $\mathbb{F}$. Tada se rang od $\mathcal{A}$ po vrstama podudara sa rangom od $\mathcal{A}$ po kolonama.
+
+\subsection{Zavisnost matrice operatora od baze}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Analitička geometrija}
 \section{Ugao između dve prave}
 \[
