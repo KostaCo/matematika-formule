@@ -1471,22 +1471,112 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
     \item Permutacija $\sigma$ je \textbf{ciklus dužine $k$} ako postoji $(i_1, \dots, i_k) \in \mathbb{S}_n^k$ td. \[  \sigma(i_1) = i_2, \sigma(i_2)
     = i_3, \dots, \sigma(i_k) = i_1 \land (\forall j \in \mathbb{S}_n \setminus \{i_1, \dots, i_k\})\;\sigma(j) = j \]
     \item Ciklusi dužine 2 se zovu \textbf{transpozicije}. Transpozicije su neparne.
+    \item Disjunktni ciklusi komutiraju. (Očigledno, jer, na primer, ciklus $(124)$ "ne pipa" broj 3.)
+    \item \textbf{Red permutacije:} $|\sigma| = \min\{j \in \mathbb{N} \; | \; \sigma^j = \operatorname{id}\}$
 \end{itemize}
+\newpage
 \begin{theorem}
     Svaka permutacija $\sigma \in \mathbb{S}_n$ se može predstaviti kao proizvod
     \begin{enumerate}
-        \item disjunktnih ciklusa
-        \item transpozicija
+        \item disjunktnih ciklusa \\
+        \underline{primer:} $\begin{pmatrix} 
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ 
+3 & 8 & 6 & 5 & 2 & 1 & 4 & 7 
+\end{pmatrix} = (136)(2875)$
+        \item transpozicija\\
+        \underline{primer:} $(i_1 i_2 \dots i_d) = (i_1 i_d)(i_1 i_{d-1}) \dots (i_1 i_2)$ 
     \end{enumerate}
-\end{theorem}
+\end{theorem}\
+
+\noindent\textbf{Posledica 1.} \textit{Ciklus $\sigma$ je paran. $\iff$ Ciklus $\sigma$ je neparne dužine.} \\
 
 
+\noindent\textbf{Posledica 2.} \textit{Neka je $\sigma = \tau_1 \circ \tau_2 \circ \dots \circ \tau_k$, gde su $\tau_i$ ciklusi dužine $t_i$. Tada je}\[ 
+    |\sigma| = \operatorname{NZS}(t_1, t_2, \dots, t_k).
+\]
 
 
+\subsection{Definicija determinante (Lajbnicova formula)}
+Determinanta $\operatorname{det}: \mathbb{M}_n(\mathbb{F}) \to \mathbb{F}$ je funkcija definisana formulom:
+\[ \det \mathcal{A} = \sum_{\sigma \in \mathbb{S}_n} \left((-1)^{I(\sigma)} \prod_{i = 1}^{n}\alpha_{i \sigma(i)}\right), \]
+gde je $\mathcal{A} \in \mathbb{M}_{n}(\mathbb{F})$ i $\sigma_i$ je $i$-ta po redu permutacija skupa $\mathbb{S}_n$ u leksikografskom poretku. Ova definicija 
+ima prvenstveno teorijski značaj, jer je računski složena. Determinanta matrice $\mathcal{A}$ označava se sa $|\mathcal{A}|$\\
 
-
-
-
+\noindent\underline{\textit{Intuicija/Izvođenje:}} Definišemo funkciju $n$-dimenzione zapremine, 
+\[\operatorname{vol}_n: \underbrace{\mathbb{R}^n \times \dots \times \mathbb{R}^n}_n \to \mathbb{R}, \]
+koja ima sledeća svojstva:
+\begin{enumerate}
+    \item linearnost po svakoj komponenti
+    \item antisimetričnost (ako permutujemo dve komponente, znak se menja; iz ovoga sledi da ako su dve komponente iste, vrednost funkcije je 0)
+    \item $\operatorname{vol}_n(e_1, e_2, \dots, e_n) = 1$
+\end{enumerate}
+Računamo:
+\[
+    \begin{aligned}
+        &\operatorname{vol}_n \left(\begin{bmatrix}
+        a_{11} \\ \vdots \\ a_{n1}
+        \end{bmatrix}, 
+        \underbrace{
+        \begin{bmatrix}
+            a_{12} \\ \vdots \\ a_{n2}
+        \end{bmatrix}, 
+        \dots,
+        \begin{bmatrix}
+            a_{1n} \\ \vdots \\ a_{nn}
+        \end{bmatrix}}_{(\star)}
+        \right) = \operatorname{vol}_n \bigg( a_{11}e_1 + \dots + a_{n1}e_n, \;(\star)\; \bigg) \\
+        &= \sum_{j_1 = 1}^{n}a_{j_11} \operatorname{vol}_n(e_{j_1}, (\star)) 
+        = \sum_{j_1 = 1}^{n}a_{j_11} \operatorname{vol}_n\left(e_{j_1}, \begin{bmatrix}
+            a_{12} \\ \vdots \\ a_{n2}
+        \end{bmatrix}, 
+        \dots,
+        \begin{bmatrix}
+            a_{1n} \\ \vdots \\ a_{nn}
+        \end{bmatrix}\right) \\
+        &= \sum_{j_1 = 1}^{n} \sum_{j_2=1}^{n} a_{j_11} a_{j_22} \operatorname{vol}_n\left(e_{j_1}, e_{j_2}, \begin{bmatrix}
+            a_{13} \\ \vdots \\ a_{n3}
+        \end{bmatrix}, 
+        \dots,
+        \begin{bmatrix}
+            a_{1n} \\ \vdots \\ a_{nn}
+        \end{bmatrix}\right) =
+    \end{aligned}
+\]
+\[
+        = \sum_{j_1 = 1}^{n} \sum_{j_2 = 1}^{n} \dots \sum_{j_n=1}^{n} a_{j_11} a_{j_22} \dots a_{j_nn} \underbrace{\operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n})}_{0 \text{ ako se 2 komp. podudaraju}}
+\]
+Pretpostavimo da važi $e_{j_1} \neq e_{j_2} \neq \dots \neq e_{j_n}$ (inače je ceo izraz jednak 0, tj. vektori su linearno zavisni).Tada izraz postaje:
+\[
+    \sum_{(j_1, \dots, j_n) \;\in \;\mathbb{S}_n } a_{j_11} a_{j_22} \dots a_{j_nn} \operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n}),
+\]
+a prema definiciji funkcije $\operatorname{vol}_n$ važi
+\[
+    \operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n}) = \operatorname{sgn}((j_1, \dots, j_n)) = 
+    \begin{cases}
+        +1, & I((j_1, \dots, j_n)) \equiv_2 0 \\
+        -1, & I((j_1, \dots, j_n)) \equiv_2 1
+    \end{cases}.
+\] Dakle, 
+\[ \operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n}) = (-1)^{I(\sigma)}, \;\; \sigma = (j_1, \dots, j_n) \]
+Definišimo permutaciju $\sigma \in S_n$ kao \textbf{inverznu} permutaciju od $(j_1, j_2, \dots, j_n)$, tj.
+\[
+\sigma(j_i) = i, \qquad \text{za svako } i = 1, 2, \dots, n.
+\]
+Tada važi:
+\[
+a_{j_1 1} a_{j_2 2} \dots a_{j_n n}
+=
+a_{1\sigma(1)} a_{2\sigma(2)} \dots a_{n\sigma(n)},
+\]
+jer kada $i$ prolazi kroz $1, \dots, n$, tada $k = j_i$ takođe prolazi kroz sve brojeve od $1$ do $n$ (samo u drugačijem redosledu), a pri tome je $i = \sigma(k)$.
+Takođe, pošto inverzna permutacija ima isti broj inverzija (tj. istu parnost) kao i polazna, važi:
+\[
+(-1)^{I((j_1, \dots, j_n))} = (-1)^{I(\sigma)}.
+\]
+Zamenom u prethodnu sumu (i zamenom oznake $a_{ij}$ sa $\alpha_{ij}$) dobijamo upravo polaznu Lajbnicovu formulu:
+\[
+\sum_{\sigma \in S_n} (-1)^{I(\sigma)} \alpha_{1\sigma(1)} \alpha_{2\sigma(2)} \dots \alpha_{n\sigma(n)}.
+\]
 
 
 
