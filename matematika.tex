@@ -1576,11 +1576,18 @@ Takođe, pošto inverzna permutacija ima isti broj inverzija (tj. istu parnost) 
 Zamenom u prethodnu sumu (i zamenom oznake $a_{ij}$ sa $\alpha_{ij}$) dobijamo upravo polaznu Lajbnicovu formulu:
 \[
 \sum_{\sigma \in S_n} (-1)^{I(\sigma)} \alpha_{1\sigma(1)} \alpha_{2\sigma(2)} \dots \alpha_{n\sigma(n)}.
-\]
+\]\\
 
+\begin{theorem}
+    Neka je $\mathcal{A} = (\alpha_{ij}) \in \mathbb{M}_n$. Tada važi:
+    \begin{enumerate}
+        \item Ako je neka vrsta ili kolona matrice $\mathcal{A}$ nula vektor, onda je $|\mathcal{A}| = 0$.
+        \item $|\mathcal{A}| = |\mathcal{A^T}|$
+        \item Ako je $A$ trougaona matrica, tada je $|\mathcal{A}| = \alpha_{11}\alpha_{22}\dots \alpha_{nn}$.
+    \end{enumerate} 
+\end{theorem}
 
-
-
+\subsection{Multilinearnost determinante}
 \newpage
 \section{Sistemi linearnih jednačina}
 \section{Redukcija linearnih operatora na konačnodimenzionim prostorima}

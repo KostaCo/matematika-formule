@@ -113,6 +113,7 @@
 \contentsline {subsection}{\numberline {8.4.2}Parnost permutacija}{43}{subsection.8.4.2}%
 \contentsline {subsection}{\numberline {8.4.3}Ciklus}{43}{subsection.8.4.3}%
 \contentsline {subsection}{\numberline {8.4.4}Definicija determinante (Lajbnicova formula)}{44}{subsection.8.4.4}%
+\contentsline {subsection}{\numberline {8.4.5}Multilinearnost determinante}{45}{subsection.8.4.5}%
 \contentsline {section}{\numberline {8.5}Sistemi linearnih jednačina}{46}{section.8.5}%
 \contentsline {section}{\numberline {8.6}Redukcija linearnih operatora na konačnodimenzionim prostorima}{46}{section.8.6}%
 \contentsline {section}{\numberline {8.7}Unitarni prostori}{46}{section.8.7}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  11 AUG 2026 16:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  11 AUG 2026 16:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1032,8 +1032,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1501--1504
 
  []
 
-[44] [45]
-Overfull \hbox (6.88722pt too wide) in paragraph at lines 1586--1586
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 1579--1580
+
+ []
+
+[45]
+Overfull \hbox (6.88722pt too wide) in paragraph at lines 1593--1593
 |[]\T1/cmsrbr/b/n/17.28 Redukcija li-ne-ar-nih ope-ra-to-ra na ko-na£-no-di-men-
  []
 
@@ -1046,27 +1051,27 @@ Glava 10.
 [48
 
 ] [49] [50] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1778--1779
+Underfull \hbox (badness 10000) in paragraph at lines 1785--1786
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1786--1787
+Underfull \hbox (badness 10000) in paragraph at lines 1793--1794
 
  []
 
-<slike/rolle.pdf, id=1073, 552.20506pt x 241.06795pt>
+<slike/rolle.pdf, id=1082, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 1790.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 1797.
 (pdftex.def)             Requested size: 181.18439pt x 79.09654pt.
-<slike/Mittelwertsatz6.svg.png, id=1074, 1927.2pt x 1229.59375pt>
+<slike/Mittelwertsatz6.svg.png, id=1083, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1811.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1818.
 (pdftex.def)             Requested size: 181.18439pt x 115.59308pt.
 [52 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 1818--1820
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 1825--1827
 [][] 
  []
 
@@ -1088,20 +1093,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `matematika.out' has not changed.
-(rerunfilecheck)             Checksum: 9A5D80C4BC496A7D771F4C64EB7244B5;24078.
+(rerunfilecheck)             Checksum: 3E829D337A8C4CEC1A49512454115FEF;24284.
  ) 
 Here is how much of TeX's memory you used:
- 18586 strings out of 467870
- 298404 string characters out of 5418355
- 836148 words of memory out of 5000000
- 46855 multiletter control sequences out of 15000+600000
+ 18592 strings out of 467870
+ 298472 string characters out of 5418355
+ 837148 words of memory out of 5000000
+ 46856 multiletter control sequences out of 15000+600000
  692681 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,22n,79p,578b,758s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrb.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbri.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrr.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrx.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (57 pages, 651604 bytes).
+Output written on matematika.pdf (57 pages, 653221 bytes).
 PDF statistics:
- 1254 PDF objects out of 1440 (max. 8388607)
- 327 named destinations out of 1000 (max. 500000)
- 1147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1264 PDF objects out of 1440 (max. 8388607)
+ 332 named destinations out of 1000 (max. 500000)
+ 1155 words of extra memory for PDF output out of 10000 (max. 10000000)
 
