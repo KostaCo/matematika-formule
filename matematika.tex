@@ -1104,7 +1104,8 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \section{Linearni operatori}
 \newpage
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
-Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. 
+\subsubsection*{Linearni funkcional i dualni prostor}
+Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. $V^*$ nazivamo \textbf{dualni prostor} prostora $V$.
 
 
 Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
@@ -1125,7 +1126,7 @@ Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}
     Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. \\
     
     \noindent\underline{\textit{Intuicija:}} Dualna baza rešava sledeći problem. Recimo da imamo vektor $x \in V$ zadat u standardnim koordinatama i nestandardnu bazu $e$ prostora $V$. Hoćemo da izrazimo $x$ kao linearnu kombinaciju vektora baze $e$. Dualna baza se sastoji od linearnih funkcionala koji rade baš ovo - pretvaraju standardne koordinate u koordinate u nekoj bazi $e$. Funkcionali $e_j^*$ su upravo koeficijenti u redovima inverzne matrice prelaska.
-
+\newpage
 \subsubsection*{Primer: Određivanje dualne baze}
 Neka je $V = \mathbb{R}^3$ i neka je $V = \mathcal{L}\left(\{e_1 = (2, 1), \;e_2 = (3,1)\}\right)$. Odredimo bazu $e^*$. Znamo da važi $e^*_j(e_i) = \delta_{ij}$. Dakle, 
 \[ e_1^*(e_1) = e_1^*((2, 1)) = 2e_1^*((1, 0)) + e_1^*((0, 1)) = 1 \]
@@ -1180,14 +1181,14 @@ f(a_1) = f(a_2) = \dots = f(a_{n-1})=0.\]
 
 Sa druge strane, skup $A = \{g \in V^* \;|\; g(a_0) = 0\}$ je \textbf{anihilator} $\{a_0\}^0$ vektora $a_0$. Kako je $\dim A = \dim H = n-1$, $A$ i $H$ su izomorfni. Ovo možemo uopštiti na 
 bilo koji podskup $S$ vektorskog prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] \underline{\textit{Intuicija:}} Geometrijski, ako je $S$ podskup prostora $V$, njegov 
-anihilator $S^0$ je skup svih linearnih funkcionala $f(x) = a_1x_1 + a_2x_2 +  \dots +a_{n}x_{n}$ takvih da je vektor $(a_1, \dots, a_{n})$ normalan na svaki vektor $s \in S$.
+anihilator $S^0$ je skup svih linearnih funkcionala $f(x) = a_1x_1 + a_2x_2 +  \dots +a_{n}x_{n}$ takvih da je vektor $(a_1, \dots, a_{n})$ normalan na svaki vektor $s \in S$. Drugim rečima: $L^0$ - sva linearna pitanja čiji je odgovor 0 na svakom vektoru iz $L$.
 
 \begin{theorem}
     Ako je $V$, $\dim V < \infty$, vektorski prostor nad $F$ i $L$ njegov potprostor, tada važi
     \[ \dim L + \dim L^0 = \dim V \]
 \end{theorem}
 \noindent\underline{\textit{Intuicija:}} Ako je npr. $V = \mathbb{R}^3$ i $\dim L = 2$, tada se svi vektori normalni na $L$ nalaze na pravoj $\alpha x$, $\alpha \in \mathbb{R}, \; x \in L^\perp$,\; tj. $\dim L^0 = 1$. Zapravo, 
-prostori $L^0$ i $L^\perp$ su izomorfni ukoliko postoji skalarni proizvod na $V$.
+prostori $L^0$ i $L^\perp$ su izomorfni ukoliko postoji skalarni proizvod na $V$. 
 \\
 
 
@@ -1283,7 +1284,7 @@ Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
     \noindent\underline{\textit{Intuicija:}} Zamislimo da je $V = \mathbb{R}^3$ i $S$ ravan. $S^0$ je tada prava normalna na ravan $S$. $(S^0)^0$ je sada skup svih vektora normalnih na pravu $S^0$ - to je upravo ravan.
 \end{itemize}
 
-\subsection{Dualno preslikavanje}
+\subsection{Dualno (transponovano) preslikavanje}
 Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom} \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
 \[ (A^*[f])(x) := A^*[f](x) = (f \circ A)(x) = f(A(x)) \]
 Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjugovani)} operator od $A$.
@@ -1294,17 +1295,41 @@ Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjugovani)} oper
 \begin{theorem}
     Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$, $\operatorname{dim} U, \operatorname{dim} V < \infty$, i \linebreak$A \in \operatorname{Hom}\left(U, V\right)$. Tada
     \begin{enumerate}
-        \item $\ker A^* = (\operatorname{Im} A)^0$
+        \item $\ker A^* = (\operatorname{Im} A)^0$ \\
+        \underline{\textit{Intuicija:}} $\ker A^* = \left\{f \in V^* \; | \; f\left(A\left(x\right)\right) = 0, \; \forall x \in U\right\} = (\operatorname{Im} A )^0$
         \item $\operatorname{Im} A^* = (\ker A)^0$
-        \item $\operatorname{r}(A^*) = \operatorname{r}(A)$
+        \item $\operatorname{r}(A^*) = \operatorname{r}(A)$\\
+        \underline{\textit{Intuicija:}} Očigledno iz teoreme \ref{ATjednakoAzvezda} ($\mathcal{A^T} = \mathcal{A}^*$).
     \end{enumerate}
 \end{theorem}
 \begin{theorem}
+    \label{ATjednakoAzvezda}
     Neka su $U$ i $V$ konačnodimenzioni v. prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom}\left(U, V\right)$. Neka je $e$ neka baza od $U$ i $e^*$ njoj dualna 
     baza od $U^*$, i neka je $f$ neka baza od $V$ i $f^*$ njoj dualna baza od $V^*$. Ako sa $\mathcal{A}$ obeležimo matricu operatora $A$ u paru baza $e$ i $f$, a sa
     $\mathcal{A}^*$ matricu operatora $A^*$ u paru baza $f^*$ i $e^*$, tada je \[\mathcal{A}^\mathcal{T} = \mathcal{A}^*.\]
 \end{theorem}
-\noindent\textbf{Posledica 1.} Neka je $\mathcal{A}$ matrica nad poljem $\mathbb{F}$. Tada se rang od $\mathcal{A}$ po vrstama podudara sa rangom od $\mathcal{A}$ po kolonama.
+\noindent\textbf{Posledica 1.} Neka je $\mathcal{A}$ matrica nad poljem $\mathbb{F}$. Tada se rang od $\mathcal{A}$ po vrstama podudara sa rangom od $\mathcal{A}$ po kolonama.\\
+
+\noindent\underline{\textit{Intuicija:}} Dakle, $A$ slika $U$ u $V$, a $A^*$ slika $V^*$ u $U^*$. Takođe, vidimo da je transponovana matrica preslikavanja $A$ upravo matrica preslikavanja $A^*$. Znamo da ako neko linearno preslikavanje 
+$T$ slika $U$ u $V$ i $\operatorname{dim} U = n, \; \operatorname{dim} V = m$, tada će njegova matrica $\mathcal{T}$ biti dimenzija $\operatorname{dim} V \times \operatorname{dim} U = m \times n$,
+a $\mathcal{T^T}$dimenzija $n \times m$, tj. oblika
+\[
+    \mathcal{T} = \begin{bmatrix}
+        a_{11} & a_{12} & \dots & a_{1n} \\
+        a_{21} & a_{22} & \dots & a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{m1} & a_{m2} & \dots & a_{mn}
+    \end{bmatrix} \implies 
+    \mathcal{T^T} = \begin{bmatrix}
+        a_{11} & a_{21} & \dots & a_{m1} \\
+        a_{12} & a_{22} & \dots & a_{m2} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{1n} & a_{2n} & \dots & a_{nm}
+    \end{bmatrix},
+\] što znači da intuitivno ima smisla (jer je $V\cong V^*$) da $\mathcal{T}$ odgovara $A$, a $\mathcal{T^T}$ odgovara $A^*$. Iz ovog razloga
+važi $(AB)^\mathcal{T} = B^\mathcal{T} A^\mathcal{T}$. Naime, ako važi $U \xrightarrow{AB} W$, tj. $U \xrightarrow{B} V \xrightarrow{A} W$, 
+u duhu dosadašnje diskusije dobijamo $W^* \xrightarrow{A^\mathcal{T}} V^* \xrightarrow{B^\mathcal{T}} U^*$. Dakle, ovo je intuicija iza trasponovane matrice. Da rezimiramo:
+\[ \boxed{u \in U \xrightarrow{A} A(u) \in V \xrightarrow{f} f(A(u)) \in \mathbb{F}}, \;\; f: V \to \mathbb{F}, \;A: U \to V \]
 
 \subsection{Zavisnost matrice operatora od baze}
 

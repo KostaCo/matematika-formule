@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1786372814.51941 "d:/Projekti/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1786372816.54157 0
+["pdflatex"] 1786437533.46353 "d:/Projekti/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1786437535.168 0
   "C:/Users/Kosta/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1783239793 90336 08e6d31167078fb1fde7f415ac955abb ""
   "C:/Users/Kosta/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1765279486 13333552 39e7fdd33c8df25cdda8ed4c0eb75844 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cmsrb/cmsrbt1.enc" 1572034764 2157 57b150f99c9d61d6c444b4cace336027 ""
@@ -156,11 +156,11 @@
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/Kosta/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "d:/Projekti/matematika-formule/matematika.tex" 1786372811 78731 a6f049c28aa792051b8cfa3c4ab6d085 ""
-  "matematika.aux" 1786372816 19555 3bb388aa95f1da25c691d861b7bd5728 "pdflatex"
-  "matematika.out" 1786372816 20305 e09105e94d16992014aa295e095454bd "pdflatex"
-  "matematika.tex" 1786372811 78731 a6f049c28aa792051b8cfa3c4ab6d085 ""
-  "matematika.toc" 1786372816 11308 4129680f2f5d9544f4fff33aeb3fd801 "pdflatex"
+  "d:/Projekti/matematika-formule/matematika.tex" 1786437532 80820 6c29f82c7441271f3f098db19b183411 ""
+  "matematika.aux" 1786437534 19631 baebf4f60cf60d0d0e969ccd14b3ddaa "pdflatex"
+  "matematika.out" 1786437534 20394 bb672ba5d5510625040bddc779b09c32 "pdflatex"
+  "matematika.tex" 1786437532 80820 6c29f82c7441271f3f098db19b183411 ""
+  "matematika.toc" 1786437534 11324 e3bdc6b9a48611d0c0ff197dab0690c5 "pdflatex"
   "slike/Mittelwertsatz6.svg.png" 1783276848 126270 b9528d7fc65d9521361db1627249b588 ""
   "slike/rolle.pdf" 1783276551 6734 db32dab086a48e45db83764f98d960ed ""
   (generated)
