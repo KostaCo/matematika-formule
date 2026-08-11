@@ -1437,6 +1437,58 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
 
 \newpage
 \section{Determinante}
+\subsection{Simetrična grupa $\mathbb{S}_n$}
+\begin{itemize}
+    \item $\mathbb{S}_n = \left\{1, 2, \dots, n\right\}, \;\forall n \in \mathbb{N}$
+    \item Bijekcije skupa $\mathbb{S}_n$ nazivamo \textbf{permutacije}, a grupu $(\mathbb{S}_n, \circ)$ \textbf{grupa permutacija} ili \textbf{simetrična grupa}.
+    \item Zapis: \[
+\sigma = \begin{pmatrix} 
+1 & 2 & \cdots & n \\ 
+\sigma(1) & \sigma(2) & \cdots & \sigma(n) 
+\end{pmatrix} \in \mathbb{S}_n
+\]
+\end{itemize}
+
+\subsection{Parnost permutacija}
+\begin{itemize}
+    \item \textbf{Inverzija permutacije $\sigma$} - uređeni par $(i, j)$ td. $i < j$ i $\sigma(i) > \sigma(j)$
+    \item $I(\sigma)$ - Broj inverzija perm. $\sigma$
+    \item $\sigma$ je parna $\iff I(\sigma)$ parno
+    \item Preslikavanje za određivanje parnosti: \[ \operatorname{sgn}(\sigma) = \prod_{i < k < n} \frac{\sigma(k) - \sigma(i)}{k - i} \in \left\{-1, 1\right\} \]
+    \item $A_n = \ker \operatorname{sgn} = \left\{\sigma \in \mathbb{S}_n \; | \; \operatorname{sgn}(\sigma) = 1\right\}$ - \textbf{alternirajuća podgrupa od $\mathbb{S}_n$ (podgrupa parnih permutacija)} 
+\end{itemize}
+
+\begin{theorem}\
+    \begin{enumerate}
+        \item $\operatorname{sgn}: (\mathbb{S}_n, \circ) \to (\left\{-1, 1\right\}, \cdot)$ je homomorfizam grupa, tj. $ \operatorname{sgn}(\sigma \cdot \tau) = \operatorname{sgn}(\sigma) \cdot \operatorname{sgn}(\tau) $
+        \item $\ker \operatorname{sgn} = A_n$ je grupa.
+        \item $||A_n|| = \frac{n!}{2}$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Ciklus}
+\begin{itemize}
+    \item Permutacija $\sigma$ je \textbf{ciklus dužine $k$} ako postoji $(i_1, \dots, i_k) \in \mathbb{S}_n^k$ td. \[  \sigma(i_1) = i_2, \sigma(i_2)
+    = i_3, \dots, \sigma(i_k) = i_1 \land (\forall j \in \mathbb{S}_n \setminus \{i_1, \dots, i_k\})\;\sigma(j) = j \]
+    \item Ciklusi dužine 2 se zovu \textbf{transpozicije}. Transpozicije su neparne.
+\end{itemize}
+\begin{theorem}
+    Svaka permutacija $\sigma \in \mathbb{S}_n$ se može predstaviti kao proizvod
+    \begin{enumerate}
+        \item disjunktnih ciklusa
+        \item transpozicija
+    \end{enumerate}
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage

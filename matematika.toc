@@ -109,6 +109,9 @@
 \contentsline {subsection}{\numberline {8.3.11}Dualno (transponovano) preslikavanje}{40}{subsection.8.3.11}%
 \contentsline {subsection}{\numberline {8.3.12}Zavisnost matrice operatora od baze}{41}{subsection.8.3.12}%
 \contentsline {section}{\numberline {8.4}Determinante}{43}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Simetrična grupa $\mathbb {S}_n$}{43}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Parnost permutacija}{43}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Ciklus}{43}{subsection.8.4.3}%
 \contentsline {section}{\numberline {8.5}Sistemi linearnih jednačina}{44}{section.8.5}%
 \contentsline {section}{\numberline {8.6}Redukcija linearnih operatora na konačnodimenzionim prostorima}{44}{section.8.6}%
 \contentsline {section}{\numberline {8.7}Unitarni prostori}{44}{section.8.7}%
