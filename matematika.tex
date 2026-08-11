@@ -59,6 +59,7 @@
 
 \begin{document}
 \maketitle
+\setcounter{page}{2}
 \tableofcontents
 \newpage
 % Section 1
@@ -1101,7 +1102,18 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \chapter{Linearna algebra}
 
+\section{Klasična algebra vektora}
+\section{Vektorski prostori}
 \section{Linearni operatori}
+\subsection{Linearni operator}
+\subsection{Rang i defekt linearnog operatora}
+\subsection{Regularni operatori}
+\subsection{Izomorfizmi vektorskih prostora}
+\subsection{Teoreme o izomorfizmu}
+\subsection{Tačni (egzaktni) nizovi}
+\subsection{Algebra}
+\subsection{Rang matrice}
+\subsection{Određivanje inverzne matrice}
 \newpage
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
 \subsubsection*{Linearni funkcional i dualni prostor}
@@ -1331,9 +1343,107 @@ važi $(AB)^\mathcal{T} = B^\mathcal{T} A^\mathcal{T}$. Naime, ako važi $U \xri
 u duhu dosadašnje diskusije dobijamo $W^* \xrightarrow{A^\mathcal{T}} V^* \xrightarrow{B^\mathcal{T}} U^*$. Dakle, ovo je intuicija iza trasponovane matrice. Da rezimiramo:
 \[ \boxed{u \in U \xrightarrow{A} A(u) \in V \xrightarrow{f} f(A(u)) \in \mathbb{F}}, \;\; f: V \to \mathbb{F}, \;A: U \to V \]
 
+
+
+
 \subsection{Zavisnost matrice operatora od baze}
+Neka su $U, V, W$ konačnodimenzioni vektorski prostori nad poljem $\mathbb{F}$ i neka je 
+$\dim U = m$, $\dim V = n$ i $\dim W = l$. 
+Neka su dati linearni operatori 
+\[
+A: U \to V, \qquad B: V \to W,
+\]
+i neka su $e = (e_1, \dots, e_m)$, $f = (f_1, \dots, f_n)$ i $g = (g_1, \dots, g_l)$ redom baze prostora $U, V, W$.
+
+\medskip
+\noindent
+\subsubsection*{Matrica operatora u datim bazama} 
+Matrica operatora $A$ u paru baza $(e, f)$ definisana je sa:
+\[
+Ae_j = \sum_{i=1}^{n} \alpha_{ij} f_i, \qquad j = 1, \dots, m,
+\]
+gde je $\mathcal{A} = (\alpha_{ij}) \in \mathbb{M}_{n \times m}(\mathbb{F})$.
+Slično, matrica operatora $B$ u paru baza $(f, g)$ je:
+\[
+Bf_k = \sum_{r=1}^{l} \beta_{rk} g_r, \qquad k = 1, \dots, n.
+\]
+
+Ako je $C = B \circ A : U \to W$, tada je matrica kompozicije u paru baza $(e, g)$ data kao proizvod matrica (obrnutim redom):
+\[
+\boxed{\mathcal{C} = \mathcal{B} \cdot \mathcal{A}}
+\]
+gde je $\mathcal{C} \in \mathbb{M}_{l \times m}(\mathbb{F})$, $\mathcal{B} \in \mathbb{M}_{l \times n}(\mathbb{F})$, a $\mathcal{A} \in \mathbb{M}_{n \times m}(\mathbb{F})$.
+
+\medskip
+\noindent
+\subsubsection*{Matrica prelaska} 
+Neka je $T_{ee'}$ matrica prelaska sa baze $e$ na bazu $e'$. Tada za koordinate proizvoljnog vektora $x \in U$ važi:
+\[
+x(e) = T_{ee'} \, x(e'),
+\]
+gde su $x(e)$ i $x(e')$ koordinate vektora $x$ u tim bazama.
+
+\medskip
+\noindent
+\subsubsection*{Promena baze linearnog operatora}
+Neka je $A: U \to V$ linearni operator. Ako su $e, e'$ baze od $U$ i $f, f'$ baze od $V$, tada je veza između matrica operatora $A$ u parovima baza $(e, f)$ i $(e', f')$ data sa:
+\[
+\boxed{\mathcal{A}(f', e') = T_{ff'}^{-1} \, \mathcal{A}(f, e) \, T_{ee'}}
+\]
+gde su $T_{ee'}$ i $T_{ff'}$ odgovarajuće matrice prelaska.
+
+Specijalno, ako je $V = U$ i biramo istu bazu za polazni i dolazni prostor ($f = e$, $f' = e'$), formula se svodi na relaciju \textbf{sličnosti}:
+\[
+\boxed{\mathcal{A}(e') = T_{ee'}^{-1} \, \mathcal{A}(e) \, T_{ee'}}
+\]
+Tada kažemo da su matrice $\mathcal{A}(e)$ i $\mathcal{A}(e')$ \textbf{slične}.
+
+\medskip
+\noindent
+\subsubsection*{Primer (promena baze u $\mathbb{R}^3$)}
+Neka je $e$ kanonska baza u $\mathbb{R}^3$, a $f = (f_1, f_2, f_3)$ baza data sa:
+\[
+f_1 = 3e_1 + e_2 + 2e_3,\quad 
+f_2 = 2e_1 + e_2 + 2e_3,\quad 
+f_3 = -e_1 + 2e_2 + 5e_3.
+\]
+Neka je $A \in \operatorname{Hom}(\mathbb{R}^3)$ čija je matrica u bazi $e$ data sa $\mathcal{A}(e)$. 
+Koristeći formulu \linebreak$\mathcal{A}(f) = T^{-1} \mathcal{A}(e) T$, prvo nalazimo matricu prelaska sa $e$ na $f$:
+\[
+T = 
+\begin{bmatrix}
+3 & 2 & -1 \\
+1 & 1 & 2 \\
+2 & 2 & 5
+\end{bmatrix},
+\qquad
+T^{-1} = 
+\begin{bmatrix}
+1 & -12 & 5 \\
+-1 & 17 & -7 \\
+0 & -2 & 1
+\end{bmatrix}.
+\]
+Konačno, matrica operatora $A$ u bazi $f$ je:
+\[
+\mathcal{A}(f) = 
+\begin{bmatrix}
+-85 & -59 & 18 \\
+121 & 84 & -25 \\
+-13 & -9 & 3
+\end{bmatrix}.
+\]
 
 
+\newpage
+\section{Determinante}
+
+
+\newpage
+\section{Sistemi linearnih jednačina}
+\section{Redukcija linearnih operatora na konačnodimenzionim prostorima}
+\section{Unitarni prostori}
+\section{Bilinearne i kvadratne forme}
 
 
 

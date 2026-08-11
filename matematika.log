@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  11 AUG 2026 10:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  11 AUG 2026 11:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -837,33 +837,23 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Kosta/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cmsrb/cmsrbt1.enc}] (matematika.toc
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.38 ....1}Muavrova formula}{11}{subsection.4.2.1}
-                                                  % [1
+{C:/Users/Kosta/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cmsrb/cmsrbt1.enc}] (matematika.toc [2
 
-] [2])
+] [3] [4])
 \tf@toc=\write5
 \openout5 = `matematika.toc'.
 
- [3]
+ [5]
 Glava 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+cmsrbr on input line 69.
+LaTeX Font Info:    Trying to load font information for TS1+cmsrbr on input line 70.
 (C:\Users\Kosta\AppData\Local\Programs\MiKTeX\tex/latex/cmsrb\ts1cmsrbr.fd
 File: ts1cmsrbr.fd 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
@@ -873,191 +863,201 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-[4
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+[6
 
 {C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cmsrb/cmsrbts1.enc}]
 Glava 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 102.
+(hyperref)                removing `math shift' on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 102.
+(hyperref)                removing `subscript' on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 102.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 102.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 102.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 102.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 102.
+(hyperref)                removed on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 102.
+(hyperref)                removing `subscript' on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 102.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 102.
+(hyperref)                removed on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 102.
+(hyperref)                removing `subscript' on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 102.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 103.
 
 
-Overfull \hbox (36.77383pt too wide) detected at line 103
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 103.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 103.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 103.
+
+
+Overfull \hbox (36.77383pt too wide) detected at line 104
 \OML/cmmsrbm/m/it/12 H[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 G[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 A[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 K[] \OT1/cmrsrbm/m/n/12 = []
  []
 
-[5
+[7
 
-] [6] [7]
+] [8] [9]
 Glava 3.
-[8
+[10
 
-] [9] [10]
+] [11] [12]
 Glava 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 284.
+(hyperref)                removing `math shift' on input line 285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 284.
+(hyperref)                removing `math shift' on input line 285.
 
 
-Overfull \hbox (14.47087pt too wide) detected at line 287
+Overfull \hbox (14.47087pt too wide) detected at line 288
 \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = \OML/cmmsrbm/m/it/12 z;   z; x \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 C  \OT1/cmrsrbm/m/n/12 =[]\OMS/cmsy/m/n/12 )   [] \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = 0  (\OML/cmmsrbm/m/it/12 x[]; x[]; [] ; x[]  []:\OT1/cmrsrbm/m/n/12 )
  []
 
-[11
+[13
 
 ]
 Glava 5.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 304.
+(amsmath)                 on input line 305.
 
-[12
+[14
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
 
-[13] [14] [15] Excluding 'comment' comment. [16]
+[15] [16] [17] Excluding 'comment' comment. [18]
 Glava 6.
-[17
+[19
 
-] [18] [19] [20]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 627.
- [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31]
+] [20] [21] [22]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 628.
+ [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33]
 Glava 7.
-[32
+[34
 
 ]
 Glava 8.
-[33
+[35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1111--1113
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1139
 
  []
 
-[34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1190--1193
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1197--1201
-
- []
-
-[36] [37] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 1273--1274
+[36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 1202--1205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1312
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1213
 
  []
 
-[38] [39]
+[38] [39] Excluding 'comment' comment.
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
+
+ []
+
+[40] [41] [42] [43]
+Overfull \hbox (6.88722pt too wide) in paragraph at lines 1444--1444
+|[]\T1/cmsrbr/b/n/17.28 Redukcija li-ne-ar-nih ope-ra-to-ra na ko-na£-no-di-men-
+ []
+
+[44]
 Glava 9.
-[40
+[45
 
 ]
 Glava 10.
-[41
+[46
 
-] [42] [43] [44]
-Underfull \hbox (badness 10000) in paragraph at lines 1526--1527
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1534--1535
+] [47] [48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 1636--1637
 
  []
 
-<slike/rolle.pdf, id=937, 552.20506pt x 241.06795pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1644--1645
+
+ []
+
+<slike/rolle.pdf, id=1035, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 1538.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 1648.
 (pdftex.def)             Requested size: 181.18439pt x 79.09654pt.
-<slike/Mittelwertsatz6.svg.png, id=938, 1927.2pt x 1229.59375pt>
+<slike/Mittelwertsatz6.svg.png, id=1036, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1559.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 1669.
 (pdftex.def)             Requested size: 181.18439pt x 115.59308pt.
-[45 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 1566--1568
+[50 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 1676--1678
 [][] 
  []
 
-[46] [47]
+[51] [52]
 Glava 11.
-[48
+[53
 
 ]
 Glava 12.
-[49
+[54
 
 ]
 Glava 13.
-[50
+[55
 
 ] (matematika.aux)
  ***********
@@ -1065,20 +1065,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `matematika.out' has not changed.
-(rerunfilecheck)             Checksum: BB672BA5D5510625040BDDC779B09C32;20394.
+(rerunfilecheck)             Checksum: 17BC13BC619C25AD9E28635C35AF0DD0;23359.
  ) 
 Here is how much of TeX's memory you used:
- 18527 strings out of 467870
- 297599 string characters out of 5418355
+ 18564 strings out of 467870
+ 298114 string characters out of 5418355
  836148 words of memory out of 5000000
- 46833 multiletter control sequences out of 15000+600000
+ 46849 multiletter control sequences out of 15000+600000
  692681 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,79p,578b,758s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrb.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbri.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrr.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/cmsrb/cmsrbrx.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Kosta/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (51 pages, 615075 bytes).
+Output written on matematika.pdf (55 pages, 633657 bytes).
 PDF statistics:
- 1111 PDF objects out of 1200 (max. 8388607)
- 290 named destinations out of 1000 (max. 500000)
- 987 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1212 PDF objects out of 1440 (max. 8388607)
+ 311 named destinations out of 1000 (max. 500000)
+ 1115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
