@@ -1578,14 +1578,79 @@ Zamenom u prethodnu sumu (i zamenom oznake $a_{ij}$ sa $\alpha_{ij}$) dobijamo u
 \sum_{\sigma \in S_n} (-1)^{I(\sigma)} \alpha_{1\sigma(1)} \alpha_{2\sigma(2)} \dots \alpha_{n\sigma(n)}.
 \]\\
 
+
+
 \begin{theorem}
     Neka je $\mathcal{A} = (\alpha_{ij}) \in \mathbb{M}_n$. Tada važi:
     \begin{enumerate}
-        \item Ako je neka vrsta ili kolona matrice $\mathcal{A}$ nula vektor, onda je $|\mathcal{A}| = 0$.
+        \item Ako je neka vrsta ili kolona matrice $\mathcal{A}$ nula vektor, onda je $|\mathcal{A}| = 0$.\\
+        \noindent\underline{\textit{Intuicija:}} Npr. ako $3\times 3$ matrica ima tačno 1 nula vektor, geomtrijski je to onda ravan, pa ima zapreminu 0.
         \item $|\mathcal{A}| = |\mathcal{A^T}|$
-        \item Ako je $A$ trougaona matrica, tada je $|\mathcal{A}| = \alpha_{11}\alpha_{22}\dots \alpha_{nn}$.
+        \item Ako je $A$ trougaona matrica, tada je $|\mathcal{A}| = \alpha_{11}\alpha_{22}\dots \alpha_{nn}$.\\
+        \noindent\underline{\textit{Intuicija:}} Trougaona matrica je zapravo primenjivanje smicanja na originalni kvadar, pa ne menja zapreminu. 2D slučaj
+        ovoga je paralelogram.
     \end{enumerate} 
 \end{theorem}
+\newpage
+
+\subsubsection*{Primer: računanje determinante preko definicije}
+Neka je data matrica 
+\[
+\mathcal{A} = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix} \in \mathbb{M}_3(\mathbb{F}).
+\]
+Koristimo definiciju:
+\[
+\det \mathcal{A} = \sum_{\sigma \in \mathbb{S}_3} \left( (-1)^{I(\sigma)} \prod_{i=1}^{3} a_{i \, \sigma(i)} \right),
+\]
+gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
+\medskip
+
+\noindent
+\textbf{1. Korak:} Ispišimo svih 6 permutacija iz \( \mathbb{S}_3 \) (leksikografski poredak), njihov broj inverzija \( I(\sigma) \) i odgovarajući predznak \( (-1)^{I(\sigma)} \):
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\hline
+\( \sigma \) & Zapis \( (\sigma(1), \sigma(2), \sigma(3)) \) & \( I(\sigma) \) & Predznak \( (-1)^{I(\sigma)} \) \\
+\hline
+1 & \( (1,2,3) \) & 0 & \( +1 \) \\
+2 & \( (1,3,2) \) & 1 & \( -1 \) \\
+3 & \( (2,1,3) \) & 1 & \( -1 \) \\
+4 & \( (2,3,1) \) & 2 & \( +1 \) \\
+5 & \( (3,1,2) \) & 2 & \( +1 \) \\
+6 & \( (3,2,1) \) & 3 & \( -1 \) \\
+\hline
+\end{tabular}
+\end{center}
+\medskip
+\noindent
+\textbf{2. Korak:} Formiramo sumu po definiciji:
+\begin{align*}
+\det \mathcal{A}
+&= 
+(-1)^{0} a_{1\,1} a_{2\,2} a_{3\,3}
++ (-1)^{1} a_{1\,1} a_{2\,3} a_{3\,2} \\
+&\quad + (-1)^{1} a_{1\,2} a_{2\,1} a_{3\,3}
++ (-1)^{2} a_{1\,2} a_{2\,3} a_{3\,1} \\
+&\quad + (-1)^{2} a_{1\,3} a_{2\,1} a_{3\,2}
++ (-1)^{3} a_{1\,3} a_{2\,2} a_{3\,1}.
+\end{align*}
+\medskip
+\noindent
+\textbf{3. Korak:} Sredimo predznake i dobijemo poznatu Sarusovu formulu:
+\[
+\boxed{
+\begin{aligned}
+\det \mathcal{A} 
+&= a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} \\
+&\quad - a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33}.
+\end{aligned}
+}
+\]
+
 
 \subsection{Multilinearnost determinante}
 \newpage
