@@ -1720,6 +1720,35 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 \noindent\textbf{Posledica.} \textit{Neka je $\mathcal{A}$ regularna matrica reda $n$. Tada važi:}
 \[ \mathcal{A}^{-1} = \frac{1}{\det \mathcal{A}} \operatorname{adj} \mathcal{A} \]
 
+\subsection{Vandermondova determinanta}
+\[ V(\alpha_1, \alpha_2, \dots, \alpha_n) = \begin{vmatrix}
+    1 & 1 & \dots & 1 \\
+    \alpha_1 & \alpha_2 & \dots & \alpha_n \\
+    \alpha_1^2 & \alpha_2^2 & \dots & \alpha_n^2 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \alpha_1^{n-1} & \alpha_2^{n-1} & \dots & \alpha_n^{n-1} \\
+\end{vmatrix} = \prod_{i < j} (\alpha_j - \alpha_i) \]
+
+\subsection{Računanje determinanti preko rekurentnih relacija}
+\begin{itemize}
+    \item \textbf{Trodijagonalna} matrica:
+    \[ M = \begin{bmatrix}
+        a & b & 0 & \dots & 0 & 0 \\
+        c & a & b & \dots & 0 & 0 \\
+        0 & c & a & \dots & 0 & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+        0 & 0 & 0 & \dots & a & b \\
+        0 & 0 & 0 & \dots & c & a
+    \end{bmatrix} \in \mathbb{M}_n(\mathbb{F})\]
+    \item Trodijagonalne matrice se lako mogu izračunati pomoću rekurentnih relacija.
+\end{itemize}
+
+\subsection{Bine-Košijeva teorema}
+\begin{theorem}
+    \textbf{(Bine-Koši):} Neka $\mathcal{A}, \mathcal{B} \in \mathbb{M}_n(\mathbb{F})$. Tada važi:
+    \[ \det (\mathcal{AB}) = \det (\mathcal{A}) \det (\mathcal{B}) \]
+\end{theorem}
+
 
 \newpage
 \section{Sistemi linearnih jednačina}
