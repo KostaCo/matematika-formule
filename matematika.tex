@@ -38,7 +38,7 @@
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{definition}{Definicija}[section]
 \newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{lemma}{Lema}[section]
 \makeatletter
 \renewcommand{\ALG@name}{Algoritam}
 \numberwithin{algorithm}{section}
@@ -287,7 +287,6 @@ c &= a \cos \beta + b \cos \alpha
     x^n = z, \;\;z,x\in \mathbb{C} \implies  \; \sum^n_{k=1} x_k=0 \;\; (x_1, x_2, \dots, x_n \;\; \text{se ponašaju kao težišne duži $n$-tougla}.)
 \]
 
-
 \chapter{Kombinatorika}
 \section{Prebrojavanja}
 \begin{itemize}
@@ -488,6 +487,7 @@ c &= a \cos \beta + b \cos \alpha
 \subsection{Lukasovi brojevi}
 \section{Katalanovi brojevi}
 \section{Bernulijevi brojevi}
+
 \chapter{Teorija grafova}
 \section{Osnovni pojmovi i teoreme}
 
@@ -1010,38 +1010,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item \textbf{Modifikacije:} Algoritam se može unaprediti za rekonstrukciju samih putanja (pamćenjem prethodnika) ili za utvrđivanje dostupnosti čvorova (tada se težine grana tretiraju kao 1, a algoritam proverava samo postojanje puta).
 \end{itemize}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \chapter{Teorija grupa}
 \noindent
 \begin{equation*}
@@ -1059,46 +1027,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{description}
     \item[Monoid $(S, \cdot)$:] $(S1), (M4)$  
 \end{description}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \chapter{Linearna algebra}
 
@@ -1495,7 +1423,6 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
     |\sigma| = \operatorname{NZS}(t_1, t_2, \dots, t_k).
 \]
 
-
 \subsection{Definicija determinante (Lajbnicova formula)}
 Determinanta $\operatorname{det}: \mathbb{M}_n(\mathbb{F}) \to \mathbb{F}$ je funkcija definisana formulom:
 \[ \det \mathcal{A} = \sum_{\sigma \in \mathbb{S}_n} \left((-1)^{I(\sigma)} \prod_{i = 1}^{n}\alpha_{i \sigma(i)}\right), \]
@@ -1657,7 +1584,6 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 }
 \]
 
-
 \subsection{Multilinearnost determinante}
 \begin{itemize}
     \item Preslikavanje $\varphi$ je \textbf{multilinearno} ako važi
@@ -1673,7 +1599,6 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     Determinanta je multilinearni alternirajući funkcional.
 \end{theorem}
 \newpage
-
 
 \subsection{Induktivna definicija determinante i Laplasov razvoj}
 \begin{itemize}
@@ -1740,7 +1665,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
         0 & 0 & 0 & \dots & a & b \\
         0 & 0 & 0 & \dots & c & a
     \end{bmatrix} \in \mathbb{M}_n(\mathbb{F})\]
-    \item Trodijagonalne matrice se lako mogu izračunati pomoću rekurentnih relacija.
+    \item Determinante trodijagonalnih matrica se lako mogu izračunati pomoću rekurentnih relacija.
 \end{itemize}
 
 \subsection{Bine-Košijeva teorema}
@@ -1749,6 +1674,52 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     \[ \det (\mathcal{AB}) = \det (\mathcal{A}) \det (\mathcal{B}) \]
 \end{theorem}
 
+\subsection{Lema o množenju blok matrica}
+\begin{itemize}
+    \item \textbf{Blok matrica} je matrica čiji elementi su matrice. One se pri množenju ponašaju isto kao obične matrice.
+\end{itemize}
+
+\begin{lemma}
+    \textbf{(O množenju blok matrica):} Neka $\mathcal{A}, \mathcal{B} \in \mathbb{M}_n, \; \mathcal{A}_{11}, \mathcal{B}_{11} \in \mathbb{M}_{l}, \linebreak \mathcal{A}_{12}
+    \mathcal{B}_{12} \in \mathbb{M}_{l \; n-l}, \; \mathcal{A}_{21},\mathcal{B}_{21} \in \mathbb{M}_{n-l \; l}, \; \mathcal{A}_{22}, \mathcal{B}_{22} \in \mathbb{M}_{n-l}$ td. je
+    $\mathcal{A} = \begin{bmatrix}
+        \mathcal{A}_{11} & \mathcal{A}_{12} \\
+        \mathcal{A}_{21} & \mathcal{A}_{22}
+    \end{bmatrix}$ i \linebreak$\mathcal{B} = \begin{bmatrix}
+        \mathcal{B}_{11} & \mathcal{B}_{12} \\
+        \mathcal{B}_{21} & \mathcal{B}_{22}
+    \end{bmatrix}$. Tada važi
+    \[ \mathcal{AB} = \begin{bmatrix}
+        \mathcal{A}_{11}\mathcal{B}_{11} + \mathcal{A}_{12}\mathcal{B}_{21} & \mathcal{A}_{11}\mathcal{B}_{12} + \mathcal{A}_{12}\mathcal{B}_{22} \\
+        \mathcal{A}_{21}\mathcal{B}_{11} + \mathcal{A}_{22}\mathcal{B}_{21} & \mathcal{A}_{21}\mathcal{B}_{12} + \mathcal{A}_{22}\mathcal{B}_{22}
+    \end{bmatrix} \;\;\; \left( = \begin{bmatrix}
+        [l \times l] & [l \times (n-l)] \\
+        [(n-l) \times l] & [(n-l) \times (n-l)]
+    \end{bmatrix} \right)\]
+\end{lemma}
+
+\begin{lemma}
+    \[ \det \begin{bmatrix}
+        \mathcal{B} & \mathcal{C} \\
+        \mathcal{O} & \mathcal{D}
+    \end{bmatrix} = \det \mathcal{B}\det\mathcal{D}\]
+\end{lemma}
+\newpage
+\subsection{Karkterizacija determinante}
+
+\begin{itemize}
+    \item Determinanta je jedinstveno određena sledećim svojstvima:
+\end{itemize}
+
+\begin{theorem}
+    Neka je $d: \mathbb{M}_n(\mathbb{F}) \to \mathbb{F}$ funkcija koja ima svojstva:
+    \begin{description}
+        \item [(ml)] $d$ je multilinearni funkcional kolona matrice,
+        \item [(a)] $d$ je alternirajuće preslikavanje kolona, tj. ako u matrici $\mathcal{A}$ postoje 2 jednake kolone, onda je ${d}(\mathcal{A}) = 0$, 
+        \item [(n)] $d(\mathbb{I}_n)=1$.
+    \end{description}
+    Tada je $d = \det$.
+\end{theorem}
 
 \newpage
 \section{Sistemi linearnih jednačina}
@@ -1756,43 +1727,12 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 \section{Unitarni prostori}
 \section{Bilinearne i kvadratne forme}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \chapter{Analitička geometrija}
 \section{Ugao između dve prave}
 \[
     \tan(\theta) = \bigg|\frac{k_1-k_2}{1+k_1k_2}\bigg|,\;\;\;  \text{gde je $\theta$ ugao pod kojim se seku prave } k_1x+b_1 \text{ i } k_2x+b_2.
 \]
+
 \chapter{Analiza}
 \section{Nizovi}
 
@@ -2038,7 +1978,9 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c)(b - a) = f(b) - f(a)$.
 \]
 
 \chapter{Verovatnoća}
+
 \chapter{Statistika}
+
 \chapter{Numerička analiza}
                                                                                                       
 \end{document}
