@@ -1705,6 +1705,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     \end{bmatrix} = \det \mathcal{B}\det\mathcal{D}\]
 \end{lemma}
 \newpage
+
 \subsection{Karkterizacija determinante}
 
 \begin{itemize}
@@ -1721,8 +1722,132 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     Tada je $d = \det$.
 \end{theorem}
 
-\newpage
 \section{Sistemi linearnih jednačina}
+
+\subsection{Definicija sistema linearnih jednačina}
+
+Neka je dat skup $F = \{f_1, \dots, f_n\} \subset \mathbb{F}[x_1, \dots, x_m]$ linearnih polinoma u promenljivim $x_1, \dots, x_m$. On definiše sledeći \textbf{sistem linearnih
+jednačina}:
+\[
+    \begin{aligned}
+        f_1(x_1, \dots, x_m) &= \alpha_{11}x_1 + \alpha_{12}x_2 + \dots + \alpha_{1m}x_m - \beta_1 = 0, \\
+        f_2(x_1, \dots, x_m) &= \alpha_{21}x_1 + \alpha_{22}x_2 + \dots + \alpha_{2m}x_m - \beta_2 = 0, \\
+        &\vdots \\
+        f_n(x_1, \dots, x_m) &= \alpha_{n1}x_1 + \alpha_{n2}x_2 + \dots + \alpha_{nm}x_m - \beta_n = 0,
+    \end{aligned}
+\] koji kraće zapisujemo kao $\sum_{k=1}^{m} \alpha_{ik}x_k = \beta_i, \;\; i = 1, \dots, n$ ili u matričnom obliku:
+\[ \mathcal{A} = \begin{bmatrix}
+    \alpha_{11} & \alpha_{12} & \dots & \alpha_{1m} \\
+    \vdots      & \vdots      & \ddots & \vdots \\
+    \alpha_{n1} & \alpha_{n2} & \dots & \alpha_{nm}
+\end{bmatrix}, \; X = \begin{bmatrix}
+    x_1 \\ \vdots \\ x_m
+\end{bmatrix}, \; b = \begin{bmatrix}
+    \beta_1 \\ \vdots \\ \beta_n
+\end{bmatrix}, \; \mathcal{A}X = b. \]
+Matricu $\mathcal{A}$ nazivamo \textbf{matricom sistema}. Definišemo i \textbf{matricu sistema}:
+
+\[
+\mathcal{A}_p = [\,\mathcal{A} \mid b\,] = 
+\left[
+\begin{array}{cccc|c}
+\alpha_{11} & \alpha_{12} & \cdots & \alpha_{1m} & \beta_1 \\
+\vdots      & \vdots      & \ddots & \vdots      & \vdots  \\
+\alpha_{n1} & \alpha_{n2} & \cdots & \alpha_{nm} & \beta_n 
+\end{array}
+\right].
+\]
+\textbf{Rešenje sistema} je svaka uređena $m$-torka $(\gamma_1, \dots, \gamma_m) \in \mathbb{F}^m$ koja zamenom $x_i = \gamma_i$ u sistemu daje identitete u $\mathbb{F}$.
+Ako je $\mathcal{A}$ invertibilna, onda važi
+\[ X = \mathcal{A}^{-1}b. \]
+
+\subsection{Geometrijska interpretacija sistema linearnih jednačina}
+
+Ako su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $\dim U = m, \; \dim V = n$ i ako su $e$ i $f$ njihove baze, tada $\mathcal{A}$ predstavlja matricu linearnog
+operatora $A: U \to V$. Dakle, rešavanje sistema odgovara pronalaženju vektora $x \in U$ td. $Ax = b$.
+
+\begin{theorem}
+    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $\dim U = m, \; \dim V = n$. Tada važi:
+    \[ \text{sistem ima rešenja} \iff b \in \operatorname{Im} A \iff r(\mathcal{A}) = r(\mathcal{A}_p) \]
+\end{theorem}
+\noindent Ekvivalencija prvog i trećeg iskaza je \textbf{Kroneker-Kapelijeva teorema}.\\
+
+
+\noindent\textbf{Posledica.} 
+\[ r(\mathcal{A}) = n \text{ (tj. $\operatorname{Im} A = V$)} \implies \text{sistem ima rešenja} \]\\
+
+Sistem jednačina naziva se \textbf{Kramerov sistem} ako:
+\begin{enumerate}
+    \item $m=n$
+    \item $r(\mathcal{A}) = n$
+\end{enumerate}
+
+\begin{theorem}
+    Kramerov sistem jednačina uvek ima jedinstveno rešenje, koje je dato formulom
+    \[ x_k = \frac{\mathcal{D}_k}{\mathcal{D}}, \; k = 1, \dots, n,  \]
+    gde je $\mathcal{D} = \det \mathcal{A} = \det [a_1, \dots, a_n]$ determinanta matrice sistema i gde su \linebreak $\mathcal{D}_k = \det[a_1, \dots, a_{k-1}, b, a_{k+1}, \dots, a_n]$
+    determinante matrica koje se dobijaju iz $\mathcal{A}$ zamenom njene $k$-te kolone vektorom $b$.
+\end{theorem}
+
+\subsection{Homogeni sistemi linearnih jednačina}
+
+Za linearni sistem jednačina kažemo da je \textbf{homogen} ako je $b = 0$. Rešavanje homogenog sistema ekvivalentno je rešavanju jednačine $Ax = 0$, tj. pronalaženju
+jezgra linearnog operatora $A$.
+
+\begin{theorem}
+    Neka je dat homogeni sistem $\mathcal{A}X = 0$ td. $\operatorname{r}(A) = r$ i $\operatorname{d}(A) = d = m-r$.
+    \begin{enumerate}
+        \item Skup rešenja hom. sistema je $\ker A$. Tada postoji baza $v = (v_1, \dots, v_d)$ od $\ker A$ td. je svako rešenje sistema oblika
+        \[ x = \sum_{i=1}^{d} \lambda_i v_i, \; \lambda_i \in \mathbb{R} \]
+        \item Homogeni sistem uvek ima bar trivijalno rešenje $X = 0$, pa je uvek konzistentan.
+        \item Homogeni Kramerov sistem ima samo trivijalno rešenje.
+        \item Homogeni sistem u kom je broj jednačina manji od broja nepoznatih uvek ima netrivijalno rešenje.
+    \end{enumerate}
+\end{theorem}\
+
+\textbf{Fundamentalni skup rešenja} homogenog sistema je skup
+\[ \{ W_1, \dots, W_d \}, \; W_i = v_i(e) \] i svaki vektor koji je rešenje sistema se može predstaviti kao linearna kombinacija njegovih elemenata.
+
+\subsection{Nehomogeni sistemi linearnih jednačina}
+
+\begin{theorem}
+    Neka je $\mathcal{A}X = B \neq 0$ nehomogeni sistem i $r = \operatorname{r}(\mathcal{A}) = \operatorname{r}(\mathcal{A}_p)$ rang sistema i $\operatorname{d}(\mathcal{A})
+    = d = m-r$. Tada je skup rešenja sistema $\mathcal{A}X = B$ linearna mnogostrukost, tj.
+    \[ x = v_0 + \sum_{i=1}^{d} \lambda_i v_i, \] gde je $v_0$ neko partikularno rešenje sistema, $(v_1, \dots, v_d)$ baza od $\ker A$ i $\lambda_i \in \mathbb{F}$ slobodni
+    parametri.
+\end{theorem}
+
+\noindent\textbf{Posledica.} Neka je $\mathcal{A}X = B$ lin. sistem jednačina nad $\mathbb{F}$. Tada skup rešenja ovog sistema može biti:
+\begin{enumerate}
+    \item ako je $\operatorname{char} \mathbb{F} = 0$ (beskonačno polje): prazan skup, jednočlan i beskonačan.
+    \item ako je $\operatorname{char} \mathbb{F} = p$, $p$ je prost (polje sa $p$ elemenata): prazan skup, jednočlan i stepen broja $p$.
+\end{enumerate}
+
+\subsection{Gausova metoda eliminacije}
+
+Gausova metoda podrazumeva primenu elementarnih transformacija na matricu sistema. Dimenzija skupa rešenja jednaka je broju slobodnih parametara koji se dobiju 
+primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sistema.
+
+\begin{theorem}
+    Neka je $\mathcal{A} \in \mathbb{M}_{nm}(\mathbb{F}), \; \operatorname{r}(\mathcal{A}) = r$ i $X \in \mathbb{F}^n$ td. $\mathcal{A}X = B$ i neka je 
+    \[
+    \mathcal{A}'_p = 
+    \left[
+    \begin{array}{cc|c}
+    \mathbb{I}_r & \mathcal{C} & B'_r \\
+    \mathcal{O}_{n-r, r} & \mathcal{O}_{n-r, m-r} & B'_{n-r}
+    \end{array}
+    \right]
+    \] transformisana proširena matrica sistema dobijena iz $\mathcal{A}_p$ primenom elementarnih transformacija. Tada:
+    \begin{description}
+        \item[(nk)] lin. sistem $\mathcal{A}X = B$ nema rešenja ako je $B_{n-r}' \neq 0$.
+        \item[(k)] lin. sistem $\mathcal{A}X = B$ ima rešenja ako je $B_{n-r}' = 0$ i skup rešenja je dat formulom
+        \[ X = W_0 + \underbrace{\lambda_1W_1 + \dots + \lambda_dW_d}_{W_i \;\in\; \ker \mathcal{A}}, \; \lambda_i \in \mathbb{F}, \]
+        gde je $W_0$ neko partikularno, a $W_i$ fundamentalna rešenja pridruženog homogenog sistema.
+    \end{description}
+\end{theorem}
+
+\newpage
 \section{Redukcija linearnih operatora na konačnodimenzionim prostorima}
 \section{Unitarni prostori}
 \section{Bilinearne i kvadratne forme}
