@@ -134,12 +134,84 @@ Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobin
 
 \newpage
 \section{Polinomi}
-Za $P(x) = a_nx^n + \dots + a_1x+a_0, \; a_i \in \mathbb{Z}$ važi:
+\subsection{Prsten polinoma}
+\begin{itemize}
+    \item \textbf{Polinom} nad poljem $\mathbb{F}$:
+    \[ f(x) = \alpha_nx^n + \alpha_{n-1}x^{n-1}+ \dots + \alpha_1x + \alpha_0, \;\;\; \alpha_i \in \mathbb{F},\; \alpha_n \neq 0 \]
+    \item $\deg f = \partial f = n$ - \textbf{stepen polinoma}
+    \item Ne-nula polinom stepena $n$ je \textbf{moničan} ako je $\alpha_n = 1$.
+    \item $\mathcal{P} = \mathbb{F}[x]$ - skup svih polinoma nad $\mathbb{F}$
+    \item $\mathbb{F}[x] = (\mathbb{F}[x], \mathbb{F}, +, \cdot)$ je vektorski prostor.
+    \item $(\mathbb{F}, +, \cdot)$ je komutativan i asocijativan prsten sa jedinicom. Skup invertibilinih elemenata je $\mathbb{F}^* = 
+    \mathbb{F}\setminus \{0\}$ (svi ne-nula skalari).
+    \item $\mathbb{F}[x]$ je asocijativna i komutativna $\mathbb{F}$-algebra sa jedinicom.
+\end{itemize}
+
+\begin{theorem}
+    Neka su $0 \neq f, g, h \in \mathbb{F}[x]$. Tada:
+    \begin{itemize}
+        \item $fg \neq 0$
+        \item $\partial(fg) = \partial f + \partial g$
+        \item $fg$ je moničan ako su $f$ i $g$ monični
+        \item $fg$ je skalar $\iff$ $f$ i $g$ su skalari
+        \item $\partial(f + g) \neq 0 \implies \partial(f + g) \leq \max (\partial f, \partial g)$
+        \item $fg = fh \implies g = h$
+    \end{itemize}
+\end{theorem}
+
+\subsection{Teorema o deljenju polinoma}
+\begin{theorem}
+    \textbf{(O deljenju polinoma):} Za svaka dva polinoma $f, g \in \mathbb{F}[x]$ postoje jedinstveni $q, r \in \mathbb{F}[x]$ takvi da:
+    \begin{itemize}
+        \item $f(x) = q(x)g(x) + r(x)$
+        \item $0 \leq \partial r < \partial g$
+    \end{itemize}
+\end{theorem}
+
+\begin{lemma}
+    \textbf{(Bezuova):} Neka je $f \in \mathbb{F}[x]$ polinom. Tada važi
+    \[ f(a) = 0 \iff x - a \;|\; f(x) \]
+\end{lemma}
 
 \begin{itemize}
-    \item $P(\alpha) = 0 \;\land\; \alpha \in \mathbb{Z} \implies \alpha \;| \;a_0$
-    \item $\frac{p}{q} \in \mathbb{Q} \;\land\; NZD(p,q) = 1 \;\land\; P(\frac{p}{q}) = 0 \implies p \;|\; a_0 \;\land\; q \;|\; a_n$
+    \item Polinom $g \in \mathbb{F}[x]$ je \textbf{delilac} polinoma $f \in \mathbb{F}[x]$ akko postoji polinom $h \in \mathbb{F}$ takav da je $f = gh$ (pišemo $g \; | \; f$).
 \end{itemize}
+\newpage
+\begin{theorem}
+    Relacija deljivosti polinoma ima sledeće osobine:
+    \begin{enumerate}
+        \item $g \; | \; f \land h \; | \; g \implies h \; | \; f$ (tranzitivnost)
+        \item $g \; | \; f \land g \; | \; h \implies g \; | \; f \pm h$
+        \item $g \; | \; f \implies g \; | \; fh, \; \forall h \in \mathbb{F}[x]$
+        \item $g \; | \; f_1, \dots, f_k \implies g \; | \; f_1g_1 + \dots + f_kg_k, \; \forall g_i \in \mathbb{F}[x]$
+        \item $g(x) = c \in \mathbb{F}^* \implies g \; | \; f, \; \forall f \in \mathbb{F}[x]$
+        \item $g \; | \; f \implies cg \; | \; f, \; \forall c \in \mathbb{F}$
+        \item $g \; | \; f \land \partial g = \partial f \iff g = cf, \; c \in \mathbb{F}^*$
+    \end{enumerate}
+\end{theorem}\
+
+\begin{itemize}
+    \item Polinom $d(x)$ je \textbf{najveći zajednički delilac} $\operatorname{NZD}(f(x), g(x))$ polinoma $f(x)$ i $g(x)$ akko $d(x)$ ima sledeće osobine:
+    \begin{description}
+        \item[(NZD1)] $d\;|\;f \land d\;|\;g$
+        \item[(NZD2)] $d_1\;|\;f \land d_1\;|\;g \implies d_1\;|\;d$
+        \item[(NZD3)] vodeći koeficijent polinoma $d$ je 1
+    \end{description}
+    \item Ako je $\operatorname{NZD}(f, g)=1$, kažemo da su $f$ i $g$ uzajamno prosti.
+\end{itemize}
+
+\subsection{Posledice teoreme o deljenju polinoma}
+
+\begin{theorem}
+    \textbf{(O racionalnim korenima):}
+    Za $P(x) = a_nx^n + \dots + a_0, \; a_i \in \mathbb{Z}$ važi:
+\begin{itemize}
+    \item $P(\alpha) = 0 \;\land\; \alpha \in \mathbb{Z} \implies \alpha \;| \;a_0$
+    \item $\frac{p}{q} \in \mathbb{Q} \;\land\; \operatorname{NZD}(p,q) = 1 \;\land\; P(\frac{p}{q}) = 0 \implies p \;|\; a_0 \;\land\; q \;|\; a_n$
+\end{itemize}
+\end{theorem}
+
+
 
 \newpage
 \chapter{Geometrija}
@@ -264,7 +336,6 @@ c &= a \cos \beta + b \cos \alpha
 \]
 
 \newpage
-
 \chapter{Teorija brojeva}
 \section{Kongruencija}
 \subsection{Mala Fermaova teorema}
@@ -286,7 +357,6 @@ c &= a \cos \beta + b \cos \alpha
 \[
     x^n = z, \;\;z,x\in \mathbb{C} \implies  \; \sum^n_{k=1} x_k=0 \;\; (x_1, x_2, \dots, x_n \;\; \text{se ponašaju kao težišne duži $n$-tougla}.)
 \]
-
 \chapter{Kombinatorika}
 \section{Prebrojavanja}
 \begin{itemize}
@@ -487,7 +557,6 @@ c &= a \cos \beta + b \cos \alpha
 \subsection{Lukasovi brojevi}
 \section{Katalanovi brojevi}
 \section{Bernulijevi brojevi}
-
 \chapter{Teorija grafova}
 \section{Osnovni pojmovi i teoreme}
 
@@ -1009,7 +1078,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item \textbf{Napomena:} Za svaka dva čvora grafa, algoritam pronalazi najkraći put koji potencijalno prolazi kroz sve ostale čvorove. 
     \item \textbf{Modifikacije:} Algoritam se može unaprediti za rekonstrukciju samih putanja (pamćenjem prethodnika) ili za utvrđivanje dostupnosti čvorova (tada se težine grana tretiraju kao 1, a algoritam proverava samo postojanje puta).
 \end{itemize}
-
 \chapter{Teorija grupa}
 \noindent
 \begin{equation*}
@@ -1029,7 +1097,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{description}
 
 \chapter{Linearna algebra}
-
 \section{Klasična algebra vektora}
 \section{Vektorski prostori}
 \section{Linearni operatori}
@@ -1721,7 +1788,6 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     \end{description}
     Tada je $d = \det$.
 \end{theorem}
-
 \section{Sistemi linearnih jednačina}
 
 \subsection{Definicija sistema linearnih jednačina}
@@ -1848,7 +1914,13 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \end{theorem}
 
 \newpage
+
 \section{Redukcija linearnih operatora na konačnodimenzionim prostorima}
+
+
+
+
+
 \section{Unitarni prostori}
 \section{Bilinearne i kvadratne forme}
 
