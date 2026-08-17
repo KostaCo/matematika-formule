@@ -2003,10 +2003,49 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 
 \section{Redukcija linearnih operatora na konačnodimenzionim prostorima}
 
+\subsection{Redukcija linearnog operatora}
+\begin{itemize}
+    \item Redukcija linearnog operatora je postupak izbora pogodne baze u kojoj matrica operatora poprima najjednostavniji mogući oblik (dijagonalni ili Žordanov).
+    \item Cilj je pojednostaviti računske operacije (stepenovanje, eksponencijacija, rešavanje sistema), otkriti geometrijsku strukturu prostora (invarijantne potprostore) i klasifikovati sve operatore do na sličnost.
+    \item Motivacija potiče iz potrebe za rešavanjem sprega diferencijalnih jednačina, gde dijagonalizacija razdvaja spregnute promenljive u nezavisne jednačine.
+\end{itemize}
 
+\subsection{Invarijantni potprostori}
 
+\begin{itemize}
+    \item Neka je $A \in \operatorname{Hom} V$ i $L \subseteq V$. $L$ je \textbf{invarijantan potprostor} operatora $A$ ako je $A(L) \subseteq L$.
+    \item Ako je $L$ invarijantan potprostor od $A$, onda je dobro definisana restrikcija operatora $A$ na $L$. Dakle, preslikavanje $A_L:L \to L, \; A_Lx = Ax$ je linearni operator.
+    \item Svaki linearni operator $A \in \operatorname{Hom}V$ ima \textbf{trivijalne} invarijantne potprostore, \linebreak $L = \{0\}$ i $L = V$. Ostale nazivamo \textbf{pravi} ili \textbf{netrivijalni} invarijantni potprostori operatora $A$.
+\end{itemize}
 
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$ linearni operator. Tada važi:
+    \begin{enumerate}
+        \item $\ker A$ i $\operatorname{Im}A$ su invarijantni potprostori od $A$
+        \item $\ker A^j \subseteq \ker A^{j+1}, \;\; \forall j \in \mathbb{N}$
+        \item $\operatorname{Im}A^j \supseteq \operatorname{Im}A^{j+1}, \;\; \forall j \in \mathbb{N}$
+    \end{enumerate}
+\end{theorem}
 
+\subsection{Dekompozabilni i ireducibilni operatori}
+
+\begin{itemize}
+    \item Ako $A \in \operatorname{Hom}V$ ima netrivijalni invarijantni potprostor, kažemo da je \textbf{reducibilan (svodljiv)} na $V$. U suprotnom, kažemo da je \textbf{ireducibilan (nesvodljiv)} na $V$.
+    \item Za operator koji ima invarijantne netrivijalne potprostore $L$ i $M$ takve da je $V = L \oplus M$, kažemo da je \textbf{dekompozabilan}.
+    \item Ako za svaki netrivijalni invarijantni potprostor $L$ postoji invarijantni potprostor $M$ takav da je $V = L \oplus M$, kažemo da je operator $A$ \textbf{potpuno reducibilan} ili \textbf{potpuno svodljiv}.
+    \item Ako je operator potpuno reducibilan, tada je i svodljiv.
+\end{itemize}
+
+\subsection{Karakteristični polinom i invarijante sličnosti}
+\subsection{Hamilton-Kejlijeva teorema}
+\subsection{Minimalni polinom matrice}
+\subsection{Sopstvene vrednosti linearnog operatora}
+\subsection{Dijagonalizacija linearnog operatora}
+\subsection{Svođenje matrice operatora na trougaoni oblik}
+\subsection{Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}
+\subsection{Nilpotetnti operatori}
+\subsection{Žordanova normalna forma}
+\subsection{Invarijantnost linearnih operatora nad realnim vektorskim prostorima}
 \section{Unitarni prostori}
 \section{Bilinearne i kvadratne forme}
 
