@@ -203,6 +203,92 @@ Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobin
 \subsection{Posledice teoreme o deljenju polinoma}
 
 \begin{theorem}
+    \textbf{(Euklidov algoritam):} Neka su $f, g \in \mathbb{F}[x]$ polinomi takvi da je  $\deg f \geq \deg g$. Tada je dobro
+    definisan konačan niz jednakosti:
+    \[
+        \begin{aligned}
+            &f = gq_1 + r1,\\
+            &g = r_1q_2 + r_2, \\
+            &r_1 = r_2q_3 + r_3, \\
+            &\vdots\\
+            &r_{k-3} = r_{k-2}q_{k-1} + r_{k-1},\\
+            &r_{k-2} = r_{k-1}q_k + r_k,\\
+            &r_{k-1} = r_kq_{k+1}.
+        \end{aligned}
+    \]
+    Tada je $\operatorname{NZD}(f, g)=cr_k$, gde je $c \in \mathbb{F}^*$ jednak recipročnoj vrednosti vodećeg koeficijenta
+    polinoma $r_k$.
+\end{theorem}
+
+\begin{theorem}
+    Neka su $f, g \in \mathbb{F}[x]$ polinomi i neka je $\operatorname{NZD}(f,g)=d$. Tada postoje polinomi $u, v \in \mathbb{F}[x]$
+    takvi da je
+    \[ fu + gv = d. \]
+    Ako je $\deg f > 0$ i $\deg g > 0$, onda možemo odabrati $u$ i $v$ td. važi $\deg u < \deg g$ i $\deg v < \deg f$.
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Ovo važi jer "namestimo" $u$ i $v$ tako da se članovi najvećeg stepena skrate. Na primer:
+\[ f(x) = 3x^4 + 5x^3 + x^2 + 5x - 2, \;\;\; g(x) = 3x^4 + 11x^3 + 23x^2 + 21x - 10 \]
+\[ \implies \operatorname{NZD}(f, g) = x^2 + \frac{5}{3}x - \frac{2}{3} \]
+\[ fu + gv = \operatorname{NZD}(f, g) \implies u(x) = \frac{x}{30}, \;\; v(x) = \frac{-x + 2}{30} \]
+
+\subsection{Nule polinoma}
+
+\begin{theorem}
+    \textbf{(O kompleksnim nulama realnog polinoma):} Neka je $f \in \mathbb{R}[x]$ i $z \in \mathbb{C}\setminus\mathbb{R}$. Tada važi
+    \[ f(z) = 0 \implies f(\overline{z}) = 0. \]
+\end{theorem}
+
+\subsection{Ireducibilnost(nesvodljivost) polinoma}
+\begin{itemize}
+    \item Polinom $f(x) \in \mathbb{F}[x]$ je \textbf{reducibilan (svodljiv)} nad $\mathbb{F}$ ako postoje polinomi $g, h \in 
+    \mathbb{F}[x]$ td. važi:
+    \begin{enumerate}
+        \item $f(x) = g(x)h(x)$,
+        \item $\deg g \geq 1 \land \deg g \geq 1$.
+    \end{enumerate}
+    Ako takvi polinomi ne postoje, onda je \textbf{ireducibilan (nesvodljiv)}.
+    \item Ireducibilni polinom stepena barem 1 nazivamo \textbf{prostim polinomom} nad $\mathbb{F}$.
+\end{itemize}
+
+\begin{theorem}
+    Neka $p, f, g \in \mathbb{F}[x]$. Tada važi: 
+    \[p \text{ je prost polinom } \land\; p \;|\; fg \implies p \;|\; f \lor p \;|\; g\]
+\end{theorem}
+
+\noindent\textbf{Posledica 1.} \textit{Ako je $p \in \mathbb{F}[x]$ prost polinom i $p\;|\; f_1\dots f_m$, tada $p$ deli
+barem jedan od polinoma $f_i$.}
+
+\begin{theorem}
+    Neka je $f \in \mathbb{F}[x]$ i $\deg f \geq 1$. Tada postoji $a_n \in \mathbb{F}$ i različiti prosti monični polinomi 
+    $p_1, \dots, p_m$ i $r_1, \dots, r_k \in \mathbb{N}$ td. važi
+    \[ f(x) = a_np_1^{r_1}\dots p_m^{r_m}. \]
+    Ova dekompozicija je jedinstvena do na permutaciju polinoma $p_i^{r_i}$.
+\end{theorem}
+
+\begin{theorem}
+    Ireducibilni polinomi nad $\mathbb{C}$ su oblika:
+    \[ x - \alpha, \;\; \alpha \in \mathbb{R}. \]
+\end{theorem}
+
+\begin{theorem}
+    Ireducibilni polinomi nad $\mathbb{R}$ su oblika:
+    \begin{enumerate}
+        \item $ x - \alpha, \;\; \alpha \in \mathbb{R}, $
+        \item $x^2 + px + q, \;\; p, q \in \mathbb{R}$ td. $D = p^2 - 4q < 0$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    \textbf{(Ajzenštajnov kriterijum):} Neka je $f(x) = \sum_{i=0}^{n}a_ix^i \in \mathbb{Z}[x]$ i neka postoji prost broj $p$ td. važi:
+    \begin{enumerate}
+        \item $p\;|\; a_i, \; i \in \{0, 1, \dots, n-1\}$
+        \item $p \;\not | \; a_n$
+        \item $p^2 \;\not | \; a_0$.
+    \end{enumerate}
+    Tada je $f(x)$ ireducibilan nad $\mathbb{Q}$.
+\end{theorem}
+
+\begin{theorem}
     \textbf{(O racionalnim korenima):}
     Za $P(x) = a_nx^n + \dots + a_0, \; a_i \in \mathbb{Z}$ važi:
 \begin{itemize}
