@@ -2141,6 +2141,46 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \end{theorem}
 
 \subsection{Minimalni polinom matrice}
+
+\begin{itemize}
+    \item \textbf{Minimalni polinom} matrice $\mathcal{A}$ je monični polinom $\mu_\mathcal{A}(\lambda) \in \mathbb{F}[\lambda]$ 
+    najmanjeg stepena za koji važi \[ \mu_\mathcal{A}(\mathcal{A})=0. \]
+\end{itemize}
+
+\begin{theorem}
+    Neka je $\mathcal{A}\in \mathbb{M}_n(\mathbb{F})$.
+    \begin{enumerate}
+        \item Ako je $p \in \mathbb{F}[\lambda]$ takav da je $p(\mathcal{A}) = 0$, tada $\mu_\mathcal{A}(\lambda)\;|\;p(\lambda)$.
+        Specijalno, važi \[\mu_\mathcal{A}(\lambda)\;|\;\kappa_\mathcal{A}(\lambda).\]
+        \item Minimalni polinom je invarijanta sličnosti.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Neka je $p(\lambda) = \lambda^n + \alpha_{n-1}\lambda^n + \dots + \alpha_1\lambda + \alpha_0 \in \mathbb{F}[\lambda], \; n > 0$.
+    Tada je $p(\lambda)$ jednak minimalnom polinomu matrice
+    \[\mathcal{A} = A(e) = \begin{bmatrix}
+        0 & 0 & \dots & 0 &-\alpha_0 \\
+        1 & 0 & \dots & 0 &-\alpha_1 \\
+        0 & 1 & \dots & 0 &-\alpha_2\\
+        \vdots & \vdots & \ddots & \vdots & \vdots \\
+        0 & 0 & \dots & 1 & -\alpha_{n-1}
+    \end{bmatrix}.\]
+    Takođe važi $\kappa_\mathcal{A}(\lambda) = (-1)^n\mu_\mathcal{A}(\lambda)$.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $\mathcal{A} \in \mathbb{M}_n(\mathbb{F})$ i $p(\lambda) = \alpha_k\lambda^k + \dots + \alpha_1\lambda + \alpha_0
+     \in \mathbb{F}[\lambda]$ t.d. $p(\mathcal{A})=0$. Tada važi
+    \begin{enumerate}
+        \item $\alpha_0 \neq 0 \implies \mathcal{A}$ je invertibilna,
+        \item ako je $p = \mu_\mathcal{A}$, tada važi
+        \[  \alpha_0 \neq 0 \iff \mathcal{A} \text{ je invertibilna.}\]
+    \end{enumerate}
+    Ukoliko je $\mathcal{A}$ invertibilina, njen inverz se pronalazi po formuli
+    \[ \mathcal{A}^{-1} = - \frac{1}{\alpha_0}\left( \alpha_k\mathcal{A}^{k-1}+\dots + \alpha_1\mathbb{I}_n \right). \]
+\end{theorem}
+
 \subsection{Sopstvene vrednosti linearnog operatora}
 \subsection{Dijagonalizacija linearnog operatora}
 \subsection{Svođenje matrice operatora na trougaoni oblik}
