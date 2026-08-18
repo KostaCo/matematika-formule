@@ -2054,15 +2054,15 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \[
         \begin{array}{cc}
          & \begin{array}{cc}
-           \text{kolone } L & \text{kolone } M 
+           \text{kolone } L\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; & \text{kolone } M 
          \end{array} \\[4pt]
         \begin{array}{c}
          \text{vrste } L \\
          \text{vrste } M 
         \end{array} &
         \left[\begin{array}{c|c}
-        A_1(k \times k) & A_{12}(k \times (n-k)) \\ \hline
-        0 ((n-k) \times k) & A_2((n-k) \times (n-k))
+        A_1[k \times k] & A_{12}[k \times (n-k)] \\ \hline
+        0 [(n-k) \times k] & A_2[(n-k) \times (n-k)]
         \end{array}\right]
         \end{array}
     \]
@@ -2076,14 +2076,47 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \[ \det (A(e)) = \det(A_1(e_L)) \det (A_2). \]
 \end{itemize}
 
+\begin{theorem}
+    \label{rlonkdp1}
+    Neka je $A \in \operatorname{Hom}V$ potpuno reducibilan linearni operator. Tada postoje ne-nula potprostori $L_1, 
+    \dots, L_m$ t.d. je \[ V = \bigoplus_{i=1}^m L_i, \] i pri tome su za svako $i \in \mathbb{N}_m$ restrikcije
+    $A_i = A_{|L_i}$ ireducibilni linearni operatori na $L_i$.
+\end{theorem}
+
+\begin{itemize}
+    \item Dakle, ako je, kao u teoremi \ref{rlonkdp1}, $V = \bigoplus^m_{i=1} L_i$ i ako su $A_i = A_{|L_i}$, tada je
+    i $A = \bigoplus^m_{i=1} A_i$. Neka je $e = (e_{L_1}, \dots, e_{L_m})$ baza od $V$ t.d. su $e_{L_i}$ baze od $L_i$, onda
+    je matrica operatora $A$ u toj bazi kvazidijagonalna, tj. oblika
+    \[ A(e) = \begin{bmatrix}
+        A_1(e_{L_1}) & 0 & \dots & 0 \\
+        0 & A_2(e_{L_2}) & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & A_m(e_{L_m})
+    \end{bmatrix}. \]
+    \item Tada važi i formula
+    \[ \det (A(e)) = \prod^m_{i=1} \det(A_i(e_{L_i})). \]
+\end{itemize}
+
+\begin{theorem}
+    \textbf{(Fitingova dekompozicija):} Neka je $A: V \to V$ linearni operator i $\dim V < \infty$. Tada postoje $m \in \mathbb{N}$
+    i jedinstveni invarijantni potprostori $L = \ker A^m$ i $M = \operatorname{Im}A^m$ od $A$ t.d. je 
+    \begin{enumerate}
+        \item $V = L \oplus M$,
+        \item $B = A_{|M}$ je regularan operator i $C = A_{|L}$ je nilpotentan operator.
+    \end{enumerate}
+\end{theorem}
+
 \subsection{Karakteristični polinom i invarijante sličnosti}
+
+
+
 \subsection{Hamilton-Kejlijeva teorema}
 \subsection{Minimalni polinom matrice}
 \subsection{Sopstvene vrednosti linearnog operatora}
 \subsection{Dijagonalizacija linearnog operatora}
 \subsection{Svođenje matrice operatora na trougaoni oblik}
 \subsection{Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}
-\subsection{Nilpotetnti operatori}
+\subsection{Nilpotentni operatori}
 \subsection{Žordanova normalna forma}
 \subsection{Invarijantnost linearnih operatora nad realnim vektorskim prostorima}
 \section{Unitarni prostori}
