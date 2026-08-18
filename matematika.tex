@@ -2108,9 +2108,38 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 
 \subsection{Karakteristični polinom i invarijante sličnosti}
 
+\begin{itemize}
+    \item Ako je $\mathcal{A} \in \mathbb{M}_n(\mathbb{F})$, tada matricu $\mathcal{C} = \mathcal{A} - \lambda\mathbb{I}_n$, 
+    gde je $\lambda$ promenljiva, nazivamo \textbf{karakteristična matrica} od $\mathcal{A}$.
+    \item Determinantu od $\mathcal{C}$, tj. polinom u $\lambda$:
+    \[ \det(\mathcal{A} - \lambda \mathbb{I}_n) = \begin{vmatrix}
+        \alpha_{11} - \lambda & \alpha_{12} & \dots & \alpha_{1n}\\
+        \alpha_{21} & \alpha_{22}-\lambda & \dots & \alpha_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \alpha_{n1} & \alpha{n2} & \dots & \alpha_{nn} - \lambda
+    \end{vmatrix} = \kappa_\mathcal{A}(\lambda)\]
+    nazivamo \textbf{karakteristični polinom} $\kappa_\mathcal{A}(\lambda)$ matrice $\mathcal{A}$.
+    \item \textbf{Karakteristična jednačina} matrice $\mathcal{A}$: $\kappa_\mathcal{A}(\lambda) = 0$
+    \item Važi jednakost:
+    \[ \kappa_\mathcal{A}(\lambda) = \prod^{n}_{i = 1} (\alpha_{ii} - \lambda) + q(\lambda), \;\; \deg q \leq n-2 \]
+    \item \textbf{Invarijante sličnosti} su svojstva linearnog operatora $A \in \operatorname{Hom}V$ koja ne zavise od baze.
+\end{itemize}
 
+\begin{theorem}
+    Karakteristični polinom je invarijanta sličnosti.
+\end{theorem}\
+
+\noindent\textbf{Posledica 1.} \textit{Trag matrice je invarijanta sličnosti.}\\
+
+\noindent\textbf{Posledica 2.} \textit{Determinanta matrice je invarijanta sličnosti.}
 
 \subsection{Hamilton-Kejlijeva teorema}
+
+\begin{theorem}
+    \textbf{(Hamilton-Kejli):} Neka je $\mathcal{A} \in \mathbb{M}_n$. Tada je \[ \kappa_\mathcal{A}(\mathcal{A}) = 0, \]
+    tj. svaka matrica poništava svoj karakteristični polinom.
+\end{theorem}
+
 \subsection{Minimalni polinom matrice}
 \subsection{Sopstvene vrednosti linearnog operatora}
 \subsection{Dijagonalizacija linearnog operatora}
