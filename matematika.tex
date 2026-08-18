@@ -2014,7 +2014,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 
 \begin{itemize}
     \item Neka je $A \in \operatorname{Hom} V$ i $L \subseteq V$. $L$ je \textbf{invarijantan potprostor} operatora $A$ ako je $A(L) \subseteq L$.
-    \item Ako je $L$ invarijantan potprostor od $A$, onda je dobro definisana restrikcija operatora $A$ na $L$. Dakle, preslikavanje $A_L:L \to L, \; A_Lx = Ax$ je linearni operator.
+    \item Ako je $L$ invarijantan potprostor od $A$, onda je dobro definisana restrikcija operatora $A$ na $L$. Dakle, preslikavanje $A_{|L}:L \to L, \; A_{|L}x = Ax$ je linearni operator.
     \item Svaki linearni operator $A \in \operatorname{Hom}V$ ima \textbf{trivijalne} invarijantne potprostore, \linebreak $L = \{0\}$ i $L = V$. Ostale nazivamo \textbf{pravi} ili \textbf{netrivijalni} invarijantni potprostori operatora $A$.
 \end{itemize}
 
@@ -2033,7 +2033,45 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \item Ako $A \in \operatorname{Hom}V$ ima netrivijalni invarijantni potprostor, kažemo da je \textbf{reducibilan (svodljiv)} na $V$. U suprotnom, kažemo da je \textbf{ireducibilan (nesvodljiv)} na $V$.
     \item Za operator koji ima invarijantne netrivijalne potprostore $L$ i $M$ takve da je $V = L \oplus M$, kažemo da je \textbf{dekompozabilan}.
     \item Ako za svaki netrivijalni invarijantni potprostor $L$ postoji invarijantni potprostor $M$ takav da je $V = L \oplus M$, kažemo da je operator $A$ \textbf{potpuno reducibilan} ili \textbf{potpuno svodljiv}.
-    \item Ako je operator potpuno reducibilan, tada je i svodljiv.
+    \item Ako je operator potpuno reducibilan, tada je i dekompozabilan.
+    \item Ako je $A$ dekompozabilan, onda je potpuno određen svojim restrikcijama $A_1 = A_{|L}$ i $A_2 = A_{|M}$ jer $(\forall 
+    x \in V)(\exists_1 l \in L)(\exists_1 m \in M)\;x= l + m$, pa važi
+    \[ A(x) = A(l + m) = A(l) + A(m) = A_1(l) + A_2(m) \]
+    Kažemo da je $A$ \textbf{direktna suma} operatora $A_1$ i $A_2$ (pišemo $A = A_1 \oplus A_2$).
+    \item Neka je $A$ reducibilan i $L$ njegov invarijantni potprostor, a $M$ neki direktan komplement od $L$. Odaberemo bazu 
+    $e$ td. prvih $k = \dim L$ vektora čine bazu $e_L$, a ostalih $n-k$ bazu $e_M$. U bazi $e$, matrica operatora $A$ ima oblik
+    \[ A(e) = \begin{bmatrix}
+        A_1(e_L) & A_{12} \\
+        0 & A_2
+    \end{bmatrix}, \]
+    gde je $A_1 = A_{|L}$.\\
+    \noindent\underline{\textit{Intuicija:}} Kako je $L$ invarijantni potprostor i $\dim L = k$, matrica $A_1(e_L)$ će biti 
+    dimenzija $k \times k$ (jer slika $L$ u $L$). Ovo znači da će se ispod $A_1(e_L)$ nalaziti nula-matrica dimenzija $(n-k) \times k$
+    (jer $A_1(e_L)$ ne slika ništa van $L$). Kako nije dato da je $M$ invarijantni potprostor, druga kolona u opštem slučaju neće
+    imati nula-matricu. Dakle, matrica $A_{12}$ slika $M$ u $L$ (jer u $e$ prvo ide $e_L$ pa $e_M$), pa mora biti dimenzija 
+    $k \times (n-k)$. Preostali blok $A_2$ je dimenzija $(n-k)\times (n-k)$ i on opisuje kako se vektori iz $M$ projektuju 
+    nazad u $M$. On nije restrikcija u $M$ (jer nije invarijantan), već samo jedan blok u matrici. Dijagram:
+    \[
+        \begin{array}{cc}
+         & \begin{array}{cc}
+           \text{kolone } L & \text{kolone } M 
+         \end{array} \\[4pt]
+        \begin{array}{c}
+         \text{vrste } L \\
+         \text{vrste } M 
+        \end{array} &
+        \left[\begin{array}{c|c}
+        A_1(k \times k) & A_{12}(k \times (n-k)) \\ \hline
+        0 ((n-k) \times k) & A_2((n-k) \times (n-k))
+        \end{array}\right]
+        \end{array}
+    \]
+    \item Ako je i $M$ invarijantan, tj. $A$ je dekompozabilan, onda je matrica $A(e)$ kvazidijagonalna:
+    \[ A(e) = \begin{bmatrix}
+        A_1(e_L) & 0 \\
+        0 & A_2(e_M)
+    \end{bmatrix}, \]
+    gde je $A_1 = A_{|L}$ i $A_2 = A_{|M}$.
 \end{itemize}
 
 \subsection{Karakteristični polinom i invarijante sličnosti}
