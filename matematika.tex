@@ -2182,6 +2182,40 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \end{theorem}
 
 \subsection{Sopstvene vrednosti linearnog operatora}
+
+\begin{itemize}
+    \item Skalar $\lambda \in \mathbb{F}$ se zove \textbf{sopstvena (svojstvena, karakteristična) vrednost} linearnog operatora $A \in \operatorname{Hom}V$ ako
+    \[ (\exists x \in V)\; Ax = \lambda x \land x \neq 0. \] Vektor $x$ se zove \textbf{sopstveni (svojstveni, karakteristični) vektor} koji odgovara 
+    sopstvenoj vrednosti $\lambda$.
+    \item \textbf{Spektar} $\operatorname{Sp}(A)$ linearnog operatora $A$ - skup svih sopstvenih vrednosti od $A$.
+    \item \textbf{Sopstveni potprostor sopstvene vrednosti} $\lambda$ operatora $A$:
+    \[ V_\lambda^A = V_\lambda = \{x \in V \;|\; Ax = \lambda x\} \]
+\end{itemize}
+
+\begin{theorem}
+    $V_\lambda^A$ je potprostor od $V$.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$ linearni operator. Tada važi
+    \[ \lambda_0 \in V_\lambda^A\setminus \{0\} \iff \kappa_A(\lambda_0) = 0 \]
+\end{theorem}
+
+\noindent\textbf{Posledica.} \textit{Sopstvena vrednost je invarijanta sličnosti.}
+
+\begin{theorem}
+    Linearni operator koji deluje na $n$-dimenzionom vektorskom prostoru nad algebarski zatvorenim poljem ima tačno $n$ sopstvenih vrednosti (među kojima može
+    biti istih).
+\end{theorem}
+
+\begin{theorem}
+    Neka je $\mathcal{A} \in \mathbb{M}_n(\mathbb{F})$. Tada:
+    \begin{enumerate}
+        \item Svaki ireducibilni faktor karakterističnog polinoma matrice $\mathcal{A}$ ujedno je i ireducibilni faktor minimalnog polinoma iste.
+        \item $\kappa_\mathcal{A}(\lambda)$ nema višestrukih nula $\implies \kappa_\mathcal{A}(\lambda) = \mu_\mathcal{A}(\lambda)$
+    \end{enumerate}
+\end{theorem}
+
 \subsection{Dijagonalizacija linearnog operatora}
 \subsection{Svođenje matrice operatora na trougaoni oblik}
 \subsection{Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}

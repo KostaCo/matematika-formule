@@ -140,12 +140,12 @@
 \contentsline {subsection}{\numberline {8.6.5}Hamilton-Kejlijeva teorema}{58}{subsection.8.6.5}%
 \contentsline {subsection}{\numberline {8.6.6}Minimalni polinom matrice}{59}{subsection.8.6.6}%
 \contentsline {subsection}{\numberline {8.6.7}Sopstvene vrednosti linearnog operatora}{59}{subsection.8.6.7}%
-\contentsline {subsection}{\numberline {8.6.8}Dijagonalizacija linearnog operatora}{59}{subsection.8.6.8}%
-\contentsline {subsection}{\numberline {8.6.9}Svođenje matrice operatora na trougaoni oblik}{59}{subsection.8.6.9}%
-\contentsline {subsection}{\numberline {8.6.10}Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}{59}{subsection.8.6.10}%
-\contentsline {subsection}{\numberline {8.6.11}Nilpotentni operatori}{59}{subsection.8.6.11}%
-\contentsline {subsection}{\numberline {8.6.12}Žordanova normalna forma}{59}{subsection.8.6.12}%
-\contentsline {subsection}{\numberline {8.6.13}Invarijantnost linearnih operatora nad realnim vektorskim prostorima}{59}{subsection.8.6.13}%
+\contentsline {subsection}{\numberline {8.6.8}Dijagonalizacija linearnog operatora}{60}{subsection.8.6.8}%
+\contentsline {subsection}{\numberline {8.6.9}Svođenje matrice operatora na trougaoni oblik}{60}{subsection.8.6.9}%
+\contentsline {subsection}{\numberline {8.6.10}Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}{60}{subsection.8.6.10}%
+\contentsline {subsection}{\numberline {8.6.11}Nilpotentni operatori}{60}{subsection.8.6.11}%
+\contentsline {subsection}{\numberline {8.6.12}Žordanova normalna forma}{60}{subsection.8.6.12}%
+\contentsline {subsection}{\numberline {8.6.13}Invarijantnost linearnih operatora nad realnim vektorskim prostorima}{60}{subsection.8.6.13}%
 \contentsline {section}{\numberline {8.7}Unitarni prostori}{60}{section.8.7}%
 \contentsline {section}{\numberline {8.8}Bilinearne i kvadratne forme}{60}{section.8.8}%
 \contentsline {chapter}{\numberline {9}Analitička geometrija}{61}{chapter.9}%
