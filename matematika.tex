@@ -2344,6 +2344,53 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
 
 
 \subsection{Nilpotentni operatori}
+
+\begin{itemize}
+    \item Za operator $A \in \operatorname{Hom}V$ kažemo da je \textbf{nilpotentan} ako postoji $k \in \mathbb{N}$ t.d. je $A^k = 0$.
+    \item \textbf{Indeks nilpotentnosti} $k$ operatora $A$: \[k = \min \{k \in \mathbb{N}\;|\;A^k = 0 \land A^{k-1}\neq 0\}\]
+    \item Ako je $A$ nilpotentni operator indeksa nilpotentnosti $k$, njegov karakteristični polinom je $\kappa_A(\lambda) = (-1)^n\lambda^n$, a
+    minimalni $\mu_A(\lambda) = \lambda^k$, pa mu je jedina sopstvena vrednost $\lambda = 0$. Takođe, $\operatorname{Tr}(A) = \det A = 0$ i $k \leq \dim V$.
+    \item \textbf{Kanonska nilpotentna matrica indeksa $k$}:
+    \[ \mathcal{N}_k = \begin{bmatrix}
+        0 & 1 & 0 & \dots & 0 \\
+        0 & 0 & 1 & \dots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \dots & 1 \\
+        0 & 0 & 0 & \dots & 0
+    \end{bmatrix}_{k \times k} \]
+\end{itemize}
+
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$ nilpotentni operator indeksa nilpotentnosti $k$. Tada:
+    \begin{enumerate}
+        \item Postoji vektor $e \in V$ t.d. je skup $S_1 = \{e, Ae, \dots, A^{k-1}e\}$ linearno nezavisan;
+        \item $L_1 = \mathcal{L}(S_1)$ je invarijantan potprostor od $A$;
+        \item Restrikcija $A_{|L_1}$ je nilpotentan operator indeksa nilpotentnosti $k$, čija je matrica u bazi $e_{L_1} = (A^{k-1}e, \dots, Ae, e)$ 
+        kanonska nilpotentna matrica indeksa nilpotentnosti $k$, tj. oblika
+        \[ \mathcal{A}_{|L_1}(e_{L_1}) = \begin{bmatrix}
+        0 & 1 & 0 & \dots & 0 \\
+        0 & 0 & 1 & \dots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \dots & 1 \\
+        0 & 0 & 0 & \dots & 0
+    \end{bmatrix}_{k \times k} \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Ciklički operator} - linearni operator za koji postoji baza $\mathcal{B} = (e, Ae, \dots, A^{k-1}e)$ t.d. je $A^ke \in \mathcal{L}(\mathcal{B})$.
+    \item Nilpotentan ciklički operator $A$ u bazi $e_{L_1} = (A^{k-1}e, \dots, Ae, e)$ ima kanonsku nilpotentnu matricu indeksa nilpotentnosti $k$, tj. oblika
+    \[ \mathcal{A}(e_{L_1}) = \begin{bmatrix}
+        0 & 1 & 0 & \dots & 0 \\
+        0 & 0 & 1 & \dots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \dots & 1 \\
+        0 & 0 & 0 & \dots & 0
+    \end{bmatrix}_{k \times k} \]
+    \item Baza $e_{L_1} = (A^{k-1}e, \dots, Ae, e)$  zove se \textbf{ciklička baza} od $A_1$, a $L_1 = \mathcal{L}(\{e, Ae, \dots, A^{k-1}e\})$ se zove 
+    \textbf{ciklički potprostor} operatora $A$.
+\end{itemize}
+
 \subsection{Žordanova normalna forma}
 \subsection{Invarijantnost linearnih operatora nad realnim vektorskim prostorima}
 \section{Unitarni prostori}
