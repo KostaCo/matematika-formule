@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,12pt,twoside]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{geometry}
@@ -32,8 +32,9 @@
 }
 \usepackage[pagestyles]{titlesec}
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\huge}
-\newpagestyle{mystyle}
-{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\newpagestyle{mystyle}{%
+  \sethead[\chaptertitle][][\thepage]{\thepage}{}{\sectiontitle}
+}
 \pagestyle{mystyle}
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{definition}{Definicija}[section]
