@@ -2301,6 +2301,48 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 \end{itemize}
 
 \subsection{Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}
+
+\begin{theorem}
+    \label{irfkpiip1}
+    Neka je $A \in \operatorname{Hom}V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
+    \begin{enumerate}
+        \item $f = gh$,
+        \item $f(A) = 0$,
+        \item $g$ i $h$ su uzajamno prosti polinomi.
+    \end{enumerate}
+    Tada je $V = \ker g(A) \oplus \ker h(A)$.
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Ako polinom $f$ poništava operator $A$ i ako $f$ rastavimo na 2 uzajamno prosta faktora $g$ i $h$, tada se ceo
+prostor $V$ raspada na direktnu sumu jezgara ta 2 faktora. Dakle, praktično razdvajamo $V$ na dva dela. U prvom ($\ker g(A)$) važi $g(A) = 0$, a u drugom 
+($\ker h(A)$) važi $h(A) = 0$. Ova teorema nam garantuje da se ti delovi ne poklapaju i da pokrivaju ceo $V$.\\
+
+\noindent\textbf{Posledica.} \textit{Neka je $A \in \operatorname{Hom}V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
+    \begin{enumerate}
+        \item $f = gh$,
+        \item $f(A) = 0$,
+        \item $g$ i $h$ su uzajamno prosti polinomi,
+        \item $f$ je minimalan polinom od $A$,
+        \item $g$ i $h$ su monični polinomi.
+    \end{enumerate}
+    Tada su $g$ i $h$ minimalni polinomi restrikcija $A_{|\ker g(A)}$ i $A_{| \ker h(A)}$ respektivno.
+}
+
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$ linearni operator čiji je minimalni polinom
+    \[ \mu_A = \prod_{i=1}^{k}p_i^{s_i}, \]
+    gde su $p_i$ različiti monični polinomi. Tada je $V = \bigoplus_{i=1}^k L_i$, pri čemu su $L_i = \ker p_i^{s_i}$ invarijantni potprostori od $A$, 
+    i $p_i^{s_i}$ je minimalni polinom restrikcije $A_{|L_i}$ na $L_i, \; i \in \mathbb{N}_k$.
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Ovo je samo primena teoreme \ref{irfkpiip1} maksimalan broj puta. \\
+Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
+\[ \mathcal{A}(e) = \begin{bmatrix}
+    A_1 & 0 & \dots & 0 \\
+    0 & A_2 & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & A_k
+\end{bmatrix}. \]
+
+
 \subsection{Nilpotentni operatori}
 \subsection{Žordanova normalna forma}
 \subsection{Invarijantnost linearnih operatora nad realnim vektorskim prostorima}
