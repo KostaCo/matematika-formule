@@ -2198,7 +2198,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 
 \begin{theorem}
     Neka je $A \in \operatorname{Hom}V$ linearni operator. Tada važi
-    \[ \lambda_0 \in V_\lambda^A\setminus \{0\} \iff \kappa_A(\lambda_0) = 0 \]
+    \[ \lambda_0 \in \operatorname{Sp}(A) \iff \kappa_A(\lambda_0) = 0 \]
 \end{theorem}
 
 \noindent\textbf{Posledica.} \textit{Sopstvena vrednost je invarijanta sličnosti.}
@@ -2217,7 +2217,88 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \end{theorem}
 
 \subsection{Dijagonalizacija linearnog operatora}
+
+\begin{itemize}
+    \item Ako operator $A \in \operatorname{Hom}V$ ima $\dim V$ jednodimenzionih invarijantnih potprostora, tada postoji baza $f$ od $V$, u kojoj je matrica operatora $A(f)$ dijagonalna.
+    \item Proces pronalaženja baze (ako ona postoji) u kojoj je matrica operatora $A$ dijagonalna, zove se \textbf{dijagonalizacija} linearnog operatora.
+    \item Za operator $A$ kažemo da je \textbf{dijagonalizabilan} ako postoji baza $f$ u kojoj je matrica operatora $A(f)$ dijagonalna.
+\end{itemize}
+
+\begin{lemma}
+    Neka su $\lambda_1, \dots, \lambda_k$ međusobno različite sopstvene vrednosti linearnog operatora $A \in \operatorname{Hom}V$ i 
+    neka su redom $v_1, \dots, v_k$ odgovarajući sopstveni vektori. Tada je skup vektora $\{v_1, \dots, v_k\}$ linearno nezavisan.
+\end{lemma}
+
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$ linearni operator nad $\mathbb{F}$. Tada su sledeći iskazi ekvivalentni:
+    \begin{enumerate}
+        \item $A$ je dijagonalizabilan.
+        \item Postoji baza $e$ od $V$ koja se sastoji od sopstvenih vektora.
+        \item $\mu_\mathcal{A}(\lambda)$ je proizvod međusobno različitih linearnih faktora oblika $\lambda - \lambda_i, \; \lambda_i \in \mathbb{F}$.
+    \end{enumerate}
+\end{theorem}
+
+\noindent\textbf{Posledica 1.} \textit{Ako je operator $A$ dijagonalizabilan, tada se na glavnoj dijagonali njegove matice u 
+bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti operatora $A$. Dakle, oblika je}
+\[ \mathcal{A}(e) = \begin{bmatrix}
+    \lambda_1 & 0 & \dots & 0 \\
+    0 & \lambda_2 & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & \lambda_n
+\end{bmatrix}. \]
+
+\noindent\textbf{Posledica 2.} \textit{Ako operator $A$ ima $n = \dim V$ različitih sopstvenih vrednosti, onda je on dijagonalizabilan.}
+\newpage
+\begin{algorithm}[!h]
+    \caption{Dijagonalizacija matrice}
+    \begin{enumerate}
+        \item Naći sve sopstvene vrednosti operatora $A$.
+        \item Formirati polinom 
+        \[ p(\lambda) = \prod_{i=1}^{k}(\lambda - \lambda_i), \;\; \lambda_i \in \operatorname{Sp}(A). \]
+        \item Proveriti da li je matrica dijagonalizabilna:
+        \[ p(\mathcal{A}) = 0 \iff \mathcal{A} \text{ je dijagonalizabilna.} \]
+        Ako nije dijagonalizabilna, algoritam se zaustavlja.
+        \item Naći sopstvene vektore u polaznoj bazi $e$, tj. vektore 
+        \[v_i(e) = (t_{1i}, \dots, t_{ni}), \;\; i \in \mathbb{N}_n\]
+        i formirati matricu prelaska $T_{ev}$.
+        \item Ako operator $A$ u bazi $e$ ima matricu $\mathcal{A}(e)$, matrica
+        \[ \mathcal{A}(v) = T_{ev}^{-1}\mathcal{A}(e)T_{ev} \] je dijagonalna.
+    \end{enumerate}
+\end{algorithm}
+
+\begin{itemize}
+    \item Neka je $A \in \operatorname{Hom}V$ linearni operator i $\lambda_0 \in \operatorname{Sp}(A)$. Tada definišemo:
+    \begin{enumerate}
+        \item \textbf{Algebarska višestrukost} sopstvene vrednosti $\lambda_0$ je višestrukost $\lambda_0$ kao nule karakterističnog
+        polinoma $\kappa_{A}(\lambda)$.
+        \item \textbf{Geometrijska višestrukost} sopstvene vrednosti $\lambda_0$ je dimenzija njenog sopstvenog prostora $V_{\lambda_0}$.
+    \end{enumerate}
+\end{itemize}
+
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$ linearni operator i $\lambda_0$ neka njegova sopstvena vrednost. Algebarska višestrukost
+    sopstvene vrednosti $\lambda_0$ veća je ili jednaka od njene geometrijske višestrukosti.
+\end{theorem}
+
 \subsection{Svođenje matrice operatora na trougaoni oblik}
+
+\begin{itemize}
+    \item U opštem slučaju, za proizvoljni operator ne postoji baza u kojoj je njegova matrica dijagonalna.
+    \item Ako je polje algebarski zatvoreno (npr. $\mathbb{C}$), onda možemo naći bazu u kojoj je matrica gornje-trougaona. 
+    Tada se na dijagonali nalaze sopstvene vrednosti.
+\end{itemize}
+
+\begin{theorem}
+    \label{gtm1}
+    Neka je $V$ vektorski prostor nad algebarski zatvorenim poljem i $A \in \operatorname{Hom}V$. Tada postoji baza u kojoj je 
+    operator $A$ predstavljen gornje-trougaonom matricom.
+\end{theorem}
+
+\begin{itemize}
+    \item Teorema \ref{gtm1} važi i kada polje $\mathbb{F}$ nije algebarski zatvoreno, ali je karakteristični polinom oblika
+    \[ \kappa_A(\lambda) = (-1)^n(\lambda-\lambda_1)^{r_1}\dots (\lambda - \lambda_k)^{r_k}, \;\; \lambda_i \in \mathbb{F}. \]
+\end{itemize}
+
 \subsection{Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}
 \subsection{Nilpotentni operatori}
 \subsection{Žordanova normalna forma}
