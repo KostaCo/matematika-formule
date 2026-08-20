@@ -2450,7 +2450,107 @@ izgleda kao blok-dijagonalna matrica oblika
 \end{theorem}
 
 \subsection{Žordanova normalna forma}
-\subsection{Invarijantnost linearnih operatora nad realnim vektorskim prostorima}
+
+\begin{itemize}
+    \item Neka je $A \in \operatorname{Hom}V$ i $\lambda \in \operatorname{Sp}(A)$. Tada skup
+    \[ V_{(\lambda)}^A = \{ v \in V \;|\; (\exists k \in \mathbb{N})\; (A - \lambda\mathbb{I}_n)^kv=0 \} \]
+    nazivamo \textbf{korenski potprostor} operatora $A$ koji odgovara sop. vrednosti $\lambda$.
+    \item Važi $V = \bigoplus_{\lambda_i \in \operatorname{Sp}(A)}V_{(\lambda_i)}^A$ 
+    \item Svaki ne-nula vektor $x \in V_{(\lambda)}^A$ zovemo \textbf{korenski vektor} operatora $A$ koji odgovara sopstvenoj vrednosti $\lambda$. Sopstveni vektori su ujedno i korenski (za $k = 1$).
+    \item \textbf{Osnovni Žordanov blok} $\mathcal{B}^k_\lambda$ je matrica oblika 
+    \[\mathcal{B}^k_\lambda = \begin{bmatrix}
+        \lambda & 1 & 0 & \dots & 0 & 0 \\
+        0 & \lambda & 1 & \dots & 0 & 0\\
+        0 & 0 & \lambda & \dots & 0 & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+        0 & 0 & 0 & \dots & \lambda & 1 \\
+        0 & 0 & 0 & \dots & 0 & \lambda
+    \end{bmatrix}, \]
+    pri čemu je $\lambda$ sopstvena vrednost bloka, a $k$ je dimenzija bloka. Važi i
+    \[ \mu_{\mathcal{B}_\lambda^k}(t) = (t-\lambda)^k  \;\land \;\kappa_{\mathcal{B}_\lambda^k}(t) = (-1)^k(t-\lambda)^k. \]
+    \item \textbf{Žordanov blok} $\mathcal{C}_\lambda^r$ je kvazidijagonalna matrica oblika
+    \[ \mathcal{C}_\lambda^r = \begin{bmatrix}
+        \mathcal{B}_\lambda^{s_1} & 0 & \dots & 0 \\
+        0 & \mathcal{B}_\lambda^{s_2} & \dots & 0\\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \mathcal{B}_\lambda^{s_l}
+    \end{bmatrix}, \] gde je $\lambda$ sopstvena vrednost i $\mathcal{B}_\lambda^{k_i}, \; i \in \mathbb{N}_l$, osnovni Žordanovi blokovi sopstvene 
+    vrednosti $\lambda$, t.d. $s1 \geq \dots \geq s_l$ i $r = s_1 + \dots + s_l$. Važi i 
+    \[ \mu_{\mathcal{C}_\lambda^r}(t) = (t - \lambda)^{s_1} \;\land\; \kappa_{\mathcal{C}_\lambda^r}(t) = (-1)^r(t-\lambda)^r. \]
+    \item \textbf{Žordanova matrica} $\mathcal{J}^n$ je kvazidijagonalna blok-matrica, oblika
+    \[ \mathcal{J}^n = \begin{bmatrix}
+        \mathcal{C}_{\lambda_1}^{r_1} & 0 & \dots & 0 \\
+        0 & \mathcal{C}_{\lambda_2}^{r_2} & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \mathcal{C}_{\lambda_k}^{r_k}
+    \end{bmatrix},  \] gde su $\lambda_i, \; i \in \mathbb{N}_k$, međusobno različite sopstvene vrednosti, a $\mathcal{C}_{\lambda_i}^{r_i}$ Žordanov blok sopstvene vrednosti $\lambda_i$,
+    pri čemu je $n = r_1 + \dots + r_k$.
+\end{itemize}
+
+\begin{theorem}
+    \label{zordan1}
+    \textbf{(Žordanova normalna forma - proširena verzija):} Neka je $A \in \operatorname{Hom}V$ i 
+    \[ \kappa_\mathcal{A}(\lambda) = (-1)^n (\lambda - \lambda_1)^{r_1}\dots (\lambda - \lambda_k)^{r_k} \;\;\land \;\; \mu_\mathcal{A}(\lambda) =  (\lambda - \lambda_1)^{s_1}\dots (\lambda - \lambda_k)^{s_k},\]
+    pri čemu je $\lambda_i \neq \lambda_j$ za $i \neq j$. Tada postoji baza $e$, u kojoj se matrica operatora $A$ podudara sa Žordanovom matricom
+    \[ \mathcal{J}^A = \begin{bmatrix}
+        \mathcal{C}_{\lambda_1}^{r_1} & 0 & \dots & 0 \\
+        0 & \mathcal{C}_{\lambda_2}^{r_2} & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \mathcal{C}_{\lambda_k}^{r_k}
+    \end{bmatrix}. \] Pri tome:
+    \begin{enumerate}
+        \item U matrici $\mathcal{C}_{\lambda_i}^{r_i}$ postoji barem jedan osnovni Žordanov blok dimenzije $s_i$, tj. matrica $\mathcal{B}_{\lambda_i}^{s_i}$, 
+        a red svih ostalih osnovnih Žordanovih blokova u $\mathcal{C}_{\lambda_i}^{r_i}$ nije veći od $s_i$.
+        \item Broj osnovnih Žordanovih blokova u $\mathcal{C}_{\lambda_i}^{r_i}$ jednak je geometrijskoj višestrukosti sopstvene vrednosti $\lambda_i$.
+        \item Zbir redova svih osnovnih Žordanovih blokova u $\mathcal{C}_{\lambda_i}^{r_i}$ jednak je algebarskoj višestrukosti sopstvene vrednosti $\lambda_i$, tj. broju $r_i$.
+        \item Broj svih osnovnih Žordanovih blokova, kao i njihove dimenzije, jedinstveno su određeni operatorom $A$.
+        \item Matrica $\mathcal{J}^A$ jedinstveno je određena do na permutacije osnovnih Žordanovih blokova u $\mathcal{C}_{\lambda_i}^{r_i}, \; i \in \mathbb{N}_k$, duž njihovih glavnih dijagonala.
+    \end{enumerate}
+\end{theorem}\
+
+\begin{itemize}
+    \item Matrica $\mathcal{J}^A$ iz teoreme \ref{zordan1} zove se \textbf{Žordanova normalna forma} operatora $A$. Baza $e$ zove se \textbf{Žordanova baza}.
+    \item Kako Žordanova forma nije jedinstvena, tako ni Žordanova baza nije jedinstvena.
+\end{itemize}\
+
+\begin{corollary}
+    Dve matrice su slične ako i samo ako imaju istu Žordanovu formu.
+\end{corollary}\
+
+\begin{algorithm}[!h]
+    \caption{Određivanje Žordanove forme matrice operatora}
+    \begin{enumerate}
+        \item Naći $\kappa_\mathcal{A}(\lambda)$ i $\mu_\mathcal{A}(\lambda)$ i sve sopstvene vrednosti operatora $A$.
+        \item Uzeti redom sopstvene vrednosti $\lambda_i$ i za svaku od njih naći strukturu osnovnog Žordanovog bloka u Žordanovom bloku $\mathcal{C}_{\lambda_i}^{r_i}$.
+        \item Odrediti njihove Žordanove baze $e^{\lambda_i} = (e_1^{\lambda_1}, \dots, e_{r_i}^{\lambda_i})$.
+        \item Formirati Žordanovu bazu $e = (e_{1}^{\lambda_1}, \dots, e_{r_1}^{\lambda_1}, e_{1}^{\lambda_2}, \dots, e_{r_2}^{\lambda_2}, \dots, e_{1}^{\lambda_k}, \dots, e_{r_k}^{\lambda_k})$ i 
+        matricu operatora $A$ u ovoj bazi - ovo je upravo Žordanova matrica $\mathcal{J}^A$.
+    \end{enumerate}
+
+    
+\end{algorithm}
+
+\subsection{Invarijantnost linearnih operatora nad realnim vek. prostorima - kompleksifikacija realnog vektorskog prostora}
+
+\begin{itemize}
+    \item Neka je $V$ realni vektorski prostor i $A \in \operatorname{Hom}V$. Tada prostoru $V$ možemo na prirodan način pridružiti kompleksni vektorski prostor $V^\mathbb{C}$ i 
+    operator $A$ tretirati kao linearni operator na $V^{\mathbb{C}}$. Dakle, ako je $e = (e_1, \dots, e_n)$ neka baza od $V$,  tada je
+    \[ V^\mathbb{C} = \left\{ \sum_{i=1}^{n} \lambda_i e_i \;|\; \lambda_i \in \mathbb{C} \right\} = V \oplus iV. \]
+    Drugim rečima, $V^\mathbb{C}$ je lineal od $V$, ali nad poljem $\mathbb{C}$. Vektorski prostor $V^\mathbb{C}$ nazivamo \textbf{kompleksifikacija realnog vektorskog prostora} $V$.
+    \item Ako je $A \in \operatorname{Hom}V$, možemo definisati i operator $A^C \in \operatorname{Hom}V^\mathbb{C}$ na prirodan način:
+    \[ A^\mathbb{C}z = A^\mathbb{C}(x + iy) = Ax + iAy. \]
+    Linearni operator $A^\mathbb{C}$ nazivamo \textbf{kompleksifikacija linearnog operatora} $A$.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $V$ realni vektorski prostor i $A \in \operatorname{Hom}V$ t.d. $\kappa_A$ ima barem jednu nulu iz $\mathbb{C}\setminus\mathbb{R}$. Tada $A$ ima 
+    dvodimenzioni invarijantni prostor.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $\mathcal{A} \in \mathbb{M}_n(\mathbb{R})$ simetrična matrica $(\mathcal{A^T} = \mathcal{A})$. Tada je \[\operatorname{Sp}(\mathcal{A}) \neq \emptyset.\]
+\end{theorem}
+
 \section{Unitarni prostori}
 \section{Bilinearne i kvadratne forme}
 
