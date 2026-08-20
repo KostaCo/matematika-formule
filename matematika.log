@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  19 AUG 2026 20:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  20 AUG 2026 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1059,55 +1059,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 2315--2318
 
  []
 
-[62]
-Overfull \hbox (32.80608pt too wide) in paragraph at lines 2390--2392
+[62] [63]
+Overfull \hbox (32.80608pt too wide) in paragraph at lines 2409--2411
 []\T1/cmsrbr/m/n/12 Baza $\OML/cmmsrbm/m/it/12 e[] \OT1/cmrsrbm/m/n/12 = (\OML/cmmsrbm/m/it/12 A[]e; [] ; Ae; e\OT1/cmrsrbm/m/n/12 )$ \T1/cmsrbr/m/n/12 zo-ve se \T1/cmsrbr/b/n/12 ci-kli£-ka ba-za \T1/cmsrbr/m/n/12 od $\OML/cmmsrbm/m/it/12 A[]$\T1/cmsrbr/m/n/12 , a $\OML/cmmsrbm/m/it/12 L[] \OT1/cmrsrbm/m/n/12 = \OMS/cmsy/m/n/12 L\OT1/cmrsrbm/m/n/12 (\OMS/cmsy/m/n/12 f\OML/cmmsrbm/m/it/12 e; Ae; [] ; A[]e\OMS/cmsy/m/n/12 g\OT1/cmrsrbm/m/n/12 )$
  []
 
-[63] [64]
+[64] [65]
 Glava 9.
-[65
+[66
 
 ]
 Glava 10.
-[66
+[67
 
-] [67] [68] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 2556--2557
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2564--2565
+] [68] [69] [70]
+Underfull \hbox (badness 10000) in paragraph at lines 2614--2615
 
  []
 
-<slike/rolle.pdf, id=1423, 552.20506pt x 241.06795pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2622--2623
+
+ []
+
+<slike/rolle.pdf, id=1431, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 2568.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 2626.
 (pdftex.def)             Requested size: 181.18439pt x 79.09654pt.
-<slike/Mittelwertsatz6.svg.png, id=1424, 1927.2pt x 1229.59375pt>
+<slike/Mittelwertsatz6.svg.png, id=1432, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 2589.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 2647.
 (pdftex.def)             Requested size: 181.18439pt x 115.59308pt.
-[70 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 2596--2598
+[71 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 2654--2656
 [][] 
  []
 
-[71] [72]
+[72] [73]
 Glava 11.
-[73
-
-]
-Glava 12.
 [74
 
 ]
-Glava 13.
+Glava 12.
 [75
+
+]
+Glava 13.
+[76
 
 ] (./matematika.aux)
  ***********
@@ -1118,18 +1118,18 @@ Package rerunfilecheck Info: File `matematika.out' has not changed.
 (rerunfilecheck)             Checksum: 3AEBBBADDF3088E6A99DE10A22AA2E6C;31827.
  ) 
 Here is how much of TeX's memory you used:
- 18781 strings out of 467533
- 297100 string characters out of 5422138
+ 18788 strings out of 467533
+ 297217 string characters out of 5422138
  838892 words of memory out of 5000000
- 46934 multiletter control sequences out of 15000+600000
+ 46936 multiletter control sequences out of 15000+600000
  692681 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,22n,79p,587b,809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrx.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (75 pages, 585922 bytes).
+Output written on matematika.pdf (76 pages, 590784 bytes).
 PDF statistics:
- 1640 PDF objects out of 1728 (max. 8388607)
- 1509 compressed objects within 16 object streams
- 479 named destinations out of 1000 (max. 500000)
+ 1649 PDF objects out of 1728 (max. 8388607)
+ 1517 compressed objects within 16 object streams
+ 484 named destinations out of 1000 (max. 500000)
  1395 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -38,7 +38,7 @@
 \pagestyle{mystyle}
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{definition}{Definicija}[section]
-\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{corollary}{Posledica}[theorem]
 \newtheorem{lemma}{Lema}[section]
 \makeatletter
 \renewcommand{\ALG@name}{Algoritam}
@@ -2349,7 +2349,7 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
     \item Za operator $A \in \operatorname{Hom}V$ kažemo da je \textbf{nilpotentan} ako postoji $k \in \mathbb{N}$ t.d. je $A^k = 0$.
     \item \textbf{Indeks nilpotentnosti} $k$ operatora $A$: \[k = \min \{k \in \mathbb{N}\;|\;A^k = 0 \land A^{k-1}\neq 0\}\]
     \item Ako je $A$ nilpotentni operator indeksa nilpotentnosti $k$, njegov karakteristični polinom je $\kappa_A(\lambda) = (-1)^n\lambda^n$, a
-    minimalni $\mu_A(\lambda) = \lambda^k$, pa mu je jedina sopstvena vrednost $\lambda = 0$. Takođe, $\operatorname{Tr}(A) = \det A = 0$ i $k \leq \dim V$.
+    minimalni $\mu_A(\lambda) = \lambda^k$, pa mu je jedina sopstvena vrednost $\lambda_0 = 0$. Takođe, $\operatorname{Tr}(A) = \det A = 0$ i $k \leq \dim V$.
     \item \textbf{Kanonska nilpotentna matrica indeksa $k$}:
     \[ \mathcal{N}_k = \begin{bmatrix}
         0 & 1 & 0 & \dots & 0 \\
@@ -2378,8 +2378,27 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
 \end{theorem}
 
 \begin{itemize}
-    \item \textbf{Ciklički operator} - linearni operator za koji postoji baza $\mathcal{B} = (e, Ae, \dots, A^{k-1}e)$ t.d. je $A^ke \in \mathcal{L}(\mathcal{B})$.
-    \item Nilpotentan ciklički operator $A$ u bazi $e_{L_1} = (A^{k-1}e, \dots, Ae, e)$ ima kanonsku nilpotentnu matricu indeksa nilpotentnosti $k$, tj. oblika
+    \item \textbf{Ciklički operator} - linearni operator za koji postoji baza $\mathcal{B} = (A^{k-1}e, \dots, Ae, e)$ t.d. je $A^ke \in \mathcal{L}(\mathcal{B})$. \\
+    \noindent\underline{\textit{Intuicija:}} Neka je $v_i = A^{k-i}e$ za $i \in \mathbb{N}_k$. 
+Tada operator deluje na sledeći način:
+\[
+A v_1 = A^k e = \alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_k v_k,
+\]
+\[
+A v_2 = v_1, \; A v_3 = v_2,\; \dots,  \;A v_k = v_{k-1}.
+\]
+Dakle, operator "pomera" vektore duž lanca (od $v_i$ ka $v_{i-1}$), ali prvi vektor $v_1$ se  izražava kao linearna kombinacija cele baze. 
+U ovoj bazi matrica operatora je oblik \textit{matrice pratioca} (companion matrix):
+\[
+\begin{bmatrix}
+\alpha_1 & 1 & 0 & \dots & 0 \\
+\alpha_2 & 0 & 1 & \dots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+\alpha_{k-1} & 0 & 0 & \dots & 1 \\
+\alpha_k & 0 & 0 & \dots & 0
+\end{bmatrix}.
+\]
+    \item Nilpotentan ciklički operator $A$ u bazi $e_{L_1} = (A^{k-1}e, \dots, Ae, e)$ ima kanonsku nilpotentnu matricu indeksa nilpotentnosti $k$ ($A^k e = 0$, pa su $\alpha_1 = \dots = \alpha_k = 0$), tj. oblika
     \[ \mathcal{A}(e_{L_1}) = \begin{bmatrix}
         0 & 1 & 0 & \dots & 0 \\
         0 & 0 & 1 & \dots & 0 \\
@@ -2390,6 +2409,45 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
     \item Baza $e_{L_1} = (A^{k-1}e, \dots, Ae, e)$  zove se \textbf{ciklička baza} od $A_1$, a $L_1 = \mathcal{L}(\{e, Ae, \dots, A^{k-1}e\})$ se zove 
     \textbf{ciklički potprostor} operatora $A$.
 \end{itemize}
+
+\begin{corollary}
+    Neka je $A \in \operatorname{Hom}V$ nilpotentnan operator indeksa nilpotentnosti $k$. Tada postoje invarijantni potprostori 
+    $L_1, \dots, L_m$ t.d. je
+    \[ V = \bigoplus^{m}_{i=1} L_i \;\;\land\;\; A = \bigoplus^{m}_{i=1} A_{|L_i}.\]
+    Linearni operatori $A_i$ su nilpotentni operatori indeksa nilpotentnosti $k_i = \dim L_i \leq k$ i važi:
+    \begin{enumerate}
+        \item $k = k_1 \geq k_2 \geq \dots \geq k_m \geq 1$,
+        \item matrice operatora $A_i$ na $L_i$ u bazi $e_{L_i} = (A^{k_i-1}e_i, \dots, Ae_i, e_i)$ su oblika
+        \[\begin{bmatrix}
+        0 & 1 & 0 & \dots & 0 \\
+        0 & 0 & 1 & \dots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \dots & 1 \\
+        0 & 0 & 0 & \dots & 0
+    \end{bmatrix}_{k_i \times k_i}, \] tj. operatori $A_i$ su ciklički operatori na $L_i$.
+    \end{enumerate}
+\end{corollary}
+\noindent\underline{\textit{Intuicija:}} Dakle, matrica operatora $A$ u bazi $e$, koja je unija cikličkih baza $e_{L_i}$, 
+izgleda kao blok-dijagonalna matrica oblika 
+\[\mathcal{A}(e) = \begin{bmatrix}
+    \mathcal{N}_{k_1} & 0 & \dots & 0 \\
+    0 & \mathcal{N}_{k_2} & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & \mathcal{N}_{k_m}
+\end{bmatrix},\] gde je svaki blok $\mathcal{N}_{k_i}$ kanonska nilpotentna matrica.
+\newpage
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$ nilpotentan operator indeksa nilpotentnosti $k$, t.d. se $V$ dekomponuje kao
+    \[ V = \bigoplus_{j = 1}^{k}\xi_jM_j, \] gde je $M_j$ ciklički operator dimenzije $j$, kojem u cikličkoj bazi restrikcije operatora $A$ na $M_j$
+    odgovara kanonska nilpotentna matrica $\mathcal{N}_j$, a $\xi_j$ je broj takvih potprostora, tj. blokova dimenzije $j$ duž dijagonale matrice
+    \[\mathcal{A}(e) = \begin{bmatrix}
+    \mathcal{N}_{k_1} & 0 & \dots & 0 \\
+    0 & \mathcal{N}_{k_2} & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & \mathcal{N}_{k_m}
+\end{bmatrix}.\] Ako je $d_i = \dim(\ker(A^i))$ i $r_i = \dim(\operatorname{Im}(A^i)), \; i \in \mathbb{N}_k$, tada je
+\[ \xi_j = r_{j-1} - 2r_j + r_{j+1} = 2d_j - d_{j-1} - d_{j+1}, \;\; \forall j \in \mathbb{N}_k. \]
+\end{theorem}
 
 \subsection{Žordanova normalna forma}
 \subsection{Invarijantnost linearnih operatora nad realnim vektorskim prostorima}
