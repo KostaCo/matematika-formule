@@ -2551,7 +2551,78 @@ izgleda kao blok-dijagonalna matrica oblika
     Neka je $\mathcal{A} \in \mathbb{M}_n(\mathbb{R})$ simetrična matrica $(\mathcal{A^T} = \mathcal{A})$. Tada je \[\operatorname{Sp}(\mathcal{A}) \neq \emptyset.\]
 \end{theorem}
 
+\newpage
 \section{Unitarni prostori}
+
+\subsection{Definicija unitarnog prostora}
+\begin{itemize}
+    \item Neka je $V$ kompleksni vektorski prostor. Kažemo da je $V$ \textbf{unitarni} vektorski prostor ako je definisana funkcija $\langle \cdot, \cdot \rangle : V \times V \to \mathbb{C}$, za koju 
+važe ($\forall v_1, v_2, w \in V, \; \forall \alpha \in \mathbb{C}$) sledeće aksiome:
+\begin{description}
+    \item[(A1)] aditivnost u prvom argumentu:
+    \[ \langle v_1 + v_2, w \rangle = \langle v_1, w \rangle + \langle v_2, w \rangle \]
+    \item[(A2)] homogenost u prvom argumentu: \[ \langle \alpha v, w \rangle = \alpha \langle v, w  \rangle \] 
+    \item[(A3)] hermitska simetričnost: \[ \langle v, w \rangle = \overline{\langle w, v \rangle} \]
+    \item[(A4)] pozitivna definitnost: \[\langle v, v \rangle \geq 0\]
+    \item[(A5)] nedegenerisanost: \[\langle v, v \rangle = 0 \iff v = 0\]
+\end{description}
+    \item Funkcija koja zadovoljava (A1)-(A3) zove se \textbf{hermitski bilinearni funkcional (forma)}. Ako zadovoljava i (A5), zove se \textbf{nedegenerisana hermitska bilinearna forma}. Ako još zadovoljava i (A4), zove se \textbf{skalarni proizvod} na $V$.
+    \item Iz (A1)-(A5) se dobijaju i naredna svojstva: \begin{description}
+        \item[(A1')] aditivnost u drugom argumentu: \[ \langle v, w_1 + w_2 \rangle = \langle v, w_1 \rangle + \langle v, w_2 \rangle \]
+        \item[(A2')] hermitska homogenost u drugom argumentu: \[\langle v, \alpha w \rangle = \overline{\alpha} \langle v, w \rangle\] 
+    \end{description}
+\end{itemize}
+
+\subsection{Važni primeri unitarnih prostora}
+\begin{enumerate}
+    \item \textbf{Standardni skalarni proizvod}: $V$ je $\mathbb{C}^n$ ili $\mathbb{R}^n$, pri čemu je skalarni proizvod definisan kao
+    \[ \langle v, w \rangle = \sum_{i=1}^{n} v_i \overline{w_i}, \;\; v = (v_1, \dots, v_n), \; w = (w_1, \dots, w_n)\]
+    \item \textbf{Neprekidni skalarni proizvod na} $\mathcal{C}[a, b]$: Neka je $\mathcal{C}[a, b]$ v. prostor svih kompleksnih (ili realnih) nepr. funkcija na $[a, b]\subseteq \mathbb{R}$ i $\omega: [a, b] \to \mathbb{R}^+$ nepr. pozitivna realna funkcija. Skalarni proizvod definišemo formulom
+    \[ \langle f, g \rangle_\omega = \int_{a}^{b} \omega(t)f(t)\overline{g(t)}dt.\] 
+    Funkcija $\omega$ naziva se \textbf{težina}. Ako je $\omega = 1$, tada dobijamo verziju neprekidnog standardnog skalarnog proizvoda na $\mathcal{C}[a, b]$.
+    \item Neka je \( V = \mathbb{M}_n(\mathbb{C}) \) vektorski prostor kvadratnih kompleksnih matrica reda \( n \). \linebreak \( V \) je unitaran prostor uz skalarni proizvod dat formulom
+\[
+\langle \mathcal{A}, \mathcal{B} \rangle = \operatorname{Tr}(\mathcal{B}^*\mathcal{A}),
+\]
+gde je \( \mathcal{A}^* = (\overline{\alpha_{ji}}) \) matrica koja se dobije iz matrice \( \mathcal{A} = (\alpha_{ij}) \) konjugovanjem i transponovanjem.
+\item Neka je \( V = \{(\alpha_1, \alpha_2, \dots, \alpha_n, \dots) \mid \alpha_i \in \mathbb{R}, \forall i \in \mathbb{N}, \sum_{i=1}^\infty |\alpha_i|^2 < \infty\} \) skup svih kvadratno sumabilnih redova u \( \mathbb{R}^\mathbb{N} \). \( V \) je vektorski prostor u kojem za dva niza \( (\alpha_i)_{i \in \mathbb{N}}, (\beta_i)_{i \in \mathbb{N}} \in V \) važi da je \( \sum_{i=1}^\infty \alpha_i \beta_i < \infty \), pa možemo uvesti skalarni proizvod formulom:
+\[
+\langle (\alpha_i)_{i \in \mathbb{N}}, (\beta_i)_{i \in \mathbb{N}} \rangle = \sum_{i=1}^\infty \alpha_i \beta_i.
+\]
+\end{enumerate}
+
+\subsection{Ortogonalnost}
+\begin{itemize}
+    \item Neka je $V$ unitarni prostor. Za vektore $v$ i $w$ kažemo da su \textbf{ortogonalni (normalni)} i pišemo $v \perp w$ ako je $\langle v, w \rangle = 0$.
+    \item Za $W_1, W_2 \subseteq V$ kažemo da je $W_1$ ortogonalan na $W_2$ i pišemo $W_1 \perp W_2$ akko je $\langle W_1, W_2 \rangle = 0$, tj.
+    \[ (\forall w_1 \in W_1)(\forall w_2 \in W_2)\;\langle w_1, w_2 \rangle = 0. \]
+    \item Skup $W = \{w_1, \dots, w_k\}$ je \textbf{ortogonalan} ako važi
+    \[ (\forall i \in \mathbb{N}_k) \;v_i \neq 0 \land \langle v_i, v_j \rangle = 0, \; i \neq j.\]
+    \item Beskonačan skup je ortogonalan akko mu je svaki konačan podskup ortogonalan.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $S \subseteq V$ ortogonalan podskup unitarnog prostora $V$. Tada je on linearno nezavisan.
+\end{theorem}
+
+\subsection{Norma. Ugao. Bunjakovski-Koši-Švarcova nejednakost}
+\begin{itemize}
+    \item Funkcija $|| \; || : V \to \mathbb{R}_0^+$, definisana formulom
+    \[ ||v|| = \sqrt{\langle v, v \rangle} \] naziva se \textbf{norma}.
+\end{itemize}
+
+\begin{theorem}
+    \textbf{(Bunjakovski-Koši-Švarcova nejednakost):} Neka je $V$ unitarni prostor i $u, v \in V$. Tada važi
+    \[ |\langle u, v \rangle| \leq ||u|| \; ||v||, \] pri čemu jednakost važi akko su $u$ i $v$ lin. zavisni.
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Ugao} definišemo formulom \[ \cos \angle (v, w) = \frac{\langle v, w \rangle}{||v|| \; ||w||}. \]
+\end{itemize}
+
+\newpage
+\subsection{Ortonormirana baza. Gram-Šmitov postupak}
+
 \section{Bilinearne i kvadratne forme}
 
 \chapter{Analitička geometrija}
