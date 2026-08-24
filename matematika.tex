@@ -2623,6 +2623,97 @@ gde je \( \mathcal{A}^* = (\overline{\alpha_{ji}}) \) matrica koja se dobije iz 
 \newpage
 \subsection{Ortonormirana baza. Gram-Šmitov postupak}
 
+\begin{itemize}
+    \item Za bazu $e = (e_1, \dots, e_n)$ unitarnog prostora $V$ dimenzije $n$ kažemo da je \textbf{ortonormirana} ako važi:
+    \[ (\forall i \in \mathbb{N}_n)(\forall j \in \mathbb{N}_n) \; \langle e_i, e_j \rangle = \delta_{ij} \]
+    \item \textbf{Gram-Šmitov postupak ortogonalizacije} je algoritam kojim se neka proizvoljna baza $f$ vektorskog prostora $V$
+    zamenjuje ortonormiranom bazom $e$ t.d. u $i$-tom koraku ($i \in \mathbb{N}_n$) važi
+    \[ \mathcal{L}(\{ e_1, \dots, e_i \}) = \mathcal{L}(\{ f_1, \dots, f_i \}).\]
+\end{itemize}
+
+\begin{algorithm}[!h]
+    \caption{Gram-Šmitov postupak ortogonalizacije}
+    \begin{itemize}
+        \item \[ v_1 = f_1\]
+        \[ e_1 = \varepsilon_1 \frac{v_1}{||v_1||}, \;\; \varepsilon \in \{-1, 1\}\]
+        \item \textbf{FOR} $k$ \textbf{IN} $\{ 2, 3, \dots, n \}$:
+        \[ v_k = f_k - \sum_{i=1}^{k} \langle f_k, e_i \rangle e_i \]
+        \[ e_k = \varepsilon \frac{v_k}{||v_k ||}, \;\; \varepsilon \in \{-1, 1\} \]
+    \end{itemize}
+\end{algorithm}
+\noindent\underline{\textit{Intuicija:}} Vektori baze $f$ nisu (u opštem slučaju) međusobno normalni. Dakle, vektor $f_i$ 
+se može predstaviti kao linearna kombinacija vektora $f_{i-1}, f_{i-2}, \dots, f_1$. Kako bismo našli vektor $e_i$, koji je 
+normalan na sve ove vektore, formiramo ga tako što od $f_i$ oduzimamo sve njegove komponente (ortogonalne projekcije)
+ po tim vektorima.
+
+\begin{theorem}
+    \textbf{(Gram-Šmitova ortogonalizacija):} Neka je $f = (f_1, \dots, f_n)$ baza unitarnog vektorskog prostora $V$. Tada 
+    postoji pozitivno orijentisana ortonormirana baza $e = (e_1, \dots, e_n)$ t.d. je
+    \[
+        \begin{aligned}
+            f_1 &= \alpha_{11}e_1, \\
+            f_2 &= \alpha_{21}e_1 + \alpha_{22}e_2, \\
+            &\vdots \\
+            f_n &= \alpha_{1n}e_1 + \alpha_{2n}e_2 + \dots + \alpha_{nn}e_n.
+        \end{aligned}
+    \]
+        Skalare $\alpha_{ii}$ možemo izabrati tako da baza $e$ bude pozitivno orijentisana.
+\end{theorem}
+\newpage
+\subsection{Furijeovi koeficijenti i njihova svojstva}
+
+\begin{itemize}
+    \item Vektor $v$ u proizvoljnoj ortonormiranoj bazi $e$ možemo predstaviti kao
+    \[ v = \sum_{i=1}^{n} \langle v, e_i \rangle e_i. \]
+    Skalari $v_i = \langle v, e_i \rangle$ zovu se \textbf{Furijeovi koeficijenti} vektora $v$ s obzirom na ortonormiranu bazu $e$.
+\end{itemize}
+
+\begin{theorem}
+    \textbf{(Beselova nejednakost):} Neka je $\mathcal{B}_k = \{e_1, \dots, e_k\}$ ortonormirani skup unitarnog prostora $V$. Tada za
+    svaki $v \in V$ važi
+    \[ \langle v, v \rangle \geq \langle v, e_1\rangle^2 + \langle v, e_2\rangle^2 + \dots + \langle v, e_k\rangle^2 \]
+    Jednakost važi za svaki $v \in V$ akko je $\mathcal{B}_k$ baza od $V$.
+\end{theorem}
+
+\begin{theorem}
+    \textbf{(Parservalova jednakost):} Neka je $\mathcal{B}_k = \{e_1, \dots, e_k\}$ ortonormirani skup unitarnog prostora $V$.
+    Tada je $\mathcal{B}_k$ baza od $V$ akko za svaka dva $v, w \in V$ važi jednakost
+    \[ \langle v, w \rangle = \sum_{i=1}^{n} \langle v, e_i \rangle \langle e_i, w \rangle. \]
+\end{theorem}
+
+\subsection{Ortogonalni komplement}
+\begin{theorem}
+    Neka su $L$ i $M$ neki potprostori unitarnog prostora $V$. Tada važi:
+    \begin{enumerate}
+        \item $L^\perp$ je potprostor od $V$,
+        \item $L \oplus L^\perp = V$,
+        \item $L^\perp$ je jedinstven,
+        \item $(L^\perp)^\perp = L$,
+        \item $(L + M)^\perp = L^\perp \cap M^\perp$,
+        \item $(L \cap M)^\perp = L^\perp + M^\perp$.
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Hermitsko konjugovanje}
+
+\begin{itemize}
+    \item Preslikavanje $^*: \mathbb{M}_n(\mathbb{C}) \to \mathbb{M}_n(\mathbb{C})$ (označava se i sa $^\dagger$) definišemo
+    kao kompoziciju transponovanja i konjugovanja (koja je komutativna). Dakle, ono matrici \linebreak $\mathcal{A} = (\alpha_{ij})$ 
+    dodeli matricu $\mathcal{A}^* = \mathcal{A}^\dagger = (\overline{\alpha_{ji}}) \in \mathbb{M}_n \in \mathbb{C}$. Ovo preslikavanje
+    nazivamo \textbf{hermitsko konjugovanje}. Za matricu $\mathcal{A}^* = \mathcal{A}^\dagger$ kažemo da je \textbf{(hermitski)
+    adjugovana} matrici $\mathcal{A}$.
+\end{itemize}
+
+\begin{theorem}
+    Hermitsko konjugovanje $^*$ (ili $^\dagger$) ima sledeće osobine:
+    \begin{enumerate}
+        \item involutivnost: $(\mathcal{A}^*)^* = \mathcal{A}$,
+        \item $^*$ je bijekcija,
+        \item $(\lambda \mathcal{A})^* = \overline{\lambda}\mathcal{A}^*$,
+        \item $(\mathcal{AB})^* = \mathcal{B}^* \mathcal{A}^*$.
+    \end{enumerate}
+\end{theorem}
+
 \section{Bilinearne i kvadratne forme}
 
 \chapter{Analitička geometrija}
