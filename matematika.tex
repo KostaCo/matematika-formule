@@ -1381,7 +1381,7 @@ Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
 \subsection{Dualno (transponovano) preslikavanje}
 Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom} \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
 \[ (A^*[f])(x) := A^*[f](x) = (f \circ A)(x) = f(A(x)) \]
-Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjugovani)} operator od $A$.
+Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjungovani)} operator od $A$.
 \begin{theorem}
     Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom}\left(U, V\right)$. Tada postoji jedinstveni linearni operator $A^* 
     \in \operatorname{Hom}\left(U^*, V^*\right)$ takav da je $A^*[f](x) = f(A(x)), \linebreak \forall f \in V^*, \; \forall x \in U$.
@@ -1768,7 +1768,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     \end{vmatrix} \]
     \item \textbf{Algebarski komplement (kofaktor)} $A_{ij}$ elementa $\alpha_{ij}$:
     \[ A_{ij} = (-1)^{i+j} \Delta_{ij}(\mathcal{A}) \]
-    \item \textbf{Adjugovana matrica} $\tilde{\mathcal{A}}$ matrice $\mathcal{A}$:
+    \item \textbf{adjungovana matrica} $\tilde{\mathcal{A}}$ matrice $\mathcal{A}$:
     \[ \tilde{\mathcal{A}} = \operatorname{adj} (\mathcal{A}) = \begin{bmatrix}
         A_{11} & A_{21} & \dots & A_{n1} \\
         A_{12} & A_{22} & \dots & A_{n2} \\
@@ -2701,7 +2701,7 @@ normalan na sve ove vektore, formiramo ga tako što od $f_i$ oduzimamo sve njego
     kao kompoziciju transponovanja i konjugovanja (koja je komutativna). Dakle, ono matrici \linebreak $\mathcal{A} = (\alpha_{ij})$ 
     dodeli matricu $\mathcal{A}^* = \mathcal{A}^\dagger = (\overline{\alpha_{ji}}) \in \mathbb{M}_n \in \mathbb{C}$. Ovo preslikavanje
     nazivamo \textbf{hermitsko konjugovanje}. Za matricu $\mathcal{A}^* = \mathcal{A}^\dagger$ kažemo da je \textbf{(hermitski)
-    adjugovana} matrici $\mathcal{A}$.
+    adjungovana} matrici $\mathcal{A}$.
 \end{itemize}
 
 \begin{theorem}
@@ -2712,6 +2712,89 @@ normalan na sve ove vektore, formiramo ga tako što od $f_i$ oduzimamo sve njego
         \item $(\lambda \mathcal{A})^* = \overline{\lambda}\mathcal{A}^*$,
         \item $(\mathcal{AB})^* = \mathcal{B}^* \mathcal{A}^*$.
     \end{enumerate}
+\end{theorem}
+
+\subsection{Gramova matrica i Gramova determinanta}
+
+\begin{itemize}
+    \item Skup vektora $\{v_1, \dots, v_k\}$ u unitarnom prostoru $V$ je lin. nezavisan ako sledeća jednačina ima samo trivijalno rešenje:
+    \[ \lambda_1v_1 + \lambda_2v_2 + \dots + \lambda_kv_k = 0. \] Ako ovu jednakost skalarno pomnožimo vektorima $v_i$, dobijamo 
+    sledeći homogeni sistem:
+    \[
+        \begin{aligned}
+            &\langle v_1, v_1 \rangle \lambda_1 + \langle v_2, v_1 \rangle \lambda_2 +  \dots + \langle v_k, v_1 \rangle \lambda_k = 0 \\
+            &\langle v_1, v_2 \rangle \lambda_1 + \langle v_2, v_2 \rangle \lambda_2 +  \dots + \langle v_k, v_2 \rangle \lambda_k = 0 \\
+            &\;\;\;\vdots \\
+            &\langle v_1, v_k \rangle \lambda_1 + \langle v_2, v_k \rangle \lambda_2 + \dots + \langle v_k, v_k \rangle \lambda_k = 0
+        \end{aligned}
+    \]
+    Ovom sistemu odgovara \textbf{Gramova matrica}:
+    \[ G = G(v_1, \dots, v_k) = \begin{bmatrix}
+        \langle v_1, v_1 \rangle & \langle v_2, v_1 \rangle & \dots & \langle v_k, v_1 \rangle \\
+        \langle v_1, v_2 \rangle & \langle v_2, v_2 \rangle & \dots & \langle v_k, v_2 \rangle \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \langle v_1, v_k \rangle & \langle v_2, v_k \rangle & \dots & \langle v_k, v_k \rangle \\
+    \end{bmatrix}.\]
+    Za determinantu ove matrice se koristi oznaka $\Gamma = \Gamma (v_1, \dots, v_k)$.
+    \item Skup $\{v_1, \dots, v_k\}$ je linearno nezavisan akko $\Gamma (v_1, \dots, v_k) \neq 0$.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $V$ unitaran prostor i $v_1, \dots, v_k \in V$. Tada je
+    \begin{enumerate}
+        \item $(\forall \lambda \in \mathbb{C})\;\Gamma(v_1 + \lambda v_2, v_2, \dots, v_k) = \Gamma (v_1, v_2,\dots, v_k) $,
+        \item $v_k \perp \{ v_1, v_2, \dots, v_{k-1} \} \implies \Gamma (v_1, v_2, \dots, v_k) = ||v_k||^2\; \Gamma (v_1, v_2, \dots, v_{k-1})$,
+        \item $\Gamma (v_1, v_2, \dots, v_k) \geq 0$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Neka je $\{ v_1, v_2, \dots, v_k \} \subseteq V$ podskup unitarnog prostora. Tada je 
+    \[ \Gamma (v_1, v_2, \dots, v_k) = (\operatorname{vol}_k\mathcal{P}(v_1, v_2, \dots, v_k))^2, \]
+    gde je $\mathcal{P}(v_1, v_2, \dots, v_k)$ paralelepiped određen vektorima $v_1, v_2, \dots, v_k$. 
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Dakle, Gramova determinanta jednaka je kvadratu $k$-dimenzione zapremine paralelepipeda.
+
+\subsection{Linearni funkcionali u unitarnim prostorima}
+
+\begin{theorem}
+    \label{skalarni1}
+    Neka je $f$ linearni funkcional na konačnodimenzionom unitarnom prostoru $V$. Tada postoji jedinstveni vektor $v_0 \in V$ t.d. je $f(v) = 
+    \langle v, v_0 \rangle$.
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Dakle, svaki linearni funkcional se može predstaviti kao skalarni proizvod.
+
+
+\begin{itemize}
+    \item Teorema \ref{skalarni1} pokazuje da se prirodno može uspostaviti bijekcija između $V$ i $V^*$, čija je formula
+    \[ \delta(f) = v_0. \] Za ovo preslikavanje važi:
+    \begin{enumerate}
+        \item $\delta (f + g) = \delta(f) + \delta(g), \;\; f, g \in V^*$ (aditivnost)
+        \item $\delta (\lambda f) = \overline{\lambda}\delta(f), \;\; f \in V^*, \; \lambda \in \mathbb{C}$ (antihomogenost) 
+    \end{enumerate}
+    Za preslikavanje koje zadovoljava ove dve osobine kažemo da je \textbf{antilinearno}.
+\end{itemize}
+
+\subsection{Hermitski adjungovani operator}
+
+\begin{itemize}
+    \item Za svaki $A \in \operatorname{Hom}V$ postoji jedinstven operator $A^*: V \to V$ t.d.
+    \[ \langle Av, w \rangle = \langle v, A^*w \rangle, \;\; \forall v, w \in V. \] Preslikavanje $A^*$ (ili $A^\dagger$) zove se \textbf{hermitski adjungovani operator}.
+\end{itemize}
+
+\begin{theorem}
+    Preslikavanje $A^*$ (ili $A^\dagger$) je linearno.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $e = (e_1, \dots, e_n)$ ortonormirana baza unitarnog prostora $V$. Neka je $\mathcal{A} = \mathcal{A}(e) = (\alpha_{ij})$ matrica nekog
+    linearnog operatora u bazi $e$, a \linebreak $\mathcal{A}^* = \mathcal{A}^\dagger = \mathcal{A}^*(e) = (\beta_{ij})$ matrica njemu hermitski 
+    adjungovanog operatora $A^*$ u istoj bazi $e$. Tada je $\beta_{ij} = \overline{\alpha_{ji}}$.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $A \in \operatorname{Hom}V$. Tada važi
+    \[ V = \ker A \oplus \operatorname{Im}A^* = \ker A^* \oplus \operatorname{Im}A. \]
 \end{theorem}
 
 \section{Bilinearne i kvadratne forme}

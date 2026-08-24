@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1787570641.71889 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1787570643.19478 0
+["pdflatex"] 1787597372.38992 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1787597373.76035 0
   "/etc/texmf/web2c/texmf.cnf" 1779652215.19533 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kosta/Projects/matematika-formule/matematika.tex" 1787570641.44527 154744 f26880ae6cb12998d1062a89f18ce0d7 ""
+  "/home/kosta/Projects/matematika-formule/matematika.tex" 1787597372.22393 159182 765c7c8ca99c3dc0f5859b15092933a7 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbt1.enc" 1586730458 2157 57b150f99c9d61d6c444b4cace336027 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbts1.enc" 1586730458 2739 09dbe67a27d855e4d39579aa6d913f4e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -160,10 +160,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1779652241 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1779652292 3643082 d718a7a87975810f30f4b2fa7adae9db ""
-  "matematika.aux" 1787570643.10694 28791 a00ce2d05b639ce2d6125e5e49e45ce5 "pdflatex"
-  "matematika.out" 1787570643.10889 33864 f002c1a86a4dd6f4fb438feeac14288e "pdflatex"
-  "matematika.tex" 1787570641.44527 154744 f26880ae6cb12998d1062a89f18ce0d7 ""
-  "matematika.toc" 1787570643.10932 17367 bdccdb25ee3c5b05ab19075353f6cfb3 "pdflatex"
+  "matematika.aux" 1787597373.68542 29297 8afab1ce8d75310d341ae2ac7d03cdd3 "pdflatex"
+  "matematika.out" 1787597373.68877 34640 8640605a6369332bb3af8185703f540f "pdflatex"
+  "matematika.tex" 1787597372.22393 159182 765c7c8ca99c3dc0f5859b15092933a7 ""
+  "matematika.toc" 1787597373.6891 17695 8a33e9dffa49b3c181c2210ef3bb0bed "pdflatex"
   "slike/Mittelwertsatz6.svg.png" 1783337122.88671 126270 22f4e7dd1b9fe7c29ce41cb8bb81359b ""
   "slike/rolle.pdf" 1783337122.88678 6734 db32dab086a48e45db83764f98d960ed ""
   (generated)
