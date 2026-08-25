@@ -2753,7 +2753,8 @@ normalan na sve ove vektore, formiramo ga tako što od $f_i$ oduzimamo sve njego
     \[ \Gamma (v_1, v_2, \dots, v_k) = (\operatorname{vol}_k\mathcal{P}(v_1, v_2, \dots, v_k))^2, \]
     gde je $\mathcal{P}(v_1, v_2, \dots, v_k)$ paralelepiped određen vektorima $v_1, v_2, \dots, v_k$. 
 \end{theorem}
-\noindent\underline{\textit{Intuicija:}} Dakle, Gramova determinanta jednaka je kvadratu $k$-dimenzione zapremine paralelepipeda.
+\noindent\underline{\textit{Intuicija:}} Dakle, Gramova determinanta jednaka je kvadratu $k$-dimenzione zapremine paralelepipeda
+koji određuju $v_1, \dots, v_k$.
 
 \subsection{Linearni funkcionali u unitarnim prostorima}
 
@@ -2794,9 +2795,96 @@ normalan na sve ove vektore, formiramo ga tako što od $f_i$ oduzimamo sve njego
 
 \begin{theorem}
     Neka je $A \in \operatorname{Hom}V$. Tada važi
-    \[ V = \ker A \oplus \operatorname{Im}A^* = \ker A^* \oplus \operatorname{Im}A. \]
+    \[ V = \ker A \oplus \operatorname{Im}A^\dagger = \ker A^\dagger \oplus \operatorname{Im}A. \]
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} $\langle Av, w \rangle = 0 \implies \langle v, A^\dagger w \rangle = 0 \implies v \perp \operatorname{Im}A^\dagger$
+
+\subsection{Ortogonalni projektor}
+
+\begin{itemize}
+    \item Linearni operator $P \in \hom V$ je \textbf{projektor} ako važi $P = P^2$. \\
+    \noindent\underline{\textit{Intuicija:}} Projektori su dobili ime po tome što projektuju objekte na neki potprostor. 
+    Uslov $P = P^2$ zapravo ima sledeće značenje: Ako npr. $P$ projektuje 3D prostor na ravan, kada ga primenimo jednom na 
+    neku tačku van te ravni, ona će se preslikati na ravan. Ako primenimo projektor ponovo, kako je tačka već na ravni, neće 
+    se desiti ništa.
+    \item Ako za projektor $P$ važi i $P = P^\dagger$, onda je on \textbf{ortogonalni projektor}.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $P$ ortogonalni projektor na unitarnom prostoru $V$. Tada:
+    \begin{enumerate}
+        \item $v \in \operatorname{Im}P \implies Pv = v$,\\
+        \noindent\underline{\textit{Intuicija:}} Ovo je primer sa ravni iz intuicije odozgo.
+        \item $v \in (\operatorname{Im}V)^\perp \implies Pv = 0$,\\
+        \noindent\underline{\textit{Intuicija:}} Zamislimo da je $V = \mathbb{R}^3$ i da je $\operatorname{Im}P$ neka ravan $\pi$.
+        tada $(\operatorname{Im}P)^\perp$ predstavlja pravu $p$ takvu da je $p \perp \pi$ i $0 \in p$, pa će se svaka tačka sa ove prave
+        projektovati u nulu.
+        \item $v \in V \implies Pv \in \operatorname{Im}P$.
+    \end{enumerate}
 \end{theorem}
 
+\begin{theorem}
+    Neka je $A \in \hom V$ i $L \subseteq V$. Tada važi
+    \[ L \text{ je invarijantan potprostor od } A \iff AP = PAP, \]
+    gde je $P$ ortogonalni projektor na $L$.
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Ako primenimo prvo projektor pa onda $A$, a pritom preslikane tačke ne napuste $L$, 
+primenjivanje projekcije još jednom ne radi ništa (tačke ostaju u ravni). U suprotnom, ako $L$ nije invarijantan potprostor od 
+$A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menja rezultat.
+
+\subsection{Neke važne klase operatora}
+
+\begin{itemize}
+    \item Kažemo da je operator $A \in \hom V$:
+    \begin{enumerate}
+        \item \textbf{normalan} ako je $A^\dagger A = A A^\dagger $,\\
+        \noindent\underline{\textit{Intuicija:}} Za normalan operator postoji ortonormirana baza koja se sastoji isključivo od njegovih 
+        sopstvenih vektora. Dakle, možemo izvršiti promenu baze tako da njegova matrica bude dijagonalna (sa kompleksnim brojevima 
+        na dijagonali).
+        \item \textbf{hermitski} ili \textbf{hermitski simetričan} ako je $A = A^\dagger$,\\
+        \noindent\underline{\textit{Intuicija:}} Geometrijski, hermitski operator skalira (realnim sopstvenim vrednostima) 
+        duž ortogonalnih osa. Ako je prostor realan, ovo je zapravo samo ortogonalna matrica.
+        \item \textbf{antihermitski} ili \textbf{hermitski kososimetričan} ako je $A^\dagger = - A$,
+        \item \textbf{unitaran} ako je $A^\dagger A= A A^\dagger = \operatorname{id}_V $.
+    \end{enumerate}
+    2, 3 i 4 su specijalni slučajevi normalnog operatora.
+    \item Ako je $V$ realan vektorski prostor, ovi operatori imaju specijalne nazive:
+    \begin{itemize}
+        \item hermitski $\rightarrow$ \textbf{simetričan},
+        \item antihermitski $\rightarrow$ \textbf{antisimetričan (kososimetričan)},
+        \item unitaran $\rightarrow$ \textbf{ortogonalan}.
+    \end{itemize}
+\end{itemize}
+
+\begin{theorem}
+    Sopstvene vrednosti:
+    \begin{enumerate}
+        \item hermitskog operatora su iz $\mathbb{R}$,
+        \item antihermitskog operatora su iz \;$i \cdot\mathbb{R}$,
+        \item unitarnog operatora se nalaze na jediničnoj kružnici $\mathbb{S}^1$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Neka je $V$ unitaran prostor i $A \in \hom V$ hermitski, kosohermitski ili unitarni operator i $L$ invarijantni potprostor
+    operatora $A$. Tada je $L^\perp$ invarijantan potprostor od $A$.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $V$ unitaran prostor i $A \in \hom V$ unitaran operator. Tada $A$ i $A^\dagger$ čuvaju skalarni proizvod, pa
+    specijalno čuvaju ortogonalnost i normu (i slikaju ortonormiranu bazu u ortonormiranu bazu).
+\end{theorem}
+
+\begin{theorem}
+    Neka je $V$ unitaran prostor i $A \in \hom V$ takav da $A$ preslikava ortonormiranu bazu u ortonormiranu bazu. Tada je $A$ unitaran.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $A:V \to V$ operator koji čuva skalarni proizvod, tj. takav da za sve $v, w \in V$ važi jednakost 
+    \[ \langle Av, Aw \rangle = \langle v, w \rangle. \] Tada je $A$ linearan operator.
+\end{theorem}
+
+\newpage
 \section{Bilinearne i kvadratne forme}
 
 \chapter{Analitička geometrija}
