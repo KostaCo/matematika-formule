@@ -2840,12 +2840,14 @@ $A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menj
         \item \textbf{normalan} ako je $A^\dagger A = A A^\dagger $,\\
         \noindent\underline{\textit{Intuicija:}} Za normalan operator postoji ortonormirana baza koja se sastoji isključivo od njegovih 
         sopstvenih vektora. Dakle, možemo izvršiti promenu baze tako da njegova matrica bude dijagonalna (sa kompleksnim brojevima 
-        na dijagonali).
+        na dijagonali). Videti \ref{normalniOperatori}.
         \item \textbf{hermitski} ili \textbf{hermitski simetričan} ako je $A = A^\dagger$,\\
         \noindent\underline{\textit{Intuicija:}} Geometrijski, hermitski operator skalira (realnim sopstvenim vrednostima) 
         duž ortogonalnih osa. Ako je prostor realan, ovo je zapravo samo ortogonalna matrica.
-        \item \textbf{antihermitski} ili \textbf{hermitski kososimetričan} ako je $A^\dagger = - A$,
-        \item \textbf{unitaran} ako je $A^\dagger A= A A^\dagger = \operatorname{id}_V $.
+        \item \textbf{antihermitski} ili \textbf{hermitski kososimetričan} ako je $A^\dagger = - A$,\\
+        \noindent\underline{\textit{Intuicija:}} Rotacija u kompleksnom prostoru bez promene dužine vektora.
+        \item \textbf{unitaran} ako je $A^\dagger A= A A^\dagger = \operatorname{id}_V $.\\
+        \noindent\underline{\textit{Intuicija:}} Ovo je rotacija prostora. Unitarni op. čuvaju distance i uglove.
     \end{enumerate}
     2, 3 i 4 su specijalni slučajevi normalnog operatora.
     \item Ako je $V$ realan vektorski prostor, ovi operatori imaju specijalne nazive:
@@ -2883,6 +2885,57 @@ $A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menj
     Neka je $A:V \to V$ operator koji čuva skalarni proizvod, tj. takav da za sve $v, w \in V$ važi jednakost 
     \[ \langle Av, Aw \rangle = \langle v, w \rangle. \] Tada je $A$ linearan operator.
 \end{theorem}
+
+\subsection{Izomorfizmi unitarnih prostora}
+\begin{itemize}
+    \item Za dva unitarna prostora $U$ i $V$ kažemo da su \textbf{izomorfni} ako postoji linearno preslikavanje $A:U \to V$ t.d.
+    \begin{enumerate}
+        \item $A$ čuva skalarne proizvode:
+        \[ (\forall u,v \in U) \; \langle u, v \rangle_U = \langle Au, v \rangle_V, \]
+        \item $A$ je bijekcija.
+    \end{enumerate}
+    Oznaka koja se koristi je $\cong_u$.
+    \item $\mathcal{V}_u(\mathbb{F})$ - skup svih konačnodimenzionih unitarnih vektorskih prostora nad $\mathbb{F}$.
+\end{itemize}
+
+\begin{lemma}
+    Relacija $\cong_u$ je relacija ekvivalencije na $\mathcal{V}_u(\mathbb{F})$.
+\end{lemma}
+
+\begin{theorem}
+    \[ U \cong_u V \iff \dim U = \dim V, \;\;\;\; U,V \in  \mathcal{V}_u(\mathbb{F})\]
+\end{theorem}
+
+\subsection{Normalni operatori}
+\label{normalniOperatori}
+\begin{theorem}
+    Neka je $N$ normalan operator. Tada:
+    \begin{enumerate}
+        \item Ako je $\lambda \in \operatorname{Sp}(N)$, tada je $\overline{\lambda} \in \operatorname{Sp}(N^\dagger)$, uz isti sopstveni vektor.
+        \item Sopstveni vektori normalnog operatora koji pripadaju međusobno različitim sopstvenim vrednostima su međusobno ortogonalni.
+    \end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+    Neka je $V$ unitaran prostor i $A \in \hom V$. Tada postoji ortonormirana baza $e$ u kojoj je matrica operatora $A(e)$ gornje trougaona.
+\end{lemma}
+
+\begin{lemma}
+    \[ \text{Operator } N \in \hom V \text{ je normalan} \iff (\forall v \in V)\; ||Nv|| = ||N^\dagger v|| \]
+\end{lemma}
+
+\begin{theorem}
+    Neka je $N$ normalan operator u unitarnom prostoru $V$. Tada postoji ortonormirana baza $e$ u kojoj je matrica operatora $N$ dijagonalna.
+\end{theorem}
+
+\begin{itemize}
+    \item Teorema važi i za hermitske, antihermitske i unitarne operatore (jer su oni normalni). Za odgovarajuću bazu $e$, u kojoj su dijagonalni (i imaju sopstvene vrednosti na dijagonali) važi:
+    \begin{enumerate}
+        \item Hermitski operator ima realne sopstvene vrednosti na dijagonali.
+        \item Kosohermitski operator ima čisto imaginarne sop. vrednosti na dijagonali.
+        \item Unitarni operator ima sop. vrednosti po modulu jednake 1 na dijagonali.
+    \end{enumerate}
+\end{itemize}
 
 \newpage
 \section{Bilinearne i kvadratne forme}
