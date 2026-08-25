@@ -2937,6 +2937,69 @@ $A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menj
     \end{enumerate}
 \end{itemize}
 
+\subsection{Normalni operatori na realnim prostorima}
+
+\begin{itemize}
+    \item Realni specijalni operatori (simetrični, kososimetrični, ortogonalni, normalni) su specijalni slučajevi kompleksnih (hermitskih, antihermitskih, unitarnih, normalnih) jer se konjugacija svodi na transponovanje ($\overline{\mathbb{R}} = \mathbb{R}$).
+    \item Karakteristični polinom realnog operatora može imati kompleksne korene. Tada nema realnih sopstvenih vektora.
+    \item Neka je $z = x + iy \in V^\mathbb{C}$ sopstveni vektor za $\lambda = \mu + i\nu$. Tada je $L = \mathcal{L}(\{x, y\})$ dvodimenzioni invarijantni potprostor i u bazi $(y, x)$ restrikcija ima oblik:
+\[
+    A|_L = \begin{bmatrix}
+        \mu & -\nu \\
+        \nu & \mu
+    \end{bmatrix}.
+\]
+    \item Neka je $r = |\lambda| = \sqrt{\mu^2 + \nu^2}$ i $\lambda = r(\cos\phi + i\sin\phi)$. Tada:
+\[
+    A|_L = r \begin{bmatrix}
+        \cos\phi & -\sin\phi \\
+        \sin\phi & \cos\phi
+    \end{bmatrix}
+\]
+To jest, operator na tom potprostoru deluje kao rotacija za ugao $\phi$, praćena uniformnim skaliranjem za faktor $r$.
+\end{itemize}
+
+\begin{lemma}
+    Neka je $A \in \hom V_\mathbb{R}$ simetričan operator na realnom vektorskom prostoru $V$. Tada postoji ortonormirana baza 
+    od $V$ t.d. je matrica operatora $A$ u toj bazi dijagonalna.
+\end{lemma}
+
+\begin{theorem}
+    Neka je $N$ normalan operator na euklidskom vektorskom prostoru $V$. Tada postoji ortonormirana baza $e$ od $V$ u kojoj 
+    je operator $N$ predstavljen matricom
+    \[ N(e) = \begin{bmatrix}
+        \lambda_1 & 0 & \dots & 0 & 0 & 0 & \dots & 0 \\
+        0 & \lambda_2 & \dots & 0 & 0 & 0 & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \lambda_k & 0 & 0 & \dots & 0 \\
+        0 & 0 & \dots & 0 & \mathcal{A}(r_1, \phi_1) & 0 & \dots & 0 \\
+        0 & 0 & \dots & 0 & 0 & \mathcal{A}(r_2, \phi_2) & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & 0 \\
+        0 & 0 & \dots & 0 & 0 & 0 & \dots & \mathcal{A}(r_j, \phi_j)
+    \end{bmatrix}, \] gde su $\mathcal{A}(r_i, \phi_i) = r_i \begin{bmatrix}
+        \cos \phi_i & -\sin \phi_i \\
+        \sin \phi_i & \cos \phi_i
+    \end{bmatrix}, \; r_i \in \mathbb{R}^+, \;\phi_i \in (0, 2\pi), \; \forall i \in \mathbb{N}_j $.
+\end{theorem}
+
+\subsection{Pozitivni operatori}
+\begin{itemize}
+    \item Za hermitski (simetrični) operator $A \in \hom V$ kažemo da je \textbf{pozitivno semidefinitan} ili \textbf{pozitivan} 
+    i pišemo $A \geq 0$ ako je \[ (\forall v \in V) \; \langle Av, v \rangle \geq 0. \] 
+    \item Pozitivan operator je \textbf{strogo pozitivan} ili \textbf{pozitivno definitan} (pišemo $A > 0$) ako je
+    \[ \langle Av, v \rangle = 0 \iff v = 0. \]
+    \item Analogno se definiše \textbf{negativan} i \textbf{strogo negativan} operator. Hermitski operator koji nije ni pozitivan 
+    ni negativan zove se \textbf{indefinitan}.
+\end{itemize}
+
+\begin{theorem}
+    Hermitski operator $A$ je pozitivan ako i samo ako su sve njegove sopstvene vrednosti veće ili jednake od 0.
+\end{theorem}
+
+\begin{theorem}
+    Hermitski operator $A$ je strogo pozitivan ako i samo ako su sve njegove sopstvene vrednosti veće od 0.
+\end{theorem}
+
 \newpage
 \section{Bilinearne i kvadratne forme}
 
