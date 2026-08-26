@@ -3000,6 +3000,57 @@ To jest, operator na tom potprostoru deluje kao rotacija za ugao $\phi$, praćen
     Hermitski operator $A$ je strogo pozitivan ako i samo ako su sve njegove sopstvene vrednosti veće od 0.
 \end{theorem}
 
+\begin{itemize}
+    \item Neka je $(\cdot, \cdot)$ standardan skalarni proizvod na $V \cong \mathbb{C}^n$ i $A$ strogo pozitivan operator. Tada
+    $A$ definiše skalarni proizvod formulom \[ \langle v, w \rangle_A = (Av,w)=v^\mathcal{T}Aw. \]
+    Svaki skalarni proizvod na $\mathbb{C}^n$ je ovog oblika, tj. može se predstaviti kao matrični proizvod, za neku strogo
+    pozitivnu matricu $\mathcal{A} = A(e)$.
+\end{itemize}
+
+\subsection{Kvadratni koren operatora}
+
+\begin{itemize}
+    \item Za operator $B \in \hom V$ kažemo da je \textbf{kvadratni (drugi) koren} operatora $A \in \hom V$ ako je $B^2 = A$.
+    \item Analogno se definiše proizvoljni \textbf{$k$-ti koren} operatora $A$ za $3 \leq k \in \mathbb{N}$.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $A \in \hom V$ pozitivan operator. Tada postoji jedinstven pozitivan kvadratni koren $B$ za koji važi da komutira sa 
+    svim operatorima sa kojima komutira operator $A$.
+\end{theorem}
+
+\subsection{Dekartova i polarna forma linearnog operatora}
+
+\begin{itemize}
+    \item Može se uspostaviti analogija između brojeva i linearnih operatora. Najvažnije informacije o linearnom operatoru
+    su sadržane u njegovom spektru, pa posmatramo operatore čiji je spektar sadržan o određenom skupu.
+    \item Hermitskim operatorima odgovaraju realni brojevi (jer je njihov spektar u $\mathbb{R}$), a unitarnim operatorima kompleksni brojevi norme 1.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $B$ proizvoljan linearni operator na unitarnom prostoru $V$. Tada postoje jedinstveni operatori $H, A \in \hom V$ 
+    takvi da je $H$ hermitski, $A$ antihermitski i $B = H + A$.
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Ovde je $B = H + A$ analogija za $z = a + ib$.
+
+\begin{corollary}
+    \textbf{(Dekartova forma linearnog operatora):} Neka je $B \in \hom V$ proizvoljni linearni operator na unitarnom prostoru 
+    $V$. Tada postoje jedinstveni hermitski operatori $H_1, H_2 \in \hom V$ t.d. je $B = H_1 + iH_2$.
+\end{corollary}
+
+\begin{theorem}
+    \textbf{(Polarna forma linearnog operatora):} Neka je $V$ unitaran vektorski prostor.
+    \begin{enumerate}
+        \item Ako je $A \in \hom V$, tada postoje unitarni operatori $U_1$ i $U_2$ i pozitivni operatori $H_1$ i $H_2$ takvi da je 
+        $A = U_1H_1 = U_2H_2$.
+        \item Operatori $H_1$ u $H_2$ iz prethodne tačke su jednoznačno određeni sa $A$. Ako je $A$ regularan operator, onda su i
+        $U_1$ i $U_2$ jednoznačno određeni.
+        \item $A$ je normalan ako i samo ako je $U_1H_1 = H_1U_1, \; U_2H_2 = H_2U_2$ i $H_1 = H_2$.
+    \end{enumerate}
+\end{theorem}
+\noindent\underline{\textit{Intuicija:}} Ovo je generalizacija polarne forme kompleksnog broja: $z = r \cdot e^{i \varphi}$.
+Važi $A = HU$, pri čemu je $\operatorname{Sp}(H) \subseteq [0, + \infty)$ i $\operatorname{Sp}(U) \subseteq \mathbb{S}^1$.
+
 \newpage
 \section{Bilinearne i kvadratne forme}
 
