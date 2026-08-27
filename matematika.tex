@@ -3054,6 +3054,121 @@ Važi $A = HU$, pri čemu je $\operatorname{Sp}(H) \subseteq [0, + \infty)$ i $\
 \newpage
 \section{Bilinearne i kvadratne forme}
 
+\subsection{Definicija bilinearnog funkcionala}
+\begin{itemize}
+    \item Intuitivno, bilinearne forme služe za definisanje proizvoljnog skalarnog proizvoda (ne samo standardnog).
+    \item Neka je $V$ vektorski prostor nad $\mathbb{F} \in \{ \mathbb{C}, \mathbb{R} \}$. \textbf{Bilinearni funkcional (forma)} 
+    na $\mathbb{F}$ je preslikavanje $A: V \times V \to \mathbb{F}$ za koje važe aksiome:
+    \begin{description}
+        \item[(b1)] $(\forall v_1, v_2, w \in V)(\forall \alpha, \beta \in \mathbb{F}) \; A(\alpha v_1 + \beta v_2, w) = \alpha A(v_1, w) + \beta A(v_2, w)$,
+        \item[(b2)] $(\forall v_1, v_2, w \in V)(\forall \alpha, \beta \in \mathbb{F}) \; A(w, \alpha v_1 + \beta v_2) = \alpha A(w, v_1) + \beta A(w, v_2)$. 
+    \end{description}
+    \item Bilinearni funkcional je \textbf{hermitski} ako uz (b1) važi i 
+    \begin{description}
+        \item[(b3)] $(\forall v, w \in V) \; A(v, w) = \overline{A(w, v)}$.
+    \end{description}
+    Ako je $\mathbb{F} = \mathbb{C}$, onda umesto (b2) za hermitski funkcional važi:
+    \begin{description}
+        \item[(b2')] $(\forall v_1, v_2, w \in V)(\forall \alpha, \beta \in \mathbb{C}) \; A(w, \alpha v_1 + \beta v_2) = \overline{\alpha} A(w, v_1) + \overline{\beta} A(w, v_2)$,
+    \end{description}
+    a ako je $\mathbb{F} = \mathbb{R}$, onda je (b2)$\iff$(b2') i funkcional se zove \textbf{simetrični}.
+\end{itemize}
+
+\subsection{Matrica hermitskog bilinearnog funkcionala}
+\begin{itemize}
+    \item Matrica $\mathcal{A} = A(e) = (\alpha_{ij}) = (A(e_j, e_i))$ naziva se \textbf{matrica bilinearnog funkcionala} $A$ u bazi $e$.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $A$ bilinearni funkcional na $V$ i $e$ neka baza od $V$. Neka je i $\mathcal{A} = A(e) = (\alpha_{ij})$ matrica bilinearnog funk. u 
+    bazi $e$. Tada za proizv. $v, w \in V$ važi 
+    \[ A(v, w) = w^\mathcal{T}\mathcal{A}v. \]
+    Ako je $A$ hermitski bilinearni funkcional, tada je matrica $\mathcal{A}$ hermitska i za proizvoljne $v, w \in V$ važi
+    \[ A(v, w) = \overline{w}^\mathcal{T}Av. \]
+\end{theorem}
+
+\subsection{Kongruentnost matrica. Rang i jezgro hermitskog bilinernog funkcionala.}
+\begin{theorem}
+    Neka je $A$ hermitski bilinearni funkcional na unitarnom vektorskom prostoru $V$ i neka su $A(e)$ i $A(f)$ matrice hermitskog bilinearnog funkcionala u 
+    bazama $e$ i $f$ redom. Tada važi
+    \[ A(f) = T^\dagger A(e)T, \] gde je $T$ matrica prelaska sa baze $e$ u bazu $f$.
+\end{theorem}
+
+\begin{itemize}
+    \item Za dve matrice $\mathcal{A, B} \in \mathbb{M}_n(\mathbb{F})$ kažemo da su kongruentne (pišemo $\mathcal{A}\equiv \mathcal{B}$) ako i samo ako
+    postoji regularna matrica $\mathcal{T} \in \mathbb{M}_n(\mathbb{F})$ t.d. je 
+    \[ \mathcal{B} = \mathcal{T}^\dagger\mathcal{AT}. \]
+\end{itemize}
+
+\begin{theorem}
+    Relacija kongruentnosti matrica je relacija ekvivalencije.
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Rang} bilinearnog hermitskog funkcionala je rang matrice hermitskog bilinearnog funkcionala $A(e)$ u proizvoljnoj bazi $e$.
+    \item Kažemo da je funkcional \textbf{regularan} ako je $\operatorname{r}(A(e)) = \dim V$.
+    \item \textbf{Jezgro} bilinearnog funkcionala $A(v, w)$ na vektorskom prostoru $V$ je skup
+    \[ N_A = \{ v \in V \;|\; A(v, w) = 0, \; \forall w \in V \}. \]
+\end{itemize}
+
+\begin{theorem}
+    Neka je $A$ bilinearni funkcional na vektorskom prostoru $V$ i $e$ baza od $V$. Tada je $N_A = \ker (A(e))$.
+\end{theorem}
+
+\begin{corollary}
+    $N_A$ je potprostor od $V$.
+\end{corollary}
+
+\subsection{Kvadratne forme (funkcionali)}
+
+\begin{itemize}
+    \item \textbf{Kvadratna forma (funkcional)} je preslikavanje $q: V \to \mathbb{F}$ koje je može pridružiti \textit{simetričnoj}
+    bilinearnoj formi $A(v, w)$ t.d. ($q(v) = A(v, v)$). Ovo možemo uraditi baš zato što je $A$ simetrična.
+    \item $A(v, w)$ se zove \textbf{polarna forma} kvadratne forme $q$.
+    \item Ako je $A(v, w)$ hermitska bilinearna forma, onda $q$ nazivamo \textbf{hermitski kvadratni funkcional}.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $V$ vektorski prostor nad $\mathbb{F}$. Tada:
+    \begin{enumerate}
+        \item Svaka kvadratna forma $q$ na $V$ zadovoljava \textit{relaciju paralelograma}:
+        \[ q(v + w) + q(v-w) = 2(q(v) + q(w)). \]
+        \noindent\underline{\textit{Intuicija:}} Ovo je uopšenje zakona paralelograma iz geometrije:
+        \[ ||v + w||^2 + ||v - w||^2 = 2(||v||^2 + ||w||^2). \] 
+        \item Ako je $q$ hermitski kvadratni funkcional na $V$, tada je
+        \begin{enumerate}
+            \item $(\forall v \in V) \; q(v) \in \mathbb{R}$
+            \item $(\forall v \in V) \; q(iv) = q(v)$.
+        \end{enumerate}
+        \item Polarna forma $A$ potpuno je određena svojom kvadratnom formom $q$.
+    \end{enumerate}
+\end{theorem}\
+
+\begin{itemize}
+    \item Hermitska kvadratna forma $q(v) = A(v, v)$ je \textbf{pozitivna} ako je 
+    \[ (\forall v \in V) \; q(v) \geq 0\;. \]
+    \item Hermitska pozitivna kvadratna forma $q(v) = A(v, v)$ je \textbf{strogo pozitivna} ako je 
+    \[ (\forall v \in V) \; q(v) = 0 \iff v = 0\;. \]
+\end{itemize}
+\newpage
+\subsection{Karakterizacija hermitskih bilinearnih funkcionala u unitarnom prostoru}
+
+\begin{theorem}
+    Neka je $V$ unitaran vektorski prostor. $A(v, w)$ je hermitski bilinearan funkcional ako i samo ako postoji jedinstveni 
+    hermitski operator $A:V \to V$ t.d. je 
+    \[ A(v, w) = \langle Av, w \rangle, \] pri čemu je $\langle \cdot, \cdot \rangle$ skalarni proizvod u $V$.
+\end{theorem}
+
+\begin{corollary}
+    Broj svih bilinearnih funkcionala na $V$ jednak je broju svih hermitskih operatora na $V$.
+\end{corollary}
+
+\begin{corollary}
+    Svakom strogo pozitivnom operatoru odgovara tačno jedan skalarni proizvod, dat formulom
+    \[ (\forall v, w \in V)\;\langle v, w \rangle_A = (Av, w) = \overline{w}^\mathcal{T} A v, \]
+    pri čemu je $(\cdot, \cdot)$ standardni skalarni porizvod na $V \cong \mathbb{C}^n (\mathbb{R}^n)$.
+\end{corollary}
+
 \chapter{Analitička geometrija}
 \section{Ugao između dve prave}
 \[
