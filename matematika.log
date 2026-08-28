@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  27 AUG 2026 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  28 AUG 2026 20:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1083,50 +1083,50 @@ Overfull \hbox (0.60283pt too wide) in paragraph at lines 3154--3154
 |[]\T1/cmsrbr/b/n/14.4 Karakterizacija her-mit-skih bi-li-ne-ar-nih funk-ci-o-na-la u uni-
  []
 
-[80]
+[80] [81] [82] [83] [84]
 Glava 9.
-[81
+[85
 
 ]
 Glava 10.
-[82
+[86
 
-] [83] [84] [85]
-Underfull \hbox (badness 10000) in paragraph at lines 3329--3330
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3337--3338
+] [87] [88] [89]
+Underfull \hbox (badness 10000) in paragraph at lines 3486--3487
 
  []
 
-<slike/rolle.pdf, id=1724, 552.20506pt x 241.06795pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 3494--3495
+
+ []
+
+<slike/rolle.pdf, id=1779, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 3341.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 3498.
 (pdftex.def)             Requested size: 181.18439pt x 79.09654pt.
-<slike/Mittelwertsatz6.svg.png, id=1725, 1927.2pt x 1229.59375pt>
+<slike/Mittelwertsatz6.svg.png, id=1780, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 3362.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 3519.
 (pdftex.def)             Requested size: 181.18439pt x 115.59308pt.
-[86 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 3369--3371
+[90 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 3526--3528
 [][] 
  []
 
-[87] [88]
+[91] [92]
 Glava 11.
-[89
+[93
 
 ]
 Glava 12.
-[90
+[94
 
 ]
 Glava 13.
-[91
+[95
 
 ] (./matematika.aux)
  ***********
@@ -1134,21 +1134,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `matematika.out' has not changed.
-(rerunfilecheck)             Checksum: F89FE6260CBD6EF585B5218F63E58335;37948.
+(rerunfilecheck)             Checksum: 926E692983D555211262C9BA52A30003;39562.
  ) 
 Here is how much of TeX's memory you used:
- 18956 strings out of 467533
- 299299 string characters out of 5422138
- 838892 words of memory out of 5000000
- 46963 multiletter control sequences out of 15000+600000
+ 18980 strings out of 467533
+ 299632 string characters out of 5422138
+ 839892 words of memory out of 5000000
+ 46969 multiletter control sequences out of 15000+600000
  692681 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,22n,79p,740b,809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrx.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (91 pages, 651953 bytes).
+Output written on matematika.pdf (95 pages, 667703 bytes).
 PDF statistics:
- 1975 PDF objects out of 2073 (max. 8388607)
- 1823 compressed objects within 19 object streams
- 625 named destinations out of 1000 (max. 500000)
- 1587 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2032 PDF objects out of 2073 (max. 8388607)
+ 1876 compressed objects within 19 object streams
+ 643 named destinations out of 1000 (max. 500000)
+ 1627 words of extra memory for PDF output out of 10000 (max. 10000000)
 
