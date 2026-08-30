@@ -23,6 +23,8 @@
 \MakeOuterQuote{"}                    % Pretvara obične "..." sa tastature u „...”
 \usepackage{subcaption}
 \usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -1185,6 +1187,185 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \chapter{Linearna algebra}
 \section{Klasična algebra vektora}
+\subsection{Definicija vektora}
+\begin{definition}
+    Kažemo da su uređeni parovi tačaka $(A, B)$ i $(C, D)$ prostora $\mathbb{E}$ \textbf{ekvivalentni} ako duži $AD$ i $BC$ imaju zajedničko središte. Oznaka: $(A, B) \sim (C, D)$.
+\end{definition}
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=0.9, >=stealth, every node/.style={font=\large}]
+    
+    % Definicija tačaka (dve duži koje se seku u središtu)
+    \coordinate (C) at (-3, 1.5);
+    \coordinate (B) at (3, -1.5);
+    \coordinate (A) at (-2, -2);
+    \coordinate (D) at (2, 2);
+    \coordinate (S) at (0, 0);
+    
+    % Crtanje duži AB i CD (pune linije)
+    \draw[thick] (A) -- (D);
+    \draw[thick] (C) -- (B);
+    
+    % Isprekidani vektori AB i CD (sa strelicama)
+    \draw[->, dashed, thick, black] (A) -- (B) node[midway, below, black] {\(\overrightarrow{AB}\)};
+    \draw[->, dashed, thick, black] (C) -- (D) node[midway, above, black] {\(\overrightarrow{CD}\)};
+    
+    
+    % Označavanje tačaka A, B, C, D
+    \node[below left] at (A) {\(A\)};
+    \node[below right] at (B) {\(B\)};
+    \node[above left] at (C) {\(C\)};
+    \node[above right] at (D) {\(D\)};
+    
+    % Mali kružići na krajevima duži
+    \fill (A) circle (2.5pt);
+    \fill (B) circle (2.5pt);
+    \fill (C) circle (2.5pt);
+    \fill (D) circle (2.5pt);
+    \fill (S) circle (2.5pt);
+    
+    \end{tikzpicture}
+\end{figure}
+\begin{itemize}
+    \item Svaku usmerenu duž, sa početkom $A$ i krajem $B$, možemo identifikovati sa uređenim parom tačaka $(A, B) \in \mathbb{E}$. Koristimo oznaku $\overrightarrow{AB}$.
+\end{itemize}
+\begin{lemma}
+    Neka su $ABDC$ i $CDFE$ paralelogrami. Ako tačke $A, B, E$ i $F$ nisu kolinearne, tada je $ABFE$ paralelogram.
+\end{lemma}
+
+
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}[scale=0.4, >=stealth, every node/.style={font=\large}]
+% Koordinate tačaka
+\coordinate (A) at (-5, 5);
+\coordinate (B) at (-8, 0);
+\coordinate (C) at (1, 5);
+\coordinate (D) at (-2, 0);
+\coordinate (E) at (7, 5);
+\coordinate (F) at (4, 0);
+
+% Paralelogram ABDC (puna linija)
+\draw[thick] (A) -- (B) -- (D) -- (C) -- cycle;
+
+% Paralelogram CDEF (puna linija)
+\draw[thick] (C) -- (D) -- (F) -- (E) -- cycle;
+
+% Oznake tačaka (crne)
+\node[below left] at (B) {\(B\)};
+\node[above left] at (A) {\(A\)};
+\node[above right] at (C) {\(C\)};
+\node[below right] at (D) {\(D\)};
+\node[above right] at (E) {\(E\)};
+\node[below right] at (F) {\(F\)};
+
+% Male tačke na vrhovima (opciono)
+\fill (A) circle (5pt);
+\fill (B) circle (5pt);
+\fill (C) circle (5pt);
+\fill (D) circle (5pt);
+\fill (E) circle (5pt);
+\fill (F) circle (5pt);
+
+\end{tikzpicture}
+\end{figure}
+
+\begin{theorem}
+    $\sim$ je relacija ekvivalencije na skupu svih usmerenih duži prostora $\mathbb{E}$.
+\end{theorem}
+
+\begin{definition}
+    Svaka od klasa ekvivalencije na koje je skup usmerenih duži $\mathbb{E}\times\mathbb{E}$ razbijen relacijom $\sim$ zove se \textbf{vektor}.
+\end{definition}
+
+\begin{itemize}
+    \item Meru duži $XY$ nazivamo \textbf{dužinom, intenzitetom} ili \textbf{modulom} vektora $XY$ i označavamo $||XY||$.
+    \item Ako je prava određena tačkama $X$ i $Y$ ili je paralelna pravoj $XY$, zovemo je \textbf{pravcem} vektora $XY$.
+    \item Vektore koji imaju isti pravac zovemo \textbf{kolinearnim}, a one kojima su pravci paralelni nekoj istoj ravni \textbf{koplanarnim}.
+    \item \textbf{Orijentacija (smer)} vektora $XY$ je smer prave $p$ određen početkom i krajem predstavnika $\overrightarrow{XY}$ na $p$.
+    \item Vektor čiji je predstavnik $\overrightarrow{XX}$ zovemo \textbf{nula vektor} i označavamo sa $0$.
+    \item $XY$ je \textbf{suprotnosmeran} vektoru $YX$.
+    \item Svaki vektor je jednoznačno određen intenzitetom, pravcem i smerom.
+\end{itemize}
+\subsection{Linearne operacije na skupu vektora}
+\begin{theorem}
+    Ako je $A$ proizvoljna tačka skupa $\mathbb{E}$, za svaki vektor $a \in V$ postoji jedinstveno $B \in V$ t.d. je $a = AB$.
+\end{theorem}
+\begin{itemize}
+    \item Dakle, prostor je \textit{homogen}, jer su sve tačke ravnopravne.
+\end{itemize}
+
+\begin{definition}
+    Neka je $A \in \mathbb{E}$ i $a, b \in V$. Neka su $a$ i $b$ dati svojim predstavnicima $\overrightarrow{AB}$ i $\overrightarrow{BC}$. Pod \textbf{zbirom vektora} zovemo vektor $c$, čiji predstavnik je $\overrightarrow{AC}$.
+\end{definition}
+\begin{theorem}
+    Zbir dva vektora ne zavisi od izbora njihovih predstavnika.
+\end{theorem}
+
+\begin{definition}
+    \textbf{Množenje vektora skalarom} je operacija kojom se bilo kojem skalaru $\alpha \in \mathbb{R}$ i vektoru $a \in V$ dodeljuje jedinstveni $b \in V$ koji zadovoljava sledeće uslove:
+    \begin{enumerate}
+        \item $||b|| = |\alpha| \cdot ||a||$,
+        \item Ako je $a \neq 0$ i $b \neq 0$, onda $b$ ima isti pravac kao $a$,
+        \item $b$ ima isti smer kao $a$ ako i samo ako je $\alpha > 0$ (za $\alpha \neq 0$).
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    Ako su $a, b, \in V$ i $\alpha, \beta \in \mathbb{R}$ proizvoljni, tada:
+    \begin{align*}
+        &(S1)\;a+(b+c) = (a+b)+c, & (M1)\;\alpha(a + b) = \alpha a + \alpha b, \\
+        &(S2)\;a + 0 = 0 + a = a &(M2)\;\alpha(\beta a) = (\alpha \beta)a,\;\;\;\;\;\;\;\\
+        &(S3)\;a + (-a) = (-a) + a = 0 & (M3)\;(\alpha + \beta)a = \alpha a + \beta a\\
+        &(S4)\;a + b = b + a, &(M4)\;1\cdot a = a.\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+    \end{align*}
+\end{theorem}
+
+\subsection{Linearna nezavisnost vektora. Baza i dimenzija}
+
+\begin{itemize}
+    \item Vektor \[ a = \alpha_1 a_1 + \dots + \alpha_m a_m, \;\; \alpha_i \in \mathbb{R}\] nazivamo \textbf{linearnom kombinacijom} vektora $a_1, \dots, a_m$.
+    \item Skup nenula vektora $W = \{a_1, \dots, a_m\}$ je \textbf{linearno (ne)zavisan} ako (ne) postoje skalari $\alpha_1, \dots, \alpha_m$ različiti od nule t.d. je 
+    \[ \alpha_1 a_1 + \dots + \alpha_m a_m = 0. \]
+    \item \textbf{Dimenzija} je "{maksimalan broj}" linearno nezavisnih vektora nekog vektorskog prostora. Oni čine \textbf{bazu} tog prostora.
+\end{itemize}
+
+\begin{theorem}
+    Nenula vektori $a$ i $b$ su linearno zavisni ako i samo ako su kolinearni.
+\end{theorem}
+\subsubsection*{Prava ($\mathbb{E}^1$)}
+\begin{corollary}
+    Neka je $\mathbb{E}$ prava i $e_1$ nenula vektor u $V^1$. Tada je za proizvoljni $x \in V^1$ jedinstveno određen $x_1 \in \mathbb{R}$ t.d. je $x = x_1e_1$.
+\end{corollary}
+\subsubsection*{Ravan ($\mathbb{E}^2$)}
+\begin{theorem}
+    Ako je $\mathbb{E}$ ravan, onda u vektorskom prostoru $V^2$ postoje dva linearno nezavisna vektora. Svaka tri vektora iz $V^2$ su linearno zavisna.
+\end{theorem}
+\begin{corollary}
+    Neka je $\mathbb{E}$ ravan i $e_1, e_2 \in V^2$ linearno nezavisni vektori. Za svaki $x \in V^2$ postoje jedinstveni $x_1, x_2 \in \mathbb{R}$ t.d. je $x = x_1e_1 + x_2e_2$.
+\end{corollary}
+\subsubsection*{Prostor ($\mathbb{E}^3$)}
+\begin{lemma}
+    Vektori $a, b, c$ su linearno zavisni ako i samo ako su koplanarni.
+\end{lemma}
+
+\begin{theorem}
+    Ako je $\mathbb{E}$ prostor, onda u $V^3$ postoje tri linearno nezavisna vektora. Svaka četiri vektora iz $V^3$ su linearno zavisna.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $\mathbb{E}$ prostor i $e_1, e_2, e_3 \in V^3$ tri linearno nezavisna vektora. Tada su za svaki $x \in V^3$ jedinstveno određeni $x_1, x_2, x_3 \in \mathbb{R}$ t.d. je $x = x_1e_1 + x_2e_2 + x_3e_3$.
+\end{theorem}
+
+\begin{definition}
+    Neka je $\mathcal{B} = (e_1, \dots, e_m), \; m \in \mathbb{N}_3$ baza vektorskog prostora $V^m$. Ako je $x \in V^m$, tada postoje jedinstveni $x_1, \dots, x_m \in \mathbb{R}$ t.d. je \[x = x_1e_1 + \dots + x_me_m.\]
+    Skalari $x_i$ zovu se \textbf{koordinate} vektora $x$ u bazi $\mathcal{B}$.
+\end{definition}
+
+\begin{definition}
+    Preslikavanje $\kappa_\mathcal{B}(x) = (x_1, \dots, x_m)$ zove se \textbf{koordinatizacija} i ono je bijekcija.
+\end{definition}
+
 \section{Vektorski prostori}
 \section{Linearni operatori}
 \subsection{Linearni operator}
