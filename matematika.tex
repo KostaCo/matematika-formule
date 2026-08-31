@@ -25,6 +25,7 @@
 \usepackage{bm}
 \usepackage{tikz}
 \usetikzlibrary{calc, shapes.geometric}
+\usetikzlibrary{arrows.meta, angles, quotes}
 \usetikzlibrary{arrows.meta}
 \hypersetup{
     colorlinks,
@@ -70,17 +71,29 @@
 \newpage
 % Section 1
 \chapter{Oznake i konvencije}
-\subsection{Kronekerov $\delta$ simbol}
+\subsection{Kronekerov $\delta_{ij}$ simbol}
 \begin{definition}
     \[ \delta_{ij} := \begin{cases}
-        1 & i = j,\\
-        0 & i \neq j
+        1, & i = j,\\
+        0, & i \neq j
     \end{cases}. \]
 \end{definition}
 \subsection{Ajnštajnova konvencija o sabiranju}
 Na primer, izraz \[ x_1e_1 + \dots + x_ne_n = \sum_{k=1}^{n} x_ke_k\]
 može se skraćeno pisati kao 
 \[ x_ke_k, \] tj. kad god se neki indeks pojavljuje dvaput u istom izrazu, može se podrazumevati sabiranje po tom indeksu (ako nije naglašeno suprotno).
+\subsection{Antisimetrični Kronekerov $\varepsilon_{ijk}$ simbol}
+Neka je $e = (e_1, e_2, e_3)$ ortonormirana baza vektorskog prostora $V_e^3$. Uvodimo 
+\[ \varepsilon = \begin{cases}
+    1, & e \text{ je pozitivno orijentisana}\\
+    -1, & e \text{ je negativno orijentisana}
+\end{cases}. \]
+Zatim uvodimo i 
+\[ \varepsilon_{ijk} = \begin{cases}
+    \varepsilon, & (i, j, k) \in \{(1, 2, 3), (2, 3, 1), (3, 1, 2)\}\\
+    -\varepsilon, & (i, j, k) \in \{ (2, 1, 3), (1, 3, 2), (3, 2, 1) \}
+\end{cases}. \]
+Više o orijentaciji baza se može videti u \ref{orijentacijaBaze}.
 \chapter{Logika}
 \section{Relacije}
 Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobine:\\
@@ -1461,7 +1474,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{theorem}
     \textbf{(Tales):} Za svaki vektor $AB$ ravni, svaku osu $s$, svaku pravu $l$ t.d. $l \nparallel s$ i svaki $\alpha \in \mathbb{R}$ važi
     \[ \operatorname{pr}_s^l(\alpha AB) = \alpha\operatorname{pr}_s^l(AB). \]
-\end{theorem}
+\end{theorem}\
 
 \begin{itemize}
     \item Pod uglom koji grade dva vektora uvek podrazumevamo onaj manji, tj. \[\angle(x, y) \in [0, \pi].\]
@@ -1471,12 +1484,12 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \textbf{Skalarni proizvod} vektora je binarna operacija $\cdot:V \times V \to \mathbb{R}$, kojom bilo kojim vektorima $x$ i $y$ dodeljujemo broj
     \[ x\cdot y = ||x|| \; ||y|| \cos(\angle(x, y)). \] Koriste se i druge oznake: $\langle x, y \rangle, (x | y)$.
 \end{definition}
-\intuicija Skalarni proizvod $\langle x, y \rangle$ ustvari predstavlja intenzitet vektora koji se dobija projektovanjem vektora $x$ na $y$ i onda množenjem skalarom $||y||$.
+\intuicija Skalarni proizvod $\langle x, y \rangle$ ustvari predstavlja intenzitet vektora koji se dobija projektovanjem vektora $x$ na $y$ i onda množenjem skalarom $||y||$.\
 
 \begin{itemize}
     \item Vektori $x, y \neq 0$ su \textbf{ortogonalni} ako je $\displaystyle\angle(x, y) = \frac{\pi}{2}$.
     \item Primetimo da važi $\langle x, y \rangle = ||x||\operatorname{pr}_x(y) = ||y||\operatorname{pr}_y(x)$.
-\end{itemize}
+\end{itemize}\
 
 \begin{theorem}
     \label{skP1}
@@ -1488,16 +1501,16 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \item $\langle x, x \rangle \geq 0$,
         \item $\langle x, x \rangle = 0 \iff x = 0$.
     \end{enumerate}
-\end{theorem}
+\end{theorem}\
 
 \begin{itemize}
     \item Vektorski prostor koji zadovoljava sve osobine iz teoreme \ref{skP1} naziva se \textbf{euklidski vektorski prostor}.
-\end{itemize}
+\end{itemize}\
 
 \begin{theorem}
     \[ x = y \iff (\forall u \in V)\; \langle u, x \rangle = \langle u, y \rangle \]
-\end{theorem}
-
+\end{theorem}\
+\newpage
 \begin{itemize}
     \item Za skalarni proizvod važi formula:
     \[ \langle x, y \rangle = x_1y_1 + x_2y_2 + x_3y_3. \]
@@ -1511,10 +1524,219 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \[ \cos(\phi_i) = \frac{\langle x, e_i \rangle}{||x||} = \left( \frac{x}{||x||} \right)_i\]
     \end{enumerate}
     \item Proizvoljna baza se može "{pretvoriti}" u ortonormiranu pomoću Gram-Šmitovog postupka (videti \ref{gramSmitAlgo}).
-\end{itemize}
+\end{itemize}\
 
 \subsection{Vektorski i mešoviti proizvod}
+\label{orijentacijaBaze}
 
+\begin{itemize}
+    \item Za trojku linearno nezavisnih vektora $(x, y, z)$ kažemo da je \textbf{pozitivno orijentisana} ako bismo se, posmatrano 
+    sa vrha vektora $z$, kretali suprotno od kazaljke na satu idući od $x$ ka $y$ kraćim putem. Alternativno, možemo primeniti 
+    pravilo desne ruke (slika \ref{desnaRuka}). Naime, ako se reper može predstaviti prstima desne ruke kao na slici, onda je 
+    pozitivno orijentisan.
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.65\textwidth]{slike/pravilo_desne_ruke.png}
+    \caption{Pravilo desne ruke}
+    \label{desnaRuka}
+    \end{figure}
+    \item Ukoliko je $(x, y, z)$ pozitivan, onda su $(y,x,z)$ i $(x, -y, z)$ negativno orijentisani reperi. U opštem slučaju, 
+    bilo koja parna permutacija (videti \ref{ParnostPermutacija}) pozitivno orijentisanog repera je pozitivno orijentisan reper.
+    Dakle, cikličnom zamenom vektora repera se ne menja orijentacija, pa $(x, y, z), (y, z, x)$ i $(z, x, y)$ imaju istu orijentaciju.
+\end{itemize}
+
+\begin{definition}
+    \textbf{Vektorski proizvod} je binarna operacija $V^3_e \times V^3_e \to V^3_e$ kojom bilo kojem paru vektora $x, y$ dodeljujemo 
+    vektor $x \times y$ (slika \ref{vektorskiProizvod1}), koji ima sledeća svojstva:
+    \begin{enumerate}
+        \item Ima intenzitet jednak broju $||x||\;||y|| \sin(\angle(x, y))$, tj. površini paralelograma koji određuju $x$ i $y$,
+        \item $(x\times y) \perp x \;\land\; (x\times y) \perp y$,
+        \item $(x, y, x\times y)$ je pozitivno orijentisana trojka.
+    \end{enumerate}
+\end{definition}
+
+
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % 1. Ravan (paralelogram)
+        \coordinate (R1) at (-3, -1);
+        \coordinate (R2) at (5, -1);
+        \coordinate (R3) at (8.5, 1.5);
+        \coordinate (R4) at (0.5, 1.5);
+        
+        \draw (R1) -- (R2) -- (R3) -- (R4) -- cycle;
+        
+        % 2. Tačke i vektori
+        \coordinate (O) at (0, 0);
+        \coordinate (X) at (3, 0);
+        \coordinate (Y) at (1.5, 0.866); % Ugao od 30 stepeni
+        \coordinate (P) at (4.5, 0.866); % Četvrto teme paralelograma (X + Y)
+
+        % 3. Svetlosiva boja unutar paralelograma koji obrazuju vektori
+        \fill[gray!20] (O) -- (X) -- (P) -- (Y) -- cycle;
+
+        % Ivice paralelograma nad vektorima
+        \draw (Y) -- (P) -- (X);
+
+        % Vektori x i y
+        \draw[->, thick] (O) -- (X) node[midway, below=3pt] {$x$};
+        \draw[->, thick] (O) -- (Y) node[midway, above left=1pt] {$y$};
+
+        % 4. Ugao w
+        \draw pic[draw, angle radius=0.6cm] {angle = X--O--Y};
+        \node at (0.75, 0.18) {$w$};
+
+        % 5. Vertikalna osa (x \times y i y \times x)
+        % Gornji deo (pun vektor nagore)
+        \draw[->, thick] (O) -- (0, 2.2);
+        
+        % Deo ose ispod O koji prolazi 'kroz' ravan do donje ivice (isprekidan)
+        \draw[dotted, thick] (O) -- (0, -1);
+        
+        % Donji deo ose van ravni (pun vektor nadole)
+        \draw[->, thick] (0, -1) -- (0, -2.2);
+
+        % Oznake za vektorske proizvode
+        \node[left=8pt] at (-0.1, 1.5) {$x \times y$};
+        \node[right=8pt] at (0.1, -1.6) {$y \times x$};
+
+        % Tačka O sa belim kružićem
+        \draw[fill=white, draw=black] (O) circle (1.5pt);
+        \node[below left=2pt] at (O) {$O$};
+
+    \end{tikzpicture}
+    \caption{Vektorski proizvod}
+    \label{vektorskiProizvod1}
+\end{figure}
+
+\begin{definition}
+    \textbf{Mešoviti proizvod} je trinarna operacija $[\cdot, \cdot, \cdot]:V^3_e \times V^3_e \times V^3_e \to \mathbb{R}$, kojom 
+    uređenoj trojki vektora $(x, y, z)$ dodeljujemo broj
+     \[[x, y, z] = \langle x \times y, z\rangle.\]
+\end{definition}
+
+\begin{theorem}
+    Apsolutna vrednost mešovitog proizvoda $[x, y, z]$ jednaka je zapremini paralelepipeda određenog vektorima $x, y$ i $z$
+    (slika \ref{mesovitiProizvod1}).
+\end{theorem}
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
+
+        % --- KORDI NATE ---
+        % Koordinatni početak
+        \coordinate (O) at (0, 0);
+        
+        % Vektori osnovice (ravni)
+        \coordinate (X) at (3.6, 0);
+        \coordinate (Y) at (1.5, 0.9);
+        \coordinate (XY) at (5.1, 0.9); % Teme baze X + Y
+
+        % Vektor visine/treće ivice z
+        \coordinate (Z) at (2.2, 2.4);
+
+        % Gornja osnova paralelopipeda (pomera se za vektor Z)
+        \coordinate (Z_X) at (5.8, 2.4);  % X + Z
+        \coordinate (Z_Y) at (3.7, 3.3);  % Y + Z
+        \coordinate (Z_XY) at (7.3, 3.3); % X + Y + Z
+
+        % Projekciona tačka visine H na osnovu
+        \coordinate (H_bot) at (2.2, 0.2);
+
+        % --- BOJENJE BAZNIH RAVNI (Sivo umesto šrafure) ---
+        \fill[gray!25] (O) -- (X) -- (XY) -- (Y) -- cycle;
+
+        % --- UNUTRAŠNJE I ZADNJE IVICE PARALELOPIPEDA ---
+        % Isprekidane linije za nevidljive i projekcione ivice
+        \draw[dotted, thick] (Z) -- (Z_Y);
+        \draw[dotted, thick] (Y) -- (Z_Y);
+        \draw[dotted, thick] (Z_Y) -- (Z_XY);
+        \draw[dotted, thick] (O) -- (H_bot);
+        \draw[dotted, thick] (Z) -- (0, 1.95); % Ortogonalna projekcija z na vertikalnu osu
+
+        % --- VIDLJIVE IVICE PARALELOPIPEDA ---
+        % Gornja osnova
+        \draw (Z) -- (Z_X) -- (Z_XY);
+        
+        % Bočne ivice
+        \draw (X) -- (Z_X);
+        \draw (XY) -- (Z_XY);
+        
+        % Ivice osnove (pored glavnih vektora)
+        \draw (Y) -- (XY) -- (X);
+
+        % Visina H (od gornjeg temena Z do baze)
+        \draw (Z) -- (H_bot);
+        \draw[fill=white, draw=black] (H_bot) circle (1.2pt);
+        \node[above right=1pt] at (2.3, 1.0) {$H$};
+
+        % --- VEKTORI ---
+        % Bazni vektori x, y, z
+        \draw[->, thick] (O) -- (X) node[midway, below=3pt] {$x$};
+        \draw[->, thick] (O) -- (Y) node[midway, above left=1pt] {$y$};
+        \draw[->, thick] (O) -- (Z) node[midway, above left=1pt] {$z$};
+
+        % Vertikalna osa sa vektorskim proizvodom x \times y i projekcijom pr_{x \times y} z
+        \draw (O) -- (0, 3.2);
+        \draw[->, ultra thick] (O) -- (0, 1.95); % Vektor projekcije pr_{x \times y} z
+        
+        % Vektor y \times z (normalan na stranu obuhvaćenu sa y i z)
+        \draw[->, >=Stealth] (O) -- (1.0, -1.3) node[midway, right=6pt] {$y \times z$};
+
+        % --- OZNAKE I UGLOVI ---
+        % Ugao w između z i vertikalne ose
+        \coordinate (V) at (0, 2.0);
+        \draw pic[draw, angle radius=0.7cm] {angle = Z--O--V};
+        \node at (0.4, 1.3) {$w$};
+
+        % Tekstualne oznake uz vertikalnu osu
+        \node[left=4pt] at (0, 1.6) {$x \times y$};
+        \node[left=4pt] at (0, 0.7) {$\mathbf{pr}_{x \times y} z$};
+
+        % Tačka O sa belim kružićem
+        \draw[fill=white, draw=black] (O) circle (1.5pt);
+        \node[below left=2pt] at (O) {};
+
+    \end{tikzpicture}
+    \caption{Mešoviti proizvod}
+    \label{mesovitiProizvod1}
+\end{figure}
+
+\begin{theorem}
+    Ako su $x, y, z \in V_e^3$ i $\alpha \in \mathbb{R}$, tada važi:
+    \begin{align*}
+        &(L1)\;x\times y = -y \times x, & (P1)\;[x, y, z] = - [y, x, z],\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \\
+        &(L2)\;(\alpha x) \times y = \alpha (x \times y), & (P2)\; [x, y, z] = [y, z, x] = [z, x, y], \;\;\;\;\;\;\;\;\;\;\;\;\\
+        &(L3)\; (x + y)\times z = x\times z + y \times z, & (P3)\;[\alpha x, y, z] = \alpha[x, y, z],\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\\
+        &\; & (P4)\;[x_1 + x_2, y, z] = [x_1, y, z] + [x_2, y, z].
+    \end{align*}
+\end{theorem}
+\begin{itemize}
+    \item U pozitivno orijentisanoj bazi $e = (e_1, e_2, e_3)$, vektor $x \times y$ ima koordinate
+    \[ (x_2y_3 - x_3y_2, x_3y_1 - x_1y_3, x_1y_2 - x_2y_1), \]
+    tj. jednak je determinanti
+    \[ x \times y = \begin{vmatrix}
+        e_1 & e_2 & e_3 \\
+        x_1 & x_2 & x_3 \\
+        y_1 & y_2 & y_3
+    \end{vmatrix}. \]
+    Ukoliko je $e$ negativno orijentisana, treba pomnožiti determinantu sa $-1$. Više o determinantama se može videti u \ref{determinante}.
+\end{itemize}
+
+\begin{theorem}
+    Za $x, y, z \in V_e^3$ važi formula
+    \[ (x \times y) \times z = \langle x, z \rangle y - \langle y, z \rangle x. \]
+\end{theorem}
+\begin{corollary}
+    Vektorsko množenje nije asocijativno.
+\end{corollary}
+\begin{theorem}
+    \textbf{(Jakobijev identitet):} 
+    \[ x \times (y \times z) + y \times (z \times x) + z \times (x \times y) = 0 \]
+\end{theorem}
+\newpage
 \section{Vektorski prostori}
 \section{Linearni operatori}
 \subsection{Linearni operator}
@@ -1849,6 +2071,7 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
 
 \newpage
 \section{Determinante}
+\label{determinante}
 \subsection{Simetrična grupa $\mathbb{S}_n$}
 \begin{itemize}
     \item $\mathbb{S}_n = \left\{1, 2, \dots, n\right\}, \;\forall n \in \mathbb{N}$
@@ -1862,6 +2085,7 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
 \end{itemize}
 
 \subsection{Parnost permutacija}
+\label{ParnostPermutacija}
 \begin{itemize}
     \item \textbf{Inverzija permutacije $\sigma$} - uređeni par $(i, j)$ td. $i < j$ i $\sigma(i) > \sigma(j)$
     \item $I(\sigma)$ - Broj inverzija perm. $\sigma$
@@ -3658,10 +3882,294 @@ Važi $A = HU$, pri čemu je $\operatorname{Sp}(H) \subseteq [0, + \infty)$ i $\
 \end{theorem}
 
 \chapter{Analitička geometrija}
-\section{Ugao između dve prave}
+\section{Prava u ravni}
+Postoji više oblika jednačine prave u $\mathbb{E}^2$:
+\begin{enumerate}
+    \item \textbf{Opšti oblik} (za svaku pravu):
+    \[ \boxed{ax_1 + bx_2 + c= 0} \]
+
+    \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % Koordinatne ose
+        \draw[->, thick] (-1.5, 0) -- (4.5, 0) node[right] {$x_1$};
+        \draw[->, thick] (0, -2.5) -- (0, 2) node[above] {$x_2$};
+        
+        % Koordinatni početak
+        \node[below left] at (0, 0) {$O$};
+        
+        % Prava sa pozitivnim nagibom koja seče ose u negativnim tačkama
+        \draw[thick, domain=-0.6:4.2, smooth, variable=\x] plot ({\x}, {0.667*\x - 2});
+        
+        % Natpis direktno iznad prave, prateći njen nagib
+        %\node[below left, rotate=33.7, font=\normalsize] at (2.6, -0.4) {$x_2 = -\frac{a}{b} x_1 - \frac{c}{b}$};
+        
+        % Presečne tačke na osama
+        \coordinate (Px1) at (3, 0);
+        \coordinate (Px2) at (0, -2);
+        
+        % Mali kružići na presecima
+        \fill (Px1) circle (2pt);
+        \fill (Px2) circle (2pt);
+        
+        % Oznake preseka
+        \node[above left] at (Px1) {$-\frac{c}{a}$};
+        \node[above left] at (Px2) {$-\frac{c}{b}$};
+        \end{tikzpicture}
+        %\caption{Prava $ax_1 + bx_2 + c= 0$}
+    \end{figure}
+    \item \textbf{Segmentni oblik} (ne prolazi kroz nulu):
+    \[ \boxed{\frac{x_1}{p_1} + \frac{x_2}{p_2} = 1} \]
+    \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % Koordinatne ose
+        \draw[->, thick] (-1.5, 0) -- (4.5, 0) node[right] {$x_1$};
+        \draw[->, thick] (0, -2.5) -- (0, 2) node[above] {$x_2$};
+        
+        % Koordinatni početak
+        \node[below left] at (0, 0) {$O$};
+        
+        % Prava sa pozitivnim nagibom koja seče ose u negativnim tačkama
+        \draw[thick, domain=-0.6:4.2, smooth, variable=\x] plot ({\x}, {0.667*\x - 2});
+        
+        % Natpis direktno iznad prave, prateći njen nagib
+        %\node[below left, rotate=33.7, font=\normalsize] at (2.6, -0.4) {$x_2 = -\frac{a}{b} x_1 - \frac{c}{b}$};
+        
+        % Presečne tačke na osama
+        \coordinate (Px1) at (3, 0);
+        \coordinate (Px2) at (0, -2);
+        
+        % Mali kružići na presecima
+        \fill (Px1) circle (2pt);
+        \fill (Px2) circle (2pt);
+        
+        % Oznake preseka
+        \node[above left] at (Px1) {$(p_1, 0)$};
+        \node[above left] at (Px2) {$(0, p_2)$};
+        \end{tikzpicture}
+        %\caption{Prava $ax_1 + bx_2 + c= 0$}
+    \end{figure}
+    \newpage
+    \item \textbf{Eksplicitni oblik} (nije vertikalna):
+    \[ \boxed{x_2 = kx_1 + n}\]
+    \[ k = \tan(\theta)\]
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
+
+% Koordinatne ose
+\draw (-2, 0) -- (4, 0);
+\draw (0, -1.5) -- (0, 3);
+
+% Strelica x_1 na pozitivnom delu ose
+\draw[->, thick] (0, 0) -- (3, 0) node[above right] {$x_1$};
+
+% Strelica x_2 na gornjem delu ose
+\draw[->, thick] (0, 1) -- (0, 2.3) node[above left] {$x_2$};
+
+% Tačka T(0,t) i isprekidana linija
+\coordinate (T) at (0, 1);
+\draw[dashed] (T) -- (3, 1);
+
+% Prava l
+\draw (-1.8, -0.35) -- (3.5, 3.65) node[above left=6pt] {$l$};
+
+% Ugao theta
+\draw (1, 1) arc (0:38:1) node[midway, right=3pt] {$\theta$};
+
+% Tačka O (koordinatni početak)
+\coordinate (O) at (0, 0);
+\draw[fill=white, draw=black] (O) circle (1.5pt);
+\node[below right=2pt] at (O) {$O$};
+
+% Tačka T sa belim kružićem
+\draw[fill=white, draw=black] (T) circle (1.5pt);
+\node[above left=1pt] at (T) {$(0,n)$};
+\end{tikzpicture}
+    \end{figure}
+    \item \textbf{Parametarski oblik} (za svaku pravu):
+    \[\boxed{(x_1, x_2) = (p_1, p_2) + (a, b)t}\]
+    \item \textbf{Središte masa} (za svaku pravu):
+    \[\boxed{(x_1, x_2) = (p_1, q_1)t_1 + (p_2, q_2)t_2, \;\; t_1 + t_2 = 1}\]
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
+
+% Koordinatne ose
+\draw (-2, 0) -- (4, 0);
+\draw (0, -1.5) -- (0, 2.5);
+
+% Strelica x_1 na pozitivnom delu ose
+\draw[->, thick] (0, 0) -- (3.5, 0) node[above left=3pt] {$x_1$};
+
+% Strelica x_2 na gornjem delu ose
+\draw[->, thick] (0, 0) -- (0, 2.2) node[above right=2pt] {$x_2$};
+
+% Prava sa negativnim nagibom: l
+% Jednačina npr. y = -0.6*x + 1.2
+\draw (-1.2, 1.92) -- (3.5, -0.9);
+\node at (-0.5, 2) {$l$};
+
+% Tačka P(p1, p2)
+\coordinate (P) at (-0.5, 1.5);
+\draw[fill=white, draw=black] (P) circle (1.5pt);
+\node[below left=3pt] at (P) {$P(p_1, p_2)$};
+
+% Tačka X(x1, x2)
+\coordinate (X) at (0.6, 0.84);
+\draw[fill=white, draw=black] (X) circle (1.5pt);
+\node[above right=3pt] at (X) {$X(x_1, x_2)$};
+
+% Tačka Q(q1, q2)
+\coordinate (Q) at (2.0, 0);
+\draw[fill=white, draw=black] (2.1, -0.06) circle (1.5pt); % Tačka na pravoj l blizu x1 ose
+\node[below=2pt] at (Q) {$Q(q_1, q_2)$};
+
+% Tačka O (koordinatni početak)
+\coordinate (O) at (0, 0);
+\draw[fill=white, draw=black] (O) circle (1.5pt);
+\node[below left=2pt] at (O) {$O$};
+\end{tikzpicture}
+    \end{figure}
+    \newpage
+    \item \textbf{Vektorski oblik} (za svaku pravu):
+    \[ \boxed{\langle PX, n \rangle = 0} \]
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
+
+% Koordinatne ose
+\draw (-2.2, 0) -- (2.7, 0);
+\draw (0, -1.7) -- (0, 3.5);
+
+% Strelica x_1 na pozitivnom delu ose
+\draw[->, thick] (0, 0) -- (2.1, 0) node[above right=3pt] {$x_1$};
+
+% Strelica x_2 na gornjem delu ose
+\draw[->, thick] (0, 0) -- (0, 2.5) node[above left=3pt] {$x_2$};
+
+% Prava l sa pozitivnim nagibom (ugao cca 30 deg)
+\coordinate (P) at (-0.3, 0.4);
+\coordinate (X) at (1.575, 1.65);
+\draw (-1.8, -0.6) -- (2.7, 2.4) node[below right=2pt] {$l$};
+
+% Vektor od početka do tačke X (sa strelicom na pravi l)
+\draw[->, thick] (P) -- (X);
+
+% Vektor normale n (normalan na pravu l u tački X)
+% Pravac l je pod uglom od 30°, pa je normala pod 120°
+\draw[->, thick] (X) -- ++(120:1.3) node[below left=2pt] {$n$};
+
+% Prav ugao sa tačkom između l i n
+\draw (X) +(30:0.5) arc (30:120:0.5);
+\fill (X) +(75:0.3) circle (1.2pt);
+
+% Tačke sa belim kružićima
+\coordinate (O) at (0, 0);
+\draw[fill=white, draw=black] (O) circle (1.5pt);
+\node[below right=3pt] at (O) {$O$};
+
+\draw[fill=white, draw=black] (P) circle (1.5pt);
+\node[above left=2pt] at (P) {$P$};
+
+\draw[fill=white, draw=black] (X) circle (1.5pt);
+\node[below right=3pt] at (X) {$X$};
+
+\end{tikzpicture}
+    \end{figure}
+\end{enumerate}
+
+\subsection{Rastojanje tačke od prave}
+\begin{definition}
+    Neka su $\mathcal{A, B}$ skupovi tačaka. Tada \textbf{rastojanje između skupova} definišemo kao
+    \[ d(\mathcal{A, B}) = \inf\{ d(A, B)\;|\;A\in\mathcal{A}, B \in \mathcal{B} \}. \]
+\end{definition}
+
+\begin{theorem}
+    Neka je data tačka $A$, prava $l$ (ili ravan $\sigma$). Neka je $B$ podnožje normale iz $A$ na pravu $l$ (ili ravan $\sigma$) i 
+    neka je $C$ proizvoljna druga tačka sa te prave (ili ravni). Tada je:
+    \[ d(A, B) \leq d(A, C), \;\; \text{odnosno} \;\; d(A, l) = ||AB||\;\;\;\;\;(d(A, \sigma) = ||AB||) .\]
+\end{theorem}
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
+
+% Ravan pi (paralelogram)
+\coordinate (R1) at (-3, -1);
+\coordinate (R2) at (4, -1);
+\coordinate (R3) at (7.8, 0.7);
+\coordinate (R4) at (0.8, 0.7);
+
+\draw (R1) -- (R2) -- (R3) -- (R4) -- cycle;
+
+% Tačke A, B, C
+\coordinate (B) at (2.5, 0.1);
+\coordinate (A) at (2.5, 2.3);
+\coordinate (C) at (0.6, -0.2);
+
+% Linije
+\draw (A) -- (B);          % Vertikalna duža AB
+\draw (B) -- (C);          % Duža BC u ravni
+\draw[dashed] (A) -- (C);  % Isprekidana hipotenuza AC
+
+% Oznaka za prav ugao sa tačkom
+% Ugao između segmenta BC (pod uglom ~170°) i BA (pod uglom 90°)
+\draw (B) +(-170:0.5) arc (-170:-270:0.5);
+\fill (B) +(-220:0.28) circle (1.2pt);
+
+% Tačke sa belim kružićima
+\draw[fill=white, draw=black] (A) circle (1.5pt);
+\node[above=3pt] at (A) {$A$};
+
+\draw[fill=white, draw=black] (B) circle (1.5pt);
+\node[below=3pt] at (B) {$B$};
+
+\draw[fill=white, draw=black] (C) circle (1.5pt);
+\node[below=3pt] at (C) {$C$};
+\end{tikzpicture}
+\end{figure}
+
+\begin{theorem}
+    Neka je tačka $A$ zadata vektorom položaja $a$ i prava $l$ zadata jednačinom $\langle r, n \rangle = p$, gde je $r$ vektor
+    položaja proizvoljne tačke na pravoj, a $n$ vektor normale na pravu. Tada je rastojanje 
+    tačke $A$ od prave $l$ dato formulom
+    \[ d(A, l) = \frac{1}{||n||}\left|\langle a, n\rangle - p\right|. \]
+    Ako je prava data jednačinom $l: ax + by + c = 0$, a tačka koordinatama $A(x_1, y_1)$, onda važi
+    \[ d(A, l) = \frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}}. \]
+\end{theorem}
+
+\subsection{Ugao između dve prave}
+Neka je $\theta$ ugao pod kojim se seku prave $y = k_1x+b_1$ i $y = k_2x+b_2$. Tada:
 \[
-    \tan(\theta) = \bigg|\frac{k_1-k_2}{1+k_1k_2}\bigg|,\;\;\;  \text{gde je $\theta$ ugao pod kojim se seku prave } k_1x+b_1 \text{ i } k_2x+b_2.
+    \tan(\theta) = \bigg|\frac{k_1-k_2}{1+k_1k_2}\bigg|.
 \]
+
+\section{Prava i ravan u prostoru}
+
+\subsubsection*{Jednačine ravni}
+\begin{itemize}
+    \item \textbf{Opšta jednačina ravni}:
+    \[ a_1x_1 + a_2x_2 + a_3x_3 + b = 0 \]
+    \item \textbf{Vektorska jednačina ravni}:
+    \[ \langle r - p, n \rangle = 0, \]
+    gde je $n$ vektor normale na ravan, $p$ vektor položaja neke poznate tačke u ravni, a $r$ vektor položaja bilo koje tačke prostora.\\
+    \intuicija Recimo da $r$ i $p$ odgovaraju tačkama $R$ i $P$ redom. Ako su i $R$ i $P$ u ravni, onda je vektor $\overrightarrow{PR} = r - p$ paralelan ravni, pa je i normalan na vektor $n$.
+\end{itemize}
+\subsubsection*{Jednačine prave}
+\begin{itemize}
+    \item \textbf{Parametarska jednačina prave}:
+    \[ (x_1, x_2, x_3) = (p_1, p_2, p_3) + (a_1, a_2, a_3)t \]
+    \item \textbf{Kanonska jednačina prave}:
+    \[ \frac{x_1 - p_1}{a_1} = \frac{x_2 - p_2}{a_2} = \frac{x_3 - p_3}{a_3} \]
+    $(a_1, a_2, a_3)$ je vektor prave.
+\end{itemize}
+
+\begin{theorem}
+    a
+\end{theorem}
 
 \chapter{Analiza}
 \section{Nizovi}
