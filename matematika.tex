@@ -25,6 +25,7 @@
 \usepackage{bm}
 \usepackage{tikz}
 \usetikzlibrary{calc, shapes.geometric}
+\usetikzlibrary{arrows.meta}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -55,6 +56,8 @@
 \renewcommand{\arctan}{\operatorname{arctg}}
 \renewcommand{\arccot}{\operatorname{arcctg}}
 
+\newcommand{\intuicija}{\noindent\underline{\textit{Intuicija:}}\ }
+
 % Title
 \title{Matematika - Cheatsheet}
 \author{Kosta Čolović}
@@ -66,6 +69,18 @@
 \tableofcontents
 \newpage
 % Section 1
+\chapter{Oznake i konvencije}
+\subsection{Kronekerov $\delta$ simbol}
+\begin{definition}
+    \[ \delta_{ij} := \begin{cases}
+        1 & i = j,\\
+        0 & i \neq j
+    \end{cases}. \]
+\end{definition}
+\subsection{Ajnštajnova konvencija o sabiranju}
+Na primer, izraz \[ x_1e_1 + \dots + x_ne_n = \sum_{k=1}^{n} x_ke_k\]
+može se skraćeno pisati kao 
+\[ x_ke_k, \] tj. kad god se neki indeks pojavljuje dvaput u istom izrazu, može se podrazumevati sabiranje po tom indeksu (ako nije naglašeno suprotno).
 \chapter{Logika}
 \section{Relacije}
 Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobine:\\
@@ -1355,7 +1370,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \begin{theorem}
     Neka je $\mathbb{E}$ prostor i $e_1, e_2, e_3 \in V^3$ tri linearno nezavisna vektora. Tada su za svaki $x \in V^3$ jedinstveno određeni $x_1, x_2, x_3 \in \mathbb{R}$ t.d. je $x = x_1e_1 + x_2e_2 + x_3e_3$.
-\end{theorem}
+\end{theorem}\
 
 \begin{definition}
     Neka je $\mathcal{B} = (e_1, \dots, e_m), \; m \in \mathbb{N}_3$ baza vektorskog prostora $V^m$. Ako je $x \in V^m$, tada postoje jedinstveni $x_1, \dots, x_m \in \mathbb{R}$ t.d. je \[x = x_1e_1 + \dots + x_me_m.\]
@@ -1363,8 +1378,142 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{definition}
 
 \begin{definition}
-    Preslikavanje $\kappa_\mathcal{B}(x) = (x_1, \dots, x_m)$ zove se \textbf{koordinatizacija} i ono je bijekcija.
+    Bijektivno preslikavanje $\kappa_\mathcal{B}(x) = (x_1, \dots, x_m)$ zove se \textbf{koordinatizacija}.
 \end{definition}
+\newpage
+\begin{theorem}
+    Neka je $\mathcal{B} = (e_1, \dots, e_m),\; m\in \mathbb{N}_3$ baza vektorskog prostora $V^m$. Tada važi:
+    \begin{enumerate}
+        \item Dva vektora su jednaka ako i samo ako su jednake njihove koordinate u odnosu na $\mathcal{B}$.
+        \item Svaka koordinata sume dva vektora jednaka je sumi odgovarajućih koordinata vektora.
+        \item Svaka kooordinata proizvoda vektora i skalara jednaka je proizvodu tog skalara i odgovarajuće koordinate.
+    \end{enumerate}
+\end{theorem}
+
+\begin{itemize}
+    \item Ako je $O$ zadata tačka u $\mathbb{E}^1, \mathbb{E}^2$ ili $\mathbb{E}^3$, tada se svakoj tački tog prostora može pridružiti jedinstven vektor $OX$, koji zovemo \textbf{radijus-vektor} ili \textbf{vektor položaja} tačke $X$.
+    \item Koordinatni sistem označavamo sa npr. $Oe_1e_2e_3$. $O$ je \textbf{koordinatni početak}, a $x_1, x_2, x_3$ (ose određene vektorima $e_i$ i tačkom $O$) \textbf{koordinatne ose}.
+    \item Tačku $X$ označavamo sa npr. $X(x_1, x_2, x_3)$.
+    \item \textbf{Ortonormirana baza} se sastoji od baznih vektora koji su međusobno ortogonalni i intenziteta 1. Odgovarajući koordinatni sistem je \textbf{Dekartov pravougli koordinatni sistem}.
+\end{itemize}
+
+\subsection{Projektovanje i skalarni proizvod}
+\begin{itemize}
+    \item \textbf{Paralelna vektor-projekcija} vektora $AB$ na osu $s$ u odnosu na pravu $l$ je vektor $A'B'$, čija temena su tačke u kojima prave paralelne $l$ kroz $A$ i $B$ seku $s$.
+        \begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=0.9, >=stealth, every node/.style={font=\normalsize}]
+    
+    % Definicija tačaka (dve duži koje se seku u središtu)
+    \coordinate (B) at (0, -1);
+    \coordinate (B') at (2, -3);
+    \coordinate (A) at (-2, -2);
+    \coordinate (A') at (-1, -3);
+    \coordinate (O) at (-5, -3);
+    \coordinate (s) at (7, -3);
+    \coordinate (e) at (-3, -3);
+    
+    % Crtanje duži AB i CD (pune linije)
+    \draw[thick] (O) -- (s);
+    
+    % Isprekidani vektori AB i CD (sa strelicama)
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, thick, black] (A) -- (B);
+    \draw[->,  >={Stealth[length=7pt, width=7pt]}, thick, black] (A') -- (B');
+    \draw[->,  >={Stealth[length=7pt, width=7pt]}, thick, black] (O) -- (e);
+    
+    
+    % Označavanje tačaka A, B, C, D
+    \node[below left] at (A) {\(A\)};
+    \node[above right] at (B) {\(B\)};
+    \node[below left] at (B') {\(B'\)};
+    \node[below] at (O) {\(O\)};
+    \node[above left] at (s) {\(s\)};
+    \node[below left] at (A') {\(A'\)};
+    \node[above] at (-4, -3) {\(e\)};
+    \node[above right] at (3, -1) {\(l\)};
+    
+    % Mali kružići na krajevima duži
+    \fill (A) circle (2.5pt);
+    \draw[fill=white, draw=black] (O) circle (2.5pt);
+    \fill (A') circle (2.5pt);
+    \draw[dashed] ($(A)!-3.5cm!(A')$) -- ($(A')!-2cm!(A)$);
+    \draw[dashed] ($(B)!-2cm!(B')$) -- ($(B')!-2cm!(B)$);
+    \draw ($(5, -3)!-2cm!(4, -2)$) -- ($(4, -2)!-3.5cm!(5, -3)$);
+
+    \end{tikzpicture}
+    \caption{Paralelna vektor-projekcija}
+        \end{figure}
+    \item \textbf{Paralelna skalar-projekcija} je broj čija je apsolutna vrednost $||A'B'||$, a znak zavisi od toga da li je istosmeran sa $s$. Oznaka: $\operatorname{pr}_s^l(AB)$. Ako je skalar-projekcija ortogonalna, pišemo $\operatorname{pr}_s(AB)$.
+    \item Ako je $e$ jedinični vektor ose $s$, onda je $\operatorname{pr}_s^l(AB)e$.
+    \item Uglom koji zahvataju vektori $OA$ i $OB$ nazivamo ugao $AOB$.
+\end{itemize}
+
+\begin{theorem}
+    Ako je $w := \angle(AB, s)$, onda je 
+    \[ \operatorname{pr}_s(AB) = ||AB|| \cos(w). \]
+\end{theorem}
+
+\begin{theorem}
+    Za svaka dva vektora $AB$ i $BC$ ravni, svaku osu $s$ te ravni i svaku pravu $l$ t.d. $l \nparallel s$ važi
+    \[ \operatorname{pr}_s^l (AB + BC) =   \operatorname{pr}_s^l(AB) + \operatorname{pr}_s^l(BC).\]
+\end{theorem}
+
+\begin{theorem}
+    \textbf{(Tales):} Za svaki vektor $AB$ ravni, svaku osu $s$, svaku pravu $l$ t.d. $l \nparallel s$ i svaki $\alpha \in \mathbb{R}$ važi
+    \[ \operatorname{pr}_s^l(\alpha AB) = \alpha\operatorname{pr}_s^l(AB). \]
+\end{theorem}
+
+\begin{itemize}
+    \item Pod uglom koji grade dva vektora uvek podrazumevamo onaj manji, tj. \[\angle(x, y) \in [0, \pi].\]
+\end{itemize}
+
+\begin{definition}
+    \textbf{Skalarni proizvod} vektora je binarna operacija $\cdot:V \times V \to \mathbb{R}$, kojom bilo kojim vektorima $x$ i $y$ dodeljujemo broj
+    \[ x\cdot y = ||x|| \; ||y|| \cos(\angle(x, y)). \] Koriste se i druge oznake: $\langle x, y \rangle, (x | y)$.
+\end{definition}
+\intuicija Skalarni proizvod $\langle x, y \rangle$ ustvari predstavlja intenzitet vektora koji se dobija projektovanjem vektora $x$ na $y$ i onda množenjem skalarom $||y||$.
+
+\begin{itemize}
+    \item Vektori $x, y \neq 0$ su \textbf{ortogonalni} ako je $\displaystyle\angle(x, y) = \frac{\pi}{2}$.
+    \item Primetimo da važi $\langle x, y \rangle = ||x||\operatorname{pr}_x(y) = ||y||\operatorname{pr}_y(x)$.
+\end{itemize}
+
+\begin{theorem}
+    \label{skP1}
+    Ako su $x, y, z \in V^3$ i $\alpha \in \mathbb{R}$, tada je:
+    \begin{enumerate}
+        \item $\langle x, y \rangle = \langle y, x \rangle$,
+        \item $\langle x, y + z \rangle = \langle x, y \rangle + \langle x, z \rangle$,
+        \item $\langle \alpha x, y \rangle = \alpha \langle x, y \rangle$,
+        \item $\langle x, x \rangle \geq 0$,
+        \item $\langle x, x \rangle = 0 \iff x = 0$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{itemize}
+    \item Vektorski prostor koji zadovoljava sve osobine iz teoreme \ref{skP1} naziva se \textbf{euklidski vektorski prostor}.
+\end{itemize}
+
+\begin{theorem}
+    \[ x = y \iff (\forall u \in V)\; \langle u, x \rangle = \langle u, y \rangle \]
+\end{theorem}
+
+\begin{itemize}
+    \item Za skalarni proizvod važi formula:
+    \[ \langle x, y \rangle = x_1y_1 + x_2y_2 + x_3y_3. \]
+    \item Primene skalarnog proizvoda:
+    \begin{enumerate}
+        \item Norma vektora:
+        \[ ||x|| = \sqrt{\langle x, x \rangle} \]
+        \item Kosinus ugla $w = \angle (x, y)$:
+        \[ \cos(w) = \frac{\langle x, y \rangle}{||x|| \; ||y||} = \frac{\langle x, y \rangle}{\sqrt{\langle x, x \rangle\langle y, y \rangle}} \]
+        \item Uglovi sa vektorima baze i $i$-ta koordinata vektora:
+        \[ \cos(\phi_i) = \frac{\langle x, e_i \rangle}{||x||} = \left( \frac{x}{||x||} \right)_i\]
+    \end{enumerate}
+    \item Proizvoljna baza se može "{pretvoriti}" u ortonormiranu pomoću Gram-Šmitovog postupka (videti \ref{gramSmitAlgo}).
+\end{itemize}
+
+\subsection{Vektorski i mešoviti proizvod}
 
 \section{Vektorski prostori}
 \section{Linearni operatori}
@@ -2803,6 +2952,7 @@ gde je \( \mathcal{A}^* = (\overline{\alpha_{ji}}) \) matrica koja se dobije iz 
 
 \newpage
 \subsection{Ortonormirana baza. Gram-Šmitov postupak}
+\label{gramSmitAlgo}
 
 \begin{itemize}
     \item Za bazu $e = (e_1, \dots, e_n)$ unitarnog prostora $V$ dimenzije $n$ kažemo da je \textbf{ortonormirana} ako važi:

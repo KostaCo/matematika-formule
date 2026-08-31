@@ -1,212 +1,217 @@
 \babel@toc {serbian}{}\relax 
-\contentsline {chapter}{\numberline {1}Logika}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Relacije}{7}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Relacije ekvivalencije i poretka}{7}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}\textit {1-1} i \textit {na} funkcije}{7}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Operacije}{7}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Algebra}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Zbir i razlika kubova i kub zbira i razlike}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Nejednakosti}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Sredine ($H_n,\tmspace +\thickmuskip {.2777em} G_n,\tmspace +\thickmuskip {.2777em} A_n,\tmspace +\thickmuskip {.2777em} K_n$)}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Bernulijeva nejednakost}{8}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Koši-Švarcova nejednakost}{8}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Korenovanje}{8}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Nizovi}{9}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Poznate sume}{9}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Aritmetički niz}{9}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Geometrijski niz}{9}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Polinomi}{10}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Prsten polinoma}{10}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Teorema o deljenju polinoma}{10}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Posledice teoreme o deljenju polinoma}{11}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Nule polinoma}{12}{subsection.2.5.4}%
-\contentsline {subsection}{\numberline {2.5.5}Ireducibilnost(nesvodljivost) polinoma}{12}{subsection.2.5.5}%
-\contentsline {chapter}{\numberline {3}Geometrija}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Trigonometrija}{14}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Sinusna teorema}{14}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Kosinusna teorema}{14}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Teorema o projekcijama}{14}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Adicione formule}{14}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Formule za polovinu ugla}{15}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Transformacije proizvoda u zbir}{15}{subsection.3.1.6}%
-\contentsline {subsection}{\numberline {3.1.7}Transformacije zbira u proizvod}{15}{subsection.3.1.7}%
-\contentsline {subsection}{\numberline {3.1.8}Molvajdove formule}{16}{subsection.3.1.8}%
-\contentsline {subsection}{\numberline {3.1.9}Tangensna teorema}{16}{subsection.3.1.9}%
-\contentsline {subsection}{\numberline {3.1.10}Inverzne trigonometrijske funkcije}{16}{subsection.3.1.10}%
-\contentsline {subsection}{\numberline {3.1.11}Formule višestrukog ugla}{16}{subsection.3.1.11}%
-\contentsline {subsection}{\numberline {3.1.12}Ostalo}{16}{subsection.3.1.12}%
-\contentsline {chapter}{\numberline {4}Teorija brojeva}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Kongruencija}{17}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Mala Fermaova teorema}{17}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Broj delilaca}{17}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Kompleksni brojevi}{17}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Muavrova formula}{17}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Koren kompleksnog broja}{17}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Zbir $n$-tih korena kompleksog broja}{17}{subsection.4.2.3}%
-\contentsline {chapter}{\numberline {5}Kombinatorika}{18}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Prebrojavanja}{18}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Binomni koeficijenti}{18}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Binomni identiteti}{18}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Formula uključenja-isključenja}{19}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Izbori elemenata}{20}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Generisanje permutacija i kombinacija}{20}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Funkcije generatrise}{20}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Definicija funkcije generatrise}{20}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Operacije sa funkcijama generatrisama}{20}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Particije brojeva}{20}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Rekurentne jednačine}{21}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Linearne rekurentne jednačine}{21}{subsection.5.7.1}%
-\contentsline {subsubsection}{Linearne rekurentne jednačine sa konstantnim koeficijentima}{21}{subsection.5.7.1}%
-\contentsline {subsubsection}{Linearne rekurentne jednačine sa funkcionalnim koeficijentima}{22}{Item.22}%
-\contentsline {subsection}{\numberline {5.7.2}Nelinearne rekurentne jednačine}{22}{subsection.5.7.2}%
-\contentsline {section}{\numberline {5.8}Fibonačijevi brojevi}{22}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Lukasovi brojevi}{22}{subsection.5.8.1}%
-\contentsline {section}{\numberline {5.9}Katalanovi brojevi}{22}{section.5.9}%
-\contentsline {section}{\numberline {5.10}Bernulijevi brojevi}{22}{section.5.10}%
-\contentsline {chapter}{\numberline {6}Teorija grafova}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Osnovni pojmovi i teoreme}{23}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Tipovi grafova}{23}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Izomorfizmi grafova i teoreme}{23}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Šetnje, staze i putevi}{24}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}Neki grafovi}{24}{subsection.6.1.4}%
-\contentsline {subsection}{\numberline {6.1.5}Matrične reprezentacije grafova}{25}{subsection.6.1.5}%
-\contentsline {section}{\numberline {6.2}Stabla}{25}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Definicija i osnovna svojstva}{25}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Korenska i razapinjuća stabla}{26}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Pretrage grafova}{26}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Označena stabla}{27}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Prebrojavanje označenih stabala}{27}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Kodiranje i dekodiranje označenih stabala}{27}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Minimalna razapinjuća stabla}{28}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Težinski grafovi}{28}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Kruskalov algoritam}{28}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Primov algoritam}{29}{subsection.6.4.3}%
-\contentsline {section}{\numberline {6.5}Ojlerovi multigrafovi}{30}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Problem kineskog poštara}{30}{subsection.6.5.1}%
-\contentsline {section}{\numberline {6.6}Hamiltonovi grafovi}{31}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Problem trgovačkog putnika}{32}{subsection.6.6.1}%
-\contentsline {section}{\numberline {6.7}Planarni grafovi}{33}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Sparivanja u grafovima}{33}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Bojenje grafova}{34}{section.6.9}%
-\contentsline {subsubsection}{Teoreme i svojstva}{34}{section.6.9}%
-\contentsline {subsection}{\numberline {6.9.1}Bojenje mapa}{35}{subsection.6.9.1}%
-\contentsline {section}{\numberline {6.10}Rastojanja u usmerenim težinskim grafovima}{35}{section.6.10}%
-\contentsline {subsection}{\numberline {6.10.1}Dajkstrin algoritam}{35}{subsection.6.10.1}%
-\contentsline {subsection}{\numberline {6.10.2}Flojd-Varšalov algoritam}{36}{subsection.6.10.2}%
-\contentsline {chapter}{\numberline {7}Teorija grupa}{38}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Linearna algebra}{39}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Klasična algebra vektora}{39}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Definicija vektora}{39}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Linearne operacije na skupu vektora}{40}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Linearna nezavisnost vektora. Baza i dimenzija}{41}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Vektorski prostori}{42}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Linearni operatori}{42}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Linearni operator}{42}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Rang i defekt linearnog operatora}{42}{subsection.8.3.2}%
-\contentsline {subsection}{\numberline {8.3.3}Regularni operatori}{42}{subsection.8.3.3}%
-\contentsline {subsection}{\numberline {8.3.4}Izomorfizmi vektorskih prostora}{42}{subsection.8.3.4}%
-\contentsline {subsection}{\numberline {8.3.5}Teoreme o izomorfizmu}{42}{subsection.8.3.5}%
-\contentsline {subsection}{\numberline {8.3.6}Tačni (egzaktni) nizovi}{42}{subsection.8.3.6}%
-\contentsline {subsection}{\numberline {8.3.7}Algebra}{42}{subsection.8.3.7}%
-\contentsline {subsection}{\numberline {8.3.8}Rang matrice}{42}{subsection.8.3.8}%
-\contentsline {subsection}{\numberline {8.3.9}Određivanje inverzne matrice}{42}{subsection.8.3.9}%
-\contentsline {subsection}{\numberline {8.3.10}Lin. funkcionali, dualna baza, anihilator, refleksivnost}{43}{subsection.8.3.10}%
-\contentsline {subsubsection}{Dualna baza}{43}{subsection.8.3.10}%
-\contentsline {subsubsection}{Anihilator}{45}{Item.74}%
-\contentsline {subsubsection}{Refleksivnost}{46}{theorem.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.11}Dualno (transponovano) preslikavanje}{47}{subsection.8.3.11}%
-\contentsline {subsection}{\numberline {8.3.12}Zavisnost matrice operatora od baze}{48}{subsection.8.3.12}%
-\contentsline {section}{\numberline {8.4}Determinante}{50}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Simetrična grupa $\mathbb {S}_n$}{50}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Parnost permutacija}{50}{subsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.4.3}Ciklus}{50}{subsection.8.4.3}%
-\contentsline {subsection}{\numberline {8.4.4}Definicija determinante (Lajbnicova formula)}{51}{subsection.8.4.4}%
-\contentsline {subsection}{\numberline {8.4.5}Multilinearnost determinante}{53}{subsection.8.4.5}%
-\contentsline {subsection}{\numberline {8.4.6}Induktivna definicija determinante i Laplasov razvoj}{54}{subsection.8.4.6}%
-\contentsline {subsection}{\numberline {8.4.7}Determinanta matrice i elementarne transformacije}{54}{subsection.8.4.7}%
-\contentsline {subsection}{\numberline {8.4.8}Vandermondova determinanta}{55}{subsection.8.4.8}%
-\contentsline {subsection}{\numberline {8.4.9}Računanje determinanti preko rekurentnih relacija}{55}{subsection.8.4.9}%
-\contentsline {subsection}{\numberline {8.4.10}Bine-Košijeva teorema}{55}{subsection.8.4.10}%
-\contentsline {subsection}{\numberline {8.4.11}Lema o množenju blok matrica}{55}{subsection.8.4.11}%
-\contentsline {subsection}{\numberline {8.4.12}Karkterizacija determinante}{56}{subsection.8.4.12}%
-\contentsline {section}{\numberline {8.5}Sistemi linearnih jednačina}{56}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Definicija sistema linearnih jednačina}{56}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Geometrijska interpretacija sistema linearnih jednačina}{57}{subsection.8.5.2}%
-\contentsline {subsection}{\numberline {8.5.3}Homogeni sistemi linearnih jednačina}{57}{subsection.8.5.3}%
-\contentsline {subsection}{\numberline {8.5.4}Nehomogeni sistemi linearnih jednačina}{58}{subsection.8.5.4}%
-\contentsline {subsection}{\numberline {8.5.5}Gausova metoda eliminacije}{58}{subsection.8.5.5}%
-\contentsline {section}{\numberline {8.6}Redukcija linearnih operatora na konačnodimenzionim prostorima}{59}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Redukcija linearnog operatora}{59}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Invarijantni potprostori}{59}{subsection.8.6.2}%
-\contentsline {subsection}{\numberline {8.6.3}Dekompozabilni i ireducibilni operatori}{59}{subsection.8.6.3}%
-\contentsline {subsection}{\numberline {8.6.4}Karakteristični polinom i invarijante sličnosti}{61}{subsection.8.6.4}%
-\contentsline {subsection}{\numberline {8.6.5}Hamilton-Kejlijeva teorema}{61}{subsection.8.6.5}%
-\contentsline {subsection}{\numberline {8.6.6}Minimalni polinom matrice}{62}{subsection.8.6.6}%
-\contentsline {subsection}{\numberline {8.6.7}Sopstvene vrednosti linearnog operatora}{62}{subsection.8.6.7}%
-\contentsline {subsection}{\numberline {8.6.8}Dijagonalizacija linearnog operatora}{63}{subsection.8.6.8}%
-\contentsline {subsection}{\numberline {8.6.9}Svođenje matrice operatora na trougaoni oblik}{64}{subsection.8.6.9}%
-\contentsline {subsection}{\numberline {8.6.10}Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}{65}{subsection.8.6.10}%
-\contentsline {subsection}{\numberline {8.6.11}Nilpotentni operatori}{66}{subsection.8.6.11}%
-\contentsline {subsection}{\numberline {8.6.12}Žordanova normalna forma}{68}{subsection.8.6.12}%
-\contentsline {subsection}{\numberline {8.6.13}Invarijantnost linearnih operatora nad realnim vek. prostorima - kompleksifikacija realnog vektorskog prostora}{70}{subsection.8.6.13}%
-\contentsline {section}{\numberline {8.7}Unitarni prostori}{71}{section.8.7}%
-\contentsline {subsection}{\numberline {8.7.1}Definicija unitarnog prostora}{71}{subsection.8.7.1}%
-\contentsline {subsection}{\numberline {8.7.2}Važni primeri unitarnih prostora}{71}{subsection.8.7.2}%
-\contentsline {subsection}{\numberline {8.7.3}Ortogonalnost}{72}{subsection.8.7.3}%
-\contentsline {subsection}{\numberline {8.7.4}Norma. Ugao. Bunjakovski-Koši-Švarcova nejednakost}{72}{subsection.8.7.4}%
-\contentsline {subsection}{\numberline {8.7.5}Ortonormirana baza. Gram-Šmitov postupak}{73}{subsection.8.7.5}%
-\contentsline {subsection}{\numberline {8.7.6}Furijeovi koeficijenti i njihova svojstva}{74}{subsection.8.7.6}%
-\contentsline {subsection}{\numberline {8.7.7}Ortogonalni komplement}{74}{subsection.8.7.7}%
-\contentsline {subsection}{\numberline {8.7.8}Hermitsko konjugovanje}{74}{subsection.8.7.8}%
-\contentsline {subsection}{\numberline {8.7.9}Gramova matrica i Gramova determinanta}{75}{subsection.8.7.9}%
-\contentsline {subsection}{\numberline {8.7.10}Linearni funkcionali u unitarnim prostorima}{75}{subsection.8.7.10}%
-\contentsline {subsection}{\numberline {8.7.11}Hermitski adjungovani operator}{76}{subsection.8.7.11}%
-\contentsline {subsection}{\numberline {8.7.12}Ortogonalni projektor}{76}{subsection.8.7.12}%
-\contentsline {subsection}{\numberline {8.7.13}Neke važne klase operatora}{77}{subsection.8.7.13}%
-\contentsline {subsection}{\numberline {8.7.14}Izomorfizmi unitarnih prostora}{78}{subsection.8.7.14}%
-\contentsline {subsection}{\numberline {8.7.15}Normalni operatori}{78}{subsection.8.7.15}%
-\contentsline {subsection}{\numberline {8.7.16}Normalni operatori na realnim prostorima}{79}{subsection.8.7.16}%
-\contentsline {subsection}{\numberline {8.7.17}Pozitivni operatori}{79}{subsection.8.7.17}%
-\contentsline {subsection}{\numberline {8.7.18}Kvadratni koren operatora}{80}{subsection.8.7.18}%
-\contentsline {subsection}{\numberline {8.7.19}Dekartova i polarna forma linearnog operatora}{80}{subsection.8.7.19}%
-\contentsline {section}{\numberline {8.8}Bilinearne i kvadratne forme}{81}{section.8.8}%
-\contentsline {subsection}{\numberline {8.8.1}Definicija bilinearnog funkcionala}{81}{subsection.8.8.1}%
-\contentsline {subsection}{\numberline {8.8.2}Matrica hermitskog bilinearnog funkcionala}{81}{subsection.8.8.2}%
-\contentsline {subsection}{\numberline {8.8.3}Kongruentnost matrica. Rang i jezgro hermitskog bilinernog funkcionala.}{81}{subsection.8.8.3}%
-\contentsline {subsection}{\numberline {8.8.4}Kvadratne forme (funkcionali)}{82}{subsection.8.8.4}%
-\contentsline {subsection}{\numberline {8.8.5}Karakterizacija hermitskih bilinearnih funkcionala u unitarnom prostoru}{83}{subsection.8.8.5}%
-\contentsline {subsection}{\numberline {8.8.6}Zakon inercije za hermitski kvadratni funkcional}{83}{subsection.8.8.6}%
-\contentsline {subsection}{\numberline {8.8.7}Dijagonalizacija hermitske kvadratne forme. Lagranžev algoritam.}{84}{subsection.8.8.7}%
-\contentsline {subsection}{\numberline {8.8.8}Jakobijev algoritam}{86}{subsection.8.8.8}%
-\contentsline {subsection}{\numberline {8.8.9}Karakterizacija pozitivnosti bilinearne hermitske forme}{86}{subsection.8.8.9}%
-\contentsline {subsection}{\numberline {8.8.10}Istovremena dijagonalizacija para hermitskih kvadratnih formi}{87}{subsection.8.8.10}%
-\contentsline {chapter}{\numberline {9}Analitička geometrija}{88}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Ugao između dve prave}{88}{section.9.1}%
-\contentsline {chapter}{\numberline {10}Analiza}{89}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Nizovi}{89}{section.10.1}%
-\contentsline {subsection}{\numberline {10.1.1}Limes niza}{89}{subsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.1.2}Monotoni nizovi}{90}{subsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.1.3}Podnizovi, tačke nagomilavanja, gornji i donji limes}{90}{subsection.10.1.3}%
-\contentsline {subsection}{\numberline {10.1.4}Košijev kriterijum konvergencije}{90}{subsection.10.1.4}%
-\contentsline {section}{\numberline {10.2}Limesi i neprekidnost funkcija}{90}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}Funkcije}{90}{subsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.2.2}Osnovno o svojstvu neprekidnosti}{90}{subsection.10.2.2}%
-\contentsline {subsection}{\numberline {10.2.3}Neprekidnost funkcija}{91}{subsection.10.2.3}%
-\contentsline {subsection}{\numberline {10.2.4}Poznati limesi}{91}{subsection.10.2.4}%
-\contentsline {subsection}{\numberline {10.2.5}Upoređivanje beskonačnosti}{91}{subsection.10.2.5}%
-\contentsline {subsection}{\numberline {10.2.6}Teoreme}{91}{subsection.10.2.6}%
-\contentsline {section}{\numberline {10.3}Asimptote}{92}{section.10.3}%
-\contentsline {subsection}{\numberline {10.3.1}Kosa asimptota}{92}{subsection.10.3.1}%
-\contentsline {section}{\numberline {10.4}Izvodi}{92}{section.10.4}%
-\contentsline {subsection}{\numberline {10.4.1}Poznati izvodi}{92}{subsection.10.4.1}%
-\contentsline {subsection}{\numberline {10.4.2}Lajbnicova formula}{92}{subsection.10.4.2}%
-\contentsline {subsection}{\numberline {10.4.3}Fermaova, Rolova, Košijeva i Lagranžova teorema}{93}{subsection.10.4.3}%
-\contentsline {section}{\numberline {10.5}Tejlorov razvoj}{94}{section.10.5}%
-\contentsline {subsection}{\numberline {10.5.1}Opšta formula Tejlorovog razvoja i ostaci}{94}{subsection.10.5.1}%
-\contentsline {subsection}{\numberline {10.5.2}Razvoji elementarnih funkcija (Maklorenov polinom)}{94}{subsection.10.5.2}%
-\contentsline {section}{\numberline {10.6}Integrali}{95}{section.10.6}%
-\contentsline {subsection}{\numberline {10.6.1}Poznati integrali}{95}{subsection.10.6.1}%
-\contentsline {subsection}{\numberline {10.6.2}Izvedeni integrali}{95}{subsection.10.6.2}%
-\contentsline {chapter}{\numberline {11}Verovatnoća}{96}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Statistika}{97}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Numerička analiza}{98}{chapter.13}%
+\contentsline {chapter}{\numberline {1}Oznake i konvencije}{7}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}Kronekerov $\delta $ simbol}{7}{subsection.1.0.1}%
+\contentsline {subsection}{\numberline {1.0.2}Ajnštajnova konvencija o sabiranju}{7}{subsection.1.0.2}%
+\contentsline {chapter}{\numberline {2}Logika}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Relacije}{8}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Relacije ekvivalencije i poretka}{8}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}\textit {1-1} i \textit {na} funkcije}{8}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Operacije}{8}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Algebra}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Zbir i razlika kubova i kub zbira i razlike}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Nejednakosti}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Sredine ($H_n,\tmspace +\thickmuskip {.2777em} G_n,\tmspace +\thickmuskip {.2777em} A_n,\tmspace +\thickmuskip {.2777em} K_n$)}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Bernulijeva nejednakost}{9}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Koši-Švarcova nejednakost}{9}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Korenovanje}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Nizovi}{10}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Poznate sume}{10}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Aritmetički niz}{10}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Geometrijski niz}{10}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Polinomi}{11}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Prsten polinoma}{11}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Teorema o deljenju polinoma}{11}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Posledice teoreme o deljenju polinoma}{12}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Nule polinoma}{13}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Ireducibilnost(nesvodljivost) polinoma}{13}{subsection.3.5.5}%
+\contentsline {chapter}{\numberline {4}Geometrija}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Trigonometrija}{15}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Sinusna teorema}{15}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Kosinusna teorema}{15}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Teorema o projekcijama}{15}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Adicione formule}{15}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Formule za polovinu ugla}{16}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Transformacije proizvoda u zbir}{16}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Transformacije zbira u proizvod}{16}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Molvajdove formule}{17}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}Tangensna teorema}{17}{subsection.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.10}Inverzne trigonometrijske funkcije}{17}{subsection.4.1.10}%
+\contentsline {subsection}{\numberline {4.1.11}Formule višestrukog ugla}{17}{subsection.4.1.11}%
+\contentsline {subsection}{\numberline {4.1.12}Ostalo}{17}{subsection.4.1.12}%
+\contentsline {chapter}{\numberline {5}Teorija brojeva}{18}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Kongruencija}{18}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Mala Fermaova teorema}{18}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Broj delilaca}{18}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Kompleksni brojevi}{18}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Muavrova formula}{18}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Koren kompleksnog broja}{18}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Zbir $n$-tih korena kompleksog broja}{18}{subsection.5.2.3}%
+\contentsline {chapter}{\numberline {6}Kombinatorika}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Prebrojavanja}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Binomni koeficijenti}{19}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Binomni identiteti}{19}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Formula uključenja-isključenja}{20}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Izbori elemenata}{21}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Generisanje permutacija i kombinacija}{21}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Funkcije generatrise}{21}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Definicija funkcije generatrise}{21}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Operacije sa funkcijama generatrisama}{21}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Particije brojeva}{21}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Rekurentne jednačine}{22}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Linearne rekurentne jednačine}{22}{subsection.6.7.1}%
+\contentsline {subsubsection}{Linearne rekurentne jednačine sa konstantnim koeficijentima}{22}{subsection.6.7.1}%
+\contentsline {subsubsection}{Linearne rekurentne jednačine sa funkcionalnim koeficijentima}{23}{Item.22}%
+\contentsline {subsection}{\numberline {6.7.2}Nelinearne rekurentne jednačine}{23}{subsection.6.7.2}%
+\contentsline {section}{\numberline {6.8}Fibonačijevi brojevi}{23}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Lukasovi brojevi}{23}{subsection.6.8.1}%
+\contentsline {section}{\numberline {6.9}Katalanovi brojevi}{23}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Bernulijevi brojevi}{23}{section.6.10}%
+\contentsline {chapter}{\numberline {7}Teorija grafova}{24}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Osnovni pojmovi i teoreme}{24}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Tipovi grafova}{24}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Izomorfizmi grafova i teoreme}{24}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Šetnje, staze i putevi}{25}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}Neki grafovi}{25}{subsection.7.1.4}%
+\contentsline {subsection}{\numberline {7.1.5}Matrične reprezentacije grafova}{26}{subsection.7.1.5}%
+\contentsline {section}{\numberline {7.2}Stabla}{26}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Definicija i osnovna svojstva}{26}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Korenska i razapinjuća stabla}{27}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Pretrage grafova}{27}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}Označena stabla}{28}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Prebrojavanje označenih stabala}{28}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Kodiranje i dekodiranje označenih stabala}{28}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Minimalna razapinjuća stabla}{29}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Težinski grafovi}{29}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Kruskalov algoritam}{29}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Primov algoritam}{30}{subsection.7.4.3}%
+\contentsline {section}{\numberline {7.5}Ojlerovi multigrafovi}{31}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Problem kineskog poštara}{31}{subsection.7.5.1}%
+\contentsline {section}{\numberline {7.6}Hamiltonovi grafovi}{32}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Problem trgovačkog putnika}{33}{subsection.7.6.1}%
+\contentsline {section}{\numberline {7.7}Planarni grafovi}{34}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Sparivanja u grafovima}{34}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Bojenje grafova}{35}{section.7.9}%
+\contentsline {subsubsection}{Teoreme i svojstva}{35}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Bojenje mapa}{36}{subsection.7.9.1}%
+\contentsline {section}{\numberline {7.10}Rastojanja u usmerenim težinskim grafovima}{36}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Dajkstrin algoritam}{36}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}Flojd-Varšalov algoritam}{37}{subsection.7.10.2}%
+\contentsline {chapter}{\numberline {8}Teorija grupa}{39}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Linearna algebra}{40}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Klasična algebra vektora}{40}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Definicija vektora}{40}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Linearne operacije na skupu vektora}{41}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Linearna nezavisnost vektora. Baza i dimenzija}{42}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Projektovanje i skalarni proizvod}{43}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}Vektorski i mešoviti proizvod}{45}{subsection.9.1.5}%
+\contentsline {section}{\numberline {9.2}Vektorski prostori}{45}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Linearni operatori}{45}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Linearni operator}{45}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Rang i defekt linearnog operatora}{45}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Regularni operatori}{45}{subsection.9.3.3}%
+\contentsline {subsection}{\numberline {9.3.4}Izomorfizmi vektorskih prostora}{45}{subsection.9.3.4}%
+\contentsline {subsection}{\numberline {9.3.5}Teoreme o izomorfizmu}{45}{subsection.9.3.5}%
+\contentsline {subsection}{\numberline {9.3.6}Tačni (egzaktni) nizovi}{45}{subsection.9.3.6}%
+\contentsline {subsection}{\numberline {9.3.7}Algebra}{45}{subsection.9.3.7}%
+\contentsline {subsection}{\numberline {9.3.8}Rang matrice}{45}{subsection.9.3.8}%
+\contentsline {subsection}{\numberline {9.3.9}Određivanje inverzne matrice}{45}{subsection.9.3.9}%
+\contentsline {subsection}{\numberline {9.3.10}Lin. funkcionali, dualna baza, anihilator, refleksivnost}{46}{subsection.9.3.10}%
+\contentsline {subsubsection}{Dualna baza}{46}{subsection.9.3.10}%
+\contentsline {subsubsection}{Anihilator}{48}{Item.85}%
+\contentsline {subsubsection}{Refleksivnost}{49}{theorem.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.11}Dualno (transponovano) preslikavanje}{50}{subsection.9.3.11}%
+\contentsline {subsection}{\numberline {9.3.12}Zavisnost matrice operatora od baze}{51}{subsection.9.3.12}%
+\contentsline {section}{\numberline {9.4}Determinante}{53}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Simetrična grupa $\mathbb {S}_n$}{53}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Parnost permutacija}{53}{subsection.9.4.2}%
+\contentsline {subsection}{\numberline {9.4.3}Ciklus}{53}{subsection.9.4.3}%
+\contentsline {subsection}{\numberline {9.4.4}Definicija determinante (Lajbnicova formula)}{54}{subsection.9.4.4}%
+\contentsline {subsection}{\numberline {9.4.5}Multilinearnost determinante}{56}{subsection.9.4.5}%
+\contentsline {subsection}{\numberline {9.4.6}Induktivna definicija determinante i Laplasov razvoj}{57}{subsection.9.4.6}%
+\contentsline {subsection}{\numberline {9.4.7}Determinanta matrice i elementarne transformacije}{57}{subsection.9.4.7}%
+\contentsline {subsection}{\numberline {9.4.8}Vandermondova determinanta}{58}{subsection.9.4.8}%
+\contentsline {subsection}{\numberline {9.4.9}Računanje determinanti preko rekurentnih relacija}{58}{subsection.9.4.9}%
+\contentsline {subsection}{\numberline {9.4.10}Bine-Košijeva teorema}{58}{subsection.9.4.10}%
+\contentsline {subsection}{\numberline {9.4.11}Lema o množenju blok matrica}{58}{subsection.9.4.11}%
+\contentsline {subsection}{\numberline {9.4.12}Karkterizacija determinante}{59}{subsection.9.4.12}%
+\contentsline {section}{\numberline {9.5}Sistemi linearnih jednačina}{59}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Definicija sistema linearnih jednačina}{59}{subsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.5.2}Geometrijska interpretacija sistema linearnih jednačina}{60}{subsection.9.5.2}%
+\contentsline {subsection}{\numberline {9.5.3}Homogeni sistemi linearnih jednačina}{60}{subsection.9.5.3}%
+\contentsline {subsection}{\numberline {9.5.4}Nehomogeni sistemi linearnih jednačina}{61}{subsection.9.5.4}%
+\contentsline {subsection}{\numberline {9.5.5}Gausova metoda eliminacije}{61}{subsection.9.5.5}%
+\contentsline {section}{\numberline {9.6}Redukcija linearnih operatora na konačnodimenzionim prostorima}{62}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Redukcija linearnog operatora}{62}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {9.6.2}Invarijantni potprostori}{62}{subsection.9.6.2}%
+\contentsline {subsection}{\numberline {9.6.3}Dekompozabilni i ireducibilni operatori}{62}{subsection.9.6.3}%
+\contentsline {subsection}{\numberline {9.6.4}Karakteristični polinom i invarijante sličnosti}{64}{subsection.9.6.4}%
+\contentsline {subsection}{\numberline {9.6.5}Hamilton-Kejlijeva teorema}{64}{subsection.9.6.5}%
+\contentsline {subsection}{\numberline {9.6.6}Minimalni polinom matrice}{65}{subsection.9.6.6}%
+\contentsline {subsection}{\numberline {9.6.7}Sopstvene vrednosti linearnog operatora}{65}{subsection.9.6.7}%
+\contentsline {subsection}{\numberline {9.6.8}Dijagonalizacija linearnog operatora}{66}{subsection.9.6.8}%
+\contentsline {subsection}{\numberline {9.6.9}Svođenje matrice operatora na trougaoni oblik}{67}{subsection.9.6.9}%
+\contentsline {subsection}{\numberline {9.6.10}Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}{68}{subsection.9.6.10}%
+\contentsline {subsection}{\numberline {9.6.11}Nilpotentni operatori}{69}{subsection.9.6.11}%
+\contentsline {subsection}{\numberline {9.6.12}Žordanova normalna forma}{71}{subsection.9.6.12}%
+\contentsline {subsection}{\numberline {9.6.13}Invarijantnost linearnih operatora nad realnim vek. prostorima - kompleksifikacija realnog vektorskog prostora}{73}{subsection.9.6.13}%
+\contentsline {section}{\numberline {9.7}Unitarni prostori}{74}{section.9.7}%
+\contentsline {subsection}{\numberline {9.7.1}Definicija unitarnog prostora}{74}{subsection.9.7.1}%
+\contentsline {subsection}{\numberline {9.7.2}Važni primeri unitarnih prostora}{74}{subsection.9.7.2}%
+\contentsline {subsection}{\numberline {9.7.3}Ortogonalnost}{75}{subsection.9.7.3}%
+\contentsline {subsection}{\numberline {9.7.4}Norma. Ugao. Bunjakovski-Koši-Švarcova nejednakost}{75}{subsection.9.7.4}%
+\contentsline {subsection}{\numberline {9.7.5}Ortonormirana baza. Gram-Šmitov postupak}{76}{subsection.9.7.5}%
+\contentsline {subsection}{\numberline {9.7.6}Furijeovi koeficijenti i njihova svojstva}{77}{subsection.9.7.6}%
+\contentsline {subsection}{\numberline {9.7.7}Ortogonalni komplement}{77}{subsection.9.7.7}%
+\contentsline {subsection}{\numberline {9.7.8}Hermitsko konjugovanje}{77}{subsection.9.7.8}%
+\contentsline {subsection}{\numberline {9.7.9}Gramova matrica i Gramova determinanta}{78}{subsection.9.7.9}%
+\contentsline {subsection}{\numberline {9.7.10}Linearni funkcionali u unitarnim prostorima}{78}{subsection.9.7.10}%
+\contentsline {subsection}{\numberline {9.7.11}Hermitski adjungovani operator}{79}{subsection.9.7.11}%
+\contentsline {subsection}{\numberline {9.7.12}Ortogonalni projektor}{79}{subsection.9.7.12}%
+\contentsline {subsection}{\numberline {9.7.13}Neke važne klase operatora}{80}{subsection.9.7.13}%
+\contentsline {subsection}{\numberline {9.7.14}Izomorfizmi unitarnih prostora}{81}{subsection.9.7.14}%
+\contentsline {subsection}{\numberline {9.7.15}Normalni operatori}{81}{subsection.9.7.15}%
+\contentsline {subsection}{\numberline {9.7.16}Normalni operatori na realnim prostorima}{82}{subsection.9.7.16}%
+\contentsline {subsection}{\numberline {9.7.17}Pozitivni operatori}{82}{subsection.9.7.17}%
+\contentsline {subsection}{\numberline {9.7.18}Kvadratni koren operatora}{83}{subsection.9.7.18}%
+\contentsline {subsection}{\numberline {9.7.19}Dekartova i polarna forma linearnog operatora}{83}{subsection.9.7.19}%
+\contentsline {section}{\numberline {9.8}Bilinearne i kvadratne forme}{84}{section.9.8}%
+\contentsline {subsection}{\numberline {9.8.1}Definicija bilinearnog funkcionala}{84}{subsection.9.8.1}%
+\contentsline {subsection}{\numberline {9.8.2}Matrica hermitskog bilinearnog funkcionala}{84}{subsection.9.8.2}%
+\contentsline {subsection}{\numberline {9.8.3}Kongruentnost matrica. Rang i jezgro hermitskog bilinernog funkcionala.}{84}{subsection.9.8.3}%
+\contentsline {subsection}{\numberline {9.8.4}Kvadratne forme (funkcionali)}{85}{subsection.9.8.4}%
+\contentsline {subsection}{\numberline {9.8.5}Karakterizacija hermitskih bilinearnih funkcionala u unitarnom prostoru}{86}{subsection.9.8.5}%
+\contentsline {subsection}{\numberline {9.8.6}Zakon inercije za hermitski kvadratni funkcional}{86}{subsection.9.8.6}%
+\contentsline {subsection}{\numberline {9.8.7}Dijagonalizacija hermitske kvadratne forme. Lagranžev algoritam.}{87}{subsection.9.8.7}%
+\contentsline {subsection}{\numberline {9.8.8}Jakobijev algoritam}{89}{subsection.9.8.8}%
+\contentsline {subsection}{\numberline {9.8.9}Karakterizacija pozitivnosti bilinearne hermitske forme}{89}{subsection.9.8.9}%
+\contentsline {subsection}{\numberline {9.8.10}Istovremena dijagonalizacija para hermitskih kvadratnih formi}{90}{subsection.9.8.10}%
+\contentsline {chapter}{\numberline {10}Analitička geometrija}{91}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Ugao između dve prave}{91}{section.10.1}%
+\contentsline {chapter}{\numberline {11}Analiza}{92}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Nizovi}{92}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Limes niza}{92}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}Monotoni nizovi}{93}{subsection.11.1.2}%
+\contentsline {subsection}{\numberline {11.1.3}Podnizovi, tačke nagomilavanja, gornji i donji limes}{93}{subsection.11.1.3}%
+\contentsline {subsection}{\numberline {11.1.4}Košijev kriterijum konvergencije}{93}{subsection.11.1.4}%
+\contentsline {section}{\numberline {11.2}Limesi i neprekidnost funkcija}{93}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Funkcije}{93}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}Osnovno o svojstvu neprekidnosti}{93}{subsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.2.3}Neprekidnost funkcija}{94}{subsection.11.2.3}%
+\contentsline {subsection}{\numberline {11.2.4}Poznati limesi}{94}{subsection.11.2.4}%
+\contentsline {subsection}{\numberline {11.2.5}Upoređivanje beskonačnosti}{94}{subsection.11.2.5}%
+\contentsline {subsection}{\numberline {11.2.6}Teoreme}{94}{subsection.11.2.6}%
+\contentsline {section}{\numberline {11.3}Asimptote}{95}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Kosa asimptota}{95}{subsection.11.3.1}%
+\contentsline {section}{\numberline {11.4}Izvodi}{95}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Poznati izvodi}{95}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}Lajbnicova formula}{95}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}Fermaova, Rolova, Košijeva i Lagranžova teorema}{96}{subsection.11.4.3}%
+\contentsline {section}{\numberline {11.5}Tejlorov razvoj}{97}{section.11.5}%
+\contentsline {subsection}{\numberline {11.5.1}Opšta formula Tejlorovog razvoja i ostaci}{97}{subsection.11.5.1}%
+\contentsline {subsection}{\numberline {11.5.2}Razvoji elementarnih funkcija (Maklorenov polinom)}{97}{subsection.11.5.2}%
+\contentsline {section}{\numberline {11.6}Integrali}{98}{section.11.6}%
+\contentsline {subsection}{\numberline {11.6.1}Poznati integrali}{98}{subsection.11.6.1}%
+\contentsline {subsection}{\numberline {11.6.2}Izvedeni integrali}{98}{subsection.11.6.2}%
+\contentsline {chapter}{\numberline {12}Verovatnoća}{99}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Statistika}{100}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Numerička analiza}{101}{chapter.14}%
