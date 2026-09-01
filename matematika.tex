@@ -1895,7 +1895,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \item \textbf{Skalarne} matrice ($Sc_n$): $\mathcal{A} = \lambda \mathbb{I}_n, \; \lambda \in \mathbb{F}$.
     \end{enumerate}
 \end{itemize}
-\newpage
+
 \subsection{Baza i dimenzija vektorskog prostora}
 
 \begin{itemize}
@@ -1953,7 +1953,145 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{theorem}
 
 \subsection{Potprostor}
+
+\begin{definition}
+    Neka je $V$ vektorski prostor nad $\mathbb{F}$ i neka je $L$ podskup od $V$. $L$ je \textbf{potprostor} od $V$ ako je 
+    i sam vektorski prostor nad $\mathbb{F}$ s obzirom na iste operacija sabiranja vektora i množenja vektora skalarom. Oznaka: $L \leq V$.
+\end{definition}
+
+\begin{theorem}
+    \textbf{(Karakterizacija potprostora)}: Neka je $\emptyset \neq L$ podskup vektorskog prostora $V$. Sledeći iskazi su ekvivalentni:
+    \begin{enumerate}
+        \item $L \leq V$
+        \item \begin{enumerate}
+            \item $(\forall x, y \in L)\;x + y \in L$
+            \item $(\forall x \in L)(\forall \alpha \in \mathbb{F})\;\alpha x \in L$
+        \end{enumerate}
+        \item $(\forall x, y \in L)(\forall \alpha, \beta \in \mathbb{F})\;\alpha x + \beta y \in L$
+        \item $(\forall x, y \in L)(\forall \alpha \in \mathbb{F})\;\alpha x +  y \in L$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Neka je $L$ potprostor konačnodimenzionog vektorskog prostora $V$. Tada je $\dim L \leq \dim V$. Specijalno, ako je 
+    $\dim L = \dim V$, tada je $L = V$.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $I$ proizvoljan neprazan skup indeksa i $\mathcal{F} = \{L_i\;|\; i \in I\}$ familija potprostora vektorskog prostora $V$. Tada je i \[L = \bigcap_{i \in I}L_i\]
+    potprostor od $V$.
+\end{theorem}
+
+\begin{itemize}
+    \item Takođe, od poznatih vektorskih potprostora nad istim poljem $\mathbb{F}$ možemo dobiti nove preko \textbf{direktnog
+    proizvoda prostora}. Ako su $V$ i $W$ dva vektorska prostora nad $\mathbb{F}$, tada na njihovom Dekartovom proizvodu 
+    možemo definisati sabiranje vektora i množenje vektora skalarom:
+    \begin{description}
+        \item[(s)] $(v_1, w_1) + (v_2, w_2) = (v_1 +_v v_2, w_1 +_w w_2), \;\; v_1, v_2 \in V, \; w_1, w_2 \in W$
+        \item[(ms)] $\lambda(v, w) = (\lambda \cdot_v v, \lambda \cdot_w w), \;\; v \in V, w \in W, \; \lambda \in \mathbb{F}$
+    \end{description}
+\end{itemize}
+
+\begin{theorem}
+    Neka su $V$ i $W$ vektorski prostori nad $\mathbb{F}$. Tada je $(V \times W, \mathbb{F}, +, \cdot)$ takođe vektorski prostor
+    nad $\mathbb{F}$.
+\end{theorem}
+
+\begin{itemize}
+    \item Ako ne pretpostavljamo da su $V$ i $W$ potprostori nekog vektorskog prostora, onda se njihov proizvod zove 
+    \textbf{spoljašnji direktni proizvod} vektorskih prostora.
+\end{itemize}
+
+\begin{definition}
+    Neka je $S \subset V$ proizvoljan podskup vektorskog prostora $V$. Najmanji potprostor od $V$ koji sadrži skup $S$
+    se zove \textbf{lineal} nad skupom $S$ i označava sa $\mathcal{L}(S)$.
+\end{definition}
+
+\begin{theorem}
+    Neka su $S_1, S_2$ neki podskupovi vektorskog prostora $V$. Tada:
+    \begin{enumerate}
+        \item $S\leq V \implies \mathcal{L}(S) = S$
+        \item $\mathcal{L(L(}S)) = \mathcal{L}(S)$
+        \item $S\subseteq S_1 \implies \mathcal{L}(S) \subseteq \mathcal{L}(S_1)$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Neka je $S$ neki podskup vektorskog prostora $V$. Tada je $\mathcal{L}(S)$ skup svih linearnih kombinacija elemenata iz $S$, tj.
+    \[ \mathcal{L}(S) = \bigcap_{S \subseteq M \leq V} M = \{\alpha_1a_{i_1} + \dots + \alpha_ka_{i_k}\;|\;k \in \mathbb{N}, \alpha_i \in \mathbb{F}, a_{i_j}\in S\}. \]
+\end{theorem}
+
 \subsection{Suma potprostora i faktor prostor}
+\begin{itemize}
+    \item Neka su $L$ i $M$ potprostori konačnodimenzionog vektorskog prostora $V$. \textbf{Suma potprostora} $L$ i $M$ 
+    (pišemo $L + M$) je najmanji potprostor od $V$ koji sadrži \linebreak $L$ i $M$. Dakle, \[ L + M = \mathcal{L}(L \cup M). \]
+    \item Za sumu $L + M$ kažemo da je \textbf{direktna} ako je $L \cup M = \{0\}$. Pišemo $L \oplus M$ ili $L \dotplus M$.
+    \item Ako je $L \oplus M = V$, kažemo da je $M$ \textbf{direktni komplement} od $L$ u $V$ i da je $L$ direktni komplement
+    od $M$ u $V$.
+\end{itemize}
+
+\begin{theorem}
+    Neka su $L$ i $M$ potprostori vektorskog prostora $V$. Tada je
+    \[ L + M = \mathcal{L}(L \cup M) = \{ l + m \;|\; l \in L, \; m \in M \}. \]
+\end{theorem}
+
+\begin{theorem}
+    Neka je $V$ vektorski prostor i $L, M \leq V$. Tada su sledeći iskazi ekvivalentni:
+    \begin{enumerate}
+        \item Suma $L + M$ je direktna.
+        \item Svaki $v \in L + M$ ima jedinstven prikaz u obliku zbira po jednog vektora iz $L$ i $M$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    \textbf{(Grasmanova formula)}: \label{Grasman} Neka su $L$ i $M$ potprostori vektorskog prostora $V$ i $\dim V = n$. Tada važi
+    \[ \dim (L + M) = \dim L + \dim M - \dim(L \cap M). \]
+\end{theorem}
+
+\begin{corollary}
+    Suma $M + L$ je direktna ako i samo ako je \[\dim L + \dim M = \dim(L + M).\]
+\end{corollary}
+
+\begin{algorithm}[!h]
+    \caption{Nalaženje baze sume potprostora}
+    Neka je $V$ vektorski prostor, $M, N \leq V, \; \dim M \geq \dim N$ i $B_M = \{a_1, \dots, a_k\}$ i $B_N = \{b_1, \dots, b_l\}$
+    baze od $M$ i $N$ redom. Bazu od $M + N$ dobijamo na sl. način:
+
+    \begin{enumerate}
+        \item $B_0 = B_M$
+        \item \textbf{FOR $i$ IN $\mathbb{N}_l$}:
+        \begin{itemize}
+            \item \textbf{IF} $B_i \cup \{b_i\}$ je linearno nezavisan
+            \[ B_{i} := B_{i-1} \cup \{b_i\} \]
+            \item \textbf{ELSE}
+            \[ B_{i} := B_{i-1} \]
+        \end{itemize}
+        \item $B_l$ je baza vektorskog prostora $M + N$.
+    \end{enumerate}
+    \label{NalazenjeBazeSumePotprostora}
+\end{algorithm}
+\newpage
+\begin{algorithm}[!h]
+    \caption{Nalaženje baze preseka potprostora}
+    Neka je $V$ vektorski prostor i $M, N \leq V$. Neka su $B_M = \{a_1,\dots, a_k\}$ i $B_N = \{b_1, \dots, b_l\}$ baze od 
+    $M$ i $N$ redom. Pretpostavimo da je $B_{M+N} = \{a_1, \dots, a_k, b_1, \dots, b_s\}$ baza od $M+N$. Bazu od $M \cap N$
+    nalazimo na sledeći način:
+
+    \begin{enumerate}
+        \item Neka je 
+        \[ b_j = \underbrace{\sum_{i=1}^{k}\alpha_{ji}a_i}_{e_j} + \underbrace{\sum_{i=1}^{s}\beta_{ji}b_i}_{f_j} = e_j + f_j, \;\; j \in \{s+1, s+2, \dots, l\}. \]
+        \item $\displaystyle B_{M \cap N} = \{e_j \; |\; j \in \{ s+1, \dots, l \}\}$ je jedna baza od $M \cap N$.
+    \end{enumerate}
+\end{algorithm}
+\intuicija Iz Grasmanove formule (teorema \ref{Grasman}) znamo da je
+\[ \dim (M \cap N) = \dim M + \dim N - \dim (M + N) = k + l - (k + s) = l-s. \]
+To je upravo broj $|B_{M \cap N}|$. U ovom algoritmu praktično samo uzimamo vektore iz baze $B_N$ i iz njih "izvlačimo" komponente 
+iz $B_M$. Ove komponente će pripadati upravo prostoru $M \cap N$. Zamislimo to na sledeći način. Recimo da imamo dve ravni koje se 
+seku po pravoj. Neka su $e_1$ i $e_2$ bazni vektori prve, a $f_1$ i $f_2$ bazni vektori druge ravni. Tada možemo dobiti vektor 
+$u = \alpha e_1 + \beta e_2$ koji je paralelan pravoj po kojoj se date ravni seku. Sada, vektor $f_2$ dobijamo kao $f_2 = \gamma u + \delta f_1$.
+Dakle, bazni vektor prostora $N$ dobijamo kao linearnu kombinaciju vektora $e_j$ i $f_j$, t.d. $e_j$ leži upravo u $N \cap M$, pa
+zato uzimamo samo tu komponentu.
+
 \section{Linearni operatori}
 \subsection{Linearni operator}
 \label{linearniOperator}
