@@ -4165,10 +4165,114 @@ Neka je $\theta$ ugao pod kojim se seku prave $y = k_1x+b_1$ i $y = k_2x+b_2$. T
     \item \textbf{Kanonska jednačina prave}:
     \[ \frac{x_1 - p_1}{a_1} = \frac{x_2 - p_2}{a_2} = \frac{x_3 - p_3}{a_3} \]
     $(a_1, a_2, a_3)$ je vektor prave.
-\end{itemize}
+\end{itemize}\
+\subsection{Rastojanje od ravni i prave}
+\begin{theorem}
+    Rastojanje tačke $A$ od ravni $\sigma$ je 
+    \[ d(A, \sigma) = \frac{1}{||n||}|\langle a, n \rangle + b|,  \]
+    gde je ravan zadata jednačinom $\langle r, n \rangle = -b$, a $a$ je vektor položaja tačke $A$. \\Ako je ravan zadata
+    jednačinom $\sigma: a_1x_1 + a_2x_2 + a_3x_3 + b = 0$, a tačka $A(\overline{x}_1, \overline{x}_2, \overline{x}_3)$, onda 
+    je rastojanje dato formulom
+    \[ d(A, \sigma) = \frac{|a_1\overline{x}_1 + a_2\overline{x}_2 + a_3\overline{x}_3 + b|}{\sqrt{a_1^2 + a_2^2 + a_3^2}} \]
+\end{theorem}
 
 \begin{theorem}
-    a
+    Rastojanje tačke $A$ od prave $l$ je
+    \[ d(A, l) = \frac{1}{||v||}\left|\left|(a-q)\times v\right|\right|, \]
+    pri čemu je prava $l$ određena tačkom $Q$ i pravcem $v$, a $q$ i $a$ su vektori položaja tačaka $Q$ i $A$.
+\end{theorem}
+\subsection{Mimoilazne prave}
+\begin{theorem}
+    Za proizvoljne mimoilazne prave $l$ i $k$ postoji tačno jedna prava koja ih seče i normalna je na njih. Ta prava se zove 
+    \textbf{zajednička normala} pravih $l$ i $k$.
+\end{theorem}
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=0.85, >=Stealth, every node/.style={font=\small}]
+
+% --- GORNJA RAVAN pi_1 ---
+\coordinate (P1_1) at (-3, 1);
+\coordinate (P1_2) at (4, 1);
+\coordinate (P1_3) at (7, 3.2);
+\coordinate (P1_4) at (0, 3.2);
+
+\draw (P1_1) -- (P1_2) -- (P1_3) -- (P1_4) -- cycle;
+\node at (-2.2, 1.25) {$\pi_1$};
+
+% --- DONJA RAVAN pi_2 ---
+\coordinate (P2_1) at (-3.5, -2);
+\coordinate (P2_2) at (3.2, -2);
+\coordinate (P2_3) at (6.2, 0.2);
+\coordinate (P2_4) at (-0.5, 0.2);
+
+\draw (P2_1) -- (P2_2) -- (P2_3) -- (P2_4) -- cycle;
+\node at (-2.7, -1.75) {$\pi_2$};
+
+% --- KLJUČNE TAČKE ---
+\coordinate (M) at (1.5, 2.1);
+\coordinate (N) at (1.5, -0.9);
+
+% --- VERTIKALNA OSA (MN) ---
+\draw[thick] (1.5, 3.7) -- (1.5, -0.9);
+
+% --- GORNJA RAVAN (pi_1) LINIJE ---
+% Prava l (podebljana, prolazi kroz M i A)
+\draw[thick] (-0.5, 1.6) -- (4.5, 2.85);
+\node[below=4pt] at (0.2, 1.8) {$l$};
+
+% Tačka A na pravoj l
+\coordinate (A) at (3.3, 2.55);
+\draw[fill=white, draw=black] (A) circle (1.5pt);
+\node[above=3pt] at (A) {$A$};
+
+% Prava k_1 (tanka)
+\draw (-0.2, 2.695) -- (3.8, 1.295);
+\node[above=2pt] at (3, 1.5) {$k_1$};
+
+% Prav ugao u M (isprekidani luk)
+\draw[dashed] (M) +(-90:0.4) arc (-90:-166:0.4);
+\fill (M) +(-128:0.22) circle (1.2pt);
+
+% --- DONJA RAVAN (pi_2) LINIJE ---
+% Prava k (podebljana, prolazi kroz N i B)
+\draw[thick] (-0.5, -0.2) -- (3.5, -1.6);
+\node[below left=2pt] at (0.2, -0.3) {$k$};
+
+% Tačka B na pravoj k
+\coordinate (B) at (0.3, -0.48);
+\draw[fill=white, draw=black] (B) circle (1.5pt);
+\node[above right=3pt] at (B) {$B$};
+
+% Prava l_1 (tanka)
+\draw (-1.5, -1.65) -- (4.5, -0.15);
+\node[below=4pt] at (3.5, -0.3) {$l_1$};
+
+% Prav ugao u N (pun luk)
+\draw (N) +(90:0.4) arc (90:14:0.4);
+\fill (N) +(52:0.22) circle (1.2pt);
+
+% --- TAČKE M I N (Beli kružići) ---
+\draw[fill=white, draw=black] (M) circle (1.5pt);
+\node[above right=2pt] at (M) {$M$};
+
+\draw[fill=white, draw=black] (N) circle (1.5pt);
+\node[below left=2pt] at (N) {$N$};
+\end{tikzpicture}
+\caption{Zajednička normala mimoilaznih pravih}
+\end{figure}
+
+\begin{theorem}
+    Neka su $l$ i $k$ mimoilazne prave i tačke $M \in l$ i $N \in k$ t.d. je $MN$ zajednička normala pravih $l$ i $k$. Za proizvoljne 
+    tačke $X \in l$ i $Y \in k$ važi:
+    \[ ||MN|| \leq ||XY||,\] odnosno, \[d(l, k) = \inf \{d(X, Y) \;|\; X \in l, \;Y \in k\} = ||MN||. \]
+\end{theorem}
+
+
+
+\begin{theorem}
+    Rastojanje između mimoilaznih pravih $l$ i $k$ dato je formulom
+    \[ d(l, k) = \frac{|[AB, u, v]|}{||u \times v||}, \] gde je $l$ zadata tačkom $A$ i pravcem $u$, a $k$ tačkom $B$ i pravcem $v$.
 \end{theorem}
 
 \chapter{Analiza}
