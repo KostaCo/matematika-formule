@@ -527,7 +527,7 @@ c &= a \cos \beta + b \cos \alpha
 
 \section{Funkcije generatrise}
 \subsection{Definicija funkcije generatrise}
-\[a = (a_0, a_1, a_2, a_3, \dots) \implies a(x) = \sum_{+\infty}^{i = 0} a_i x_i, \;\; a_k = \frac{a^{(k)}(0)}{k!}\]
+\[a = (a_0, a_1, a_2, a_3, \dots) \implies a(x) = \sum_{i = 0}^{+\infty} a_i x^i, \;\; a_k = \frac{a^{(k)}(0)}{k!}\]
 \subsection{Operacije sa funkcijama generatrisama}
 \[
     \begin{aligned}
@@ -1895,11 +1895,65 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \item \textbf{Skalarne} matrice ($Sc_n$): $\mathcal{A} = \lambda \mathbb{I}_n, \; \lambda \in \mathbb{F}$.
     \end{enumerate}
 \end{itemize}
-
+\newpage
 \subsection{Baza i dimenzija vektorskog prostora}
+
+\begin{itemize}
+    \item Skup $B$ je \textbf{skup generatora (generišući skup)} ako je svaki $x \in V$ linearna kombinacija vektora iz $B$.
+    \item Beskonačan skup je linearno nezavisan ako su svi njegovi konačni podskupovi linearno nezavisni.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $B = \{a_1, \dots, a_n\}$ podskup vektorskog prostora $V$ koji ne sadrži nula-vektor. $B$ je linearno zavisan ako i samo ako postoji indeks $i>1$ t.d. 
+    je $a_i$ linearna kombinacija svojih prethodnika.
+\end{theorem}
+
+\begin{itemize}
+    \item Podskup $B$ vektorskog prostora $V$ je \textbf{baza} tog prostora ako je i njegov skup generatora i linearno nezavisan.
+\end{itemize}
+
+\begin{theorem}
+    \textbf{(O bazi)}: Neka je $V$ proizvoljan vektorski prostor nad $F$. Tada:
+    \begin{enumerate}
+        \item postoji barem jedna baza $B$ prostora $V$,
+        \item ako su $B_1$ i $B_2$ dve baze prostora $V$, onda postoji bijekcija $f:B_1 \to B_2$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Dimenzija} vektorskog prostora je kardinalni broj njegove baze.
+    \item Prostor je \textbf{konačnodimenzion} ako ima barem jednu konačnu bazu.
+\end{itemize}
+
+\begin{lemma}
+    Neka je $B = \{a_1, \dots, a_n\}$ neki skup generatora vektorskog prostora $V$ i $S = \{b_1, \dots, b_m\}$ neki linearno nezavisni podskup od $V$. Tada 
+    je $m \leq n$ i $V$ je generisan skupom vektora
+    \[ \{b_1, b_2, \dots, b_m, a_{i_1}, a_{i_2}, \dots, a_{i_{n-m}}\}. \] Specijalno, svaki podskup od $V$ koji sadrži bar $n+1$ vektor je linearno zavisan.
+\end{lemma}
+
+\begin{theorem}
+    Neka je $V$ vektorski prostor dimenzije $n$. Tada:
+    \begin{enumerate}
+        \item Svaki podskup od $V$ koji sadrži $n + 1$ vektora je linearno zavisan.
+        \item Svaki linearno nezavisan podskup $A = \{a_1, \dots, a_n\}$ od $V$ je njegova baza.
+        \item Svaki skup generatora $B = \{b_1, \dots, b_n\}$ prostora $V$ je i njegova baza.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Neka je $S$ skup generatora konačnodimenzionog vektorskog prostora $V$. Tada:
+    \begin{enumerate}
+        \item Maksimalan broj linearno nezavisnih vektora u $S$ je baza od $V$.
+        \item Ako iz $S$ izbacimo sve vektore koji su linearna kombinacija svojih prethodnika, dobijamo bazu od $V$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Neka je $S$ linearno nezavisan podskup vektorskog prostora $V$. Tada je on podskup neke baze od $V$, tj. moguće je nadopuniti ga do baze od $V$.
+\end{theorem}
+
 \subsection{Potprostor}
 \subsection{Suma potprostora i faktor prostor}
-
 \section{Linearni operatori}
 \subsection{Linearni operator}
 \label{linearniOperator}
@@ -2578,7 +2632,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 \end{lemma}
 \newpage
 
-\subsection{Karkterizacija determinante}
+\subsection{Karakterizacija determinante}
 
 \begin{itemize}
     \item Determinanta je jedinstveno određena sledećim svojstvima:
@@ -2719,7 +2773,6 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \end{theorem}
 
 \newpage
-
 \section{Redukcija linearnih operatora na konačnodimenzionim prostorima}
 
 \subsection{Redukcija linearnog operatora}
