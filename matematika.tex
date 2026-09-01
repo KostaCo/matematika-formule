@@ -143,6 +143,7 @@ Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobin
 \]
 \newpage
 \section{Nizovi}
+\label{nizovi}
 \subsection{Poznate sume}
 
 \[
@@ -165,6 +166,7 @@ Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobin
 
 \newpage
 \section{Polinomi}
+\label{polinomi}
 \subsection{Prsten polinoma}
 \begin{itemize}
     \item \textbf{Polinom} nad poljem $\mathbb{F}$:
@@ -1209,9 +1211,14 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         &(M4)\; 1 \cdot a = a
     \end{aligned}
 \end{equation*}
+\subsection{Monoid}
 \begin{description}
     \item[Monoid $(S, \cdot)$:] $(S1), (M4)$  
 \end{description}
+\subsection{Abelova grupa}
+\label{abelovaGrupa}
+\subsection{$\mathbb{F}$-algebra}
+\label{F-algebra}
 
 \chapter{Linearna algebra}
 \section{Klasična algebra vektora}
@@ -1738,11 +1745,168 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{theorem}
 \newpage
 \section{Vektorski prostori}
+
+\subsection{Definicija i primeri vektorskih prostora}
+
+\begin{definition}
+    Neka je $V \neq 0$. Tada se uređena četvorka $(V, \mathbb{F}, +, \cdot) = V$ zove \textbf{vektorski prostor} nad poljem $\textbf{F}$ ako za 
+    $\forall \alpha, \beta \in \mathbb{F}, \;\forall x,y \in V$ važi:
+    \begin{description}
+        \item[(VP1)] $(V, +)$ je Abelova grupa (videti \ref{abelovaGrupa}),
+        \item[(VP2)] $\alpha (\beta x) = (\alpha \beta)x$,
+        \item[(VP3)] $(\alpha + \beta)x = \alpha x + \beta x$,
+        \item[(VP4)] $\alpha(x + y) = \alpha x + \beta y$,
+        \item[(VP5)] $1 \cdot x = x$.
+    \end{description}
+\end{definition}
+
+\begin{theorem}
+    Neka je $V$ vektorski prostor nad $\mathbb{F}$, $x \in V$ i $\alpha \in \mathbb{F}$. Tada važi:
+    \begin{enumerate}
+        \item $\alpha \cdot (-x) = (-\alpha) x = -(\alpha x)$,
+        \item $0 \cdot x = 0$,
+        \item $\alpha \cdot 0 = 0$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{itemize}
+    \item Primeri vektorskih prostora:
+    \begin{enumerate}
+        \item Polje $\mathbb{F} = (\mathbb{F}, \mathbb{F}, +, \cdot)$ je vektorski prostor nad samim sobom. Specijalno, $\mathbb{Q, R, C}$ su vektorski prostori.
+        \item Skup svih vektora $V^3$, kao i skup svih radijus vektora $V^3(O)$
+        \item $(\mathbb{F}^n, \mathbb{F}, +, \cdot)$, gde je $\mathbb{F}^n = \{(x_1, \dots, x_n)\;|\;x_i \in \mathbb{F}\}$. Specijalno: $\mathbb{Q}^n, \mathbb{R}^n, \mathbb{C}^n$
+        \item $\mathbb{C}^n_\mathbb{R} = (\mathbb{C}^n, \mathbb{R}, +, \cdot)$
+        \item Matrice (videti \ref{matrice})
+        \item Polinomi (videti \ref{polinomi})
+        \item Skup svih nizova nad $\mathbb{F}$ (videti \ref{nizovi})
+        \item Funkcije
+        \item Formalni redovi
+        \item Loranovi redovi i polinomi
+    \end{enumerate}
+\end{itemize}
+
+\subsection{Vektorski prostori $\mathbb{R}^n$ i $\mathbb{C}^n$}
+
+\begin{itemize}
+    \item $V^n$ i $\mathbb{R}^n$ su izomorfni prostori dimenzije $n$ (videti \ref{izomorfizmi}). Ako je $\mathcal{B}=(a_1, \dots, a_n)$ baza vektorskog prostora 
+    $V^n$, tada svaki $v \in V$ ima jedinstven zapis u obliku 
+    \[ v = v_1a_1 + v_2a_2 + \dots + v_na_n. \] 
+    \item \textbf{Kanonsku bazu} vektorskog prostora $\mathbb{R}^n$ čine vektori
+    \[ \kappa_\mathcal{B}(a_1) = (1, 0, \dots, 0), \;\kappa_\mathcal{B}(a_2) = (0, 1, \dots, 0), \;\dots, \;\kappa_\mathcal{B}(a_n) = (0, 0, \dots, 1). \]
+    \item \textbf{Standardni skalarni proizvod} vektora $x = (x_1, \dots, x_n), y = (y_1, \dots, y_n) \in \mathbb{R}^n$ dat je formulom
+    \[ \langle x, y \rangle = x_1y_1 + x_2y_2 + \dots + x_ny_n. \]
+    \item Kako su skalari u $\mathbb{C}^n_\mathbb{R} = (\mathbb{C}^n, \mathbb{R}, +, \cdot)$ realni brojevi, baza ovog prostora ima $2n$ vektora:
+    \[ e_1 = (1, 0, \dots, 0), \; \dots, \; e_n = (0, 0, \dots, 1),\; e_{n+1} = (i, 0, \dots, 0), \;\dots,\; e_{2n} = (0, 0, \dots, i). \]
+\end{itemize}
+
+\subsection{Matrice}
+\label{matrice}
+
+\begin{itemize}
+    \item Skup svih matrica tipa $m \times n$, 
+    \[ \mathbb{M}_{mn}(\mathbb{F}) = \left\{\begin{bmatrix}
+        \alpha_{11} & \alpha_{12} & \dots & \alpha_{1n} \\
+        \alpha_{21} & \alpha_{22} & \dots & \alpha_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \alpha_{m1} & \alpha_{m2} & \dots & \alpha_{mn}
+    \end{bmatrix} = \mathcal{A} = (\alpha_{ij}) \;\Bigg|\; \alpha_{ij} \in \mathbb{F}\right\}, \]
+    je vektoski prostor nad $\mathbb{F}$ i $\forall \mathcal{A, B} \in \mathbb{M}_{mn}(\mathbb{F}), \; \forall \lambda \in \mathbb{F}$,
+    \begin{description}
+        \item[(s)] $\mathcal{A} + \mathcal{B} = (\alpha_{ij}) + (\beta_{ij}) = (\alpha_{ij} + \beta_{ij})$,
+        \item[(m)] $\lambda \mathcal{A} = \lambda (\alpha_{ij}) = (\lambda \alpha_{ij})$. 
+    \end{description}
+    \item \textbf{Množenje matrica}, $\cdot : \mathbb{M}_{mn}(\mathbb{F}) \times \mathbb{M}_{nk}(\mathbb{F}) \to \mathbb{M}_{mn}(\mathbb{F})$, se definiše na sledeći način:
+    \[ \mathcal{AB} = (\alpha_{ij}) \cdot (\beta_{ij}) = \begin{bmatrix}
+        \alpha_{11} & \dots & \alpha_{1n}\\
+        \vdots & \ddots & \vdots \\
+        \alpha_{m1} & \dots & \alpha_{mn}
+    \end{bmatrix} \begin{bmatrix}
+        \beta_{11} & \dots & \beta_{1k}\\
+        \vdots & \ddots & \vdots \\
+        \beta_{n1} & \dots & \beta_{nk}
+    \end{bmatrix} = \]
+    \[
+        = 
+        \begin{bmatrix}
+        \displaystyle \sum_{r=1}^{n} \alpha_{1r}\beta_{r1} & 
+        \displaystyle \sum_{r=1}^{n} \alpha_{1r}\beta_{r2} & 
+        \dots & 
+        \displaystyle \sum_{r=1}^{n} \alpha_{1r}\beta_{rk} \\[10pt]
+        \displaystyle \sum_{r=1}^{n} \alpha_{2r}\beta_{r1} & 
+        \displaystyle \sum_{r=1}^{n} \alpha_{2r}\beta_{r2} & 
+        \dots & 
+        \displaystyle \sum_{r=1}^{n} \alpha_{2r}\beta_{rk} \\[10pt]
+        \vdots & \vdots & \ddots & \vdots \\[10pt]
+        \displaystyle \sum_{r=1}^{n} \alpha_{mr}\beta_{r1} & 
+        \displaystyle \sum_{r=1}^{n} \alpha_{mr}\beta_{r2} & 
+        \dots & 
+        \displaystyle \sum_{r=1}^{n} \alpha_{mr}\beta_{rk}
+        \end{bmatrix}.
+    \]
+    \item Množenje matrica je asocijativno kad ima smisla: $\mathcal{A}(\mathcal{BC}) = (\mathcal{AB})\mathcal{C}$.
+    \item Vektore smatramo $n \times 1$ matricama. Više o ovome (uključujući intuiciju) u \ref{linearniOperator}.
+    \item \textbf{Transponovanje} matrica podrazumeva zamenu vrsta i kolona: \[\mathcal{A}^\mathcal{T} = (\alpha_{ij})^\mathcal{T} = (\alpha_{ji}).\]
+\end{itemize}
+\newpage
+
+\begin{theorem}
+    Za $\mathcal{A, B} \in \mathbb{M}_{mn}(\mathbb{F})$ i $\lambda \in \mathbb{F}$ važi:
+    \begin{enumerate}
+        \item $(\lambda \mathcal{A})^\mathcal{T} = \lambda \mathcal{A}^\mathcal{T}$,
+        \item $(\mathcal{A} + \mathcal{B})^\mathcal{T} = \mathcal{A}^\mathcal{T} + \mathcal{B}^\mathcal{T}$,
+        \item $(\mathcal{AB})^\mathcal{T} = \mathcal{B^TA^T}$.
+    \end{enumerate} 
+\end{theorem}\
+
+\begin{itemize}
+    \item Ako je $n = m$, pišemo $\mathbb{M}_{mn}(\mathbb{F}) = \mathbb{M}_{nn}(\mathbb{F}) = \mathbb{M}_n(\mathbb{F})$.
+    \item Neutral za množenje matrica je \textbf{jedinična matrica}:
+    \[ \mathbb{I}_n = \begin{bmatrix}
+        1 & 0 & \dots & 0 \\
+        0 & 1 & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & 1
+    \end{bmatrix} \]
+\end{itemize}
+
+\begin{theorem}
+    Za sve $\mathcal{A, B, C} \in \mathbb{M}_n(\mathbb{F})$ i $\lambda \in \mathbb{F}$ važi
+    \begin{enumerate}
+        \item $\lambda(\mathcal{AB}) = (\lambda \mathcal{A})\mathcal{B} = \mathcal{A}(\lambda \mathcal{B})$,
+        \item $\mathcal{A(B + C) = AB + AC}$,
+        \item $\mathcal{(A + B)C = AC + BC}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    $\mathbb{M}_n(\mathbb{F})$ je asocijativna $\mathbb{F}$-algebra sa jedinicom (videti \ref{F-algebra}).
+\end{theorem}
+
+\begin{itemize}
+    \item \textbf{Opšta linearna grupa}, $\operatorname{GL}(n, \mathbb{F}) = \operatorname{GL}_n$, je skup \textbf{invertibilnih (regularnih)} matrica, tj. matrica $\mathcal{A}$ takvih da 
+    postoji $\mathcal{A}^{-1}$ t.d.
+    \[ \mathcal{AA}^{-1} = \mathcal{A}^{-1}\mathcal{A} = \mathbb{I}_n. \]
+    \item Neki važni podskupovi od $\mathbb{M}_n(\mathbb{F})$:
+    \begin{enumerate}
+        \item \textbf{Simetrične} matrice ($\mathcal{S}_n$): $\mathcal{A = A^T}$.
+        \item \textbf{Kososimetrične (antisimetrične)} matrice ($\mathcal{K}_n$): $\mathcal{A = -A^T}$.
+        \item \textbf{Ortogonalne} matrice ($\mathcal{O}(n, \mathbb{F})$): $\mathcal{A}^{-1} = \mathcal{A^T}$.
+        \item \textbf{Dijagonalne} matrice ($\mathcal{D}_n$): $i \neq j \implies \alpha_{ij}=0$. Označavaju se i sa $\operatorname{diag}[\alpha_{11}, \dots, \alpha_{nn}]$
+        \item \textbf{Skalarne} matrice ($Sc_n$): $\mathcal{A} = \lambda \mathbb{I}_n, \; \lambda \in \mathbb{F}$.
+    \end{enumerate}
+\end{itemize}
+
+\subsection{Baza i dimenzija vektorskog prostora}
+\subsection{Potprostor}
+\subsection{Suma potprostora i faktor prostor}
+
 \section{Linearni operatori}
 \subsection{Linearni operator}
+\label{linearniOperator}
 \subsection{Rang i defekt linearnog operatora}
 \subsection{Regularni operatori}
 \subsection{Izomorfizmi vektorskih prostora}
+\label{izomorfizmi}
 \subsection{Teoreme o izomorfizmu}
 \subsection{Tačni (egzaktni) nizovi}
 \subsection{Algebra}
@@ -4274,6 +4438,14 @@ Neka je $\theta$ ugao pod kojim se seku prave $y = k_1x+b_1$ i $y = k_2x+b_2$. T
     Rastojanje između mimoilaznih pravih $l$ i $k$ dato je formulom
     \[ d(l, k) = \frac{|[AB, u, v]|}{||u \times v||}, \] gde je $l$ zadata tačkom $A$ i pravcem $u$, a $k$ tačkom $B$ i pravcem $v$.
 \end{theorem}
+
+\section{Analitička geometrija u $\mathbb{R}^n$}
+\begin{itemize}
+    \item \textbf{$k$-dimenziona ravan} $\pi$ definisana je sa:
+    \[ X \in \pi \iff PX = \alpha_1a_1 + \dots + \alpha_ka_k. \]
+    \item 1-dimenzione ravni zovu se \textbf{prave}, za svako $n$.
+    \item $(n-1)$-dimenzione ravni u $\mathbb{R}^n$ zovu se \textbf{hiperravni}.
+\end{itemize}
 
 \chapter{Analiza}
 \section{Nizovi}
