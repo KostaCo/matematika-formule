@@ -1212,6 +1212,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \end{aligned}
 \end{equation*}
 \subsection{Monoid}
+\label{monoid}
 \begin{description}
     \item[Monoid $(S, \cdot)$:] $(S1), (M4)$  
 \end{description}
@@ -2372,11 +2373,104 @@ zato uzimamo samo tu komponentu.
 u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jedan za drugi.
 
 
-
+\newpage
 \section{Linearni operatori}
-\subsection{Linearni operator}
+\subsection{Definicija i svojstva linearnog operatora}
 \label{linearniOperator}
+
+\begin{definition}
+    Neka su $U, V$ vektorski prostori nad $\mathbb{F}$. Preslikavanje $A: U \to V$ se zove \textbf{linearni operator (linearna transformacija, homomorfizam)} ako važi jedan od
+    ekvivalentnih uslova ($\forall x, y \in U, \; \forall \alpha, \beta \in \mathbb{F}$):
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item $A(x + y) = A(x) + A(y)$
+            \item $A(\alpha x) = \alpha A(x)$
+        \end{enumerate}
+        \item $A(\alpha x + \beta y) = \alpha A(x) + \beta A(y)$
+        \item $A(\alpha x + y) = \alpha A(x) + A(y)$
+    \end{enumerate}
+    Koristi se i skraćena oznaka $Ax := A(x)$.
+\end{definition}
+
+\begin{itemize}
+    \item \textbf{Monomorfizam} - injektivni linearni operator
+    \item \textbf{Epimorfizam} - surjektivni linearni operator
+    \item \textbf{Izomorfizam} - bijektivni linearni operator
+    \item \textbf{Endomorfizam} - linearni operator koji slika $V$ u $V$
+    \item \textbf{Automorfizam} - bijektivni endomorfizam
+    \item $\hom_\mathbb{F}(U, V) = \hom (U, V)$ - skup svih linearnih operatora sa $U$ u $V$
+    \item Ako je $U = V$, onda je $\hom V := \hom (U, V)$.
+    \item $\operatorname{Im} A := A(U)$ - \textbf{slika} preslikavanja $A:U \to V$
+    \item $\ker A := \{x \in U \;|\; Ax = 0\} = A^{-1}(0)$ - \textbf{jezgro (kernel)} preslikavanja $A:U \to V$
+\end{itemize}
+
+\begin{theorem}
+    Neka su $U, V$ vektorski prostori nad $\mathbb{F}$ i $A \in \hom(U, V)$ linearni operator. Tada važi:
+    \begin{enumerate}
+        \item $A(0) = 0$,
+        \item $(\forall x \in U) \; A(-x) = -A(x)$,
+        \item $U_1 \leq U \implies A(U_1) \leq V$,
+        \item $V_1 \leq V \implies A^{-1}(V_1) \leq U $,
+        \item $\operatorname{Im} A \leq V, \;\; \ker A \leq U$,
+        \item $A$ je monomorfizam $\iff \ker A = \{0\}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Kompozicija linearnih operatora je linearni operator. Ako $\dim V\geq2$, onda je $(\hom V, \circ)$ nekomutativni monoid (videti \ref{monoid}), čiji invertibilini
+    elementi su automorfizmi.
+\end{theorem}
+
 \subsection{Rang i defekt linearnog operatora}
+
+\begin{lemma}
+    Linearni operator $A:U \to V$ potpuno je određen svojim dejstvom na nekoj bazi $e$ vektorskog prostora $U$.
+\end{lemma}
+\intuicija $\displaystyle Ax = \sum_{i=1}^{m}x_iA(e_i)$
+
+\begin{itemize}
+    \item $r(A) = \dim (\operatorname{Im} A)$ - \textbf{rang} linearnog operatora
+    \item $d(A) = \dim (\ker A)$ - \textbf{defekt} linearnog operatora
+\end{itemize}
+
+\begin{theorem}
+    \textbf{(O rangu i defektu linearnog operatora)}: Neka je $A: U \to V$ linearni operator i $\dim U < \infty$. Tada je 
+    \[ r(A) + d(A) = \dim U.\]
+\end{theorem}
+
+\begin{corollary}
+    Neka je $L$ pravi potprostor konačnodimenzionog prostora $U$. Tada $L$ i $U$ nisu izomorfni.
+\end{corollary}
+
+\begin{corollary}
+    Neka je $V$ konačnodimenzioni prostor i $A: V \to V$ linearni operator. Tada:
+    \[ A\text{ je izomorfizam} \iff A \text{ je monomorfizam} \iff A \text{ je epimorfizam} \]
+\end{corollary}
+
+\begin{corollary}
+    Neka je $V$ konačnodimenzioni vektorski prostor, $A:V \to V, \; B: V \to V$ linearni operatori t.d. je ili $AB = \operatorname{id}_V$ ili
+    $BA = \operatorname{id}_V$. Tada je $A$ izomorfizam i $A^{-1} = B$.
+\end{corollary}
+
+\begin{itemize}
+    \item Prethodne 3 posledice ne važe ako je $\dim U = \infty$.
+\end{itemize}
+
+\subsection{Projektori}
+
+\begin{definition}
+    Neka je $V$ konačnodimenzioni vektorski prostor i $P: V \to V$ linearni operator t.d. je $P^2 = P$. Tada se $P$ zove \textbf{projektor}.
+\end{definition}
+
+\begin{theorem}
+    Svaki projektor zadovoljava sledeća svojstva:
+    \begin{enumerate}
+        \item $x \in \operatorname{Im} A \iff Px = x$,
+        \item $P \neq \operatorname{id}_V \implies P$ nije izomorfizam,
+        \item $V = \ker P \oplus \operatorname{Im} P$.
+    \end{enumerate}
+\end{theorem}
+
 \subsection{Regularni operatori}
 \subsection{Izomorfizmi vektorskih prostora}
 \label{izomorfizmi}
@@ -4945,16 +5039,16 @@ Neka je $\theta$ ugao pod kojim se seku prave $y = k_1x+b_1$ i $y = k_2x+b_2$. T
 \end{theorem}
 \begin{theorem}
     \textbf{(Štolc):} 
-    \[ \lim_{x\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{x\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{x\to +\infty} b_n = +\infty) \]
+    \[ \lim_{n\to +\infty} \frac{a_n-a_{n-1}}{b_n-b_{n-1}} = \lim_{n\to +\infty} \frac{a_n}{b_n}\;\;\; (b_n \text{ strogo rastući i} \lim_{n\to +\infty} b_n = +\infty) \]
 \end{theorem}
 \begin{theorem}
-    \textbf{(Koši ($A_n$)): }\[\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\]
+    \textbf{(Koši ($A_n$)): }\[\lim_{n\to +\infty}a_n = a \implies \lim_{n\to +\infty}\frac{a_1+a_2+\dots+a_n}{n} = a\]
 \end{theorem}
 \begin{theorem}
-    \textbf{($H_n$): }\[\lim_{x\to +\infty}a_n = a \implies \lim_{x\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\]
+    \textbf{($H_n$): }\[\lim_{n\to +\infty}a_n = a \implies \lim_{n\to +\infty} \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}} = a\]
 \end{theorem}
 \begin{theorem}
-    \textbf{($G_n$): }\[lim_{x\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{x\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\]
+    \textbf{($G_n$): }\[\lim_{n\to +\infty} a_n=a \; \land \; a_n>0, n\in \mathbb{N} \implies \lim_{n\to +\infty} \sqrt[n]{a_1a_2 \dots a_n} = a\]
 \end{theorem}
 
 \subsection{Monotoni nizovi}

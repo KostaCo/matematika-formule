@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1788362430.9009 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1788362433.17934 0
+["pdflatex"] 1788371379.23188 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1788371381.78328 0
   "/etc/texmf/web2c/texmf.cnf" 1779652215.19533 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kosta/Projects/matematika-formule/matematika.tex" 1788362430.65243 257396 eea32ae7e9f40377eeb835be78aa4a93 ""
+  "/home/kosta/Projects/matematika-formule/matematika.tex" 1788371372.95388 261284 7fb70010ffae1efcb35416ed9163503f ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbt1.enc" 1586730458 2157 57b150f99c9d61d6c444b4cace336027 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbts1.enc" 1586730458 2739 09dbe67a27d855e4d39579aa6d913f4e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -231,10 +231,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1779652241 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1779652292 3643082 d718a7a87975810f30f4b2fa7adae9db ""
-  "matematika.aux" 1788362433.08685 39651 17aed04964be6a79b9e1edc75cb41533 "pdflatex"
-  "matematika.out" 1788362433.09254 44366 e3ddd7ac302f23a6ef5bf950933668da "pdflatex"
-  "matematika.tex" 1788362430.65243 257396 eea32ae7e9f40377eeb835be78aa4a93 ""
-  "matematika.toc" 1788362433.09292 22269 5a503de48b43189ceb59607cb8da23ea "pdflatex"
+  "matematika.aux" 1788371381.67024 39887 5a4042debe6fee6f0dbf86b8a7f1d38a "pdflatex"
+  "matematika.out" 1788371381.67431 44609 fcdd4fdb22818c71b3d3fc281100b621 "pdflatex"
+  "matematika.tex" 1788371372.95388 261284 7fb70010ffae1efcb35416ed9163503f ""
+  "matematika.toc" 1788371381.67484 22381 586982b4911ce4171f0c5e02f86c976b "pdflatex"
   "slike/Mittelwertsatz6.svg.png" 1783337122.88671 126270 22f4e7dd1b9fe7c29ce41cb8bb81359b ""
   "slike/pravilo_desne_ruke.png" 1788178310.97578 359407 9d92655914f9266e61ae63299c54f8d0 ""
   "slike/rolle.pdf" 1783337122.88678 6734 db32dab086a48e45db83764f98d960ed ""
