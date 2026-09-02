@@ -2021,7 +2021,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \[ \mathcal{L}(S) = \bigcap_{S \subseteq M \leq V} M = \{\alpha_1a_{i_1} + \dots + \alpha_ka_{i_k}\;|\;k \in \mathbb{N}, \alpha_i \in \mathbb{F}, a_{i_j}\in S\}. \]
 \end{theorem}
 
-\subsection{Suma potprostora i faktor prostor}
+\subsection{Suma potprostora}
 \begin{itemize}
     \item Neka su $L$ i $M$ potprostori konačnodimenzionog vektorskog prostora $V$. \textbf{Suma potprostora} $L$ i $M$ 
     (pišemo $L + M$) je najmanji potprostor od $V$ koji sadrži \linebreak $L$ i $M$. Dakle, \[ L + M = \mathcal{L}(L \cup M). \]
@@ -2091,6 +2091,159 @@ seku po pravoj. Neka su $e_1$ i $e_2$ bazni vektori prve, a $f_1$ i $f_2$ bazni 
 $u = \alpha e_1 + \beta e_2$ koji je paralelan pravoj po kojoj se date ravni seku. Sada, vektor $f_2$ dobijamo kao $f_2 = \gamma u + \delta f_1$.
 Dakle, bazni vektor prostora $N$ dobijamo kao linearnu kombinaciju vektora $e_j$ i $f_j$, t.d. $e_j$ leži upravo u $N \cap M$, pa
 zato uzimamo samo tu komponentu.
+
+\newpage
+\subsection{Faktor prostor}
+
+\begin{itemize}
+    \item Neka je $V$ vektorski prostor nad $\mathbb{F}$ i $L \leq V$. Uvodimo relaciju $\sim_L$ na $V$ na sledeći način:
+    \[ x \sim_L y \iff x - y \in L. \]
+    Ovo je relacija ekvivalencije na $V$. Njene klase ekvivalencije su
+    \[ [x]_L = \{ y \in V \;|\; x \sim_L y \}. \]
+    \intuicija $[x]_L$ je ustvari jedna translacija prostora $L$ za vektor $x$. Dakle:
+    \[ [x]_L = \{ y \in V \;|\; x \sim_L y \} = \{ x + u \;|\; u \in L \} = x + L .\]
+    Slika \ref{FaktorProstor1} ovo lepo ilustruje na primeru $\mathbb{R}^2$.
+    \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
+        
+        \draw[step=1cm, gray!25, very thin] (-5, -4) grid (4, 7);
+        
+        % Koordinatne ose
+        \draw[->, thick] (-5, 0) -- (4, 0) node[right] {$x_1$};
+        \draw[->, thick] (0, -4) -- (0, 7) node[above] {$x_2$};
+        
+        % Koordinatni početak
+        \node[below right] at (0, 0) {$O$};
+        
+        % Zelena prava y = 2x sa oznakom skupova L
+        \draw[thick, green!60!black] (-2, -4) -- (3.5, 7);
+        \node[green!60!black, right] at (3.2, 5.7) {$L$};
+        
+        % Prava y = 2x + 5
+        \draw[thick, gray] (-4.5, -4) -- (1, 7) node[below right, gray] {$[x]_L$};
+        
+        % Vektor x = (-1, 3) plave boje
+        \draw[->, very thick, blue] (0, 0) -- (-1, 3) node[midway, left=2pt] {$x$};
+        
+        
+        % Crveni vektori iz tačke x = (-1, 3) do tačaka na pravoj y = 2x
+        \draw[->, thick, red] (-1, 3) -- (1.5, 3) node[below right, red] {$-y_1$};
+        \draw[->, thick, red] (-1, 3) -- (2, 4) node[below right, red] {$-y_2$};
+        \draw[->, thick, red] (-1, 3) -- (2.5, 5) node[below right, red] {$-y_3$};
+        
+        
+        % Vektori iz (0,0) do tačaka (-3, -1), (-3.5, -2), (-4, -3)
+        \draw[->, thick, teal] (0, 0) -- (-3, -1) node[above left, teal] {$y_2$};
+        \draw[->, thick, teal] (0, 0) -- (-3.5, -2) node[above left, teal] {$y_3$};
+        \draw[->, thick, teal] (0, 0) -- (-2.5, 0) node[above left, teal] {$y_1$};
+        
+        \node[] at (-3.5, 3.5) {$V = \mathbb{R}^2$};
+        
+        \end{tikzpicture}
+        \caption{$\;x = (-1, 3), \;L = \{ \alpha(1, 2) \;|\; \alpha \in \mathbb{R} \}, \;[x]_L = \{ y \in \mathbb{R}^2 \;|\; x \sim_L y \}$}
+        \label{FaktorProstor1}
+    \end{figure}
+    
+    Da je u pitanju bio npr. prostor $\mathbb{R}^3$, a $L$ neka ravan, tada bi $[x]_L$ predstavljao translaciju te ravni za vektor $x$. Slično, $L$ može biti i npr. prava u $\mathbb{R}^3$.
+
+    \newpage
+    \item Skup svih klasa ekvivalencije relacije $\sim_L$ obeležavamo sa
+    \[ V / L = \{ [x]_L \;|\; x \in V \}. \]
+
+    \intuicija Dakle, $V/L$ je zapravo prostor u kom je svaka tačka translacija prostora $L$ za neki vektor. Na primer, ako je $L$ bila ravan u $V = \mathbb{R}^3$, 
+    tada je $\dim V/L = 1$, jer se svaka translacija ravni $L$ slika u tačku. Slično, prave u $\mathbb{R}^2$ se slikaju u tačke u $\mathbb{R}$, a prave u $\mathbb{R}^3$
+    se slikaju u tačke u $\mathbb{R}^2$. Primer iz prethodne diskusije je lepo ilustrovan na slici \ref{FaktorProstor2}.
+
+    \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=0.75, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % --- PRVI KOORDINATNI SISTEM (Levo) ---
+        \begin{scope}[xshift=0cm]
+            \draw[step=1cm, gray!25, very thin] (-5, -4) grid (4, 7);
+
+            % Koordinatne ose
+            \draw[->, thick] (-5, 0) -- (4, 0) node[right] {$x_1$};
+            \draw[->, thick] (0, -4) -- (0, 7) node[above] {$x_2$};
+
+            % Koordinatni početak
+            \node[below right] at (0, 0) {$O$};
+
+            % Zelena prava y = 2x sa oznakom skupova L
+            \draw[thick, green!60!black] (-2, -4) -- (3.5, 7);
+            \node[green!60!black, right] at (3, 5.5) {$L$};
+
+            % Prava y = 2x + 5
+            \draw[thick, gray] (-4.5, -4) -- (1, 7) node[below right, gray] {$[x]_L$};
+
+            % Vektor x = (-1, 3) plave boje
+            \draw[->, very thick, blue] (0, 0) -- (-1, 3) node[midway, left=2pt] {$x$};
+
+            % Crveni vektori iz tačke x = (-1, 3) do tačaka na pravoj y = 2x
+            \draw[->, thick, red] (-1, 3) -- (1.5, 3) node[below right, red] {$-y_1$};
+            \draw[->, thick, red] (-1, 3) -- (2, 4) node[below right, red] {$-y_2$};
+            \draw[->, thick, red] (-1, 3) -- (2.5, 5) node[below right, red] {$-y_3$};
+
+            % Vektori iz (0,0) do tačaka (-3, -1), (-3.5, -2), (-4, -3)
+            \draw[->, thick, teal] (0, 0) -- (-3, -1) node[above left, teal] {$y_2$};
+            \draw[->, thick, teal] (0, 0) -- (-3.5, -2) node[above left, teal] {$y_3$};
+            \draw[->, thick, teal] (0, 0) -- (-2.5, 0) node[above left, teal] {$y_1$};
+
+            \node[] at (-3.5, 3.5) {$V = \mathbb{R}^2$};
+        \end{scope}
+
+        % --- DRUGI KOORDINATNI SISTEM (Desno) ---
+        \begin{scope}[xshift=11cm]
+
+            % Koordinatne ose
+            \draw[->, thick] (-5, 0) -- (4, 0) node[right] {$x_1$};
+            \foreach \x in {-4,-3,-2,-1,1,2,3}
+            \draw[thick] (\x, 0.1) -- (\x, -0.1);
+
+            % Koordinatni početak
+            \node[below right] at (0, 0) {$O$};
+            \fill[green!60!black] (0, 0) circle (2pt);
+            \node[above, green!60!black] at (0, 0) {$[(0, 0)]_L$};
+        
+            \node[below, gray] at (-3.5, 0) {$[(-1, 3)]_L$};
+            \fill[gray] (-3.5, 0) circle (2pt);
+
+            \node[] at (3.5, -1) {$V/L$};
+        \end{scope}
+
+        % --- ZAKRIVLJENA STRELICA IZMEĐU DVA SISTEMA ---
+        \draw[->, thick, >=Stealth] (3.5, 2.2) to[out=30, in=150] (6.5, 2.2);
+        \end{tikzpicture}
+        \caption{Faktor prostor}
+        \label{FaktorProstor2}
+    \end{figure}
+
+    Vidimo da smo osim vektora $x$ mogli da odaberemo npr. $y_1, y_2$ ili $y_3$ sa slike i dobili bismo isti $[x]_L$. Iz ovog razloga se dimenzija smanjuje.
+    \item Na $V/L$ definišemo operacije sabiranja vektora i množenje vektora skalarom:
+    \begin{description}
+        \item[(s)] $[x]_L + [y]_L = [x + y]_L, \;\; x, y \in V$,
+        \item[(m)] $\alpha \cdot_L [x]_L = [\alpha x]_L, \;\; x \in V, \;\alpha \in \mathbb{F}$.
+    \end{description}
+\end{itemize}
+
+\begin{theorem}
+    $V/L = (V/L, \mathbb{F},  +_L, \cdot_L)$ je vektorski prostor nad $\mathbb{F}$.
+\end{theorem}
+
+\begin{theorem}
+    Neka je $L \leq V$, $\dim V = n$, $B_L = \{a_1, \dots, a_l\}$ baza od $L$ i $\{ a_1, \dots, a_l, a_{l+1}, \dots, a_n \}$ baza od $V$. Tada je 
+    \[ B_{V/L} = \{ [a_{l+1}]_L, [a_{l+2}]_L, \dots, [a_n]_L \} \]
+    baza od $V/L$ i važi
+    \[ \dim V/L = \dim V - \dim L. \]
+\end{theorem}
+\intuicija Kako vektori iz $B_L$ pripadaju prostoru $L = [0]_L$, koji se u prostoru $V/L$ slika u nulu, i oni će se "kolapsirati" u nulu, pa neće činiti bazu od $V/L$.
+
+\begin{itemize}
+    \item Dakle, hiperravni $n$-dimenzionog prostora $V$ koje ne prolaze kroz koordinatni početak su elementi prostora $V/N$, gde je $N$ $(n-1)$-dimenzioni potprostor od $V$ i ove hiperravni se zovu \textbf{linearne mnogostrukosti}.
+\end{itemize}
+
+\subsection{Matrica prelaska}
 
 \section{Linearni operatori}
 \subsection{Linearni operator}
