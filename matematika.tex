@@ -1399,6 +1399,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \begin{definition}
     Bijektivno preslikavanje $\kappa_\mathcal{B}(x) = (x_1, \dots, x_m)$ zove se \textbf{koordinatizacija}.
+    \label{koordinatizacija1}
 \end{definition}
 \newpage
 \begin{theorem}
@@ -2244,6 +2245,133 @@ zato uzimamo samo tu komponentu.
 \end{itemize}
 
 \subsection{Matrica prelaska}
+
+\begin{itemize}
+    \item Za fiksiranu bazu $e$, koordinatizacija (videti definiciju \ref{koordinatizacija1}) je data formulom
+    \[ \kappa_e(x) = \kappa_e\left(\sum_{i=1}^{n} x_ie_i \right) = (x_1, \dots, x_n) = x(e). \]
+    \item Recimo da hoćemo da vektor $x$, izražen u bazi $e = (e_1, \dots, e_n)$, izrazimo u nekoj bazi $f = (f_1, \dots, f_n)$. Dakle, ako su $x_i'$ 
+    koordinate vektora u bazi $f$, važi
+    \[ x = \sum_{i=1}^{n} x_ie_i = \sum_{i=1}^{n} x_i'f_i. \] 
+    Ovo možemo izraziti u matričnom obliku:
+    \[ x(e) = T_{f \to e}x(f), \;\;\;\; x(f) = T_{e \to f}x(e). \]
+    Matrica $T_{e \to f}$ naziva se \textbf{matrica prelaska} sa baze $e$ u bazu $f$.
+    \item Hajde da vidimo kako određujemo ovu matricu. Neka je, npr. $e=(e_1, e_2)$ i $f = (f_1, f_2)$. Neka je i $f_1(e) = (2, 1)$ i $f_2 = (-1, 1)$ (slika \ref{PromenaBaze1}).
+    \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % --- PRVI KOORDINATNI SISTEM (Levo) ---
+        \begin{scope}[xshift=0cm]
+            \draw[step=1cm, gray!25, very thin] (-3, -3) grid (4, 4);
+        
+        % Koordinatne ose
+        \draw[->, thick] (-3, 0) -- (4, 0);
+        \draw[->, thick] (0, -3) -- (0, 4);
+        
+        % Koordinatni početak
+        \node[below left] at (0, 0) {$O$};
+    
+        % Vektori iz (0,0) do tačaka (-3, -1), (-3.5, -2), (-4, -3)
+        \draw[->, thick, blue] (0, 0) -- (1, 0) node[below right, blue] {$e_1$};
+        \draw[->, thick, blue] (0, 0) -- (0, 1) node[above left, blue] {$e_2$};
+        \draw[->, thick, teal] (0, 0) -- (2, 1) node[below right, teal] {$f_1$};
+        \draw[->, thick, teal] (0, 0) -- (-1, 1) node[above left, teal] {$f_2$};
+        \draw[->, thick, olive] (0, 0) -- (3, 2) node[above left, olive] {$x$};
+        
+        \node[] at (6, 3.5) {Baza $f$};
+        
+        \end{scope}
+
+        % --- DRUGI KOORDINATNI SISTEM (Desno) ---
+        \begin{scope}[xshift=8cm]
+
+            \draw[step=1cm, gray!25, very thin] (-3, -3) grid (4, 4);
+        
+        % Koordinatne ose
+        \draw[->, thick] (-3, 0) -- (4, 0);
+        \draw[->, thick] (0, -3) -- (0, 4);
+        
+        % Koordinatni početak
+        \node[below left] at (0, 0) {$O$};
+    
+        % Vektori iz (0,0) do tačaka (-3, -1), (-3.5, -2), (-4, -3)
+        \draw[->, thick, blue] (0, 0) -- (1/3, -1/3) node[below right, blue] {$e_1$};
+        \draw[->, thick, blue] (0, 0) -- (1/3, 2/3) node[above right, blue] {$e_2$};
+        \draw[->, thick, teal] (0, 0) -- (1, 0) node[below right, teal] {$f_1$};
+        \draw[->, thick, teal] (0, 0) -- (0, 1) node[above left, teal] {$f_2$};
+        \draw[->, thick, olive] (0, 0) -- (5/3, 1/3) node[above left, olive] {$x$};
+
+        \node[] at (-10, 3.5) {Baza $e$};
+        
+        \end{scope}
+        \end{tikzpicture}
+        \caption{Promena baze}
+        \label{PromenaBaze1}
+    \end{figure}
+
+    Znamo da je \[\begin{bmatrix}
+        e_1 & e_2
+    \end{bmatrix}_e = \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}, \;\; \begin{bmatrix}
+        f_1 & f_2
+    \end{bmatrix}_e = \begin{bmatrix}
+        2 & -1\\
+        1 & 1
+    \end{bmatrix}, \;\; \begin{bmatrix}
+        f_1 & f_2
+    \end{bmatrix}_f = \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}.\]
+
+    Dakle, važi
+    \[ [v]_e = \underbrace{\begin{bmatrix}
+        2 & -1 \\
+        1 & 1
+    \end{bmatrix}}_{T_{f\to e}} [v]_f \implies [v]_f = T_{e \to f}^{-1}[v]_e = \underbrace{\begin{bmatrix}
+        \frac{1}{3} & \frac{1}{3} \\[4pt]
+        -\frac{1}{3} & \frac{2}{3}
+    \end{bmatrix}}_{T_{e \to f}}[v]_e.\]
+
+    Ovako dobijamo
+    \[ \begin{bmatrix}
+        e_1 & e_2
+    \end{bmatrix}_f = \begin{bmatrix}
+        \frac{1}{3} & \frac{1}{3} \\[4pt]
+        -\frac{1}{3} & \frac{2}{3}
+    \end{bmatrix} \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}\implies e_1(f) = \left(\frac{1}{3}, -\frac{1}{3}\right), \; e_2(f) = \left(\frac{1}{3}, \frac{2}{3}\right).\]
+\end{itemize}
+
+\begin{theorem}
+    Neka su $e, f, g$ tri baze vektorskog prostora $V$. Tada važi:
+    \begin{enumerate}
+        \item $x(e) = T_{f \to e}x(f)$,
+        \item $T_{g \to e} = T_{f \to e}T_{g \to f}$,
+        \item $T_{e \to f}^{-1} = T_{f \to e}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{algorithm}
+    \caption{Opšti postupak za određivanje matrice prelaska}
+
+    Neka su $e = (e_1, \dots, e_n)$ i $f = (f_1, \dots, f_n)$ baze prostora $V$. 
+    Da bi se odredila $T_{e \to f}$:
+    \begin{enumerate}
+        \item Izrazimo vektore baze $f$ kao linearne kombinacije vektora baze $e$:
+        \[ f_j = \sum_{i=1}^n \alpha_{ij} e_i, \quad j = 1, \dots, n. \]
+        \item Formiramo matricu $T_{f \to e} = (\alpha_{ij})$ (kolone su koordinate $f_j$ u bazi $e$).
+        \item Invertujemo: $T_{e \to f} = (T_{f \to e})^{-1}$.
+    \end{enumerate}
+\end{algorithm}
+\intuicija Ako posmatramo matricu prelaska kao linearni operator (videti \ref{linearniOperator}), prva kolona kaže u šta se slika prvi vektor baze, a druga 
+u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jedan za drugi.
+
+
 
 \section{Linearni operatori}
 \subsection{Linearni operator}
