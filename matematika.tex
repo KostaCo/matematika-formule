@@ -2524,15 +2524,191 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
 \end{theorem}
 
 \begin{itemize}
-    \item Dakle, predstavnici relacije $\cong$ mogu biti $\mathbb{F}^n = (\mathbb{F}^n, \mathbb{F}, +, \cdot),\; n \in \mathbb{N}$.
+    \item Dakle, predstavnici klasa ekvivalencije relacije $\cong$ mogu biti \[\mathbb{F}^n = (\mathbb{F}^n, \mathbb{F}, +, \cdot),\; n \in \mathbb{N}.\]
 \end{itemize}
 
 \subsection{Teoreme o izomorfizmu}
+
+\begin{theorem}
+    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A:U \to V$ epimorfizam. Tada je \[U/\ker A \cong V.\]
+\end{theorem}
+
+\begin{theorem}
+    Neka je $V$ vektorski prostor nad $\mathbb{F}$ i $L, M \leq V$. Tada je
+    \[ (L + M)/M \cong L/(L\cap M). \]
+\end{theorem}
+
+\begin{theorem}
+    Neka je $V$ vektorski prostor nad $\mathbb{F}$ i $L, M \leq V \land L \subseteq M$. Tada je
+    \[ M/L \leq V/L \;\;\land\;\; V/M \cong (V/L)\big/ (M/L). \]
+\end{theorem}
+
 \subsection{Tačni (egzaktni) nizovi}
-\subsection{Algebra}
+
+\begin{definition}
+    \textbf{Tačan (egzaktan) niz} je niz vektorskih prostora $(V_i)_{i \in \mathbb{Z}}$ i linearnih preslikavanja $(A_i: V_i \to V_{i+1})_{i \in \mathbb{Z}}$:
+    \[ \cdots \;V_{i-2} \xrightarrow{A_{i-2}} V_{i-1} \xrightarrow{A_{i-1}} V_i \xrightarrow{A_i} V_{i+1} \xrightarrow{A_{i+1}} V_{i+2} \xrightarrow{A_{i+2}} \;\cdots,  \]
+    takav da je $(\forall i \in \mathbb{Z})\;\operatorname{Im} A_{i-1} = \ker A_i$.
+\end{definition}
+
+\begin{definition}
+    \textbf{Kratki tačni nizovi} su tačni nizovi oblika 
+    \[ \{0\} \xrightarrow{i} U \xrightarrow{A} V \xrightarrow{B} W \xrightarrow{\pi} \{0\}. \]
+\end{definition}
+
+\begin{theorem}
+    U kratkom tačnom nizu važi
+    \[ \operatorname{Im} A = \ker B \;\;\land\;\; U \cong \operatorname{Im} A \;\;\land \;\; V/\operatorname{Im} A \cong W.  \]
+\end{theorem}
+
+\subsection{Algebra $\hom V$}
+
+\begin{theorem}\
+    \begin{enumerate}
+        \item Uređena četvorka 
+        \[
+        \operatorname{Hom}(U, V) = (\operatorname{Hom}_{\mathbb{F}}(U, V), \mathbb{F}, +, \cdot),
+        \]
+        gde je
+        \begin{enumerate}
+            \item[(a)] $(A + B)(x) = Ax + Bx$, za sve $A, B \in \operatorname{Hom}(U, V)$ i sve $x \in U$,
+            \item[(b)] $(\lambda \cdot A)(x) = \lambda \cdot Ax$, za sve $A \in \operatorname{Hom}(U, V)$, $\lambda \in \mathbb{F}$ i sve $x \in U$,
+        \end{enumerate}
+        je vektorski prostor nad poljem $\mathbb{F}$.
+        
+        \item Ako su $e = (e_1, \dots, e_m)$ i $f = (f_1, \dots, f_n)$ baze prostora $U$ i $V$ redom i ako sa $E_{ij}$ obeležimo linearni operator koji u paru baza $(e, f)$ deluje na sledeći način:
+        \[
+        E_{ij}(e_k) = \delta_{jk} f_i,
+        \]
+        tada je skup
+        \[
+        \mathcal{E} = \{ E_{ij} \mid i \in\mathbb{N}_n,\; j \in\mathbb{N}_m \}
+        \]
+        baza vektorskog prostora $\operatorname{Hom}(U, V)$. Specijalno,
+        \[
+        \dim \operatorname{Hom}(U, V) = \dim U \cdot \dim V = m \cdot n.
+        \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    \[ \hom_\mathbb{F}(U, V) \cong \mathbb{M}_{nm}(\mathbb{F}) \]
+\end{theorem}
+
+\begin{theorem}\
+    \begin{enumerate}
+        \item Uređena petorka $\hom V = (\hom V, \mathbb{F}, +, \circ, \cdot)$ je asocijativna algebra sa jedinicom.
+        \item $\hom V \cong \mathbb{M}_n(\mathbb{F})$
+        \item Izomorfizam $\varphi_e: \hom V \to \mathbb{M}_n(\mathbb{F}), \; \varphi_e(A) = \mathcal{A} = (\alpha_{ij})$ preslikava regularne operatore u regularne matrice.
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    Neka je $\varphi_e(A) = \mathcal{A}$. Matrica $\mathcal{A} \in \mathbb{M}_n$ je regularna akko $r(A) = n$.
+\end{corollary}
+
 \subsection{Rang matrice}
-\subsection{Određivanje inverzne matrice}
+
+\begin{itemize}
+    \item \textbf{Rang matrice} je broj njenih linearno nezavisnih kolona.
+    \item \textbf{Elementarne transformacije} nad vrstama (kolonama) matrice su:
+    \begin{description}
+        \item [(EL1)] Množenje vrste (kolone) skalarom $\alpha \neq 0$,
+        \item [(EL2)] Zamena dve vrste (kolone),
+        \item [(EL3)] Dodavanje $j$-te vrste (kolone) $i$-toj.
+    \end{description}
+\end{itemize}
+
+\begin{theorem}
+    Neka je $\mathbb{E}_{ij}$ matrica koja na preseku $i$-te vrste i $j$-te kolone ima jedinicu, a sve ostale elemente jednake $0$. Tada važi sledeća formula:
+    \[ \mathbb{E}_{ij} \mathbb{E}_{kl} = \delta_{jk} \mathbb{E}_{il}, \]
+    kad god ima smisla.
+\end{theorem}
+
+\begin{theorem}\
+    \begin{enumerate}
+        \item Za $\lambda \neq 0$, neka je \[\mathbb{F}_{i,\lambda} = \operatorname{diag}[1, 1, \ldots, \lambda, 1, \ldots, 1] \in \mathbb{M}_n\] i $\mathcal{A} = [a_1, a_2, \ldots, a_m] = [a^1, a^2, \ldots, a^n] \in \mathbb{M}_{nm}$. Tada je \[\mathbb{F}_{i,\lambda} \mathcal{A} = [a^1, a^2, \ldots, \lambda a^i, \ldots, a^n],\] tj. sve vrste matrica $\mathbb{F}_{i,\lambda} \mathcal{A}$ i $\mathcal{A}$ osim $i$-te se podudaraju, a $i$-ta vrsta matrice $\mathbb{F}_{i,\lambda} \mathcal{A}$ jednaka je proizvodu $\lambda$ i $i$-te vrste matrice $\mathcal{A}$.
+
+        \item Analogno tvrđenje važi i za kolone matrica $\mathcal{A} \mathbb{F}_{i,\lambda}$ ($\mathbb{F}_{i,\lambda} \in \mathbb{M}_{m}$) i $\mathcal{A}$, tj. \[\mathcal{A} \mathbb{F}_{i,\lambda} = [a_1, a_2, \ldots, \lambda a_i, \ldots, a_m].\]
+
+        \item Matrica $\mathbb{F}_{i,\frac{1}{\lambda}}$ je inverz od $\mathbb{F}_{i,\lambda}$, tj. $\mathbb{F}_{i,\lambda}$ je regularna matrica.
+
+    \end{enumerate}
+    \label{rangMatriceTeorema2}
+\end{theorem}
 \newpage
+\begin{theorem}
+    \begin{enumerate}\
+        \item Neka je \[\mathbb{G}_{ij} = \mathbb{I}_n + \mathbb{E}_{ij} + \mathbb{E}_{ji} - \mathbb{E}_{ii} - \mathbb{E}_{jj} \in \mathbb{M}_n, \, i < j,\] i neka je \[\mathcal{A} = [a_1, a_2, \dots, a_m] = [a^1, a^2, \dots, a^n] \in \mathbb{M}_{nm}.\] Tada je \[\mathbb{G}_{ij} \mathcal{A} = [a^1, a^2, \dots, a^j, \dots, a^i, \dots, a^n],\] tj. sve vrste matrica $\mathbb{G}_{ij} \mathcal{A}$ i $\mathcal{A}$ osim $i$-te i $j$-te se podudaraju, a $i$-ta vrsta matrice $\mathbb{G}_{ij} \mathcal{A}$ jednaka je $j$-toj vrsti matrice $\mathcal{A}$, i $j$-ta vrsta matrice $\mathbb{G}_{ij} \mathcal{A}$ jednaka je $i$-toj vrsti matrice $\mathcal{A}$.
+
+        \item Analogno tvrđenje važi i za kolone matrica $\mathcal{A} \mathbb{G}_{ij}$ ($\mathbb{G}_{ij} \in \mathbb{M}_m$) i $\mathcal{A}$, tj. \[\mathcal{A} \mathbb{G}_{ij} = [a_1, a_2, \dots, a_j, \dots, a_i, \dots, a_m].\]
+
+        \item Kako je $\mathbb{G}_{ij}^2 = \mathbb{I}_n$, tj. $\mathbb{G}_{ij}$ je inverz sam sebi, $\mathbb{G}_{ij}$ je regularna matrica.
+    \end{enumerate}
+    \label{rangMatriceTeorema3}
+\end{theorem}
+
+\begin{theorem}\
+    \begin{enumerate}
+        \item Neka je \[\mathbb{E}'_{ij} = \mathbb{I}_n + \mathbb{E}_{ij} \in \mathbb{M}_n,\; i < j\] i neka je \[\mathcal{A} = [a_1, a_2, \dots, a_m] = [a^1, a^2, \dots, a^n] \in \mathbb{M}_{nm}.\]
+            Tada je \[\mathbb{E}'_{ij} \mathcal{A} = [a^1, a^2, \dots, a^i + a^j, \dots, a^j, \dots, a^n],\] tj. sve vrste osim $i$-te matrice $\mathbb{E}'_{ij} \mathcal{A}$ i $\mathcal{A}$ se podudaraju, a $i$-ta vrsta matrice $\mathbb{E}'_{ij} \mathcal{A}$ jednaka je zbiru $i$-te i $j$-te vrste matrice $\mathcal{A}$.
+
+    \item Analogno tvrdnje važi i za kolone matrice $\mathcal{A} \mathbb{E}'_{ij}$ ($\mathbb{E}'_{ij} \in \mathbb{M}_m$) i $\mathcal{A}$, tj. \[\mathcal{A} \mathbb{E}'_{ij} = [a_1, a_2, \dots, a_i + a_j, \dots, a_j, \dots, a_m].\]
+
+    \item Matrica $\mathbb{I}_n - \mathbb{E}_{ij} \in \mathbb{M}_n$ je inverz od $\mathbb{E}'_{ij}$, tj. $\mathbb{E}'_{ij}$ je regularna matrica.
+    \end{enumerate}
+    \label{rangMatriceTeorema4}
+\end{theorem}
+
+\begin{theorem}
+    \label{rangMatriceTeorema5}
+    Neka je $\mathcal{A} \in \mathbb{M}_{nm}(\mathbb{F})$ proizvoljna matrica ranga \[r \in \{0, 1, \ldots, \min(n, m)\}.\] Tada postoji konačan broj elementarnih transformacija nad vrstama i kolonama matrice $\mathcal{A}$ tako da njihovom primenom matricu $\mathcal{A}$ svodimo na kanonsku matricu
+    \[
+    \mathbb{D}_{nm}^r = 
+    \begin{bmatrix}
+        \mathbb{I}_r & \mathcal{O}_{r, m-r} \\
+        \mathcal{O}_{n-r, r} & \mathcal{O}_{n-r, m-r}
+    \end{bmatrix}.
+    \]
+    \medskip
+    \noindent Specijalno, ako je $\mathcal{A} \in \mathbb{M}_n(\mathbb{F})$ regularna matrica (tj. $\operatorname{r}(\mathcal{A}) = n$), tada se ona može svesti na jediničnu matricu $\mathbb{I}_n$ primenom elementarnih transformacija \textbf{samo} nad vrstama (ili \textbf{samo} nad kolonama) matrice $\mathcal{A}$.
+\end{theorem}
+
+\begin{itemize}
+    \item Prethodna teorema \ref{rangMatriceTeorema5} omogućava da elementarnim transformacijama nad vrstama i kolonama date matrice $\mathcal{A}$ istu svedemo na neku od matrica $\mathbb{D}_{nm}^r$, koja ima rang $r$.
+    \item Elementarnim transformacija (EL1), (EL2) i (EL3) nad vrstama odgovara množenje sleva regularnim matricama $\mathbb{F}_{i, \lambda}, \mathbb{G}_{ij}$ i $\mathbb{E}_{ij}'$ (teoreme \ref{rangMatriceTeorema2}, 
+    \ref{rangMatriceTeorema3}, \ref{rangMatriceTeorema4}) redom (a elementarnim transformacijama nad kolonama odgovara množenje istim matricama zdesna).
+    Dakle, imamo: 
+    \[
+        \mathbb{D}_{nm}^r = \underbrace{\mathcal{S}_1\dots\mathcal{S}_k}_\mathcal{S} \mathcal{A} \underbrace{\mathcal{T}_1\dots \mathcal{T}_s}_\mathcal{T},
+    \]
+    gde su \[\mathcal{S}_p \in \{ \mathbb{F}_{i, \lambda}, \mathbb{G}_{ij}, \mathbb{E}_{ij}' \;|\; \lambda \in \mathbb{F}, \; i \neq j, \; i,j \in \mathbb{N}_n \}\] i 
+    \[\mathcal{T}_p \in \{ \mathbb{F}_{i, \lambda}, \mathbb{G}_{ij}, \mathbb{E}_{ij}' \;|\; \lambda \in \mathbb{F}, \; i \neq j, \; i,j \in \mathbb{N}_m \}.\]
+    \item Definicija ranga matrice ne zavisi od toga da li rang računamo po kolonama ili vrstama.
+\end{itemize}
+
+\subsection{Određivanje inverzne matrice}
+
+\begin{itemize}
+    \item Da bismo odredili inverz (ako postoji) matrice $\mathcal{A}$, formiramo matricu $n \times (2n)$ tako što dopišemo jediničnu matricu reda $n$ sa desne 
+    strane matrice $\mathcal{A}$, tj. \linebreak $\mathcal{B} = \begin{bmatrix}
+        \;\mathcal{A}&|&\mathbb{I}_n\;
+    \end{bmatrix}$. Zatim vršimo elementarne transformacije ((EL1), (EL2) i (EL3)) isključivo nad vrstama matrice $\mathcal{B}$, dok ne transformišemo $\mathcal{A}$
+    u $\mathbb{I}_n$. Istoveremeno se u desnoj polovini matrice $\mathcal{B}$ matrica $\mathbb{I}_n$ transformiše u $\mathcal{A}^{-1}$.
+
+    \item Opravdajmo sada ovu proceduru. Pretpostavimo da matrica $\mathcal{A}$ ima inverznu matricu. Budući da vršimo elementarne transformacije nad vrstama matrice
+    $\mathcal{A}$, matricu $\mathcal{A}$ množimo, sa leve strane, nekim od matrica iz skupa 
+    \[\{\mathbb{F}_{i,\lambda}, \mathbb{G}_{ij}, \mathbb{E}'_{ij} \mid \lambda \neq 0, i \neq j, i,j = 1,2,\dots,n\}\]
+    dok $\mathcal{A}$ ne transformišemo u $\mathbb{I}_n$, tako da je $\mathcal{S} \cdot \mathcal{A} = \mathbb{I}_n$, gde je $\mathcal{S} = \mathcal{S}_m \cdot \mathcal{S}_{m-1} \cdots \mathcal{S}_2 \cdot \mathcal{S}_1$.
+    Množenjem jednakosti $\mathcal{S} \cdot \mathcal{A} = \mathbb{I}_n$ inverzom od $\mathcal{S}$ s leva, dobićemo da je $\mathcal{A} = \mathcal{S}^{-1} \cdot \mathbb{I}_n$, a zatim uzimanjem inverza od obe strane ove 
+    jednakosti, imamo \[\mathbb{I}_n^{-1} \cdot (\mathcal{S}^{-1})^{-1} = \mathbb{I}_n \cdot \mathcal{S} = \mathcal{S} \cdot \mathbb{I}_n = \mathcal{A}^{-1}.\] Dakle, ako nad matricom $\mathbb{I}_n$ izvršimo iste 
+    transformacije (kao i nad matricom $\mathcal{A}$) opisane matricom $\mathcal{S}$, ona će se transformisati u matricu $\mathcal{A}^{-1}$.
+    \item Ako $\mathcal{A}$ nije regularna, onda umesto matrice $\mathbb{I}_n = \mathbb{D}_{nn}^n$ dobijamo neku od kanonskih matrica $\mathbb{D}_{nn}^r, \; r < n$. 
+\end{itemize}
+
+
+\newpage
+
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
 \subsubsection*{Linearni funkcional i dualni prostor}
 Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. $V^*$ nazivamo \textbf{dualni prostor} prostora $V$.
