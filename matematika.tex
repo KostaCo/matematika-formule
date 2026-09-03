@@ -1772,6 +1772,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{theorem}
 
 \begin{itemize}
+    \item $\mathcal{V}(\mathbb{F})$ - skup svih konačnodimenzionih vektorskih prostora nad $\mathbb{F}$.
     \item Primeri vektorskih prostora:
     \begin{enumerate}
         \item Polje $\mathbb{F} = (\mathbb{F}, \mathbb{F}, +, \cdot)$ je vektorski prostor nad samim sobom. Specijalno, $\mathbb{Q, R, C}$ su vektorski prostori.
@@ -1799,7 +1800,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \[ \langle x, y \rangle = x_1y_1 + x_2y_2 + \dots + x_ny_n. \]
     \item Kako su skalari u $\mathbb{C}^n_\mathbb{R} = (\mathbb{C}^n, \mathbb{R}, +, \cdot)$ realni brojevi, baza ovog prostora ima $2n$ vektora:
     \[ e_1 = (1, 0, \dots, 0), \; \dots, \; e_n = (0, 0, \dots, 1),\; e_{n+1} = (i, 0, \dots, 0), \;\dots,\; e_{2n} = (0, 0, \dots, i). \]
-\end{itemize}
+\end{itemize}\
 
 \subsection{Matrice}
 \label{matrice}
@@ -1849,7 +1850,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item Vektore smatramo $n \times 1$ matricama. Više o ovome (uključujući intuiciju) u \ref{linearniOperator}.
     \item \textbf{Transponovanje} matrica podrazumeva zamenu vrsta i kolona: \[\mathcal{A}^\mathcal{T} = (\alpha_{ij})^\mathcal{T} = (\alpha_{ji}).\]
 \end{itemize}
-\newpage
 
 \begin{theorem}
     Za $\mathcal{A, B} \in \mathbb{M}_{mn}(\mathbb{F})$ i $\lambda \in \mathbb{F}$ važi:
@@ -2472,8 +2472,61 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
 \end{theorem}
 
 \subsection{Regularni operatori}
+
+\begin{itemize}
+    \item Linearni operator $A:U \to V$ je \textbf{regularan} ako je maksimalnog ranga. Dakle, postoje 2 opcije:
+    \begin{enumerate}
+        \item $\dim U \leq \dim V \implies (A \text{ je regularan} \iff \dim A = \dim U \land \ker A = \{0\})$,
+        \item $\dim U > \dim V \implies (A \text{ je regularan} \iff \operatorname{Im} A = V)$.
+    \end{enumerate}
+    \item Linearni operator $A$ je \textbf{singularan} ako je $\ker A \neq \{0\}$, tj. $d(A) \geq 1$.
+\end{itemize}
+
+\begin{theorem}
+    Neka je $A \in \hom V$. Tada važi:
+    \[ A \text{ je invertibilan} \iff A\text{ je regularan}. \]
+\end{theorem}
+
+\begin{theorem}
+    Neka su $A \in \hom V, \;, B \in \hom (U, V), \; C \in \hom U$ linearni operatori t.d. su $A$ i $C$ regularni. Tada važi:
+    \begin{enumerate}
+        \item $r(A \circ B) = r(B \circ C) = r(A \circ B \circ C) = r(B)$,
+        \item $V_1 \leq V \implies \dim A(V_1) = \dim V_1$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{itemize}
+    \item Operator $A_{|V_1}:V_1 \to A(V_1)$, definisan formulom $A_{|V_1}(x) := A(x)$, se zove \textbf{restrikcija} operatora $A$
+    na potprostor $V_1$.
+    \item Ako na $\hom (U, V)$ definišemo operacije:
+    \begin{enumerate}
+        \item $A \sim B$ ako $r(A) = r(B)$,
+        \item $A \approx B$ ako postoje reg. operatori $S \in \hom V, \; T \in \hom U$ t.d. $A = S\circ B \circ T$,
+    \end{enumerate}
+    dobijamo da su ovo relacije ekvivalencije i da se podudaraju. Dakle, $A$ i $B$ imaju isti rang ako i samo ako je $A = S\circ B \circ T$.
+\end{itemize}
+
 \subsection{Izomorfizmi vektorskih prostora}
 \label{izomorfizmi}
+
+\begin{definition}
+    Za dva vektorska prostora $U$ i $V$ nad $\mathbb{F}$ kažemo da su \textbf{izomorfni} ako postoji barem jedan izomorfizam sa 
+    $U$ na $V$ (tj. bijektivno preslikavanje $A: U \to V$). Oznaka koja se koristi je $\cong$.
+\end{definition}
+
+\begin{theorem}
+    Relacija $\cong$ je relacija ekvivalencije na skupu $\mathcal{V}(\mathbb{F})$.
+\end{theorem}
+
+\begin{theorem}
+    Neka su $U, V \in \mathcal{V}(\mathbb{F})$. Tada važi:
+    \[ U \cong V \iff \dim U = \dim V. \]
+\end{theorem}
+
+\begin{itemize}
+    \item Dakle, predstavnici relacije $\cong$ mogu biti $\mathbb{F}^n = (\mathbb{F}^n, \mathbb{F}, +, \cdot),\; n \in \mathbb{N}$.
+\end{itemize}
+
 \subsection{Teoreme o izomorfizmu}
 \subsection{Tačni (egzaktni) nizovi}
 \subsection{Algebra}
@@ -2482,14 +2535,14 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
 \newpage
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
 \subsubsection*{Linearni funkcional i dualni prostor}
-Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \operatorname{Hom} (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. $V^*$ nazivamo \textbf{dualni prostor} prostora $V$.
+Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. $V^*$ nazivamo \textbf{dualni prostor} prostora $V$.
 
 
 Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
 \\
 \subsubsection{Dualna baza}
     Neka je $V$ vektorski prostor nad $\mathbb{F}$ ($n = \dim V < \infty$) i $e = (e_1, \dots, e_n)$ neka njegova baza.
-     Postoji jedinstvena baza $e^* = (e_1^*, \dots, e_n^*)$ prostora $V^* = \operatorname{Hom} (V, \mathbb{F})$ takva da je:
+     Postoji jedinstvena baza $e^* = (e_1^*, \dots, e_n^*)$ prostora $V^* = \hom  (V, \mathbb{F})$ takva da je:
     \begin{enumerate}
         \item \[
         e^*_j(e_i) = \delta_{ij}=\begin{cases}
@@ -2662,15 +2715,15 @@ Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
 \end{itemize}
 
 \subsection{Dualno (transponovano) preslikavanje}
-Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom} \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
+Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \hom  \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
 \[ (A^*[f])(x) := A^*[f](x) = (f \circ A)(x) = f(A(x)) \]
 Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjungovani)} operator od $A$.
 \begin{theorem}
-    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom}\left(U, V\right)$. Tada postoji jedinstveni linearni operator $A^* 
-    \in \operatorname{Hom}\left(U^*, V^*\right)$ takav da je $A^*[f](x) = f(A(x)), \linebreak \forall f \in V^*, \; \forall x \in U$.
+    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \hom \left(U, V\right)$. Tada postoji jedinstveni linearni operator $A^* 
+    \in \hom \left(U^*, V^*\right)$ takav da je $A^*[f](x) = f(A(x)), \linebreak \forall f \in V^*, \; \forall x \in U$.
 \end{theorem}
 \begin{theorem}
-    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$, $\operatorname{dim} U, \operatorname{dim} V < \infty$, i \linebreak$A \in \operatorname{Hom}\left(U, V\right)$. Tada
+    Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$, $\operatorname{dim} U, \operatorname{dim} V < \infty$, i \linebreak$A \in \hom \left(U, V\right)$. Tada
     \begin{enumerate}
         \item $\ker A^* = (\operatorname{Im} A)^0$ \\
         \underline{\textit{Intuicija:}} $\ker A^* = \left\{f \in V^* \; | \; f\left(A\left(x\right)\right) = 0, \; \forall x \in U\right\} = (\operatorname{Im} A )^0$
@@ -2681,7 +2734,7 @@ Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjungovani)} ope
 \end{theorem}
 \begin{theorem}
     \label{ATjednakoAzvezda}
-    Neka su $U$ i $V$ konačnodimenzioni v. prostori nad $\mathbb{F}$ i $A \in \operatorname{Hom}\left(U, V\right)$. Neka je $e$ neka baza od $U$ i $e^*$ njoj dualna 
+    Neka su $U$ i $V$ konačnodimenzioni v. prostori nad $\mathbb{F}$ i $A \in \hom \left(U, V\right)$. Neka je $e$ neka baza od $U$ i $e^*$ njoj dualna 
     baza od $U^*$, i neka je $f$ neka baza od $V$ i $f^*$ njoj dualna baza od $V^*$. Ako sa $\mathcal{A}$ obeležimo matricu operatora $A$ u paru baza $e$ i $f$, a sa
     $\mathcal{A}^*$ matricu operatora $A^*$ u paru baza $f^*$ i $e^*$, tada je \[\mathcal{A}^\mathcal{T} = \mathcal{A}^*.\]
 \end{theorem}
@@ -2772,7 +2825,7 @@ f_1 = 3e_1 + e_2 + 2e_3,\quad
 f_2 = 2e_1 + e_2 + 2e_3,\quad 
 f_3 = -e_1 + 2e_2 + 5e_3.
 \]
-Neka je $A \in \operatorname{Hom}(\mathbb{R}^3)$ čija je matrica u bazi $e$ data sa $\mathcal{A}(e)$. 
+Neka je $A \in \hom (\mathbb{R}^3)$ čija je matrica u bazi $e$ data sa $\mathcal{A}(e)$. 
 Koristeći formulu \linebreak$\mathcal{A}(f) = T^{-1} \mathcal{A}(e) T$, prvo nalazimo matricu prelaska sa $e$ na $f$:
 \[
 T = 
@@ -3298,13 +3351,13 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \subsection{Invarijantni potprostori}
 
 \begin{itemize}
-    \item Neka je $A \in \operatorname{Hom} V$ i $L \subseteq V$. $L$ je \textbf{invarijantan potprostor} operatora $A$ ako je $A(L) \subseteq L$.
+    \item Neka je $A \in \hom  V$ i $L \subseteq V$. $L$ je \textbf{invarijantan potprostor} operatora $A$ ako je $A(L) \subseteq L$.
     \item Ako je $L$ invarijantan potprostor od $A$, onda je dobro definisana restrikcija operatora $A$ na $L$. Dakle, preslikavanje $A_{|L}:L \to L, \; A_{|L}x = Ax$ je linearni operator.
-    \item Svaki linearni operator $A \in \operatorname{Hom}V$ ima \textbf{trivijalne} invarijantne potprostore, \linebreak $L = \{0\}$ i $L = V$. Ostale nazivamo \textbf{pravi} ili \textbf{netrivijalni} invarijantni potprostori operatora $A$.
+    \item Svaki linearni operator $A \in \hom V$ ima \textbf{trivijalne} invarijantne potprostore, \linebreak $L = \{0\}$ i $L = V$. Ostale nazivamo \textbf{pravi} ili \textbf{netrivijalni} invarijantni potprostori operatora $A$.
 \end{itemize}
 
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$ linearni operator. Tada važi:
+    Neka je $A \in \hom V$ linearni operator. Tada važi:
     \begin{enumerate}
         \item $\ker A$ i $\operatorname{Im}A$ su invarijantni potprostori od $A$
         \item $\ker A^j \subseteq \ker A^{j+1}, \;\; \forall j \in \mathbb{N}$
@@ -3315,7 +3368,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \subsection{Dekompozabilni i ireducibilni operatori}
 
 \begin{itemize}
-    \item Ako $A \in \operatorname{Hom}V$ ima netrivijalni invarijantni potprostor, kažemo da je \textbf{reducibilan (svodljiv)} na $V$. U suprotnom, kažemo da je \textbf{ireducibilan (nesvodljiv)} na $V$.
+    \item Ako $A \in \hom V$ ima netrivijalni invarijantni potprostor, kažemo da je \textbf{reducibilan (svodljiv)} na $V$. U suprotnom, kažemo da je \textbf{ireducibilan (nesvodljiv)} na $V$.
     \item Za operator koji ima invarijantne netrivijalne potprostore $L$ i $M$ takve da je $V = L \oplus M$, kažemo da je \textbf{dekompozabilan}.
     \item Ako za svaki netrivijalni invarijantni potprostor $L$ postoji invarijantni potprostor $M$ takav da je $V = L \oplus M$, kažemo da je operator $A$ \textbf{potpuno reducibilan} ili \textbf{potpuno svodljiv}.
     \item Ako je operator potpuno reducibilan, tada je i dekompozabilan.
@@ -3363,7 +3416,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 
 \begin{theorem}
     \label{rlonkdp1}
-    Neka je $A \in \operatorname{Hom}V$ potpuno reducibilan linearni operator. Tada postoje ne-nula potprostori $L_1, 
+    Neka je $A \in \hom V$ potpuno reducibilan linearni operator. Tada postoje ne-nula potprostori $L_1, 
     \dots, L_m$ t.d. je \[ V = \bigoplus_{i=1}^m L_i, \] i pri tome su za svako $i \in \mathbb{N}_m$ restrikcije
     $A_i = A_{|L_i}$ ireducibilni linearni operatori na $L_i$.
 \end{theorem}
@@ -3407,7 +3460,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \item \textbf{Karakteristična jednačina} matrice $\mathcal{A}$: $\kappa_\mathcal{A}(\lambda) = 0$
     \item Važi jednakost:
     \[ \kappa_\mathcal{A}(\lambda) = \prod^{n}_{i = 1} (\alpha_{ii} - \lambda) + q(\lambda), \;\; \deg q \leq n-2 \]
-    \item \textbf{Invarijante sličnosti} su svojstva linearnog operatora $A \in \operatorname{Hom}V$ koja ne zavise od baze.
+    \item \textbf{Invarijante sličnosti} su svojstva linearnog operatora $A \in \hom V$ koja ne zavise od baze.
 \end{itemize}
 
 \begin{theorem}
@@ -3469,7 +3522,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \subsection{Sopstvene vrednosti linearnog operatora}
 
 \begin{itemize}
-    \item Skalar $\lambda \in \mathbb{F}$ se zove \textbf{sopstvena (svojstvena, karakteristična) vrednost} linearnog operatora $A \in \operatorname{Hom}V$ ako
+    \item Skalar $\lambda \in \mathbb{F}$ se zove \textbf{sopstvena (svojstvena, karakteristična) vrednost} linearnog operatora $A \in \hom V$ ako
     \[ (\exists x \in V)\; Ax = \lambda x \land x \neq 0. \] Vektor $x$ se zove \textbf{sopstveni (svojstveni, karakteristični) vektor} koji odgovara 
     sopstvenoj vrednosti $\lambda$.
     \item \textbf{Spektar} $\operatorname{Sp}(A)$ linearnog operatora $A$ - skup svih sopstvenih vrednosti od $A$.
@@ -3482,7 +3535,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \end{theorem}
 
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$ linearni operator. Tada važi
+    Neka je $A \in \hom V$ linearni operator. Tada važi
     \[ \lambda_0 \in \operatorname{Sp}(A) \iff \kappa_A(\lambda_0) = 0 \]
 \end{theorem}
 
@@ -3504,18 +3557,18 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \subsection{Dijagonalizacija linearnog operatora}
 
 \begin{itemize}
-    \item Ako operator $A \in \operatorname{Hom}V$ ima $\dim V$ jednodimenzionih invarijantnih potprostora, tada postoji baza $f$ od $V$, u kojoj je matrica operatora $A(f)$ dijagonalna.
+    \item Ako operator $A \in \hom V$ ima $\dim V$ jednodimenzionih invarijantnih potprostora, tada postoji baza $f$ od $V$, u kojoj je matrica operatora $A(f)$ dijagonalna.
     \item Proces pronalaženja baze (ako ona postoji) u kojoj je matrica operatora $A$ dijagonalna, zove se \textbf{dijagonalizacija} linearnog operatora.
     \item Za operator $A$ kažemo da je \textbf{dijagonalizabilan} ako postoji baza $f$ u kojoj je matrica operatora $A(f)$ dijagonalna.
 \end{itemize}
 
 \begin{lemma}
-    Neka su $\lambda_1, \dots, \lambda_k$ međusobno različite sopstvene vrednosti linearnog operatora $A \in \operatorname{Hom}V$ i 
+    Neka su $\lambda_1, \dots, \lambda_k$ međusobno različite sopstvene vrednosti linearnog operatora $A \in \hom V$ i 
     neka su redom $v_1, \dots, v_k$ odgovarajući sopstveni vektori. Tada je skup vektora $\{v_1, \dots, v_k\}$ linearno nezavisan.
 \end{lemma}
 
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$ linearni operator nad $\mathbb{F}$. Tada su sledeći iskazi ekvivalentni:
+    Neka je $A \in \hom V$ linearni operator nad $\mathbb{F}$. Tada su sledeći iskazi ekvivalentni:
     \begin{enumerate}
         \item $A$ je dijagonalizabilan.
         \item Postoji baza $e$ od $V$ koja se sastoji od sopstvenih vektora.
@@ -3552,7 +3605,7 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 \end{algorithm}
 
 \begin{itemize}
-    \item Neka je $A \in \operatorname{Hom}V$ linearni operator i $\lambda_0 \in \operatorname{Sp}(A)$. Tada definišemo:
+    \item Neka je $A \in \hom V$ linearni operator i $\lambda_0 \in \operatorname{Sp}(A)$. Tada definišemo:
     \begin{enumerate}
         \item \textbf{Algebarska višestrukost} sopstvene vrednosti $\lambda_0$ je višestrukost $\lambda_0$ kao nule karakterističnog
         polinoma $\kappa_{A}(\lambda)$.
@@ -3561,7 +3614,7 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 \end{itemize}
 
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$ linearni operator i $\lambda_0$ neka njegova sopstvena vrednost. Algebarska višestrukost
+    Neka je $A \in \hom V$ linearni operator i $\lambda_0$ neka njegova sopstvena vrednost. Algebarska višestrukost
     sopstvene vrednosti $\lambda_0$ veća je ili jednaka od njene geometrijske višestrukosti.
 \end{theorem}
 
@@ -3575,7 +3628,7 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 
 \begin{theorem}
     \label{gtm1}
-    Neka je $V$ vektorski prostor nad algebarski zatvorenim poljem i $A \in \operatorname{Hom}V$. Tada postoji baza u kojoj je 
+    Neka je $V$ vektorski prostor nad algebarski zatvorenim poljem i $A \in \hom V$. Tada postoji baza u kojoj je 
     operator $A$ predstavljen gornje-trougaonom matricom.
 \end{theorem}
 
@@ -3588,7 +3641,7 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 
 \begin{theorem}
     \label{irfkpiip1}
-    Neka je $A \in \operatorname{Hom}V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
+    Neka je $A \in \hom V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
     \begin{enumerate}
         \item $f = gh$,
         \item $f(A) = 0$,
@@ -3600,7 +3653,7 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 prostor $V$ raspada na direktnu sumu jezgara ta 2 faktora. Dakle, praktično razdvajamo $V$ na dva dela. U prvom ($\ker g(A)$) važi $g(A) = 0$, a u drugom 
 ($\ker h(A)$) važi $h(A) = 0$. Ova teorema nam garantuje da se ti delovi ne poklapaju i da pokrivaju ceo $V$.\\
 
-\noindent\textbf{Posledica.} \textit{Neka je $A \in \operatorname{Hom}V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
+\noindent\textbf{Posledica.} \textit{Neka je $A \in \hom V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
     \begin{enumerate}
         \item $f = gh$,
         \item $f(A) = 0$,
@@ -3612,7 +3665,7 @@ prostor $V$ raspada na direktnu sumu jezgara ta 2 faktora. Dakle, praktično raz
 }
 
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$ linearni operator čiji je minimalni polinom
+    Neka je $A \in \hom V$ linearni operator čiji je minimalni polinom
     \[ \mu_A = \prod_{i=1}^{k}p_i^{s_i}, \]
     gde su $p_i$ različiti monični polinomi. Tada je $V = \bigoplus_{i=1}^k L_i$, pri čemu su $L_i = \ker p_i^{s_i}$ invarijantni potprostori od $A$, 
     i $p_i^{s_i}$ je minimalni polinom restrikcije $A_{|L_i}$ na $L_i, \; i \in \mathbb{N}_k$.
@@ -3630,7 +3683,7 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
 \subsection{Nilpotentni operatori}
 
 \begin{itemize}
-    \item Za operator $A \in \operatorname{Hom}V$ kažemo da je \textbf{nilpotentan} ako postoji $k \in \mathbb{N}$ t.d. je $A^k = 0$.
+    \item Za operator $A \in \hom V$ kažemo da je \textbf{nilpotentan} ako postoji $k \in \mathbb{N}$ t.d. je $A^k = 0$.
     \item \textbf{Indeks nilpotentnosti} $k$ operatora $A$: \[k = \min \{k \in \mathbb{N}\;|\;A^k = 0 \land A^{k-1}\neq 0\}\]
     \item Ako je $A$ nilpotentni operator indeksa nilpotentnosti $k$, njegov karakteristični polinom je $\kappa_A(\lambda) = (-1)^n\lambda^n$, a
     minimalni $\mu_A(\lambda) = \lambda^k$, pa mu je jedina sopstvena vrednost $\lambda_0 = 0$. Takođe, $\operatorname{Tr}(A) = \det A = 0$ i $k \leq \dim V$.
@@ -3645,7 +3698,7 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
 \end{itemize}
 
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$ nilpotentni operator indeksa nilpotentnosti $k$. Tada:
+    Neka je $A \in \hom V$ nilpotentni operator indeksa nilpotentnosti $k$. Tada:
     \begin{enumerate}
         \item Postoji vektor $e \in V$ t.d. je skup $S_1 = \{e, Ae, \dots, A^{k-1}e\}$ linearno nezavisan;
         \item $L_1 = \mathcal{L}(S_1)$ je invarijantan potprostor od $A$;
@@ -3695,7 +3748,7 @@ U ovoj bazi matrica operatora je oblik \textit{matrice pratioca} (companion matr
 \end{itemize}
 
 \begin{corollary}
-    Neka je $A \in \operatorname{Hom}V$ nilpotentnan operator indeksa nilpotentnosti $k$. Tada postoje invarijantni potprostori 
+    Neka je $A \in \hom V$ nilpotentnan operator indeksa nilpotentnosti $k$. Tada postoje invarijantni potprostori 
     $L_1, \dots, L_m$ t.d. je
     \[ V = \bigoplus^{m}_{i=1} L_i \;\;\land\;\; A = \bigoplus^{m}_{i=1} A_{|L_i}.\]
     Linearni operatori $A_i$ su nilpotentni operatori indeksa nilpotentnosti $k_i = \dim L_i \leq k$ i važi:
@@ -3721,7 +3774,7 @@ izgleda kao blok-dijagonalna matrica oblika
 \end{bmatrix},\] gde je svaki blok $\mathcal{N}_{k_i}$ kanonska nilpotentna matrica.
 \newpage
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$ nilpotentan operator indeksa nilpotentnosti $k$, t.d. se $V$ dekomponuje kao
+    Neka je $A \in \hom V$ nilpotentan operator indeksa nilpotentnosti $k$, t.d. se $V$ dekomponuje kao
     \[ V = \bigoplus_{j = 1}^{k}\xi_jM_j, \] gde je $M_j$ ciklički operator dimenzije $j$, kojem u cikličkoj bazi restrikcije operatora $A$ na $M_j$
     odgovara kanonska nilpotentna matrica $\mathcal{N}_j$, a $\xi_j$ je broj takvih potprostora, tj. blokova dimenzije $j$ duž dijagonale matrice
     \[\mathcal{A}(e) = \begin{bmatrix}
@@ -3736,7 +3789,7 @@ izgleda kao blok-dijagonalna matrica oblika
 \subsection{Žordanova normalna forma}
 
 \begin{itemize}
-    \item Neka je $A \in \operatorname{Hom}V$ i $\lambda \in \operatorname{Sp}(A)$. Tada skup
+    \item Neka je $A \in \hom V$ i $\lambda \in \operatorname{Sp}(A)$. Tada skup
     \[ V_{(\lambda)}^A = \{ v \in V \;|\; (\exists k \in \mathbb{N})\; (A - \lambda\mathbb{I}_n)^kv=0 \} \]
     nazivamo \textbf{korenski potprostor} operatora $A$ koji odgovara sop. vrednosti $\lambda$.
     \item Važi $V = \bigoplus_{\lambda_i \in \operatorname{Sp}(A)}V_{(\lambda_i)}^A$ 
@@ -3773,7 +3826,7 @@ izgleda kao blok-dijagonalna matrica oblika
 
 \begin{theorem}
     \label{zordan1}
-    \textbf{(Žordanova normalna forma - proširena verzija):} Neka je $A \in \operatorname{Hom}V$ i 
+    \textbf{(Žordanova normalna forma - proširena verzija):} Neka je $A \in \hom V$ i 
     \[ \kappa_\mathcal{A}(\lambda) = (-1)^n (\lambda - \lambda_1)^{r_1}\dots (\lambda - \lambda_k)^{r_k} \;\;\land \;\; \mu_\mathcal{A}(\lambda) =  (\lambda - \lambda_1)^{s_1}\dots (\lambda - \lambda_k)^{s_k},\]
     pri čemu je $\lambda_i \neq \lambda_j$ za $i \neq j$. Tada postoji baza $e$, u kojoj se matrica operatora $A$ podudara sa Žordanovom matricom
     \[ \mathcal{J}^A = \begin{bmatrix}
@@ -3817,17 +3870,17 @@ izgleda kao blok-dijagonalna matrica oblika
 \subsection{Invarijantnost linearnih operatora nad realnim vek. prostorima - kompleksifikacija realnog vektorskog prostora}
 
 \begin{itemize}
-    \item Neka je $V$ realni vektorski prostor i $A \in \operatorname{Hom}V$. Tada prostoru $V$ možemo na prirodan način pridružiti kompleksni vektorski prostor $V^\mathbb{C}$ i 
+    \item Neka je $V$ realni vektorski prostor i $A \in \hom V$. Tada prostoru $V$ možemo na prirodan način pridružiti kompleksni vektorski prostor $V^\mathbb{C}$ i 
     operator $A$ tretirati kao linearni operator na $V^{\mathbb{C}}$. Dakle, ako je $e = (e_1, \dots, e_n)$ neka baza od $V$,  tada je
     \[ V^\mathbb{C} = \left\{ \sum_{i=1}^{n} \lambda_i e_i \;|\; \lambda_i \in \mathbb{C} \right\} = V \oplus iV. \]
     Drugim rečima, $V^\mathbb{C}$ je lineal od $V$, ali nad poljem $\mathbb{C}$. Vektorski prostor $V^\mathbb{C}$ nazivamo \textbf{kompleksifikacija realnog vektorskog prostora} $V$.
-    \item Ako je $A \in \operatorname{Hom}V$, možemo definisati i operator $A^C \in \operatorname{Hom}V^\mathbb{C}$ na prirodan način:
+    \item Ako je $A \in \hom V$, možemo definisati i operator $A^C \in \hom V^\mathbb{C}$ na prirodan način:
     \[ A^\mathbb{C}z = A^\mathbb{C}(x + iy) = Ax + iAy. \]
     Linearni operator $A^\mathbb{C}$ nazivamo \textbf{kompleksifikacija linearnog operatora} $A$.
 \end{itemize}
 
 \begin{theorem}
-    Neka je $V$ realni vektorski prostor i $A \in \operatorname{Hom}V$ t.d. $\kappa_A$ ima barem jednu nulu iz $\mathbb{C}\setminus\mathbb{R}$. Tada $A$ ima 
+    Neka je $V$ realni vektorski prostor i $A \in \hom V$ t.d. $\kappa_A$ ima barem jednu nulu iz $\mathbb{C}\setminus\mathbb{R}$. Tada $A$ ima 
     dvodimenzioni invarijantni prostor.
 \end{theorem}
 
@@ -4064,7 +4117,7 @@ koji određuju $v_1, \dots, v_k$.
 \subsection{Hermitski adjungovani operator}
 
 \begin{itemize}
-    \item Za svaki $A \in \operatorname{Hom}V$ postoji jedinstven operator $A^*: V \to V$ t.d.
+    \item Za svaki $A \in \hom V$ postoji jedinstven operator $A^*: V \to V$ t.d.
     \[ \langle Av, w \rangle = \langle v, A^*w \rangle, \;\; \forall v, w \in V. \] Preslikavanje $A^*$ (ili $A^\dagger$) zove se \textbf{hermitski adjungovani operator}.
 \end{itemize}
 
@@ -4079,7 +4132,7 @@ koji određuju $v_1, \dots, v_k$.
 \end{theorem}
 
 \begin{theorem}
-    Neka je $A \in \operatorname{Hom}V$. Tada važi
+    Neka je $A \in \hom V$. Tada važi
     \[ V = \ker A \oplus \operatorname{Im}A^\dagger = \ker A^\dagger \oplus \operatorname{Im}A. \]
 \end{theorem}
 \noindent\underline{\textit{Intuicija:}} $\langle Av, w \rangle = 0 \implies \langle v, A^\dagger w \rangle = 0 \implies v \perp \operatorname{Im}A^\dagger$
