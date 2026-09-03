@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  3 SEP 2026 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  4 SEP 2026 00:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -883,35 +883,42 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikz@expandcount=\count379
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+))) (/usr/share/texlive/texmf-dist/tex/latex/tikz-3dplot/tikz-3dplot.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary3d.code.tex
+File: tikzlibrary3d.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\arrowsize=\dimen322
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen322
-\pgfarrowlength=\dimen323
-\pgfarrowwidth=\dimen324
-\pgfarrowlinewidth=\dimen325
+\pgfarrowinset=\dimen323
+\pgfarrowlength=\dimen324
+\pgfarrowwidth=\dimen325
+\pgfarrowlinewidth=\dimen326
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex
 File: tikzlibraryangles.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 36.
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
  (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box117
 \beforetitleunit=\skip68
 \aftertitleunit=\skip69
-\ttl@plus=\dimen326
-\ttl@minus=\dimen327
+\ttl@plus=\dimen327
+\ttl@minus=\dimen328
 \ttl@toksa=\toks50
-\titlewidth=\dimen328
-\titlewidthlast=\dimen329
-\titlewidthfirst=\dimen330
+\titlewidth=\dimen329
+\titlewidthlast=\dimen330
+\titlewidthfirst=\dimen331
  (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titleps.sty))
 \c@theorem=\count380
 \c@definition=\count381
@@ -925,30 +932,30 @@ Package babel Info: 'serbian' activates 'serbian' shorthands.
 )
 \openout1 = `matematika.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 67.
-LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -984,9 +991,9 @@ LaTeX Font Info:    ... okay on input line 67.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Encoding Info:    Redeclaring text command \v (encoding OT2) on input line 67.
-LaTeX Encoding Info:    Text composite with undeclared \v in encoding OT2 on input line 67.
-Package hyperref Info: Link coloring ON on input line 67.
+LaTeX Encoding Info:    Redeclaring text command \v (encoding OT2) on input line 68.
+LaTeX Encoding Info:    Text composite with undeclared \v in encoding OT2 on input line 68.
+Package hyperref Info: Link coloring ON on input line 68.
 (./matematika.out) (./matematika.out)
 \@outlinefile=\write5
 \openout5 = `matematika.out'.
@@ -994,13 +1001,13 @@ Package hyperref Info: Link coloring ON on input line 67.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count384
-\scratchdimen=\dimen331
+\scratchdimen=\dimen332
 \scratchbox=\box118
 \nofMPsegments=\count385
 \nofMParguments=\count386
 \everyMPshowfont=\toks51
 \MPscratchCnt=\count387
-\MPscratchDim=\dimen332
+\MPscratchDim=\dimen333
 \MPnumerator=\count388
 \makeMPintoPDFobject=\count389
 \everyMPtoPDFconversion=\toks52
@@ -1016,14 +1023,14 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package csquotes Info: Redefining character " on input line 67.
+Package csquotes Info: Redefining character " on input line 68.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -1043,58 +1050,53 @@ Overfull \hbox (0.21928pt too wide) in paragraph at lines 193--193
 Glava 1.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 74.
+(hyperref)                than one, level fixed on input line 75.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 75.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\delta' on input line 74.
+(hyperref)                removing `\delta' on input line 75.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 74.
+(hyperref)                removing `subscript' on input line 75.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 75.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 85.
+(hyperref)                removing `math shift' on input line 86.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\varepsilon' on input line 85.
+(hyperref)                removing `\varepsilon' on input line 86.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 85.
+(hyperref)                removing `subscript' on input line 86.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 85.
+(hyperref)                removing `math shift' on input line 86.
 
 [8
 
 ]
 Glava 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+cmsrbr on input line 101.
+LaTeX Font Info:    Trying to load font information for TS1+cmsrbr on input line 102.
 (/usr/share/texlive/texmf-dist/tex/latex/cmsrb/ts1cmsrbr.fd
 File: ts1cmsrbr.fd 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
@@ -1104,63 +1106,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
 [9
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbts1.enc}]
 Glava 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 134.
+(hyperref)                removing `subscript' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 134.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 134.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 134.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 134.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 134.
+(hyperref)                removed on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 134.
+(hyperref)                removing `subscript' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 134.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.33234pt
-(hyperref)                removed on input line 134.
+(hyperref)                removed on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 134.
+(hyperref)                removing `subscript' on input line 135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 135.
 
 
-Overfull \hbox (36.77383pt too wide) detected at line 135
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 135.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 135.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 135.
+
+
+Overfull \hbox (36.77383pt too wide) detected at line 136
 \OML/cmmsrbm/m/it/12 H[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 G[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 A[] \OT1/cmrsrbm/m/n/12 = []  \OMS/cmsy/m/n/12 ^^T  \OML/cmmsrbm/m/it/12 K[] \OT1/cmrsrbm/m/n/12 = []
  []
 
@@ -1174,14 +1181,14 @@ Glava 4.
 Glava 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 475.
+(hyperref)                removing `math shift' on input line 476.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 475.
+(hyperref)                removing `math shift' on input line 476.
 
 
-Overfull \hbox (14.47087pt too wide) detected at line 478
+Overfull \hbox (14.47087pt too wide) detected at line 479
 \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = \OML/cmmsrbm/m/it/12 z;   z; x \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 C  \OT1/cmrsrbm/m/n/12 =[]\OMS/cmsy/m/n/12 )   [] \OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = 0  (\OML/cmmsrbm/m/it/12 x[]; x[]; [] ; x[]  []:\OT1/cmrsrbm/m/n/12 )
  []
 
@@ -1192,12 +1199,12 @@ Glava 6.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 493.
+(amsmath)                 on input line 494.
 
 [20
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
 
  []
 
@@ -1206,20 +1213,20 @@ Glava 7.
 [25
 
 ] [26] [27] [28]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 816.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 817.
  [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39]
 Glava 8.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1214.
+(hyperref)                than one, level fixed on input line 1215.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1221.
+(hyperref)                removing `math shift' on input line 1222.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1221.
+(hyperref)                removing `math shift' on input line 1222.
 
 [40
 
@@ -1227,224 +1234,226 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Glava 9.
 [41
 
-] [42] [43] [44] [45]
-<slike/pravilo_desne_ruke.png, id=1524, 1536.74126pt x 809.0225pt>
+] [42] [43] [44] [45] [46]
+Missing character: There is no ; in font nullfont!
+[47] [48]
+<slike/pravilo_desne_ruke.png, id=1550, 1536.74126pt x 809.0225pt>
 File: slike/pravilo_desne_ruke.png Graphic file (type png)
 <use slike/pravilo_desne_ruke.png>
-Package pdftex.def Info: slike/pravilo_desne_ruke.png  used on input line 1548.
+Package pdftex.def Info: slike/pravilo_desne_ruke.png  used on input line 1907.
 (pdftex.def)             Requested size: 294.42636pt x 154.99971pt.
- [46 <./slike/pravilo_desne_ruke.png>] [47] [48]
+ [49 <./slike/pravilo_desne_ruke.png>] [50] [51]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1791.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1791.
+(hyperref)                removing `math shift' on input line 2209.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1791.
+(hyperref)                removing `superscript' on input line 2209.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1791.
+(hyperref)                removing `math shift' on input line 2209.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1791.
+(hyperref)                removing `math shift' on input line 2209.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1791.
+(hyperref)                removing `superscript' on input line 2209.
 
-[49]
-Overfull \hbox (11.85788pt too wide) detected at line 1802
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2209.
+
+[52]
+Overfull \hbox (11.85788pt too wide) detected at line 2220
 \OML/cmmsrbm/m/it/12 e[] \OT1/cmrsrbm/m/n/12 = (1\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 0\OML/cmmsrbm/m/it/12 ; [] ; \OT1/cmrsrbm/m/n/12 0)\OML/cmmsrbm/m/it/12 ;  [] ;  e[] \OT1/cmrsrbm/m/n/12 = (0\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 0\OML/cmmsrbm/m/it/12 ; [] ; \OT1/cmrsrbm/m/n/12 1)\OML/cmmsrbm/m/it/12 ;  e[] \OT1/cmrsrbm/m/n/12 = (\OML/cmmsrbm/m/it/12 i; \OT1/cmrsrbm/m/n/12 0\OML/cmmsrbm/m/it/12 ; [] ; \OT1/cmrsrbm/m/n/12 0)\OML/cmmsrbm/m/it/12 ;  [] ;  e[] \OT1/cmrsrbm/m/n/12 = (0\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 0\OML/cmmsrbm/m/it/12 ; [] ; i\OT1/cmrsrbm/m/n/12 )\OML/cmmsrbm/m/it/12 :
  []
 
-[50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62]
+[53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2564.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hom' on input line 2564.
+(hyperref)                removing `math shift' on input line 2982.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2564.
-
-[63] [64] [65] [66]
-Underfull \hbox (badness 10000) in paragraph at lines 2717--2719
-
- []
+(hyperref)                removing `\hom' on input line 2982.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2732--2733
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2982.
 
- []
-
-[67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 2796--2799
+[66] [67] [68] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 3135--3137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2803--2807
+Underfull \hbox (badness 10000) in paragraph at lines 3150--3151
 
  []
 
-[69] [70] Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 2879--2880
+[70] [71]
+Underfull \hbox (badness 10000) in paragraph at lines 3214--3217
 
  []
 
 
-Overfull \hbox (2.72772pt too wide) in paragraph at lines 2913--2915
+Underfull \hbox (badness 10000) in paragraph at lines 3221--3225
+
+ []
+
+[72] [73] Excluding 'comment' comment.
+Underfull \hbox (badness 10000) in paragraph at lines 3297--3298
+
+ []
+
+
+Overfull \hbox (2.72772pt too wide) in paragraph at lines 3331--3333
 [][]\T1/cmsrbr/b/n/12 Teorema 9.3.25. []\T1/cmsrbr/m/it/12 Ne-ka su $\OML/cmmsrbm/m/it/12 U$ \T1/cmsrbr/m/it/12 i $\OML/cmmsrbm/m/it/12 V$ \T1/cmsrbr/m/it/12 ko-na£-no-di-men-zi-o-ni v. pro-sto-ri nad $\U/msb/m/n/12 F$ \T1/cmsrbr/m/it/12 i $\OML/cmmsrbm/m/it/12 A \OMS/cmsy/m/n/12 2 [] []$\T1/cmsrbr/m/it/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2917--2918
+Underfull \hbox (badness 10000) in paragraph at lines 3335--3336
 
  []
 
-[71] [72] [73]
+[74] [75] [76]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3035.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3035.
+(hyperref)                removing `math shift' on input line 3453.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3035.
-
-[74]
-Underfull \hbox (badness 10000) in paragraph at lines 3087--3088
-
- []
+(hyperref)                removing `subscript' on input line 3453.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3096--3099
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3453.
 
- []
-
-[75]
-Underfull \hbox (badness 10000) in paragraph at lines 3174--3175
+[77]
+Underfull \hbox (badness 10000) in paragraph at lines 3505--3506
 
  []
 
-[76] [77]
-Underfull \hbox (badness 10000) in paragraph at lines 3309--3310
+
+Underfull \hbox (badness 10000) in paragraph at lines 3514--3517
 
  []
 
-[78] [79]
-Underfull \hbox (badness 10000) in paragraph at lines 3440--3441
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 3592--3593
 
  []
 
-[80]
-Underfull \hbox (badness 10000) in paragraph at lines 3444--3445
+[79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 3727--3728
 
  []
 
 [81] [82]
-Overfull \hbox (6.88722pt too wide) in paragraph at lines 3518--3518
+Underfull \hbox (badness 10000) in paragraph at lines 3858--3859
+
+ []
+
+[83]
+Underfull \hbox (badness 10000) in paragraph at lines 3862--3863
+
+ []
+
+[84] [85]
+Overfull \hbox (6.88722pt too wide) in paragraph at lines 3936--3936
 |[]\T1/cmsrbr/b/n/17.28 Redukcija li-ne-ar-nih ope-ra-to-ra na ko-na£-no-di-men-
  []
 
-[83] [84]
-Underfull \hbox (badness 10000) in paragraph at lines 3646--3647
+[86] [87]
+Underfull \hbox (badness 10000) in paragraph at lines 4064--4065
 
  []
 
-[85] [86] [87] [88]
-Underfull \hbox (badness 10000) in paragraph at lines 3828--3831
+[88] [89] [90] [91]
+Underfull \hbox (badness 10000) in paragraph at lines 4246--4249
 
  []
 
-[89] [90]
-Overfull \hbox (32.80608pt too wide) in paragraph at lines 3922--3924
+[92] [93]
+Overfull \hbox (32.80608pt too wide) in paragraph at lines 4340--4342
 []\T1/cmsrbr/m/n/12 Baza $\OML/cmmsrbm/m/it/12 e[] \OT1/cmrsrbm/m/n/12 = (\OML/cmmsrbm/m/it/12 A[]e; [] ; Ae; e\OT1/cmrsrbm/m/n/12 )$ \T1/cmsrbr/m/n/12 zo-ve se \T1/cmsrbr/b/n/12 ci-kli£-ka ba-za \T1/cmsrbr/m/n/12 od $\OML/cmmsrbm/m/it/12 A[]$\T1/cmsrbr/m/n/12 , a $\OML/cmmsrbm/m/it/12 L[] \OT1/cmrsrbm/m/n/12 = \OMS/cmsy/m/n/12 L\OT1/cmrsrbm/m/n/12 (\OMS/cmsy/m/n/12 f\OML/cmmsrbm/m/it/12 e; Ae; [] ; A[]e\OMS/cmsy/m/n/12 g\OT1/cmrsrbm/m/n/12 )$
  []
 
-[91] [92]
+[94] [95]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (2.68497pt too wide) in paragraph at lines 4046--4046
+Overfull \hbox (2.68497pt too wide) in paragraph at lines 4464--4464
 |[]\T1/cmsrbr/b/n/14.4 Invarijantnost li-ne-ar-nih ope-ra-to-ra nad re-al-nim vek. pro-
  []
 
-[93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
-Overfull \hbox (0.60283pt too wide) in paragraph at lines 4668--4668
+[96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109]
+Overfull \hbox (0.60283pt too wide) in paragraph at lines 5086--5086
 |[]\T1/cmsrbr/b/n/14.4 Karakterizacija her-mit-skih bi-li-ne-ar-nih funk-ci-o-na-la u uni-
  []
 
-[107] [108] [109] [110] [111]
+[110] [111] [112] [113] [114]
 Glava 10.
-[112
+[115
 
-] [113] [114] [115]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5237.
-
+] [116] [117] [118]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 5237.
+(hyperref)                removing `math shift' on input line 5655.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5237.
+(hyperref)                removing `superscript' on input line 5655.
 
-[116]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5655.
+
+[119]
 Glava 11.
-[117
+[120
 
-] [118] [119] [120]
-Underfull \hbox (badness 10000) in paragraph at lines 5396--5397
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5404--5405
+] [121] [122] [123]
+Underfull \hbox (badness 10000) in paragraph at lines 5814--5815
 
  []
 
-<slike/rolle.pdf, id=2306, 552.20506pt x 241.06795pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 5822--5823
+
+ []
+
+<slike/rolle.pdf, id=2334, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 5408.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 5826.
 (pdftex.def)             Requested size: 181.18439pt x 79.09654pt.
-<slike/Mittelwertsatz6.svg.png, id=2307, 1927.2pt x 1229.59375pt>
+<slike/Mittelwertsatz6.svg.png, id=2335, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 5429.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 5847.
 (pdftex.def)             Requested size: 181.18439pt x 115.59308pt.
-[121 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 5436--5438
+[124 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 5854--5856
 [][] 
  []
 
-[122] [123]
+[125] [126]
 Glava 12.
-[124
+[127
 
 ]
 Glava 13.
-[125
+[128
 
 ]
 Glava 14.
-[126
+[129
 
 ] (./matematika.aux)
  ***********
@@ -1455,18 +1464,18 @@ Package rerunfilecheck Info: File `matematika.out' has not changed.
 (rerunfilecheck)             Checksum: 8022F0D048735F43D7E1C0025C2A5A5B;44622.
  ) 
 Here is how much of TeX's memory you used:
- 30945 strings out of 467533
- 560118 string characters out of 5422138
- 1066596 words of memory out of 5000000
- 58422 multiletter control sequences out of 15000+600000
+ 31842 strings out of 467533
+ 580784 string characters out of 5422138
+ 1081557 words of memory out of 5000000
+ 59290 multiletter control sequences out of 15000+600000
  706061 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,22n,107p,753b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,22n,107p,753b,1061s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrx.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (126 pages, 1127368 bytes).
+Output written on matematika.pdf (129 pages, 1138919 bytes).
 PDF statistics:
- 2622 PDF objects out of 2984 (max. 8388607)
- 2425 compressed objects within 25 object streams
- 927 named destinations out of 1000 (max. 500000)
+ 2653 PDF objects out of 2984 (max. 8388607)
+ 2453 compressed objects within 25 object streams
+ 943 named destinations out of 1000 (max. 500000)
  1860 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -24,6 +24,7 @@
 \usepackage{subcaption}
 \usepackage{bm}
 \usepackage{tikz}
+\usepackage{tikz-3dplot}
 \usetikzlibrary{calc, shapes.geometric}
 \usetikzlibrary{arrows.meta, angles, quotes}
 \usetikzlibrary{arrows.meta}
@@ -1229,7 +1230,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{definition}
 \begin{figure}[!h]
     \centering
-    \begin{tikzpicture}[scale=0.9, >=stealth, every node/.style={font=\large}]
+    \begin{tikzpicture}[scale=0.9, >=stealth, every node/.style={font=\normalsize}]
     
     % Definicija tačaka (dve duži koje se seku u središtu)
     \coordinate (C) at (-3, 1.5);
@@ -1243,8 +1244,8 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \draw[thick] (C) -- (B);
     
     % Isprekidani vektori AB i CD (sa strelicama)
-    \draw[->, dashed, thick, black] (A) -- (B) node[midway, below, black] {\(\overrightarrow{AB}\)};
-    \draw[->, dashed, thick, black] (C) -- (D) node[midway, above, black] {\(\overrightarrow{CD}\)};
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, dashed, black] (A) -- (B) node[midway, below, black] {\(\overrightarrow{AB}\)};
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, dashed, black] (C) -- (D) node[midway, above, black] {\(\overrightarrow{CD}\)};
     
     
     % Označavanje tačaka A, B, C, D
@@ -1254,11 +1255,11 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \node[above right] at (D) {\(D\)};
     
     % Mali kružići na krajevima duži
-    \fill (A) circle (2.5pt);
-    \fill (B) circle (2.5pt);
-    \fill (C) circle (2.5pt);
-    \fill (D) circle (2.5pt);
-    \fill (S) circle (2.5pt);
+    \fill (A) circle (1.5pt);
+    \fill (B) circle (1.5pt);
+    \fill (C) circle (1.5pt);
+    \fill (D) circle (1.5pt);
+    \fill (S) circle (1.5pt);
     
     \end{tikzpicture}
 \end{figure}
@@ -1272,7 +1273,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \begin{figure}[!h]
   \centering
-  \begin{tikzpicture}[scale=0.4, >=stealth, every node/.style={font=\large}]
+  \begin{tikzpicture}[scale=0.4, >=stealth, every node/.style={font=\normalsize}]
 % Koordinate tačaka
 \coordinate (A) at (-5, 5);
 \coordinate (B) at (-8, 0);
@@ -1327,17 +1328,67 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{theorem}
     Ako je $A$ proizvoljna tačka skupa $\mathbb{E}$, za svaki vektor $a \in V$ postoji jedinstveno $B \in V$ t.d. je $a = AB$.
 \end{theorem}
+
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=1, >=stealth, every node/.style={font=\normalsize}]
+    
+    % Definicija tačaka (dve duži koje se seku u središtu)
+    \coordinate (A) at (-3, 0);
+    \coordinate (B) at (3, 0);
+    
+    \draw[thick] (A) -- (B);
+    
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, dashed, black] (A) -- (B) node[midway, above, black] {\(a\)};
+    \draw[solid] ($(A)!-2.5cm!(B)$) -- ($(B)!-2.5cm!(A)$);
+    
+    \node[above left] at (A) {\(A\)};
+    \node[above right] at (B) {\(B\)};
+    
+    \fill (A) circle (1.5pt);
+    \fill (B) circle (1.5pt);
+    
+    \end{tikzpicture}
+\end{figure}
+
 \begin{itemize}
     \item Dakle, prostor je \textit{homogen}, jer su sve tačke ravnopravne.
 \end{itemize}
 
 \begin{definition}
     Neka je $A \in \mathbb{E}$ i $a, b \in V$. Neka su $a$ i $b$ dati svojim predstavnicima $\overrightarrow{AB}$ i $\overrightarrow{BC}$. Pod \textbf{zbirom vektora} zovemo vektor $c$, čiji predstavnik je $\overrightarrow{AC}$.
+    \begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=1, >=stealth, every node/.style={font=\normalsize}]
+    
+    % Definicija tačaka (dve duži koje se seku u središtu)
+    \coordinate (A) at (-2, 3);
+    \coordinate (B) at (3, -2);
+    \coordinate (C) at (5, 2);
+    
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, solid, black] (A) -- (B) node[midway, below left, black] {\(\overrightarrow{AB}\)};
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, solid, black] (B) -- (C) node[midway, below right, black] {\(\overrightarrow{BC}\)};
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, dashed, black] (A) -- (C) node[midway, above right, black] {\(\overrightarrow{AC}\)};
+    
+    \node[above left] at (A) {\(A\)};
+    \node[below right] at (B) {\(B\)};
+    \node[above right] at (C) {\(C\)};
+    
+    \fill (A) circle (1.5pt);
+    \fill (B) circle (1.5pt);
+    \fill (C) circle (1.5pt);
+    
+    \end{tikzpicture}
+\end{figure}
 \end{definition}
+
+
+
 \begin{theorem}
     Zbir dva vektora ne zavisi od izbora njihovih predstavnika.
 \end{theorem}
 
+\newpage
 \begin{definition}
     \textbf{Množenje vektora skalarom} je operacija kojom se bilo kojem skalaru $\alpha \in \mathbb{R}$ i vektoru $a \in V$ dodeljuje jedinstveni $b \in V$ koji zadovoljava sledeće uslove:
     \begin{enumerate}
@@ -1361,25 +1412,112 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \begin{itemize}
     \item Vektor \[ a = \alpha_1 a_1 + \dots + \alpha_m a_m, \;\; \alpha_i \in \mathbb{R}\] nazivamo \textbf{linearnom kombinacijom} vektora $a_1, \dots, a_m$.
+    \begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=1, >=stealth, every node/.style={font=\normalsize}]
+    
+    % Definicija tačaka (dve duži koje se seku u središtu)
+    \coordinate (B) at (2, 3);
+    \coordinate (C) at (2, 6);
+    \coordinate (B_1) at (2, 4);
+    \coordinate (B_2) at (2, 5);
+    \coordinate (B_3) at (2, 6);
+
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, solid, red] (-3, 1) -- (B) node[midway, below, red] {\(b\)};
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, solid, blue] (B) -- (B_1) node[midway, right, blue] {\(a\)};
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, solid, blue] (B_1) -- (B_2) node[midway, right, blue] {\(a\)};
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, solid, blue] (B_2) -- (B_3) node[midway, right, blue] {\(a\)};
+    \draw[->, >={Stealth[length=9pt, width=5pt]}, dashed, green] (-3, 1) -- (C) node[midway, above left, green] {\(c = 3a + b\)};
+    
+    
+    \end{tikzpicture}
+\end{figure}
     \item Skup nenula vektora $W = \{a_1, \dots, a_m\}$ je \textbf{linearno (ne)zavisan} ako (ne) postoje skalari $\alpha_1, \dots, \alpha_m$ različiti od nule t.d. je 
     \[ \alpha_1 a_1 + \dots + \alpha_m a_m = 0. \]
-    \item \textbf{Dimenzija} je "{maksimalan broj}" linearno nezavisnih vektora nekog vektorskog prostora. Oni čine \textbf{bazu} tog prostora.
+    \item \textbf{Dimenzija} je "{maksimalan broj}" linearno nezavisnih vektora nekog vektorskog prostora. Oni čine \textbf{bazu} tog prostora (videti \ref{bazaDimenzija}).
 \end{itemize}
 
 \begin{theorem}
     Nenula vektori $a$ i $b$ su linearno zavisni ako i samo ako su kolinearni.
+    \begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=1, >=stealth, every node/.style={font=\normalsize}]
+    
+    % Definicija tačaka (dve duži koje se seku u središtu)
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (9, 0);
+    
+
+    \draw[solid] ($(A)!-2.5cm!(B)$) -- ($(B)!-9cm!(A)$);
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, solid, black] (A) -- (B) node[midway, above, black] {\(a\)};
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, solid, black] (A) -- (C) node[midway, above, black] {\(b = 3a\)};
+    
+    
+    \fill (A) circle (1.5pt);
+    
+    \end{tikzpicture}
+\end{figure}
 \end{theorem}
+\newpage
 \subsubsection*{Prava ($\mathbb{E}^1$)}
+\vfill
 \begin{corollary}
     Neka je $\mathbb{E}$ prava i $e_1$ nenula vektor u $V^1$. Tada je za proizvoljni $x \in V^1$ jedinstveno određen $x_1 \in \mathbb{R}$ t.d. je $x = x_1e_1$.
+    \begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=1, >=stealth, every node/.style={font=\normalsize}]
+    
+    % Definicija tačaka (dve duži koje se seku u središtu)
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (2, 0);
+    \coordinate (C) at (6, 0);
+    
+
+    \draw[solid] ($(A)!-2.5cm!(B)$) -- ($(B)!-6cm!(A)$);
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, solid, black] (A) -- (B) node[midway, above, black] {\(e_1\)};
+    \draw[->, >={Stealth[length=7pt, width=7pt]}, solid, black] (A) -- (C) node[midway, below, black] {\(x = 3e_1\)};
+    
+    \node[below, black] at (0, 0) {\($O$\)};
+    
+    \fill (A) circle (1.5pt);
+    
+    \end{tikzpicture}
+\end{figure}
 \end{corollary}
+\vfill
 \subsubsection*{Ravan ($\mathbb{E}^2$)}
+\vfill
 \begin{theorem}
     Ako je $\mathbb{E}$ ravan, onda u vektorskom prostoru $V^2$ postoje dva linearno nezavisna vektora. Svaka tri vektora iz $V^2$ su linearno zavisna.
 \end{theorem}
+\vfill
 \begin{corollary}
     Neka je $\mathbb{E}$ ravan i $e_1, e_2 \in V^2$ linearno nezavisni vektori. Za svaki $x \in V^2$ postoje jedinstveni $x_1, x_2 \in \mathbb{R}$ t.d. je $x = x_1e_1 + x_2e_2$.
+    \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1.3, >=Stealth, every node/.style={font=\normalsize}]
+        
+        \draw[step=1cm, gray!25, very thin] (-4, -4) grid (4, 4);
+        
+        % Koordinatne ose
+        \draw[->, thick] (-4, 0) -- (4, 0) node[right] {$x_1$};
+        \draw[->, thick] (0, -4) -- (0, 4) node[above] {$x_2$};
+        
+        % Koordinatni početak
+        \node[below left] at (0, 0) {$O$};
+        
+        % Vektor x = (-1, 3) plave boje
+        \draw[->, very thick, blue] (0, 0) -- (1, 0) node[midway, below=2pt] {$e_1$};
+        \draw[->, very thick, blue] (0, 0) -- (0, 1) node[midway, left=2pt] {$e_2$};
+        \draw[->, very thick, black] (0, 0) -- (3, 2);
+        \node at (2.5, 2.5) {$x = 3e_1 + 2e_2$};
+        
+        \end{tikzpicture}
+    \end{figure}
 \end{corollary}
+\vfill
+\newpage
 \subsubsection*{Prostor ($\mathbb{E}^3$)}
 \begin{lemma}
     Vektori $a, b, c$ su linearno zavisni ako i samo ako su koplanarni.
@@ -1388,10 +1526,62 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{theorem}
     Ako je $\mathbb{E}$ prostor, onda u $V^3$ postoje tri linearno nezavisna vektora. Svaka četiri vektora iz $V^3$ su linearno zavisna.
 \end{theorem}
-
 \begin{theorem}
     Neka je $\mathbb{E}$ prostor i $e_1, e_2, e_3 \in V^3$ tri linearno nezavisna vektora. Tada su za svaki $x \in V^3$ jedinstveno određeni $x_1, x_2, x_3 \in \mathbb{R}$ t.d. je $x = x_1e_1 + x_2e_2 + x_3e_3$.
-\end{theorem}\
+
+    \begin{figure}[!h]
+    \centering
+    \tdplotsetmaincoords{70}{120} % Postavka ugla gledanja
+    \begin{tikzpicture}[tdplot_main_coords, scale=1, >=Stealth, every node/.style={font=\normalsize}]
+    
+    % Mreža (grid) u x1x2 ravni (z=0) - pod
+    \begin{scope}[canvas is xy plane at z=0]
+        \draw[step=1cm, gray!25, very thin] (-1, -1) grid (5, 5);
+    \end{scope}
+    
+    % Mreža (grid) u x1x3 ravni (y=0) - levi zid (radi lepšeg 3D utiska)
+    \begin{scope}[canvas is xz plane at y=0]
+        \draw[step=1cm, gray!25, very thin] (-1, -1) grid (5, 5);
+    \end{scope}
+    
+    % Koordinatne ose
+    \draw[->, thick] (0, 0, 0) -- (5, 0, 0) node[below] {$x_1$};
+    \draw[->, thick] (0, 0, 0) -- (0, 5, 0) node[right] {$x_2$};
+    \draw[->, thick] (0, 0, 0) -- (0, 0, 5) node[above] {$x_3$};
+    
+    % Koordinatni početak
+    \node[below] at (0, 0, 0) {$O$};
+    
+    % Bazisni vektori (plavi) - e1, e2, e3
+    \draw[->, very thick, blue] (0, 0, 0) -- (1, 0, 0);
+    \draw[->, very thick, blue] (0, 0, 0) -- (0, 1, 0);
+    \draw[->, very thick, blue] (0, 0, 0) -- (0, 0, 1) node[midway, left=2pt] {$e_3$};
+    
+    % Isprekidane linije za projekcije (paralelepiped)
+    % Donja osnova (u ravni z=0)
+    \draw[dashed, thin] (0, 0, 0) -- (2, 0, 0) -- (2, 3, 0) -- (0, 3, 0) -- cycle;
+    % Gornja osnova (u ravni z=1.5)
+    \draw[dashed, thin] (0, 0, 4) -- (2, 0, 4) -- (2, 3, 4) -- (0, 3, 4) -- cycle;
+    % Vertikalne ivice
+    \draw[dashed, thin] (2, 0, 0) -- (2, 0, 4);
+    \draw[dashed, thin] (2, 3, 0) -- (2, 3, 4);
+    \draw[dashed, thin] (0, 3, 0) -- (0, 3, 4);
+    
+    % Rezultujući vektor x (od koordinatnog početka do vrha)
+    \draw[->, very thick, red] (0, 0, 0) -- (2, 3, 4);
+    
+    % Oznaka vektora (sa formulom)
+    \node[above, align=center, red] at (2, 5.5, 4) {$x = 2e_1 + 3e_2 + 4e_3$};
+    \node[blue] at (1, 0, -0.3) {$e_1$};
+    \node[blue] at (0, 1, -0.3) {$e_2$};
+    \fill (2, 3, 4) circle (1pt);
+    \fill (0, 0, 0) circle (2pt);
+    
+    \end{tikzpicture}
+\end{figure}
+\end{theorem}
+
+\subsubsection*{Prostor dimenzije $m$ ($\mathbb{E}^m$)}
 
 \begin{definition}
     Neka je $\mathcal{B} = (e_1, \dots, e_m), \; m \in \mathbb{N}_3$ baza vektorskog prostora $V^m$. Ako je $x \in V^m$, tada postoje jedinstveni $x_1, \dots, x_m \in \mathbb{R}$ t.d. je \[x = x_1e_1 + \dots + x_me_m.\]
@@ -1402,7 +1592,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     Bijektivno preslikavanje $\kappa_\mathcal{B}(x) = (x_1, \dots, x_m)$ zove se \textbf{koordinatizacija}.
     \label{koordinatizacija1}
 \end{definition}
-\newpage
 \begin{theorem}
     Neka je $\mathcal{B} = (e_1, \dots, e_m),\; m\in \mathbb{N}_3$ baza vektorskog prostora $V^m$. Tada važi:
     \begin{enumerate}
@@ -1411,9 +1600,30 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \item Svaka kooordinata proizvoda vektora i skalara jednaka je proizvodu tog skalara i odgovarajuće koordinate.
     \end{enumerate}
 \end{theorem}
-
+\newpage
 \begin{itemize}
     \item Ako je $O$ zadata tačka u $\mathbb{E}^1, \mathbb{E}^2$ ili $\mathbb{E}^3$, tada se svakoj tački tog prostora može pridružiti jedinstven vektor $OX$, koji zovemo \textbf{radijus-vektor} ili \textbf{vektor položaja} tačke $X$.
+    \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=0.8, >=Stealth, every node/.style={font=\normalsize}]
+        
+        \draw[step=1cm, gray!25, very thin] (-4, -4) grid (4, 4);
+        
+        % Koordinatne ose
+        \draw[->, thick] (-4, 0) -- (4, 0) node[right] {$x_1$};
+        \draw[->, thick] (0, -4) -- (0, 4) node[above] {$x_2$};
+        
+        % Koordinatni početak
+        \node[below left] at (0, 0) {$O$};
+        
+        % Vektor x = (-1, 3) plave boje
+        \draw[->, very thick, blue] (0, 0) -- (3, 2) node [midway, above=3pt] {$\overrightarrow{OX}$};
+        \node[above right] at (3, 2) {$X$};
+
+        \fill (3, 2) circle (2.5pt);
+        
+        \end{tikzpicture}
+    \end{figure}
     \item Koordinatni sistem označavamo sa npr. $Oe_1e_2e_3$. $O$ je \textbf{koordinatni početak}, a $x_1, x_2, x_3$ (ose određene vektorima $e_i$ i tačkom $O$) \textbf{koordinatne ose}.
     \item Tačku $X$ označavamo sa npr. $X(x_1, x_2, x_3)$.
     \item \textbf{Ortonormirana baza} se sastoji od baznih vektora koji su međusobno ortogonalni i intenziteta 1. Odgovarajući koordinatni sistem je \textbf{Dekartov pravougli koordinatni sistem}.
@@ -1463,28 +1673,160 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \draw ($(5, -3)!-2cm!(4, -2)$) -- ($(4, -2)!-3.5cm!(5, -3)$);
 
     \end{tikzpicture}
-    \caption{Paralelna vektor-projekcija}
         \end{figure}
     \item \textbf{Paralelna skalar-projekcija} je broj čija je apsolutna vrednost $||A'B'||$, a znak zavisi od toga da li je istosmeran sa $s$. Oznaka: $\operatorname{pr}_s^l(AB)$. Ako je skalar-projekcija ortogonalna, pišemo $\operatorname{pr}_s(AB)$.
-    \item Ako je $e$ jedinični vektor ose $s$, onda je $\operatorname{pr}_s^l(AB)e$.
+    \item Ako je $e$ jedinični vektor ose $s$, onda je $A'B' = \operatorname{pr}_s^l(AB)e$.
     \item Uglom koji zahvataju vektori $OA$ i $OB$ nazivamo ugao $AOB$.
 \end{itemize}
-
+\newpage
 \begin{theorem}
-    Ako je $w := \angle(AB, s)$, onda je 
+    Neka je $w := \angle(AB, s)$. Tada je 
     \[ \operatorname{pr}_s(AB) = ||AB|| \cos(w). \]
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+
+% Horizontalna prava
+\draw (-1, 0) -- (6, 0);
+
+% Kosa prava koja prolazi kroz A i B
+\draw (0.5, -0.5) -- (5.2, 4.2);
+
+% Tačke
+\coordinate (A) at (1, 0);
+\coordinate (C) at (4, 0);
+\coordinate (B) at (4, 3);
+\fill (A) circle (1.5pt);
+
+\node[below, black] at (5.5, 0) {$s$};
+\node[below, blue] at (2.5, 0) {$\operatorname{pr}_s(AB)$};
+
+% Vektor od C do B
+\draw[->, thick] (A) -- (B);
+\draw[thick, blue] (A) -- (C);
+
+\draw (B) -- (C);
+
+% Ugao omega kod temena A
+\draw (A) +(0:0.8) arc (0:45:0.8);
+\node at (1.5, 0.25) {$\omega$};
+
+% Prav ugao sa tačkom kod temena C
+\draw (C) +(90:0.5) arc (90:180:0.5);
+\fill (C) +(135:0.25) circle (1.2pt);
+
+% Oznake tačaka
+\node[below=4pt] at (A) {$A$};
+\node[below right] at (C) {$B'$};
+\node[above left=2pt] at (B) {$B$};
+\end{tikzpicture}
+\end{figure}
 \end{theorem}
 
 \begin{theorem}
     Za svaka dva vektora $AB$ i $BC$ ravni, svaku osu $s$ te ravni i svaku pravu $l$ t.d. $l \nparallel s$ važi
     \[ \operatorname{pr}_s^l (AB + BC) =   \operatorname{pr}_s^l(AB) + \operatorname{pr}_s^l(BC).\]
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=0.9, >=Stealth, every node/.style={font=\normalsize}]
+
+% Definicija tačaka
+\coordinate (B) at (0, -1);
+\coordinate (B') at (2, -3);
+\coordinate (A) at (-2, -2);
+\coordinate (A') at (-1, -3);
+\coordinate (C) at (3, -1.5);
+\coordinate (C') at (4.5, -3);
+\coordinate (O) at (-5, -3);
+\coordinate (s) at (10, -3);
+\coordinate (e) at (-3, -3);
+
+% Osa s
+\draw[thick] (O) -- (s);
+
+% Vektori
+\draw[->, thick] (A) -- (B);
+\draw[->, thick] (A') -- (C');
+\draw[->, thick] (O) -- (e);
+\draw[->, thick] (B) -- (C);
+\draw[->, dashed] (A) -- (C);
+
+% Označavanje tačaka i linija
+\node[below left] at (A) {\(A\)};
+\node[above right] at (B) {\(B\)};
+\node[below left] at (B') {\(B'\)};
+\node[below] at (O) {\(O\)};
+\node[above left] at (s) {\(s\)};
+\node[below left] at (A') {\(A'\)};
+\node[above] at (-4, -3) {\(e\)};
+\node[above right] at (6, -1) {\(l\)};
+\node[above right] at (C) {\(C\)};
+\node[below left] at (C') {\(C'\)};
+
+% Tačke i projekcijske linije
+\fill (A) circle (2.5pt);
+\draw[fill=white, draw=black] (O) circle (2.5pt);
+\fill (A') circle (2.5pt);
+
+\draw[dashed] ($(A)!-3.5cm!(A')$) -- ($(A')!-2cm!(A)$);
+\draw[dashed] ($(B)!-2cm!(B')$) -- ($(B')!-2cm!(B)$);
+\draw ($(8, -3)!-2cm!(7, -2)$) -- ($(7, -2)!-3.5cm!(8, -3)$);
+\draw[dashed] ($(C)!-2.5cm!(C')$) -- ($(C')!-2cm!(C)$);
+
+\end{tikzpicture}
+\end{figure}
 \end{theorem}
 
 \begin{theorem}
     \textbf{(Tales):} Za svaki vektor $AB$ ravni, svaku osu $s$, svaku pravu $l$ t.d. $l \nparallel s$ i svaki $\alpha \in \mathbb{R}$ važi
     \[ \operatorname{pr}_s^l(\alpha AB) = \alpha\operatorname{pr}_s^l(AB). \]
-\end{theorem}\
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=0.8, >=Stealth, every node/.style={font=\normalsize}]
 
+% Definicija tačaka
+\coordinate (A) at (-2, -3);
+\coordinate (B) at (-1, -1);
+\coordinate (C) at (0, 1);
+\coordinate (B') at (1, -3);
+\coordinate (C') at (4, -3);
+\coordinate (O) at (-5, -3);
+\coordinate (s) at (10, -3);
+\coordinate (e) at (-3, -3);
+
+% Osa s
+\draw[thick] (O) -- (s);
+
+% Vektori
+\draw[->, thick] (A) -- (B) node[midway, left] {$a$};
+\draw[->, thick] (A) -- (C) node[midway, above left] {$\alpha a$};;
+\draw[->, thick] (A) -- (C') node[midway, above] {$\alpha \operatorname{pr}_s(a)$};
+\draw[->, thick] (A) -- (B') node[midway, below ] {$\operatorname{pr}_s(a)$};
+\draw[->, thick] (O) -- (e);
+
+% Označavanje tačaka i linija
+\node[below left] at (A) {\(A\)};
+\node[right] at (B) {\(B\)};
+\node[below right] at (B') {\(B'\)};
+\node[below] at (O) {\(O\)};
+\node[above left] at (s) {\(s\)};
+\node[above] at (-4, -3) {\(e\)};
+\node[above right] at (6, -1) {\(l\)};
+\node[right] at (C) {\(C\)};
+\node[above right] at (C') {\(C'\)};
+
+% Tačke i projekcijske linije
+\fill (A) circle (2.5pt);
+\draw[fill=white, draw=black] (O) circle (2.5pt);
+
+\draw[dashed] ($(B)!-2cm!(B')$) -- ($(B')!-1cm!(B)$);
+\draw ($(8, -3)!-1cm!(7, -2)$) -- ($(7, -2)!-4.5cm!(8, -3)$);
+\draw[dashed] ($(C)!-1cm!(C')$) -- ($(C')!-1cm!(C)$);
+
+\end{tikzpicture}
+\end{figure}
+\end{theorem}\
+\newpage
 \begin{itemize}
     \item Pod uglom koji grade dva vektora uvek podrazumevamo onaj manji, tj. \[\angle(x, y) \in [0, \pi].\]
 \end{itemize}
@@ -1492,8 +1834,25 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{definition}
     \textbf{Skalarni proizvod} vektora je binarna operacija $\cdot:V \times V \to \mathbb{R}$, kojom bilo kojim vektorima $x$ i $y$ dodeljujemo broj
     \[ x\cdot y = ||x|| \; ||y|| \cos(\angle(x, y)). \] Koriste se i druge oznake: $\langle x, y \rangle, (x | y)$.
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+
+\draw[->, thick] (0, 0) -- (4, 2.5) node[right] {$x$};
+\draw[->, thick] (0, 0) -- (0, 4) node[left] {$y$};
+\draw[dashed] (4, 2.5) -- (0, 2.5);
+
+% Ugao omega kod temena
+\draw(0, 2) +(0:0) arc (270:360:0.5);
+\fill (0, 2.5) +(315:0.25) circle (1.2pt);
+\fill (0, 2.5) circle(2pt);
+\node[left, blue] at (0, 1.25) {$\operatorname{pr}_y(x)$};
+\draw[thick, blue] (0, 0) -- (0, 2.5);
+
+\end{tikzpicture}
+\end{figure}
 \end{definition}
-\intuicija Skalarni proizvod $\langle x, y \rangle$ ustvari predstavlja intenzitet vektora koji se dobija projektovanjem vektora $x$ na $y$ i onda množenjem skalarom $||y||$.\
+\intuicija Skalarni proizvod $\langle x, y \rangle$ u stvari predstavlja intenzitet vektora koji se dobija projektovanjem vektora $x$ na $y$ i onda množenjem skalarom $||y||$.\
 
 \begin{itemize}
     \item Vektori $x, y \neq 0$ su \textbf{ortogonalni} ako je $\displaystyle\angle(x, y) = \frac{\pi}{2}$.
@@ -1553,7 +1912,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     bilo koja parna permutacija (videti \ref{ParnostPermutacija}) pozitivno orijentisanog repera je pozitivno orijentisan reper.
     Dakle, cikličnom zamenom vektora repera se ne menja orijentacija, pa $(x, y, z), (y, z, x)$ i $(z, x, y)$ imaju istu orijentaciju.
 \end{itemize}
-
+\newpage
 \begin{definition}
     \textbf{Vektorski proizvod} je binarna operacija $V^3_e \times V^3_e \to V^3_e$ kojom bilo kojem paru vektora $x, y$ dodeljujemo 
     vektor $x \times y$ (slika \ref{vektorskiProizvod1}), koji ima sledeća svojstva:
@@ -1562,10 +1921,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \item $(x\times y) \perp x \;\land\; (x\times y) \perp y$,
         \item $(x, y, x\times y)$ je pozitivno orijentisana trojka.
     \end{enumerate}
-\end{definition}
-
-
-\begin{figure}[!h]
+    \begin{figure}[!h]
     \centering
     \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
         
@@ -1584,7 +1940,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \coordinate (P) at (4.5, 0.866); % Četvrto teme paralelograma (X + Y)
 
         % 3. Svetlosiva boja unutar paralelograma koji obrazuju vektori
-        \fill[gray!20] (O) -- (X) -- (P) -- (Y) -- cycle;
+        \fill[green!50] (O) -- (X) -- (P) -- (Y) -- cycle;
 
         % Ivice paralelograma nad vektorima
         \draw (Y) -- (P) -- (X);
@@ -1619,6 +1975,10 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \caption{Vektorski proizvod}
     \label{vektorskiProizvod1}
 \end{figure}
+\end{definition}
+
+
+
 
 \begin{definition}
     \textbf{Mešoviti proizvod} je trinarna operacija $[\cdot, \cdot, \cdot]:V^3_e \times V^3_e \times V^3_e \to \mathbb{R}$, kojom 
@@ -1629,8 +1989,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{theorem}
     Apsolutna vrednost mešovitog proizvoda $[x, y, z]$ jednaka je zapremini paralelepipeda određenog vektorima $x, y$ i $z$
     (slika \ref{mesovitiProizvod1}).
-\end{theorem}
-\begin{figure}[!h]
+    \begin{figure}[!h]
     \centering
     \begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
 
@@ -1655,7 +2014,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \coordinate (H_bot) at (2.2, 0.2);
 
         % --- BOJENJE BAZNIH RAVNI (Sivo umesto šrafure) ---
-        \fill[gray!25] (O) -- (X) -- (XY) -- (Y) -- cycle;
+        \fill[blue!50] (O) -- (X) -- (XY) -- (Y) -- cycle;
 
         % --- UNUTRAŠNJE I ZADNJE IVICE PARALELOPIPEDA ---
         % Isprekidane linije za nevidljive i projekcione ivice
@@ -1684,7 +2043,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         % --- VEKTORI ---
         % Bazni vektori x, y, z
         \draw[->, thick] (O) -- (X) node[midway, below=3pt] {$x$};
-        \draw[->, thick] (O) -- (Y) node[midway, above left=1pt] {$y$};
+        \draw[->, thick] (O) -- (Y) node[midway, right=3pt] {$y$};
         \draw[->, thick] (O) -- (Z) node[midway, above left=1pt] {$z$};
 
         % Vertikalna osa sa vektorskim proizvodom x \times y i projekcijom pr_{x \times y} z
@@ -1692,18 +2051,19 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \draw[->, ultra thick] (O) -- (0, 1.95); % Vektor projekcije pr_{x \times y} z
         
         % Vektor y \times z (normalan na stranu obuhvaćenu sa y i z)
-        \draw[->, >=Stealth] (O) -- (1.0, -1.3) node[midway, right=6pt] {$y \times z$};
+        \draw[->, >=Stealth] (O) -- (1.0, -1.3) node[midway, below left] {$y \times z$};
 
         % --- OZNAKE I UGLOVI ---
         % Ugao w između z i vertikalne ose
         \coordinate (V) at (0, 2.0);
         \draw pic[draw, angle radius=0.7cm] {angle = Z--O--V};
-        \node at (0.4, 1.3) {$w$};
+        %\node at (0.4, 1.3) {$w$};
 
         % Tekstualne oznake uz vertikalnu osu
-        \node[left=4pt] at (0, 1.6) {$x \times y$};
+        \node[above left=4pt] at (0, 1.6) {$x \times y$};
         \node[left=4pt] at (0, 0.7) {$\mathbf{pr}_{x \times y} z$};
 
+        
         % Tačka O sa belim kružićem
         \draw[fill=white, draw=black] (O) circle (1.5pt);
         \node[below left=2pt] at (O) {};
@@ -1712,6 +2072,8 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \caption{Mešoviti proizvod}
     \label{mesovitiProizvod1}
 \end{figure}
+\end{theorem}
+
 
 \begin{theorem}
     Ako su $x, y, z \in V_e^3$ i $\alpha \in \mathbb{R}$, tada važi:
@@ -1733,6 +2095,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \end{vmatrix}. \]
     Ukoliko je $e$ negativno orijentisana, treba pomnožiti determinantu sa $-1$. Više o determinantama se može videti u \ref{determinante}.
 \end{itemize}
+\vfill
 
 \begin{theorem}
     Za $x, y, z \in V_e^3$ važi formula
@@ -1741,10 +2104,65 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{corollary}
     Vektorsko množenje nije asocijativno.
 \end{corollary}
+\vfill
 \begin{theorem}
     \textbf{(Jakobijev identitet):} 
     \[ x \times (y \times z) + y \times (z \times x) + z \times (x \times y) = 0 \]
+
+    \begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=1.2, >=Stealth, every node/.style={font=\normalsize}]
+
+% --- TEMENA ZIDOVA (Proširene dimenzije kutije) ---
+\coordinate (O) at (0, 0);          % Koordinatni početak
+\coordinate (x_pt) at (-2.2, -1.65);% Produžen vektor x (napred-levo)
+\coordinate (y_pt) at (0, 4.2);     % Produžen vektor y (gore)
+\coordinate (z_pt) at (5.0, 0);     % Produžen vektor z (desno)
+
+\coordinate (xy) at (-2.2, 2.55);   % Temena zida xy (x_pt + y_pt)
+\coordinate (yz) at (5.0, 4.2);    % Temena zida yz (y_pt + z_pt)
+\coordinate (xz) at (2.8, -1.65);   % Temena zida xz (x_pt + z_pt)
+
+% --- ISPISIVANJE ZIDOVA (Zadnji, Levi, Pod) ---
+\draw[thick] (O) -- (y_pt) -- (yz) -- (z_pt) -- cycle; % Zadnji zid (ravan yz)
+\draw[thick] (O) -- (y_pt) -- (xy) -- (x_pt) -- cycle; % Levi zid (ravan xy)
+\draw[thick] (O) -- (x_pt) -- (xz) -- (z_pt) -- cycle; % Pod (ravan xz)
+
+% --- OSNOVNI VEKTORI x, y, z ---
+\draw[->, ultra thick, red] (O) -- (x_pt) node[below left=2pt] {$x$};
+\draw[->, ultra thick, blue] (O) -- (y_pt) node[above left=2pt] {$y$};
+\draw[->, ultra thick, green!60!black] (O) -- (z_pt) node[below right=2pt] {$z$};
+
+% --- UNUTRAŠNJI VEKTORI ---
+
+% KOMPONENTE NA ZADNJEM ZIDU (ravan yz)
+% Svetloplavi (+y smer)
+\draw[->, thick, cyan!80!black] (2.8, 0.9) -- (2.8, 2.4)
+    node[midway, right=3pt] {$y\langle x, z \rangle$};
+% Narandžasti (-z smer)
+\draw[->, thick, orange] (2.8, 0.9) -- (1.3, 0.9)
+    node[midway, above=3pt] {$-z\langle x, y \rangle$};
+
+% KOMPONENTE NA PODU (ravan xz)
+% Narandžasti (+z smer)
+\draw[->, thick, orange] (-0.4, -0.7) -- (1.6, -0.7)
+    node[midway, above=2pt] {$z\langle y, x \rangle$};
+% Ljubičasti (-x smer)
+\draw[->, thick, purple] (1.6, -0.7) -- (1.0, -1.15)
+    node[midway, below right] {$-x\langle y, z \rangle$};
+
+% KOMPONENTE NA LEVOM ZIDU (ravan xy)
+% Ljubičasti (+x smer)
+\draw[->, thick, purple] (-0.6, 2.0) -- (-1.2, 1.55)
+    node[midway, above left=2pt] {$x\langle z, y \rangle$};
+% Svetloplavi (-y smer)
+\draw[->, thick, cyan!80!black] (-1.2, 1.55) -- (-1.2, 0.3)
+    node[below] {$-y\langle z, x \rangle$};
+
+\end{tikzpicture}
+\end{figure}
 \end{theorem}
+\vfill
 \newpage
 \section{Vektorski prostori}
 
@@ -1899,7 +2317,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{itemize}
 
 \subsection{Baza i dimenzija vektorskog prostora}
-
+\label{bazaDimenzija}
 \begin{itemize}
     \item Skup $B$ je \textbf{skup generatora (generišući skup)} ako je svaki $x \in V$ linearna kombinacija vektora iz $B$.
     \item Beskonačan skup je linearno nezavisan ako su svi njegovi konačni podskupovi linearno nezavisni.
@@ -2102,7 +2520,7 @@ zato uzimamo samo tu komponentu.
     \[ x \sim_L y \iff x - y \in L. \]
     Ovo je relacija ekvivalencije na $V$. Njene klase ekvivalencije su
     \[ [x]_L = \{ y \in V \;|\; x \sim_L y \}. \]
-    \intuicija $[x]_L$ je ustvari jedna translacija prostora $L$ za vektor $x$. Dakle:
+    \intuicija $[x]_L$ je u stvari jedna translacija prostora $L$ za vektor $x$. Dakle:
     \[ [x]_L = \{ y \in V \;|\; x \sim_L y \} = \{ x + u \;|\; u \in L \} = x + L .\]
     Slika \ref{FaktorProstor1} ovo lepo ilustruje na primeru $\mathbb{R}^2$.
     \begin{figure}[!h]
