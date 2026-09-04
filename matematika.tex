@@ -49,6 +49,9 @@
 \renewcommand{\ALG@name}{Algoritam}
 \numberwithin{algorithm}{section}
 \makeatother
+\AtBeginDocument{%
+    \renewcommand{\bibname}{Literatura}%
+}
 
 \DeclareMathOperator{\arccot}{arccot}
 
@@ -1478,7 +1481,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \draw[->, >={Stealth[length=7pt, width=7pt]}, solid, black] (A) -- (B) node[midway, above, black] {\(e_1\)};
     \draw[->, >={Stealth[length=7pt, width=7pt]}, solid, black] (A) -- (C) node[midway, below, black] {\(x = 3e_1\)};
     
-    \node[below, black] at (0, 0) {\($O$\)};
+    \node[below, black] at (0, 0) {$O$};
     
     \fill (A) circle (1.5pt);
     
@@ -2164,18 +2167,20 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \end{theorem}
 \vfill
 \newpage
+
+
 \section{Vektorski prostori}
 
 \subsection{Definicija i primeri vektorskih prostora}
 
 \begin{definition}
-    Neka je $V \neq 0$. Tada se uređena četvorka $(V, \mathbb{F}, +, \cdot) = V$ zove \textbf{vektorski prostor} nad poljem $\textbf{F}$ ako za 
+    Neka je $V \neq 0$. Tada se uređena četvorka $(V, \mathbb{F}, +, \cdot) = V$ zove \textbf{vektorski prostor} nad poljem $\mathbb{F}$ ako za 
     $\forall \alpha, \beta \in \mathbb{F}, \;\forall x,y \in V$ važi:
     \begin{description}
         \item[(VP1)] $(V, +)$ je Abelova grupa (videti \ref{abelovaGrupa}),
         \item[(VP2)] $\alpha (\beta x) = (\alpha \beta)x$,
         \item[(VP3)] $(\alpha + \beta)x = \alpha x + \beta x$,
-        \item[(VP4)] $\alpha(x + y) = \alpha x + \beta y$,
+        \item[(VP4)] $\alpha(x + y) = \alpha x + \alpha y$,
         \item[(VP5)] $1 \cdot x = x$.
     \end{description}
 \end{definition}
@@ -2236,6 +2241,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \item[(s)] $\mathcal{A} + \mathcal{B} = (\alpha_{ij}) + (\beta_{ij}) = (\alpha_{ij} + \beta_{ij})$,
         \item[(m)] $\lambda \mathcal{A} = \lambda (\alpha_{ij}) = (\lambda \alpha_{ij})$. 
     \end{description}
+    \intuicija Matrice zapravo predstavljaju linearna preslikavanja (pogledati \ref{linearniOperator}).
     \item \textbf{Množenje matrica}, $\cdot : \mathbb{M}_{mn}(\mathbb{F}) \times \mathbb{M}_{nk}(\mathbb{F}) \to \mathbb{M}_{mn}(\mathbb{F})$, se definiše na sledeći način:
     \[ \mathcal{AB} = (\alpha_{ij}) \cdot (\beta_{ij}) = \begin{bmatrix}
         \alpha_{11} & \dots & \alpha_{1n}\\
@@ -2264,9 +2270,12 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
         \displaystyle \sum_{r=1}^{n} \alpha_{mr}\beta_{rk}
         \end{bmatrix}.
     \]
+    \intuicija Množenje matrica predstavlja kompoziciju linearnih preslikavanja (videti \ref{linearniOperator}). Izraz $\mathcal{AB}v$ zapravo predstavlja 
+    primenu operatora $B$ na $v$, a zatim primenu operatora $A$ na vektor $\mathcal{B}v$. Sve ovo je detaljno objašnjeno u \ref{linearniOperator}.
     \item Množenje matrica je asocijativno kad ima smisla: $\mathcal{A}(\mathcal{BC}) = (\mathcal{AB})\mathcal{C}$.
-    \item Vektore smatramo $n \times 1$ matricama. Više o ovome (uključujući intuiciju) u \ref{linearniOperator}.
+    \item Vektore smatramo $n \times 1$ matricama. 
     \item \textbf{Transponovanje} matrica podrazumeva zamenu vrsta i kolona: \[\mathcal{A}^\mathcal{T} = (\alpha_{ij})^\mathcal{T} = (\alpha_{ji}).\]
+    \intuicija Za intuiciju iza transponovanja pogledati \ref{dualnoPreslikavanje}.
 \end{itemize}
 
 \begin{theorem}
@@ -2318,8 +2327,10 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 \subsection{Baza i dimenzija vektorskog prostora}
 \label{bazaDimenzija}
+\begin{definition}
+    Skup $B$ je \textbf{skup generatora (generišući skup)} ako je svaki $x \in V$ linearna kombinacija vektora iz $B$.
+\end{definition}
 \begin{itemize}
-    \item Skup $B$ je \textbf{skup generatora (generišući skup)} ako je svaki $x \in V$ linearna kombinacija vektora iz $B$.
     \item Beskonačan skup je linearno nezavisan ako su svi njegovi konačni podskupovi linearno nezavisni.
 \end{itemize}
 
@@ -2328,9 +2339,10 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     je $a_i$ linearna kombinacija svojih prethodnika.
 \end{theorem}
 
-\begin{itemize}
-    \item Podskup $B$ vektorskog prostora $V$ je \textbf{baza} tog prostora ako je i njegov skup generatora i linearno nezavisan.
-\end{itemize}
+\begin{definition}
+    Podskup $B$ vektorskog prostora $V$ je \textbf{baza} tog prostora ako je i skup generatora za $V$ i linearno nezavisan.
+\end{definition}
+
 
 \begin{theorem}
     \textbf{(O bazi)}: Neka je $V$ proizvoljan vektorski prostor nad $F$. Tada:
@@ -2340,10 +2352,12 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \end{enumerate}
 \end{theorem}
 
-\begin{itemize}
-    \item \textbf{Dimenzija} vektorskog prostora je kardinalni broj njegove baze.
-    \item Prostor je \textbf{konačnodimenzion} ako ima barem jednu konačnu bazu.
-\end{itemize}
+\begin{definition}
+    \textbf{Dimenzija} vektorskog prostora je kardinalni broj njegove baze.
+\end{definition}
+\begin{definition}
+    Prostor je \textbf{konačnodimenzion} ako ima barem jednu konačnu bazu.
+\end{definition}
 
 \begin{lemma}
     Neka je $B = \{a_1, \dots, a_n\}$ neki skup generatora vektorskog prostora $V$ i $S = \{b_1, \dots, b_m\}$ neki linearno nezavisni podskup od $V$. Tada 
@@ -2513,6 +2527,7 @@ Dakle, bazni vektor prostora $N$ dobijamo kao linearnu kombinaciju vektora $e_j$
 zato uzimamo samo tu komponentu.
 
 \newpage
+
 \subsection{Faktor prostor}
 
 \begin{itemize}
@@ -2792,7 +2807,10 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
 
 
 \newpage
+
+
 \section{Linearni operatori}
+
 \subsection{Definicija i svojstva linearnog operatora}
 \label{linearniOperator}
 
@@ -3309,6 +3327,7 @@ Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
 \end{itemize}
 
 \subsection{Dualno (transponovano) preslikavanje}
+\label{dualnoPreslikavanje}
 Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \hom  \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
 \[ (A^*[f])(x) := A^*[f](x) = (f \circ A)(x) = f(A(x)) \]
 Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjungovani)} operator od $A$.
@@ -3354,9 +3373,6 @@ a $\mathcal{T^T}$dimenzija $n \times m$, tj. oblika
 važi $(AB)^\mathcal{T} = B^\mathcal{T} A^\mathcal{T}$. Naime, ako važi $U \xrightarrow{AB} W$, tj. $U \xrightarrow{B} V \xrightarrow{A} W$, 
 u duhu dosadašnje diskusije dobijamo $W^* \xrightarrow{A^\mathcal{T}} V^* \xrightarrow{B^\mathcal{T}} U^*$. Dakle, ovo je intuicija iza trasponovane matrice. Da rezimiramo:
 \[ \boxed{u \in U \xrightarrow{A} A(u) \in V \xrightarrow{f} f(A(u)) \in \mathbb{F}}, \;\; f: V \to \mathbb{F}, \;A: U \to V \]
-
-
-
 
 \subsection{Zavisnost matrice operatora od baze}
 Neka su $U, V, W$ konačnodimenzioni vektorski prostori nad poljem $\mathbb{F}$ i neka je 
@@ -3448,6 +3464,8 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
 
 
 \newpage
+
+
 \section{Determinante}
 \label{determinante}
 \subsection{Simetrična grupa $\mathbb{S}_n$}
@@ -5909,5 +5927,42 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c)(b - a) = f(b) - f(a)$.
 \chapter{Statistika}
 
 \chapter{Numerička analiza}
-                                                                                                      
+\newpage
+
+\begin{thebibliography}{9}   % Broj 9 označava širinu za oznake (ako imaš do 9 stavki, dovoljno je)
+
+\bibitem{zolic1}
+A. Zolić, Z. Kadelburg, S. Ognjanović,
+\emph{Analiza sa algebrom 1},
+udžbenik sa zbirkom zadataka za 1. razred Matematičke gimnazije,
+Krug, Beograd.
+
+\bibitem{kadelburg2}
+Z. Kadelburg, V. Mićić, S. Ognjanović, S. Čukić,
+\emph{Analiza sa algebrom 2},
+udžbenik sa zbirkom zadataka za 2. razred Matematičke gimnazije,
+Krug, Beograd.
+
+\bibitem{kadelburg3}
+Z. Kadelburg, V. Mićić, S. Ognjanović,
+\emph{Analiza sa algebrom 3},
+udžbenik sa zbirkom zadataka za 3. razred Matematičke gimnazije,
+Krug, Beograd.
+
+\bibitem{kadelburg4}
+Z. Kadelburg, S. Ognjanović, V. Mićić, S. Čukić,
+\emph{Analiza sa algebrom 4},
+udžbenik sa zbirkom zadataka za 4. razred Matematičke gimnazije,
+Krug, Beograd.
+
+\bibitem{knjiga1} 
+   Z. Rakić, 
+   \emph{Linearna algebra i analitička geometrija}, 
+   Matematički fakultet, Beograd, 2015.
+
+
+
+\bibitem{3b1b}
+Youtube/3Blue1Brown, \emph{Essence of Linear Algebra}
+\end{thebibliography}                                                                                              
 \end{document}
