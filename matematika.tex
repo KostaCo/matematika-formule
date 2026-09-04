@@ -2392,7 +2392,8 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     Neka je $V$ vektorski prostor nad $\mathbb{F}$ i neka je $L$ podskup od $V$. $L$ je \textbf{potprostor} od $V$ ako je 
     i sam vektorski prostor nad $\mathbb{F}$ s obzirom na iste operacija sabiranja vektora i množenja vektora skalarom. Oznaka: $L \leq V$.
 \end{definition}
-
+\intuicija Na primer, ako je ravan koja sadrži koordinatni početak jedan vektorski prostor, onda su sve prave koje prolaze kroz koordinatni početak i 
+sadrže se u toj ravni njeni potprostori.
 \begin{theorem}
     \textbf{(Karakterizacija potprostora)}: Neka je $\emptyset \neq L$ podskup vektorskog prostora $V$. Sledeći iskazi su ekvivalentni:
     \begin{enumerate}
@@ -2416,9 +2417,11 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     potprostor od $V$.
 \end{theorem}
 
+\intuicija Na primer, presek dve ravni iz 3-dimenzionog prostora $V$ koje prolaze kroz koordinatni početak je prava, koja je takođe potprostor od $V$.
+
 \begin{itemize}
     \item Takođe, od poznatih vektorskih potprostora nad istim poljem $\mathbb{F}$ možemo dobiti nove preko \textbf{direktnog
-    proizvoda prostora}. Ako su $V$ i $W$ dva vektorska prostora nad $\mathbb{F}$, tada na njihovom Dekartovom proizvodu 
+    proizvoda prostora}. Ako su $V$ i $W$ dva vektorska prostora nad $\mathbb{F}$, tada na njihovom Dekartovom proizvodu $V \times W$
     možemo definisati sabiranje vektora i množenje vektora skalarom:
     \begin{description}
         \item[(s)] $(v_1, w_1) + (v_2, w_2) = (v_1 +_v v_2, w_1 +_w w_2), \;\; v_1, v_2 \in V, \; w_1, w_2 \in W$
@@ -2455,6 +2458,8 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \[ \mathcal{L}(S) = \bigcap_{S \subseteq M \leq V} M = \{\alpha_1a_{i_1} + \dots + \alpha_ka_{i_k}\;|\;k \in \mathbb{N}, \alpha_i \in \mathbb{F}, a_{i_j}\in S\}. \]
 \end{theorem}
 
+\intuicija Na primer, $\mathcal{L}\{(1, 0, 0), (0, 1, 0), (0, 0, 1)\} = \mathbb{R}^3$.
+\vfill
 \subsection{Suma potprostora}
 \begin{itemize}
     \item Neka su $L$ i $M$ potprostori konačnodimenzionog vektorskog prostora $V$. \textbf{Suma potprostora} $L$ i $M$ 
@@ -2485,6 +2490,8 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \begin{corollary}
     Suma $M + L$ je direktna ako i samo ako je \[\dim L + \dim M = \dim(L + M).\]
 \end{corollary}
+
+\intuicija Posmatrati, na primer, presek dve ravni ili ravni i prave u prostoru.
 
 \begin{algorithm}[!h]
     \caption{Nalaženje baze sume potprostora}
@@ -2518,7 +2525,8 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \end{enumerate}
 \end{algorithm}
 \intuicija Iz Grasmanove formule (teorema \ref{Grasman}) znamo da je
-\[ \dim (M \cap N) = \dim M + \dim N - \dim (M + N) = k + l - (k + s) = l-s. \]
+\[ \dim (M \cap N) = \dim M + \dim N - \dim (M + N) = k + l - (k + s) = l-s, \]
+\[ l - s = |B_M| + |B_N| - |B_{M+N}|. \]
 To je upravo broj $|B_{M \cap N}|$. U ovom algoritmu praktično samo uzimamo vektore iz baze $B_N$ i iz njih "izvlačimo" komponente 
 iz $B_M$. Ove komponente će pripadati upravo prostoru $M \cap N$. Zamislimo to na sledeći način. Recimo da imamo dve ravni koje se 
 seku po pravoj. Neka su $e_1$ i $e_2$ bazni vektori prve, a $f_1$ i $f_2$ bazni vektori druge ravni. Tada možemo dobiti vektor 
