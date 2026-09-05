@@ -2835,14 +2835,83 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
     \end{enumerate}
     Koristi se i skraćena oznaka $Ax := A(x)$.
 \end{definition}
+\vfill
+\intuicija Linearni operator na vektor deluje isto kao množenje tog vektora odgovarajućom matricom sleva (objašnjeno formalno kasnije - teorema 
+\ref{matriceHomomorfizmiIzomorfni}). Matrica nam govori "{gde će završiti}" vektori baze nakon primene operatora. Na primer, recimo da u dvodimenzionom 
+prostoru (baza $e = ((1, 0), (0, 1))$) imamo operator $A$, 
+kojem odgovara matrica \[ \mathcal{A} = \begin{bmatrix}
+    \frac{1}{3} & -1 \\[6pt]
+    2           &  1
+\end{bmatrix}. \] Zaključujemo da je $A(e_1) = (\frac{1}{3}, 2), \; A(e_2) = (-1, 1)$. Dakle, ceo prostor se transformiše na isti način kao i vektori 
+baze (lema \ref{OdredjenostLinearnogOperatora}). Transformaciju $A$ možemo prikazati vizuelno:
+\begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % --- PRVI KOORDINATNI SISTEM (Levo) ---
+        \begin{scope}[xshift=0cm]
+            \draw[step=1cm, gray!25, very thin] (-3, -3) grid (4, 4);
+        
+            \draw[->, thick] (-3, 0) -- (4, 0);
+            \draw[->, thick] (0, -3) -- (0, 4);
+        
+            \node[below left] at (0, 0) {$O$};
+    
+            \draw[->, thick, blue] (0, 0) -- (1, 0) node[below right, blue] {$e_1$};
+            \draw[->, thick, blue] (0, 0) -- (0, 1) node[above left, blue] {$e_2$};
+            \draw[->, thick, olive] (0, 0) -- (1, 2) node[above left, olive] {$x$};
+        \end{scope}
 
+        % --- DRUGI KOORDINATNI SISTEM (Desno) ---
+        \begin{scope}[xshift=8.5cm]
+
+            % Mreža i rotirane ose unutar transformisanog sistema
+            \begin{scope}
+                \clip (-3, -3) rectangle (4, 4);
+                \begin{scope}[x={(0.3333cm, 2cm)}, y={(-1cm, 1cm)}]
+                    % Transformisana mreža
+                    \foreach \i in {-10,-9,...,10} {
+                        \draw[gray!30, very thin] (-15, \i) -- (15, \i);
+                        \draw[gray!30, very thin] (\i, -15) -- (\i, 15);
+                    }
+                    
+                    % Ose rotirane tako da prate pravce A(e_1) i A(e_2)
+                    \draw[->, thick] (-2, 0) -- (2, 0);
+                    \draw[->, thick] (0, -3) -- (0, 3);
+                \end{scope}
+            \end{scope};
+        
+            % Vektori definisani u transformisanom koordinatnom sistemu
+            \begin{scope}[x={(0.3333cm, 2cm)}, y={(-1cm, 1cm)}]
+                \node[below left] at (0, 0) {$O$};
+    
+                \draw[->, thick, blue] (0, 0) -- (1, 0) node[below right, blue] {$A(e_1)$};
+                \draw[->, thick, blue] (0, 0) -- (0, 1) node[below left, blue] {$A(e_2)$};
+                \draw[->, thick, olive] (0, 0) -- (1, 2) node[below right=4pt, olive] {$A(x)$};
+            \end{scope}
+
+            %\draw[->, dashed] (-3, 0) -- (4, 0);
+            %\draw[->, dashed] (0, -3) -- (0, 4);
+
+        \end{scope}
+
+        % Strelica transformacije
+        \draw[->, thick, >=Stealth] (3.5, 1.2) to[out=30, in=150] (6.3, 1.2);
+        \node at (4.8, 2) {$A$};
+        \end{tikzpicture}
+    \end{figure}
+
+    Prikazan je i vektor $x = (1, 2)$. Na slici desno je $A(x) = (-\frac{5}{3}, 4)$. Napomenimo da dimenzije prostora $U$ i $V$ ne moraju biti iste, tako
+    da matrica nije nužno kvadratna.
+    \vfill
+    \newpage
 \begin{itemize}
     \item \textbf{Monomorfizam} - injektivni linearni operator
     \item \textbf{Epimorfizam} - surjektivni linearni operator
     \item \textbf{Izomorfizam} - bijektivni linearni operator
     \item \textbf{Endomorfizam} - linearni operator koji slika $V$ u $V$
     \item \textbf{Automorfizam} - bijektivni endomorfizam
-    \item $\hom_\mathbb{F}(U, V) = \hom (U, V)$ - skup svih linearnih operatora sa $U$ u $V$
+    \item $\hom_\mathbb{F}(U, V) = \hom (U, V)$ - skup svih linearnih operatora sa $U$ na $V$
     \item Ako je $U = V$, onda je $\hom V := \hom (U, V)$.
     \item $\operatorname{Im} A := A(U)$ - \textbf{slika} preslikavanja $A:U \to V$
     \item $\ker A := \{x \in U \;|\; Ax = 0\} = A^{-1}(0)$ - \textbf{jezgro (kernel)} preslikavanja $A:U \to V$
@@ -2864,10 +2933,13 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
     Kompozicija linearnih operatora je linearni operator. Ako $\dim V\geq2$, onda je $(\hom V, \circ)$ nekomutativni monoid (videti \ref{monoid}), čiji invertibilini
     elementi su automorfizmi.
 \end{theorem}
+\intuicija Kompozicija linearnih operatora se može posmatrati kao množenje matrica:
+\[ (A\circ B)(v) = A(B(v)) = \mathcal{AB}v. \]
 
 \subsection{Rang i defekt linearnog operatora}
 
 \begin{lemma}
+    \label{OdredjenostLinearnogOperatora}
     Linearni operator $A:U \to V$ potpuno je određen svojim dejstvom na nekoj bazi $e$ vektorskog prostora $U$.
 \end{lemma}
 \intuicija $\displaystyle Ax = \sum_{i=1}^{m}x_iA(e_i)$
@@ -2876,12 +2948,61 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
     \item $r(A) = \dim (\operatorname{Im} A)$ - \textbf{rang} linearnog operatora
     \item $d(A) = \dim (\ker A)$ - \textbf{defekt} linearnog operatora
 \end{itemize}
-
+\newpage 
 \begin{theorem}
     \textbf{(O rangu i defektu linearnog operatora)}: Neka je $A: U \to V$ linearni operator i $\dim U < \infty$. Tada je 
     \[ r(A) + d(A) = \dim U.\]
 \end{theorem}
+\vfill
+\intuicija Defekt je veći od jedan (a rang nije maksimalan) kada linearni operator smanjuje dimenziju prostora. Na primer, ako je operator $A$ opisan 
+matricom \[\mathcal{A} = \begin{bmatrix}
+    1 & 2 \\
+    1 & 2
+\end{bmatrix},\] onda se oba vektora baze slikaju na pravu $y = x$, pa je rezultujući prostor jednodimenzion. 
 
+\begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % --- PRVI KOORDINATNI SISTEM (Levo) ---
+        \begin{scope}[xshift=0cm]
+            \draw[step=1cm, gray!25, very thin] (-1, -1) grid (6, 6);
+        
+            \draw[->, thick] (-1, 0) -- (6, 0);
+            \draw[->, thick] (0, -1) -- (0, 6);
+        
+            \node[below left] at (0, 0) {$O$};
+    
+            \draw[->, thick, blue] (0, 0) -- (1, 0) node[below right, blue] {$e_1$};
+            \draw[->, thick, blue] (0, 0) -- (0, 1) node[above left, blue] {$e_2$};
+            \draw[->, thick, olive] (0, 0) -- (1, 2) node[above left, olive] {$x$};
+        \end{scope}
+
+        % --- DRUGI KOORDINATNI SISTEM (Desno) ---
+        \begin{scope}[xshift=8.5cm]
+            
+            \node[below right] at (0, 0) {$O$};
+            
+            
+            %\draw[->, dashed] (-3, 0) -- (4, 0);
+            %\draw[->, dashed] (0, -3) -- (0, 4);
+            
+            \draw[->, thick] (-1, -1) -- (6, 6);
+            \draw[->, thick, blue] (0, 0) -- (1, 1) node[below right] {$A(e_1)$};
+            \draw[->, thick, blue] (0, 0) -- (2, 2) node[below right] {$A(e_2)$};
+            \draw[->, thick, red] (0, 0) -- (5, 5) node[below right] {$A(x)$};
+
+            \fill (0, 0) circle (2pt);
+        \end{scope}
+
+        % Strelica transformacije
+        \draw[->, thick, >=Stealth] (5.1, 3.2) to[out=30, in=150] (7.8, 3.2);
+        \node at (6.4, 4) {$A$};
+        \end{tikzpicture}
+    \end{figure}
+
+    \noindent Analogno je i sa proizvoljnim brojem dimenzija.
+    \vfill
 \begin{corollary}
     Neka je $L$ pravi potprostor konačnodimenzionog prostora $U$. Tada $L$ i $U$ nisu izomorfni.
 \end{corollary}
@@ -2892,14 +3013,15 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
 \end{corollary}
 
 \begin{corollary}
-    Neka je $V$ konačnodimenzioni vektorski prostor, $A:V \to V, \; B: V \to V$ linearni operatori t.d. je ili $AB = \operatorname{id}_V$ ili
+    Neka je $V$ konačnodimenzioni vektorski prostor, $A:V \to V$ i \linebreak$ B: V \to V$ linearni operatori t.d. je ili $AB = \operatorname{id}_V$ ili
     $BA = \operatorname{id}_V$. Tada je $A$ izomorfizam i $A^{-1} = B$.
 \end{corollary}
-
+\vfill
 \begin{itemize}
     \item Prethodne 3 posledice ne važe ako je $\dim U = \infty$.
 \end{itemize}
-
+\vfill
+\newpage
 \subsection{Projektori}
 
 \begin{definition}
@@ -2914,7 +3036,7 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
         \item $V = \ker P \oplus \operatorname{Im} P$.
     \end{enumerate}
 \end{theorem}
-
+\newpage
 \subsection{Regularni operatori}
 
 \begin{itemize}
@@ -3006,7 +3128,6 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
 \end{theorem}
 
 \subsection{Algebra $\hom V$}
-
 \begin{theorem}\
     \begin{enumerate}
         \item Uređena četvorka 
@@ -3035,7 +3156,7 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
     \end{enumerate}
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem} \label{matriceHomomorfizmiIzomorfni}
     \[ \hom_\mathbb{F}(U, V) \cong \mathbb{M}_{nm}(\mathbb{F}) \]
 \end{theorem}
 
