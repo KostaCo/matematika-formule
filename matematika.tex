@@ -2537,7 +2537,7 @@ zato uzimamo samo tu komponentu.
 \newpage
 
 \subsection{Faktor prostor}
-
+\label{faktorProstor}
 \begin{itemize}
     \item Neka je $V$ vektorski prostor nad $\mathbb{F}$ i $L \leq V$. Uvodimo relaciju $\sim_L$ na $V$ na sledeći način:
     \[ x \sim_L y \iff x - y \in L. \]
@@ -3022,21 +3022,61 @@ matricom \[\mathcal{A} = \begin{bmatrix}
 \end{itemize}
 \vfill
 \newpage
+
 \subsection{Projektori}
 
 \begin{definition}
     Neka je $V$ konačnodimenzioni vektorski prostor i $P: V \to V$ linearni operator t.d. je $P^2 = P$. Tada se $P$ zove \textbf{projektor}.
 \end{definition}
 
+\intuicija Projektore zamišljamo na sledeći način. Zamislimo da imamo npr. neki 3D objekat i obasjamo ga svetlošću. Taj objekat 
+će projektovati 2D senku na ravan. Pogledajmo sledeći primer u 2D prostoru.
+
+\begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+            \draw[step=1cm, gray!25, very thin] (-3, -3) grid (7, 7);
+        
+            \draw[->, thick] (-3, 0) -- (7, 0);
+            \draw[->, thick] (0, -3) -- (0, 7);
+        
+            \node[below left] at (0, 0) {$O$};
+    
+            \draw[->, thick, blue] (0, 0) -- (1, 2) node[above, blue] {$v_1$};
+            \draw[thick, gray] (-3, -1) -- (7, 7/3);
+            
+            \draw[->, thick, green] (0, 0) -- (0, 1) node [left] {$u$};
+            \draw[dashed, gray] (1, 2) -- (1, 1/3);
+            \draw[->, thick, red] (0, 0) -- (4, 4/3) node [below right] {$Pv_2$};
+            \draw[->, thick, blue] (0, 0) -- (1, 1/3) node [above right] {$Pv_1$};
+
+            \draw[->, thick, red] (0, 0) -- (4, 6) node [right] {$v_2$};
+            \draw[dashed, gray] (4, 4/3) -- (4, 6);
+            \node[gray] at (6.5, 2.5) {$l$};
+        \end{tikzpicture}
+    \end{figure}
+
+    \noindent U pitanju je projekcija na pravu $l$ u odnosu na pravac $u$. Matrica ove projekcije je 
+    \[ P = \begin{bmatrix}
+        1 & 0 \\[6pt]
+        \frac{1}{3} & 0
+    \end{bmatrix}, \]
+    što se lako i vidi na slici (po tome gde završavaju vektori $(1, 0)$ i $(0, 1)$).
+
 \begin{theorem}
     Svaki projektor zadovoljava sledeća svojstva:
     \begin{enumerate}
-        \item $x \in \operatorname{Im} A \iff Px = x$,
-        \item $P \neq \operatorname{id}_V \implies P$ nije izomorfizam,
-        \item $V = \ker P \oplus \operatorname{Im} P$.
+        \item $x \in \operatorname{Im} P \iff Px = x$,\\
+        \intuicija Na prethodnoj slici vidimo da je npr. $P(Pv_1) = Pv_1$ (projekcija na pravu vektora koji je već na toj 
+        pravoj je taj isti vektor).
+        \item $P \neq \operatorname{id}_V \implies P$ nije izomorfizam,\\
+        \intuicija $P$ očigledno smanjuje dimenziju, pa ne može biti bijekcija (vidi teoremu \ref{IzomorfizmiTeorema2}).
+        \item $V = \ker P \oplus \operatorname{Im} P$.\\
+        \intuicija Kako je $\operatorname{Im} P = l$ i $\ker P = \mathcal{L}\{u\}$, tvrđenje je očigledno (pogotovo sa prethodne slike).
     \end{enumerate}
 \end{theorem}
 \newpage
+
 \subsection{Regularni operatori}
 
 \begin{itemize}
@@ -3052,9 +3092,12 @@ matricom \[\mathcal{A} = \begin{bmatrix}
     Neka je $A \in \hom V$. Tada važi:
     \[ A \text{ je invertibilan} \iff A\text{ je regularan}. \]
 \end{theorem}
+\intuicija Ako $A$ nije regularan, onda smanjuje dimenziju. Na primer, uzmimo operator koji slika 3D prostor na pravu. Tada 
+se veliki broj vektora slika u isti, pa ne možemo utvrditi "koji je odakle došao", tj. ne postoji jedinstven $A^{-1}$. Sa druge 
+strane, ako je $A$ regularan, onda on ne smanjuje dimenziju (na primer rotacija prostora), pa postoji njegov inverz.
 
 \begin{theorem}
-    Neka su $A \in \hom V, \;, B \in \hom (U, V), \; C \in \hom U$ linearni operatori t.d. su $A$ i $C$ regularni. Tada važi:
+    Neka su $A \in \hom V, \; B \in \hom (U, V), \; C \in \hom U$ linearni operatori t.d. su $A$ i $C$ regularni. Tada važi:
     \begin{enumerate}
         \item $r(A \circ B) = r(B \circ C) = r(A \circ B \circ C) = r(B)$,
         \item $V_1 \leq V \implies \dim A(V_1) = \dim V_1$.
@@ -3084,7 +3127,7 @@ matricom \[\mathcal{A} = \begin{bmatrix}
     Relacija $\cong$ je relacija ekvivalencije na skupu $\mathcal{V}(\mathbb{F})$.
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem} \label{IzomorfizmiTeorema2}
     Neka su $U, V \in \mathcal{V}(\mathbb{F})$. Tada važi:
     \[ U \cong V \iff \dim U = \dim V. \]
 \end{theorem}
@@ -3092,22 +3135,111 @@ matricom \[\mathcal{A} = \begin{bmatrix}
 \begin{itemize}
     \item Dakle, predstavnici klasa ekvivalencije relacije $\cong$ mogu biti \[\mathbb{F}^n = (\mathbb{F}^n, \mathbb{F}, +, \cdot),\; n \in \mathbb{N}.\]
 \end{itemize}
-
+\newpage
 \subsection{Teoreme o izomorfizmu}
 
 \begin{theorem}
     Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A:U \to V$ epimorfizam. Tada je \[U/\ker A \cong V.\]
 \end{theorem}
+\intuicija Ako je $A:U \to V$ epimorfizam, to znači da je $\dim U \geq \dim V$. Dakle, preslikavanje $A$ je "na", ali nije "1-1". Ova teorema nam kaže kako 
+da "rešimo ovaj problem", tj. kako da od epimorfizma "napravimo" izomorfizam. Da bi dva prostora bila izomorfna, moraju biti iste dimenzije (teorema \ref{IzomorfizmiTeorema2}).
+Dakle, moramo "eliminisati višak dimenzije". Zbog ovoga je zgodan faktor prostor. Više o faktor prostorima se može videti u \ref{faktorProstor}. Dajemo 
+ilustraciju ove teoreme na jednom primeru.
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[scale=0.75, >=Stealth, every node/.style={font=\normalsize}]
+    
+    % --- LEVI PROSTOR: U ---
+    \begin{scope}[xshift=0cm]
+        \draw[step=1cm, gray!25, very thin] (-5, -4) grid (4, 7);
 
+        % Koordinatne ose
+        \draw[->, thick] (-5, 0) -- (4, 0) node[right] {$u_1$};
+        \draw[->, thick] (0, -4) -- (0, 7) node[above] {$u_2$};
+
+        \node[below right] at (0, 0) {$O$};
+
+        % Kernel (jezgro) - zelena prava
+        \draw[thick, green!60!black] (-2, -4) -- (3.5, 7);
+        \node[green!60!black, above right] at (3, 5.5) {$\ker A$};
+
+        % Klasa [x] = x + ker A - siva prava
+        \draw[thick, gray] (-4.5, -4) -- (1, 7) node[above right, gray] {$[x] = x + \ker A$};
+
+        % Vektor x (plavi)
+        \draw[->, very thick, blue] (0, 0) -- (-1, 3) node[midway, left=2pt] {$x$};
+
+        % Vektori y_i (crveni) koji povezuju x sa tačkama u ker A
+        \draw[->, thick, red] (-1, 3) -- (1.5, 3) node[below right, red] {$-y_1$};
+        \draw[->, thick, red] (-1, 3) -- (2, 4) node[below right, red] {$-y_2$};
+        \draw[->, thick, red] (-1, 3) -- (2.5, 5) node[below right, red] {$-y_3$};
+
+        % Vektori iz kernela (teal)
+        \draw[->, thick, teal] (0, 0) -- (-3, -1) node[above left, teal] {$y_2$};
+        \draw[->, thick, teal] (0, 0) -- (-3.5, -2) node[above left, teal] {$y_3$};
+        \draw[->, thick, teal] (0, 0) -- (-2.5, 0) node[above left, teal] {$y_1$};
+
+        \node[] at (-3.5, 3.5) {$U$};
+    \end{scope}
+
+    % --- DESNI PROSTOR: V (ili Im A) ---
+    \begin{scope}[xshift=11cm]
+        % Koordinatne ose
+        \draw[->, thick] (-5, 0) -- (4, 0) node[right] {$v_1$};
+        \foreach \x in {-4,-3,-2,-1,1,2,3}
+            \draw[thick] (\x, 0.1) -- (\x, -0.1);
+
+        \node[below right] at (0, 0) {$O$};
+
+        % Nula u V (slika kernela) - zelena tačka
+        \fill[green!60!black] (0, 0) circle (3pt);
+        \node[above, green!60!black] at (0, 0) {$A(\ker A) = \{0\}$};
+
+        % Slika klase [x] - siva tačka
+        \node[below, gray] at (-3.5, 0) {$A([x]) = \{A(x)\}$};
+        \fill[gray] (-3.5, 0) circle (3pt);
+
+        \node[] at (3.5, -1) {$V = \operatorname{Im} A$};
+    \end{scope}
+
+    % --- STRELICA IZMEĐU ---
+    \draw[->, thick, >=Stealth] (3.5, 2.2) to[out=30, in=150] (6.5, 2.2);
+    \node[above] at (5, 2.8) {$A$};
+
+    \end{tikzpicture}
+\end{figure}
+\vfill
 \begin{theorem}
     Neka je $V$ vektorski prostor nad $\mathbb{F}$ i $L, M \leq V$. Tada je
     \[ (L + M)/M \cong L/(L\cap M). \]
 \end{theorem}
+\intuicija Zamislimo da je $V = \mathbb{R}^3$ i $L$ i $M$ prave koje se seku u nuli. Tada će $L + M$ biti ravan. Dakle, $(L + M)/M$ je jednodimenzioni prostor čiji elementi su translirane prave (paralelne sa $M$) unutar te ravni.
+
+Sa druge strane, $L \cap M$ će biti tačka (nula-vektor), pa je $L/(L\cap M) \cong L$, što je takođe jednodimenzioni prostor (prava). Izomorfizam se uspostavlja tako što svakoj pravoj paralelnoj sa $M$ unutar ravni $L+M$ dodelimo tačku u kojoj ta prava seče $L$ (pošto $L$ i $M$ nisu paralelne, svaka takva translacija seče $L$ tačno jednom). Dakle, oba količnička prostora su prave (1D), pa su izomorfni, što potvrđuje teoremu.
+\vfill
+\newpage
 
 \begin{theorem}
     Neka je $V$ vektorski prostor nad $\mathbb{F}$ i $L, M \leq V \land L \subseteq M$. Tada je
     \[ M/L \leq V/L \;\;\land\;\; V/M \cong (V/L)\big/ (M/L). \]
 \end{theorem}
+
+\intuicija 
+Zamislimo da je $V = \mathbb{R}^3$. Neka je $L$ prava kroz koordinatni početak (recimo $z$-osa), a $M$ ravan koja sadrži tu pravu (recimo $yz$-ravan). 
+
+Posmatrajmo desnu stranu: $(V/L) \big/ (M/L)$.
+Prvo, $V/L$ je prostor u kome je čitava $z$-osa "slepljena" u jednu tačku. Geometrijski, to su sve prave paralelne sa $z$-osom; taj prostor je dimenzije $2$ (možemo ga zamisliti kao $xy$-ravan).
+Unutar tog prostora, $M/L$ je skup svih pravih paralelnih sa $z$-osom koje leže u $yz$-ravni. Kada te prave "slepljene" u tačke, one čine jednu pravu (dimenzije $1$) unutar te $xy$-ravni.
+Kada $V/L$ podelimo sa tom pravom ($M/L$), mi smo u stvari "spljoštili" $xy$-ravan duž jedne ose, pa ostaje prostor dimenzije $1$ (prava).
+
+Sa druge strane, $V/M$ je direktno deljenje celog $\mathbb{R}^3$ sa $yz$-ravni. Pošto smo celu $yz$-ravan "slepili" u nulu, ono što ostaje je samo $x$-osa, što je takođe 1D prostor.
+
+Dakle, obe strane su prave (1D), pa su izomorfne. Ovo je analogno skraćivanju razlomka: 
+\[
+\frac{V/L}{M/L} \cong \frac{V}{M}.
+\]
+Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
+
 
 \subsection{Tačni (egzaktni) nizovi}
 
