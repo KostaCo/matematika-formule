@@ -2170,7 +2170,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 
 
 \section{Vektorski prostori}
-
+\label{vektorskiProstori}
 \subsection{Definicija i primeri vektorskih prostora}
 
 \begin{definition}
@@ -3138,7 +3138,7 @@ strane, ako je $A$ regularan, onda on ne smanjuje dimenziju (na primer rotacija 
 \newpage
 \subsection{Teoreme o izomorfizmu}
 
-\begin{theorem}
+\begin{theorem} \label{teoremeIzomorfizam1}
     Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A:U \to V$ epimorfizam. Tada je \[U/\ker A \cong V.\]
 \end{theorem}
 \intuicija Ako je $A:U \to V$ epimorfizam, to znači da je $\dim U \geq \dim V$. Dakle, preslikavanje $A$ je "na", ali nije "1-1". Ova teorema nam kaže kako 
@@ -3229,7 +3229,7 @@ Zamislimo da je $V = \mathbb{R}^3$. Neka je $L$ prava kroz koordinatni početak 
 
 Posmatrajmo desnu stranu: $(V/L) \big/ (M/L)$.
 Prvo, $V/L$ je prostor u kome je čitava $z$-osa "slepljena" u jednu tačku. Geometrijski, to su sve prave paralelne sa $z$-osom; taj prostor je dimenzije $2$ (možemo ga zamisliti kao $xy$-ravan).
-Unutar tog prostora, $M/L$ je skup svih pravih paralelnih sa $z$-osom koje leže u $yz$-ravni. Kada te prave "slepljene" u tačke, one čine jednu pravu (dimenzije $1$) unutar te $xy$-ravni.
+Unutar tog prostora, $M/L$ je skup svih pravih paralelnih sa $z$-osom koje leže u $yz$-ravni. Kada se te prave "slepe" u tačke, one čine jednu pravu (dimenzije $1$) unutar te $xy$-ravni.
 Kada $V/L$ podelimo sa tom pravom ($M/L$), mi smo u stvari "spljoštili" $xy$-ravan duž jedne ose, pa ostaje prostor dimenzije $1$ (prava).
 
 Sa druge strane, $V/M$ je direktno deljenje celog $\mathbb{R}^3$ sa $yz$-ravni. Pošto smo celu $yz$-ravan "slepili" u nulu, ono što ostaje je samo $x$-osa, što je takođe 1D prostor.
@@ -3249,14 +3249,50 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     takav da je $(\forall i \in \mathbb{Z})\;\operatorname{Im} A_{i-1} = \ker A_i$.
 \end{definition}
 
+\intuicija Demonstrirajmo ovo na nekoliko primera.
+\begin{enumerate}
+    \item Posmatramo niz 
+    \[ \{0\} \xrightarrow{A} \mathbb{R} \xrightarrow{B} \mathbb{R}^3 \xrightarrow{C} \mathbb{R}^2 \xrightarrow{D} \mathbb{R} \xrightarrow{E} \{0\}, \]
+    gde su
+    \begin{itemize}
+        \item $A: \{0\} \to \mathbb{R}, \;A(0) = 0$
+        \item $B: \mathbb{R} \to \mathbb{R}^3, \; B(x) = (x, 0, 0)$
+        \item $C: \mathbb{R}^3 \to \mathbb{R}^2, \; C(x, y, z) = (y, z)$
+        \item $D: \mathbb{R}^2 \to \mathbb{R}, \; D(y, z) = z$
+        \item $E: \mathbb{R} \to \{0\}, \; E(x) = 0$
+    \end{itemize}
+    \item Najkraći (trivijalni) egzaktni niz:
+    \[ \{0\} \to V \xrightarrow{\operatorname{id}} V \to \{0\}. \]
+\end{enumerate}
+\newpage
 \begin{definition}
     \textbf{Kratki tačni nizovi} su tačni nizovi oblika 
     \[ \{0\} \xrightarrow{i} U \xrightarrow{A} V \xrightarrow{B} W \xrightarrow{\pi} \{0\}. \]
 \end{definition}
+\intuicija Pokažimo i primer kratkoog tačnog niza:
+\[ \{0\} \xrightarrow{A} \mathbb{R} \xrightarrow{B} \mathbb{R}^2 \xrightarrow{C} \mathbb{R} \xrightarrow{D} \{0\}, \]
+gde su
+\begin{itemize}
+    \item $A: \{0\} \to \mathbb{R}, \; A(0) = 0$
+    \item $B: \mathbb{R} \to \mathbb{R}^2, \; B(x) = (x, 0)$
+    \item $C: \mathbb{R}^2 \to \mathbb{R}, \; C(x, y) = y$
+    \item $D: \mathbb{R} \to \{0\}, \; D(y) = 0$.
+\end{itemize}
 
 \begin{theorem}
     U kratkom tačnom nizu važi
-    \[ \operatorname{Im} A = \ker B \;\;\land\;\; U \cong \operatorname{Im} A \;\;\land \;\; V/\operatorname{Im} A \cong W.  \]
+    \begin{enumerate}
+        \item $\operatorname{Im} A = \ker B$
+        
+        \intuicija Važi po definiciji egzaktnog niza.
+        \item $U \cong \operatorname{Im} A$
+        
+        \intuicija Pošto je niz tačan na $U$, važi $\ker A = \{0\}$, pa je $A$ injektivan. Injektivan linearni operator je izomorfizam između svog domena i svoje slike, pa je $U \cong \operatorname{Im} A$.
+        
+        \item $V/\operatorname{Im} A \cong W$
+        
+        \intuicija Pošto je niz tačan na $W$, važi $\operatorname{Im} B = W$, pa je $B$ surjektivan. Prva teorema o izomorfizmu (\ref{teoremeIzomorfizam1}) daje $V/\ker B \cong W$. Kako je $\ker B = \operatorname{Im} A$ (iz (i)), sledi $V/\operatorname{Im} A \cong W$.
+    \end{enumerate}
 \end{theorem}
 
 \subsection{Algebra $\hom V$}
@@ -3271,7 +3307,7 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
             \item[(a)] $(A + B)(x) = Ax + Bx$, za sve $A, B \in \operatorname{Hom}(U, V)$ i sve $x \in U$,
             \item[(b)] $(\lambda \cdot A)(x) = \lambda \cdot Ax$, za sve $A \in \operatorname{Hom}(U, V)$, $\lambda \in \mathbb{F}$ i sve $x \in U$,
         \end{enumerate}
-        je vektorski prostor nad poljem $\mathbb{F}$.
+        je vektorski prostor nad poljem $\mathbb{F}$ (videti \ref{vektorskiProstori}).
         
         \item Ako su $e = (e_1, \dots, e_m)$ i $f = (f_1, \dots, f_n)$ baze prostora $U$ i $V$ redom i ako sa $E_{ij}$ obeležimo linearni operator koji u paru baza $(e, f)$ deluje na sledeći način:
         \[
@@ -3292,17 +3328,25 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     \[ \hom_\mathbb{F}(U, V) \cong \mathbb{M}_{nm}(\mathbb{F}) \]
 \end{theorem}
 
+\intuicija Ovo je teorema koja nam govori da su matrice i linearna preslikavanja praktično ista stvar.
+
 \begin{theorem}\
     \begin{enumerate}
-        \item Uređena petorka $\hom V = (\hom V, \mathbb{F}, +, \circ, \cdot)$ je asocijativna algebra sa jedinicom.
+        \item Uređena petorka $\hom V = (\hom V, \mathbb{F}, +, \circ, \cdot)$ je asocijativna algebra sa jedinicom (videti \ref{F-algebra}).
         \item $\hom V \cong \mathbb{M}_n(\mathbb{F})$
+        
+        \intuicija Kvadratne matrice su praktično isto što i lin. operatori koji slikaju $V$ u $V$ (jer slikaju $n$-dimenzionu bazu u $n$-dimenzionu bazu).
         \item Izomorfizam $\varphi_e: \hom V \to \mathbb{M}_n(\mathbb{F}), \; \varphi_e(A) = \mathcal{A} = (\alpha_{ij})$ preslikava regularne operatore u regularne matrice.
+        
+        \intuicija Preslikavanje koje direktno spaja matrice i linearne operatore.
     \end{enumerate}
 \end{theorem}
 
 \begin{corollary}
     Neka je $\varphi_e(A) = \mathcal{A}$. Matrica $\mathcal{A} \in \mathbb{M}_n$ je regularna akko $r(A) = n$.
 \end{corollary}
+
+\intuicija Ako preslikavanje ne smanjuje dimenziju, onda će imati tačno $n$ vektora baze.
 
 \subsection{Rang matrice}
 
@@ -3322,9 +3366,95 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     kad god ima smisla.
 \end{theorem}
 
-\begin{theorem}\
+\intuicija
+Pokazaćemo ovo na primeru. Neka su date sledeće matrične jedinice:
+
+\[
+E_{23} = 
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{bmatrix}, \qquad
+E_{31} = 
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+1 & 0 & 0
+\end{bmatrix}, \qquad
+E_{21} = 
+\begin{bmatrix}
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}, \qquad
+E_{12} = 
+\begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}.
+\]
+
+\medskip
+\noindent
+\textbf{1. Slučaj $j = k$:} $E_{23} \cdot E_{31} = E_{21}$ (jer je $j=3, k=3$, pa je $\delta_{33}=1$):
+
+\[
+E_{23} \cdot E_{31} =
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+1 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+= E_{21}.
+\]
+
+\medskip
+\noindent
+\textbf{2. Slučaj $j \neq k$:} $E_{23} \cdot E_{12} = 0$ (jer je $j=3, k=1$, pa je $\delta_{31}=0$):
+
+\[
+E_{23} \cdot E_{12} =
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+= 0.
+\]
+
+\medskip
+\noindent
+\textbf{Zaključak:} Množenje matričnih jedinica svodi se na "prebacivanje" jedinice sa pozicije $(i,j)$ na poziciju $(i,l)$, ali samo ako se indeksi $j$ i $k$ poklapaju. U suprotnom, proizvod je nula-matrica.
+
+\begin{theorem} \textbf{(EL1) - množenje vrste/kolone skalarom} \label{rangMatriceTeorema1}
     \begin{enumerate}
-        \item Za $\lambda \neq 0$, neka je \[\mathbb{F}_{i,\lambda} = \operatorname{diag}[1, 1, \ldots, \lambda, 1, \ldots, 1] \in \mathbb{M}_n\] i $\mathcal{A} = [a_1, a_2, \ldots, a_m] = [a^1, a^2, \ldots, a^n] \in \mathbb{M}_{nm}$. Tada je \[\mathbb{F}_{i,\lambda} \mathcal{A} = [a^1, a^2, \ldots, \lambda a^i, \ldots, a^n],\] tj. sve vrste matrica $\mathbb{F}_{i,\lambda} \mathcal{A}$ i $\mathcal{A}$ osim $i$-te se podudaraju, a $i$-ta vrsta matrice $\mathbb{F}_{i,\lambda} \mathcal{A}$ jednaka je proizvodu $\lambda$ i $i$-te vrste matrice $\mathcal{A}$.
+        \item Za $\lambda \neq 0$, neka je \[\mathbb{F}_{i,\lambda} = \operatorname{diag}[1, 1, \ldots \underbrace{,\lambda,}_i 1, \ldots, 1] \in \mathbb{M}_n\] i $\mathcal{A} = [a_1, a_2, \ldots, a_m] = [a^1, a^2, \ldots, a^n] \in \mathbb{M}_{nm}$. Tada je \[\mathbb{F}_{i,\lambda} \mathcal{A} = [a^1, a^2, \ldots, \lambda a^i, \ldots, a^n],\] tj. sve vrste matrica $\mathbb{F}_{i,\lambda} \mathcal{A}$ i $\mathcal{A}$ osim $i$-te se podudaraju, a $i$-ta vrsta matrice $\mathbb{F}_{i,\lambda} \mathcal{A}$ jednaka je proizvodu $\lambda$ i $i$-te vrste matrice $\mathcal{A}$.
 
         \item Analogno tvrđenje važi i za kolone matrica $\mathcal{A} \mathbb{F}_{i,\lambda}$ ($\mathbb{F}_{i,\lambda} \in \mathbb{M}_{m}$) i $\mathcal{A}$, tj. \[\mathcal{A} \mathbb{F}_{i,\lambda} = [a_1, a_2, \ldots, \lambda a_i, \ldots, a_m].\]
 
@@ -3333,10 +3463,23 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     \end{enumerate}
     \label{rangMatriceTeorema2}
 \end{theorem}
-\newpage
+
 \begin{theorem}
-    \begin{enumerate}\
-        \item Neka je \[\mathbb{G}_{ij} = \mathbb{I}_n + \mathbb{E}_{ij} + \mathbb{E}_{ji} - \mathbb{E}_{ii} - \mathbb{E}_{jj} \in \mathbb{M}_n, \, i < j,\] i neka je \[\mathcal{A} = [a_1, a_2, \dots, a_m] = [a^1, a^2, \dots, a^n] \in \mathbb{M}_{nm}.\] Tada je \[\mathbb{G}_{ij} \mathcal{A} = [a^1, a^2, \dots, a^j, \dots, a^i, \dots, a^n],\] tj. sve vrste matrica $\mathbb{G}_{ij} \mathcal{A}$ i $\mathcal{A}$ osim $i$-te i $j$-te se podudaraju, a $i$-ta vrsta matrice $\mathbb{G}_{ij} \mathcal{A}$ jednaka je $j$-toj vrsti matrice $\mathcal{A}$, i $j$-ta vrsta matrice $\mathbb{G}_{ij} \mathcal{A}$ jednaka je $i$-toj vrsti matrice $\mathcal{A}$.
+    \begin{enumerate}\textbf{(EL2) - zamena dve vrste/kolone}
+        \item Neka je \[\mathbb{G}_{ij} = \mathbb{I}_n + \mathbb{E}_{ij} + \mathbb{E}_{ji} - \mathbb{E}_{ii} - \mathbb{E}_{jj} \in \mathbb{M}_n, \, i < j,\]
+        tj.
+        \[ \mathbb{G}_{ij} = \begin{bmatrix}
+            1 & 0 & \dots & 0 & \dots & 0 & \dots & 0& 0\\
+            0 & 1 & \dots & 0 & \dots & 0 & \dots & 0& 0\\
+            \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots& \vdots \\
+            0 & 0 & \dots & 0 & \dots & 1 & \dots & 0& 0\\
+            \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots& \vdots \\
+            0 & 0 & \dots & 1 & \dots & 0 & \dots & 0& 0\\
+            \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots& \vdots \\
+            0 & 0 & \dots & 0 & \dots & 0 & \dots & 1 & 0\\
+            0 & 0 & \dots & 0 & \dots & 0 & \dots & 0 & 1\\
+        \end{bmatrix}. \]
+        Dakle, $\mathbb{G}_{ij}$ je jedinična matrica sa zamenjenom $i$-tom i $j$-tom vrstom (kolonom). Neka je i \[\mathcal{A} = [a_1, a_2, \dots, a_m] = [a^1, a^2, \dots, a^n] \in \mathbb{M}_{nm}.\] Tada je \[\mathbb{G}_{ij} \mathcal{A} = [a^1, a^2, \dots, a^j, \dots, a^i, \dots, a^n],\] tj. sve vrste matrica $\mathbb{G}_{ij} \mathcal{A}$ i $\mathcal{A}$ osim $i$-te i $j$-te se podudaraju, a $i$-ta vrsta matrice $\mathbb{G}_{ij} \mathcal{A}$ jednaka je $j$-toj vrsti matrice $\mathcal{A}$, i $j$-ta vrsta matrice $\mathbb{G}_{ij} \mathcal{A}$ jednaka je $i$-toj vrsti matrice $\mathcal{A}$.
 
         \item Analogno tvrđenje važi i za kolone matrica $\mathcal{A} \mathbb{G}_{ij}$ ($\mathbb{G}_{ij} \in \mathbb{M}_m$) i $\mathcal{A}$, tj. \[\mathcal{A} \mathbb{G}_{ij} = [a_1, a_2, \dots, a_j, \dots, a_i, \dots, a_m].\]
 
@@ -3345,7 +3488,7 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     \label{rangMatriceTeorema3}
 \end{theorem}
 
-\begin{theorem}\
+\begin{theorem} \textbf{(EL3) - dodavanje $i$-te vrste/kolone $j$-toj}
     \begin{enumerate}
         \item Neka je \[\mathbb{E}'_{ij} = \mathbb{I}_n + \mathbb{E}_{ij} \in \mathbb{M}_n,\; i < j\] i neka je \[\mathcal{A} = [a_1, a_2, \dots, a_m] = [a^1, a^2, \dots, a^n] \in \mathbb{M}_{nm}.\]
             Tada je \[\mathbb{E}'_{ij} \mathcal{A} = [a^1, a^2, \dots, a^i + a^j, \dots, a^j, \dots, a^n],\] tj. sve vrste osim $i$-te matrice $\mathbb{E}'_{ij} \mathcal{A}$ i $\mathcal{A}$ se podudaraju, a $i$-ta vrsta matrice $\mathbb{E}'_{ij} \mathcal{A}$ jednaka je zbiru $i$-te i $j$-te vrste matrice $\mathcal{A}$.
@@ -3357,7 +3500,7 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     \label{rangMatriceTeorema4}
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem} 
     \label{rangMatriceTeorema5}
     Neka je $\mathcal{A} \in \mathbb{M}_{nm}(\mathbb{F})$ proizvoljna matrica ranga \[r \in \{0, 1, \ldots, \min(n, m)\}.\] Tada postoji konačan broj elementarnih transformacija nad vrstama i kolonama matrice $\mathcal{A}$ tako da njihovom primenom matricu $\mathcal{A}$ svodimo na kanonsku matricu
     \[
@@ -3369,12 +3512,12 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     \]
     \medskip
     \noindent Specijalno, ako je $\mathcal{A} \in \mathbb{M}_n(\mathbb{F})$ regularna matrica (tj. $\operatorname{r}(\mathcal{A}) = n$), tada se ona može svesti na jediničnu matricu $\mathbb{I}_n$ primenom elementarnih transformacija \textbf{samo} nad vrstama (ili \textbf{samo} nad kolonama) matrice $\mathcal{A}$.
-\end{theorem}
+\end{theorem}\
 
 \begin{itemize}
     \item Prethodna teorema \ref{rangMatriceTeorema5} omogućava da elementarnim transformacijama nad vrstama i kolonama date matrice $\mathcal{A}$ istu svedemo na neku od matrica $\mathbb{D}_{nm}^r$, koja ima rang $r$.
-    \item Elementarnim transformacija (EL1), (EL2) i (EL3) nad vrstama odgovara množenje sleva regularnim matricama $\mathbb{F}_{i, \lambda}, \mathbb{G}_{ij}$ i $\mathbb{E}_{ij}'$ (teoreme \ref{rangMatriceTeorema2}, 
-    \ref{rangMatriceTeorema3}, \ref{rangMatriceTeorema4}) redom (a elementarnim transformacijama nad kolonama odgovara množenje istim matricama zdesna).
+    \item Elementarnim transformacija (EL1), (EL2) i (EL3) nad vrstama odgovara množenje sleva regularnim matricama $\mathbb{F}_{i, \lambda}, \mathbb{G}_{ij}$ i $\mathbb{E}_{ij}'$ (teoreme \ref{rangMatriceTeorema1}, 
+    \ref{rangMatriceTeorema2}, \ref{rangMatriceTeorema3}) redom (a elementarnim transformacijama nad kolonama odgovara množenje istim matricama zdesna).
     Dakle, imamo: 
     \[
         \mathbb{D}_{nm}^r = \underbrace{\mathcal{S}_1\dots\mathcal{S}_k}_\mathcal{S} \mathcal{A} \underbrace{\mathcal{T}_1\dots \mathcal{T}_s}_\mathcal{T},
@@ -3403,12 +3546,76 @@ Prvo "skratimo" $L$, pa onda $M/L$, isto je kao da smo odmah "skratili" $M$.
     \item Ako $\mathcal{A}$ nije regularna, onda umesto matrice $\mathbb{I}_n = \mathbb{D}_{nn}^n$ dobijamo neku od kanonskih matrica $\mathbb{D}_{nn}^r, \; r < n$. 
 \end{itemize}
 
+\subsubsection*{Primer: Određivanje inverzne matrice preko elementarnih transformacija}
 
-\newpage
+Neka je data matrica
+\[
+\mathcal{A} = \begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}.
+\]
+
+\noindent
+\textbf{Korak 1:} Formiramo proširenu matricu \([\mathcal{A} \mid \mathbb{I}_2]\):
+\[
+\begin{bmatrix}
+2 & 1 & \big| & 1 & 0 \\
+1 & 1 & \big| & 0 & 1
+\end{bmatrix}.
+\]
+
+\medskip
+\noindent
+\textbf{Korak 2:} Elementarnim transformacijama nad vrstama svedemo levu polovinu na \(\mathbb{I}_2\).
+
+\medskip
+\noindent
+\textbf{2a)} Zamenimo prvu i drugu vrstu (da dobijemo \(1\) na poziciji \((1,1)\)):
+\[
+\begin{bmatrix}
+1 & 1 & \big| & 0 & 1 \\
+2 & 1 & \big| & 1 & 0
+\end{bmatrix}.
+\]
+
+\medskip
+\noindent
+\textbf{2b)} Drugoj vrsti dodamo prvu pomnoženu sa \(-2\) (da dobijemo \(0\) na poziciji \((2,1)\)):
+\[
+\begin{bmatrix}
+1 & 1 & \big| & 0 & 1 \\
+0 & -1 & \big| & 1 & -2
+\end{bmatrix}.
+\]
+
+\medskip
+\noindent
+\textbf{2c)} Drugu vrstu pomnožimo sa \(-1\) (da dobijemo \(1\) na poziciji \((2,2)\)):
+\[
+\begin{bmatrix}
+1 & 1 & \big| & 0 & 1 \\
+0 & 1 & \big| & -1 & 2
+\end{bmatrix}.
+\]
+
+\medskip
+\noindent
+\textbf{2d)} Prvoj vrsti dodamo drugu pomnoženu sa \(-1\) (da dobijemo \(0\) na poziciji \((1,2)\)):
+\[
+\begin{bmatrix}
+1 & 0 & \big| & 1 & -1 \\
+0 & 1 & \big| & -1 & 2
+\end{bmatrix}.
+\]
+
+\medskip
+\noindent
+\textbf{Korak 3:} Leva polovina je sada jedinična matrica \(\mathbb{I}_2\), pa je desna polovina upravo inverzna matrica:
+\[
+\mathcal{A}^{-1} = \begin{bmatrix} 1 & -1 \\ -1 & 2 \end{bmatrix}.
+\]
 
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
 \subsubsection*{Linearni funkcional i dualni prostor}
-Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. $V^*$ nazivamo \textbf{dualni prostor} prostora $V$.
+Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. \linebreak Prostor $V^*$ se zove \textbf{dualni prostor} prostora $V$.
 
 
 Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
@@ -3428,8 +3635,16 @@ Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}
     \end{enumerate}
     Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. \\
     
-    \noindent\underline{\textit{Intuicija:}} Dualna baza rešava sledeći problem. Recimo da imamo vektor $x \in V$ zadat u standardnim koordinatama i nestandardnu bazu $e$ prostora $V$. Hoćemo da izrazimo $x$ kao linearnu kombinaciju vektora baze $e$. Dualna baza se sastoji od linearnih funkcionala koji rade baš ovo - pretvaraju standardne koordinate u koordinate u nekoj bazi $e$. Funkcionali $e_j^*$ su upravo koeficijenti u redovima inverzne matrice prelaska.
-\newpage
+ \noindent\underline{\textit{Intuicija:}} 
+Dualna baza $e^*$ je skup linearnih funkcionala koji "čitaju" koordinate vektora u bazi $e$. Funkcional $e_j^*$ izdvaja $j$-tu koordinatu:
+\[
+e_j^*(x_1e_1 + \dots + x_ne_n) = x_j.
+\]
+Ovi funkcionali su upravo \textbf{vrste} inverzne matrice prelaska $P^{-1}$, pa se koordinate vektora $x$ u bazi $e$ dobijaju kao:
+\[
+[x]_e = P^{-1} [x]_{\text{std}}.
+\]
+Dakle, dualna baza i matrica prelaska su dva aspekta iste stvari: dualna baza su funkcionali, a matrice prelaska njihovi koeficijenti.
 \subsubsection*{Primer: Određivanje dualne baze}
 Neka je $V = \mathbb{R}^3$ i neka je $V = \mathcal{L}\left(\{e_1 = (2, 1), \;e_2 = (3,1)\}\right)$. Odredimo bazu $e^*$. Znamo da važi $e^*_j(e_i) = \delta_{ij}$. Dakle, 
 \[ e_1^*(e_1) = e_1^*((2, 1)) = 2e_1^*((1, 0)) + e_1^*((0, 1)) = 1 \]
@@ -3440,38 +3655,6 @@ vektor $v = (x, y)$ važi
 \[ e_2^*(v) = xe_2^*((1, 0)) + ye_2^*((0, 1)) = x - 2y \]
 Dakle, $V^* = \mathcal{L} \left(\left\{ e_1^* , e_2^* \right\}\right)  = \mathcal{L} \left(\left\{ -x + 3y , x - 2y \right\}\right)$.
 
-\subsubsection*{Primer: Dualna baza i matrica prelaska}
-Neka je data nestandardna baza prostora $\mathbb{R}^2$:
-\[
-e_1 = (1, 1), \quad e_2 = (1, -1).
-\]
-Kolone matrice prelaska $P$ su vektori baze $e$:
-\[
-P = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \] 
-Računamo inverznu matricu:
-\[ P^{-1} = \frac{1}{-2} \begin{bmatrix} -1 & -1 \\ -1 & 1 \end{bmatrix}
-= \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \\[4pt] \frac{1}{2} & -\frac{1}{2} \end{bmatrix}.
-\]
-Vrste matrice $P^{-1}$ su koeficijenti funkcionala dualne baze $e^*$:
-\[
-e_1^*(x,y) = \frac{1}{2}x + \frac{1}{2}y, \quad
-e_2^*(x,y) = \frac{1}{2}x - \frac{1}{2}y.
-\]
-Neka je vektor $v \in \mathbb{R}^2$ zadat u \textit{standardnim koordinatama}:
-\[
-v = (7, 3).
-\]
-Koordinate vektora $v$ u bazi $e$ dobijamo množenjem kolone standardnih koordinata matricom $P^{-1}$ (tj. primenom funkcionala dualne baze):
-\[
-[v]_e = P^{-1} \cdot [v]_{\text{std}}
-= \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \\[4pt] \frac{1}{2} & -\frac{1}{2} \end{bmatrix}
-\begin{bmatrix} 7 \\ 3 \end{bmatrix} = \begin{bmatrix} 5 \\ 2 \end{bmatrix}.
-\]
-Dakle, standardni vektor $(7, 3)$ zapisan u bazi $e$ ima koordinate:
-\[
-\boxed{v = 5e_1 + 2e_2}
-\]
-\newpage
 \subsubsection{Anihilator}
 Svaki linearni funkcional je oblika $f(x) = \sum_{j=1}^{n}x_j\xi_j$, gde je $\xi_j=f(e_j)\in\mathbb{F}$. Jezgro ovog (ne-nula) preslikavanja 
 $\operatorname{Ker} f = \{x \in V \;|\; f(x) = 0\}$ je očigledno hiperravan u $V \cong \mathbb{F}^n$, koja prolazi kroz koordinatni početak.
@@ -3479,114 +3662,75 @@ I obrnutno, svaka hiperravan na $V$ je jezgro nekog ne-nula linearnog funkcional
 
 Neka je $H = \operatorname{Ker} f$ hiperravan u $V$
 i neka je $\mathcal{B}_H = \{a_1, a_2, \dots, a_{n-1}\}$ baza za $H$. Dopunimo je vektorom $a_0$ do baze za $V$. Tada je \[H = \{x \in V\;|\; f(x) = 0\},\] gde
-je $f$ jedinstveni linearni funkcional koji zadovoljava \[f(a_0) = 1 \footnote{mogli smo odabrati i bilo koju drugu vrednost $\alpha \neq 0$ - jezgro ostaje isto} \;\;\text{i}\;\; 
+je $f$ jedinstveni linearni funkcional koji zadovoljava \[f(a_0) = 1 \footnote{Mogli smo odabrati i bilo koju drugu vrednost $\alpha \neq 0$ - jezgro ostaje isto} \;\;\text{i}\;\; 
 f(a_1) = f(a_2) = \dots = f(a_{n-1})=0.\]
 
 Sa druge strane, skup $A = \{g \in V^* \;|\; g(a_0) = 0\}$ je \textbf{anihilator} $\{a_0\}^0$ vektora $a_0$. Kako je $\dim A = \dim H = n-1$, $A$ i $H$ su izomorfni. Ovo možemo uopštiti na 
-bilo koji podskup $S$ vektorskog prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] \underline{\textit{Intuicija:}} Geometrijski, ako je $S$ podskup prostora $V$, njegov 
-anihilator $S^0$ je skup svih linearnih funkcionala $f(x) = a_1x_1 + a_2x_2 +  \dots +a_{n}x_{n}$ takvih da je vektor $(a_1, \dots, a_{n})$ normalan na svaki vektor $s \in S$. Drugim rečima: $L^0$ - sva linearna pitanja čiji je odgovor 0 na svakom vektoru iz $L$.
+bilo koji podskup $S$ vektorskog prostora $V$ i dobiti \textbf{anihilator} skupa $S:$ \[S^0 = \{ f \in V^* \;|\; f(x) = 0, \forall x \in S \}\] \underline{\textit{Intuicija:}} Geometrijski, 
+možemo zamisliti $S$ kao podskup prostora $V$ (sa definisanim skalarnim proizvodom \footnote{U opštem slučaju, $S^0$ ne zahteva skalarni proizvod - on živi u dualnom prostoru $V^*$ kao skup funkcionala koji se poništavaju na $S$; tek kada identifikujemo $V^*$ sa $V$ preko skalarnog proizvoda, ovi funkcionali postaju "ortogonalni vektori".}). Njegov 
+anihilator $S^0$ je onda skup svih linearnih funkcionala $f(x) = a_1x_1 + a_2x_2 +  \dots +a_{n}x_{n}$ takvih da je vektor $(a_1, \dots, a_{n})$ normalan na svaki vektor $s \in S$.
 
 \begin{theorem}
     Ako je $V$, $\dim V < \infty$, vektorski prostor nad $F$ i $L$ njegov potprostor, tada važi
     \[ \dim L + \dim L^0 = \dim V \]
-\end{theorem}
+\end{theorem}\
+
 \noindent\underline{\textit{Intuicija:}} Ako je npr. $V = \mathbb{R}^3$ i $\dim L = 2$, tada se svi vektori normalni na $L$ nalaze na pravoj $\alpha x$, $\alpha \in \mathbb{R}, \; x \in L^\perp$,\; tj. $\dim L^0 = 1$. Zapravo, 
 prostori $L^0$ i $L^\perp$ su izomorfni ukoliko postoji skalarni proizvod na $V$. 
 \\
 
+\begin{corollary}
+    Neka je $\dim V = n,\; \dim L = l,\; L \leq V$. Tada je
+    \[ L = H_1 \cap H_2 \cap \dots \cap H_{n-l},  \] gde su $H_i$ hiperravni od $V$.
+\end{corollary}
 
-\noindent\textbf{Posledica 1.} \textit{
-    Neka je $\dim V = n,\; \dim L = l,\; L \leq V$. Tada je00 
-    \[ L = H_1 \cap H_2 \cap \dots \cap H_{n-l},  \] gde su $H_i$ hiperravni od $V$.}\\
 \noindent\underline{\textit{Intuicija:}} Neka je, na primer, $V = \mathbb{R}^3$. Ako je $\dim L = 2$, tada je $L$ jedna hiperravan (tj. ravan) iz $\mathbb{R}^3$. Sa druge strane, ako je $\dim L = 1$, tada je $L$ prava iz $\mathbb{R}^3$,
 tj. presek dve ravni iz $\mathbb{R}^3$. Slično, ako je $L$ tačka iz $\mathbb{R}^3$, tj. $\dim L = 0$, tada je $L$ zapravo presek tri ravni iz $V$.
-\\
 
+\medskip
 
-\noindent\textbf{Posledica 2.}\textit{
-    Neka je $\dim V < \infty$ i $L \leq V, \; M \leq V$. Tada je $L = M \iff L^0 = M^0$.}\\
+\begin{corollary}
+    Neka je $\dim V < \infty$ i $L \leq V, \; M \leq V$. Tada je \[L = M \iff L^0 = M^0.\]
+\end{corollary}
+
 \noindent\underline{\textit{Intuicija:}} Neka je npr. $V = \mathbb{R}^3$ i $L$ i $M$ dve ravni. Znamo da je svaka ravan potpuno određena vektorom normale i jednom tačkom koju sadrži. Kako anihilator upravo zamišljamo
 kao prostor čiji su svi vektori normalni na dati skup (u ovom slučaju v. prostor) i kako svaki anihilator zadrži tačku nula, imamo baš ono što nam treba.
-
-
-\newpage
+\vfill
 \subsubsection{Refleksivnost}
 Za v. prostor $V$, $\dim V < \infty$, nad $\mathbb{F}$ posmatramo niz $V, V^*, V^{**}, V^{***}, \dots$. Svi elementi ovog niza su prostori nad istim poljem $\mathbb{F}$ i imaju istu dimenziju $\dim V$. Dakle, 
 svi ovi prostori su izomorfni.
 
 Za svako $x \in V$ i $f \in V^*$ možemo definisati linearno preslikavanje $\phi:V \to V^{**}:$ \[\phi(x)[f] \;  = f(x). \;\footnote{Napomena: $\phi: V \to V^{**}$, ali $\phi(x) : V^* \to \mathbb{F}$.} \]
-\underline{\textit{Intuicija:}} Zamislimo stvari na sledeći način. 
 
-\begin{itemize}
-    \item $V$ sadrži neke objekte $x, y, z, \dots$, čije osobine možemo da merimo. Ove objekte zovemo vektori. Svaka osobina je upravo po jedna komponenta vektora.
-    \item $V^*$ su svi mogući eksperimenti (merenja) koje možemo da uradimo na objektima iz $V$. Ove eksperimente zovemo linearnim funkcionalima. Jedan funkcional može biti 
-    npr. "Kolika je $x$-koordinata?", drugi "Kolika je $y$-koordinata?", treći "Koliko je $x + y - 2z$?"\ itd. Dakle, $V^*$ nije skup rezultata, već svih pitanja koje možemo
-    postaviti vektoru.
-    \item Šta sve znamo o konkretnom vektoru, npr. $x = (3, -1, 5)$? Znamo kako odgovara na svako moguće pitanje (tj. koju vrednost daje za svaki mogući eksperiment). Dakle, jedan
-    vektor određuje beskonačnu tabelu sa pitanjima i odgovorima:
-    \begin{table}[!h]
-        \centering
-        \begin{tabular}{cc}
-            \toprule
-            Pitanje & Odgovor \\ \midrule
-            $f_1$ & 3 \\
-            $f_2$ & 2 \\
-            $f_3$ & 42 \\
-            \vdots & \vdots \\
-            \bottomrule
-        \end{tabular}
-    \end{table}
-
-    \item Šta radi $\phi(x)$? On pravi ovu tabelu. On kaže "{daj mi pitanje $f$ i daću ti odgovor na $f$ za vektor $x$}". Dakle, $\phi(x): f \mapsto f(x)$. Zašto je ovo zapravo element
-    prostora $V^{**}$? Znamo da svaki linearni funkcional slika element prostora u broj (opštije, u element polja $\mathbb{F}$). Pošto je sada $V^*$ prostor, element mora slikati $V^* \to \mathbb{F}$.
-    Dakle, uzme funkcional i vrati broj. Koji broj? Baš njegov rezultat na $x$.
-    \item Ovim pristupom vektor više nije samo strelica. Možemo ga posmatrati kao mašinu koja zna odgovor na svako moguće linearno pitanje. Ovo je potpuno nova filozofija. Evo još jedne jako prirodne analogije.
-    Zamislimo osobu. Ne opisujemo je fotografijom. Opisujemo je odgovorom na sva moguća pitanja. Ime? Marko. Visina? 183. Masa? 79. Godine? 25. I tako dalje. Ako znamo odgovore na sva moguća pitanja, onda znamo i osobu.
-    Ne treba nam fotografija. Isto tako, ne moramo znati koordinate vektora. Potpuno je određen odgovorom na sva moguća pitanja.
-    \item Dakle, ne treba gledati na $V^{**\dots*}$ kao merač merača merača $\dots$ merača, već razmišljati na gore navedeni način.
-\end{itemize}
-\newpage
-
-
-
-\begin{comment}
-Neka je $(a_1, \dots, a_n)$ baza od $V$ i $x \in V$. Dakle, važi:
-
-\[x = x_1a_1 + x_2a_2 + \dots + x_na_n\]
-Označimo $g = \phi(x)$ i primetimo da važi $\phi(a_i) = a_i^{**}$. Dakle,
-\[g = \phi(x) = \phi(a_1x_1 + \dots + a_nx_n) = x_1\phi(a_1)  + \dots + x_n\phi(a_n) = x_1a_1^{**} + \dots + x_na_n^{**}\]
-Sada, $f \in V^*$ je linearni funkcional, dakle oblika
-\[f = \xi_1a_1^* + \xi_2a_2^*+ \dots + \xi_na_n^* \implies f(x) = \xi_1x_1 + \xi_2x_2+ \dots + \xi_nx_n\]
-Sada primenimo $g$ na $f$:
-\[ g(f) = (x_1\phi(a_1) + \dots + x_n\phi(a_n))(f) = x_1\cdot\phi(a_1)(f) + \dots + x_n \cdot \phi(a_n)(f) \]
-Po definiciji je $\phi(a_i)(f) = f(a_i)$. Znači, zbog $a_i^*(a_j) = \delta_{ij}$ važi $f(a_i) = \xi_i$:
-\[g(f) = x_1 f(a_1) + \dots + x_n f(a_n) = \xi_1x_1 + \dots + \xi_nx_n = f(x)\]
-Dakle, koordinate vektora su ostale iste! Pogledajmo: \[x = (x_1, \dots, x_n) \;\;\text{i}\;\; \phi(x) = (x_1, \dots, x_n).\]
-Zato je ovo prirodan izomorfizam. Vektor je u potpunosti određen svim mogućim "linearnim merenjima"\ koja se na njemu mogu izvršiti. Preslikavanje $\phi(x)$ radi baš ovo.
-Možemo vektor posmatrati i kao telo u fizici. Telo se može opisati 1. koordinatama ili 2. svim mogućim eksperimentima koji se na njemu mogu uraditi. Ako svaki mogući eksperiment
-na 2 tela daje identične rezultate, onda su ta tela ista. Dakle, ako za svaki funkcional važi $f(x) + f(y)$, onda $x = y$.
-\end{comment}
-
-\newpage
-
-
+\intuicija Vektor $x$ je u potpunosti određen vrednostima $f(x)$ za sve $f \in V^*$. Drugim rečima, ako dva vektora daju iste rezultate na svim linearnim funkcionalima, onda su jednaki.
+\vfill
 \begin{theorem}
     Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$. Preslikavanje $\phi$ je izomorfizam vektorskih prostora $V$ i $V^{**}$.
 \end{theorem}
-\noindent\underline{\textit{Intuicija:}} U diskusiji iznad smo pokazali da svaki vektor ima jedinstven skup pitanja koji ga opisuje. Obrnuto, svaka linearna tabela odgovora (tj. svako linearno preslikavanje $g: V^* \to \mathbb{F}$ koje svakom pitanju dodeljuje broj) potiče od tačno jednog vektora $x \in V$ takvog da je $g = \phi(x)$. Dakle, ne postoji "lažni profil" – svaki zamišljeni linearni profil je profil nekog stvarnog vektora, pa su $V$ i $V^{**}$ savršeno istog oblika (izomorfni).\\
+\intuicija Preslikavanje $\phi$ je injektivno (ako $\phi(x)=0$, onda $f(x)=0$ za sve $f$, pa je $x=0$). Kako su dimenzije $V$ i $V^{**}$ jednake, injektivnost povlači izomorfizam. 
 
 
-\noindent\textbf{Posledica 1.}
-Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
+\newpage
+\begin{corollary}
+    Neka je $V$, $\dim V < \infty$, vektorski prostor nad $\mathbb{F}$.
 \begin{itemize}
-    \item \textit{Neka je $\varPsi \in V^{**}$. Tada postoji jedinstveni $x \in V$ td. $\phi(x) = \varPsi$.\\}
-    \noindent\underline{\textit{Intuicija:}} U $\varPsi$ pišu odgovori na sva moguća pitanja. Ako su odgovori kozistentni (linearni), onda tačno taj upitnik pripada jednom $x \in V$. Taj vektor je jedinstven.
-    \item \textit{Svaka baza od $V^*$ dualna je nekoj bazi iz $V$.}\\
-    \noindent\underline{\textit{Intuicija:}} Recimo da imamo $n$ pitanja koja čine bazu u $V^*$. Tim pitanjima odgovara tačno jedan skup od $n$ vektora od kojih svaki na svoje pitanje odgovara sa 1, a na ostala sa 0.
-    \item \textit{Neka je $S$ proizvoljni podskup od $V$. Tada je $(S^0)^0 = \mathcal{L}(S)$.}\\
-    \noindent\underline{\textit{Intuicija:}} Zamislimo da je $V = \mathbb{R}^3$ i $S$ ravan. $S^0$ je tada prava normalna na ravan $S$. $(S^0)^0$ je sada skup svih vektora normalnih na pravu $S^0$ - to je upravo ravan.
-\end{itemize}
+    \item \textit{Neka je $\varPsi \in V^{**}$. Tada postoji jedinstveni $x \in V$ td. $\phi(x) = \varPsi$.}
+    
 
+    \intuicija Svaki linearni funkcional na $V^*$ potiče od jedinstvenog vektora $x \in V$ (surjektivnost $\phi$).
+    \item \textit{Svaka baza od $V^*$ dualna je nekoj bazi iz $V$.}
+    
+    \intuicija Izomorfizam $\phi$ preslikava baze iz $V$ u baze od $V^{**} \cong V^*$.
+    
+
+    \item \textit{Neka je $S$ proizvoljni podskup od $V$. Tada je $(S^0)^0 = \mathcal{L}(S)$.}
+    
+    
+    \intuicija Dvostruki anihilator skupa $S$ vraća njegov linearni omotač. U $\mathbb{R}^3$: anihilator ravni je normala; anihilator normale je ponovo ravan.
+\end{itemize}
+\end{corollary}
+
+\vfill
 \subsection{Dualno (transponovano) preslikavanje}
 \label{dualnoPreslikavanje}
 Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \hom  \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
@@ -3612,7 +3756,11 @@ Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjungovani)} ope
     baza od $U^*$, i neka je $f$ neka baza od $V$ i $f^*$ njoj dualna baza od $V^*$. Ako sa $\mathcal{A}$ obeležimo matricu operatora $A$ u paru baza $e$ i $f$, a sa
     $\mathcal{A}^*$ matricu operatora $A^*$ u paru baza $f^*$ i $e^*$, tada je \[\mathcal{A}^\mathcal{T} = \mathcal{A}^*.\]
 \end{theorem}
-\noindent\textbf{Posledica 1.} Neka je $\mathcal{A}$ matrica nad poljem $\mathbb{F}$. Tada se rang od $\mathcal{A}$ po vrstama podudara sa rangom od $\mathcal{A}$ po kolonama.\\
+\vfill
+\newpage
+\begin{corollary}
+    Neka je $\mathcal{A}$ matrica nad poljem $\mathbb{F}$. Tada se rang od $\mathcal{A}$ po vrstama podudara sa rangom od $\mathcal{A}$ po kolonama.
+\end{corollary} 
 
 \noindent\underline{\textit{Intuicija:}} Dakle, $A$ slika $U$ u $V$, a $A^*$ slika $V^*$ u $U^*$. Takođe, vidimo da je transponovana matrica preslikavanja $A$ upravo matrica preslikavanja $A^*$. Znamo da ako neko linearno preslikavanje 
 $T$ slika $U$ u $V$ i $\operatorname{dim} U = n, \; \operatorname{dim} V = m$, tada će njegova matrica $\mathcal{T}$ biti dimenzija $\operatorname{dim} V \times \operatorname{dim} U = m \times n$,
@@ -3666,54 +3814,64 @@ gde je $\mathcal{C} \in \mathbb{M}_{l \times m}(\mathbb{F})$, $\mathcal{B} \in \
 \medskip
 \noindent
 \subsubsection*{Matrica prelaska} 
-Neka je $T_{ee'}$ matrica prelaska sa baze $e$ na bazu $e'$. Tada za koordinate proizvoljnog vektora $x \in U$ važi:
+Neka je $T_{e' \to e}$ matrica prelaska sa baze $e'$ na bazu $e$. Tada za koordinate proizvoljnog vektora $x \in U$ važi:
 \[
-x(e) = T_{ee'} \, x(e'),
+x(e) = T_{e' \to e} \, x(e'),
 \]
 gde su $x(e)$ i $x(e')$ koordinate vektora $x$ u tim bazama.
 
 \medskip
 \noindent
 \subsubsection*{Promena baze linearnog operatora}
-Neka je $A: U \to V$ linearni operator. Ako su $e, e'$ baze od $U$ i $f, f'$ baze od $V$, tada je veza između matrica operatora $A$ u parovima baza $(e, f)$ i $(e', f')$ data sa:
+
+Neka je $A: U \to V$ linearni operator. Neka su $e, e'$ baze od $U$ i $f, f'$ baze od $V$. 
+Neka je $T_{e \to e'}$ matrica prelaska iz baze $e$ u bazu $e'$ (tj. $x(e') = T_{e \to e'} \, x(e)$), 
+a $T_{f \to f'}$ matrica prelaska iz baze $f$ u bazu $f'$.
+
+Tada je veza između matrica operatora $A$ u parovima baza $(e, f)$ i $(e', f')$ data sa:
 \[
-\boxed{\mathcal{A}(f', e') = T_{ff'}^{-1} \, \mathcal{A}(f, e) \, T_{ee'}}
+\boxed{\mathcal{A}(f', e') = T_{f \to f'}^{-1} \, \mathcal{A}(f, e) \, T_{e \to e'}}
 \]
-gde su $T_{ee'}$ i $T_{ff'}$ odgovarajuće matrice prelaska.
+gde je $\mathcal{A}(f, e)$ matrica operatora $A$ u bazi $e$ (polazni prostor) i $f$ (dolazni prostor).
 
 Specijalno, ako je $V = U$ i biramo istu bazu za polazni i dolazni prostor ($f = e$, $f' = e'$), formula se svodi na relaciju \textbf{sličnosti}:
 \[
-\boxed{\mathcal{A}(e') = T_{ee'}^{-1} \, \mathcal{A}(e) \, T_{ee'}}
+\boxed{\mathcal{A}(e') = T_{e \to e'}^{-1} \, \mathcal{A}(e) \, T_{e \to e'}}
 \]
 Tada kažemo da su matrice $\mathcal{A}(e)$ i $\mathcal{A}(e')$ \textbf{slične}.
 
 \medskip
 \noindent
 \subsubsection*{Primer (promena baze u $\mathbb{R}^3$)}
+
 Neka je $e$ kanonska baza u $\mathbb{R}^3$, a $f = (f_1, f_2, f_3)$ baza data sa:
 \[
 f_1 = 3e_1 + e_2 + 2e_3,\quad 
 f_2 = 2e_1 + e_2 + 2e_3,\quad 
 f_3 = -e_1 + 2e_2 + 5e_3.
 \]
-Neka je $A \in \hom (\mathbb{R}^3)$ čija je matrica u bazi $e$ data sa $\mathcal{A}(e)$. 
-Koristeći formulu \linebreak$\mathcal{A}(f) = T^{-1} \mathcal{A}(e) T$, prvo nalazimo matricu prelaska sa $e$ na $f$:
+Neka je $A \in \operatorname{Hom}(\mathbb{R}^3)$ čija je matrica u bazi $e$ data sa $\mathcal{A}(e)$. 
+
+Matrica prelaska iz $e$ u $f$ je (kolone su koordinate vektora $f_i$ u bazi $e$):
 \[
-T = 
+T_{e \to f} = 
 \begin{bmatrix}
 3 & 2 & -1 \\
 1 & 1 & 2 \\
 2 & 2 & 5
-\end{bmatrix},
-\qquad
-T^{-1} = 
+\end{bmatrix}.
+\]
+Njen inverz je:
+\[
+T_{e \to f}^{-1} = 
 \begin{bmatrix}
 1 & -12 & 5 \\
 -1 & 17 & -7 \\
 0 & -2 & 1
 \end{bmatrix}.
 \]
-Konačno, matrica operatora $A$ u bazi $f$ je:
+
+Koristeći formulu $\mathcal{A}(f) = T_{e \to f}^{-1} \, \mathcal{A}(e) \, T_{e \to f}$, dobijamo matricu operatora $A$ u bazi $f$:
 \[
 \mathcal{A}(f) = 
 \begin{bmatrix}
@@ -3745,8 +3903,8 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
 \label{ParnostPermutacija}
 \begin{itemize}
     \item \textbf{Inverzija permutacije $\sigma$} - uređeni par $(i, j)$ td. $i < j$ i $\sigma(i) > \sigma(j)$
-    \item $I(\sigma)$ - Broj inverzija perm. $\sigma$
-    \item $\sigma$ je parna $\iff I(\sigma)$ parno
+    \item $I(\sigma)$ - \textbf{broj inverzija} permutacije $\sigma$
+    \item $\sigma$ je parna $\iff I(\sigma)$ je parno
     \item Preslikavanje za određivanje parnosti: \[ \operatorname{sgn}(\sigma) = \prod_{i < k < n} \frac{\sigma(k) - \sigma(i)}{k - i} \in \left\{-1, 1\right\} \]
     \item $A_n = \ker \operatorname{sgn} = \left\{\sigma \in \mathbb{S}_n \; | \; \operatorname{sgn}(\sigma) = 1\right\}$ - \textbf{alternirajuća podgrupa od $\mathbb{S}_n$ (podgrupa parnih permutacija)} 
 \end{itemize}
@@ -3781,12 +3939,17 @@ Konačno, matrica operatora $A$ u bazi $f$ je:
     \end{enumerate}
 \end{theorem}\
 
-\noindent\textbf{Posledica 1.} \textit{Ciklus $\sigma$ je paran. $\iff$ Ciklus $\sigma$ je neparne dužine.} \\
+\begin{corollary}
+    Ciklus $\sigma$ je paran. $\iff$ Ciklus $\sigma$ je neparne dužine.
+\end{corollary}
 
 
-\noindent\textbf{Posledica 2.} \textit{Neka je $\sigma = \tau_1 \circ \tau_2 \circ \dots \circ \tau_k$, gde su $\tau_i$ ciklusi dužine $t_i$. Tada je}\[ 
+
+\begin{corollary}
+    Neka je $\sigma = \tau_1 \circ \tau_2 \circ \dots \circ \tau_k$, gde su $\tau_i$ ciklusi dužine $t_i$. Tada je\[ 
     |\sigma| = \operatorname{NZS}(t_1, t_2, \dots, t_k).
 \]
+\end{corollary}
 
 \subsection{Definicija determinante (Lajbnicova formula)}
 Determinanta $\operatorname{det}: \mathbb{M}_n(\mathbb{F}) \to \mathbb{F}$ je funkcija definisana formulom:
@@ -3884,12 +4047,10 @@ a negativno orijentisani delovi se svode na oduzimanje.
         \item Ako je neka vrsta ili kolona matrice $\mathcal{A}$ nula vektor, onda je $|\mathcal{A}| = 0$.\\
         \noindent\underline{\textit{Intuicija:}} Npr. ako $3\times 3$ matrica ima tačno 1 nula vektor, geomtrijski je to onda ravan, pa ima zapreminu 0.
         \item $|\mathcal{A}| = |\mathcal{A^T}|$
-        \item Ako je $A$ trougaona matrica, tada je $|\mathcal{A}| = \alpha_{11}\alpha_{22}\dots \alpha_{nn}$.\\
-        \noindent\underline{\textit{Intuicija:}} Trougaona matrica je zapravo primenjivanje smicanja na originalni kvadar, pa ne menja zapreminu. 2D slučaj
-        ovoga je paralelogram.
+        \item Ako je $\mathcal{A}$ trougaona matrica, tada je $|\mathcal{A}| = \alpha_{11}\alpha_{22}\dots \alpha_{nn}$.\\
+        \noindent\underline{\textit{Intuicija:}} Trougaona matrica deluje tako što svaki novi bazni vektor dodaje novu dimenziju koja je ortogonalna na prethodne (zbog nula iznad/ispod dijagonale). Zato se zapremina množi samo dijagonalnim elementima – oni su dužine "visina" u svakom koraku.
     \end{enumerate} 
 \end{theorem}
-\newpage
 
 \subsubsection*{Primer: računanje determinante preko definicije}
 Neka je data matrica 
@@ -3989,7 +4150,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 \end{itemize}
 
 \begin{theorem}
-    \textbf{(Laplasov razvoj):} Neka je $\mathcal{A} \in \mathbb{M}_n(\mathbb{F})$. Tada za $\forall i, j \in \{1, 2, \dots, n\}$ važi:
+    \textbf{(Laplasov razvoj):} Neka je $\mathcal{A} \in \mathbb{M}_n(\mathbb{F})$ i neka je $A_{ij}$ algebarski komplement elementa $\alpha_{ij}$.  Tada za $\forall i, j \in \{1, 2, \dots, n\}$ važi:
     \[ \sum_{j=1}^{n} \alpha_{ij}A_{rj} = \delta_{ir}\det \mathcal{A} \]
     \[ \sum_{i=1}^{n} \alpha_{ij}A_{ir} = \delta_{jr}\det \mathcal{A}.  \]
     \[ \left( \iff 
@@ -4086,6 +4247,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     \end{description}
     Tada je $d = \det$.
 \end{theorem}
+
 \section{Sistemi linearnih jednačina}
 
 \subsection{Definicija sistema linearnih jednačina}
@@ -4212,6 +4374,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 \end{theorem}
 
 \newpage
+
 \section{Redukcija linearnih operatora na konačnodimenzionim prostorima}
 
 \subsection{Redukcija linearnog operatora}
