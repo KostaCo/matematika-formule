@@ -3956,9 +3956,9 @@ f_3 = -e_1 + 2e_2 + 5e_3.
 \]
 Neka je $A \in \operatorname{Hom}(\mathbb{R}^3)$ čija je matrica u bazi $e$ data sa $\mathcal{A}(e)$. 
 
-Matrica prelaska iz $e$ u $f$ je (kolone su koordinate vektora $f_i$ u bazi $e$):
+Matrica prelaska iz $f$ u $e$ je (kolone su koordinate vektora $f_i$ u bazi $e$):
 \[
-T_{e \to f} = 
+T_{f \to e} = 
 \begin{bmatrix}
 3 & 2 & -1 \\
 1 & 1 & 2 \\
@@ -3967,7 +3967,7 @@ T_{e \to f} =
 \]
 Njen inverz je:
 \[
-T_{e \to f}^{-1} = 
+T_{f \to e}^{-1} = 
 \begin{bmatrix}
 1 & -12 & 5 \\
 -1 & 17 & -7 \\
@@ -3975,7 +3975,7 @@ T_{e \to f}^{-1} =
 \end{bmatrix}.
 \]
 
-Koristeći formulu $\mathcal{A}(f) = T_{e \to f}^{-1} \, \mathcal{A}(e) \, T_{e \to f}$, dobijamo matricu operatora $A$ u bazi $f$:
+Koristeći formulu $\mathcal{A}(f) = T_{f \to e}^{-1} \, \mathcal{A}(e) \, T_{f \to e}$, dobijamo matricu operatora $A$ u bazi $f$:
 \[
 \mathcal{A}(f) = 
 \begin{bmatrix}
