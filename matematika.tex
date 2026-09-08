@@ -3375,7 +3375,7 @@ gde su
         
         \item $V/\operatorname{Im} A \cong W$
         
-        \intuicija Pošto je niz tačan na $W$, važi $\operatorname{Im} B = W$, pa je $B$ surjektivan. Prva teorema o izomorfizmu (\ref{teoremeIzomorfizam1}) daje $V/\ker B \cong W$. Kako je $\ker B = \operatorname{Im} A$ (iz (i)), sledi $V/\operatorname{Im} A \cong W$.
+        \intuicija Pošto je $\operatorname{Im} A = \ker B$, svi elementi iz $\operatorname{Im}A$ se slikaju u 0, tj. smanjuje se dimenzija, pa faktor prostor "ovo rešava" (videti \ref{faktorProstor}).
     \end{enumerate}
 \end{theorem}
 
@@ -3405,6 +3405,8 @@ gde su
         \[
         \dim \operatorname{Hom}(U, V) = \dim U \cdot \dim V = m \cdot n.
         \]
+
+        \intuicija $m \cdot n$ opcija za vektore baze (jer je $|f| = n, \; |e| = m$). Može se posmatrati i ovako: za prostor $\mathbb{M}_{nm}(\mathbb{F})$ potrebno je $m \cdot n$ vektora (matrica) baze.
     \end{enumerate}
 \end{theorem}
 
@@ -3419,7 +3421,7 @@ gde su
         \item Uređena petorka $\hom V = (\hom V, \mathbb{F}, +, \circ, \cdot)$ je asocijativna algebra sa jedinicom (videti \ref{F-algebra}).
         \item $\hom V \cong \mathbb{M}_n(\mathbb{F})$
         
-        \intuicija Kvadratne matrice su praktično isto što i lin. operatori koji slikaju $V$ u $V$ (jer slikaju $n$-dimenzionu bazu u $n$-dimenzionu bazu).
+        \intuicija Kvadratne matrice su praktično isto što i linearni operatori koji slikaju $V$ u $V$ (jer slikaju $n$-dimenzionu bazu u $n$-dimenzionu bazu).
         \item Izomorfizam $\varphi_e: \hom V \to \mathbb{M}_n(\mathbb{F}), \; \varphi_e(A) = \mathcal{A} = (\alpha_{ij})$ preslikava regularne operatore u regularne matrice.
         
         \intuicija Preslikavanje koje direktno spaja matrice i linearne operatore.
@@ -3430,7 +3432,8 @@ gde su
     Neka je $\varphi_e(A) = \mathcal{A}$. Matrica $\mathcal{A} \in \mathbb{M}_n$ je regularna akko $r(A) = n$.
 \end{corollary}
 
-\intuicija Ako preslikavanje ne smanjuje dimenziju, onda će imati tačno $n$ vektora baze.
+\intuicija Ako preslikavanje ne smanjuje dimenziju, onda će prostor $V$ imati tačno $n$ vektora baze.
+\newpage
 
 \subsection{Rang matrice}
 \vfill
@@ -3623,10 +3626,10 @@ E_{23} \cdot E_{12} =
     u $\mathbb{I}_n$. Istoveremeno se u desnoj polovini matrice $\mathcal{B}$ matrica $\mathbb{I}_n$ transformiše u $\mathcal{A}^{-1}$.
 
     \item Opravdajmo sada ovu proceduru. Pretpostavimo da matrica $\mathcal{A}$ ima inverznu matricu. Budući da vršimo elementarne transformacije nad vrstama matrice
-    $\mathcal{A}$, matricu $\mathcal{A}$ množimo, sa leve strane, nekim od matrica iz skupa 
+    $\mathcal{A}$, matricu $\mathcal{A}$ množimo sa leve strane nekim od matrica iz skupa 
     \[\{\mathbb{F}_{i,\lambda}, \mathbb{G}_{ij}, \mathbb{E}'_{ij} \mid \lambda \neq 0, i \neq j, i,j = 1,2,\dots,n\}\]
     dok $\mathcal{A}$ ne transformišemo u $\mathbb{I}_n$, tako da je $\mathcal{S} \cdot \mathcal{A} = \mathbb{I}_n$, gde je $\mathcal{S} = \mathcal{S}_m \cdot \mathcal{S}_{m-1} \cdots \mathcal{S}_2 \cdot \mathcal{S}_1$.
-    Množenjem jednakosti $\mathcal{S} \cdot \mathcal{A} = \mathbb{I}_n$ inverzom od $\mathcal{S}$ s leva, dobićemo da je $\mathcal{A} = \mathcal{S}^{-1} \cdot \mathbb{I}_n$, a zatim uzimanjem inverza od obe strane ove 
+    Množenjem jednakosti $\mathcal{S} \cdot \mathcal{A} = \mathbb{I}_n$ inverzom od $\mathcal{S}$ sleva, dobićemo da je $\mathcal{A} = \mathcal{S}^{-1} \cdot \mathbb{I}_n$, a zatim uzimanjem inverza od obe strane ove 
     jednakosti, imamo \[\mathbb{I}_n^{-1} \cdot (\mathcal{S}^{-1})^{-1} = \mathbb{I}_n \cdot \mathcal{S} = \mathcal{S} \cdot \mathbb{I}_n = \mathcal{A}^{-1}.\] Dakle, ako nad matricom $\mathbb{I}_n$ izvršimo iste 
     transformacije (kao i nad matricom $\mathcal{A}$) opisane matricom $\mathcal{S}$, ona će se transformisati u matricu $\mathcal{A}^{-1}$.
     \item Ako $\mathcal{A}$ nije regularna, onda umesto matrice $\mathbb{I}_n = \mathbb{D}_{nn}^n$ dobijamo neku od kanonskih matrica $\mathbb{D}_{nn}^r, \; r < n$. 
