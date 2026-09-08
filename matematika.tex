@@ -3325,9 +3325,6 @@ Dakle, obe strane su prave (1D), pa su izomorfne. Ovo je analogno skraćivanju r
 \frac{V/L}{M/L} \cong \frac{V}{M}.
 \]
 
-
-
-
 \subsection{Tačni (egzaktni) nizovi}
 
 \begin{definition}
@@ -3351,7 +3348,7 @@ Dakle, obe strane su prave (1D), pa su izomorfne. Ovo je analogno skraćivanju r
     \item Najkraći (trivijalni) egzaktni niz:
     \[ \{0\} \to V \xrightarrow{\operatorname{id}} V \to \{0\}. \]
 \end{enumerate}
-\newpage
+
 \begin{definition}
     \textbf{Kratki tačni nizovi} su tačni nizovi oblika 
     \[ \{0\} \xrightarrow{i} U \xrightarrow{A} V \xrightarrow{B} W \xrightarrow{\pi} \{0\}. \]
@@ -3436,9 +3433,10 @@ gde su
 \intuicija Ako preslikavanje ne smanjuje dimenziju, onda će imati tačno $n$ vektora baze.
 
 \subsection{Rang matrice}
-
+\vfill
 \begin{itemize}
     \item \textbf{Rang matrice} je broj njenih linearno nezavisnih kolona.
+    \vfill
     \item \textbf{Elementarne transformacije} nad vrstama (kolonama) matrice su:
     \begin{description}
         \item [(EL1)] Množenje vrste (kolone) skalarom $\alpha \neq 0$,
@@ -3446,13 +3444,13 @@ gde su
         \item [(EL3)] Dodavanje $j$-te vrste (kolone) $i$-toj.
     \end{description}
 \end{itemize}
-
+\vfill
 \begin{theorem}
     Neka je $\mathbb{E}_{ij}$ matrica koja na preseku $i$-te vrste i $j$-te kolone ima jedinicu, a sve ostale elemente jednake $0$. Tada važi sledeća formula:
     \[ \mathbb{E}_{ij} \mathbb{E}_{kl} = \delta_{jk} \mathbb{E}_{il}, \]
     kad god ima smisla.
 \end{theorem}
-
+\vfill
 \intuicija
 Pokazaćemo ovo na primeru. Neka su date sledeće matrične jedinice:
 
@@ -3482,7 +3480,7 @@ E_{12} =
 0 & 0 & 0
 \end{bmatrix}.
 \]
-
+\vfill
 \medskip
 \noindent
 \textbf{1. Slučaj $j = k$:} $E_{23} \cdot E_{31} = E_{21}$ (jer je $j=3, k=3$, pa je $\delta_{33}=1$):
@@ -3508,7 +3506,7 @@ E_{23} \cdot E_{31} =
 \end{bmatrix}
 = E_{21}.
 \]
-
+\vfill
 \medskip
 \noindent
 \textbf{2. Slučaj $j \neq k$:} $E_{23} \cdot E_{12} = 0$ (jer je $j=3, k=1$, pa je $\delta_{31}=0$):
@@ -3534,11 +3532,12 @@ E_{23} \cdot E_{12} =
 \end{bmatrix}
 = 0.
 \]
-
+\vfill
 \medskip
 \noindent
 \textbf{Zaključak:} Množenje matričnih jedinica svodi se na "prebacivanje" jedinice sa pozicije $(i,j)$ na poziciju $(i,l)$, ali samo ako se indeksi $j$ i $k$ poklapaju. U suprotnom, proizvod je nula-matrica.
-
+\vfill
+\newpage
 \begin{theorem} \textbf{(EL1) - množenje vrste/kolone skalarom} \label{rangMatriceTeorema1}
     \begin{enumerate}
         \item Za $\lambda \neq 0$, neka je \[\mathbb{F}_{i,\lambda} = \operatorname{diag}[1, 1, \ldots \underbrace{,\lambda,}_i 1, \ldots, 1] \in \mathbb{M}_n\] i $\mathcal{A} = [a_1, a_2, \ldots, a_m] = [a^1, a^2, \ldots, a^n] \in \mathbb{M}_{nm}$. Tada je \[\mathbb{F}_{i,\lambda} \mathcal{A} = [a^1, a^2, \ldots, \lambda a^i, \ldots, a^n],\] tj. sve vrste matrica $\mathbb{F}_{i,\lambda} \mathcal{A}$ i $\mathcal{A}$ osim $i$-te se podudaraju, a $i$-ta vrsta matrice $\mathbb{F}_{i,\lambda} \mathcal{A}$ jednaka je proizvodu $\lambda$ i $i$-te vrste matrice $\mathcal{A}$.
