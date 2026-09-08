@@ -3227,10 +3227,96 @@ Sa druge strane, $L \cap M$ će biti tačka (nula-vektor), pa je $L/(L\cap M) \c
 \intuicija 
 Zamislimo da je $V = \mathbb{R}^3$. Neka je $L$ prava kroz koordinatni početak (recimo $z$-osa), a $M$ ravan koja sadrži tu pravu (recimo $yz$-ravan). 
 
+\begin{figure}[!h]
+    \centering
+    \tdplotsetmaincoords{70}{120} % Postavka ugla gledanja
+    \begin{tikzpicture}[tdplot_main_coords, scale=1, >=Stealth, every node/.style={font=\normalsize}]
+    
+    % Mreža (grid) u x1x2 ravni (z=0) - pod
+    \begin{scope}[canvas is xy plane at z=0]
+        \draw[step=1cm, gray!25, very thin] (-1, -1) grid (5, 5);
+    \end{scope}
+    
+    % Mreža (grid) u x1x3 ravni (y=0) - levi zid (radi lepšeg 3D utiska)
+    \begin{scope}[canvas is xz plane at y=0]
+        \draw[step=1cm, gray!25, very thin] (-1, -1) grid (5, 5);
+    \end{scope}
+
+    % Mreža (grid) u x2x3 ravni (x=0) - levi zid (radi lepšeg 3D utiska)
+    \begin{scope}[canvas is yz plane at x=0]
+        \draw[step=1cm, olive!60, very thin] (-1, -1) grid (5, 5);
+    \end{scope}
+
+    \node[below right, olive!60] at (0, 5, 5) {$M$};
+    
+    % Koordinatne ose
+    \draw[->, thick] (0, 0, 0) -- (5, 0, 0) node[below] {$x$};
+    \draw[->, thick] (0, 0, 0) -- (0, 5, 0) node[right] {$y$};
+    \draw[->, thick] (0, 0, 0) -- (0, 0, 5) node[above] {$z$};
+    \draw[thick, blue] (0, 0, 0) -- (0, 0, 5);
+    \draw[dashed, thick, blue] (0, 0, -1) -- (0, 0, 0);
+
+    \node[blue] at (0, 0.5, 4.5) {$L$};
+
+    % Koordinatni početak
+    \node[below right] at (0, 0, 0) {$O$};
+    
+    \fill (0, 0, 0) circle (2pt);
+    
+    \end{tikzpicture}
+\end{figure}
+
 Posmatrajmo desnu stranu: $(V/L) \big/ (M/L)$.
 Prvo, $V/L$ je prostor u kome je čitava $z$-osa "slepljena" u jednu tačku. Geometrijski, to su sve prave paralelne sa $z$-osom; taj prostor je dimenzije $2$ (možemo ga zamisliti kao $xy$-ravan).
 Unutar tog prostora, $M/L$ je skup svih pravih paralelnih sa $z$-osom koje leže u $yz$-ravni. Kada se te prave "slepe" u tačke, one čine jednu pravu (dimenzije $1$) unutar te $xy$-ravni.
-Kada $V/L$ podelimo sa tom pravom ($M/L$), mi smo u stvari "spljoštili" $xy$-ravan duž jedne ose, pa ostaje prostor dimenzije $1$ (prava).
+
+\begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % --- PRVI KOORDINATNI SISTEM (Levo) ---
+        \begin{scope}[xshift=0cm]
+            \draw[step=1cm, gray!25, very thin] (-3, -3) grid (3, 3);
+        
+        % Koordinatne ose
+        \draw[->, thick] (-3, 0) -- (3, 0) node[below left] {$x$};
+        \draw[->, thick] (0, -3) -- (0, 3) node[below right] {$y$};
+        
+        % Koordinatni početak
+        \node[below left] at (0, 0) {$O$};
+        \node at (-2.5, 2.5) {$V/L$};
+
+        \node[blue, above left] at (0, 0) {$[0]_L$};
+        \fill[blue] (0, 0) circle (2pt);
+
+        \node[olive, above right] at (1, 1) {$[(1, 1, 0)]_L$};
+        \fill[olive] (1, 1) circle (2pt);
+        
+        \end{scope}
+
+        % --- DRUGI KOORDINATNI SISTEM (Desno) ---
+        \begin{scope}[xshift=8cm]
+        % Koordinatne ose
+        \draw[->, thick] (-3.5, 0) -- (3.5, 0) node[below left] {$y$};
+        \foreach \x in {-3,-2,-1,1,2,3}
+            \draw[thick] (\x, 0.1) -- (\x, -0.1);
+
+        \node[below right] at (0, 0) {$O$};
+
+        % Nula u V (slika kernela) - zelena tačka
+        \fill[blue] (0, 0) circle (2pt);
+        \node[above, blue] at (0, 0) {$[0]_L$};
+
+        % Slika klase [x] - siva tačka
+        \node[below, gray] at (-2, 0) {$[(0, -2, 0)]_L$};
+        \fill[gray] (-2, 0) circle (2pt);
+
+        \node[] at (-3, 1) {$M/L$};
+    \end{scope}
+        \end{tikzpicture}
+    \end{figure}
+
+\noindent Kada $V/L$ podelimo sa tom pravom ($M/L$), mi smo u stvari "spljoštili" $xy$-ravan duž jedne ose, pa ostaje prostor dimenzije $1$ (prava).
 
 Sa druge strane, $V/M$ je direktno deljenje celog $\mathbb{R}^3$ sa $yz$-ravni. Pošto smo celu $yz$-ravan "slepili" u nulu, ono što ostaje je samo $x$-osa, što je takođe 1D prostor.
 
@@ -3238,6 +3324,8 @@ Dakle, obe strane su prave (1D), pa su izomorfne. Ovo je analogno skraćivanju r
 \[
 \frac{V/L}{M/L} \cong \frac{V}{M}.
 \]
+
+
 
 
 \subsection{Tačni (egzaktni) nizovi}
