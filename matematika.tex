@@ -4015,8 +4015,10 @@ Koristeći formulu $\mathcal{A}(f) = T_{f \to e}^{-1} \, \mathcal{A}(e) \, T_{f 
 \begin{theorem}\
     \begin{enumerate}
         \item $\operatorname{sgn}: (\mathbb{S}_n, \circ) \to (\left\{-1, 1\right\}, \cdot)$ je homomorfizam grupa, tj. $ \operatorname{sgn}(\sigma \cdot \tau) = \operatorname{sgn}(\sigma) \cdot \operatorname{sgn}(\tau) $
-        \item $\ker \operatorname{sgn} = A_n$ je grupa.
+        \item $\ker \operatorname{sgn} = A_n$ je grupa. \;\; (svi koji se slikaju u 1)
         \item $||A_n|| = \frac{n!}{2}$
+        
+        \intuicija Postoji $n!$ permutacija, od kojih su pola parne i pola neparne.
     \end{enumerate}
 \end{theorem}
 
@@ -4025,28 +4027,30 @@ Koristeći formulu $\mathcal{A}(f) = T_{f \to e}^{-1} \, \mathcal{A}(e) \, T_{f 
     \item Permutacija $\sigma$ je \textbf{ciklus dužine $k$} ako postoji $(i_1, \dots, i_k) \in \mathbb{S}_n^k$ td. \[  \sigma(i_1) = i_2, \sigma(i_2)
     = i_3, \dots, \sigma(i_k) = i_1 \land (\forall j \in \mathbb{S}_n \setminus \{i_1, \dots, i_k\})\;\sigma(j) = j \]
     \item Ciklusi dužine 2 se zovu \textbf{transpozicije}. Transpozicije su neparne.
-    \item Disjunktni ciklusi komutiraju. (Očigledno, jer, na primer, ciklus $(124)$ "ne pipa" broj 3.)
+    \item Disjunktni ciklusi komutiraju. 
+    
+    \intuicija Na primer, ciklus $(124)$ "ne dira" broj 3, tj. svi elementi osim 1, 2 i 4 su nezavisni od ove permutacije.
     \item \textbf{Red permutacije:} $|\sigma| = \min\{j \in \mathbb{N} \; | \; \sigma^j = \operatorname{id}\}$
 \end{itemize}
 \newpage
 \begin{theorem}
     Svaka permutacija $\sigma \in \mathbb{S}_n$ se može predstaviti kao proizvod
     \begin{enumerate}
-        \item disjunktnih ciklusa \\
-        \underline{primer:} $\begin{pmatrix} 
+        \item disjunktnih ciklusa 
+        
+        \;\;\underline{primer:} $\begin{pmatrix} 
 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ 
 3 & 8 & 6 & 5 & 2 & 1 & 4 & 7 
 \end{pmatrix} = (136)(2875)$
-        \item transpozicija\\
-        \underline{primer:} $(i_1 i_2 \dots i_d) = (i_1 i_d)(i_1 i_{d-1}) \dots (i_1 i_2)$ 
+        \item transpozicija
+    
+        \;\;\underline{primer:} $(i_1 i_2 \dots i_d) = (i_1 i_d)(i_1 i_{d-1}) \dots (i_1 i_2)$ 
     \end{enumerate}
 \end{theorem}\
 
 \begin{corollary}
     Ciklus $\sigma$ je paran. $\iff$ Ciklus $\sigma$ je neparne dužine.
 \end{corollary}
-
-
 
 \begin{corollary}
     Neka je $\sigma = \tau_1 \circ \tau_2 \circ \dots \circ \tau_k$, gde su $\tau_i$ ciklusi dužine $t_i$. Tada je\[ 
@@ -4056,101 +4060,133 @@ Koristeći formulu $\mathcal{A}(f) = T_{f \to e}^{-1} \, \mathcal{A}(e) \, T_{f 
 
 \subsection{Definicija determinante (Lajbnicova formula)}
 Determinanta $\operatorname{det}: \mathbb{M}_n(\mathbb{F}) \to \mathbb{F}$ je funkcija definisana formulom:
-\[ \det \mathcal{A} = \sum_{\sigma \in \mathbb{S}_n} \left((-1)^{I(\sigma)} \prod_{i = 1}^{n}\alpha_{i \sigma(i)}\right), \]
-gde je $\mathcal{A} \in \mathbb{M}_{n}(\mathbb{F})$ i $\sigma_i$ je $i$-ta po redu permutacija skupa $\mathbb{S}_n$ u leksikografskom poretku. Ova definicija 
-ima prvenstveno teorijski značaj, jer je računski složena. Determinanta matrice $\mathcal{A}$ označava se sa $|\mathcal{A}|$\\
+\[ 
+\det \mathcal{A} = \sum_{\sigma \in \mathbb{S}_n} \left((-1)^{I(\sigma)} \prod_{i = 1}^{n}a_{i \sigma(i)}\right), 
+\]
+gde je $\mathcal{A} = (a_{ij}) \in \mathbb{M}_{n}(\mathbb{F})$. Ova definicija ima prvenstveno teorijski značaj jer je računski složena ($\mathcal{O}(n!)$ operacija). Determinanta matrice $\mathcal{A}$ označava se i sa $|\mathcal{A}|$.
 
-\noindent\underline{\textit{Intuicija/Izvođenje:}} Definišemo funkciju $n$-dimenzione zapremine, 
-\[\operatorname{vol}_n: \underbrace{\mathbb{R}^n \times \dots \times \mathbb{R}^n}_n \to \mathbb{R}, \]
+\medskip
+\noindent\underline{\textit{Intuicija / Izvođenje:}} 
+
+Definišemo funkciju $n$-dimenzione orijentisane zapremine:
+\[
+\operatorname{vol}_n: \underbrace{\mathbb{R}^n \times \dots \times \mathbb{R}^n}_n \to \mathbb{R},
+\]
 koja ima sledeća svojstva:
 \begin{enumerate}
-    \item linearnost po svakoj komponenti
-    \item antisimetričnost (ako permutujemo dve komponente, znak se menja; iz ovoga sledi da ako su dve komponente iste, vrednost funkcije je 0)
-    \item $\operatorname{vol}_n(e_1, e_2, \dots, e_n) = 1$
+    \item \textbf{Multilinearnost:} linearnost po svakoj komponenti (koloni),
+    \item \textbf{Antisimetričnost:} ako zamenimo mesta dvema komponentama, znak funkcije se menja (iz čega sledi da ako su dve komponente iste, vrednost je $0$),
+    \item \textbf{Normalizovanost:} $\operatorname{vol}_n(e_1, e_2, \dots, e_n) = 1$, gde je $(e_1, \dots, e_n)$ standardna kanonska baza.
 \end{enumerate}
-Računamo:
-\[
-    \begin{aligned}
-        &\operatorname{vol}_n \left(\begin{bmatrix}
-        a_{11} \\ \vdots \\ a_{n1}
-        \end{bmatrix}, 
-        \underbrace{
-        \begin{bmatrix}
-            a_{12} \\ \vdots \\ a_{n2}
-        \end{bmatrix}, 
-        \dots,
-        \begin{bmatrix}
-            a_{1n} \\ \vdots \\ a_{nn}
-        \end{bmatrix}}_{(\star)}
-        \right) = \operatorname{vol}_n \bigg( a_{11}e_1 + \dots + a_{n1}e_n, \;(\star)\; \bigg) \\
-        &= \sum_{j_1 = 1}^{n}a_{j_11} \operatorname{vol}_n(e_{j_1}, (\star)) 
-        = \sum_{j_1 = 1}^{n}a_{j_11} \operatorname{vol}_n\left(e_{j_1}, \begin{bmatrix}
-            a_{12} \\ \vdots \\ a_{n2}
-        \end{bmatrix}, 
-        \dots,
-        \begin{bmatrix}
-            a_{1n} \\ \vdots \\ a_{nn}
-        \end{bmatrix}\right) \\
-        &= \sum_{j_1 = 1}^{n} \sum_{j_2=1}^{n} a_{j_11} a_{j_22} \operatorname{vol}_n\left(e_{j_1}, e_{j_2}, \begin{bmatrix}
-            a_{13} \\ \vdots \\ a_{n3}
-        \end{bmatrix}, 
-        \dots,
-        \begin{bmatrix}
-            a_{1n} \\ \vdots \\ a_{nn}
-        \end{bmatrix}\right) =
-    \end{aligned}
-\]
-\[
-        = \sum_{j_1 = 1}^{n} \sum_{j_2 = 1}^{n} \dots \sum_{j_n=1}^{n} a_{j_11} a_{j_22} \dots a_{j_nn} \underbrace{\operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n})}_{0 \text{ ako se 2 komp. podudaraju}}
-\]
-Pretpostavimo da važi $e_{j_1} \neq e_{j_2} \neq \dots \neq e_{j_n}$ (inače je ceo izraz jednak 0, tj. vektori su linearno zavisni).Tada izraz postaje:
-\[
-    \sum_{(j_1, \dots, j_n) \;\in \;\mathbb{S}_n } a_{j_11} a_{j_22} \dots a_{j_nn} \operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n}),
-\]
-a prema definiciji funkcije $\operatorname{vol}_n$ važi
-\[
-    \operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n}) = \operatorname{sgn}((j_1, \dots, j_n)) = 
-    \begin{cases}
-        +1, & I((j_1, \dots, j_n)) \equiv_2 0 \\
-        -1, & I((j_1, \dots, j_n)) \equiv_2 1
-    \end{cases}.
-\] Dakle, 
-\[ \operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n}) = (-1)^{I(\sigma)}, \;\; \sigma = (j_1, \dots, j_n) \]
-Definišimo permutaciju $\sigma \in S_n$ kao \textbf{inverznu} permutaciju od $(j_1, j_2, \dots, j_n)$, tj.
-\[
-\sigma(j_i) = i, \qquad \text{za svako } i = 1, 2, \dots, n.
-\]
-Tada važi:
-\[
-a_{j_1 1} a_{j_2 2} \dots a_{j_n n}
-=
-a_{1\sigma(1)} a_{2\sigma(2)} \dots a_{n\sigma(n)},
-\]
-jer kada $i$ prolazi kroz $1, \dots, n$, tada $k = j_i$ takođe prolazi kroz sve brojeve od $1$ do $n$ (samo u drugačijem redosledu), a pri tome je $i = \sigma(k)$.
-Takođe, pošto inverzna permutacija ima isti broj inverzija (tj. istu parnost) kao i polazna, važi:
-\[
-(-1)^{I((j_1, \dots, j_n))} = (-1)^{I(\sigma)}.
-\]
-Zamenom u prethodnu sumu (i zamenom oznake $a_{ij}$ sa $\alpha_{ij}$) dobijamo upravo polaznu Lajbnicovu formulu:
-\[
-\sum_{\sigma \in S_n} (-1)^{I(\sigma)} \alpha_{1\sigma(1)} \alpha_{2\sigma(2)} \dots \alpha_{n\sigma(n)}.
-\]\\
 
-Ako imamo 3-dimenzionu bazu $(e_i, e_j, e_k)$, vidimo da je ona pozitivno orijentisana akko je $(i, j, k) \in \mathbb{S}_n$ parna permutacija. Determinanta
-matrice čije kolone čine negativno orijentisanu bazu je negativna. O ovome se može razmišljati na sledeći način: znamo da kvadratna matrica predstavlja 
-transformaciju prostora. Ako transformacija "obrće" zapreminu, prirodno se nameće da je ta zapremina negativna (zamislimo $1 \times 1 \times 1$ kocku koja 
-se smanjuje dok zapremina ne postane 0, a zatim nastavi, tj. počne da raste "naopako"). Ovo i vidimo u prethodnom izvođenju. Sabiramo zapreminu "deo po deo", 
-a negativno orijentisani delovi se svode na oduzimanje.
+Posmatrajmo matricu $\mathcal{A}$ predstavljenu preko svojih kolonskih vektora $v_1, v_2, \dots, v_n$:
+\[
+v_j = \begin{bmatrix} a_{1j} \\ \vdots \\ a_{nj} \end{bmatrix} = \sum_{i=1}^n a_{ij} e_i.
+\]
+Izračunajmo zapreminu paralelotopa razapetog kolonskim vektorima:
+\[
+\begin{aligned}
+\operatorname{vol}_n (v_1, v_2, \dots, v_n) &= \operatorname{vol}_n \left( \sum_{j_1=1}^n a_{j_1 1} e_{j_1}, \sum_{j_2=1}^n a_{j_2 2} e_{j_2}, \dots, \sum_{j_n=1}^n a_{j_n n} e_{j_n} \right) \\
+&= \sum_{j_1 = 1}^{n} \sum_{j_2 = 1}^{n} \dots \sum_{j_n=1}^{n} a_{j_1 1} a_{j_2 2} \dots a_{j_n n} \operatorname{vol}_n (e_{j_1}, e_{j_2}, \dots, e_{j_n}).
+\end{aligned}
+\]
+Zbog antisimetričnosti, ako se proizvoljna dva indeksa $j_a, j_b$ podudaraju ($j_a = j_b$), važi $\operatorname{vol}_n(e_{j_1}, \dots, e_{j_n}) = 0$. Prema tome, ne-nula sabirci ostaju samo kada je preslikavanje $\tau: i \mapsto j_i$ permutacija skupa $\{1, \dots, n\}$, tj. $\tau = (j_1, j_2, \dots, j_n) \in \mathbb{S}_n$.
 
+Suma se svodi na:
+\[
+\sum_{\tau \in S_n} a_{\tau(1) 1} a_{\tau(2) 2} \dots a_{\tau(n) n} \operatorname{vol}_n (e_{\tau(1)}, e_{\tau(2)}, \dots, e_{\tau(n)}).
+\]
+Na osnovu svojstava antisimetričnosti i normalizovanosti, dovođenjem vektora $(e_{\tau(1)}, \dots, e_{\tau(n)})$ u kanonski poredak $(e_1, \dots, e_n)$ pomoću susednih transpozicija dobijamo:
+\[
+\operatorname{vol}_n (e_{\tau(1)}, \dots, e_{\tau(n)}) = \operatorname{sgn}(\tau) \cdot \operatorname{vol}_n(e_1, \dots, e_n) = (-1)^{I(\tau)}.
+\]
 
+Da bismo prešli na standardni zapis gde su vrste poređane po redu ($1, 2, \dots, n$), definišimo inverznu permutaciju $\sigma = \tau^{-1}$. Kako svaka permutacija i njena inverzna imaju isti broj inverzija ($I(\tau) = I(\sigma)$), važi:
+\[
+a_{\tau(1) 1} a_{\tau(2) 2} \dots a_{\tau(n) n} = a_{1 \sigma(1)} a_{2 \sigma(2)} \dots a_{n \sigma(n)} \quad \text{i} \quad (-1)^{I(\tau)} = (-1)^{I(\sigma)}.
+\]
+Zamenom u sumu dobijamo polaznu Lajbnicovu formulu:
+\[
+\det \mathcal{A} = \sum_{\sigma \in \mathbb{S}_n} (-1)^{I(\sigma)} a_{1\sigma(1)} a_{2\sigma(2)} \dots a_{n\sigma(n)}.
+\]
+
+\medskip
+\noindent\textbf{Geometrijska interpretacija:}
+Kvadratna matrica $\mathcal{A}$ predstavlja linearnu transformaciju prostora. Vrednost $\det \mathcal{A}$ meri faktor promene zapreme pri toj transformaciji. Znak determinante odražava orijentaciju prostora: ako je $\det \mathcal{A} > 0$, transformacija čuva orijentaciju, dok negativna vrednost ($\det \mathcal{A} < 0$) označava da transformacija „preslikava prostor u ogledalu” (menja orijentaciju baze).
+
+\begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % --- PRVI KOORDINATNI SISTEM (Levo) ---
+        \begin{scope}[xshift=0cm]
+            \draw[step=1cm, gray!25, very thin] (-3, -4) grid (4, 5);
+        
+            \draw[->, thick] (-3, 0) -- (4, 0);
+            \draw[->, thick] (0, -4) -- (0, 5);
+        
+            \node[below left] at (0, 0) {$O$};
+
+            % Kvadrat određen baznim vektorima
+            \fill[green!30, opacity=0.6] (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+            \draw[green!60!black, thick] (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+            \node[green!60!black] at (1.3, 1.3) {$S = 1$};
+    
+            % Bazni vektori (iscrtani preko površine)
+            \draw[->, very thick, blue] (0, 0) -- (1, 0) node[below right, blue] {$e_1$};
+            \draw[->, very thick, blue] (0, 0) -- (0, 1) node[above left, blue] {$e_2$};
+        \end{scope}
+
+        % --- DRUGI KOORDINATNI SISTEM (Desno) ---
+        \begin{scope}[xshift=8.5cm]
+
+            % Mreža i rotirane ose unutar transformisanog sistema
+            \begin{scope}
+                \clip (-3, -4) rectangle (4, 5);
+                \begin{scope}[x={(0.3333cm, 2cm)}, y={(-1cm, 1cm)}]
+                    % Transformisana mreža
+                    \foreach \i in {-10,-9,...,10} {
+                        \draw[gray!30, very thin] (-15, \i) -- (15, \i);
+                        \draw[gray!30, very thin] (\i, -15) -- (\i, 15);
+                    }
+                    
+                    % Ose rotirane tako da prate pravce A(e_1) i A(e_2)
+                    \draw[->, thick] (-2, 0) -- (2.5, 0);
+                    \draw[->, thick] (0, -3) -- (0, 3);
+                \end{scope}
+            \end{scope};
+        
+            % Vektori i transformisana površina
+            \begin{scope}[x={(0.3333cm, 2cm)}, y={(-1cm, 1cm)}]
+                \node[below left] at (0, 0) {$O$};
+
+                % Transformisani kvadrat (paralelogram)
+                \fill[green!30, opacity=0.6] (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+                \draw[green!60!black, thick] (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+                \node[green!60!black] at (1.2, 1.2) {$S = \det(\mathcal{A})$};
+    
+                \draw[->, very thick, blue] (0, 0) -- (1, 0) node[below right, blue] {$A(e_1)$};
+                \draw[->, very thick, blue] (0, 0) -- (0, 1) node[below left, blue] {$A(e_2)$};
+            \end{scope}
+
+        \end{scope}
+
+        % Strelica transformacije
+        \draw[->, thick, >=Stealth] (3.5, 1.2) to[out=30, in=150] (6.3, 1.2);
+        \node at (4.8, 2) {$A$};
+        \end{tikzpicture}
+    \end{figure}
+    \newpage
 
 \begin{theorem}
     Neka je $\mathcal{A} = (\alpha_{ij}) \in \mathbb{M}_n$. Tada važi:
     \begin{enumerate}
-        \item Ako je neka vrsta ili kolona matrice $\mathcal{A}$ nula vektor, onda je $|\mathcal{A}| = 0$.\\
-        \noindent\underline{\textit{Intuicija:}} Npr. ako $3\times 3$ matrica ima tačno 1 nula vektor, geomtrijski je to onda ravan, pa ima zapreminu 0.
+        \item Ako je neka vrsta ili kolona matrice $\mathcal{A}$ nula vektor, onda je $|\mathcal{A}| = 0$.
+    
+        \noindent\underline{\textit{Intuicija:}} Npr. ako $3\times 3$ matrica ima tačno 1 nula vektor, geometrijski je to onda ravan, pa ima zapreminu 0.
         \item $|\mathcal{A}| = |\mathcal{A^T}|$
-        \item Ako je $\mathcal{A}$ trougaona matrica, tada je $|\mathcal{A}| = \alpha_{11}\alpha_{22}\dots \alpha_{nn}$.\\
+        \item Ako je $\mathcal{A}$ trougaona matrica, tada je $|\mathcal{A}| = \alpha_{11}\alpha_{22}\dots \alpha_{nn}$.
+        
         \noindent\underline{\textit{Intuicija:}} Trougaona matrica deluje tako što svaki novi bazni vektor dodaje novu dimenziju koja je ortogonalna na prethodne (zbog nula iznad/ispod dijagonale). Zato se zapremina množi samo dijagonalnim elementima – oni su dužine "visina" u svakom koraku.
     \end{enumerate} 
 \end{theorem}
@@ -4227,7 +4263,6 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 \begin{theorem}
     Determinanta je multilinearni alternirajući funkcional.
 \end{theorem}
-\newpage
 
 \subsection{Induktivna definicija determinante i Laplasov razvoj}
 \begin{itemize}
@@ -4296,7 +4331,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     \end{bmatrix} \in \mathbb{M}_n(\mathbb{F})\]
     \item Determinante trodijagonalnih matrica se lako mogu izračunati pomoću rekurentnih relacija.
 \end{itemize}
-
+\newpage
 \subsection{Bine-Košijeva teorema}
 \begin{theorem}
     \textbf{(Bine-Koši):} Neka $\mathcal{A}, \mathcal{B} \in \mathbb{M}_n(\mathbb{F})$. Tada važi:
@@ -4333,7 +4368,6 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
         \mathcal{O} & \mathcal{D}
     \end{bmatrix} = \det \mathcal{B}\det\mathcal{D}\]
 \end{lemma}
-\newpage
 
 \subsection{Karakterizacija determinante}
 
@@ -4352,6 +4386,7 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 \end{theorem}
 
 \newpage
+
 \section{Sistemi linearnih jednačina}
 
 \subsection{Definicija sistema linearnih jednačina}

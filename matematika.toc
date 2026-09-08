@@ -139,13 +139,13 @@
 \contentsline {subsection}{\numberline {9.4.2}Parnost permutacija}{82}{subsection.9.4.2}%
 \contentsline {subsection}{\numberline {9.4.3}Ciklus}{82}{subsection.9.4.3}%
 \contentsline {subsection}{\numberline {9.4.4}Definicija determinante (Lajbnicova formula)}{83}{subsection.9.4.4}%
-\contentsline {subsection}{\numberline {9.4.5}Multilinearnost determinante}{85}{subsection.9.4.5}%
+\contentsline {subsection}{\numberline {9.4.5}Multilinearnost determinante}{86}{subsection.9.4.5}%
 \contentsline {subsection}{\numberline {9.4.6}Induktivna definicija determinante i Laplasov razvoj}{86}{subsection.9.4.6}%
-\contentsline {subsection}{\numberline {9.4.7}Determinanta matrice i elementarne transformacije}{86}{subsection.9.4.7}%
+\contentsline {subsection}{\numberline {9.4.7}Determinanta matrice i elementarne transformacije}{87}{subsection.9.4.7}%
 \contentsline {subsection}{\numberline {9.4.8}Vandermondova determinanta}{87}{subsection.9.4.8}%
 \contentsline {subsection}{\numberline {9.4.9}Računanje determinanti preko rekurentnih relacija}{87}{subsection.9.4.9}%
-\contentsline {subsection}{\numberline {9.4.10}Bine-Košijeva teorema}{87}{subsection.9.4.10}%
-\contentsline {subsection}{\numberline {9.4.11}Lema o množenju blok matrica}{87}{subsection.9.4.11}%
+\contentsline {subsection}{\numberline {9.4.10}Bine-Košijeva teorema}{88}{subsection.9.4.10}%
+\contentsline {subsection}{\numberline {9.4.11}Lema o množenju blok matrica}{88}{subsection.9.4.11}%
 \contentsline {subsection}{\numberline {9.4.12}Karakterizacija determinante}{88}{subsection.9.4.12}%
 \contentsline {section}{\numberline {9.5}Sistemi linearnih jednačina}{89}{section.9.5}%
 \contentsline {subsection}{\numberline {9.5.1}Definicija sistema linearnih jednačina}{89}{subsection.9.5.1}%
