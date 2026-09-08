@@ -2687,7 +2687,7 @@ zato uzimamo samo tu komponentu.
 \end{itemize}
 
 \subsection{Matrica prelaska}
-
+\label{MatricaPrelaska}
 \begin{itemize}
     \item Za fiksiranu bazu $e$, koordinatizacija (videti definiciju \ref{koordinatizacija1}) je data formulom
     \[ \kappa_e(x) = \kappa_e\left(\sum_{i=1}^{n} x_ie_i \right) = (x_1, \dots, x_n) = x(e). \]
@@ -2949,7 +2949,7 @@ baze (lema \ref{OdredjenostLinearnogOperatora}). Transformaciju $A$ možemo prik
     \item $d(A) = \dim (\ker A)$ - \textbf{defekt} linearnog operatora
 \end{itemize}
 \newpage 
-\begin{theorem}
+\begin{theorem} \label{teoremaRangDefekt}
     \textbf{(O rangu i defektu linearnog operatora)}: Neka je $A: U \to V$ linearni operator i $\dim U < \infty$. Tada je 
     \[ r(A) + d(A) = \dim U.\]
 \end{theorem}
@@ -3704,10 +3704,10 @@ Neka je data matrica
 
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
 \subsubsection*{Linearni funkcional i dualni prostor}
-Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n \in \mathbb{R}$. \linebreak Prostor $V^*$ se zove \textbf{dualni prostor} prostora $V$.
+Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n  \in \mathbb{R}$.\;\footnote{Linearni funkcional možemo posmatrati kao skalarni proizvod, tj. svaki linearni funkcional je oblika $f_a(v) = \langle a, v \rangle$ za jedinstven vektor $a$. I obrnuto, za svaki vektor $a$ postoji jedinstven linearni funkcional.} \linebreak Prostor $V^*$ se zove \textbf{dualni prostor} prostora $V$.
 
 
-Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
+Zbog teoreme o rangu i defektu (\ref{teoremaRangDefekt}) važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
 \\
 \subsubsection{Dualna baza}
     Neka je $V$ vektorski prostor nad $\mathbb{F}$ ($n = \dim V < \infty$) i $e = (e_1, \dots, e_n)$ neka njegova baza.
@@ -3722,8 +3722,8 @@ Zbog teoreme o rangu i defektu važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}
     \item svaki linearni funkcional $f: V \to \mathbb{F}$ je oblika\[ f = \sum_{j=1}^{n} f(e_j)e_j^* \] 
     \item za svaki vektor $x \in V$ važi \[ x = \sum_{j=1}^{n} e^*_j(x)e_j \]
     \end{enumerate}
-    Baza $e^*$ se zove \textbf{dualna baza} bazi $e$. \\
-    
+    Baza $e^*$ se zove \textbf{dualna baza} bazi $e$.
+    \newpage
  \noindent\underline{\textit{Intuicija:}} 
 Dualna baza $e^*$ je skup linearnih funkcionala koji "čitaju" koordinate vektora u bazi $e$. Funkcional $e_j^*$ izdvaja $j$-tu koordinatu:
 \[
@@ -3735,7 +3735,7 @@ Ovi funkcionali su upravo \textbf{vrste} inverzne matrice prelaska $P^{-1}$, pa 
 \]
 Dakle, dualna baza i matrica prelaska su dva aspekta iste stvari: dualna baza su funkcionali, a matrice prelaska njihovi koeficijenti.
 \subsubsection*{Primer: Određivanje dualne baze}
-Neka je $V = \mathbb{R}^3$ i neka je $V = \mathcal{L}\left(\{e_1 = (2, 1), \;e_2 = (3,1)\}\right)$. Odredimo bazu $e^*$. Znamo da važi $e^*_j(e_i) = \delta_{ij}$. Dakle, 
+Neka je $V = \mathbb{R}^2$ i neka je $V = \mathcal{L}\left(\{e_1 = (2, 1), \;e_2 = (3,1)\}\right)$. Odredimo bazu $e^*$. Znamo da važi $e^*_j(e_i) = \delta_{ij}$. Dakle, 
 \[ e_1^*(e_1) = e_1^*((2, 1)) = 2e_1^*((1, 0)) + e_1^*((0, 1)) = 1 \]
 \[ e_1^*(e_2) = e_1^*((3, 1)) = 3e_1^*((1, 0)) + e_1^*((0, 1)) = 0 \]
 Rešavanjem ovog sistema, dobijamo $e_1^*((1, 0)) = -1$ i $e_1^*((0, 1)) = 3$. Analognim postupkom, za $e_2^*$ dobijamo $e_2^*((1, 0)) = 1$ i $e_2^*((0, 1)) = -2$. Sada, za proizvoljan
@@ -3819,15 +3819,21 @@ Za svako $x \in V$ i $f \in V^*$ možemo definisati linearno preslikavanje $\phi
 \end{itemize}
 \end{corollary}
 
-\vfill
 \subsection{Dualno (transponovano) preslikavanje}
 \label{dualnoPreslikavanje}
 Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \hom  \left(U, V\right)$. Tada $A$ prirodno indukuje linearno preslikavanje $A^*: V^* \to U^*$ formulom
 \[ (A^*[f])(x) := A^*[f](x) = (f \circ A)(x) = f(A(x)) \]
 Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjungovani)} operator od $A$.
+\medskip
+
+\intuicija Na prvi pogled nije očigledno šta zapravo radi dualni operator. Naime, on rešava sledeći problem: "Ako znam da merim (pomoću linearnih funkcionala)
+vektore u $V$, kako mogu pomoću $A$ da napravim način merenja i u $U$?" Dakle imamo $f:V \to \mathbb{F}$, koji je linearni funkcional iz $V^*$, a kako $A$ slika 
+$U$ u $V$, onda $f \circ A$ slika $U$ u $\mathbb{F}$, tj. ovo je naš linearni funkcional u $U^*$. Ovo je upravo (po definiciji) dualni operator:
+\[ A^*(f) = f(A). \]
+
 \begin{theorem}
     Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$ i $A \in \hom \left(U, V\right)$. Tada postoji jedinstveni linearni operator $A^* 
-    \in \hom \left(U^*, V^*\right)$ takav da je $A^*[f](x) = f(A(x)), \linebreak \forall f \in V^*, \; \forall x \in U$.
+    \in \hom \left(V^*, U^*\right)$ takav da je $A^*[f](x) = f(A(x)), \linebreak \forall f \in V^*, \; \forall x \in U$.
 \end{theorem}
 \begin{theorem}
     Neka su $U$ i $V$ vektorski prostori nad $\mathbb{F}$, $\operatorname{dim} U, \operatorname{dim} V < \infty$, i \linebreak$A \in \hom \left(U, V\right)$. Tada
@@ -3845,12 +3851,14 @@ Linearni operator $A^*$ zove se \textbf{dualni (transponovani, adjungovani)} ope
     baza od $U^*$, i neka je $f$ neka baza od $V$ i $f^*$ njoj dualna baza od $V^*$. Ako sa $\mathcal{A}$ obeležimo matricu operatora $A$ u paru baza $e$ i $f$, a sa
     $\mathcal{A}^*$ matricu operatora $A^*$ u paru baza $f^*$ i $e^*$, tada je \[\mathcal{A}^\mathcal{T} = \mathcal{A}^*.\]
 \end{theorem}
-\vfill
-\newpage
+
 \begin{corollary}
     Neka je $\mathcal{A}$ matrica nad poljem $\mathbb{F}$. Tada se rang od $\mathcal{A}$ po vrstama podudara sa rangom od $\mathcal{A}$ po kolonama.
 \end{corollary} 
+\newpage
 
+\begin{comment}
+    
 \noindent\underline{\textit{Intuicija:}} Dakle, $A$ slika $U$ u $V$, a $A^*$ slika $V^*$ u $U^*$. Takođe, vidimo da je transponovana matrica preslikavanja $A$ upravo matrica preslikavanja $A^*$. Znamo da ako neko linearno preslikavanje 
 $T$ slika $U$ u $V$ i $\operatorname{dim} U = n, \; \operatorname{dim} V = m$, tada će njegova matrica $\mathcal{T}$ biti dimenzija $\operatorname{dim} V \times \operatorname{dim} U = m \times n$,
 a $\mathcal{T^T}$dimenzija $n \times m$, tj. oblika
@@ -3871,6 +3879,7 @@ a $\mathcal{T^T}$dimenzija $n \times m$, tj. oblika
 važi $(AB)^\mathcal{T} = B^\mathcal{T} A^\mathcal{T}$. Naime, ako važi $U \xrightarrow{AB} W$, tj. $U \xrightarrow{B} V \xrightarrow{A} W$, 
 u duhu dosadašnje diskusije dobijamo $W^* \xrightarrow{A^\mathcal{T}} V^* \xrightarrow{B^\mathcal{T}} U^*$. Dakle, ovo je intuicija iza trasponovane matrice. Da rezimiramo:
 \[ \boxed{u \in U \xrightarrow{A} A(u) \in V \xrightarrow{f} f(A(u)) \in \mathbb{F}}, \;\; f: V \to \mathbb{F}, \;A: U \to V \]
+\end{comment}
 
 \subsection{Zavisnost matrice operatora od baze}
 Neka su $U, V, W$ konačnodimenzioni vektorski prostori nad poljem $\mathbb{F}$ i neka je 
@@ -3903,7 +3912,7 @@ gde je $\mathcal{C} \in \mathbb{M}_{l \times m}(\mathbb{F})$, $\mathcal{B} \in \
 \medskip
 \noindent
 \subsubsection*{Matrica prelaska} 
-Neka je $T_{e' \to e}$ matrica prelaska sa baze $e'$ na bazu $e$. Tada za koordinate proizvoljnog vektora $x \in U$ važi:
+Neka je $T_{e' \to e}$ matrica prelaska sa baze $e'$ na bazu $e$. Tada za koordinate proizvoljnog vektora $x \in U$ važi (videti \ref{MatricaPrelaska}):
 \[
 x(e) = T_{e' \to e} \, x(e'),
 \]
@@ -3914,23 +3923,29 @@ gde su $x(e)$ i $x(e')$ koordinate vektora $x$ u tim bazama.
 \subsubsection*{Promena baze linearnog operatora}
 
 Neka je $A: U \to V$ linearni operator. Neka su $e, e'$ baze od $U$ i $f, f'$ baze od $V$. 
-Neka je $T_{e \to e'}$ matrica prelaska iz baze $e$ u bazu $e'$ (tj. $x(e') = T_{e \to e'} \, x(e)$), 
+Neka je $T_{e \to e'}$ matrica prelaska iz baze $e$ u bazu $e'$, 
 a $T_{f \to f'}$ matrica prelaska iz baze $f$ u bazu $f'$.
 
 Tada je veza između matrica operatora $A$ u parovima baza $(e, f)$ i $(e', f')$ data sa:
 \[
-\boxed{\mathcal{A}(f', e') = T_{f \to f'}^{-1} \, \mathcal{A}(f, e) \, T_{e \to e'}}
+\boxed{\mathcal{A}(f', e') = T_{f \to f'} \, \mathcal{A}(f, e) \, T_{e \to e'}^{-1}}
 \]
 gde je $\mathcal{A}(f, e)$ matrica operatora $A$ u bazi $e$ (polazni prostor) i $f$ (dolazni prostor).
 
-Specijalno, ako je $V = U$ i biramo istu bazu za polazni i dolazni prostor ($f = e$, $f' = e'$), formula se svodi na relaciju \textbf{sličnosti}:
+Specijalno, ako je $V = U$ i biramo istu bazu za polazni i dolazni prostor ($f = e$, $f' = e'$), formula se svodi na relaciju sličnosti:
 \[
-\boxed{\mathcal{A}(e') = T_{e \to e'}^{-1} \, \mathcal{A}(e) \, T_{e \to e'}}
+\boxed{\mathcal{A}(e') = T_{e \to e'} \, \mathcal{A}(e) \, T_{e \to e'}^{-1}}
 \]
-Tada kažemo da su matrice $\mathcal{A}(e)$ i $\mathcal{A}(e')$ \textbf{slične}.
 
-\medskip
-\noindent
+\newpage
+
+\intuicija Recimo da imamo vektor $v$ i da znamo njegove koordinate u bazi $f$, tj. $[v]_f$. Sada, recimo da hoćemo da izračunamo vektor $A(v)$ u bazi $f$, tj.
+$[\mathcal{A}v]_f$. Evo logike iza formule za promenu baze (setimo se da je $T_{e \to f}^{-1} = T_{f \to e}$):
+{\Large \[ [A(v)]_f = T_{e \to f}  \overbrace{[A]_e \underbrace{T_{f \to e} [v]_f}_{[v]_e}}^{[A(v)]_e} \]}
+
+Dakle, prvo "prevedemo" vektor "na stranom jeziku" u "svoj jezik," zatim primenimo transformaciju koja je "u našem jeziku" i, na kraju, taj transformisani vektor prevedemo nazad u 
+"strani jezik".
+\vfill
 \subsubsection*{Primer (promena baze u $\mathbb{R}^3$)}
 
 Neka je $e$ kanonska baza u $\mathbb{R}^3$, a $f = (f_1, f_2, f_3)$ baza data sa:
@@ -3969,7 +3984,7 @@ Koristeći formulu $\mathcal{A}(f) = T_{e \to f}^{-1} \, \mathcal{A}(e) \, T_{e 
 -13 & -9 & 3
 \end{bmatrix}.
 \]
-
+\vfill
 
 \newpage
 
