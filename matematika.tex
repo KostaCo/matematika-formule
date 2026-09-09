@@ -4541,7 +4541,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \item Svaki linearni operator $A \in \hom V$ ima \textbf{trivijalne} invarijantne potprostore, \linebreak $L = \{0\}$ i $L = V$. Ostale nazivamo \textbf{pravi} ili \textbf{netrivijalni} invarijantni potprostori operatora $A$.
 \end{itemize}
 
-\begin{theorem}
+\begin{theorem} \label{teoremaInvarijantiPotprostori1}
     Neka je $A \in \hom V$ linearni operator. Tada važi:
     \begin{enumerate}
         \item $\ker A$ i $\operatorname{Im}A$ su invarijantni potprostori od $A$
@@ -4632,6 +4632,13 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \end{enumerate}
 \end{theorem}
 
+\intuicija $x \in \operatorname{Im}A^m \implies A(x) \in \operatorname{Im}A^m$ (teorema \ref{teoremaInvarijantiPotprostori1}).
+\begin{enumerate}
+    \item $(x \in \ker A^m \implies A^m x = 0) \;\; \land \;\; (x \in \operatorname{Im} A^m \implies x = A^m y)$\\
+    $\implies (x \in \ker A^m \cap \operatorname{Im}A^m \implies x = 0) \implies V = L \oplus M$
+    \item $\ker A_{|M} = \{0\}$ zbog tačke 1.
+\end{enumerate}
+
 \subsection{Karakteristični polinom i invarijante sličnosti}
 
 \begin{itemize}
@@ -4646,6 +4653,11 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \end{vmatrix} = \kappa_\mathcal{A}(\lambda)\]
     nazivamo \textbf{karakteristični polinom} $\kappa_\mathcal{A}(\lambda)$ matrice $\mathcal{A}$.
     \item \textbf{Karakteristična jednačina} matrice $\mathcal{A}$: $\kappa_\mathcal{A}(\lambda) = 0$
+
+    \intuicija Čemu ovo služi? Želimo da pronađemo vektore na koje linearni operator deluje samo kao skaliranje ($\mathcal{A}v = \lambda v$), tj. sve vektore koji 
+    ostaju na svom pravcu nakon primene transformacije. Ovo znači da je $\mathcal{A}v - \lambda\mathbb{I}_n v = 0$ (za $v \neq 0$), pa je 
+    \[ \mathcal{A} - \lambda\mathbb{I}_n = 0 \implies \underbrace{\det (\mathcal{A} - \lambda\mathbb{I}_n = 0)}_{\kappa_A(\lambda)} = 0. \]
+
     \item Važi jednakost:
     \[ \kappa_\mathcal{A}(\lambda) = \prod^{n}_{i = 1} (\alpha_{ii} - \lambda) + q(\lambda), \;\; \deg q \leq n-2 \]
     \item \textbf{Invarijante sličnosti} su svojstva linearnog operatora $A \in \hom V$ koja ne zavise od baze.
@@ -4653,11 +4665,15 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
 
 \begin{theorem}
     Karakteristični polinom je invarijanta sličnosti.
-\end{theorem}\
+\end{theorem}
 
-\noindent\textbf{Posledica 1.} \textit{Trag matrice je invarijanta sličnosti.}\\
+\begin{corollary}
+    Trag $\operatorname{Tr}(\mathcal{A})$ matrice (suma elemenata na glavnoj dijagonali) je invarijanta sličnosti.
+\end{corollary}
 
-\noindent\textbf{Posledica 2.} \textit{Determinanta matrice je invarijanta sličnosti.}
+\begin{corollary}
+    Determinanta matrice je invarijanta sličnosti.
+\end{corollary}
 
 \subsection{Hamilton-Kejlijeva teorema}
 
@@ -4727,7 +4743,9 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \[ \lambda_0 \in \operatorname{Sp}(A) \iff \kappa_A(\lambda_0) = 0 \]
 \end{theorem}
 
-\noindent\textbf{Posledica.} \textit{Sopstvena vrednost je invarijanta sličnosti.}
+\begin{corollary}
+    Sopstvena vrednost je invarijanta sličnosti.
+\end{corollary}
 
 \begin{theorem}
     Linearni operator koji deluje na $n$-dimenzionom vektorskom prostoru nad algebarski zatvorenim poljem ima tačno $n$ sopstvenih vrednosti (među kojima može
@@ -4754,7 +4772,7 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     Neka su $\lambda_1, \dots, \lambda_k$ međusobno različite sopstvene vrednosti linearnog operatora $A \in \hom V$ i 
     neka su redom $v_1, \dots, v_k$ odgovarajući sopstveni vektori. Tada je skup vektora $\{v_1, \dots, v_k\}$ linearno nezavisan.
 \end{lemma}
-
+\newpage
 \begin{theorem}
     Neka je $A \in \hom V$ linearni operator nad $\mathbb{F}$. Tada su sledeći iskazi ekvivalentni:
     \begin{enumerate}
@@ -4764,17 +4782,21 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
     \end{enumerate}
 \end{theorem}
 
-\noindent\textbf{Posledica 1.} \textit{Ako je operator $A$ dijagonalizabilan, tada se na glavnoj dijagonali njegove matice u 
-bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti operatora $A$. Dakle, oblika je}
+\begin{corollary}
+    Ako je operator $A$ dijagonalizabilan, tada se na glavnoj dijagonali njegove matice u 
+bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti operatora $A$. Dakle, oblika je
 \[ \mathcal{A}(e) = \begin{bmatrix}
     \lambda_1 & 0 & \dots & 0 \\
     0 & \lambda_2 & \dots & 0 \\
     \vdots & \vdots & \ddots & \vdots \\
     0 & 0 & \dots & \lambda_n
 \end{bmatrix}. \]
+\end{corollary}
 
-\noindent\textbf{Posledica 2.} \textit{Ako operator $A$ ima $n = \dim V$ različitih sopstvenih vrednosti, onda je on dijagonalizabilan.}
-\newpage
+\begin{corollary}
+    Ako operator $A$ ima $n = \dim V$ različitih sopstvenih vrednosti, onda je on dijagonalizabilan.
+\end{corollary}
+
 \begin{algorithm}[!h]
     \caption{Dijagonalizacija matrice}
     \begin{enumerate}
@@ -4786,12 +4808,12 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
         Ako nije dijagonalizabilna, algoritam se zaustavlja.
         \item Naći sopstvene vektore u polaznoj bazi $e$, tj. vektore 
         \[v_i(e) = (t_{1i}, \dots, t_{ni}), \;\; i \in \mathbb{N}_n\]
-        i formirati matricu prelaska $T_{ev}$.
-        \item Ako operator $A$ u bazi $e$ ima matricu $\mathcal{A}(e)$, matrica
-        \[ \mathcal{A}(v) = T_{ev}^{-1}\mathcal{A}(e)T_{ev} \] je dijagonalna.
+        i formirati matricu prelaska $T_{v \to e}$ iz baze $v$ u bazu $e$.
+        \item Ako operator $A$ u bazi $e$ ima matricu $\mathcal{A}(e)$, tada je matrica
+        \[ \mathcal{A}(v) = T_{v \to e}^{-1}\mathcal{A}(e)T_{v \to e} \] dijagonalna.
     \end{enumerate}
 \end{algorithm}
-
+\newpage
 \begin{itemize}
     \item Neka je $A \in \hom V$ linearni operator i $\lambda_0 \in \operatorname{Sp}(A)$. Tada definišemo:
     \begin{enumerate}
@@ -4810,7 +4832,7 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 
 \begin{itemize}
     \item U opštem slučaju, za proizvoljni operator ne postoji baza u kojoj je njegova matrica dijagonalna.
-    \item Ako je polje algebarski zatvoreno (npr. $\mathbb{C}$), onda možemo naći bazu u kojoj je matrica gornje-trougaona. 
+    \item Ako je polje algebarski zatvoreno (svaki nekonstantan polinom ima nulu - npr. polje $\mathbb{C}$), onda možemo naći bazu u kojoj je matrica gornje-trougaona. 
     Tada se na dijagonali nalaze sopstvene vrednosti.
 \end{itemize}
 
@@ -4821,10 +4843,10 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 \end{theorem}
 
 \begin{itemize}
-    \item Teorema \ref{gtm1} važi i kada polje $\mathbb{F}$ nije algebarski zatvoreno, ali je karakteristični polinom oblika
+    \item Teorema \ref{gtm1} važi i kada polje $\mathbb{F}$ nije algebarski zatvoreno ako i samo ako je karakteristični polinom oblika
     \[ \kappa_A(\lambda) = (-1)^n(\lambda-\lambda_1)^{r_1}\dots (\lambda - \lambda_k)^{r_k}, \;\; \lambda_i \in \mathbb{F}. \]
 \end{itemize}
-
+\vfill
 \subsection{Ireducibilni faktori karakterističnog polinoma i invarijantni potprostori}
 
 \begin{theorem}
@@ -4839,9 +4861,12 @@ bazi u kojoj je predstavljen dijagonalnom matricom nalaze sopstvene vrednosti op
 \end{theorem}
 \noindent\underline{\textit{Intuicija:}} Ako polinom $f$ poništava operator $A$ i ako $f$ rastavimo na 2 uzajamno prosta faktora $g$ i $h$, tada se ceo
 prostor $V$ raspada na direktnu sumu jezgara ta 2 faktora. Dakle, praktično razdvajamo $V$ na dva dela. U prvom ($\ker g(A)$) važi $g(A) = 0$, a u drugom 
-($\ker h(A)$) važi $h(A) = 0$. Ova teorema nam garantuje da se ti delovi ne poklapaju i da pokrivaju ceo $V$.\\
+($\ker h(A)$) važi $h(A) = 0$. Ova teorema nam garantuje da se ti delovi ne poklapaju i da pokrivaju ceo $V$.
 
-\noindent\textbf{Posledica.} \textit{Neka je $A \in \hom V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
+\newpage
+
+\begin{corollary}
+    Neka je $A \in \hom V$ linearni operator i neka su $f, g, h \in \mathbb{F}[x]$ polinomi t.d.
     \begin{enumerate}
         \item $f = gh$,
         \item $f(A) = 0$,
@@ -4850,7 +4875,7 @@ prostor $V$ raspada na direktnu sumu jezgara ta 2 faktora. Dakle, praktično raz
         \item $g$ i $h$ su monični polinomi.
     \end{enumerate}
     Tada su $g$ i $h$ minimalni polinomi restrikcija $A_{|\ker g(A)}$ i $A_{| \ker h(A)}$ respektivno.
-}
+\end{corollary}
 
 \begin{theorem}
     Neka je $A \in \hom V$ linearni operator čiji je minimalni polinom
@@ -4866,7 +4891,6 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
     \vdots & \vdots & \ddots & \vdots \\
     0 & 0 & \dots & A_k
 \end{bmatrix}. \]
-
 
 \subsection{Nilpotentni operatori}
 
@@ -4904,6 +4928,7 @@ Dakle, matrica operatora $A$ u bazi koja prati ovu dekompoziciju izgleda ovako:
 
 \begin{itemize}
     \item \textbf{Ciklički operator} - linearni operator za koji postoji baza $\mathcal{B} = (A^{k-1}e, \dots, Ae, e)$ t.d. je $A^ke \in \mathcal{L}(\mathcal{B})$. \\
+    
     \noindent\underline{\textit{Intuicija:}} Neka je $v_i = A^{k-i}e$ za $i \in \mathbb{N}_k$. 
 Tada operator deluje na sledeći način:
 \[
@@ -4934,7 +4959,7 @@ U ovoj bazi matrica operatora je oblik \textit{matrice pratioca} (companion matr
     \item Baza $e_{L_1} = (A^{k-1}e, \dots, Ae, e)$  zove se \textbf{ciklička baza} od $A_1$, a $L_1 = \mathcal{L}(\{e, Ae, \dots, A^{k-1}e\})$ se zove 
     \textbf{ciklički potprostor} operatora $A$.
 \end{itemize}
-
+\newpage
 \begin{corollary}
     Neka je $A \in \hom V$ nilpotentnan operator indeksa nilpotentnosti $k$. Tada postoje invarijantni potprostori 
     $L_1, \dots, L_m$ t.d. je
@@ -4960,7 +4985,7 @@ izgleda kao blok-dijagonalna matrica oblika
     \vdots & \vdots & \ddots & \vdots \\
     0 & 0 & \dots & \mathcal{N}_{k_m}
 \end{bmatrix},\] gde je svaki blok $\mathcal{N}_{k_i}$ kanonska nilpotentna matrica.
-\newpage
+
 \begin{theorem}
     Neka je $A \in \hom V$ nilpotentan operator indeksa nilpotentnosti $k$, t.d. se $V$ dekomponuje kao
     \[ V = \bigoplus_{j = 1}^{k}\xi_jM_j, \] gde je $M_j$ ciklički operator dimenzije $j$, kojem u cikličkoj bazi restrikcije operatora $A$ na $M_j$
@@ -4973,6 +4998,8 @@ izgleda kao blok-dijagonalna matrica oblika
 \end{bmatrix}.\] Ako je $d_i = \dim(\ker(A^i))$ i $r_i = \dim(\operatorname{Im}(A^i)), \; i \in \mathbb{N}_k$, tada je
 \[ \xi_j = r_{j-1} - 2r_j + r_{j+1} = 2d_j - d_{j-1} - d_{j+1}, \;\; \forall j \in \mathbb{N}_k. \]
 \end{theorem}
+
+\newpage
 
 \subsection{Žordanova normalna forma}
 
@@ -5031,16 +5058,16 @@ izgleda kao blok-dijagonalna matrica oblika
         \item Broj svih osnovnih Žordanovih blokova, kao i njihove dimenzije, jedinstveno su određeni operatorom $A$.
         \item Matrica $\mathcal{J}^A$ jedinstveno je određena do na permutacije osnovnih Žordanovih blokova u $\mathcal{C}_{\lambda_i}^{r_i}, \; i \in \mathbb{N}_k$, duž njihovih glavnih dijagonala.
     \end{enumerate}
-\end{theorem}\
+\end{theorem}
 
 \begin{itemize}
     \item Matrica $\mathcal{J}^A$ iz teoreme \ref{zordan1} zove se \textbf{Žordanova normalna forma} operatora $A$. Baza $e$ zove se \textbf{Žordanova baza}.
     \item Kako Žordanova forma nije jedinstvena, tako ni Žordanova baza nije jedinstvena.
-\end{itemize}\
+\end{itemize}
 
 \begin{corollary}
     Dve matrice su slične ako i samo ako imaju istu Žordanovu formu.
-\end{corollary}\
+\end{corollary}
 
 \begin{algorithm}[!h]
     \caption{Određivanje Žordanove forme matrice operatora}
@@ -5055,6 +5082,7 @@ izgleda kao blok-dijagonalna matrica oblika
     
 \end{algorithm}
 
+\newpage
 \subsection{Invarijantnost linearnih operatora nad realnim vek. prostorima - kompleksifikacija realnog vektorskog prostora}
 
 \begin{itemize}
@@ -5083,7 +5111,7 @@ izgleda kao blok-dijagonalna matrica oblika
 \subsection{Definicija unitarnog prostora}
 \begin{itemize}
     \item Neka je $V$ kompleksni vektorski prostor. Kažemo da je $V$ \textbf{unitarni} vektorski prostor ako je definisana funkcija $\langle \cdot, \cdot \rangle : V \times V \to \mathbb{C}$, za koju 
-važe ($\forall v_1, v_2, w \in V, \; \forall \alpha \in \mathbb{C}$) sledeće aksiome:
+važe sledeće aksiome ($\forall v_1, v_2, w \in V, \; \forall \alpha \in \mathbb{C}$):
 \begin{description}
     \item[(A1)] aditivnost u prvom argumentu:
     \[ \langle v_1 + v_2, w \rangle = \langle v_1, w \rangle + \langle v_2, w \rangle \]
