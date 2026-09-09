@@ -2168,7 +2168,6 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
 \vfill
 \newpage
 
-
 \section{Vektorski prostori}
 \label{vektorskiProstori}
 \subsection{Definicija i primeri vektorskih prostora}
@@ -2815,7 +2814,6 @@ u šta se slika drugi vektor baze. Dakle, praktično "menjamo" vektore baze jeda
 
 
 \newpage
-
 
 \section{Linearni operatori}
 
@@ -3988,7 +3986,6 @@ Koristeći formulu $\mathcal{A}(f) = T_{f \to e}^{-1} \, \mathcal{A}(e) \, T_{f 
 
 \newpage
 
-
 \section{Determinante}
 \label{determinante}
 \subsection{Simetrična grupa $\mathbb{S}_n$}
@@ -4550,13 +4547,15 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
         \item $\ker A$ i $\operatorname{Im}A$ su invarijantni potprostori od $A$
         \item $\ker A^j \subseteq \ker A^{j+1}, \;\; \forall j \in \mathbb{N}$
         \item $\operatorname{Im}A^j \supseteq \operatorname{Im}A^{j+1}, \;\; \forall j \in \mathbb{N}$
+        
+        \intuicija (za 2 i 3) Zamislimo linearni operator koji pri svakoj novoj primeni smanjuje dimenziju prostora. Tada $\ker$ raste, a $\operatorname{Im}$ se smanjuje.
     \end{enumerate}
 \end{theorem}
 
 \subsection{Dekompozabilni i ireducibilni operatori}
 
 \begin{itemize}
-    \item Ako $A \in \hom V$ ima netrivijalni invarijantni potprostor, kažemo da je \textbf{reducibilan (svodljiv)} na $V$. U suprotnom, kažemo da je \textbf{ireducibilan (nesvodljiv)} na $V$.
+    \item Ako $A \in \hom V$ ima netrivijalni invarijantni potprostor, kažemo da je \textbf{reducibilan (svodljiv)} na $V$. U suprotnom je \textbf{ireducibilan (nesvodljiv)} na $V$.
     \item Za operator koji ima invarijantne netrivijalne potprostore $L$ i $M$ takve da je $V = L \oplus M$, kažemo da je \textbf{dekompozabilan}.
     \item Ako za svaki netrivijalni invarijantni potprostor $L$ postoji invarijantni potprostor $M$ takav da je $V = L \oplus M$, kažemo da je operator $A$ \textbf{potpuno reducibilan} ili \textbf{potpuno svodljiv}.
     \item Ako je operator potpuno reducibilan, tada je i dekompozabilan.
@@ -4570,8 +4569,9 @@ primenom Gausove metode. Ovo je najefikasnija metoda za rešavanje linearnih sis
         A_1(e_L) & A_{12} \\
         0 & A_2
     \end{bmatrix}, \]
-    gde je $A_1 = A_{|L}$.\\
-    \noindent\underline{\textit{Intuicija:}} Kako je $L$ invarijantni potprostor i $\dim L = k$, matrica $A_1(e_L)$ će biti 
+    gde je $A_1 = A_{|L}$.
+
+    \intuicija Kako je $L$ invarijantni potprostor i $\dim L = k$, matrica $A_1(e_L)$ će biti 
     dimenzija $k \times k$ (jer slika $L$ u $L$). Ovo znači da će se ispod $A_1(e_L)$ nalaziti nula-matrica dimenzija $(n-k) \times k$
     (jer $A_1(e_L)$ ne slika ništa van $L$). Kako nije dato da je $M$ invarijantni potprostor, druga kolona u opštem slučaju neće
     imati nula-matricu. Dakle, matrica $A_{12}$ slika $M$ u $L$ (jer u $e$ prvo ide $e_L$ pa $e_M$), pa mora biti dimenzija 
@@ -5077,6 +5077,7 @@ izgleda kao blok-dijagonalna matrica oblika
 \end{theorem}
 
 \newpage
+
 \section{Unitarni prostori}
 
 \subsection{Definicija unitarnog prostora}
@@ -5578,6 +5579,7 @@ To jest, operator na tom potprostoru deluje kao rotacija za ugao $\phi$, praćen
 Važi $A = HU$, pri čemu je $\operatorname{Sp}(H) \subseteq [0, + \infty)$ i $\operatorname{Sp}(U) \subseteq \mathbb{S}^1$.
 
 \newpage
+
 \section{Bilinearne i kvadratne forme}
 
 \subsection{Definicija bilinearnog funkcionala}
