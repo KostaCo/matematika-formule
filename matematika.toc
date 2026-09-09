@@ -151,7 +151,7 @@
 \contentsline {subsection}{\numberline {9.5.1}Definicija sistema linearnih jednačina}{89}{subsection.9.5.1}%
 \contentsline {subsection}{\numberline {9.5.2}Geometrijska interpretacija sistema linearnih jednačina}{89}{subsection.9.5.2}%
 \contentsline {subsection}{\numberline {9.5.3}Homogeni sistemi linearnih jednačina}{90}{subsection.9.5.3}%
-\contentsline {subsection}{\numberline {9.5.4}Nehomogeni sistemi linearnih jednačina}{90}{subsection.9.5.4}%
+\contentsline {subsection}{\numberline {9.5.4}Nehomogeni sistemi linearnih jednačina}{91}{subsection.9.5.4}%
 \contentsline {subsection}{\numberline {9.5.5}Gausova metoda eliminacije}{91}{subsection.9.5.5}%
 \contentsline {section}{\numberline {9.6}Redukcija linearnih operatora na konačnodimenzionim prostorima}{92}{section.9.6}%
 \contentsline {subsection}{\numberline {9.6.1}Redukcija linearnog operatora}{92}{subsection.9.6.1}%

@@ -4068,6 +4068,8 @@ gde je $\mathcal{A} = (a_{ij}) \in \mathbb{M}_{n}(\mathbb{F})$. Ova definicija i
 \medskip
 \noindent\underline{\textit{Intuicija / Izvođenje:}} 
 
+\medskip
+
 Definišemo funkciju $n$-dimenzione orijentisane zapremine:
 \[
 \operatorname{vol}_n: \underbrace{\mathbb{R}^n \times \dots \times \mathbb{R}^n}_n \to \mathbb{R},
@@ -4094,7 +4096,7 @@ Zbog antisimetričnosti, ako se proizvoljna dva indeksa $j_a, j_b$ podudaraju ($
 
 Suma se svodi na:
 \[
-\sum_{\tau \in S_n} a_{\tau(1) 1} a_{\tau(2) 2} \dots a_{\tau(n) n} \operatorname{vol}_n (e_{\tau(1)}, e_{\tau(2)}, \dots, e_{\tau(n)}).
+\sum_{\tau \in \mathbb{S}_n} a_{\tau(1) 1} a_{\tau(2) 2} \dots a_{\tau(n) n} \operatorname{vol}_n (e_{\tau(1)}, e_{\tau(2)}, \dots, e_{\tau(n)}).
 \]
 Na osnovu svojstava antisimetričnosti i normalizovanosti, dovođenjem vektora $(e_{\tau(1)}, \dots, e_{\tau(n)})$ u kanonski poredak $(e_1, \dots, e_n)$ pomoću susednih transpozicija dobijamo:
 \[
@@ -4112,7 +4114,7 @@ Zamenom u sumu dobijamo polaznu Lajbnicovu formulu:
 
 \medskip
 \noindent\textbf{Geometrijska interpretacija:}
-Kvadratna matrica $\mathcal{A}$ predstavlja linearnu transformaciju prostora. Vrednost $\det \mathcal{A}$ meri faktor promene zapreme pri toj transformaciji. Znak determinante odražava orijentaciju prostora: ako je $\det \mathcal{A} > 0$, transformacija čuva orijentaciju, dok negativna vrednost ($\det \mathcal{A} < 0$) označava da transformacija „preslikava prostor u ogledalu” (menja orijentaciju baze).
+Kvadratna matrica $\mathcal{A}$ predstavlja linearnu transformaciju prostora. Vrednost $\det \mathcal{A}$ meri faktor promene $n$-dimenzione zapremine pri toj transformaciji. Znak determinante odražava orijentaciju prostora: ako je $\det \mathcal{A} > 0$, transformacija čuva orijentaciju, dok negativna vrednost ($\det \mathcal{A} < 0$) označava da transformacija „preslikava prostor u ogledalu” (menja orijentaciju baze).
 
 \begin{figure}[!h]
         \centering
@@ -4306,8 +4308,10 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
     \[\mathcal{A}\text{ je regularna. }\iff \operatorname{det}(\mathcal{A}) \neq 0.\]
 \end{theorem}
 
-\noindent\textbf{Posledica.} \textit{Neka je $\mathcal{A}$ regularna matrica reda $n$. Tada važi:}
+\begin{corollary}
+    Neka je $\mathcal{A}$ regularna matrica reda $n$. Tada važi:
 \[ \mathcal{A}^{-1} = \frac{1}{\det \mathcal{A}} \operatorname{adj} \mathcal{A} \]
+\end{corollary}
 
 \subsection{Vandermondova determinanta}
 \[ V(\alpha_1, \alpha_2, \dots, \alpha_n) = \begin{vmatrix}
@@ -4346,13 +4350,13 @@ gde je \( I(\sigma) \) broj inverzija permutacije \( \sigma \).
 \begin{lemma}
     \textbf{(O množenju blok matrica):} Neka $\mathcal{A}, \mathcal{B} \in \mathbb{M}_n, \; \mathcal{A}_{11}, \mathcal{B}_{11} \in \mathbb{M}_{l}, \linebreak \mathcal{A}_{12}
     \mathcal{B}_{12} \in \mathbb{M}_{l \; n-l}, \; \mathcal{A}_{21},\mathcal{B}_{21} \in \mathbb{M}_{n-l \; l}, \; \mathcal{A}_{22}, \mathcal{B}_{22} \in \mathbb{M}_{n-l}$ td. je
-    $\mathcal{A} = \begin{bmatrix}
+    \[\mathcal{A} = \begin{bmatrix}
         \mathcal{A}_{11} & \mathcal{A}_{12} \\
         \mathcal{A}_{21} & \mathcal{A}_{22}
-    \end{bmatrix}$ i \linebreak$\mathcal{B} = \begin{bmatrix}
+    \end{bmatrix} \;\;\text{i}\;\;\; \mathcal{B} = \begin{bmatrix}
         \mathcal{B}_{11} & \mathcal{B}_{12} \\
         \mathcal{B}_{21} & \mathcal{B}_{22}
-    \end{bmatrix}$. Tada važi
+    \end{bmatrix}.\] Tada važi
     \[ \mathcal{AB} = \begin{bmatrix}
         \mathcal{A}_{11}\mathcal{B}_{11} + \mathcal{A}_{12}\mathcal{B}_{21} & \mathcal{A}_{11}\mathcal{B}_{12} + \mathcal{A}_{12}\mathcal{B}_{22} \\
         \mathcal{A}_{21}\mathcal{B}_{11} + \mathcal{A}_{22}\mathcal{B}_{21} & \mathcal{A}_{21}\mathcal{B}_{12} + \mathcal{A}_{22}\mathcal{B}_{22}
@@ -4400,7 +4404,7 @@ jednačina}:
         &\vdots \\
         f_n(x_1, \dots, x_m) &= \alpha_{n1}x_1 + \alpha_{n2}x_2 + \dots + \alpha_{nm}x_m - \beta_n = 0,
     \end{aligned}
-\] koji kraće zapisujemo kao $\sum_{k=1}^{m} \alpha_{ik}x_k = \beta_i, \;\; i = 1, \dots, n$ ili u matričnom obliku:
+\] koji kraće zapisujemo kao $\sum_{k=1}^{m} \alpha_{ik}x_k = \beta_i, \; i \in \mathbb{N}_n$ ili u matričnom obliku:
 \[ \mathcal{A} = \begin{bmatrix}
     \alpha_{11} & \alpha_{12} & \dots & \alpha_{1m} \\
     \vdots      & \vdots      & \ddots & \vdots \\
@@ -4410,7 +4414,7 @@ jednačina}:
 \end{bmatrix}, \; b = \begin{bmatrix}
     \beta_1 \\ \vdots \\ \beta_n
 \end{bmatrix}, \; \mathcal{A}X = b. \]
-Matricu $\mathcal{A}$ nazivamo \textbf{matricom sistema}. Definišemo i \textbf{matricu sistema}:
+Matricu $\mathcal{A}$ nazivamo \textbf{matricom sistema}. Definišemo i \textbf{proširenu matricu sistema}:
 
 \[
 \mathcal{A}_p = [\,\mathcal{A} \mid b\,] = 
@@ -4438,19 +4442,22 @@ operatora $A: U \to V$. Dakle, rešavanje sistema odgovara pronalaženju vektora
 \noindent Ekvivalencija prvog i trećeg iskaza je \textbf{Kroneker-Kapelijeva teorema}.\\
 
 
-\noindent\textbf{Posledica.} 
-\[ r(\mathcal{A}) = n \text{ (tj. $\operatorname{Im} A = V$)} \implies \text{sistem ima rešenja} \]\\
+\begin{corollary}
+    \[ r(\mathcal{A}) = n \text{ (tj. $\operatorname{Im} A = V$)} \implies \text{sistem ima rešenja} \]
+\end{corollary}
 
-Sistem jednačina naziva se \textbf{Kramerov sistem} ako:
+\begin{itemize}
+    \item Sistem jednačina naziva se \textbf{Kramerov sistem} ako:
 \begin{enumerate}
     \item $m=n$
     \item $r(\mathcal{A}) = n$
 \end{enumerate}
+\end{itemize}
 
 \begin{theorem}
     Kramerov sistem jednačina uvek ima jedinstveno rešenje, koje je dato formulom
     \[ x_k = \frac{\mathcal{D}_k}{\mathcal{D}}, \; k = 1, \dots, n,  \]
-    gde je $\mathcal{D} = \det \mathcal{A} = \det [a_1, \dots, a_n]$ determinanta matrice sistema i gde su \linebreak $\mathcal{D}_k = \det[a_1, \dots, a_{k-1}, b, a_{k+1}, \dots, a_n]$
+    gde je \[\mathcal{D} = \det \mathcal{A} = \det [a_1, \dots, a_n]\] determinanta matrice sistema i gde su \[\mathcal{D}_k = \det[a_1, \dots, a_{k-1}, b, a_{k+1}, \dots, a_n]\]
     determinante matrica koje se dobijaju iz $\mathcal{A}$ zamenom njene $k$-te kolone vektorom $b$.
 \end{theorem}
 
@@ -4470,9 +4477,11 @@ jezgra linearnog operatora $A$.
     \end{enumerate}
 \end{theorem}\
 
-\textbf{Fundamentalni skup rešenja} homogenog sistema je skup
+\begin{itemize}
+    \item \textbf{Fundamentalni skup rešenja} homogenog sistema je skup
 \[ \{ W_1, \dots, W_d \}, \; W_i = v_i(e) \] i svaki vektor koji je rešenje sistema se može predstaviti kao linearna kombinacija njegovih elemenata.
-
+\end{itemize}
+\newpage
 \subsection{Nehomogeni sistemi linearnih jednačina}
 
 \begin{theorem}
@@ -4482,11 +4491,15 @@ jezgra linearnog operatora $A$.
     parametri.
 \end{theorem}
 
-\noindent\textbf{Posledica.} Neka je $\mathcal{A}X = B$ lin. sistem jednačina nad $\mathbb{F}$. Tada skup rešenja ovog sistema može biti:
+\intuicija \[ A(x) = A(v_0) + \underbrace{A \left(\sum_{i=1}^{d} \lambda_i v_i \right)}_0 = A(v_0) \]
+
+\begin{corollary}
+    Neka je $\mathcal{A}X = B$ linearni sistem jednačina nad $\mathbb{F}$. Tada skup rešenja ovog sistema može biti:
 \begin{enumerate}
     \item ako je $\operatorname{char} \mathbb{F} = 0$ (beskonačno polje): prazan skup, jednočlan i beskonačan.
-    \item ako je $\operatorname{char} \mathbb{F} = p$, $p$ je prost (polje sa $p$ elemenata): prazan skup, jednočlan i stepen broja $p$.
+    \item ako je $\operatorname{char} \mathbb{F} = p$, $p$ je prost (polje sa $p$ elemenata): prazan skup, jednočlan i kardinalnosti stepena broja $p$.
 \end{enumerate}
+\end{corollary}
 
 \subsection{Gausova metoda eliminacije}
 
