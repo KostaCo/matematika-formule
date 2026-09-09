@@ -3022,7 +3022,7 @@ matricom \[\mathcal{A} = \begin{bmatrix}
 \newpage
 
 \subsection{Projektori}
-
+\label{projektori}
 \begin{definition}
     Neka je $V$ konačnodimenzioni vektorski prostor i $P: V \to V$ linearni operator t.d. je $P^2 = P$. Tada se $P$ zove \textbf{projektor}.
 \end{definition}
@@ -3702,7 +3702,7 @@ Neka je data matrica
 
 \subsection{Lin. funkcionali, dualna baza, anihilator, refleksivnost}
 \subsubsection*{Linearni funkcional i dualni prostor}
-Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n  \in \mathbb{R}$.\;\footnote{Linearni funkcional možemo posmatrati kao skalarni proizvod, tj. svaki linearni funkcional je oblika $f_a(v) = \langle a, v \rangle$ za jedinstven vektor $a$. I obrnuto, za svaki vektor $a$ postoji jedinstven linearni funkcional.} \linebreak Prostor $V^*$ se zove \textbf{dualni prostor} prostora $V$.
+Ako je $V$ vektorski prostor nad poljem $\mathbb{F}$, tada se svako linearno preslikavanje \[f: V \to \mathbb{F}\] zove \textbf{linearni funkcional}. Ako je $\dim V < \infty$, onda je $V^* = \hom  (V, \mathbb{F})$ vektorski prostor i važi $\dim V = \dim V^*$. Dakle, $f(x_1, \dots, x_n) = a_1x_1 + \dots + a_nx_n  \in \mathbb{R}$.\;\footnote{Linearni funkcional možemo posmatrati kao skalarni proizvod, tj. svaki linearni funkcional je oblika $f_a(v) = \langle a, v \rangle$ za jedinstven vektor $a$ (teorema \ref{skalarni1}). I obrnuto, za svaki vektor $a$ postoji jedinstven linearni funkcional.} \linebreak Prostor $V^*$ se zove \textbf{dualni prostor} prostora $V$.
 
 
 Zbog teoreme o rangu i defektu (\ref{teoremaRangDefekt}) važi \[ \operatorname{r} (f) \leq 1 \;\;\text{i}\;\; \operatorname{d}(f) \geq \dim V - 1,\] tj. ako $f \neq 0$, tada postoji $0 \neq v \in V$ td. $f(v) \neq 0$.
@@ -5306,9 +5306,9 @@ normalan na sve ove vektore, formiramo ga tako što od $f_i$ oduzimamo sve njego
 \begin{theorem}
     Neka je $\{ v_1, v_2, \dots, v_k \} \subseteq V$ podskup unitarnog prostora. Tada je 
     \[ \Gamma (v_1, v_2, \dots, v_k) = (\operatorname{vol}_k\mathcal{P}(v_1, v_2, \dots, v_k))^2, \]
-    gde je $\mathcal{P}(v_1, v_2, \dots, v_k)$ paralelepiped određen vektorima $v_1, v_2, \dots, v_k$. 
+    gde je $\mathcal{P}(v_1, v_2, \dots, v_k)$ parelelotop određen vektorima $v_1, v_2, \dots, v_k$. 
 \end{theorem}
-\noindent\underline{\textit{Intuicija:}} Dakle, Gramova determinanta jednaka je kvadratu $k$-dimenzione zapremine paralelepipeda
+\noindent\underline{\textit{Intuicija:}} Dakle, Gramova determinanta jednaka je kvadratu $k$-dimenzione zapremine paralelotopa
 koji određuju $v_1, \dots, v_k$.
 
 \subsection{Linearni funkcionali u unitarnim prostorima}
@@ -5357,20 +5357,19 @@ koji određuju $v_1, \dots, v_k$.
 \subsection{Ortogonalni projektor}
 
 \begin{itemize}
-    \item Linearni operator $P \in \hom V$ je \textbf{projektor} ako važi $P = P^2$. \\
-    \noindent\underline{\textit{Intuicija:}} Projektori su dobili ime po tome što projektuju objekte na neki potprostor. 
-    Uslov $P = P^2$ zapravo ima sledeće značenje: Ako npr. $P$ projektuje 3D prostor na ravan, kada ga primenimo jednom na 
-    neku tačku van te ravni, ona će se preslikati na ravan. Ako primenimo projektor ponovo, kako je tačka već na ravni, neće 
-    se desiti ništa.
+    \item Linearni operator $P \in \hom V$ je \textbf{projektor} ako važi $P = P^2$.
+    
+    \noindent\underline{\textit{Intuicija:}} Videti \ref{projektori}.
     \item Ako za projektor $P$ važi i $P = P^\dagger$, onda je on \textbf{ortogonalni projektor}.
 \end{itemize}
 
 \begin{theorem}
     Neka je $P$ ortogonalni projektor na unitarnom prostoru $V$. Tada:
     \begin{enumerate}
-        \item $v \in \operatorname{Im}P \implies Pv = v$,\\
-        \noindent\underline{\textit{Intuicija:}} Ovo je primer sa ravni iz intuicije odozgo.
-        \item $v \in (\operatorname{Im}V)^\perp \implies Pv = 0$,\\
+        \item $v \in \operatorname{Im}P \implies Pv = v$,
+        
+        \item $v \in (\operatorname{Im}P)^\perp \implies Pv = 0$,
+        
         \noindent\underline{\textit{Intuicija:}} Zamislimo da je $V = \mathbb{R}^3$ i da je $\operatorname{Im}P$ neka ravan $\pi$.
         tada $(\operatorname{Im}P)^\perp$ predstavlja pravu $p$ takvu da je $p \perp \pi$ i $0 \in p$, pa će se svaka tačka sa ove prave
         projektovati u nulu.
@@ -5391,18 +5390,21 @@ $A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menj
 
 \begin{itemize}
     \item Kažemo da je operator $A \in \hom V$:
+    
     \begin{enumerate}
-        \item \textbf{normalan} ako je $A^\dagger A = A A^\dagger $,\\
-        \noindent\underline{\textit{Intuicija:}} Za normalan operator postoji ortonormirana baza koja se sastoji isključivo od njegovih 
-        sopstvenih vektora. Dakle, možemo izvršiti promenu baze tako da njegova matrica bude dijagonalna (sa kompleksnim brojevima 
-        na dijagonali). Videti \ref{normalniOperatori}.
-        \item \textbf{hermitski} ili \textbf{hermitski simetričan} ako je $A = A^\dagger$,\\
-        \noindent\underline{\textit{Intuicija:}} Geometrijski, hermitski operator skalira (realnim sopstvenim vrednostima) 
-        duž ortogonalnih osa. Ako je prostor realan, ovo je zapravo samo ortogonalna matrica.
-        \item \textbf{antihermitski} ili \textbf{hermitski kososimetričan} ako je $A^\dagger = - A$,\\
-        \noindent\underline{\textit{Intuicija:}} Rotacija u kompleksnom prostoru bez promene dužine vektora.
-        \item \textbf{unitaran} ako je $A^\dagger A= A A^\dagger = \operatorname{id}_V $.\\
-        \noindent\underline{\textit{Intuicija:}} Ovo je rotacija prostora. Unitarni op. čuvaju distance i uglove.
+        \item \textbf{Normalan} ako je $A^\dagger A = A A^\dagger $,\\
+        \noindent\underline{\textit{Intuicija:}} Za normalan operator postoji ortonormirana baza sopstvenih vektora, pa se može dijagonalizovati. 
+        Međutim, sopstvene vrednosti mogu biti bilo koji kompleksni brojevi, što geometrijski znači da operator na svakoj osi deluje kao kombinacija rotacije 
+        i skaliranja (množenje kompleksnim brojem).
+        \item \textbf{Hermitski} ($A=A^\dagger$)
+        
+        \intuicija Sopstvene vrednosti su realne (samo skaliranje, bez rotacije).
+        \item \textbf{Antihermitski} ($A^\dagger=-A$)
+        
+        \intuicija sopstvene vrednosti su imaginarne (rotacija za 90°).
+        \item \textbf{Unitaran} ($A^\dagger A=I$)
+        
+        \intuicija sopstvene vrednosti su na jediničnom krugu (čista rotacija).
     \end{enumerate}
     2, 3 i 4 su specijalni slučajevi normalnog operatora.
     \item Ako je $V$ realan vektorski prostor, ovi operatori imaju specijalne nazive:
