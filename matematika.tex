@@ -74,31 +74,13 @@
 \tableofcontents
 \newpage
 % Section 1
-\chapter{Oznake i konvencije}
-\subsection{Kronekerov $\delta_{ij}$ simbol}
-\begin{definition}
-    \[ \delta_{ij} := \begin{cases}
-        1, & i = j,\\
-        0, & i \neq j
-    \end{cases}. \]
-\end{definition}
-\subsection{Ajnštajnova konvencija o sabiranju}
-Na primer, izraz \[ x_1e_1 + \dots + x_ne_n = \sum_{k=1}^{n} x_ke_k\]
-može se skraćeno pisati kao 
-\[ x_ke_k, \] tj. kad god se neki indeks pojavljuje dvaput u istom izrazu, može se podrazumevati sabiranje po tom indeksu (ako nije naglašeno suprotno).
-\subsection{Antisimetrični Kronekerov $\varepsilon_{ijk}$ simbol}
-Neka je $e = (e_1, e_2, e_3)$ ortonormirana baza vektorskog prostora $V_e^3$. Uvodimo 
-\[ \varepsilon = \begin{cases}
-    1, & e \text{ je pozitivno orijentisana}\\
-    -1, & e \text{ je negativno orijentisana}
-\end{cases}. \]
-Zatim uvodimo i 
-\[ \varepsilon_{ijk} = \begin{cases}
-    \varepsilon, & (i, j, k) \in \{(1, 2, 3), (2, 3, 1), (3, 1, 2)\}\\
-    -\varepsilon, & (i, j, k) \in \{ (2, 1, 3), (1, 3, 2), (3, 2, 1) \}
-\end{cases}. \]
-Više o orijentaciji baza se može videti u \ref{orijentacijaBaze}.
-\chapter{Logika}
+
+\part{Skupovi, matematička logika i algebarske strukture}
+
+
+\chapter{Teorija skupova}
+
+\chapter{Relacije i funkcije}
 \section{Relacije}
 Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobine:\\
 \begin{itemize}
@@ -130,6 +112,9 @@ Neka je $\rho$ binarna relacija skupa $A$. Tada, ona može imati sledeće osobin
 \newpage
 
 \newpage
+
+\chapter{Matematička logika i formalni sistemi}
+
 \chapter{Algebra}
 \section{Zbir i razlika kubova i kub zbira i razlike}
 \[a^3\pm b^3 = (a \pm b)(a^2 \mp ab +b^2)\]
@@ -337,128 +322,6 @@ barem jedan od polinoma $f_i$.}
 
 
 \newpage
-\chapter{Geometrija}
-\section{Trigonometrija}
-\subsection{Sinusna teorema}
-\[
-\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma}
-\]
-
-\subsection{Kosinusna teorema}
-\[
-\begin{aligned}
-a^2 &= b^2 + c^2 - 2bc \cos \alpha, \\
-b^2 &= a^2 + c^2 - 2ac \cos \beta, \\
-c^2 &= a^2 + b^2 - 2ab \cos \gamma
-\end{aligned}
-\]
-
-\subsection{Teorema o projekcijama}
-\[
-\begin{aligned}
-a &= b \cos \gamma + c \cos \beta, \\
-b &= a \cos \gamma + c \cos \alpha, \\
-c &= a \cos \beta + b \cos \alpha
-\end{aligned}
-\]
-\subsection{Adicione formule}
-\[
-\begin{aligned}
-\sin(x \pm y) = \sin(x)\cos(y) \pm \cos(x)\sin(y) \\
-\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y) \\
-\tan(x \pm y) = \frac{\tan(x) \pm \tan(y)}{1 \mp \tan(x)\tan(y)} \\
-\cot(x \pm y) = \frac{\cot(x)\cot(y) \mp 1}{\cot(y) \pm \cot(x)} \\
-\end{aligned}
-\]
-
-\subsection{Formule za polovinu ugla}
-\[
-\begin{aligned}
-    \sin^2\left(\frac{x}{2}\right) = \frac{1 - \cos(x)}{2} \\
-    \cos^2\left(\frac{x}{2}\right) = \frac{1 + \cos(x)}{2} \\
-    \sin(x) = \frac{2\tan\left(\frac{x}{2}\right)}{1 + \tan^2\left(\frac{x}{2}\right)}\\
-    \cos(x) = \frac{1 - \tan^2\left(\frac{x}{2}\right)}{1 + \tan^2\left(\frac{x}{2}\right)}\\
-    \tan(x) = \frac{2\tan\left(\frac{x}{2}\right)}{1 - \tan^2\left(\frac{x}{2}\right)}\\
-    \cot(x) = \frac{1 - \tan^2\left(\frac{x}{2}\right)}{2\tan\left(\frac{x}{2}\right)}
-\end{aligned}
-\]
-
-\subsection{Transformacije proizvoda u zbir}
-\[
-\begin{aligned}
-    \sin(x)\sin(y) = \frac{1}{2}[\cos(x-y) - \cos(x+y)]\\
-    \cos(x)\cos(y) = \frac{1}{2}[\cos(x-y) + \cos(x+y)]\\
-    \sin(x)\cos(y) = \frac{1}{2}[\sin(x-y) + \sin(x+y)]
-\end{aligned}
-\]
-
-\subsection{Transformacije zbira u proizvod}
-\[
-\begin{aligned}
-    \cos(x) + \cos(y) = 2\cos\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
-    \cos(x) - \cos(y) = -2\sin\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\\
-    \sin(x) + \sin(y) = 2\sin\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
-    \sin(x) - \sin(y) = 2\cos\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\\
-    C_{n} = \cos(\alpha) + \cos(\alpha + x)+\cos(\alpha + 2x)+...+\cos(\alpha + nx) = \frac{\sin(\frac{n+1}{2}x)\cos(\alpha + \frac{n}{2}x)}{\sin(\frac{x}{2})}\\
-    S_{n} = \sin(\alpha + x)+\sin(\alpha + 2x)+...+\sin(\alpha + nx) = \frac{\sin(\frac{n+1}{2}x)\sin(\alpha + \frac{n}{2}x)}{\sin(\frac{x}{2})}
-\end{aligned}
-\]
-
-\subsection{Molvajdove formule}
-\[
-\begin{aligned}
-    \frac{a + b}{c} = \cos\left(\frac{\alpha - \beta}{2}\right) \sec\left(\frac{\gamma}{2}\right)\\
-    \frac{a - b}{c} = \sin\left(\frac{\alpha - \beta}{2}\right) \csc\left(\frac{\gamma}{2}\right)
-\end{aligned}
-\]
-
-\subsection{Tangensna teorema}
-\[
-\begin{aligned}
-    \frac{a - b}{a + b} = \frac{\tan\left(\frac{\alpha - \beta}{2}\right)}{\tan\left(\frac{\alpha + \beta}{2}\right)}
-\end{aligned}
-\]
-
-
-\subsection{Inverzne trigonometrijske funkcije}
-\[
-    \sin(\arccos(x)) = \cos(\arcsin(x))=\sqrt{1-x^2}
-\]
-\[
-\begin{aligned}
-\arccos(x) + \arccos(y) =
-\begin{cases}
-    \arccos\left(xy - \sqrt{(1-x^2)(1-y^2)}\right), x + y \geq 0\\
-    2\pi - \arccos\left(xy - \sqrt{(1-x^2)(1-y^2)}\right), x + y < 0
-\end{cases}\\
-    \arctan(x) + \arctan(y) =
-\begin{cases}
-    \arctan\left(\frac{x+y}{1-xy}\right), xy < 1\\
-    \arctan\left(\frac{x+y}{1-xy}\right) + \pi, x > 0, y > 0\\
-    \arctan\left(\frac{x+y}{1-xy}\right) - \pi, x < 0, y < 0
-\end{cases}
-\end{aligned}
-\]
-
-
-\subsection{Formule višestrukog ugla}
-\[
-\begin{aligned}
-    \sin(2x) = 2\sin(x)\cos(x)\\
-    \cos(2x) = \cos^2(x) - \sin^2(x)\\
-    \sin(3x) = 3\sin(x) - 4\sin^3(x)\\
-    \cos(3x) = 4\cos^3(x) - 3\cos(x)\\
-    \tan(3x)=\tan(x)\tan\bigg(\frac{\pi}{3}-x\bigg)\tan\bigg(\frac{\pi}{3}+x\bigg)\\
-    \sin(nx) = \sum_{k = 0}^{\frac{n-1}{2}} (-1)^{k}\binom{n}{2k + 1} \cos^{n-2k-1}(x)\sin^{2k+1}(x)\\
-    \cos(nx) = \sum_{k = 0}^{\frac{n}{2}} (-1)^{k}\binom{n}{2k} \cos^{n-2k}(x)\sin^{2k}(x)\\
-\end{aligned}
-\]
-\subsection{Ostalo}
-\[
- \sum_{i=0}^{\frac{1}{2}{(n-3)}}\cos\left(\frac{\left(2i+1\right)\pi}{n}\right) = \frac{1}{2},\;n=2k+1\geq3, k \in \mathbb{N}_0
-\]
-
-\newpage
 \chapter{Teorija brojeva}
 \section{Kongruencija}
 \subsection{Mala Fermaova teorema}
@@ -480,6 +343,34 @@ c &= a \cos \beta + b \cos \alpha
 \[
     x^n = z, \;\;z,x\in \mathbb{C} \implies  \; \sum^n_{k=1} x_k=0 \;\; (x_1, x_2, \dots, x_n \;\; \text{se ponašaju kao težišne duži $n$-tougla}.)
 \]
+
+\chapter{Apstraktna algebra}
+\noindent
+\begin{equation*}
+    \begin{aligned}
+        &(S1)\; a+(b+c) = (a+b)+c \\
+        &(S2)\; a + 0 = 0 + a = a \\
+        &(S3)\; a + (-a) = (-a) + a = 0 \\
+        &(S4)\; a + b = b + a \\
+        &(M1)\; \alpha(a + b) = \alpha a + \alpha b\\
+        &(M2)\; \alpha (\beta a) = (\alpha \beta)a \\
+        &(M3)\; (\alpha + \beta) a = \alpha a + \beta a \\
+        &(M4)\; 1 \cdot a = a
+    \end{aligned}
+\end{equation*}
+\subsection{Monoid}
+\label{monoid}
+\begin{description}
+    \item[Monoid $(S, \cdot)$:] $(S1), (S2)$  
+\end{description}
+\subsection{Abelova grupa}
+\label{abelovaGrupa}
+\subsection{$\mathbb{F}$-algebra}
+\label{F-algebra}
+
+
+\part{Diskretna matematika i teorija grafova}
+
 \chapter{Kombinatorika}
 \section{Prebrojavanja}
 \begin{itemize}
@@ -1201,30 +1092,158 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item \textbf{Napomena:} Za svaka dva čvora grafa, algoritam pronalazi najkraći put koji potencijalno prolazi kroz sve ostale čvorove. 
     \item \textbf{Modifikacije:} Algoritam se može unaprediti za rekonstrukciju samih putanja (pamćenjem prethodnika) ili za utvrđivanje dostupnosti čvorova (tada se težine grana tretiraju kao 1, a algoritam proverava samo postojanje puta).
 \end{itemize}
-\chapter{Teorija grupa}
-\noindent
-\begin{equation*}
-    \begin{aligned}
-        &(S1)\; a+(b+c) = (a+b)+c \\
-        &(S2)\; a + 0 = 0 + a = a \\
-        &(S3)\; a + (-a) = (-a) + a = 0 \\
-        &(S4)\; a + b = b + a \\
-        &(M1)\; \alpha(a + b) = \alpha a + \alpha b\\
-        &(M2)\; \alpha (\beta a) = (\alpha \beta)a \\
-        &(M3)\; (\alpha + \beta) a = \alpha a + \beta a \\
-        &(M4)\; 1 \cdot a = a
-    \end{aligned}
-\end{equation*}
-\subsection{Monoid}
-\label{monoid}
-\begin{description}
-    \item[Monoid $(S, \cdot)$:] $(S1), (S2)$  
-\end{description}
-\subsection{Abelova grupa}
-\label{abelovaGrupa}
-\subsection{$\mathbb{F}$-algebra}
-\label{F-algebra}
 
+
+\part{Geometrija i linearna algebra}
+
+\chapter{Geometrija}
+\section{Trigonometrija}
+\subsection{Sinusna teorema}
+\[
+\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma}
+\]
+
+\subsection{Kosinusna teorema}
+\[
+\begin{aligned}
+a^2 &= b^2 + c^2 - 2bc \cos \alpha, \\
+b^2 &= a^2 + c^2 - 2ac \cos \beta, \\
+c^2 &= a^2 + b^2 - 2ab \cos \gamma
+\end{aligned}
+\]
+
+\subsection{Teorema o projekcijama}
+\[
+\begin{aligned}
+a &= b \cos \gamma + c \cos \beta, \\
+b &= a \cos \gamma + c \cos \alpha, \\
+c &= a \cos \beta + b \cos \alpha
+\end{aligned}
+\]
+\subsection{Adicione formule}
+\[
+\begin{aligned}
+\sin(x \pm y) = \sin(x)\cos(y) \pm \cos(x)\sin(y) \\
+\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y) \\
+\tan(x \pm y) = \frac{\tan(x) \pm \tan(y)}{1 \mp \tan(x)\tan(y)} \\
+\cot(x \pm y) = \frac{\cot(x)\cot(y) \mp 1}{\cot(y) \pm \cot(x)} \\
+\end{aligned}
+\]
+
+\subsection{Formule za polovinu ugla}
+\[
+\begin{aligned}
+    \sin^2\left(\frac{x}{2}\right) = \frac{1 - \cos(x)}{2} \\
+    \cos^2\left(\frac{x}{2}\right) = \frac{1 + \cos(x)}{2} \\
+    \sin(x) = \frac{2\tan\left(\frac{x}{2}\right)}{1 + \tan^2\left(\frac{x}{2}\right)}\\
+    \cos(x) = \frac{1 - \tan^2\left(\frac{x}{2}\right)}{1 + \tan^2\left(\frac{x}{2}\right)}\\
+    \tan(x) = \frac{2\tan\left(\frac{x}{2}\right)}{1 - \tan^2\left(\frac{x}{2}\right)}\\
+    \cot(x) = \frac{1 - \tan^2\left(\frac{x}{2}\right)}{2\tan\left(\frac{x}{2}\right)}
+\end{aligned}
+\]
+
+\subsection{Transformacije proizvoda u zbir}
+\[
+\begin{aligned}
+    \sin(x)\sin(y) = \frac{1}{2}[\cos(x-y) - \cos(x+y)]\\
+    \cos(x)\cos(y) = \frac{1}{2}[\cos(x-y) + \cos(x+y)]\\
+    \sin(x)\cos(y) = \frac{1}{2}[\sin(x-y) + \sin(x+y)]
+\end{aligned}
+\]
+
+\subsection{Transformacije zbira u proizvod}
+\[
+\begin{aligned}
+    \cos(x) + \cos(y) = 2\cos\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
+    \cos(x) - \cos(y) = -2\sin\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\\
+    \sin(x) + \sin(y) = 2\sin\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)\\
+    \sin(x) - \sin(y) = 2\cos\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\\
+    C_{n} = \cos(\alpha) + \cos(\alpha + x)+\cos(\alpha + 2x)+...+\cos(\alpha + nx) = \frac{\sin(\frac{n+1}{2}x)\cos(\alpha + \frac{n}{2}x)}{\sin(\frac{x}{2})}\\
+    S_{n} = \sin(\alpha + x)+\sin(\alpha + 2x)+...+\sin(\alpha + nx) = \frac{\sin(\frac{n+1}{2}x)\sin(\alpha + \frac{n}{2}x)}{\sin(\frac{x}{2})}
+\end{aligned}
+\]
+
+\subsection{Molvajdove formule}
+\[
+\begin{aligned}
+    \frac{a + b}{c} = \cos\left(\frac{\alpha - \beta}{2}\right) \sec\left(\frac{\gamma}{2}\right)\\
+    \frac{a - b}{c} = \sin\left(\frac{\alpha - \beta}{2}\right) \csc\left(\frac{\gamma}{2}\right)
+\end{aligned}
+\]
+
+\subsection{Tangensna teorema}
+\[
+\begin{aligned}
+    \frac{a - b}{a + b} = \frac{\tan\left(\frac{\alpha - \beta}{2}\right)}{\tan\left(\frac{\alpha + \beta}{2}\right)}
+\end{aligned}
+\]
+
+
+\subsection{Inverzne trigonometrijske funkcije}
+\[
+    \sin(\arccos(x)) = \cos(\arcsin(x))=\sqrt{1-x^2}
+\]
+\[
+\begin{aligned}
+\arccos(x) + \arccos(y) =
+\begin{cases}
+    \arccos\left(xy - \sqrt{(1-x^2)(1-y^2)}\right), x + y \geq 0\\
+    2\pi - \arccos\left(xy - \sqrt{(1-x^2)(1-y^2)}\right), x + y < 0
+\end{cases}\\
+    \arctan(x) + \arctan(y) =
+\begin{cases}
+    \arctan\left(\frac{x+y}{1-xy}\right), xy < 1\\
+    \arctan\left(\frac{x+y}{1-xy}\right) + \pi, x > 0, y > 0\\
+    \arctan\left(\frac{x+y}{1-xy}\right) - \pi, x < 0, y < 0
+\end{cases}
+\end{aligned}
+\]
+
+
+\subsection{Formule višestrukog ugla}
+\[
+\begin{aligned}
+    \sin(2x) = 2\sin(x)\cos(x)\\
+    \cos(2x) = \cos^2(x) - \sin^2(x)\\
+    \sin(3x) = 3\sin(x) - 4\sin^3(x)\\
+    \cos(3x) = 4\cos^3(x) - 3\cos(x)\\
+    \tan(3x)=\tan(x)\tan\bigg(\frac{\pi}{3}-x\bigg)\tan\bigg(\frac{\pi}{3}+x\bigg)\\
+    \sin(nx) = \sum_{k = 0}^{\frac{n-1}{2}} (-1)^{k}\binom{n}{2k + 1} \cos^{n-2k-1}(x)\sin^{2k+1}(x)\\
+    \cos(nx) = \sum_{k = 0}^{\frac{n}{2}} (-1)^{k}\binom{n}{2k} \cos^{n-2k}(x)\sin^{2k}(x)\\
+\end{aligned}
+\]
+\subsection{Ostalo}
+\[
+ \sum_{i=0}^{\frac{1}{2}{(n-3)}}\cos\left(\frac{\left(2i+1\right)\pi}{n}\right) = \frac{1}{2},\;n=2k+1\geq3, k \in \mathbb{N}_0
+\]
+
+\newpage
+
+\chapter{Oznake i tenzorski simboli}
+\subsection{Kronekerov $\delta_{ij}$ simbol}
+\begin{definition}
+    \[ \delta_{ij} := \begin{cases}
+        1, & i = j,\\
+        0, & i \neq j
+    \end{cases}. \]
+\end{definition}
+\subsection{Ajnštajnova konvencija o sabiranju}
+Na primer, izraz \[ x_1e_1 + \dots + x_ne_n = \sum_{k=1}^{n} x_ke_k\]
+može se skraćeno pisati kao 
+\[ x_ke_k, \] tj. kad god se neki indeks pojavljuje dvaput u istom izrazu, može se podrazumevati sabiranje po tom indeksu (ako nije naglašeno suprotno).
+\subsection{Antisimetrični Kronekerov $\varepsilon_{ijk}$ simbol}
+Neka je $e = (e_1, e_2, e_3)$ ortonormirana baza vektorskog prostora $V_e^3$. Uvodimo 
+\[ \varepsilon = \begin{cases}
+    1, & e \text{ je pozitivno orijentisana}\\
+    -1, & e \text{ je negativno orijentisana}
+\end{cases}. \]
+Zatim uvodimo i 
+\[ \varepsilon_{ijk} = \begin{cases}
+    \varepsilon, & (i, j, k) \in \{(1, 2, 3), (2, 3, 1), (3, 1, 2)\}\\
+    -\varepsilon, & (i, j, k) \in \{ (2, 1, 3), (1, 3, 2), (3, 2, 1) \}
+\end{cases}. \]
+Više o orijentaciji baza se može videti u \ref{orijentacijaBaze}.
+  
 \chapter{Linearna algebra}
 \section{Klasična algebra vektora}
 \subsection{Definicija vektora}
@@ -2314,13 +2333,27 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item \textbf{Opšta linearna grupa}, $\operatorname{GL}(n, \mathbb{F}) = \operatorname{GL}_n$, je skup \textbf{invertibilnih (regularnih)} matrica, tj. matrica $\mathcal{A}$ takvih da 
     postoji $\mathcal{A}^{-1}$ t.d.
     \[ \mathcal{AA}^{-1} = \mathcal{A}^{-1}\mathcal{A} = \mathbb{I}_n. \]
+\end{itemize}
+\newpage
+\subsection{Važne vrste kvadratnih matrica}
+\begin{itemize}
     \item Neki važni podskupovi od $\mathbb{M}_n(\mathbb{F})$:
     \begin{enumerate}
         \item \textbf{Simetrične} matrice ($\mathcal{S}_n$): $\mathcal{A = A^T}$.
+        
+        \intuicija Imaju samo realne sopstvene vrednosti, pa odgovaraju čistom skaliranju. Videti \ref{SimetricneMatrice}.
         \item \textbf{Kososimetrične (antisimetrične)} matrice ($\mathcal{K}_n$): $\mathcal{A = -A^T}$.
+        
+        \intuicija Eksponencijal kososimetrične matrice $(e^{t\mathcal{A}})$ je ortogonalna matrica. Videti \ref{AntisimetricneMatrice}
         \item \textbf{Ortogonalne} matrice ($\mathcal{O}(n, \mathbb{F})$): $\mathcal{A}^{-1} = \mathcal{A^T}$.
+        
+        \intuicija Sopstvene vrednosti su na jediničnom krugu, tj. $|\lambda| = 1$, pa ove matrice predstavljaju čistu rotaciju ili refleksiju (za $\lambda = -1$). Videti \ref{OrtogonalneMatrice}.
         \item \textbf{Dijagonalne} matrice ($\mathcal{D}_n$): $i \neq j \implies \alpha_{ij}=0$. Označavaju se i sa $\operatorname{diag}[\alpha_{11}, \dots, \alpha_{nn}]$
+        
+        \intuicija Skaliraju prostor po koordinatnim osama.
         \item \textbf{Skalarne} matrice ($Sc_n$): $\mathcal{A} = \lambda \mathbb{I}_n, \; \lambda \in \mathbb{F}$.
+        
+        \intuicija Uniformno skaliraju prostor po koordinatnim osama.
     \end{enumerate}
 \end{itemize}
 
@@ -5387,7 +5420,7 @@ primenjivanje projekcije još jednom ne radi ništa (tačke ostaju u ravni). U s
 $A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menja rezultat.
 
 \subsection{Neke važne klase operatora}
-
+\label{NekeVazneKlaseOperatora}
 \begin{itemize}
     \item Kažemo da je operator $A \in \hom V$:
     
@@ -5399,10 +5432,11 @@ $A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menj
         \item \textbf{Hermitski} ($A=A^\dagger$)
         
         \intuicija Sopstvene vrednosti su realne (samo skaliranje, bez rotacije).
-        \item \textbf{Antihermitski} ($A^\dagger=-A$)
+        \item \textbf{Antihermitski} ($A = -A^\dagger$)
         
-        \intuicija sopstvene vrednosti su imaginarne (rotacija za 90°).
-        \item \textbf{Unitaran} ($A^\dagger A=I$)
+        \intuicija Videti \ref{AntihermitskiOperatori}
+
+        \item \textbf{Unitaran} ($A^{-1} = A^\dagger$)
         
         \intuicija sopstvene vrednosti su na jediničnom krugu (čista rotacija).
     \end{enumerate}
@@ -5539,7 +5573,52 @@ To jest, operator na tom potprostoru deluje kao rotacija za ugao $\phi$, praćen
     \end{bmatrix}, \; r_i \in \mathbb{R}^+, \;\phi_i \in (0, 2\pi), \; \forall i \in \mathbb{N}_j $.
 \end{theorem}
 
-\subsection{Pozitivni operatori}
+\subsection{Simetrične matrice}
+\label{SimetricneMatrice}
+Za simetričnu matricu $A \in \mathcal{S}_n$ važi $A = A^\mathcal{T}$. Ovo je specijalan slučaj hermitske matrice (videti \ref{HermitskiOperatori}).
+
+\begin{theorem}
+    Sopstvene vrednosti simetrične realne matrice su realni brojevi.
+\end{theorem}
+\begin{proof}
+    Neka je $A \in \mathcal{S}_n$ i $\lambda \in \mathbb{C}, \; \lambda \in \operatorname{Sp}(A)$. Neka je takođe $v \neq 0$ sopstveni vektor koji odgovara sopstvenoj
+    vrednosti $\lambda$. Tada važi:
+    \[ \begin{aligned}
+        Av = \lambda v \iff \overline{Av} = \overline{\lambda v} \iff A\overline{v} = \overline{\lambda}\overline{v}
+    \end{aligned} \]
+    Sada pomnožimo obe strane početne jednakosti vektorom $v^\dagger$ sa leve strane
+    \[ v^\dagger Av = v^\dagger \lambda v \iff v^\dagger Av = \lambda v^\dagger  v\]
+    Kako je $v^\dagger Av$ skalar, jednak je svom transponatu. Dakle:
+    \[ v^\dagger Av = (v^\dagger Av)^\mathcal{T} \iff v^\dagger Av = v^\mathcal{T} A^\mathcal{T} \overline{v} \]
+    Kako je matrica simetrična, zamenimo $A$ sa $A^\mathcal{T}$:
+    \[ v^\mathcal{T}A \overline{v} = (A \overline{v})^\mathcal{T}v\]
+    Ubacimo rezultat iz prvog koraka ($A \overline{v} = \overline{\lambda}\overline{v}$):
+    \[
+        (A \overline{v})^\mathcal{T}v = (\overline{\lambda}\overline{v})^\mathcal{T}v = \overline{\lambda} \, \overline{v}^\mathcal{T} v = \overline{\lambda} \, v^\dagger v.
+    \]
+    Time smo dobili:
+    \[
+        v^\dagger Av = \overline{\lambda} \, v^\dagger v.
+    \]
+    Izjednačimo sada ovaj rezultat sa prethodnim izrazom $v^\dagger Av = \lambda v^\dagger v$:
+    \[
+        \lambda v^\dagger v = \overline{\lambda} v^\dagger v \implies (\lambda - \overline{\lambda}) v^\dagger v = 0.
+    \]
+    Kako je $v \neq 0$, važi $v^\dagger v = \|v\|^2 > 0$. Sledi:
+    \[
+        \lambda - \overline{\lambda} = 0 \implies \lambda = \overline{\lambda} \implies \lambda \in \mathbb{R}.
+    \]
+    Dakle, svaka sopstvena vrednost simetrične realne matrice je realan broj. 
+\end{proof}
+
+Iz ovoga zaključujemo da simetrične matrice predstavljaju linearne transformacije koje vrše čisto skaliranje.
+
+\newpage
+
+\subsection{Hermitski operatori}
+\label{HermitskiOperatori}
+
+\subsubsection{Pozitivni operatori}
 \begin{itemize}
     \item Za hermitski (simetrični) operator $A \in \hom V$ kažemo da je \textbf{pozitivno semidefinitan} ili \textbf{pozitivan} 
     i pišemo $A \geq 0$ ako je \[ (\forall v \in V) \; \langle Av, v \rangle \geq 0. \] 
@@ -5563,6 +5642,303 @@ To jest, operator na tom potprostoru deluje kao rotacija za ugao $\phi$, praćen
     Svaki skalarni proizvod na $\mathbb{C}^n$ je ovog oblika, tj. može se predstaviti kao matrični proizvod, za neku strogo
     pozitivnu matricu $\mathcal{A} = A(e)$.
 \end{itemize}
+\newpage
+
+\subsection{Kososimetrične (antisimentrične) matrice}
+\label{AntisimetricneMatrice}
+Za kososimetričnu matricu $A \in \mathcal{K}_n$ važi $A = -A^\mathcal{T}$. Ovo je specijalan slučaj antihermitske matrice (videti \ref{AntihermitskiOperatori}). 
+Uzmimo jednostavan primer:
+        \[A = \begin{bmatrix}
+            0 & -1 \\
+            1 & 0
+        \end{bmatrix}.\]
+        Ova matrica rotira ravan za $90^\circ$. To vidimo na slici:
+
+        \begin{figure}[!h]
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth, every node/.style={font=\normalsize}]
+        
+        % --- PRVI KOORDINATNI SISTEM (Levo) ---
+        \begin{scope}[xshift=0cm]
+            \draw[step=1cm, gray!25, very thin] (-3, -3) grid (3, 3);
+        
+            \draw[->, thick] (-3, 0) -- (3, 0);
+            \draw[->, thick] (0, -3) -- (0, 3);
+        
+            \node[below left] at (0, 0) {$O$};
+    
+            % Bazni vektori (iscrtani preko površine)
+            \draw[->, very thick, blue] (0, 0) -- (1, 0) node[below right, blue] {$e_1$};
+            \draw[->, very thick, red] (0, 0) -- (0, 1) node[above left, red] {$e_2$};
+            \draw[->, very thick, olive] (0, 0) -- (1, 2) node[above right, olive] {$x$};
+        \end{scope}
+
+        % --- DRUGI KOORDINATNI SISTEM (Desno) ---
+        \begin{scope}[xshift=7cm]
+            \draw[step=1cm, gray!25, very thin] (-3, -3) grid (3, 3);
+        
+            \draw[->, thick] (3, 0) -- (-3, 0);
+            \draw[->, thick] (0, -3) -- (0, 3);
+        
+            \node[below right] at (0, 0) {$O$};
+
+    
+            % Bazni vektori (iscrtani preko površine)
+            \draw[->, very thick, red] (0, 0) -- (-1, 0) node[below right, red] {$Ae_2$};
+            \draw[->, very thick, blue] (0, 0) -- (0, 1) node[above right, blue] {$Ae_1$};
+            \draw[->, very thick, olive] (0, 0) -- (-2, 1) node[above right, olive] {$Ax$};
+        \end{scope}
+
+        % Strelica transformacije
+        \draw[->, thick, >=Stealth] (2, 1.4) to[out=30, in=150] (4.8, 1.4);
+        \node at (3.3, 2.2) {$A$};
+        \end{tikzpicture}
+    \end{figure}
+
+    \noindent Izračunajmo sopstvene vrednosti:
+    \[ \det (A - \lambda I) = \begin{vmatrix}
+        -\lambda & -1 \\
+        1 & -\lambda
+    \end{vmatrix} = \lambda^2 + 1 = 0 \implies \lambda = \pm i. \]
+    Ovo algebarski potvrđuje rotaciju za $90^\circ$ u matematičkom smeru. U opštem slučaju:
+    \[ \lambda \langle v, v \rangle = \langle Av, v \rangle = \langle v, A^\mathcal{T}v \rangle = \langle v, -Av \rangle = - \overline{\langle Av, v \rangle} \]
+    Dakle, sopstvene vrednosti su čisto imaginarne:
+    \[ \lambda ||v||^2 = i \theta ||v||^2 \implies \lambda = i \theta, \; \theta \in \mathbb{R} \]
+    
+    Razmotrimo sada matricu rotacije za neki
+    mali ugao $\varepsilon$.
+    \[
+        R(\varepsilon) = \begin{bmatrix}
+            \cos (\varepsilon) & -\sin (\varepsilon) \\
+            \sin (\varepsilon) & \cos (\varepsilon)
+        \end{bmatrix} \approx \begin{bmatrix}
+            1 & -\varepsilon \\
+            \varepsilon & 1
+        \end{bmatrix} = I + \varepsilon \begin{bmatrix}
+            0 & -1 \\
+            1 & 0
+        \end{bmatrix} = I + \varepsilon A
+    \]
+    Matrica oblika $I + \varepsilon A$, gde je $A$ antisimetrična matrica, je matrica \textbf{infinitezimalne rotacije}.
+    Izračunajmo normu vektora $(I + \varepsilon A)v$\;:
+    \[ ||(I + \varepsilon A)v||^2 = \langle (I + \varepsilon A)v, (I + \varepsilon A)v \rangle = 
+    \langle v, (I + \varepsilon A)v \rangle + \varepsilon \langle  Av, (I + \varepsilon A)v \rangle = \]
+    \[ = \langle v, v \rangle + \varepsilon \langle v, Av \rangle + \underbrace{\varepsilon \langle Av, v \rangle }_{-\varepsilon
+     \langle v, Av \rangle} + \varepsilon^2 \langle Av, Av \rangle = ||v||^2 + \varepsilon^2||Av||^2\]
+
+    \[ \lim_{\varepsilon \to 0} ||(I + \varepsilon A)v || = ||v||\]
+
+    Dakle, infinitezimalna rotacija čuva dužinu do na red $\varepsilon^2$. To je upravo ono što očekujemo od rotacije. Kako sada 
+    da dobijemo \textit{konačnu} rotaciju za ugao $t$? Napišimo eksponencijalnu funkciju matrice:
+    \[ e^{tA} = I + tA + \frac{t^2A^2}{2!} + \frac{t^3A^3}{3!} + \dots \]
+    Ova definicija važi za svaku kvadratnu matricu (red uvek konvergira).
+
+    Ukoliko sada krenemo da računamo stepene matrice $A$, videćemo da se ponavljaju sa periodom 4:
+    \[ \underbrace{A^0 = I, \; A^1 = A, \; A^2 = -I, \; A^3 = -A}_4, \; A^4 = I,\; A^5 = A,\; \dots \]
+    Dakle, važi:
+    \[ e^{tA} = I + tA - \frac{t^2I}{2!} - \frac{t^3A}{3!} + \frac{t^4I}{4!} + \dots =\] \[= I \left(1 - \frac{t^2}{2!} + \frac{t^4}{4!} + 
+    \dots \right) + A\left(t - \frac{t^3}{3!} + \frac{t^5}{5!} + \dots\right) = I \cos (t) + A \sin(t) = \]
+    \[ = \begin{bmatrix}
+        \cos(t) & 0 \\
+        0 & \cos(t)
+    \end{bmatrix} + \begin{bmatrix}
+        0 & -\sin(t)\\
+        \sin(t) & 0
+    \end{bmatrix} = \begin{bmatrix}
+        \cos (t) & -\sin (t)\\
+        \sin(t) & \cos(t)
+    \end{bmatrix}\]
+    Dobili smo:
+    \[ e^{tA} = \begin{bmatrix}
+        \cos (t) & -\sin (t)\\
+        \sin(t) & \cos(t)
+    \end{bmatrix}. \]
+    Ovo je upravo matrica rotacije za ugao $t$. Dakle, \textbf{eksponencijal antisimetrične matrice je ortogonalna matrica (rotacija)}. Ovo je fundamentalna veza između antisimetričnih matrica i rotacija.
+
+    \begin{theorem}
+        Ako je $A$ antisimetrična matrica, tada je $e^{tA}$ ortogonalna matrica za svako $t \in \mathbb{R}$.
+    \end{theorem}
+    \begin{proof}
+        Neka je $U(t) = e^{tA}$. Tada je
+        \[ \frac{d}{dt}U(t) = AU(t) = U(t)A, \]
+        pri čemu poslednja jednakost važi jer svaka matrica komutira sa svojim stepenom (a $U$ je red po $A$). Posmatrajmo
+        $U(t)^\mathcal{T}U(t)$:
+        \[\begin{aligned}
+            \frac{d}{dt}(U^\mathcal{T}U) &= \left(\frac{d}{dt}U\right)^\mathcal{T}U + U^\mathcal{T} \frac{d}{dt}U \\[6pt]
+             &= (AU)^\mathcal{T}U + U^\mathcal{T}AU 
+            = U^\mathcal{T}A^\mathcal{T}U + U^\mathcal{T}AU \\[6pt] &= U^\mathcal{T}(-A)U + 
+            U^\mathcal{T}AU = 0
+        \end{aligned}\]
+        Dakle, $(U^\mathcal{T}U)(t) = \operatorname{const}$. Za $t = 0$ je $U(0) = I$, pa je 
+        \[ U(t)^\mathcal{T}U(t) = I \]
+        za svako $t$. Dakle, $U(t)$ je ortogonalna.
+    \end{proof}
+
+\subsection{Antihermitski operatori}
+\label{AntihermitskiOperatori}
+Ovo su operatori za koje važi $A = -A^\dagger$, dakle generalizacija antisimentrične matrice na kompleksan prostor (videti \ref{AntisimetricneMatrice}).\\
+
+Neka je $B$ hermitska matrica i neka je $A = iB$. Tada važi
+\[A^\dagger = (iB)^\dagger = -iB^\dagger = -iB = -A.\]
+Dakle, antihermitske matrice su imaginarni umnošci hermitskih.
+\medskip
+
+Koristeći isti argument kao u realnom slučaju ($\langle Av, v \rangle = -\overline{\langle Av, v \rangle}$), dobijamo da su 
+sopstvene vrednosti čisto imaginarne:
+\[ \lambda = i \theta, \; \theta \in \mathbb{R}. \]
+
+Sada dolazimo i do generalizacije teoreme iz realnog slučaja.
+\begin{theorem}
+    Ako je $A$ antihermitska matrica, tada je $e^{tA}$ unitarna matrica za svako $t \in \mathbb{R}$.
+\end{theorem}
+\begin{proof}
+    Neka je $U(t) = e^{tA}$. Tada:
+    \[ \begin{aligned}
+        \frac{d}{dt} (U^\dagger U) &= \left(\frac{d}{dt}U\right)^\dagger U + U^\dagger \frac{d}{dt}U\\[6pt]
+        &= (AU)^\dagger U + U^\dagger AU = U^\dagger A^\dagger U + U^\dagger AU\\[6pt]
+        &= U^\dagger(-A)U + U^\dagger A U = 0
+    \end{aligned}\]
+    Dakle $(U^\dagger U)(t) = \operatorname{const}$ i $(U^\mathcal{T}U)(0) = I$. Sledi $U^\dagger U = I$, pa je $U$ unitarna.
+\end{proof}
+
+\subsubsection{Primer i intuicija}
+
+Neka je
+\[
+A = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}.
+\]
+Ova matrica je realna i antisimetrična ($A^\mathcal{T} = -A$), pa je istovremeno i antihermitska:
+\[
+A^\dagger = A^\mathcal{T} = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} = -A.
+\]
+
+Sopstvene vrednosti su čisto imaginarne, kao što i očekujemo za antihermitsku matricu, i javljaju se u konjugovanim parovima ($\pm i$).
+\[
+\det(A - \lambda I) = \begin{vmatrix} -\lambda & -1 \\ 1 & -\lambda \end{vmatrix} = \lambda^2 + 1 = 0
+\implies \lambda_1 = i, \quad \lambda_2 = -i.
+\]
+Sopstveni vektori su $v_1 = (1, -i)$ i $v_2 = (1, i)$.
+
+\newpage
+\subsubsection*{Šta radi transformacija?}
+
+Na sopstvene vektore, $A$ deluje kao množenje sa $i$, odnosno $-i$:
+\begin{itemize}
+    \item $v_1 \mapsto i v_1$ (rotacija za $+90^\circ$ u kompleksnoj ravni),
+    \item $v_2 \mapsto -i v_2$ (rotacija za $-90^\circ$, suprotan smer).
+\end{itemize}
+
+Na realne vektore, $A$ deluje kao rotacija za $90^\circ$ u ravni:
+\[
+A \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} -y \\ x \end{bmatrix}.
+\]
+
+Konačnu rotaciju za proizvoljan ugao $t$ dobijamo preko eksponencijala:
+\[
+e^{tA} = I\cos t + A\sin t = \begin{bmatrix} \cos t & -\sin t \\ \sin t & \cos t \end{bmatrix}.
+\]
+To je matrica rotacije za ugao $t$, dakle ortogonalna (i unitarna) matrica.
+
+\medskip
+\noindent\underline{\textit{Zaključak:}} Antihermitska matrica $A$ je \textbf{generator rotacije}. Ona sama po sebi nije rotacija, ali njen eksponencijal $e^{tA}$ jeste unitarna (ovde ortogonalna) matrica, odnosno konačna rotacija. Sopstvene vrednosti $i$ i $-i$ odgovaraju dvama smerovima rotacije u kompleksnom prostoru.
+
+\newpage
+
+\subsection{Ortogonalne matrice}
+\label{OrtogonalneMatrice}
+Za ortogonalnu matricu $O \in \mathcal{O}(n, \mathbb{F})$ važi $O^\mathcal{T} O = O O^\mathcal{T} = I$, odnosno $O^{-1} = O^\mathcal{T}$. Ovo je specijalan slučaj unitarne matrice (videti \ref{UnitarniOperatori}).
+
+\begin{theorem}
+    Sopstvene vrednosti ortogonalne realne matrice leže na jediničnom krugu, tj. $|\lambda| = 1$.
+\end{theorem}
+\begin{proof}
+    Neka je $O \in \mathcal{O}(n, \mathbb{F})$ i $\lambda \in \mathbb{C}$ sopstvena vrednost, a $v \neq 0$ odgovarajući sopstveni vektor. Tada važi $Ov = \lambda v$. 
+    Posmatrajmo normu:
+    \[
+        \|Ov\| = \|\lambda v\| = |\lambda| \, \|v\|.
+    \]
+    Sa druge strane, ortogonalna matrica čuva normu:
+    \[
+        \|Ov\|^2 = \langle Ov, Ov \rangle = v^\dagger O^\dagger O v = v^\dagger v = \|v\|^2.
+    \]
+    Dakle, $\|Ov\| = \|v\|$. Izjednačavanjem dobijamo:
+    \[
+        |\lambda| \, \|v\| = \|v\| \implies |\lambda| = 1,
+    \]
+    jer je $v \neq 0$, pa je $\|v\| > 0$. Dakle, sve sopstvene vrednosti ortogonalne matrice leže na jediničnom krugu $\mathbb{S}^1$. \(\square\)
+\end{proof}
+
+\noindent\underline{\textit{Intuicija:}} Ortogonalna matrica čuva dužinu vektora. Ako je $v$ sopstveni vektor, onda se $Ov$ razlikuje od $v$ samo po skalaru $\lambda$. Ali pošto se dužina ne menja, taj skalar mora imati modul $1$. Dakle, $\lambda$ je oblika $e^{i\theta}$ – čista rotacija (ili refleksija za $\lambda = -1$).
+
+\begin{theorem}
+    Neka je $O \in \mathcal{O}(n, \mathbb{F})$. Tada je $\det O = \pm 1$.
+\end{theorem}
+\begin{proof}
+    Iz $O^\mathcal{T} O = I$ sledi:
+    \[
+        \det(O^\mathcal{T} O) = \det I \implies \det(O^\mathcal{T}) \det(O) = 1 \implies (\det O)^2 = 1.
+    \]
+    Dakle, $\det O = \pm 1$.
+\end{proof}
+
+\noindent\underline{\textit{Intuicija:}}
+\begin{itemize}
+    \item $\det O = 1$: matrica predstavlja \textbf{rotaciju} (čuva orijentaciju).
+    \item $\det O = -1$: matrica predstavlja \textbf{refleksiju} (menja orijentaciju).
+\end{itemize}
+
+\subsubsection{Sopstvene vrednosti u realnom slučaju}
+
+Pošto je $O$ realna matrica, njen karakteristični polinom ima realne koeficijente, pa se kompleksne sopstvene vrednosti javljaju u konjugovanim parovima. 
+Kombinujući to sa činjenicom da je $|\lambda| = 1$, dobijamo da su sopstvene vrednosti ortogonalne matrice:
+\begin{itemize}
+    \item $\lambda = 1$ (realna, rotacija za $0^\circ$). Ove matrice pripadaju specijalnoj ortogonalnoj grupi $\mathcal{SO}(n, \mathbb{F})$.
+    \item $\lambda = -1$ (realna, refleksija/rotacija za $180^\circ$),
+    \item parovi konjugovano-kompleksnih vrednosti $e^{\pm i\theta}$ (rotacija za ugao $\theta$).
+\end{itemize}
+
+\medskip
+\noindent\textbf{Primer ($2 \times 2$).} 
+Za matricu rotacije za ugao $\theta$:
+\[
+    R = \begin{bmatrix}
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{bmatrix},
+\]
+važi $\det R = 1$ i sopstvene vrednosti su:
+\[
+    \lambda_{1,2} = \cos\theta \pm i\sin\theta = e^{\pm i\theta}.
+\]
+Za $\theta = 0$: $\lambda = 1$ (identiteta). 
+Za $\theta = \pi$: $\lambda = -1$ (centralna simetrija).
+
+\medskip
+\noindent\textbf{Primer ($3 \times 3$).} 
+Rotacija oko $z$-ose za ugao $\theta$:
+\[
+    R_z = \begin{bmatrix}
+        \cos\theta & -\sin\theta & 0 \\
+        \sin\theta & \cos\theta & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}.
+\]
+Sopstvene vrednosti: $e^{i\theta}, e^{-i\theta}, 1$. 
+Vrednost $1$ odgovara osi rotacije (vektori duž $z$-ose se ne menjaju).
+
+\subsubsection{Veza sa unitarnim matricama}
+
+Ortogonalne matrice su realni specijalni slučaj unitarnih matrica:
+\[
+    O \in \mathcal{O}(n, \mathbb{F}) \iff O \in U(n, \mathbb{F}) \;\land\; O \in \mathbb{M}_n(\mathbb{R}).
+\]
+Za unitarne matrice važi isti zaključak: sopstvene vrednosti leže na jediničnom krugu. 
+Ortogonalne matrice su one unitarne matrice koje su realne, pa su im i sopstvene vrednosti ili realne ($\pm 1$) ili u konjugovanim parovima $e^{\pm i\theta}$.
+
+\newpage
+
+\subsection{Unitarni operatori}
+\label{UnitarniOperatori}
 
 \subsection{Kvadratni koren operatora}
 
@@ -6286,7 +6662,10 @@ Neka je $\theta$ ugao pod kojim se seku prave $y = k_1x+b_1$ i $y = k_2x+b_2$. T
     \item $(n-1)$-dimenzione ravni u $\mathbb{R}^n$ zovu se \textbf{hiperravni}.
 \end{itemize}
 
-\chapter{Analiza}
+
+\part{Matematička analiza}
+
+\chapter{Nizovi i granične vrednosti}
 \section{Nizovi}
 
 \subsection{Limes niza}
@@ -6356,6 +6735,7 @@ Neka je $\theta$ ugao pod kojim se seku prave $y = k_1x+b_1$ i $y = k_2x+b_2$. T
     Niz konvergira. $\iff$ Niz je Košijev.
 \end{theorem}
 
+\chapter{Realna analiza jedne promenljive}
 \section{Limesi i neprekidnost funkcija}
 \subsection{Funkcije}
 \begin{theorem}
@@ -6529,6 +6909,9 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c)(b - a) = f(b) - f(a)$.
         \int \frac{1}{\cos(x)}\;dx &= \ln\bigg|\cot \bigg(\frac{\pi}{4} - \frac{x}{2}\bigg)\bigg| + C
     \end{aligned}
 \]
+
+
+\part{Primenjena matematika}
 
 \chapter{Verovatnoća}
 
