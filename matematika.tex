@@ -2718,7 +2718,7 @@ zato uzimamo samo tu komponentu.
 \intuicija Kako vektori iz $B_L$ pripadaju prostoru $L = [0]_L$, koji se u prostoru $V/L$ slika u nulu, i oni će se "kolapsirati" u nulu, pa neće činiti bazu od $V/L$.
 
 \begin{itemize}
-    \item Dakle, hiperravni $n$-dimenzionog prostora $V$ koje ne prolaze kroz koordinatni početak su elementi prostora $V/N$, gde je $N$ $(n-1)$-dimenzioni potprostor od $V$ i ove hiperravni se zovu \textbf{linearne mnogostrukosti}.
+    \item Dakle, hiperravni $n$-dimenzionog prostora $V$ koje ne prolaze kroz koordinatni početak su elementi prostora $V/N$, gde je $N$ $(n-1)$-dimenzioni potprostor od $V$ i ove hiperravni se zovu \textbf{linearne mnogostrukosti} (ili afini potprostori).
 \end{itemize}
 
 \subsection{Matrica prelaska}
@@ -5431,17 +5431,17 @@ $A$, tačke pri preslikavanju $A$ mogu napustiti $L$, pa ponovna projekcija menj
         \item \textbf{Normalan} ako je $A^\dagger A = A A^\dagger $,\\
         \noindent\underline{\textit{Intuicija:}} Za normalan operator postoji ortonormirana baza sopstvenih vektora, pa se može dijagonalizovati. 
         Međutim, sopstvene vrednosti mogu biti bilo koji kompleksni brojevi, što geometrijski znači da operator na svakoj osi deluje kao kombinacija rotacije 
-        i skaliranja (množenje kompleksnim brojem).
+        i skaliranja (množenje kompleksnim brojem). Videti \ref{normalniOperatori}.
         \item \textbf{Hermitski} ($A=A^\dagger$)
         
-        \intuicija Sopstvene vrednosti su realne (samo skaliranje, bez rotacije).
+        \intuicija Sopstvene vrednosti hermitskih operatora su realne (samo skaliranje, bez rotacije). Videti \ref{HermitskiOperatori}.
         \item \textbf{Antihermitski} ($A = -A^\dagger$)
         
-        \intuicija Videti \ref{AntihermitskiOperatori}
+        \intuicija Eksponencijal antihermitskog operatora ($e^{tA}$) je unitarna matrica, tj. predstavlja konačnu rotaciju. Videti \ref{AntihermitskiOperatori}.
 
         \item \textbf{Unitaran} ($A^{-1} = A^\dagger$)
         
-        \intuicija sopstvene vrednosti su na jediničnom krugu (čista rotacija).
+        \intuicija Sopstvene vrednosti unitarnih operatora su na jediničnom krugu (čista rotacija). Videti \ref{UnitarniOperatori}.
     \end{enumerate}
     2, 3 i 4 su specijalni slučajevi normalnog operatora.
     \item Ako je $V$ realan vektorski prostor, ovi operatori imaju specijalne nazive:
@@ -5575,6 +5575,8 @@ To jest, operator na tom potprostoru deluje kao rotacija za ugao $\phi$, praćen
         \sin \phi_i & \cos \phi_i
     \end{bmatrix}, \; r_i \in \mathbb{R}^+, \;\phi_i \in (0, 2\pi), \; \forall i \in \mathbb{N}_j $.
 \end{theorem}
+
+\newpage
 
 \subsection{Simetrične matrice}
 \label{SimetricneMatrice}
@@ -5940,8 +5942,114 @@ Ortogonalne matrice su one unitarne matrice koje su realne, pa su im i sopstvene
 
 \newpage
 
+
 \subsection{Unitarni operatori}
 \label{UnitarniOperatori}
+
+Neka je $V$ unitaran prostor nad $\mathbb{C}$ i $A \in \operatorname{Hom} V$. Kažemo da je $A$ \textbf{unitaran operator} ako važi
+\[
+    A^\dagger A = A A^\dagger = \operatorname{id}_V,
+\]
+odnosno $A^{-1} = A^\dagger$. 
+Ovo je kompleksna generalizacija ortogonalnih matrica (videti \ref{OrtogonalneMatrice}), a specijalan slučaj normalnih operatora.
+
+\medskip
+\noindent\underline{\textit{Intuicija:}} Unitarni operator je \textbf{kompleksna rotacija} – čuva skalarni proizvod, dužine i uglove, pa samim tim slika ortonormiranu bazu u ortonormiranu bazu.
+
+\begin{theorem}
+    Neka je $V$ unitaran prostor i $A \in \operatorname{Hom} V$. Tada su sledeći iskazi ekvivalentni:
+    \begin{enumerate}
+        \item $A$ je unitaran;
+        \item $A$ čuva skalarni proizvod: $(\forall v, w \in V) \; \langle Av, Aw \rangle = \langle v, w \rangle$;
+        \item $A$ čuva normu: $(\forall v \in V) \; \|Av\| = \|v\|$;
+        \item $A$ slika ortonormiranu bazu u ortonormiranu bazu.
+    \end{enumerate}
+\end{theorem}
+
+\noindent\underline{\textit{Intuicija:}} Sve četiri osobine opisuju istu stvar – operator je "rigidan", ništa ne isteže, ne sabija i ne menja uglove. Samo rotira (eventualno reflektuje).
+
+\subsubsection{Sopstvene vrednosti unitarnog operatora}
+
+\begin{theorem}
+    Sopstvene vrednosti unitarnog operatora leže na jediničnom krugu, tj. $|\lambda| = 1$.
+\end{theorem}
+\begin{proof}
+    Neka je $A$ unitaran i $Av = \lambda v$ sa $v \neq 0$. Tada:
+    \[
+        \|Av\| = \|\lambda v\| = |\lambda| \|v\|.
+    \]
+    Sa druge strane, $A$ čuva normu, pa je $\|Av\| = \|v\|$. Izjednačavanjem:
+    \[
+        |\lambda| \|v\| = \|v\| \implies |\lambda| = 1,
+    \]
+    jer je $v \neq 0$. Dakle, sve sopstvene vrednosti leže na jediničnom krugu $\mathbb{S}^1$. \(\square\)
+\end{proof}
+
+\noindent\underline{\textit{Intuicija:}} Ako je $v$ sopstveni vektor unitarnog operatora, operator ga ne pomera sa njegovog pravca, već samo skalira. Pošto dužina mora ostati ista, taj skalar mora biti oblika $e^{i\theta}$ – čista faza (rotacija).
+
+\subsubsection{Specijalni slučaj: ortogonalne matrice}
+
+Ako je $V = \mathbb{R}^n$ (realan prostor), unitarni operator se svodi na \textbf{ortogonalnu matricu}:
+\[
+    O^\mathcal{T} O = I \implies O^{-1} = O^\mathcal{T}.
+\]
+Sopstvene vrednosti su tada ili realne ($\pm 1$) ili u konjugovanim parovima $e^{\pm i\theta}$.
+
+\subsubsection{Grupa unitarnih operatora}
+
+\begin{theorem}
+    Skup svih unitarnih operatora na $V$ čini grupu u odnosu na kompoziciju. Ova grupa se naziva \textbf{unitarna grupa} i označava sa $U(V)$, odnosno $U(n)$ u konačnodimenzionom slučaju.
+\end{theorem}
+\begin{proof}
+    \begin{enumerate}
+        \item \textbf{Zatvorenost:} Ako su $A, B$ unitarni, tada je i $AB$ unitaran jer
+        \[
+            (AB)^\dagger (AB) = B^\dagger A^\dagger A B = B^\dagger B = I.
+        \]
+        \item \textbf{Asocijativnost:} Kompozicija operatora je asocijativna.
+        \item \textbf{Neutral:} Identiteta $I$ je unitarna.
+        \item \textbf{Inverz:} Ako je $A$ unitaran, tada je $A^{-1} = A^\dagger$ takođe unitaran.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    \textbf{Specijalna unitarna grupa} je skup
+    \[
+        SU(n) = \{ U \in U(n) \mid \det U = 1 \}.
+    \]
+    Ona je podgrupa od $U(n)$ i odgovara "čistim rotacijama" bez refleksije.
+\end{theorem}
+
+\subsubsection{Primer u $2 \times 2$}
+
+Neka je
+\[
+    U = \begin{bmatrix}
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{bmatrix}.
+\]
+Tada je $U^\dagger U = I$ (jer je $U$ realna ortogonalna), pa je $U$ unitarna. Sopstvene vrednosti su:
+\[
+    \lambda_{1,2} = \cos\theta \pm i\sin\theta = e^{\pm i\theta}.
+\]
+Dakle, obe leže na jediničnom krugu, kao što teorema predviđa.
+
+\subsubsection{Ključna razlika u odnosu na hermitske operatore}
+
+\begin{center}
+\begin{tabular}{l|c|c}
+    & \textbf{Hermitski operator} & \textbf{Unitarni operator} \\ \hline
+    Uslov & $A^\dagger = A$ & $A^\dagger A = I$ \\
+    Sopstvene vrednosti & realne ($\lambda \in \mathbb{R}$) & na jediničnom krugu ($|\lambda| = 1$) \\
+    Geometrijski smisao & istezanje/sabijanje & rotacija/refleksija \\
+    Eksponencijal & $e^{tA}$ nije unitaran & $e^{tA}$ je unitaran ako je $A$ antihermitski \\
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent\underline{\textit{Zaključak:}} Unitarni operatori su kompleksne rotacije – oni čuvaju svu geometriju unitarnog prostora (dužine, uglove, ortogonalnost). Njihove sopstvene vrednosti leže na jediničnom krugu, što algebarski odgovara rotacionom ponašanju.
+\newpage
 
 \subsection{Kvadratni koren operatora}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  25 SEP 2026 22:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  25 SEP 2026 23:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1038,7 +1038,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbt1.enc}] (./matematika.toc [2
 
 ] [3] [4] [5]
-Overfull \hbox (0.21928pt too wide) in paragraph at lines 209--209
+Overfull \hbox (0.21928pt too wide) in paragraph at lines 214--214
  [][] [][][]\T1/cmsrbr/m/n/12 Kongruentnost ma-tri-ca. Rang i je-zgro her-mit-skog bi-li-ner-nog funk- 
  []
 
@@ -1351,85 +1351,90 @@ Overfull \hbox (32.80608pt too wide) in paragraph at lines 4995--4997
  []
 
 [106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122]
-Underfull \hbox (badness 10000) in paragraph at lines 5782--5783
+Underfull \hbox (badness 10000) in paragraph at lines 5784--5785
 
  []
 
-[123] [124] [125] [126] [127] [128] [129] [130]
-Overfull \hbox (8.86842pt too wide) in paragraph at lines 6091--6091
+[123] [124] [125] [126] [127] [128]
+Overfull \hbox (3.07584pt too wide) in paragraph at lines 6041--6048
+ [] 
+ []
+
+[129] [130] [131] [132]
+Overfull \hbox (8.86842pt too wide) in paragraph at lines 6199--6199
 |[]\T1/cmsrbr/b/n/14.4 Karakterizacija her-mit-skih bi-li-ne-ar-nih funk-ci-o-na-la u uni-
  []
 
-[131] [132] [133] [134] [135]
+[133] [134] [135] [136] [137]
 Glava 12.
-[136
+[138
 
-] [137] [138] [139]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6660.
-
+] [139] [140] [141]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 6660.
+(hyperref)                removing `math shift' on input line 6768.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6660.
+(hyperref)                removing `superscript' on input line 6768.
 
-[140] [141
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6768.
+
+[142] [143
 
 ]
 Glava 13.
-[142
+[144
 
-] [143]
+] [145]
 Glava 14.
 
 Underfull \vbox (badness 2772) has occurred while \output is active []
 
- [144
+ [146
 
-] [145] [146]
-Underfull \hbox (badness 10000) in paragraph at lines 6823--6824
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6831--6832
+] [147] [148]
+Underfull \hbox (badness 10000) in paragraph at lines 6931--6932
 
  []
 
-<slike/rolle.pdf, id=2573, 552.20506pt x 241.06795pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 6939--6940
+
+ []
+
+<slike/rolle.pdf, id=2598, 552.20506pt x 241.06795pt>
 File: slike/rolle.pdf Graphic file (type pdf)
 <use slike/rolle.pdf>
-Package pdftex.def Info: slike/rolle.pdf  used on input line 6835.
+Package pdftex.def Info: slike/rolle.pdf  used on input line 6943.
 (pdftex.def)             Requested size: 181.18439pt x 79.09654pt.
-<slike/Mittelwertsatz6.svg.png, id=2574, 1927.2pt x 1229.59375pt>
+<slike/Mittelwertsatz6.svg.png, id=2599, 1927.2pt x 1229.59375pt>
 File: slike/Mittelwertsatz6.svg.png Graphic file (type png)
 <use slike/Mittelwertsatz6.svg.png>
-Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 6856.
+Package pdftex.def Info: slike/Mittelwertsatz6.svg.png  used on input line 6964.
 (pdftex.def)             Requested size: 181.18439pt x 115.59308pt.
-[147 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
-Overfull \hbox (14.17603pt too wide) in paragraph at lines 6863--6865
+[149 <./slike/rolle.pdf> <./slike/Mittelwertsatz6.svg.png>]
+Overfull \hbox (14.17603pt too wide) in paragraph at lines 6971--6973
 [][] 
  []
 
-[148] [149] [150
+[150] [151] [152
 
 ]
 Glava 15.
-[151
+[153
 
 ]
 Glava 16.
-[152
+[154
 
 ]
 Glava 17.
-[153
+[155
 
-] [154
+] [156
 
 ] (./matematika.aux)
  ***********
@@ -1440,18 +1445,18 @@ Package rerunfilecheck Info: File `matematika.out' has not changed.
 (rerunfilecheck)             Checksum: AC27C4716AC550EF20E2D0B32F90E92F;48201.
  ) 
 Here is how much of TeX's memory you used:
- 31995 strings out of 467533
- 583448 string characters out of 5422138
+ 32009 strings out of 467533
+ 583588 string characters out of 5422138
  1081593 words of memory out of 5000000
  59356 multiletter control sequences out of 15000+600000
  702645 words of font info for 139 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,19n,107p,776b,1061s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrx.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (154 pages, 1208407 bytes).
+Output written on matematika.pdf (156 pages, 1214627 bytes).
 PDF statistics:
- 2934 PDF objects out of 2984 (max. 8388607)
- 2702 compressed objects within 28 object streams
- 1030 named destinations out of 1200 (max. 500000)
+ 2960 PDF objects out of 2984 (max. 8388607)
+ 2726 compressed objects within 28 object streams
+ 1044 named destinations out of 1200 (max. 500000)
  1980 words of extra memory for PDF output out of 10000 (max. 10000000)
 
