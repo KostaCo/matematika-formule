@@ -251,10 +251,21 @@
 \contentsline {section}{\numberline {14.4}Tejlorov razvoj}{150}{section.14.4}%
 \contentsline {subsection}{\numberline {14.4.1}Opšta formula Tejlorovog razvoja i ostaci}{150}{subsection.14.4.1}%
 \contentsline {subsection}{\numberline {14.4.2}Razvoji elementarnih funkcija (Maklorenov polinom)}{150}{subsection.14.4.2}%
-\contentsline {section}{\numberline {14.5}Integrali}{151}{section.14.5}%
-\contentsline {subsection}{\numberline {14.5.1}Poznati integrali}{151}{subsection.14.5.1}%
-\contentsline {subsection}{\numberline {14.5.2}Izvedeni integrali}{151}{subsection.14.5.2}%
-\contentsline {part}{V\hspace {1em}Primenjena matematika}{152}{part.5}%
-\contentsline {chapter}{\numberline {15}Verovatnoća}{153}{chapter.15}%
-\contentsline {chapter}{\numberline {16}Statistika}{154}{chapter.16}%
-\contentsline {chapter}{\numberline {17}Numerička analiza}{155}{chapter.17}%
+\contentsline {section}{\numberline {14.5}Neodređeni integral}{151}{section.14.5}%
+\contentsline {subsection}{\numberline {14.5.1}Primitivna funkcija i neodređeni integral}{151}{subsection.14.5.1}%
+\contentsline {subsection}{\numberline {14.5.2}Smena promenljive i parcijalna integracija}{151}{subsection.14.5.2}%
+\contentsline {subsubsection}{Smena promenljive}{151}{subsection.14.5.2}%
+\contentsline {subsubsection}{Parcijalna integracija}{152}{theorem.14.5.3}%
+\contentsline {subsection}{\numberline {14.5.3}Integracija racionalnih funkcija}{152}{subsection.14.5.3}%
+\contentsline {subsection}{\numberline {14.5.4}Integracija nekih iracionalnih i trig. funkcija}{152}{subsection.14.5.4}%
+\contentsline {subsection}{\numberline {14.5.5}Neki integrali}{154}{subsection.14.5.5}%
+\contentsline {subsubsection}{Stepene funkcije}{154}{subsection.14.5.5}%
+\contentsline {subsubsection}{Racionalni kvadratni oblici}{154}{subsection.14.5.5}%
+\contentsline {subsubsection}{Logaritamske i eksponencijalne funkcije}{154}{subsection.14.5.5}%
+\contentsline {subsubsection}{Trigonometrijske funkcije}{155}{subsection.14.5.5}%
+\contentsline {subsubsection}{Iracionalni integrali (sa korenom)}{155}{subsection.14.5.5}%
+\contentsline {subsubsection}{Hiperboličke funkcije}{155}{subsection.14.5.5}%
+\contentsline {part}{V\hspace {1em}Primenjena matematika}{156}{part.5}%
+\contentsline {chapter}{\numberline {15}Verovatnoća}{157}{chapter.15}%
+\contentsline {chapter}{\numberline {16}Statistika}{158}{chapter.16}%
+\contentsline {chapter}{\numberline {17}Numerička analiza}{159}{chapter.17}%

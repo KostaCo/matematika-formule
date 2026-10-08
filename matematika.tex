@@ -1064,7 +1064,7 @@ Problem bojenja mapa datira iz XIX veka i odnosi se na bojenje teritorija tako d
     \item \textbf{Napomena:} U prvom delu, algoritam određuje prethodnika svakog čvora i izračunava najkraća rastojanja. Drugi deo algoritma služi za rekonstrukciju samih putanja koristeći informacije o prethodnicima. Moguća je modifikacija algoritma kojom se direktno pamte nizovi čvorova koji čine najkraći put.
 \end{itemize}
 
-\begin{theorem}[Teorema 3.10.3]
+\begin{theorem}
     Dajkstrin algoritam daje najkraće puteve od jednog čvora usmerenog težinskog grafa do svih čvorova tog grafa.
 \end{theorem}
 \newpage
@@ -6048,7 +6048,7 @@ Dakle, obe leže na jediničnom krugu, kao što teorema predviđa.
 \end{center}
 
 \medskip
-\noindent\underline{\textit{Zaključak:}} Unitarni operatori su kompleksne rotacije – oni čuvaju svu geometriju unitarnog prostora (dužine, uglove, ortogonalnost). Njihove sopstvene vrednosti leže na jediničnom krugu, što algebarski odgovara rotacionom ponašanju.
+\noindent\underline{\textit{Zaključak:}} Unitarni operatori su kompleksne rotacije - oni čuvaju svu geometriju unitarnog prostora (dužine, uglove, ortogonalnost). Njihove sopstvene vrednosti leže na jediničnom krugu, što algebarski odgovara rotacionom ponašanju.
 \newpage
 
 \subsection{Kvadratni koren operatora}
@@ -6993,31 +6993,159 @@ Tada postoji tačka $c \in (a,b)$ td. $f'(c)(b - a) = f(b) - f(a)$.
 \end{aligned}
 \]
 \newpage
-\section{Integrali}
-\subsection{Poznati integrali}
+\section{Neodređeni integral}
+\subsection{Primitivna funkcija i neodređeni integral}
+Neka je data funkcija $f:(a, b) \to \mathbb{R}$.
+\begin{definition}
+    Funkcija $F:(a, b) \to \mathbb{R}$ je \textbf{primitivna funkcija} funkcije $f$ ako je diferencijabilna i važi
+    \[ (\forall x \in (a, b)) \; \frac{d}{dx}F(x) = f(x). \]
+\end{definition}
+
+\begin{theorem}\
+    \begin{enumerate}[label=\alph*)]
+        \item Ako je $F:(a, b) \to \mathbb{R}$ primitivna funkcija funkcije $f:(a, b) \to \mathbb{R}$, onda je i $F(x) + C$ primitivna
+    funkcija funkcije $f$ za svako $C \in \mathbb{R}$.  
+        \item Ako su $F_1$ i $F_2$ primitivne funkcije funkcije $f$ na $(a, b)$, onda se one razlikuju za konstantu, tj. važi $F_1(x) - F_2(x) = C \in \mathbb{R}$ za svako $x \in (a, b)$.
+    \end{enumerate}
+    
+\end{theorem}
+
+\begin{definition}
+    Skup svih primitivnih funkcija funkcije $f:(a, b) \to \mathbb{R}$ se zove \textbf{neodređeni integral} funkcije $f$ i označava
+    sa \[ \int f(x) \; dx. \] U ovom izrazu se $f(x)$ zove \textbf{podintegralna funkcija}, a $f(x)\;dx$ \textbf{podintegralni
+    izraz}. Ako je $F(x)$ primitivna funkcija funkcije $f(x)$ na nekom intervalu, onda se na osnovu prethodne teoreme može zapisati
+    $ \int f(x) \; dx = \{ F(x) + C \;|\; C \in \mathbb{R}\}$, odnosno samo
+    \[ \int f(x) \; dx = F(x) + C. \]
+\end{definition}
+
+\begin{theorem}
+    Neka je $F(x)$ primitivna funkcija funkcije $f(x)$ na nekom intervalu. Tada je
+    \begin{enumerate}[label=\alph*)]
+        \item $\displaystyle d\left(\int f(x) \; dx\right) = f(x)\;dx$
+        \item $\displaystyle \int d F(x) = F(x) + C$
+        \item $\displaystyle \int \lambda f(x) \; dx = \lambda \int f(x)\;dx, \;\; \lambda \in \mathbb{R}\setminus\{0\}$
+        \item $\displaystyle \int\left(f(x) + g(x)\right)\;dx = \int f(x)\;dx + \int g(x)\;dx$, gde su $f$ i $g$ definisane na nekom intervalu.
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Smena promenljive i parcijalna integracija}
+\subsubsection{Smena promenljive}
+Neka je data funkcija $f:(a, b) \to \mathbb{R}$ i neka je $F:(a, b) \to \mathbb{R}$ njena primitivna funkcija. Tada je 
+$\int f(x)\;dx = F(x) + C$.
+
+\begin{theorem}[Smena promenljive]
+    Neka je $\varphi:(\alpha, \beta) \to (a, b)$ diferencijabilna funkcija. Tada na intervalu $(\alpha, \beta)$ važi 
+    \[ \int f(\varphi(t))\varphi'(t) \; dt = F(\varphi(t)) + C. \]
+\end{theorem}
+
+\subsubsection{Parcijalna integracija}
+
+Neka su $u, v:(a, b) \to \mathbb{R}$ diferencijabilne funkcije i neka postoji primitivna funkcija funkcije $u'(x)v(x)$. Tada
+postoji primitivna funkcija funkcije $u(x)v'(x)$ i važi
+\[ \int u(x) v'(x) \; dx = u(x)v(x) - \int u'(x) v(x) \;dx. \]
+
+\subsection{Integracija racionalnih funkcija}
+
+Neka su $P(x)$ i $Q(x)$ polinomi nad $\mathbb{R}$. Svaku racionalnu funkciju $\frac{P(x)}{Q(x)}$ možemo na jedinstven način 
+zapisati u obliku \[ \frac{P(x)}{Q(x)} = T(x) + \frac{P_1(x)}{Q(x)}, \] gde je $T(x)$ polinom i $\operatorname{deg}P_1 < \operatorname{deg}Q$.
+Polinom $Q(x)$ možemo rastaviti na polinome oblika $x-a$ (linearni) i $x^2 + bx + c$ (kvadratni koji su nerastavljivi nad $\mathbb{R}$).
+Dakle, 
+\[ Q(x) = A \prod_{i=1}^p (x-a_i)^{k_i} \prod_{i=1}^q (x^2 + b_ix + c_i)^{l_i}, \;\; \sum_{i=1}^{p}k_i = n, \;\; A, a_i, b_i, c_i \in \mathbb{R}, \;\;b_i^2 - 4c_i < 0. \]
+
+\begin{theorem}
+    Racionalna funkcija
+    \[ \frac{P_1(x)}{Q(x)}, \;\; \operatorname{deg}P_1 < \operatorname{deg} Q \] se može zapisati u obliku
+    \[ \frac{P_1(x)}{Q(x)} = \sum_{i=1}^{p} \sum_{k=1}^{k_i} \frac{A_{i,k}}{(x - a_i)^k} + \sum_{j=1}^{q} \sum_{m=1}^{l_j} \frac{B_{j,m} x + C_{j,m}}{(x^2 + \beta_j x + \gamma_j)^m}.  \]
+\end{theorem}
+
+Integral funkcije u ovom obliku se lako nalazi.
+
+\subsection{Integracija nekih iracionalnih i trig. funkcija}
+
+\begin{itemize}
+    \item Integrali oblika \[ \int R\left(x, \sqrt[n]{\frac{ax + b}{cx + d}}\right)dx, \] gde je $R$ racionalna funkcija, se rešavaju smenom 
+    \[ t^n = \frac{ax + b}{cx + d}. \]
+    Odavde je $ax + b = t^n(cx + d)$, odnosno $(a - t^nc)x = t^nd-b$, pa je \[ x = \frac{t^nd-b}{a - t^nc}. \] Diferenciranjem 
+    dobijamo \[ dx = \frac{nt^{n-1}(ad - bc)}{(a-t^nc)^2} \;dt \] Dakle, ovom smenom dobijamo integral racionalne 
+    funkcije.
+    \item Integrali oblika \[ \int R(x, \sqrt{ax^2 + bx + c})\;dx  \] se rešavaju Ojlerovim smenama:
+    \begin{enumerate}
+        \item Ako je $a > 0$, onda možemo uzeti smenu 
+        \[ \sqrt{ax^2 + bx + c} = \sqrt{a}x \pm t \]
+        \item Ako je $c>0$, onda možemo uzeti smenu
+        \[ \sqrt{ax^2 + bx + c} = xt \pm \sqrt{c} \]
+        \item Ako je $ax^2 + bx + c = a(x-x_1)(x-x_2), \;x_1 \neq x_2$, onda možemo uzeti smenu 
+        \[ \sqrt{ax^2 + bx + c} = t(x-x_1) \]
+    \end{enumerate}
+    Kod sve tri smene se kvadriranjem smene izrazi $x$, a zatim se izrazi $dx$.
+    \item Integrali oblika \[ \int R(\sin (x), \cos (x))\;dx, \] gde je $R$ racionalna funkcija:
+    \begin{enumerate}
+        \item Ako je $R(-\sin(x), \cos(x)) = - R(\sin(x), \cos(x))$, onda uzeti smenu \[ t = \cos(x) \]
+        \item Ako je $R(\sin(x), -\cos(x)) = - R(\sin(x), \cos(x))$, onda uzeti smenu \[ t = \sin(x) \]
+        \item Ako je $R(-\sin(x), -\cos(x)) = R(\sin(x), \cos(x))$, onda uzeti smenu \[ t = \tan(x), \]
+        pri čemu je \[ dx = \frac{dt}{1+t^2}, \;\; \cos^2(x) = \frac{1}{1+\tan^2(x)}=\frac{1}{1 + t^2}, \;\; \sin^2(x) = 1-\cos^2(x) = \frac{t^2}{1+t^2} \]
+        \item Ako nijedan od prethodna tri uslova nije ispunjen, uvek možemo koristiti univerzalnu trigonometrijsku smenu:
+        \[ t = \tan\left(\frac{x}{2}\right), \]
+        pri čemu je
+        \[ dx = \frac{2}{1+t^2} \, dt, \quad \sin x = \frac{2t}{1+t^2}, \quad \cos x = \frac{1-t^2}{1+t^2}. \]
+        Ova smena prevodi integral racionalne trigonometrijske funkcije u integral racionalne funkcije po $t$.
+    \end{enumerate}
+\end{itemize}
+
+\subsection{Neki integrali}
+\subsubsection{Stepene funkcije}
 \[
     \begin{aligned}
-        \int x^a\; dx &= \frac{1}{a+1}x^{a+1} + C,\;\;\;a\in \mathbb{R}\setminus\{-1\},\;x>0\\
-        \int \frac{1}{x} \;dx &= \ln |x| + C,\;\;\;x\neq 0\\
-        \int a^x\;dx&=\frac{a^x}{\ln (a)} + C,\;\;\;a>0,\;a\neq 1\\
-        \int e^x\;dx &= e^x+C\\
-        \int \sin (x)\;dx &= -\cos (x) + C\\
-        \int \cos(x)\;dx &= \sin (x)+C\\
-        \int \frac{1}{\sin^2(x)}\;dx &= -\cot (x) + C,\;\;\;x \neq k\pi,\;k\in \mathbb{Z}\\
-        \int \frac{1}{\cos ^2 (x)}\;dx &= \tan (x) + C,\;\;\;x\neq \frac{\pi}{2} + k\pi,\;k\in\mathbb{Z}\\
-        \int \frac{1}{1+x^2}\;dx &= \arctan(x) + C\\
-        \int \frac{1}{\sqrt{1-x^2}}\;dx &= \arcsin(x) + C,\;\;\;|x| < 1\\
-        \int \frac{1}{\sqrt{x^2+1}}\;dx &= \ln|x+\sqrt{x^2+1}| + C\\
-        \int \frac{1}{\sqrt{x^2-1}}\;dx &= \ln|x+\sqrt{x^2-1}| + C,\;\;\;|x|>1
-        \end{aligned}
+        &\int x^a\; dx = \frac{1}{a+1}x^{a+1} + C,\;\;\;a\in \mathbb{R}\setminus\{-1\},\;x>0\\[8pt]
+        &\int \frac{1}{x} \;dx = \ln |x| + C,\;\;\;x\neq 0
+    \end{aligned}
 \]
-\subsection{Izvedeni integrali}
+\subsubsection{Racionalni kvadratni oblici}
 \[
     \begin{aligned}
-        \int \ln|x|\;dx &= x\ln|x| - x + C\\
-        \int \sqrt{a^2-x^2}\;dx &= \frac{x}{2}\arcsin\bigg(\frac{x}{a}\bigg) + \frac{x}{2}\sqrt{a^2-x^2} + C,\;\;\;a\in \mathbb{R}, \;|x| \leq a\\
-        \int \frac{1}{\sin(x)}\;dx &= \ln\bigg|\tan \bigg(\frac{x}{2}\bigg)\bigg| + C\\
-        \int \frac{1}{\cos(x)}\;dx &= \ln\bigg|\cot \bigg(\frac{\pi}{4} - \frac{x}{2}\bigg)\bigg| + C
+        &\int \frac{1}{a^2 + x^2}\;dx = \frac{1}{a} \arctan \left(\frac{x}{a}\right) + C\\[8pt]
+        &\int \frac{1}{a^2 - x^2}\;dx = \frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right| + C\\[8pt]
+    \end{aligned}
+\]
+
+\subsubsection{Logaritamske i eksponencijalne funkcije}
+\[
+    \begin{aligned}
+        &\int \ln|x|\;dx = x\ln|x| - x + C\\[8pt]
+        &\int e^x\;dx = e^x+C\\[8pt]
+        &\int a^x\;dx =\frac{a^x}{\ln (a)} + C,\;\;\;a>0,\;a\neq 1
+    \end{aligned}
+\]
+
+\subsubsection{Trigonometrijske funkcije}
+\[
+    \begin{aligned}
+        &\int \sin (x)\;dx = -\cos (x) + C\\[8pt]
+        &\int \cos(x)\;dx = \sin (x)+C\\[8pt]
+        &\int \tan(x)\; dx = -\ln\left|\cos(x)\right| + C\\[8pt]
+        &\int \cot(x) \;dx = \ln\left|\sin(x)\right| + C\\[8pt]
+        &\int \frac{1}{\sin(x)}\;dx = \ln\bigg|\tan \bigg(\frac{x}{2}\bigg)\bigg| + C\\[8pt]
+        &\int \frac{1}{\cos(x)}\;dx = \ln\bigg|\cot \bigg(\frac{\pi}{4} - \frac{x}{2}\bigg)\bigg| + C\\[8pt]
+        &\int \frac{1}{\sin^2(x)}\;dx = -\cot (x) + C,\;\;\;x \neq k\pi,\;k\in \mathbb{Z}\\[8pt]
+        &\int \frac{1}{\cos ^2 (x)}\;dx = \tan (x) + C,\;\;\;x\neq \frac{\pi}{2} + k\pi,\;k\in\mathbb{Z}
+    \end{aligned}
+\]
+
+\subsubsection{Iracionalni integrali (sa korenom)}
+\[
+    \begin{aligned}
+        &\int \frac{1}{\sqrt{a^2-x^2}}\;dx = \arcsin\left(\frac{x}{a}\right) + C\\[8pt]
+        &\int \frac{1}{\sqrt{x^2 + a^2}}\;dx = \sinh^{-1}\left(\frac{x}{a}\right) + C = \ln\left|x + \sqrt{x^2 + a^2}\right| + C, \quad a > 0\\[8pt]
+        &\int \frac{1}{\sqrt{x^2 - a^2}}\;dx = \cosh^{-1}\left(\frac{x}{a}\right) + C = \ln\left|x + \sqrt{x^2 - a^2}\right| + C, \quad |x| > a > 0\\[8pt]
+        &\int \sqrt{a^2-x^2}\;dx = \frac{x}{2}\arcsin\bigg(\frac{x}{a}\bigg) + \frac{x}{2}\sqrt{a^2-x^2} + C,\;\;\;a\in \mathbb{R}, \;|x| \leq a
+    \end{aligned}
+\]
+
+\subsubsection{Hiperboličke funkcije}
+\[
+    \begin{aligned}
+        &\int \sinh(x) \; dx = \cosh(x) + C\\[8pt]
+        &\int \cosh(x) \; dx = \sinh(x) + C
     \end{aligned}
 \]
 
