@@ -461,6 +461,16 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT ./slike/kruzniKonus.png
+INPUT ./slike/kruzniKonus.png
+INPUT ./slike/kruzniKonus.png
+INPUT ./slike/kruzniKonus.png
+INPUT ./slike/kruzniKonus.png
+INPUT ./slike/konike.png
+INPUT ./slike/konike.png
+INPUT ./slike/konike.png
+INPUT ./slike/konike.png
+INPUT ./slike/konike.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmsrb/t1cmsrbrb.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmsrb/t1cmsrbrb.tfm
 INPUT ./slike/rolle.pdf
