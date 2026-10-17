@@ -8270,6 +8270,955 @@ Odavde \[ \sup_P s(f, P) \geq 1 - \frac{1}{n} \;\;\text{i}\;\; \inf_P S(f, P) \l
 Kada $n \to \infty$ imamo $\displaystyle 1 \leq \sup_P s(f, P) \leq \inf_P S(f, P) \leq 1$, pa je $\overline{I} = \underline{I} = 1$.
 Dakle, \[\int_a^b f(x) \, dx = 1.\]
 
+\newpage
+
+\subsection{Integrabilnost nekih klasa funkcija}
+
+\begin{theorem}
+    Svaka neprekidna funkcija na \([a, b]\) je Riman-integrabilna na \([a, b]\), to jest \(C[a, b] \subset R[a, b]\).
+\end{theorem}
+
+\begin{proof}
+    Neka je \(f\) neprekidna funkcija na \([a, b]\). Na osnovu Kantorove teoreme sledi da je \(f\) ravnomerno neprekidna na \([a, b]\). Dokazaćemo da je \(\lim_{\lambda(P) \to 0} (S(f, P) - s(f, P)) = 0\) i iskoristićemo prethodnu teoremu.
+    
+    Neka je \(\varepsilon > 0\) proizvoljno. Tada za \(\frac{\varepsilon}{b-a}\) postoji \(\delta > 0\) takvo da za svako \(x', x'' \in [a, b]\):
+    \[
+        |x' - x''| < \delta \implies |f(x') - f(x'')| < \frac{\varepsilon}{b-a}
+    \]
+    Za proizvoljnu podelu \(P\) kod koje je \(\lambda(P) < \delta\) važi: 
+    \[
+        S(f, P) - s(f, P) = \sum_{i=1}^n (M_i - m_i) \cdot \Delta x_i \overset{(1)}{<} \sum_{i=1}^n \frac{\varepsilon}{b-a} \cdot \Delta x_i = \frac{\varepsilon}{b-a} \sum_{i=1}^n \Delta x_i = \varepsilon
+    \]
+    (1) nejednakost važi jer je \(x_i - x_{i-1} < \delta\), pa je
+    \[
+        f(\xi_i') - f(\xi_i'') < \frac{\varepsilon}{b-a} \text{ za svako } \xi_i', \xi_i'' \in [x_{i-1}, x_i]
+    \]
+    Prema tome, \(\lim_{\lambda(P) \to 0} (S(f, P) - s(f, P)) = 0\), odakle je \(f \in R[a, b]\).
+\end{proof}
+    
+    S obzirom na to da za svaku neprekidnu funkciju postoji \[\lim_{\lambda(P) \to 0} \sigma(f, P, \xi) = I = \int_a^b f(x) \ dx,\] onda da bismo izračunali \(I\) dovoljno je da nađemo graničnu vrednost za bilo koji niz podela \(P_n\) takav da \(\lambda(P_n) \to 0\), to jest \[\int_a^b f(x) dx = \lim_{n \to \infty} \sigma(f, P_n, \xi_n).\]
+    
+    Neka je \(P_n\) ravnomerna podela \(x_i - x_{i-1} = \frac{b-a}{n}\). Možemo posmatrati desnu Rimanovu sumu (kada biramo tačke \(\xi\) na krajevima segmenata): \[\sigma_R(f, P_n, \xi_n) = \sum_{i=1}^n f(x_i) \cdot \frac{b-a}{n}\] i levu Rimanovu sumu (kada biramo tačke \(\xi\) na levim krajevima segmenata): \[\sigma_L(f, P_n, \xi_n) = \sum_{i=1}^n f(x_{i-1}) \cdot \frac{b-a}{n}.\]
+    
+    Prema tome, za neprekidne funkcije važi:
+    \[
+        \int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i) \cdot \frac{b-a}{n} = \lim_{n \to \infty} \sum_{i=1}^n f(x_{i-1}) \cdot \frac{b-a}{n} = \lim_{n \to \infty} \sum_{i=1}^n f(\xi_i) \cdot \frac{b-a}{n}
+    \]
+    za bilo koji izbor tačaka unutar segmenta \([x_{i-1}, x_i]\).
+
+\noindent\textbf{Primer:} Izračunati \(\int_a^b x \ dx.\)
+
+Neka je \(P_n\) ravnomerna podela \[x_i = a + i\frac{b-a}{n},\ i=0, \dots, n.\]
+Tada je
+\begin{align*}
+    \sigma_R(f, P_n, \xi_n) &= \sum_{i=1}^n f(x_i) \cdot \frac{b-a}{n} = \sum_{i=1}^n (a + i\frac{b-a}{n}) \cdot \frac{b-a}{n} \\
+    &= \frac{a(b-a)}{n} \sum_{i=1}^n 1 + \frac{(b-a)^2}{n^2} \sum_{i=1}^n i = \frac{a(b-a)}{n} \cdot n + \frac{(b-a)^2}{n^2} \frac{n(n+1)}{2} \\
+    &= ab - a^2 + (b-a)^2 \frac{n+1}{2n}
+\end{align*}
+i važi
+\begin{align*}
+    \int_a^b x dx &= \lim_{n \to \infty} \sigma_R(f, P_n, \xi_n) = \lim_{n \to \infty} ab - a^2 + (b-a)^2 \left(\frac{1}{2} + \frac{1}{2n}\right) = \\
+    &= ab - a^2 + \frac{1}{2}(b^2 - 2ab + a^2) = ab - a^2 + \frac{b^2}{2} - ab + \frac{a^2}{2} = \\
+    &= \frac{b^2 - a^2}{2}
+\end{align*}
+Isti rezultat bismo dobili i da smo radili sledeće granične vrednosti:
+\[
+    \lim_{n \to \infty} \sum_{i=1}^n f(x_{i-1}) \cdot \frac{b-a}{n} \quad \text{i} \quad \lim_{n \to \infty} \sum_{i=1}^n f\left(\frac{x_i + x_{i-1}}{2}\right) \cdot \frac{b-a}{n}.
+\]
+
+\noindent\textbf{Primer:} Izračunati \(\int_a^b \frac{1}{x^2} \ dx\), \(0 < a < b.\)
+
+Neka je \(P_n\) ravnomerna podela segmenta \([a, b]\).
+Funkcija \(f(x) = \frac{1}{x^2}\) je neprekidna na \([a, b]\), pa je
+\[
+    \int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(\xi_i) \cdot \frac{b-a}{n} = \lim_{n \to \infty} \sum_{i=1}^n \frac{1}{\xi_i^2} \cdot \frac{b-a}{n} = \lim_{n \to \infty} \frac{b-a}{n} \sum_{i=1}^n \frac{1}{\xi_i^2}
+\]
+Izabraćemo tačke \(\xi_i \in [x_{i-1}, x_i]\) tako da možemo izračunati sumu \(\sum_{i=1}^n \frac{1}{\xi_i^2}\). Neka je \(\xi_i = \sqrt{x_{i-1} \cdot x_i} \in [x_{i-1}, x_i]\). Tada je (geometrijska sredina)
+\begin{align*}
+    \sum_{i=1}^n \frac{1}{\xi_i^2} &= \sum_{i=1}^n \frac{1}{x_{i-1} \cdot x_i} = \sum_{i=1}^n \left(\frac{1}{x_{i-1}} - \frac{1}{x_i}\right) \cdot \frac{1}{x_i - x_{i-1}} = \frac{n}{b-a} \sum_{i=1}^n \left(\frac{1}{x_{i-1}} - \frac{1}{x_i}\right) = \\
+    &= \frac{n}{b-a} \left( \frac{1}{x_0} - \frac{1}{x_1} + \frac{1}{x_1} - \dots + \frac{1}{x_{n-1}} - \frac{1}{x_n} \right) = \frac{n}{b-a} \left( \frac{1}{x_0} - \frac{1}{x_n} \right) = \\
+    &= \frac{n}{b-a} \left( \frac{1}{a} - \frac{1}{b} \right)
+\end{align*}
+\[
+    \int_a^b \frac{1}{x^2} \ dx = \lim_{n \to \infty} \frac{b-a}{n} \cdot \frac{n}{b-a} \left( \frac{1}{a} - \frac{1}{b} \right) = \frac{1}{a} - \frac{1}{b}
+\]
+
+\noindent\textbf{Primer:} Naći graničnu vrednost
+\[
+    \lim_{n \to \infty} \left( \frac{n}{n^2+1} + \frac{n}{n^2+2^2} + \dots + \frac{n}{n^2+n^2} \right).
+\]
+Neka je \[S_n = \left( \frac{n}{n^2+1} + \frac{n}{n^2+2^2} + \dots + \frac{n}{n^2+n^2} \right) = \sum_{i=1}^n \frac{n}{n^2+i^2}.\]
+Naći ćemo neprekidnu funkciju \(f\) na \([a, b]\) tako da je \(\frac{n}{n^2+i^2} = f(\xi_i) \cdot \frac{b-a}{n}\) za neki izbor tačaka \(\xi_i\) na segmentu \([x_{i-1}, x_i]\), \(x_i = a + i \frac{b-a}{n}\).
+Iz \[\frac{n}{n^2+i^2} = \frac{1}{n} \cdot \frac{1}{1 + (\frac{i}{n})^2}\] sledi da je \(f(x) = \frac{1}{1+x^2}\), \([a, b] = [0, 1]\) i \(\xi_i = \frac{i}{n}\). Dakle \[S_n = \sum_{i=1}^n f\left(\frac{i}{n}\right) \cdot \frac{1-0}{n},\] pa je
+\[
+    \lim_{n \to \infty} S_n = \int_0^1 f(x) \ dx = \int_0^1 \frac{1}{1+x^2} dx
+\]
+
+\noindent\textbf{Napomena:} Ako funkcija \(f\) nije neprekidna na \([a, b]\), onda ne mora važiti: \[\int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(\xi_i) \frac{b-a}{n}, \ x_i = a + i \frac{b-a}{n}.\]
+Na primer, za Dirihleovu funkciju \(\chi(x) = \begin{cases} 1, & x \in \mathbb{Q} \\ 0, & x \in \mathbb{I} \end{cases}\) na segmentu \([0, 1]\) važi: \[\lim_{n \to \infty} \sum_{i=1}^n \chi(\xi_i) \cdot \frac{1}{n} = \sum_{i=1}^n \frac{1}{n} = 1,\] jer \(\xi_i \in \mathbb{Q}\)
+a dokazali smo da \(\int_0^1 \chi(x) \ dx\) ne postoji.
+
+\begin{theorem}
+    Monotona funkcija na segmentu je Riman-integrabilna.
+\end{theorem}
+
+\begin{proof}
+    Neka je funkcija \(f\) monotona na segmentu \([a, b]\).
+    Za konstantnu funkciju \(f\) dokazali smo da je Riman integrabilna i da je \[\int_a^b f(x) dx = c \cdot (b-a), \ f(x) = c, \;\; \forall x \in [a, b].\]
+    Ako funkcija \(f\) nije konstantna, onda je \(f(a) \neq f(b)\).
+    Pretpostavimo da je \(f\) rastuća, \(f(a) < f(b)\).
+    Za proizvoljno \(\varepsilon > 0\) izaberimo \(\delta = \frac{\varepsilon}{f(b)-f(a)}\).
+    Za svaku podelu \(P\) za koju je \(\lambda(P) < \frac{\varepsilon}{f(b)-f(a)}\) važi:
+    \[
+        S(f, P) - s(f, P) = \sum_{i=1}^n (M_i - m_i) \cdot \Delta x_i \quad \text{gde je } M_i = f(x_i) \text{ i } m_i = f(x_{i-1}), \text{ pa je}
+    \]
+    \[
+        S(f, P) - s(f, P) = \sum_{i=1}^n (f(x_i) - f(x_{i-1})) \cdot \Delta x_i < \frac{\varepsilon}{f(b)-f(a)} \sum_{i=1}^n (f(x_i) - f(x_{i-1}))
+    \]
+    \[
+         = \frac{\varepsilon}{f(b)-f(a)} \cdot (f(b) - f(a)) = \varepsilon.
+    \]
+\end{proof}
+
+\begin{definition}
+    Skup \(E \subset \mathbb{R}\) ima \textbf{meru nula} ako za svako \(\varepsilon > 0\) postoji niz \(I_n = (a_n, b_n)\), \(a_n \leq b_n\) takav da je \(E \subset \bigcup_{n=1}^\infty (a_n, b_n)\) i \(\sum_{n=1}^\infty (b_n - a_n) \leq \varepsilon\) (skup \(E\) se može pokriti najviše prebrojivom familijom intervala čija ukupna dužina je manja ili jednaka \(\varepsilon\)).
+\end{definition}
+
+\medskip
+
+\noindent\textbf{Primer:} Jednočlan skup je skup mere nula.
+
+Neka je \(A = \{a\}\). Za svako \(\varepsilon > 0\) postoji interval \(I = (a - \frac{\varepsilon}{4}, a + \frac{\varepsilon}{4})\) takav da je \(A \subset I\) i dužina intervala je manja od \(\varepsilon\).
+\\
+\medskip
+
+\noindent\textbf{Primer:} Konačan skup je skup mere nula.
+
+Neka je \(A = \{a_1, a_2, \dots, a_p\}\). Za svako \(\varepsilon > 0\) postoje intervali \(I_i = (a_i - \frac{\varepsilon}{2p}, a_i + \frac{\varepsilon}{2p})\) takvi da je \(A \subset \bigcup_{i=1}^p I_i\) i ukupna dužina intervala je \(\varepsilon\).
+\\
+\medskip
+
+\noindent\textbf{Primer:} Prebrojiv skup je skup mere nula.
+
+Neka je \(A = \{a_i \mid i \in \mathbb{N}\}\). Za svako \(\varepsilon > 0\) postoje intervali \(I_i = (a_i - \frac{\varepsilon}{2^{i+1}}, a_i + \frac{\varepsilon}{2^{i+1}})\) takvi da je \(A \subset \bigcup_{i=1}^\infty I_i\) i \[\sum_{i=1}^\infty \left( \left(a_i + \frac{\varepsilon}{2^{i+1}}\right) - \left(a_i - \frac{\varepsilon}{2^{i+1}}\right) \right) = \sum_{i=1}^\infty \frac{\varepsilon}{2^i} = \varepsilon \sum_{i=1}^\infty \frac{1}{2^i} = \varepsilon \cdot 1 = \varepsilon.\]
+\\
+\medskip
+
+\noindent\textbf{Primer:} Postoje skupovi koji su mere nula, a nisu prebrojivi (Kantorov). Navešćemo Lebegov kriterijum integrabilnosti, bez dokaza.
+
+\begin{theorem}
+    Neka je funkcija \(f\) ograničena na \([a, b]\) i neka je \(A\) skup tačaka prekida. Funkcija \(f\) je integrabilna ako i samo ako je \(A\) skup mere nula.
+\end{theorem}
+
+\begin{corollary}\
+    \begin{enumerate}[label=\alph*)]
+        \item Ako je funkcija neprekidna na \([a, b]\), osim na skupu mere nula, onda je Riman-integrabilna na \([a, b]\).
+        \item Ako \(f, g \in R[a, b]\) i ako se razlikuju samo na skupu mere nula, onda je \[\int_a^b f(x) dx = \int_a^b g(x) dx.\]
+    \end{enumerate}
+\end{corollary}
+
+\
+\medskip
+
+\noindent\textbf{Primer:} Dirihleova funkcija ima prekid u svakoj tački segmenta \([0, 1]\), a skup \([0, 1]\) nije skup mere nula. Na osnovu teoreme \(\chi(x)\) nije Riman-integrabilna.
+
+\newpage
+
+\noindent\textbf{Primer:} Funkcija \(f(x) = 1\) je Riman-integrabilna na \([0, 1]\) i važi: \(\int_0^1 f(x) \ dx = 1\) (dokazali smo).
+
+Funkcija \(g(x) = \begin{cases} 0, & x = \frac{1}{2^i}, i \in \mathbb{N} \\ 1, & \text{inače} \end{cases}\) je Riman-integrabilna (skup tačaka prekida je \(\{\frac{1}{2^i} \mid i \in \mathbb{N}\}\) koji je prebrojiv).
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Left graph for f(x)
+    \draw[->] (-0.2, 0) -- (1.5, 0) node[right] {};
+    \draw[->] (0, -0.2) -- (0, 1.5) node[above] {};
+    \draw[thick] (0, 1) -- (1, 1);
+    \draw (1, 0.05) -- (1, -0.05) node[below] {1};
+    \node[left] at (0, 1) {1};
+    \node at (1.2, 1) {\(f\)};
+
+    % Right graph for g(x)
+    \begin{scope}[xshift=3cm]
+    \draw[->] (-0.2, 0) -- (1.5, 0) node[right] {};
+    \draw[->] (0, -0.2) -- (0, 1.5) node[above] {};
+    \draw[thick] (0, 1) -- (1, 1);
+    \draw (1, 0.05) -- (1, -0.05) node[below] {1};
+    \node[left] at (0, 1) {1};
+    \node at (1, 1.2) {\(g\)};
+    
+    % Points for 1/2^i
+    \fill (0.5, 0) circle (1.5pt);
+    \fill (0.25, 0) circle (1.5pt);
+    \fill (0.125, 0) circle (1.5pt);
+    
+    % Hollow points on the line
+    \draw[fill=white] (0.5, 1) circle (1.5pt);
+    \draw[fill=white] (0.25, 1) circle (1.5pt);
+    \draw[fill=white] (0.125, 1) circle (1.5pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Na osnovu posledice \(\int_0^1 g(x) \ dx = \int_0^1 f(x) \ dx = 1\).
+
+\begin{comment}
+    
+    \subsection{Svojstva integrala}
+    
+    \begin{theorem}[Linearnost integrala]
+        Neka \(f, g \in R[a, b]\) i \(\alpha, \beta \in \mathbb{R}\). Tada \(\alpha f + \beta g \in R[a, b]\) i važi:
+        \[
+            \int_a^b (\alpha f(x) + \beta g(x)) dx = \alpha \int_a^b f(x) dx + \beta \int_a^b g(x) dx
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Za proizvoljnu podelu \((P, \xi)\) važi:
+        \begin{align*}
+            \sigma(\alpha f + \beta g, P, \xi) &= \sum_{i=1}^n (\alpha f + \beta g)(\xi_i) \cdot \Delta x_i = \alpha \sum_{i=1}^n f(\xi_i) \cdot \Delta x_i + \beta \sum_{i=1}^n g(\xi_i) \cdot \Delta x_i \\
+            &= \alpha \sigma(f, P, \xi) + \beta \sigma(g, P, \xi)
+        \end{align*}
+        Prelaskom na limes (kada \(\lambda(P) \to 0\)) dobijamo
+        \[
+            \int_a^b (\alpha f(x) + \beta g(x)) dx = \alpha \int_a^b f(x) dx + \beta \int_a^b g(x) dx.
+        \]
+    \end{proof}
+    
+    \begin{theorem}
+        Neka \(f, g \in R[a, b]\). Tada
+        \begin{enumerate}[label=\arabic*)]
+            \item \(fg \in R[a, b]\)
+            \item \(|f| \in R[a, b]\)
+            \item \(\frac{1}{f} \in R[a, b]\) uz uslov \(|f(x)| \ge d > 0 \;\; \forall x \in [a, b]\)
+            \item \(f \in R[d, c] \;\; \forall [d, c] \subset [a, b]\)
+        \end{enumerate}
+    \end{theorem}
+    
+    \noindent\textbf{Napomena:} Uslov \(|f(x)| > 0 \;\; \forall x \in [a, b]\) kod tvrđenja 3) nije nam dovoljan i to nam pokazuje sledeći primer.
+    
+    \noindent\textbf{Primer:} \(f(x) = \begin{cases} x, & x \in (0, 1) \\ 1, & x = 0 \end{cases}\), \(f \in R[0, 1]\)
+    
+    Funkcija \(g = \frac{1}{f}: [0, 1] \to \mathbb{R} \quad g(x) = \begin{cases} \frac{1}{x}, & x \in (0, 1) \\ 1, & x = 0 \end{cases}\) nije Riman integrabilna (jer nije ograničena) a važi \(f(x) > 0\) za svako \(x \in [0, 1]\).
+    
+    \begin{theorem}
+        Ako \(f \in R[a, b]\) i \(a < c < b\), onda \(f \in R[a, c]\), \(f \in R[c, b]\) i važi
+        \[
+            \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx.
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Na osnovu stava \(f \in R[a, c]\) i \(f \in R[c, b]\).
+        S obzirom da je \(f \in R[a, b]\), važi \(I = \int_a^b f(x) dx = \lim_{\lambda(P) \to 0} \sigma(f, P, \xi)\), to jest limes postoji, pa možemo birati proizvoljne podele \((P, \xi)\) takve da \(\lambda(P) \to 0\). Neka je \((P, \xi)\) proizvoljna podela sa izabranim tačkama \(\xi\) koja sadrži tačku \(c\). Tada je \(P' = P \cap [a, c]\) jedna podela segmenta \([a, c]\) i \(\xi' = \xi \cap [a, c]\) jedan izbor tačaka pri podeli \(P'\).
+        Na sličan način dobijemo i \(P'' = P \cap [c, b]\) i \(\xi'' = \xi \cap [c, b]\).
+        Važi: \(\sigma(f, P, \xi) = \sigma(f, P', \xi') + \sigma(f, P'', \xi'')\), i kada \(\lambda(P) \to 0\) imamo \(\lambda(P') \to 0\) i \(\lambda(P'') \to 0\). Prelaskom na limes dobijamo
+        \begin{align*}
+            I &= \lim_{\lambda(P) \to 0} \sigma(f, P, \xi) = \lim_{\lambda(P) \to 0} (\sigma(f, P', \xi') + \sigma(f, P'', \xi'')) \\
+            &= \lim_{\lambda(P') \to 0} \sigma(f, P', \xi') + \lim_{\lambda(P'') \to 0} \sigma(f, P'', \xi'') = \int_a^c f(x) dx + \int_c^b f(x) dx.
+        \end{align*}
+    \end{proof}
+    
+    Možemo definisati Rimanov integral i za slučajeve \(a > b\) i \(a = b\).
+    
+    \begin{definition}
+        \begin{enumerate}[label=\alph*)]
+            \item Ako je \(f\) definisana u \(a\), onda je \(\int_a^a f(x) dx = 0\)
+            \item Ako je \(a > b\) i \(\int_b^a f(x) dx\) postoji, onda je \(\int_a^b f(x) dx = - \int_b^a f(x) dx\)
+        \end{enumerate}
+    \end{definition}
+    
+    Sada prethodni stav možemo navesti i u slučaju bilo kakvog poretka tačaka \(a, b\) i \(c\).
+    
+    \begin{theorem}
+        Neka tačke \(a, b\) i \(c\) predstavljaju krajeve segmenata i neka su u bilo kakvom poretku. Ako je funkcija \(f\) Riman integrabilna na najvećem segmentu, onda je Riman integrabilna na manjim i važi:
+        \[
+            \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx.
+        \]
+    \end{theorem}
+    
+    Dakle, jednakost važi i u slučajevima \(a < b < c\) i \(b < a < c\).
+    
+    \begin{proof}
+        Dokažimo da jednakost važi za slučaj \(a < b < c\).
+        Na osnovu prethodnog stava, iz \(f \in R[a, c]\) sledi \(f \in R[a, b]\) i \(f \in R[b, c]\):
+        \[
+            \int_a^c f(x) dx = \int_a^b f(x) dx + \int_b^c f(x) dx.
+        \]
+        Odavde 
+        \[
+            \int_a^b f(x) dx = \int_a^c f(x) dx - \int_b^c f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx
+        \]
+        po definiciji.
+    \end{proof}
+    
+    \begin{center}
+        \textbf{MONOTONOST I PROCENA INTEGRALA}
+    \end{center}
+    
+    \begin{theorem}
+        Ako je \(f \in R[a, b]\), \(a < b\) i \(f(x) \ge 0\) za svako \(x \in [a, b]\), onda je
+        \[
+            \int_a^b f(x) dx \ge 0.
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Za svaku podelu sa izabranim tačkama \((P, \xi)\) važi:
+        \[
+            \sigma(f, P, \xi) = \sum_{i=1}^n f(\xi_i) \Delta x_i \ge 0.
+        \]
+        Odavde \(\displaystyle I = \lim_{\lambda(P) \to 0} \sigma(f, P, \xi) \ge 0\).
+    \end{proof}
+    
+    \begin{corollary}
+        Ako je \(f(x) \le g(x)\) za svako \(x \in [a, b]\), \(a < b\) i \(f, g \in R[a, b]\), onda je
+        \[
+            \int_a^b f(x) dx \le \int_a^b g(x) dx.
+        \]
+    \end{corollary}
+    
+    \begin{proof}
+        Primenimo prethodni stav na funkciju \(g(x) - f(x)\).
+    \end{proof}
+    
+    \begin{theorem}
+        Neka je \(f: [a, b] \to \mathbb{R}\) neprekidna i nenegativna funkcija. Ako postoji \(c \in [a, b]\) takvo da je \(f(c) > 0\), onda je
+        \[
+            \int_a^b f(x) dx > 0.
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Funkcija \(f\) je neprekidna u \(x_0\) ako za svako \(\varepsilon > 0\) postoji \(\delta > 0\) takvo da za svako \(x \in [a, b]\)
+        \[
+            |x - x_0| < \delta \implies |f(x) - f(x_0)| < \varepsilon
+        \]
+        Neka je \(c \in [a, b]\). S obzirom da je \(f\) neprekidna u \(c\) i \(f(c) > 0\), za \(\varepsilon = \frac{f(c)}{2}\) postoji \(\delta > 0\) takvo da za svako \(x \in [a, b]\)
+        \[
+            |x - c| < \delta \implies |f(x) - f(c)| < \frac{f(c)}{2}
+        \]
+        (t.j. \(\frac{f(c)}{2} < f(x) < \frac{3f(c)}{2}\)).
+    
+        \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \draw[->] (0,0) -- (5,0);
+            \draw[->] (0,0) -- (0,2);
+            \draw[thick] (0.5,0.5) .. controls (2,3) and (3,0.5) .. (4.5,0.5);
+            \draw[dashed] (2.5,0) -- (2.5,1.5) -- (0,1.5) node[left] {\(f(c)\)};
+            \draw[dashed] (2.5,0) -- (2.5,0.75) -- (0,0.75) node[left] {\(\frac{f(c)}{2}\)};
+            \node[below] at (0.5,0) {\(a\)};
+            \node[below] at (2.5,0) {\(c\)};
+            \node[below] at (4.5,0) {\(b\)};
+            \draw[thick] (2.5,-0.05) -- (2.5,0.05);
+        \end{tikzpicture}
+        \end{center}
+    
+        Našli smo okolinu \((c - \delta, c + \delta)\) takvu da za svako \(x \in (c - \delta, c + \delta) \cap [a, b]\) važi \(f(x) > \frac{f(c)}{2}\). \\
+        Neka je \(m_1 = \max\{a, c - \delta\}\) i \(m_2 = \min\{b, c + \delta\}\). \\
+        Odavde
+        \begin{align*}
+            \int_a^b f(x) dx &= \int_a^{m_1} f(x) dx + \int_{m_1}^{m_2} f(x) dx + \int_{m_2}^b f(x) dx \\
+            &\ge \int_{m_1}^{m_2} f(x) dx \overset{(1)}{\ge} \int_{m_1}^{m_2} \frac{f(c)}{2} dx = \frac{f(c)}{2}(m_2 - m_1) \overset{(2)}{>} 0
+        \end{align*}
+        \begin{enumerate}[label=\arabic*)]
+            \item[] (1) sledi iz stava
+            \item[] (2) sledi iz stava
+        \end{enumerate}
+    \end{proof}
+    
+    \begin{theorem}
+        Ako je \(f \in R[a, b]\), \(a < b\), onda važi (integralna nejednakost):
+        \[
+            \left| \int_a^b f(x) dx \right| \le \int_a^b |f(x)| dx \le \sup_{x \in [a, b]} |f(x)| \cdot (b - a).
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Iz \(-|f(x)| \le f(x) \le |f(x)|\) za svako \(x \in [a, b]\), sledi (na osnovu stava)
+        \[
+            -\int_a^b |f(x)| dx \le \int_a^b f(x) dx \le \int_a^b |f(x)| dx,
+        \]
+        odakle je
+        \[
+            \left| \int_a^b f(x) dx \right| \le \int_a^b |f(x)| dx.
+        \]
+        Ako je \(M = \sup_{x \in [a, b]} |f(x)|\), onda je \(\int_a^b |f(x)| dx \le \int_a^b M dx = M(b - a)\).
+    \end{proof}
+    
+    \begin{theorem}[Prva teorema o srednjoj vrednosti]
+        Neka \(f, g \in R[a, b]\), \(m = \inf_{x \in [a, b]} f(x)\), \(M = \sup_{x \in [a, b]} f(x)\) i \(g(x) \ge 0\) za svako \(x \in [a, b]\). Tada postoji \(\mu \in [m, M]\) takvo da je
+        \[
+            \int_a^b f(x)g(x) dx = \mu \int_a^b g(x) dx.
+        \]
+        Ako je dodatno \(f\) neprekidna na \([a, b]\), onda postoji \(c \in [a, b]\) takvo da je
+        \[
+            \int_a^b f(x)g(x) dx = f(c) \int_a^b g(x) dx.
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Iz \(f \in R[a, b]\) sledi da je \(f\) ograničena na \([a, b]\), pa postoje konačni \(\inf_{x \in [a, b]} f(x)\) i \(\sup_{x \in [a, b]} f(x)\). Iz \(f, g \in R[a, b]\) sledi \(fg \in R[a, b]\).
+        
+        Iz nejednakosti \(m \le f(x) \le M\) za svako \(x \in [a, b]\), množenjem nenegativnom funkcijom \(g(x)\), imamo
+        \[
+            m g(x) \le f(x)g(x) \le M g(x)
+        \]
+        za svako \(x \in [a, b]\).
+        
+        Odavde
+        \[
+            m \int_a^b g(x) dx \le \int_a^b f(x)g(x) dx \le M \int_a^b g(x) dx.
+        \]
+        Ako je \(\int_a^b g(x) dx = 0\), onda je i \(\int_a^b f(x)g(x) dx = 0\), pa za svako \(\mu \in [m, M]\) važi
+        \[
+            \int_a^b f(x)g(x) dx = \mu \int_a^b g(x) dx.
+        \]
+        Ako je \(\int_a^b g(x) dx > 0\), onda je
+        \[
+            m \le \frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx} \le M.
+        \]
+        Za \(\mu = \frac{\int_a^b f(x)g(x) dx}{\int_a^b g(x) dx} \in [m, M]\) važi
+        \[
+            \int_a^b f(x)g(x) dx = \mu \int_a^b g(x) dx.
+        \]
+        U slučaju da je \(f\) neprekidna, na osnovu Bolcano-Košijeve teoreme za \(\mu \in [m, M]\) postoji \(c \in (a, b)\) takvo da je \(f(c) = \mu\). Dakle,
+        \[
+            \int_a^b f(x)g(x) dx = f(c) \int_a^b g(x) dx.
+        \]
+    \end{proof}
+    
+    Sledeća posledica je specijalan slučaj za \(g(x) = 1\), \(x \in [a, b]\).
+    
+    \begin{corollary}
+        Neka \(f \in R[a, b]\), \(m = \inf_{x \in [a, b]} f(x)\), \(M = \sup_{x \in [a, b]} f(x)\). Tada postoji \(\mu \in [m, M]\) takvo da je
+        \[
+            \int_a^b f(x) dx = \mu (b - a).
+        \]
+        Ako je još \(f\) neprekidna na \([a, b]\), onda postoji \(c \in [a, b]\) takvo da je
+        \[
+            \int_a^b f(x) dx = f(c)(b - a).
+        \]
+        
+        \begin{center}
+        \begin{tabular}{cl}
+            \begin{tikzpicture}[scale=1]
+                \draw[->] (0,0) -- (4,0);
+                \draw[->] (0,0) -- (0,2.5);
+                \draw[thick] (0.5,0.5) .. controls (1.5,2) and (2.5,1) .. (3.5,1.5);
+                \draw[thick] (0.5,0) -- (0.5,0.5);
+                \draw[thick] (3.5,0) -- (3.5,1.5);
+                \node[below] at (0.5,0) {\(a\)};
+                \node[below] at (3.5,0) {\(b\)};
+                \draw[dashed] (2.5,0) -- (2.5,1.25);
+                \draw[thick] (0.5,1.25) -- (3.5,1.25);
+                \node[below] at (2.5,0) {\(c\)};
+            \end{tikzpicture}
+            &
+            \begin{tabular}{l}
+                GEOMETRIJSKA INTERPRETACIJA \\
+                postoji \(c \in [a, b]\) takvo da je \\
+                površina krivolinijskog trapeza \\
+                jednaka površini pravougaonika
+            \end{tabular}
+        \end{tabular}
+        \end{center}
+    \end{corollary}
+    
+    \begin{center}
+    \fbox{\textbf{VEZA IZMEĐU ODREĐENOG INTEGRALA I IZVODA}}
+    \end{center}
+    
+    Funkcija površine
+    
+    Za početak posmatrajmo neprekidnu funkciju \(f: [a, b] \to \mathbb{R}\).
+    Funkciju površine ćemo definisati kao
+    \[
+        P: [a, b] \to \mathbb{R}, \quad P(x) = \int_a^x f(t) dt \quad \left( \begin{array}{l} \text{promenljiva je gornja} \\ \text{granica integrala} \end{array} \right)
+    \]
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Left graph
+        \begin{scope}
+            \draw[->] (-0.2, 0) -- (4, 0);
+            \draw[->] (0, -1) -- (0, 2);
+            \draw[thick, domain=0.5:3.5, smooth, variable=\x] plot ({\x}, {1.5 - 0.3*(\x-1.5)^2});
+            \draw[dashed] (1, 0) -- (1, 1.35);
+            \draw[dashed] (2.5, 0) -- (2.5, 1.125);
+            \draw[dashed] (3, 0) -- (3, 0.675);
+            \node[below] at (1, 0) {\(a\)};
+            \node[below] at (2.5, 0) {\(x\)};
+            \node[below] at (3, 0) {\(c\)};
+            \node[above] at (2, 1.8) {\(f\)};
+        \end{scope}
+    
+        % Right graph
+        \begin{scope}[xshift=6cm]
+            \draw[->] (-0.2, 0) -- (4, 0);
+            \draw[->] (0, -1) -- (0, 2);
+            \draw[thick, domain=0.5:3.5, smooth, variable=\x] plot ({\x}, {1.5 - 0.3*(\x-1.5)^2});
+            \fill[gray!30] (1,0) -- plot[domain=1:2.5] (\x, {1.5 - 0.3*(\x-1.5)^2}) -- (2.5,0) -- cycle;
+            \draw[dashed] (1, 0) -- (1, 1.35);
+            \draw[dashed] (2.5, 0) -- (2.5, 1.125);
+            \draw[dashed] (3, 0) -- (3, 0.675);
+            \draw[dashed] (3.5, 0) -- (3.5, 0.3);
+            \node[below] at (1, 0) {\(a\)};
+            \node[below] at (2.5, 0) {\(x\)};
+            \node[below] at (3, 0) {\(c\)};
+            \node[below] at (3.5, 0) {\(b\)};
+            \node at (1.75, 0.5) {\(P(x)\)};
+            \node[right, align=left] at (4, 1.5) {\(P(x)\) je površina \\ krivolinijskog \\ trapeza stranice \(x-a\)};
+        \end{scope}
+    \end{tikzpicture}
+    \end{center}
+    
+    Očigledno \(P(a) = \int_a^a f(x) dx = 0\); \(P(x)\) je rastuća za \(x \in [a, c]\). Kada je \(x \in (c, b]\),
+    \[
+        P(x) = \int_a^c f(x) dx + \int_c^x f(x) dx = P(c) - P_2 \quad (\text{jer je } f(x) < 0 \text{ na } [c, b])
+    \]
+    \(P(x)\) opada na \([c, b]\).
+    
+    Grafik funkcije \(P(x)\)
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Ose
+        \draw[->] (-0.2, 0) -- (4, 0);
+        \draw[->] (0, -0.2) -- (0, 1.5);
+        
+        % Kriva (parabola koja prolazi kroz (1,0), (2.5,1.2) i (3.5,0))
+        \draw[thick, domain=1:3.5, smooth, variable=\x] plot ({\x}, {-0.8*(\x-1)*(\x-3.5)}); 
+        
+        % Isprekidane linije
+        \draw[dashed] (1, 0) -- (1, 0);
+        \draw[dashed] (2.5, 0) -- (2.5, 1.2);
+        \draw[dashed] (3.5, 0) -- (3.5, 0);
+        
+        % Oznake na x-osi
+        \node[below] at (1, 0) {\(a\)};
+        \node[below] at (2.5, 0) {\(c\)};
+        \node[below] at (3.5, 0) {\(b\)};
+    \end{tikzpicture}
+    \end{center}
+    
+    Na intervalima gde je \(f\) pozitivna, funkcija površine raste, a gde je \(f\) negativna, funkcija površine opada.
+    
+    Ovaj pojam možemo proširiti i na integrabilne funkcije.
+    Neka je \(f \in R[a, b]\). Funkcija \(\Phi: [a, b] \to \mathbb{R}\), \(\Phi(x) = \int_a^x f(t) dt\) se naziva integralom sa promenljivom gornjom granicom.
+    
+    \begin{theorem}
+        Neka je \(f \in R[a, b]\) i \(\Phi(x) = \int_a^x f(t) dt\), \(x \in [a, b]\). Tada
+        \begin{enumerate}[label=\alph*)]
+            \item funkcija \(\Phi\) je neprekidna na \([a, b]\).
+            \item ako je \(f\) neprekidna u \(x_0 \in [a, b]\), onda je \(\Phi\) diferencijabilna u \(x_0\) i važi: \(\Phi'(x_0) = f(x_0)\).
+        \end{enumerate}
+    \end{theorem}
+    
+    \begin{proof}
+        \begin{enumerate}[label=\alph*)]
+            \item Neka je \(x_0 \in [a, b]\) proizvoljna tačka. Funkcija \(\Phi\) je neprekidna u \(x_0\) ako \(\lim_{x \to x_0} \Phi(x) = \Phi(x_0)\), odnosno \(\lim_{x \to x_0} (\Phi(x) - \Phi(x_0)) = 0\).
+            
+            Neka \(x \in [a, b]\). Tada je
+            \[
+                |\Phi(x) - \Phi(x_0)| = \left| \int_a^x f(t) dt - \int_a^{x_0} f(t) dt \right| = \left| \int_{x_0}^x f(t) dt \right| \overset{\text{linearnost integrala}}{\le} M \cdot |x - x_0|,
+            \]
+            gde je \(M = \sup_{t \in [a, b]} |f(x)|\).
+            Iz \(x \to x_0\), sledi \(\Phi(x) \to \Phi(x_0)\). Funkcija \(\Phi\) je neprekidna u \(x_0\).
+            
+            \item Neka je \(x_0 \in (a, b)\) proizvoljna tačka. Dokazaćemo da je
+            \[
+                \Phi'(x_0) = \lim_{h \to 0} \frac{\Phi(x_0+h) - \Phi(x_0)}{h} = f(x_0).
+            \]
+            Važi:
+            \[
+                \frac{\Phi(x_0+h) - \Phi(x_0)}{h} = \frac{1}{h} \left( \int_a^{x_0+h} f(t) dt - \int_a^{x_0} f(t) dt \right) = \frac{1}{h} \int_{x_0}^{x_0+h} f(t) dt
+            \]
+            i
+            \begin{align*}
+                \frac{\Phi(x_0+h) - \Phi(x_0)}{h} - f(x_0) &= \frac{1}{h} \int_{x_0}^{x_0+h} f(t) dt - \frac{1}{h} \int_{x_0}^{x_0+h} f(x_0) dt \\
+                &= \frac{1}{h} \int_{x_0}^{x_0+h} (f(t) - f(x_0)) dt, \text{ a odatle}
+            \end{align*}
+            \[
+                \left| \frac{\Phi(x_0+h) - \Phi(x_0)}{h} - f(x_0) \right| \le \frac{1}{|h|} \left| \int_{x_0}^{x_0+h} (f(t) - f(x_0)) dt \right| \le \frac{1}{|h|} M_h |h| = M_h
+            \]
+            gde je \(M_h = \sup_{t \in [x_0, x_0+h]} |f(t) - f(x_0)|\). S obzirom da je \(f\) neprekidna u \(x_0\), imamo \(M_h \to 0\) kada \(h \to 0\), odakle je
+            \[
+                \Phi'(x_0) = \lim_{h \to 0} \frac{\Phi(x_0+h) - \Phi(x_0)}{h} = f(x_0)
+            \]
+            Za slučaj kada je \(x_0 = a\) (\(x_0 = b\)), posmatraju se granične vrednosti kada \(h \to 0+\) (\(h \to 0-\)), odakle se dobija desni (levi) izvod \(\Phi'_+(a) = f(a)\) (\(\Phi'_-(b) = f(b)\)).
+        \end{enumerate}
+    \end{proof}
+    
+    Dokazali smo \(\left( \int_a^x f(t) dt \right)' = f(x)\) za svako \(x \in [a, b]\) za neprekidnu funkciju \(f\) (izvod integrala po gornjoj granici je vrednost funkcije u gornjoj granici).
+    
+    \begin{corollary}[Posledica]
+        Za neprekidnu funkciju \(f: [a, b] \to \mathbb{R}\)
+        \[
+            \left( \int_x^b f(t) dt \right)' = -f(x) \text{ za svako } x \in [a, b].
+        \]
+    \end{corollary}
+    
+    Sledeći primer pokazuje da je bitna neprekidnost kod prethodnog stava.
+    
+    \noindent\textbf{Primer:} Neka je \(f(x) = \begin{cases} 0, & x \in [0, 1) \\ 1, & x \in [1, 2] \end{cases}\). Tada je
+    \[
+        \Phi'_+(1) = \lim_{h \to 0+} \frac{1}{h} \int_1^{1+h} f(t) dt = \lim_{h \to 0+} \frac{1}{h} \cdot 1 \cdot h = 1 \quad \left( \begin{array}{l} \int_1^{1+h} f(t) dt = \int_1^{1+h} 1 dt \\ = t|_1^{1+h} = h \end{array} \right)
+    \]
+    Odavde \(\Phi'_+(1) \neq f(1) = 0\).
+    
+    Na osnovu prethodnog stava sledi sledeća teorema.
+    
+    \begin{theorem}
+        Ako je \(f: [a, b] \to \mathbb{R}\) neprekidna funkcija, onda je
+        \[
+            \Phi(x) = \int_a^x f(t) dt, \quad x \in [a, b]
+        \]
+        njena primitivna funkcija.
+    \end{theorem}
+    
+    \begin{theorem}[Njutn-Lajbnicova teorema]
+        Neka je \(f: [a, b] \to \mathbb{R}\) neprekidna i \(F(x)\) proizvoljna njena primitivna funkcija. Tada važi
+        \[
+            \int_a^b f(x) dx = F(b) - F(a) \quad (\text{ili } F(x)|_a^b)
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Na osnovu prethodne teoreme \(\Phi(x) = \int_a^x f(t) dt\) je primitivna funkcija \(f(x)\) na \([a, b]\). Odavde postoji konstanta \(C\) takva da je \(\Phi(x) = F(x) + C\) za svako \(x \in [a, b]\).
+        Za \(x = a\) imamo \(\Phi(a) = F(a) + C\), a za \(x = b\) imamo \(\Phi(b) = F(b) + C\), pa je
+        \[
+            \Phi(b) - \Phi(a) = F(b) - F(a), \text{ odnosno } \int_a^b f(x) dx = F(b) - F(a)
+        \]
+        (iskoristili smo \(\Phi(a) = 0\), \(\Phi(b) = \int_a^b f(x) dx\)).
+        Njutn-Lajbnicova formula važi i kada je \(b < a\).
+    \end{proof}
+    
+    \noindent\textbf{Primer:} Izračunati \(\int_0^1 x^2 dx\).
+    Iz \(\int x^2 dx = \frac{x^3}{3} + C\), sledi da je \(F(x) = \frac{x^3}{3}\) jedna primitivna funkcija funkcije \(f(x) = x^2\) na \([0, 1]\). Odavde
+    \[
+        \int_0^1 x^2 dx = F(x)|_0^1 = F(1) - F(0) = \frac{1}{3} - 0 = \frac{1}{3}
+    \]
+    
+    Neka je \(C^1[a, b] = \{f \in C[a, b] : f' \in C(a, b) \text{ i postoje } f'_+(a) \text{ i } f'_-(b)\}\)
+    skup svih glatkih funkcija.
+    
+    \begin{center}
+    \fbox{\textbf{DRUGA TEOREMA O SREDNJOJ VREDNOSTI}}
+    \end{center}
+    
+    \begin{theorem}
+        Neka je \(f\) neprekidna, a \(g\) rastuća, nenegativna i glatka funkcija na \([a, b]\). Tada postoji \(\xi \in [a, b]\) tako da je
+        \[
+            \int_a^b f(x)g(x) dx = g(b) \int_\xi^b f(x) dx.
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Ako je \(g(b) = 0\), onda je desna strana jednačina nuli. Leva strana je jednaka nuli jer je \(g(x) = 0\) za svako \(x \in [a, b]\) (\(g(b) = 0\) i \(g\) rastuća).
+        
+        Ako je \(g(b) \neq 0\), onda je potrebno dokazati da postoji \(\xi \in [a, b]\) tako da je
+        \[
+            \int_\xi^b f(x) dx = \frac{1}{g(b)} \int_a^b f(x)g(x) dx.
+        \]
+        Posmatramo funkciju \(\varphi(x) = \int_x^b f(t) dt\), \(x \in [a, b]\).
+        Na osnovu stava \(\varphi\) je neprekidna. Dovoljno je dokazati da je
+        \[
+            \underbrace{\min_{x \in [a, b]} \varphi(x)}_m \le \underbrace{\frac{1}{g(b)} \int_a^b f(x)g(x) dx}_A \le \underbrace{\max_{x \in [a, b]} \varphi(x)}_M,
+        \]
+        jer na osnovu Bolcano teoreme postoji \(\xi \in [a, b]\) tako da je
+        \[
+            \varphi(\xi) = \frac{1}{g(b)} \int_a^b f(x)g(x) dx.
+        \]
+        Na osnovu stava (\(f\) je neprekidna) važi \(\varphi'(x) = -f(x)\), odakle je
+        \begin{align*}
+            A &= \frac{1}{g(b)} \int_a^b f(x)g(x) dx = -\frac{1}{g(b)} \int_a^b g(x)\varphi'(x) dx \\
+            &= -\frac{1}{g(b)} \left( g(x)\varphi(x)\Big|_a^b - \int_a^b \varphi(x)g'(x) dx \right) \\
+            &= -\frac{1}{g(b)} \left( g(b)\underbrace{\varphi(b)}_{=0} - g(a)\varphi(a) - \int_a^b \varphi(x)g'(x) dx \right) \\
+            &= \frac{g(a)\varphi(a)}{g(b)} + \frac{1}{g(b)} \int_a^b \varphi(x)g'(x) dx
+        \end{align*}
+        Odavde
+        \begin{align*}
+            A &\le \frac{g(a)\varphi(a)}{g(b)} + \frac{1}{g(b)} \int_a^b M g'(x) dx = \frac{g(a)\varphi(a)}{g(b)} + \frac{1}{g(b)} M(g(b) - g(a)) \\
+            &= M + \frac{g(a)(\varphi(a) - M)}{g(b)} \overset{\le 0}{\le} M
+        \end{align*}
+        Na sličan način se dokazuje \(A \ge m\). Dakle, postoji \(\xi \in [a, b]\) tako da je
+        \[
+            \varphi(\xi) = \frac{1}{g(b)} \int_a^b f(x)g(x) dx.
+        \]
+    \end{proof}
+    
+    \begin{theorem}[Druga teorema o srednjoj vrednosti]
+        Neka je \(f\) neprekidna, a \(g\) monotona i glatka na \([a, b]\). Tada postoji \(\xi \in [a, b]\) tako da važi
+        \[
+            \int_a^b f(x)g(x) dx = g(a) \int_a^\xi f(x) dx + g(b) \int_\xi^b f(x) dx.
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Radi određenosti, pretpostavimo da je \(g\) rastuća. Primenimo prethodni stav na funkciju \(g_1(x) = g(x) - g(a)\) (jer je potrebno da je \(g_1\) nenegativna). Tada postoji \(\xi \in [a, b]\) tako da je
+        \[
+            \int_a^b f(x)g_1(x) dx = g_1(b) \int_\xi^b f(x) dx.
+        \]
+        Odavde
+        \[
+            \int_a^b f(x)(g(x) - g(a)) dx = (g(b) - g(a)) \int_\xi^b f(x) dx,
+        \]
+        to jest
+        \begin{align*}
+            \int_a^b f(x)g(x) dx &= g(a) \int_a^b f(x) dx - g(a) \int_\xi^b f(x) dx + g(b) \int_\xi^b f(x) dx \\
+            &= g(a) \int_a^\xi f(x) dx + g(b) \int_\xi^b f(x) dx.
+        \end{align*}
+    \end{proof}
+    
+    \noindent\textbf{Napomena:} Prethodna teorema važi i u slučaju kada je \(f \in R[a, b]\) i \(g\) monotona.
+    
+    \noindent\textbf{Primer:} Neka je \(f \in C(\mathbb{R})\) i \(g_1, g_2 \in D(\mathbb{R})\). Tada je
+    \[
+        \frac{d}{dx} \left( \int_{g_1(x)}^{g_2(x)} f(t) dt \right) = f(g_2(x)) \cdot g_2'(x) - f(g_1(x)) \cdot g_1'(x)
+    \]
+    Neka je \(F(x) = \int_0^x f(t) dt\). Tada je
+    \[
+        (F \circ g_1)(x) = F(g_1(x)) = \int_0^{g_1(x)} f(t) dt
+    \]
+    i
+    \[
+        (F \circ g_2)(x) = F(g_2(x)) = \int_0^{g_2(x)} f(t) dt.
+    \]
+    Odavde
+    \begin{align*}
+        \frac{d}{dx} \left( \int_{g_1(x)}^{g_2(x)} f(t) dt \right) &= \frac{d}{dx} \left( \int_0^{g_2(x)} f(t) dt - \int_0^{g_1(x)} f(t) dt \right) \\
+        &= \frac{d}{dx} ((F \circ g_2)(x) - (F \circ g_1)(x)) = \frac{d}{dx} (F \circ g_2)(x) - \frac{d}{dx} (F \circ g_1)(x) \\
+        &= F'(g_2(x)) \cdot g_2'(x) - F'(g_1(x)) \cdot g_1'(x) \\
+        &= f(g_2(x)) \cdot g_2'(x) - f(g_1(x)) \cdot g_1'(x)
+    \end{align*}
+    (iskoristili smo \(F'(x) = f(x)\))
+    
+    \begin{center}
+    \fbox{\textbf{PARCIJALNA INTEGRACIJA}}
+    \end{center}
+    
+    \begin{theorem}
+        Neka funkcije \(u(x)\) i \(v(x)\) imaju neprekidne izvode na \([a, b]\). Tada važi jednakost
+        \[
+            \int_a^b u(x)dv(x) = [u(x)v(x)]_a^b - \int_a^b v(x)du(x)
+        \]
+    \end{theorem}
+    
+    \begin{proof}
+        Iz \((u(x)v(x))' = u'(x)v(x) + u(x)v'(x)\) sledi
+        \[
+            \int_a^b (u'(x)v(x) + u(x)v'(x))dx = [u(x)v(x)]_a^b
+        \]
+        (primenili smo Njutn-Lajbnicovu formulu).
+        
+        Odavde
+        \[
+            \int_a^b u(x)dv(x) = [u(x)v(x)]_a^b - \int_a^b v(x)du(x).
+        \]
+        Kraći zapis ove formule je \(\int_a^b u dv = uv|_a^b - \int_a^b v du\).
+    \end{proof}
+    
+    \begin{center}
+    \fbox{\textbf{SMENA PROMENLJIVE KOD ODREĐENOG INTEGRALA}}
+    \end{center}
+    
+    \begin{theorem}
+        Neka je \(f: [A, B] \to \mathbb{R}\) neprekidna, a funkcija \(\varphi: [\alpha, \beta] \to [A, B]\) ima neprekidan izvod i \(\varphi(\alpha) = A\), \(\varphi(\beta) = B\). Tada važi
+        \[
+            \int_A^B f(x)dx = \int_\alpha^\beta f(\varphi(t))\varphi'(t)dt.
+        \]
+        Jednakost važi i u slučaju da je \(f \in R[A, B]\) i \(\varphi\) strogo monotona.
+    \end{theorem}
+    
+    \begin{proof}
+        S obzirom da je \(f \in C[A, B]\), funkcija \(f\) ima primitivnu funkciju \(F\) (\(F(x) = \int_A^x f(t)dt\) jedna primitivna funkcija), \(F'(x) = f(x)\) za svako \(x \in [A, B]\). Odavde
+        \[
+            (F(\varphi(t)))' = F'(\varphi(t)) \cdot \varphi'(t) = f(\varphi(t)) \cdot \varphi'(t),
+        \]
+        pa je \(F(\varphi(t))\) primitivna funkcija funkcije \(f(\varphi(t)) \cdot \varphi'(t)\).
+        Na osnovu Njutn-Lajbnicove formule
+        \[
+            \int_\alpha^\beta f(\varphi(t)) \cdot \varphi'(t)dt = F(\varphi(t))|_\alpha^\beta = F(B) - F(A)
+        \]
+        i
+        \[
+            \int_A^B f(x)dx = F(x)|_A^B = F(B) - F(A).
+        \]
+        Odavde \(\int_A^B f(x)dx = \int_\alpha^\beta f(\varphi(t))\varphi'(t)dt\).
+    \end{proof}
+    
+    \noindent\textbf{Primer:} Izračunati: \(\displaystyle \int_0^a \sqrt{a^2-x^2}dx\), \(a>0\).
+    
+    Funkcija \(f(x) = \sqrt{a^2-x^2}\) je neprekidna na \([0, a]\), a \(g(x) = a\sin x\) ima neprekidan izvod i \(g(0)=0\), \(g(\frac{\pi}{2})=a\) (\(g'(x)=a\cos x\) je neprekidna).
+    
+    Na osnovu smene promenljive imamo:
+    \begin{align*}
+        I = \int_0^a \sqrt{a^2-x^2}dx &= \left( \begin{array}{l} f(x)=\sqrt{a^2-x^2}, g(x)=a\sin x \\ \alpha=0, \beta=\frac{\pi}{2} \end{array} \right) = \int_0^{\pi/2} f(g(t)) \cdot g'(t)dt \\
+        \text{ili} \quad \left( \begin{array}{l} x = a\sin t, dx = a\cos t dt \\ x=0 \to t=0 \\ x=a \to t=\frac{\pi}{2} \end{array} \right) &= \int_0^{\pi/2} \sqrt{a^2-a^2\sin^2 t} \cdot a\cos t dt
+    \end{align*}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+        % Left graph
+        \draw[->] (-0.2, 0) -- (2.5, 0) node[right] {\(t\)};
+        \draw[->] (0, -0.2) -- (0, 2.5) node[above] {\(x\)};
+        \draw[thick, domain=0:1.57, smooth, variable=\t] plot ({\t}, {1.5*sin(\t r)});
+        \draw[dashed] (1.57, 0) -- (1.57, 1.5);
+        \draw[dashed] (0, 1.5) -- (1.57, 1.5);
+        \node[below] at (1.57, 0) {\(\frac{\pi}{2}\)};
+        \node[left] at (0, 1.5) {\(a\)};
+        \draw[->, thick, blue] (0.5, 0.5) to[bend left] (1.0, 1.2);
+        \node[right, align=left] at (2.5, 1.5) {kada \(x\) ide od \(0\) do \(a\) \\ tada \(t\) ide od \(0\) do \(\frac{\pi}{2}\)};
+        \node[align=left, font=\small] at (2.5, 0.5) {(mogli smo izabrati da \(t\) ide od \(\pi\) do \(\frac{\pi}{2}\) \\ ili od \(2\pi\) do \(\frac{5\pi}{2}\))};
+    \end{tikzpicture}
+    \end{center}
+    
+    Dakle, \(I = \int_{\pi/2}^{\pi/2} \sqrt{a^2-a^2\sin^2 t} \cdot a\cos t dt = \int_0^{\pi/2} \sqrt{a^2\cos^2 t} \cdot a\cos t dt\)
+    
+    Dakle \(I = \int_0^{\pi/2} a\cos t \cdot a\cos t dt = a^2 \int_0^{\pi/2} |\cos t| \cdot \cos t dt = a^2 \int_0^{\pi/2} \cos^2 t dt\) (cos je pozitivan na \((0, \frac{\pi}{2})\))
+    
+    \begin{align*}
+        &= a^2 \int_0^{\pi/2} \frac{1+\cos 2t}{2} dt = \frac{a^2}{2} \left( \int_0^{\pi/2} dt + \int_0^{\pi/2} \cos 2t dt \right) = \\
+        &= \frac{a^2}{2} \left( \frac{\pi}{2} + \int_0^{\pi/2} \cos 2t dt \right)
+    \end{align*}
+    
+    \(\int_0^{\pi/2} \cos 2x dx = \left( \begin{array}{l} f(x)=\cos 2x, g(x)=\frac{1}{2}x \\ x=0 \to \alpha=0, x=\frac{\pi}{2} \to \beta=\pi \end{array} \right)\) ili \(\left( \begin{array}{l} x=\frac{1}{2}t, dx=\frac{1}{2}dt \\ x=0 \to t=0 \\ x=\frac{\pi}{2} \to t=\pi \end{array} \right)\)
+    
+    \(= \int_0^\pi \cos 2(\frac{1}{2}t) \cdot \frac{1}{2}dt = \frac{1}{2} \int_0^\pi \cos t dt = \frac{1}{2} \sin t |_0^\pi = \frac{1}{2}(0-0) = 0\)
+    
+    ili \(\left( \begin{array}{l} t=2x, dt=2dx \\ x=0 \to t=0, x=\frac{\pi}{2} \to t=\pi \end{array} \right) = \int_0^\pi \cos t \cdot \frac{1}{2}dt = 0\).
+    
+    Dakle \(I = \frac{a^2\pi}{4}\).
+    
+    \noindent\textbf{Primer:} Ako je \(f \in R[-a, a]\) parna, onda je \(\displaystyle \int_{-a}^a f(x)dx = 2 \int_0^a f(x)dx\).
+    
+    \[
+        I = \int_{-a}^a f(x)dx = \int_{-a}^0 f(x)dx + \int_0^a f(x)dx = \left( \begin{array}{l} \text{Uvedemo smenu } x=-t \\ \text{strogo monotona smena pa se može} \\ \text{primeniti na Riman integrabilnu} \\ \text{funkciju} \\ dx=-dt \end{array} \right)
+    \]
+    \[
+        = \int_a^0 f(-t)(-dt) + \int_0^a f(x)dx = \int_0^a f(t)dt + \int_0^a f(t)dt = 2\int_0^a f(t)dt
+    \]
+    (jer je \(f\) parna).
+    
+    Geometrijska interpretacija: Neka je \(f\) neprekidna na \([-a, a]\).
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        \draw[->] (-2.5,0) -- (2.5,0);
+        \draw[->] (0,-0.2) -- (0,2);
+        \draw[thick, domain=-1.5:1.5] plot (\x, {0.6*\x*\x + 0.5});
+        \fill[gray!30] (-1.5,0) -- plot[domain=-1.5:0] (\x, {0.6*\x*\x + 0.5}) -- (0,0) -- cycle;
+        \fill[gray!30] (0,0) -- plot[domain=0:1.5] (\x, {0.6*\x*\x + 0.5}) -- (1.5,0) -- cycle;
+        \node[below] at (-1.5,0) {\(-a\)};
+        \node[below] at (1.5,0) {\(a\)};
+        \node at (-0.75, 0.5) {\(P_1\)};
+        \node at (0.75, 0.5) {\(P_2\)};
+    \end{tikzpicture}
+    \end{center}
+    \(\int_{-a}^0 f(x)dx\) površina između grafika i x-ose, \(P_2 = \int_0^a f(x)dx\) površina \(P_1\), \(P_1=P_2\) jer je \(f\) parna.
+    
+    \noindent\textbf{Primer:} Ako je \(f \in R[-a, a]\) neparna, onda je \(\displaystyle \int_{-a}^a f(x)dx = 0\).
+    
+    \[
+        I = \int_{-a}^a f(x)dx = \int_{-a}^0 f(x)dx + \int_0^a f(x)dx = \left( \begin{array}{l} x=-t \text{ u prvom integralu} \\ dx=-dt \end{array} \right)
+    \]
+    \[
+        = \int_a^0 f(-t)(-dt) + \int_0^a f(x)dx = \int_0^a f(t)dt + \int_0^a f(x)dx = 0
+    \]
+    (jer je \(f(-t) = -f(t)\)).
+    
+    Geometrijska interpretacija: Neka je \(f\) neprekidna na \([-a, a]\).
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        \draw[->] (-2.5,0) -- (2.5,0);
+        \draw[->] (0,-2) -- (0,2);
+        \draw[thick, domain=-1.5:1.5] plot (\x, {0.5*\x*\x*\x});
+        \fill[gray!30] (-1.5,0) -- plot[domain=-1.5:0] (\x, {0.5*\x*\x*\x}) -- (0,0) -- cycle;
+        \fill[gray!30] (0,0) -- plot[domain=0:1.5] (\x, {0.5*\x*\x*\x}) -- (1.5,0) -- cycle;
+        \node[below] at (-1.5,0) {\(-a\)};
+        \node[below] at (1.5,0) {\(a\)};
+        \node at (-0.75, -0.5) {\(P_1\)};
+        \node at (0.75, 0.5) {\(P_2\)};
+    \end{tikzpicture}
+    \end{center}
+    \(\int_{-a}^0 f(x)dx\) površina između grafika i x-ose pri čemu se kod negativne funkcije uzima predznak - (t.j. -površina).
+    \(\int_{-a}^0 f(x)dx = -P_1\), \(\int_0^a f(x)dx = P_2\).
+    \(P_1=P_2\).
+    
+    \noindent\textbf{Primer:} Neka je \(f \in C(-\infty, +\infty)\) periodična sa periodom \(T\). Tada je
+    \begin{enumerate}[label=\alph*)]
+        \item \(\displaystyle \int_a^{a+T} f(x)dx = \int_0^T f(x)dx = \int_b^{b+T} f(x)dx\) za svako \(a, b \in \mathbb{R}\)
+        \item \(\displaystyle \int_a^{a+kT} f(x)dx = k \int_a^{a+T} f(x)dx\) za svako \(a \in \mathbb{R}, k \in \mathbb{Z}\)
+        \item \(\displaystyle \int_a^b f(x)dx = \int_{a+kT}^{b+kT} f(x)dx\) za svako \(a, b \in \mathbb{R}, k \in \mathbb{Z}\)
+    \end{enumerate}
+    
+    \begin{align*}
+        \text{a)} \quad \int_a^{a+T} f(x)dx &= \int_a^0 f(x)dx + \int_0^{a+T} f(x)dx = \left( \begin{array}{l} \text{uvedemo smenu } x-T=t \\ \text{u drugom integralu} \\ dx=dt \end{array} \right) \\
+        &= \int_a^0 f(x)dx + \int_0^a f(t+T)dt = \int_a^0 f(x)dx + \int_0^a f(t)dt = \int_0^T f(x)dx
+    \end{align*}
+    Prethodna jednakost važi za svako \(a \in \mathbb{R}\), pa je
+    \[
+        \int_a^{a+T} f(x)dx = \int_b^{b+T} f(x)dx \text{ za svako } a, b \in \mathbb{R}.
+    \]
+    
+    Geometrijska interpretacija:
+    \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+        \draw[->] (-0.5, 0) -- (7.5, 0);
+        \draw[->] (0, -1.5) -- (0, 1.5);
+        \draw[thick, domain=0:6.28, samples=100] plot (\x, {sin(\x r)});
+        
+        % Interval a to a+T
+        \draw[dashed] (1, -1.2) -- (1, 1.2) node[above] {\(a\)};
+        \draw[dashed] (3.28, -1.2) -- (3.28, 1.2) node[above] {\(a+T\)};
+        \node at (1.5, 0.4) {\(P_1\)};
+        \node at (2.5, -0.4) {\(P_2\)};
+        \node at (3.0, 0.2) {\(P_3\)};
+        
+        % Interval b to b+T
+        \draw[dashed] (4, -1.2) -- (4, 1.2) node[above] {\(b\)};
+        \draw[dashed] (6.28, -1.2) -- (6.28, 1.2) node[above] {\(b+T\)};
+        \node at (4.5, 0.4) {\(P_4\)};
+        \node at (5.5, -0.4) {\(P_5\)};
+        \node at (6.0, 0.2) {\(P_6\)};
+        
+        \node at (2.14, -1.5) {\(\int_a^{a+T} f(x)dx = P_1 - P_2 + P_3\)};
+        \node at (5.14, -1.5) {\(\int_b^{b+T} f(x)dx = P_4 - P_5 + P_6\)};
+        \node at (3.64, -2.2) {\(P_2=P_5, \quad P_1+P_3=P_4+P_6\)};
+    \end{tikzpicture}
+    \end{center}
+    
+    \begin{align*}
+        \text{b)} \quad \int_a^{a+kT} f(x)dx &= \int_a^{a+T} f(x)dx + \int_{a+T}^{a+2T} f(x)dx + \dots + \int_{a+(k-1)T}^{a+kT} f(x)dx \\
+        &= \int_a^{a+T} f(x)dx + \int_a^{a+T} f(x)dx + \dots + \int_a^{a+T} f(x)dx = k \int_a^{a+T} f(x)dx
+    \end{align*}
+    
+    \begin{align*}
+        \text{c)} \quad \int_a^b f(x)dx &= \left( \begin{array}{l} t=x+kT \\ dx=dt \end{array} \right) = \int_{a+kT}^{b+kT} f(t-kT)dt = \int_{a+kT}^{b+kT} f(t)dt = \int_{a+kT}^{b+kT} f(x)dx.
+    \end{align*}
+    
+    Geometrijska interpretacija:
+    \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+        \draw[->] (-0.5, 0) -- (7.5, 0);
+        \draw[->] (0, -1.5) -- (0, 1.5);
+        \draw[thick, domain=0:6.28, samples=100] plot (\x, {sin(\x r)});
+        
+        % Interval a to b
+        \draw[dashed] (1, -1.2) -- (1, 1.2) node[above] {\(a\)};
+        \draw[dashed] (2, -1.2) -- (2, 1.2) node[above] {\(b\)};
+        \fill[gray!30] (1,0) -- plot[domain=1:2] (\x, {sin(\x r)}) -- (2,0) -- cycle;
+        
+        % Interval a+kT to b+kT
+        \draw[dashed] (4, -1.2) -- (4, 1.2) node[above] {\(a+kT\)};
+        \draw[dashed] (5, -1.2) -- (5, 1.2) node[above] {\(b+kT\)};
+        \fill[gray!30] (4,0) -- plot[domain=4:5] (\x, {sin(\x r)}) -- (5,0) -- cycle;
+        
+        \draw[->, thick, red] (1.5, -0.5) to[bend right] (4.5, -0.5);
+    \end{tikzpicture}
+    \end{center}
+    
+\end{comment}
 
 \part{Primenjena matematika}
 

@@ -272,7 +272,8 @@
 \contentsline {section}{\numberline {14.6}Određeni integral}{169}{section.14.6}%
 \contentsline {subsection}{\numberline {14.6.1}Pojam Rimanovog integrala}{169}{subsection.14.6.1}%
 \contentsline {subsection}{\numberline {14.6.2}Darbuov integral}{172}{subsection.14.6.2}%
-\contentsline {part}{V\hspace {1em}Primenjena matematika}{176}{part.5}%
-\contentsline {chapter}{\numberline {15}Verovatnoća}{177}{chapter.15}%
-\contentsline {chapter}{\numberline {16}Statistika}{178}{chapter.16}%
-\contentsline {chapter}{\numberline {17}Numerička analiza}{179}{chapter.17}%
+\contentsline {subsection}{\numberline {14.6.3}Integrabilnost nekih klasa funkcija}{176}{subsection.14.6.3}%
+\contentsline {part}{V\hspace {1em}Primenjena matematika}{181}{part.5}%
+\contentsline {chapter}{\numberline {15}Verovatnoća}{182}{chapter.15}%
+\contentsline {chapter}{\numberline {16}Statistika}{183}{chapter.16}%
+\contentsline {chapter}{\numberline {17}Numerička analiza}{184}{chapter.17}%
