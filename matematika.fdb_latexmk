@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1791975931.20075 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1791975934.05124 0
+["pdflatex"] 1792241081.77288 "/home/kosta/Projects/matematika-formule/matematika.tex" "matematika.pdf" "matematika" 1792241084.83165 0
   "/etc/texmf/web2c/texmf.cnf" 1779652215.19533 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kosta/Projects/matematika-formule/matematika.tex" 1791975931.03409 349636 f00dd57d52b50fadeee59d0c23feff49 ""
+  "/home/kosta/Projects/matematika-formule/matematika.tex" 1792241081.60179 389001 0a11b3693c83116db910fa232aefe417 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbt1.enc" 1586730458 2157 57b150f99c9d61d6c444b4cace336027 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cmsrb/cmsrbts1.enc" 1586730458 2739 09dbe67a27d855e4d39579aa6d913f4e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -237,10 +237,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1779652241 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1779652292 3643082 d718a7a87975810f30f4b2fa7adae9db ""
-  "matematika.aux" 1791975933.95252 47662 0241e65bc8b0be1b446f4fb81016f610 "pdflatex"
-  "matematika.out" 1791975933.95649 49839 2297e146c02fcd2d2a77b3a8b6c07201 "pdflatex"
-  "matematika.tex" 1791975931.03409 349636 f00dd57d52b50fadeee59d0c23feff49 ""
-  "matematika.toc" 1791975933.95692 26133 847175b3109d1a821a83a45c33d9b654 "pdflatex"
+  "matematika.aux" 1792241084.72728 48177 ac0a5c57d4e57b26898eb4f4b0329c26 "pdflatex"
+  "matematika.out" 1792241084.73104 50332 1b48d8d0f0139d20cf0be9242fde7dc1 "pdflatex"
+  "matematika.tex" 1792241081.60179 389001 0a11b3693c83116db910fa232aefe417 ""
+  "matematika.toc" 1792241084.73155 26483 fda330a381536b9593f9d1060bb2af69 "pdflatex"
   "slike/Mittelwertsatz6.svg.png" 1783337122.88671 126270 22f4e7dd1b9fe7c29ce41cb8bb81359b ""
   "slike/konike.png" 1791975638.75916 188029 43bd2190cb005b01442190b6a2473ec9 ""
   "slike/kruzniKonus.png" 1791975085.21144 114266 b3321344e6b3186ca8acb4deb2a07f82 ""

@@ -7252,6 +7252,14 @@ Neka je data funkcija $f:(a, b) \to \mathbb{R}$.
     \[ (\forall x \in (a, b)) \; \frac{d}{dx}F(x) = f(x). \]
 \end{definition}
 
+\noindent \textbf{Primer} \begin{enumerate}[label=\alph*)]
+    \item Funkcija \(F(x) = \sin x\) je primitivna funkcija funkcije \(f(x) = \cos x\) na \(\mathbb{R}\) jer važi \((\sin x)' = \cos x\).
+    Funkcija \(F(x) = \sin x + 1\) je primitivna funkcija funkcije \(f(x) = \cos x\).
+    Sve funkcije oblika \(F(x) = \sin x + C\), gde je \(C\) konstanta, su primitivne funkcije funkcije \(f(x) = \cos x\) jer važi \((\sin x + C)' = \cos x\).
+    
+    \item Sve funkcije oblika \(F(x) = \frac{x^2}{2} + C\), gde je \(C\) konstanta, su primitivne funkcije funkcije \(f(x) = x\) jer važi \((\frac{x^2}{2} + C)' = x\).
+    
+\end{enumerate}
 \begin{theorem}\
     \begin{enumerate}[label=\alph*)]
         \item Ako je $F:(a, b) \to \mathbb{R}$ primitivna funkcija funkcije $f:(a, b) \to \mathbb{R}$, onda je i $F(x) + C$ primitivna
@@ -7260,6 +7268,29 @@ Neka je data funkcija $f:(a, b) \to \mathbb{R}$.
     \end{enumerate}
     
 \end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label=\alph*)]
+        \item Ako je \(F'(x) = f(x)\) za svako \(x \in (a, b)\), onda je 
+        \((F(x) + C)' = F'(x) = f(x)\), pa je \(F(x) + C\) primitivna funkcija funkcije \(f\).
+        
+        \item Neka je \(F(x) = F_1(x) - F_2(x)\), \(x \in (a, b)\). Tada je
+        \[
+            F'(x) = (F_1(x) - F_2(x))' = F_1'(x) - F_2'(x) = f(x) - f(x) = 0,
+        \]
+        a odatle \(F(x) = C\) za svako \(x \in (a, b)\). (Primenili smo teoremu iz Analize 1: Ako je \(F'(x) = 0 \;\; \forall x \in (a, b)\), onda je \(F(x) = C \;\; \forall x \in (a, b)\).)
+    \end{enumerate}
+\end{proof}
+
+\noindent \textbf{Napomena:} Primitivne funkcije smo definisali na intervalima.
+Za funkciju \(F(x) = \operatorname{arcctg} \frac{1}{x}\), \(F: \mathbb{R} \setminus \{0\} \to \mathbb{R}\) važi \(F'(x) = \frac{1}{1+x^2}\)
+za svako \(x \in (-\infty, 0) \cup (0, +\infty)\), ali nećemo reći da je
+\(F(x)\) primitivna funkcija funkcije \(f(x) = \frac{1}{1+x^2}\) na \((-\infty, 0) \cup (0, +\infty)\),
+već da je \(F_1(x) = \operatorname{arcctg} \frac{1}{x}\), \(F_1: (-\infty, 0) \to \mathbb{R}\) primitivna funkcija
+funkcije \(f(x) = \frac{1}{1+x^2}\) na \((-\infty, 0)\) i \(F_2(x) = \operatorname{arcctg} \frac{1}{x}\), \(F_2: (0, +\infty) \to \mathbb{R}\)
+primitivna funkcija funkcije \(f(x) = \frac{1}{1+x^2}\) na \((0, +\infty)\).
+
+\newpage
 
 \begin{definition}
     Skup svih primitivnih funkcija funkcije $f:(a, b) \to \mathbb{R}$ se zove \textbf{neodređeni integral} funkcije $f$ i označava
@@ -7279,6 +7310,73 @@ Neka je data funkcija $f:(a, b) \to \mathbb{R}$.
     \end{enumerate}
 \end{theorem}
 
+\begin{proof}\
+    \begin{enumerate}[label=\alph*)]
+        \item \(d\left(\int f(x) dx\right) = d(F(x) + C) = F'(x) dx = f(x) dx\)
+        \item \(\int dF(x) = \int F'(x) dx = \int f(x) dx = F(x) + C\)
+        \item \(\left(\lambda \int f(x) dx\right)' = \lambda \left(\int f(x) dx\right)' = \lambda (F(x) + C)' = \lambda F'(x) = \lambda f(x)\) \\
+        \(\left(\int \lambda f(x) dx\right)' = \lambda f(x)\)
+        \item \(\left(\int (f(x) + g(x)) dx\right)' = f(x) + g(x)\) \\
+        \(\left(\int f(x) dx + \int g(x) dx\right)' = \left(\int f(x) dx\right)' + \left(\int g(x) dx\right)' = f(x) + g(x)\)
+    \end{enumerate}
+\end{proof}
+
+Posmatrajmo funkciju \(f_1(x) = \frac{1}{x}\) na \((0, +\infty)\). Jedna primitivna funkcija funkcije \(f_1\) je \(F_1(x) = \ln x\) na \((0, +\infty)\). Odavde je
+\[
+    \int \frac{1}{x} dx = \ln x + C \quad \text{na } (0, +\infty).
+\]
+Neka je \(f_2(x) = \frac{1}{x}\), \(f_2: (-\infty, 0) \to \mathbb{R}\). Jedna primitivna funkcija funkcije \(f_2\) je \linebreak\(F_2(x) = \ln(-x)\) na \((-\infty, 0)\) \(\left((\ln(-x))' = \frac{1}{-x} \cdot (-x)' = \frac{1}{x}\right)\).
+Odavde je
+\[
+    \int \frac{1}{x} dx = \ln(-x) + C \quad \text{na } (-\infty, 0).
+\]
+Često se oba neodređena integrala pišu kao jedan
+\[
+    \int \frac{1}{x} dx = \ln|x| + C \quad \text{na } (-\infty, 0) \cup (0, +\infty)
+\]
+kojeg treba posmatrati kao 2 slučaja (\(x > 0\) i \(x < 0\)) pri čemu i konstante mogu biti različite na svakom od tih intervala.
+
+Slično je i sa funkcijom \(f(x) = \frac{1}{\cos^2 x}\) na \(U = \bigcup_{k \in \mathbb{Z}} \left(-\frac{\pi}{2} + k\pi, \frac{\pi}{2} + k\pi\right)\).
+S obzirom da je \((\operatorname{tg} x)' = \frac{1}{\cos^2 x}\) na svakom intervalu,
+imamo
+\[
+    \int \frac{1}{\cos^2 x} dx = \operatorname{tg} x + C \quad \text{na svakom intervalu } \left(-\frac{\pi}{2} + k\pi, \frac{\pi}{2} + k\pi\right), k \in \mathbb{Z}.
+\]
+Kao i u prethodnom slučaju (za funkciju \(f(x) = \frac{1}{x}\)) pisaćemo
+\[
+    \int \frac{1}{\cos^2 x} dx = \operatorname{tg} x + C
+\]
+pri čemu i konstante mogu biti različite na svakom od tih intervala.
+
+
+\subsubsection{Tablica neodređenih integrala}
+Navešćemo tablicu neodređenih integrala imajući u vidu da neke podintegralne funkcije su definisane na uniji otvorenih intervala i da formula važi na intervalu.
+
+\begin{enumerate}[label=\arabic*)]
+    \item \(\displaystyle \int x^a dx = \frac{x^{a+1}}{a+1} + C, \quad a \neq -1\)
+    \item \(\displaystyle \int \frac{dx}{x} = \ln|x| + C\)
+    \item \(\displaystyle \int e^x dx = e^x + C\)
+    \item \(\displaystyle \int a^x dx = \frac{a^x}{\ln a} + C, \quad a > 0, a \neq 1\)
+    \item \(\displaystyle \int \sin x \, dx = -\cos x + C\)
+    \item \(\displaystyle \int \cos x \, dx = \sin x + C\)
+    \item \(\displaystyle \int \frac{dx}{\cos^2 x} = \operatorname{tg} x + C\)
+    \item \(\displaystyle \int \frac{dx}{\sin^2 x} = -\operatorname{ctg} x + C\)
+    \item \(\displaystyle \int \frac{dx}{\sqrt{1-x^2}} = \arcsin x + C\)
+    \item \(\displaystyle \int \frac{dx}{1+x^2} = \operatorname{arcctg} x + C\)
+    \item \(\displaystyle \int \frac{dx}{\sqrt{x^2 \pm 1}} = \ln|x + \sqrt{x^2 \pm 1}| + C\)
+    \item \(\displaystyle \int \frac{dx}{1-x^2} = \frac{1}{2} \ln\left|\frac{1+x}{1-x}\right| + C\)
+\end{enumerate}
+
+\noindent \textbf{Primer:}
+
+\begin{align*}
+\int \frac{(2-\sqrt{x})(3+x)}{x^2} dx &= \int \frac{6+2x-3\sqrt{x}-x^{\frac{3}{2}}}{x^2} dx = \int \frac{6}{x^2} dx + \int \frac{2}{x} dx - \int \frac{3\sqrt{x}}{x^2} dx \\
+&\quad - \int \frac{1}{\sqrt{x}} dx = 6 \int \frac{dx}{x^2} + 2 \int \frac{dx}{x} - 3 \int x^{-\frac{3}{2}} dx - \int x^{-\frac{1}{2}} dx = \\
+&= 6 \int x^{-2} dx + 2 \int \frac{dx}{x} - 3 \int x^{-\frac{3}{2}} dx - \int x^{-\frac{1}{2}} dx = \\
+&= 6 \frac{x^{-2+1}}{-2+1} + 2 \ln|x| - 3 \frac{x^{-\frac{3}{2}+1}}{-\frac{3}{2}+1} - \frac{x^{-\frac{1}{2}+1}}{-\frac{1}{2}+1} + C \\
+&= - \frac{6}{x} + 2 \ln|x| + \frac{6}{\sqrt{x}} - 2\sqrt{x} + C
+\end{align*}
+
 \subsection{Smena promenljive i parcijalna integracija}
 \subsubsection{Smena promenljive}
 Neka je data funkcija $f:(a, b) \to \mathbb{R}$ i neka je $F:(a, b) \to \mathbb{R}$ njena primitivna funkcija. Tada je 
@@ -7289,11 +7387,101 @@ $\int f(x)\;dx = F(x) + C$.
     \[ \int f(\varphi(t))\varphi'(t) \; dt = F(\varphi(t)) + C. \]
 \end{theorem}
 
+\begin{proof}
+    Izvod leve strane je
+    \[
+        \left(\int f(\varphi(t))\varphi'(t)dt\right)' = f(\varphi(t))\varphi'(t),
+    \]
+    a desne je
+    \[
+        (F(\varphi(t)) + C)' = F'(\varphi(t)) \cdot \varphi'(t) + C' = f(\varphi(t))\varphi'(t)
+    \]
+    S obzirom da su izvodi jednaki, onda se leva i desna strana razlikuju za neku konstantu, pa je
+    \[
+        \int f(\varphi(t))\varphi'(t)dt = F(\varphi(t)) + C \quad \text{na intervalu } (\alpha, \beta).
+    \]
+\end{proof}
+
+\noindent \textbf{Primer:} Odrediti \(\int t \sin(t^2)dt\) na \((0, +\infty)\)
+
+Neka je \(f(x) = \sin x\), \(f: (0, +\infty) \to \mathbb{R}\) i \(F(x) = -\cos x\) jedna njena primitivna funkcija.
+Neka je \(\varphi: (0, +\infty) \to (0, +\infty)\), \(\varphi(t) = t^2\) diferencijabilna.
+Na osnovu prethodnog stava
+\[
+    \int f(\varphi(t))\varphi'(t)dt = F(\varphi(t)) + C \quad \text{na intervalu } (0, +\infty)
+\]
+odnosno
+\[
+    \int \sin(t^2)(2t)dt = -\cos(t^2) + C,
+\]
+odakle je
+\[
+    \int t \sin(t^2)dt = -\frac{1}{2}\cos(t^2) + C \quad \text{na } (0, +\infty)
+\]
+
+U prethodnom stavu smo uveli smenu \(x = \varphi(t)\) i imali smo \(dx = \varphi'(t)dt\). Ako uvedemo smenu \(\varphi(x) = \psi(t)\) onda imamo \(\varphi'(x)dx = \psi'(t)dt\).
+
+
 \subsubsection{Parcijalna integracija}
 
-Neka su $u, v:(a, b) \to \mathbb{R}$ diferencijabilne funkcije i neka postoji primitivna funkcija funkcije $u'(x)v(x)$. Tada
-postoji primitivna funkcija funkcije $u(x)v'(x)$ i važi
-\[ \int u(x) v'(x) \; dx = u(x)v(x) - \int u'(x) v(x) \;dx. \]
+\begin{theorem}
+    Neka su $u, v:(a, b) \to \mathbb{R}$ diferencijabilne funkcije i neka postoji primitivna funkcija funkcije $u'(x)v(x)$. Tada
+    postoji primitivna funkcija funkcije $u(x)v'(x)$ i važi
+    \[ \int u(x) v'(x) \; dx = u(x)v(x) - \int u'(x) v(x) \;dx. \]
+\end{theorem}
+
+\begin{proof}
+    S obzirom da je \((u(x)v(x))' = u'(x)v(x) + u(x)v'(x)\), \\
+    važi \(\displaystyle \int (u(x)v(x))'dx = \int u'(x)v(x)dx + \int u(x)v'(x)dx\), i
+    \[
+        \int u(x)v'(x)dx = u(x)v(x) - \int u'(x)v(x)dx,
+    \]
+    to jest
+    \[
+        \int u(x)dv(x) = u(x)v(x) - \int v(x)du(x)
+    \]
+    (skraćen zapis je \(\int udv = uv - \int vdu\))
+\end{proof}
+
+\noindent \textbf{Primer:}
+\begin{enumerate}[label=\alph*)]
+    \item \begin{align*}
+        \int x \ln x \, dx &= \left( \begin{array}{ll}
+            u(x) = \ln x & \implies du = \frac{1}{x}dx \\[1ex]
+            dv(x) = x dx & \implies v = \frac{x^2}{2}
+        \end{array} \right) = \\
+        &= \frac{1}{2}x^2 \ln x - \int \frac{1}{x} \cdot \frac{x^2}{2} dx = \frac{1}{2}x^2 \ln x - \frac{1}{2} \int x dx = \\
+        &= \frac{1}{2}x^2 \ln x - \frac{1}{2} \frac{x^2}{2} + C = \frac{1}{2}x^2 \ln x - \frac{x^2}{4} + C
+    \end{align*}
+    
+    \item Neka je \(\displaystyle I_n = \int \frac{dx}{(x^2+1)^n}\), \(n \in \mathbb{N}\)
+    
+    Za \(n=1\) \quad \(\displaystyle I_1 = \int \frac{dx}{x^2+1} = \operatorname{arcctg} x + C\)
+    
+    Za \(n=2\) \quad \(\displaystyle I_2 = \int \frac{dx}{(x^2+1)^2}\)
+    
+    Uvedimo parcijalnu integraciju u \(I_1\)
+    \begin{align*}
+        I_1 = \int \frac{dx}{x^2+1} &= \left( \begin{array}{ll}
+            u = \frac{1}{x^2+1} & \implies du = -\frac{2x}{(x^2+1)^2}dx \\[1ex]
+            dv = dx & \implies v = x
+        \end{array} \right) = \\
+        &= \frac{x}{x^2+1} + 2 \int \frac{x^2 dx}{(x^2+1)^2} = \frac{x}{x^2+1} + 2 \int \frac{x^2+1-1}{(x^2+1)^2} dx = \\
+        &= \frac{x}{x^2+1} + 2 \left( \int \frac{dx}{x^2+1} - \int \frac{dx}{(x^2+1)^2} \right) = \frac{x}{x^2+1} + 2(I_1 - I_2)
+    \end{align*}
+    Odavde \quad \(\displaystyle I_2 = \frac{1}{2} \left( \frac{x}{x^2+1} + I_1 \right) = \frac{1}{2} \left( \frac{x}{x^2+1} + \operatorname{arcctg} x \right) + C\)
+    
+    Na sličan način (korišćenjem parcijalne integracije u \(I_n\)) se može dokazati: \linebreak \(\displaystyle I_{n+1} = \frac{1}{2n} \left( \frac{x}{(x^2+1)^n} + (2n-1)I_n \right)\), \(n \in \mathbb{N}\).
+    \begin{align*}
+        I_n = \int \frac{dx}{(x^2+1)^n} &= \left( \begin{array}{ll}
+            u = \frac{1}{(x^2+1)^n} & \implies du = -\frac{n2x}{(x^2+1)^{n+1}}dx \\[1ex]
+            dv = dx & \implies v = x
+        \end{array} \right)\\ &= \frac{x}{(x^2+1)^n} - \int \frac{-n2x^2}{(x^2+1)^{n+1}} dx \\
+        &= \frac{x}{x^2+1} + 2n \int \frac{x^2+1-1}{(x^2+1)^{n+1}} dx \\  &= \frac{x}{x^2+1} + 2n \int \frac{dx}{(x^2+1)^n} - 2n \int \frac{dx}{(x^2+1)^{n+1}} \\
+        &= \frac{x}{x^2+1} + 2n I_n - 2n I_{n+1}, \quad n \in \mathbb{N}
+    \end{align*}
+    Odavde \quad \(\displaystyle I_{n+1} = \frac{1}{2n} \left[ \frac{x}{(x^2+1)^n} + (2n-1)I_n \right]\)
+\end{enumerate}
 
 \subsection{Integracija racionalnih funkcija}
 
@@ -7309,7 +7497,141 @@ Dakle,
     \[ \frac{P_1(x)}{Q(x)} = \sum_{i=1}^{p} \sum_{k=1}^{k_i} \frac{A_{i,k}}{(x - a_i)^k} + \sum_{j=1}^{q} \sum_{m=1}^{l_j} \frac{B_{j,m} x + C_{j,m}}{(x^2 + \beta_j x + \gamma_j)^m}.  \]
 \end{theorem}
 
-Integral funkcije u ovom obliku se lako nalazi.
+Dokaz teoreme sledi na osnovu sledeće dve leme.
+
+\begin{lemma}
+    Neka je \(a\) realna nula reda \(k\) polinoma \(Q(x)\) i neka je \(\frac{P(x)}{Q(x)}\) pravi razlomak $(\deg P < \deg Q)$. Tada se on može napisati u obliku
+    \[
+        \frac{P(x)}{Q(x)} = \frac{A}{(x-a)^k} + \frac{P_1(x)}{(x-a)^{k-s}Q_1(x)}, \quad A\text{-const}, s \in \mathbb{N}, 1 \leq s \leq k \text{, poslednji razlomak je pravi.}
+    \]
+\end{lemma}
+
+\begin{proof}
+    \begin{align*}
+        \frac{P(x)}{Q(x)} = \frac{P(x)}{(x-a)^k Q_1(x)} &= \frac{A}{(x-a)^k} + \frac{P(x)}{(x-a)^k Q_1(x)} - \frac{A}{(x-a)^k} = \\
+        &= \frac{A}{(x-a)^k} + \frac{P(x) - A Q_1(x)}{(x-a)^k Q_1(x)}
+    \end{align*}
+    Izaberimo \(A\) tako da je \(P(a) - A Q_1(a) = 0\) (to jest \(A = \frac{P(a)}{Q_1(a)}\)). Postoji \(s \in \mathbb{N}\) t.d. \((x-a)^s \mid P(x) - A Q_1(x)\) (\(s\) maksimalno).
+    \[
+        \frac{P(x)}{Q(x)} = \frac{A}{(x-a)^k} + \frac{P(x) - A Q_1(x)}{(x-a)^k Q_1(x)} = \frac{A}{(x-a)^k} + \frac{P_1(x)}{(x-a)^{k-s} Q_1(x)}
+    \]
+\end{proof}
+
+\begin{lemma}[Lema 2]
+    Neka je \(\frac{P(x)}{Q(x)}\) pravi razlomak i \(Q(x)\) se može napisati u obliku 
+    \[
+        Q(x) = (x^2+\alpha x+\beta)^k Q_1(x), \quad \alpha^2 - 4\beta < 0, \text{ a } x^2+\alpha x+\beta \text{ i } Q_1(x) \text{ nemaju zajedničkih nula.}
+    \]
+    Tada se \(\frac{P(x)}{Q(x)}\) može napisati u obliku
+    \[
+        \frac{P(x)}{Q(x)} = \frac{Ax+B}{(x^2+\alpha x+\beta)^k} + \frac{P_1(x)}{(x^2+\alpha x+\beta)^{k-s} Q_1(x)}, 
+    \]
+    \[A, B \text{ konstante}, s \in \mathbb{N}, 1 \leq s \leq k, \text{ poslednji razlomak je pravi.}\]
+\end{lemma}
+
+\begin{proof}[Dokaz teoreme]
+    Neka je \(Q(x) = (x-a_1)^{k_1} \dots (x-a_p)^{k_p} (x^2+b_1 x+c_1)^{l_1} \dots (x^2+b_q x+c_q)^{l_q}\).
+    
+    Primenom leme 1 dobijamo (za nulu \(a_1\))
+    \[
+        \frac{P_1(x)}{Q(x)} = \frac{A}{(x-a_1)^{k_1}} + \frac{P_2(x)}{(x-a_1)^{k_1-s} Q_1(x)}.
+    \]
+    Zatim, primenimo lemu 1 na racionalnu funkciju \(\frac{P_2(x)}{(x-a_1)^{k_1-s} Q_1(x)}\) i dobićemo
+    \[
+        \frac{P_2(x)}{Q(x)} = \frac{A}{(x-a_1)^{k_1}} + \frac{A_1}{(x-a_1)^{k_1-s}} + \frac{P_3(x)}{(x-a_1)^{k_1-s-s_1} Q_1(x)}.
+    \]
+    Nastavljajući postupak dobijamo
+    \[
+        \frac{P_1(x)}{Q(x)} = \frac{A_{1,1}}{x-a_1} + \dots + \frac{A_{1,k_1}}{(x-a_1)^{k_1}} + \frac{P_k(x)}{Q_1(x)}.
+    \]
+    Posle primene leme 1 na realne nule \(a_1, \dots, a_p\) dobijamo
+    \[
+        \frac{P_1(x)}{Q(x)} = \left( \frac{A_{1,1}}{x-a_1} + \dots + \frac{A_{1,k_1}}{(x-a_1)^{k_1}} \right) + \dots + \left( \frac{A_{p,1}}{x-a_p} + \dots + \frac{A_{p,k_p}}{(x-a_p)^{k_p}} \right) + \frac{T(x)}{L(x)}.
+    \]
+    Primenićemo lemu 2 na \(\frac{T(x)}{L(x)}\)
+    \[
+        L(x) = (x^2+b_1 x+c_1)^{l_1} \dots (x^2+b_q x+c_q)^{l_q}
+    \]
+    za \((x^2+b_1 x+c_1)^{l_1}, \dots, (x^2+b_q x+c_q)^{l_q}\) (slično kao što smo primenjivali lemu 1)
+    \begin{align*}
+        \frac{P_1(x)}{Q(x)} &= \left( \frac{A_{1,1}}{x-a_1} + \dots + \frac{A_{1,k_1}}{(x-a_1)^{k_1}} \right) + \dots + \left( \frac{A_{p,1}}{x-a_p} + \dots + \frac{A_{p,k_p}}{(x-a_p)^{k_p}} \right) + \\
+        & + \left( \frac{B_{1,1} x+C_{1,1}}{x^2+b_1 x+c_1} + \dots + \frac{B_{1,l_1} x+C_{1,l_1}}{(x^2+b_1 x+c_1)^{l_1}} \right) + \dots +\\
+         &+ \left( \frac{B_{q,1} x+C_{q,1}}{x^2+b_q x+c_q} + \dots + \frac{B_{q,l_q} x+C_{q,l_q}}{(x^2+b_q x+c_q)^{l_q}} \right)
+    \end{align*}
+\end{proof}
+
+Razlomci na desnoj strani zovu se \textbf{prosti razlomci}.
+Koeficijente \(A_{i,j}, B_{i,j}\) i \(C_{i,j}\) dobijamo na sledeći način:
+Množimo jednakost sa \(Q(x)\), sredimo desnu stranu (predstavimo je kao polinom) i izjednačimo polinome leve i desne strane (dva polinoma su jednaka ako imaju iste koeficijente), odakle dobijamo sistem linearnih jednačina po \(A_{i,j}, B_{i,j}, C_{i,j}\) koji rešimo.
+Pomoću prethodne teoreme \(\displaystyle \int \frac{P_1(x)}{Q(x)} dx\) se svodi na integrale \(\displaystyle \int \frac{A_{i,j}}{(x-a_i)^j} dx\) i \(\displaystyle \int \frac{B_{i,j} x + C_{i,j}}{(x^2+b_i x+c_i)^j} dx\) koji se mogu rešiti.
+
+\vspace{0.5cm}
+
+\noindent \textbf{Primer:} Naći \(\displaystyle \int \frac{x^4 - x^3 - 2x^2 + x - 2}{x^3 - x^2} dx\).
+
+Deljenjem polinoma \(P(x) = x^4 - x^3 - 2x^2 + x - 2\) polinomom \(Q(x) = x^3 - x^2\)
+dobjiamo polinome \(P_1(x)\) (ostatak) i \(T(x)\) (količnik)
+\begin{center}
+\begin{tabular}{r@{\quad}l}
+    \((x^4 - x^3 - 2x^2 + x - 2)\) & \(: (x^3 - x^2) = x\) \\
+    \(\underline{x^4 - x^3}\) & \\
+    \(-2x^2 + x - 2\) &
+\end{tabular}
+\end{center}
+\(P_1(x) = -2x^2 + x - 2\) i \(T(x) = x\)
+
+\[
+    \int \frac{P(x)}{Q(x)} dx = \int \left( x + \frac{-2x^2 + x - 2}{x^3 - x^2} \right) dx = \int x dx + \int \frac{-2x^2 + x - 2}{x^3 - x^2} dx
+\]
+
+Rastavićemo polinom \(Q(x)\)
+\[
+    Q(x) = x^2(x-1)
+\]
+Prema teoremi, postoje koeficijenti \(A, B\) i \(C\) tako da je
+\[
+    \frac{P_1(x)}{Q(x)} = \frac{-2x^2 + x - 2}{x^2(x-1)} = \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x-1} \quad \Big/ \cdot Q(x)
+\]
+\[
+    -2x^2 + x - 2 = Ax(x-1) + B(x-1) + Cx^2
+\]
+\[
+    -2x^2 + x - 2 = Ax^2 - Ax + Bx - B + Cx^2
+\]
+\[
+    -2x^2 + x - 2 = (A+C)x^2 + (-A+B)x - B
+\]
+Kada izjednačimo koeficijente dobijamo sistem
+\[
+    \begin{array}{rcrcr}
+        A & + & C & = & -2 \\
+        -A & + & B & = & 1 \\
+        & - & B & = & -2
+    \end{array}
+    \quad \text{, odakle je } A=1, B=2 \text{ i } C=-3 \text{ i važi:}
+\]
+\begin{align*}
+    \int \frac{-2x^2 + x - 2}{x^2(x-1)} dx &= \int \left( \frac{1}{x} + \frac{2}{x^2} - \frac{3}{x-1} \right) dx = \int \frac{1}{x} dx + \int \frac{2}{x^2} dx - \int \frac{3}{x-1} dx \\
+    &= \ln|x| + 2 \int x^{-2} dx - 3 \int \frac{dx}{x-1}.
+\end{align*}
+Zatim, \(\displaystyle \int \frac{dx}{x-1} = \left( \begin{array}{l} \text{smena } t=x-1 \\ dt=dx \end{array} \right) = \int \frac{dt}{t} = \ln|t| + C = \ln|x-1| + C\)
+
+\[
+    \int x^{-2} dx = \frac{x^{-2+1}}{-2+1} + C = -\frac{1}{x} + C
+\]
+Prema tome,
+\begin{align*}
+    \int \frac{x^4 - x^3 - 2x^2 + x - 2}{x^3 - x^2} dx &= \int x dx + \int \frac{-2x^2 + x - 2}{x^2(x-1)} dx = \\
+    &= \frac{x^2}{2} + \ln|x| - \frac{2}{x} - 3\ln|x-1| + C
+\end{align*}
+
+\vspace{0.5cm}
+
+Da bismo uradili integral racionalne funkcije potrebno je da racionalnu funkciju predstavimo kao zbir prostih razlomaka i nekog polinoma.
+
+Integrali \(\displaystyle \int \frac{dx}{(x-a_i)^j}\) se rešavaju smenom \(t = x-a_i\).
+
+Integrale \(\displaystyle \int \frac{B_{i,1} x + C_{i,1}}{x^2+b_i x+c_i} dx\) i \(\displaystyle \int \frac{B_{i,j} x + C_{i,j}}{(x^2+b_i x+c_i)^j} dx\) objasnićemo na časovima vežbi.
 
 \subsection{Integracija nekih iracionalnih i trig. funkcija}
 
@@ -7399,6 +7721,554 @@ Integral funkcije u ovom obliku se lako nalazi.
         &\int \cosh(x) \; dx = \sinh(x) + C
     \end{aligned}
 \]
+
+\section{Određeni integral}
+\subsection{Pojam Rimanovog integrala}
+
+Uočimo segment $[a, b] \subset \mathbb{R}$. Konačan skup tačaka $P = \{x_0, x_1, \dots, x_n\}$, takav da je 
+\[a = x_0 < x_1 < x_2 < \dots < x_n = b,\] nazvaćemo \textbf{podelom segmenta} $[a, b]$.\\
+
+Neka je $\mathcal{P}[a, b]$ skup svih podela segmenta. Na ovom skupu možemo posmatrati relaciju $\subset$:
+\[
+    P_1 \subset P_2 \quad (\text{podela } P_2 \text{ je finija od podele } P_1).
+\]
+
+\medskip
+
+U svakoj podeli $P$ uvešćemo oznake $\Delta x_i = x_i - x_{i-1}, \; i = 1, \dots, n$ i pojam \textbf{parametra podele} 
+\[\lambda(P) = \max_{1 \leq i \leq n} \Delta x_i \ .\]
+
+Na svakom segmentu $[x_{i-1}, x_i]$ možemo izabrati po tačku $\xi_i$.
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Glavna linija
+    \draw[thick] (0,0) -- (6,0);
+    
+    % Tačke x_i
+    \draw[thick] (0, -0.1) -- (0, 0.1);
+    \node[below] at (0, -0.1) {$a = x_0$};
+    
+    \draw[thick] (1, -0.1) -- (1, 0.1);
+    \node[below] at (1, -0.1) {$x_1$};
+    
+    \draw[thick] (2, -0.1) -- (2, 0.1);
+    \node[below] at (2, -0.1) {$x_2$};
+    
+    \draw[thick] (3, -0.1) -- (3, 0.1);
+    \node[below] at (3, -0.1) {$x_3$};
+
+    \node[below] at (3.75, -0.1) {$\dots$};
+    
+    \draw[thick] (4.5, -0.1) -- (4.5, 0.1);
+    \node[below] at (4.5, -0.1) {$x_{n-1}$};
+    
+    \draw[thick] (5.5, -0.1) -- (5.5, 0.1);
+    \node[below] at (5.5, -0.1) {$x_n = b$};
+    
+    % Strelice za xi
+    \draw[->, thick] (0.5, 0.05) -- (0.5, 0.5);
+    \node[above] at (0.5, 0.5) {$\xi_1$};
+    
+    \draw[->, thick] (1.5, 0.05) -- (1.5, 0.7);
+    \node[above] at (1.5, 0.7) {$\xi_2$};
+    
+    \draw[->, thick] (2.5, 0.05) -- (2.5, 0.5);
+    \node[above] at (2.5, 0.5) {$\xi_3$};
+    
+    \draw[->, thick] (5, 0.05) -- (5, 0.6);
+    \node[above] at (5, 0.6) {$\xi_n$};
+    
+    % Tačke za prekid
+    \node at (3.75, 0) {$\dots$};
+    \node at (4.75, 0) {$\dots$};
+\end{tikzpicture}
+\end{center}
+Na ovaj način dobićemo podelu $P$ sa izabranim tačkama $\{\xi_1, \xi_2, \dots, \xi_n\}$, u oznaci $(P, \xi)$.
+
+\vspace{0.5cm}
+\noindent \textbf{Primer:} Neka je $[1, 3]$ segment. Neka je $P = \{1, 1.3, 1.5, 2, 3\}$ podela i 
+$\xi = \{1.1, 1.5, 2.1, 2.5\}$ izabrane tačke. $(P, \xi)$ - podela sa izabranim tačkama.
+
+\vspace{0.5cm}
+
+\begin{definition}
+    Neka je $f: [a, b] \to \mathbb{R}$ i $(P, \xi)$ neka podela segmenta $[a, b]$ sa izabranim tačkama.
+    Zbir 
+    \[
+        \sum_{i=1}^n f(\xi_i) \Delta x_i
+    \]
+    se naziva \textbf{integralnom sumom} funkcije $f$ za datu podelu $(P, \xi)$, u oznaci 
+    $\sigma(f, P, \xi)$.
+\end{definition}
+
+% Nastavak prethodnog koda
+
+\vspace{0.5cm}
+\noindent \textbf{Primer:} Neka je $f(x) = x^2$ i $(P, \xi)$ podela segmenta $[0, 3]$ sa izabranim tačkama $\xi$ takva da je
+\[
+    P = \{0, 1, 1.5, 2, 2.2, 3\} \quad \text{i} \quad \xi = \{0.4, 1.2, 2, 2.1, 2.5\}.
+\]
+Tada je
+\begin{align*}
+    \sigma(f, P, \xi) &= \sum_{i=1}^5 f(\xi_i) \Delta x_i = f(0.4) \cdot (1 - 0) + f(1.2) \cdot (1.5 - 1) \\
+    &\quad + f(2) \cdot (2 - 1.5) + f(2.1) \cdot (2.2 - 2) + f(2.5) \cdot (3 - 2.2) \\
+    &= (0.4)^2 \cdot 1 + (1.2)^2 \cdot 0.5 + 2^2 \cdot 0.5 + (2.1)^2 \cdot 0.2 + (2.5)^2 \cdot 0.8 \\
+    &= 8.762
+\end{align*}
+
+\begin{center}
+\begin{tikzpicture}[x=2.8cm, y=1.3cm]
+    % Axes
+    \draw[->, thick] (-0.2, 0) -- (3.5, 0) node[right] {$x$};
+    \draw[->, thick] (0, 0) -- (0, 3.5) node[above] {$y$};
+    
+    % Curve f(x) = 0.3*x^2
+    \draw[thick, domain=0:3.2, smooth, variable=\x] plot ({\x}, {0.3*\x*\x}) node[above right] {$f(x)$};
+    
+    % Rectangles representing the integral sum (dashed borders, 50% opacity fill)
+    % P1: [0, 1], xi = 0.4 -> f(0.4) = 0.3*0.4^2 = 0.048
+    \draw[fill=gray!30, fill opacity=0.5, draw=black, dashed, thick] (0, 0) rectangle (1, {0.3*0.4*0.4});
+    \node at (0.2, 0.25) {$P_1$};
+    
+    % P2: [1, 1.5], xi = 1.2 -> f(1.2) = 0.3*1.2^2 = 0.432
+    \draw[fill=gray!30, fill opacity=0.5, draw=black, dashed, thick] (1, 0) rectangle (1.5, {0.3*1.2*1.2});
+    \node at (1.1, 0.7) {$P_2$};
+    
+    % P3: [1.5, 2], xi = 2 -> f(2) = 0.3*2^2 = 1.2
+    \draw[fill=gray!30, fill opacity=0.5, draw=black, dashed, thick] (1.5, 0) rectangle (2, {0.3*2*2});
+    \node at (1.6, 1.4) {$P_3$};
+    
+    % P4: [2, 2.2], xi = 2.1 -> f(2.1) = 0.3*2.1^2 = 1.323
+    \draw[fill=gray!30, fill opacity=0.5, draw=black, dashed, thick] (2, 0) rectangle (2.2, {0.3*2.1*2.1});
+    \node at (2.1, 1.7) {$P_4$};
+
+    % P5: [2.2, 3], xi = 2.5 -> f(2.5) = 0.3*2.5^2 = 1.875
+    \draw[fill=gray!30, fill opacity=0.5, draw=black, dashed, thick] (2.2, 0) rectangle (3, {0.3*2.5*2.5});
+    \node at (2.3, 2.2) {$P_5$};
+
+    % Ticks and labels on x-axis
+    \foreach \x/\xtext in {0/0, 1/1, 1.5/1.5, 2/2, 2.2/2.2, 3/3} {
+        \draw (\x, 0) -- (\x, -0.1);
+        \node[below] at (\x, -0.1) {$\xtext$};
+    }
+    
+    % Selected points xi inside intervals
+    \draw[thick] (0.4, 0) -- (0.4, 0.15);
+    \node[above, font=\small] at (0.4, 0.1) {$\xi_1$};
+
+    \draw[thick] (1.2, 0) -- (1.2, 0.15);
+    \node[above, font=\small] at (1.2, 0.1) {$\xi_2$};
+
+    \draw[thick] (2.0, 0) -- (2.0, 0.15);
+    \node[above, font=\small] at (2.0, 0.1) {$\xi_3$};
+
+    \draw[thick] (2.1, 0) -- (2.1, 0.15);
+    \node[above, font=\small] at (2.1, 0.1) {$\xi_4$};
+
+    \draw[thick] (2.5, 0) -- (2.5, 0.15);
+    \node[above, font=\small] at (2.5, 0.1) {$\xi_5$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-0.5cm}
+\begin{flushright}
+    $\sigma(f, P, \xi) = P_1 + P_2 + P_3 + P_4 + P_5$ \\
+    $P_i$ - površine pravougaonika
+\end{flushright}
+
+\vspace{0.5cm}
+Ako biramo tačke $\xi_i$ na krajevima segmenta, onda dobijamo \textbf{desnu integralnu sumu} 
+\[
+    R(f, P) = \sum_{i=1}^n f(x_i) \Delta x_i \quad (\text{ako biramo desnu granicu})
+\]
+i \textbf{levu integralnu sumu}
+\[
+    L(f, P) = \sum_{i=1}^n f(x_{i-1}) \Delta x_i \quad (\text{ako biramo levu granicu}).
+\]
+
+Ako je funkcija neprekidna i pozitivna na $[a, b]$, onda ima smisla računati površinu ispod grafika a iznad $x$-ose na segmentu $[a, b]$.
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm, y=1.8cm]
+    % Osenečena površina ispod krive
+    \fill[gray!30] (0.5,0) -- plot[domain=0.5:2.5, smooth] ({\x}, {0.3*sin(\x*180/3.14 * 2) + 0.8}) -- (2.5,0) -- cycle;
+
+    % Isprekidane linije za granice a i b
+    \draw[dashed] (0.5, 0) -- (0.5, {0.3*sin(0.5*180/3.14 * 2) + 0.8});
+    \draw[dashed] (2.5, 0) -- (2.5, {0.3*sin(2.5*180/3.14 * 2) + 0.8});
+
+    % Kriva f(x)
+    \draw[thick, domain=0.3:2.7, smooth, variable=\x] plot ({\x}, {0.3*sin(\x*180/3.14 * 2) + 0.8}) node[right] {$f(x)$};
+
+    % Koordinatne ose
+    \draw[->, thick] (0, 0) -- (3.0, 0) node[right] {$x$};
+    \draw[->, thick] (0, 0) -- (0, 1.5) node[above] {$y$};
+
+    % Oznake za granice a i b i početak
+    \node[below] at (0, 0) {$0$};
+    \node[below] at (0.5, 0) {$a$};
+    \node[below] at (2.5, 0) {$b$};
+\end{tikzpicture}
+\end{center}
+Postavlja se pitanje da li se usitnjavanjem podele (to jest kada $\lambda(P) \to 0$) integralna suma približava toj površini. Odgovor je potvrdan i kasnije ćemo ga detaljno obrazložiti.
+
+\vspace{0.5cm}
+\begin{definition}
+    Za funkciju $f: [a, b] \to \mathbb{R}$ kažemo da je \textbf{integrabilna u Rimanovom smislu} na segmentu $[a, b]$ ako postoji konačan limes 
+    \[
+        \lim_{\lambda(P) \to 0} \sigma(f, P, \xi) = I,
+    \]
+    Dakle,
+\[
+    \lim_{\lambda(P) \to 0} \sigma(f, P, \xi) = I \iff (\forall \varepsilon > 0) (\exists \delta > 0) (\forall (P, \xi)) (\lambda(P) < \delta \implies |\sigma(f, P, \xi) - I| < \varepsilon)
+\]
+
+U tom slučaju, broj $I$ zapisaćemo kao 
+\[
+    I = \int_a^b f(x) \, dx
+\]
+i reći ćemo da je \textbf{Rimanov integral funkcije} $f$ na segmentu $[a, b]$.
+Broj $a$ je \textbf{donja granica}, a broj $b$ je \textbf{gornja granica} integrala. Funkcija $f$ je \textbf{podintegralna funkcija}, a \textbf{integraciona promenljiva} je $x$ i ona se može zameniti bilo kojim slovom, to jest
+\[
+    I = \int_a^b f(x) \, dx = \int_a^b f(u) \, du = \int_a^b f(\xi) \, d\xi
+\]
+za Riman-integrabilnu funkciju $f$.
+Skup svih integrabilnih funkcija u Rimanovom smislu na segmentu $[a, b]$ označićemo sa $\mathcal{R}[a, b]$.
+
+\end{definition}
+
+\vspace{0.5cm}
+\noindent \textbf{Primer:} Neka je $f(x) = c, \; f: [a, b] \to \mathbb{R}$.
+Dokazaćemo da je $f$ Riman-integrabilna na $[a, b]$ i da je 
+\[
+    I = \int_a^b f(x) \, dx = \int_a^b c \, dx = c(b-a).
+\]
+Neka je $(P, \xi)$ proizvoljna podela segmenta $[a, b]$ sa izabranim tačkama, $P = \{x_0, x_1, \dots, x_n\}$ i 
+$\xi = \{\xi_1, \xi_2, \dots, \xi_n\}$. Integralna suma je jednaka
+\begin{align*}
+    \sigma(f, P, \xi) &= \sum_{i=1}^n f(\xi_i) \Delta x_i = \sum_{i=1}^n c \cdot (x_i - x_{i-1}) \\
+    &= c \sum_{i=1}^n (x_i - x_{i-1}) = c(b-a).
+\end{align*}
+Za svaku podelu $\sigma(f, P, \xi) = c(b-a)$, pa je $\lim_{\lambda(P) \to 0} \sigma(f, P, \xi) = c(b-a)$.
+Dokazali smo $\int_a^b c \, dx = c(b-a)$, a za $c=1$ $\int_a^b dx = b-a$.
+
+\vspace{0.5cm}
+\noindent \textbf{Primer:} Neka je $\chi: [0, 1] \to \mathbb{R}$, Dirihleova funkcija definisana sa
+\[
+    \chi(x) = 
+    \begin{cases} 
+        1, & x \in \mathbb{Q} \cap [0, 1] \\
+        0, & x \in \mathbb{I} \cap [0, 1]
+    \end{cases}
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Axes
+    \draw[->] (0, 0) -- (4.5, 0) node[right] {$x$};
+    \draw[->] (0, 0) -- (0, 1.8) node[above] {$y$};
+    
+    
+    \node[below] at (0.5, -0.1) {$a$};
+    \draw[thick] (0.5, -0.1) -- (0.5, 0.1);
+    \node[below] at (3.5, -0.1) {$b$};
+    \draw[thick] (3.5, -0.1) -- (3.5, 0.1);
+    
+    % y-axis labels
+    \node[left] at (0, 1.2) {$1$};
+    \draw[thick] (-0.1, 1.2) -- (0.1, 1.2);
+    \node[left] at (0, -0.2) {$0$};
+    
+    % Points representing dense distribution
+    \foreach \x in {0.6, 0.8, 1.1, 1.4, 1.7, 2.1, 2.4, 2.8, 3.1, 3.4}
+        \fill (\x, 1.2) circle (1.5pt);
+    \foreach \x in {0.7, 0.9, 1.2, 1.5, 1.8, 2.2, 2.5, 2.9, 3.2, 3.3}
+        \fill (\x, 0) circle (1.5pt);
+        
+    % Dotted line at y=1
+    \draw[dotted, thick] (0.5, 1.2) -- (3.5, 1.2);
+\end{tikzpicture}
+\end{center}
+
+Dokazaćemo da funkcija $\chi$ nije integrabilna u Rimanovom smislu.
+Neka je $P$ proizvoljna podela, $P = \{x_0, x_1, \dots, x_n\}$.
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    \draw[thick] (0,0) -- (5,0);
+    \foreach \x/\label in {0/{$a = x_0$}, 1/{$x_1$}, 2/{$x_2$}, 3/{$x_3$}, 5/{$x_n = b$}} {
+        \draw[thick] (\x, -0.1) -- (\x, 0.1);
+        \node[below] at (\x, -0.1) {\label};
+    }
+    \node at (4, -0.3) {$\dots$};
+\end{tikzpicture}
+\end{center}
+U svakom segmentu $[x_{i-1}, x_i]$ možemo izabrati tačku $\xi_i \in \mathbb{Q}$, a možemo izabrati i $\xi_i' \in \mathbb{I}$ 
+(jer skupovi $\mathbb{Q}$ i $\mathbb{I}$ su gusti u $\mathbb{R}$).
+Odavde
+\begin{align*}
+    \sigma(f, P, \xi) &= \sum_{i=1}^n f(\xi_i) \Delta x_i = \sum_{i=1}^n 1 \cdot (x_i - x_{i-1}) = b-a, \\
+    \sigma(f, P, \xi') &= \sum_{i=1}^n f(\xi_i') \Delta x_i = \sum_{i=1}^n 0 \cdot (x_i - x_{i-1}) = 0.
+\end{align*}
+Za svaku podelu (koliko god da je mala, to jest usitnjena) možemo izabrati $\xi$ i $\xi'$ tako da je 
+$\sigma(f, P, \xi) = b-a$ i $\sigma(f, P, \xi') = 0$. Odavde ne postoji $\lim_{\lambda(P) \to 0} \sigma(f, P, \xi)$.
+
+\begin{theorem}
+    Ako je funkcija $f$ Riman-integrabilna na $[a, b]$, onda je $f$ ograničena.
+\end{theorem}
+\begin{proof}
+    
+     Neka je $f$ neograničena na $[a, b]$. Tada se može dokazati da za svako $M > 0$ možemo izabrati podelu $(P, \xi)$ takvu da je $|\sigma(f, P, \xi)| > M$ (izborom $\xi$ unutar segmenta $[x_{i-1}, x_i]$ gde je $f$ neograničena tako da je $|f(\xi_i)|$ dovoljno veliki broj).
+    
+\end{proof}
+\subsection{Darbuov integral}
+
+Definisaćemo Darbuove sume za ograničene funkcije na $[a, b]$.
+\begin{definition}
+    Neka je $f: [a, b] \to \mathbb{R}$ ograničena funkcija i neka je $P = \{x_0, x_1, \dots, x_n\}$ podela.
+\textbf{Gornja Darbuova suma} funkcije $f$ za podelu $P$ je
+\[
+    S(f, P) = \sum_{i=1}^n \sup_{\xi_i \in [x_{i-1}, x_i]} f(\xi_i) \cdot \Delta x_i,
+\]
+a \textbf{donja Darbuova suma} je
+\[
+    s(f, P) = \sum_{i=1}^n \inf_{\xi_i \in [x_{i-1}, x_i]} f(\xi_i) \cdot \Delta x_i.
+\]
+(supremum i infimum na segmentima postoje jer je funkcija ograničena).
+
+\end{definition}
+
+\begin{definition}
+    
+    Podela $P$ segmenta $[a, b]$ je \textbf{ravnomerna} ako je $x_i - x_{i-1} = \frac{b-a}{n}$ za svako $i=1, \dots, n$, to jest svi segmenti su iste dužine.
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Main line
+        \draw[thick] (0,0) -- (8,0);
+        
+        % Ticks and labels
+        \draw[thick] (0, -0.1) -- (0, 0.1);
+        \node[below] at (0, -0.1) {$a$};
+        
+        \draw[thick] (1.5, -0.1) -- (1.5, 0.1);
+        \node[below] at (1.5, -0.1) {$x_1$};
+        
+        \draw[thick] (3, -0.1) -- (3, 0.1);
+        \node[below] at (3, -0.1) {$x_2$};
+
+        \draw[thick] (4.5, -0.1) -- (4.5, 0.1);
+        \node[below] at (4.5, -0.1) {$x_3$};
+
+        \draw[thick] (6, -0.1) -- (6, 0.1);
+        \node[below] at (6, -0.1) {$x_4$};
+
+        \node[below] at (7, -0.1) {$\dots$};
+        
+        \draw[thick] (8, -0.1) -- (8, 0.1);
+        \node[below] at (8, -0.1) {$b$};
+        
+        % Dots for continuation
+        \node at (4, 0) {$\dots$};
+    \end{tikzpicture}
+    \end{center}
+    (U ovom slučaju $x_i = a + i \cdot \frac{b-a}{n}$ za svako $i=1, \dots, n$.)
+    
+\end{definition}
+
+\noindent \textbf{Primer:} Izračunati: $S(f, P)$ i $s(f, P)$ za funkciju $f: [-1, 1] \to \mathbb{R}$, $f(x) = |x|$ za ravnomernu podelu $P$ na $2n$ jednakih segmenata.
+
+\[
+    x_i = -1 + i \frac{b-a}{2n} = -1 + i \cdot \frac{1}{n}, \quad x_i - x_{i-1} = \frac{b-a}{2n} = \frac{2}{2n} = \frac{1}{n}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+    % Axes
+    \draw[->, thick] (-1.5, 0) -- (1.5, 0) node[right] {$x$};
+    \draw[->, thick] (0, 0) -- (0, 1.5) node[above] {$y$};
+    
+    % Function f(x) = |x|
+    \draw[thick, domain=-1:0, smooth, variable=\x] plot ({\x}, {-\x});
+    \draw[thick, domain=0:1, smooth, variable=\x] plot ({\x}, {\x});
+    
+    % Dotted lines
+    \draw[dotted, thick] (-1, 0) -- (-1, 1);
+    \draw[dotted, thick] (1, 0) -- (1, 1);
+    \draw[dotted, thick] (0, 1) -- (0, 0);
+    
+    % Labels
+    \node[below left] at (-1, -0.05) {$-1$};
+    \draw[thick] (-1, -0.05) -- (-1, 0.05);
+    \node[below] at (0, -0.05) {$0$};
+    \node[below right] at (1, -0.05) {$1$};
+    \draw[thick] (1, -0.05) -- (1, 0.05);
+    \node[left] at (-0.05, 1) {$1$};
+    \draw[thick] (-0.05, 1) -- (0.05, 1);
+
+    \draw[thick] (-0.9, -0.05) -- (-0.9, 0.05);
+    \draw[thick] (-0.8, -0.05) -- (-0.8, 0.05);
+    \draw[thick] (-0.7, -0.05) -- (-0.7, 0.05);
+    \node[] at (-0.45, -0.05) {$\dots$};
+
+    \draw[thick] (0.9, -0.05) -- (0.9, 0.05);
+    \draw[thick] (0.8, -0.05) -- (0.8, 0.05);
+    \draw[thick] (0.7, -0.05) -- (0.7, 0.05);
+    \node[] at (0.45, -0.05) {$\dots$};
+    
+    % Points
+    \fill (-1, 1) circle (1pt);
+    \fill (0, 0) circle (1pt);
+    \fill (1, 1) circle (1pt);
+\end{tikzpicture}
+\end{center}
+
+Na segmentima $[x_{i-1}, x_i], \; i \in \{1, \dots, n\}$ važi $M_i = \sup_{\xi_i \in [x_{i-1}, x_i]} f(\xi_i) = f(x_{i-1})$ i 
+$m_i = \inf_{\xi_i \in [x_{i-1}, x_i]} f(\xi_i) = f(x_i)$ (jer je $f$ opadajuća na $[-1, 0]$).\\
+
+Na segmentima $[x_{i-1}, x_i], \; i \in \{n+1, \dots, 2n\}$ važi $M_i = \sup_{\xi_i \in [x_{i-1}, x_i]} f(\xi_i) = f(x_i)$ i 
+$m_i = \inf_{\xi_i \in [x_{i-1}, x_i]} f(\xi_i) = f(x_{i-1})$ (jer je $f$ rastuća na $[0, 1]$).
+
+Odavde:
+\begin{align*}
+    S(f, P) &= \sum_{i=1}^{2n} M_i \cdot \Delta x_i = \sum_{i=1}^{n} M_i \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} M_i \cdot \frac{1}{n} = \sum_{i=1}^{n} f(x_{i-1}) \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} f(x_i) \cdot \frac{1}{n} \\
+    &= \sum_{i=1}^{n} f\left(-1 + (i-1) \cdot \frac{1}{n}\right) \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} f\left(-1 + i \cdot \frac{1}{n}\right) \cdot \frac{1}{n} \\
+    &= \sum_{i=1}^{n} \left| -1 + (i-1) \cdot \frac{1}{n} \right| \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} \left| -1 + i \cdot \frac{1}{n} \right| \cdot \frac{1}{n} \\
+    &= \sum_{i=1}^{n} \left( 1 - (i-1) \cdot \frac{1}{n} \right) \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} \left( -1 + i \cdot \frac{1}{n} \right) \cdot \frac{1}{n} \\
+    &= \frac{1}{n} \sum_{i=1}^{n} 1 - \frac{1}{n^2} \sum_{i=1}^{n} (i-1) + \frac{1}{n} \sum_{i=n+1}^{2n} (-1) + \frac{1}{n^2} \sum_{i=n+1}^{2n} i \\
+    &= \frac{1}{n} \cdot n - \frac{1}{n^2} \frac{(n-1)n}{2} + \frac{1}{n} (-n) + \frac{1}{n^2} \left( \frac{2n(2n+1)}{2} - \frac{n(n+1)}{2} \right) \\
+    &= 1 - \frac{n-1}{2n} - 1 + \frac{1}{n^2} \left( \frac{4n^2 + 2n - n^2 - n}{2} \right) = - \frac{n-1}{2n} + \frac{3n+1}{2n} \\
+    &= \frac{2n+2}{2n} = 1 + \frac{1}{n}
+\end{align*}
+\begin{align*}
+    s(f, P) &= \sum_{i=1}^{2n} m_i \cdot \Delta x_i = \sum_{i=1}^{n} f(x_i) \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} f(x_{i-1}) \cdot \frac{1}{n} \\
+    &= \sum_{i=1}^{n} \left| -1 + i \cdot \frac{1}{n} \right| \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} \left| -1 + (i-1) \cdot \frac{1}{n} \right| \cdot \frac{1}{n} \\
+    &= \sum_{i=1}^{n} \left( 1 - i \cdot \frac{1}{n} \right) \cdot \frac{1}{n} + \sum_{i=n+1}^{2n} \left( -1 + (i-1) \cdot \frac{1}{n} \right) \cdot \frac{1}{n}
+\end{align*}
+\begin{align*}
+    &= \frac{1}{n} \sum_{i=1}^{n} 1 - \frac{1}{n^2} \sum_{i=1}^{n} i - \frac{1}{n} \sum_{i=n+1}^{2n} (-1) + \frac{1}{n^2} \sum_{i=n+1}^{2n} (i-1) \\
+    &= \frac{1}{n} \cdot n - \frac{1}{n^2} \frac{n(n+1)}{2} - \frac{1}{n} (-n) + \frac{1}{n^2} (n + (n+1) + \dots + 2n - 1) \\
+    &= - \frac{n+1}{2n} + \frac{1}{n^2} \left( \frac{(2n-1) \cdot 2n}{2} - \frac{(n-1) \cdot n}{2} \right) \\
+    &= - \frac{n+1}{2n} + \frac{1}{n^2} \frac{4n^2 - 2n - n^2 + n}{2} = - \frac{n+1}{2n} + \frac{3n-1}{2n} \\
+    &= \frac{2n-2}{2n} = 1 - \frac{1}{n}
+\end{align*}
+
+\begin{theorem}
+    Neka je $f$ ograničena na $[a, b]$ i neka je $(P, \xi)$ podela. Tada je
+    \[
+        m(b-a) \leq s(f, P) \leq \sigma(f, P, \xi) \leq S(f, P) \leq M(b-a),
+    \]
+    gde je $\displaystyle m = \inf_{x \in [a, b]} f(x)$ i $\displaystyle M = \sup_{x \in [a, b]} f(x)$.
+\end{theorem}
+
+\begin{proof}
+     Na svakom segmentu $[x_{i-1}, x_i]$ važi
+    \[
+        m \leq m_i \leq f(\xi_i) \leq M_i \leq M,
+    \]
+    Odavde je
+    \[
+        m(b-a) = \sum_{i=1}^{n} m \Delta x_i \leq \underbrace{\sum_{i=1}^{n} m_i \Delta x_i}_{s(f, P)} \leq \underbrace{\sum_{i=1}^{n} f(\xi_i) \Delta x_i}_{\sigma(f, P, \xi)} \leq \underbrace{\sum_{i=1}^{n} M_i \Delta x_i}_{S(f, P)} \leq \sum_{i=1}^{n} M \Delta x_i = M(b-a)
+    \]
+\end{proof}
+
+\begin{theorem}
+    Neka je $f: [a, b] \to \mathbb{R}$ ograničena. Tada važi:
+    \begin{enumerate}[label=\alph*)]
+        \item $P \subset P' \implies s(f, P) \leq s(f, P') \leq S(f, P') \leq S(f, P)$
+        \item $s(f, P) \leq S(f, P')$ za proizvoljne podele $P$ i $P'$
+        \item Postoje konačni $\displaystyle \sup_P s(f, P)$ i $\displaystyle \inf_P S(f, P)$
+    \end{enumerate}
+\end{theorem}
+
+
+\begin{proof}
+    
+    \begin{enumerate}[label=\alph*)]
+        \item Dovoljno je dokazati u sl. da je $P' = P \cup \{x'\}$, $x' \in (x_{i-1}, x_i)$ za neko $i$.
+        
+        \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Main line
+            \draw[thick] (0,0) -- (7,0);
+            
+            % Ticks and labels
+            \draw[thick] (0, -0.1) -- (0, 0.1);
+            \node[below] at (0, -0.1) {$a$};
+            
+            \draw[thick] (1.2, -0.1) -- (1.2, 0.1);
+            \node[below] at (1.2, -0.1) {$x_1$};
+            
+            \draw[thick] (2.3, -0.1) -- (2.3, 0.1);
+            \node[below] at (2.3, -0.1) {$x_2$};
+    
+            \node[below] at (2.9, -0.1) {$\dots$};
+            
+            \draw[thick] (3.5, -0.1) -- (3.5, 0.1);
+            \node[below] at (3.5, -0.1) {$x_{i-1}$};
+            
+            \draw[thick] (4.2, -0.1) -- (4.2, 0.1);
+            \node[below] at (4.2, -0.1) {$x'$};
+            
+            \draw[thick] (5.0, -0.1) -- (5.0, 0.1);
+            \node[below] at (5.0, -0.1) {$x_i$};
+    
+            \node[below] at (5.75, -0.1) {$\dots$};
+            
+            \draw[thick] (6.5, -0.1) -- (6.5, 0.1);
+            \node[below] at (6.5, -0.1) {$b$};
+        \end{tikzpicture}
+        \end{center}Važi:
+        \begin{align*}
+            &\inf_{\xi \in [x_{i-1}, x_i]} f(\xi) \cdot (x_i - x_{i-1}) = \inf_{\xi \in [x_{i-1}, x_i]} f(\xi) \cdot (x_i - x') + \inf_{\xi \in [x_{i-1}, x_i]} f(\xi) \cdot (x' - x_{i-1}) \\
+            &\leq \inf_{\xi \in [x', x_i]} f(\xi) \cdot (x_i - x') + \inf_{\xi \in [x_{i-1}, x']} f(\xi) \cdot (x' - x_{i-1})
+        \end{align*}
+        
+        \noindent Odavde $s(f, P) \leq s(f, P')$. Slično se dokazuje $S(f, P') \leq S(f, P)$.
+        
+        
+        \item Neka imamo proizvoljne podele $P$ i $P'$. Neka je $P'' = P \cup P'$. Tada je $P \subset P''$ i $P' \subset P''$.
+        Iz $P \subset P''$ sledi (na osnovu dela a)) $s(f, P) \leq s(f, P'')$.
+        Iz $P' \subset P''$ sledi (na osnovu dela a)) $S(f, P'') \leq S(f, P')$.
+        Zbog $s(f, P'') \leq S(f, P'')$ imamo
+        \[
+            s(f, P) \leq S(f, P').
+        \]
+    \end{enumerate}
+    
+    \begin{enumerate}[label=\alph*), start=3]
+        \item S obzirom da je $s(f, P) \leq S(f, P')$ za svaku podelu $P$ (deo stava pod b)), skup $\{s(f, P) \mid P \in \mathcal{P}\}$ je ograničen odozgo, pa postoji $\sup_P s(f, P)$. Slično se dokazuje da postoji $\inf_P S(f, P)$.
+    \end{enumerate}
+    
+\end{proof}
+
+\begin{definition}
+    Neka je $f: [a, b] \to \mathbb{R}$ ograničena.
+    \textbf{Gornji Darbuov integral} je \[\displaystyle \overline{I} = \inf_P S(f, P),\]
+    a \textbf{donji Darbuov integral} je \[\displaystyle \underline{I} = \sup_P s(f, P).\]
+    (Na osnovu prethodnog stava integrali postoje.)
+\end{definition}
+
+Za svaku podelu $P$ važi: \[\displaystyle s(f, P) \leq \underline{I} \leq \overline{I} \leq S(f, P).\] 
+
+Sledeću teoremu navodimo bez dokaza.
+
+\begin{theorem}
+    Neka je $f: [a, b] \to \mathbb{R}$ ograničena. Tada su sledeća tvrđenja ekvivalentna:
+    \begin{enumerate}[label=\alph*)]
+        \item $f$ je Riman-integrabilna na $[a, b]$.
+        \item $\displaystyle \lim_{\lambda(P) \to 0} (S(f, P) - s(f, P)) = 0$, to jest
+        \[
+            (\forall \varepsilon > 0) (\exists \delta > 0) (\forall P) (\lambda(P) < \delta \implies S(f, P) - s(f, P) < \varepsilon)
+        \]
+        \item $\overline{I} = \underline{I}$ (Gornji i donji Darbuov integral su jednaki.)
+    \end{enumerate}
+\end{theorem}
+
+\noindent \textbf{Primer:} Kod prethodnog primera za funkciju $f(x) = |x|$ na $[-1, 1]$ imamo 
+\[S(f, P) = 1 + \frac{1}{n} \;\;\text{i}\;\; s(f, P) = 1 - \frac{1}{n}\] za ravnomernu podelu $P$.
+Odavde \[ \sup_P s(f, P) \geq 1 - \frac{1}{n} \;\;\text{i}\;\; \inf_P S(f, P) \leq 1 + \frac{1}{n}.\]
+Kada $n \to \infty$ imamo $\displaystyle 1 \leq \sup_P s(f, P) \leq \inf_P S(f, P) \leq 1$, pa je $\overline{I} = \underline{I} = 1$.
+Dakle, \[\int_a^b f(x) \, dx = 1.\]
 
 
 \part{Primenjena matematika}
