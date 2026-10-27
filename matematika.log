@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  20 OCT 2026 12:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.24)  27 OCT 2026 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1460,32 +1460,32 @@ Overfull \hbox (9.49727pt too wide) detected at line 7524
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [167] [168]
-Underfull \hbox (badness 10000) in paragraph at lines 7729--7730
+Underfull \hbox (badness 10000) in paragraph at lines 7730--7731
 
  []
 
 
-Overfull \hbox (17.26128pt too wide) in paragraph at lines 7789--7791
+Overfull \hbox (17.26128pt too wide) in paragraph at lines 7790--7792
 \T1/cmsrbr/b/n/12 Primer: \T1/cmsrbr/m/n/12 Ne-ka je $\OT1/cmrsrbm/m/n/12 [1\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 3]$ \T1/cmsrbr/m/n/12 seg-ment. Ne-ka je $\OML/cmmsrbm/m/it/12 P \OT1/cmrsrbm/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmrsrbm/m/n/12 1\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 1\OML/cmmsrbm/m/it/12 :\OT1/cmrsrbm/m/n/12 3\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 1\OML/cmmsrbm/m/it/12 :\OT1/cmrsrbm/m/n/12 5\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 2\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 3\OMS/cmsy/m/n/12 g$ \T1/cmsrbr/m/n/12 po-de-la i $\OML/cmmsrbm/m/it/12 ^^X \OT1/cmrsrbm/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmrsrbm/m/n/12 1\OML/cmmsrbm/m/it/12 :\OT1/cmrsrbm/m/n/12 1\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 1\OML/cmmsrbm/m/it/12 :\OT1/cmrsrbm/m/n/12 5\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 2\OML/cmmsrbm/m/it/12 :\OT1/cmrsrbm/m/n/12 1\OML/cmmsrbm/m/it/12 ; \OT1/cmrsrbm/m/n/12 2\OML/cmmsrbm/m/it/12 :\OT1/cmrsrbm/m/n/12 5\OMS/cmsy/m/n/12 g$
  []
 
 [169] [170]
-Overfull \hbox (16.89189pt too wide) in paragraph at lines 7945--7948
+Overfull \hbox (16.89189pt too wide) in paragraph at lines 7946--7949
 \T1/cmsrbr/m/n/12 Neka je $\OT1/cmrsrbm/m/n/12 (\OML/cmmsrbm/m/it/12 P; ^^X\OT1/cmrsrbm/m/n/12 )$ \T1/cmsrbr/m/n/12 pro-i-zvolj-na po-de-la seg-men-ta $\OT1/cmrsrbm/m/n/12 [\OML/cmmsrbm/m/it/12 a; b\OT1/cmrsrbm/m/n/12 ]$ \T1/cmsrbr/m/n/12 sa iza-bra-nim ta£-ka-ma, $\OML/cmmsrbm/m/it/12 P \OT1/cmrsrbm/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmmsrbm/m/it/12 x[]; x[]; [] ; x[]\OMS/cmsy/m/n/12 g$
  []
 
 [171]
-Overfull \hbox (16.66423pt too wide) in paragraph at lines 8027--8029
+Overfull \hbox (16.66423pt too wide) in paragraph at lines 8028--8030
 [][]\T1/cmsrbr/b/n/12 Definicija 14.6.3. []\T1/cmsrbr/m/it/12 Ne-ka je $\OML/cmmsrbm/m/it/12 f \OT1/cmrsrbm/m/n/12 : [\OML/cmmsrbm/m/it/12 a; b\OT1/cmrsrbm/m/n/12 ] \OMS/cmsy/m/n/12 ! \U/msb/m/n/12 R$ \T1/cmsrbr/m/it/12 ogra-ni-£e-na funk-ci-ja i ne-ka je $\OML/cmmsrbm/m/it/12 P \OT1/cmrsrbm/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmmsrbm/m/it/12 x[]; x[]; [] ; x[]\OMS/cmsy/m/n/12 g$
  []
 
 [172]
-Underfull \hbox (badness 10000) in paragraph at lines 8125--8127
+Underfull \hbox (badness 10000) in paragraph at lines 8126--8128
 
  []
 
 [173]
-Overfull \hbox (2.36159pt too wide) detected at line 8171
+Overfull \hbox (2.36159pt too wide) detected at line 8172
 \OML/cmmsrbm/m/it/12 m\OT1/cmrsrbm/m/n/12 (\OML/cmmsrbm/m/it/12 b \OMS/cmsy/m/n/12 ^^@ \OML/cmmsrbm/m/it/12 a\OT1/cmrsrbm/m/n/12 ) = [] \OML/cmmsrbm/m/it/12 m\OT1/cmrsrbm/m/n/12 ^^A\OML/cmmsrbm/m/it/12 x[] \OMS/cmsy/m/n/12 ^^T [] ^^T [] ^^T [] ^^T [] \OML/cmmsrbm/m/it/12 M\OT1/cmrsrbm/m/n/12 ^^A\OML/cmmsrbm/m/it/12 x[] \OT1/cmrsrbm/m/n/12 = \OML/cmmsrbm/m/it/12 M\OT1/cmrsrbm/m/n/12 (\OML/cmmsrbm/m/it/12 b \OMS/cmsy/m/n/12 ^^@ \OML/cmmsrbm/m/it/12 a\OT1/cmrsrbm/m/n/12 )
  []
 
@@ -1522,7 +1522,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  102i,19n,107p,776b,1061s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cmsrb/cmsrbrx.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on matematika.pdf (185 pages, 1561038 bytes).
+Output written on matematika.pdf (185 pages, 1561054 bytes).
 PDF statistics:
  3242 PDF objects out of 3580 (max. 8388607)
  2973 compressed objects within 30 object streams
