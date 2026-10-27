@@ -265,9 +265,9 @@
 \contentsline {subsection}{\numberline {14.5.5}Neki integrali}{167}{subsection.14.5.5}%
 \contentsline {subsubsection}{Stepene funkcije}{167}{subsection.14.5.5}%
 \contentsline {subsubsection}{Racionalni kvadratni oblici}{167}{subsection.14.5.5}%
-\contentsline {subsubsection}{Logaritamske i eksponencijalne funkcije}{167}{subsection.14.5.5}%
+\contentsline {subsubsection}{Iracionalni integrali (sa korenom)}{167}{subsection.14.5.5}%
 \contentsline {subsubsection}{Trigonometrijske funkcije}{168}{subsection.14.5.5}%
-\contentsline {subsubsection}{Iracionalni integrali (sa korenom)}{168}{subsection.14.5.5}%
+\contentsline {subsubsection}{Logaritamske i eksponencijalne funkcije}{168}{subsection.14.5.5}%
 \contentsline {subsubsection}{Hiperboličke funkcije}{168}{subsection.14.5.5}%
 \contentsline {section}{\numberline {14.6}Određeni integral}{169}{section.14.6}%
 \contentsline {subsection}{\numberline {14.6.1}Pojam Rimanovog integrala}{169}{subsection.14.6.1}%
